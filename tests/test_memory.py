@@ -7,7 +7,7 @@ from pathlib import Path
 import pytest
 
 from interpretation.glossary import Usage, load_glossary
-from interpretation.memory import memory_chain, remember
+from interpretation.memory import confluence, memory_chain, remember
 
 GLOSSARY = Path(__file__).resolve().parents[1] / "glossary.json"
 
@@ -98,6 +98,44 @@ def test_a_single_hop_chain_is_not_restored():
 
 def test_a_concept_with_no_rememberings_has_an_origin_only_chain():
     g = load_glossary(GLOSSARY)
-    chain = memory_chain("labrys", g)          # nothing remembers the labrys (yet)
+    chain = memory_chain("revolution", g)      # a pump word nothing remembers
     assert chain.carriers == []
     assert chain.survival == 1.0               # nothing has carried it, so nothing is lost
+
+
+# --- confluence: independent lineages corroborate or diverge ----------------
+
+def test_independent_lineages_that_converge_corroborate_the_source():
+    g = load_glossary(GLOSSARY)
+    conf = confluence("ouroboros", g)
+    roots = {ln.root for ln in conf.lineages}
+    assert roots == {"ouroboros-alchemy", "ouroboros-jung"}   # two independent paths
+    assert conf.independently_corroborated
+    assert all(p.converges for p in conf.pairs)
+
+
+def test_lineage_groups_carriers_by_their_root():
+    g = load_glossary(GLOSSARY)
+    conf = confluence("ouroboros", g)
+    by_root = {ln.root: ln.members for ln in conf.lineages}
+    # medieval extends the alchemy lineage; jung is its own path back to the source
+    assert by_root["ouroboros-alchemy"] == ["ouroboros-alchemy", "ouroboros-medieval"]
+    assert by_root["ouroboros-jung"] == ["ouroboros-jung"]
+
+
+def test_divergent_lineages_are_a_fork_not_a_corroboration():
+    g = load_glossary(GLOSSARY)
+    conf = confluence("labrys", g)
+    assert not conf.independently_corroborated
+    preserved = {ln.root for ln in conf.corroborating}
+    assert preserved == {"labrys-religious"}          # only the faithful path preserves it
+    assert conf.pairs[0].convergence < 0.5            # the paths have forked
+    assert "DIVERGENCE" in conf.verdict
+
+
+def test_a_single_lineage_has_no_confluence_to_weigh():
+    g = load_glossary(GLOSSARY)
+    conf = confluence("divine-order", g)
+    assert len(conf.lineages) == 1
+    assert not conf.independently_corroborated
+    assert "only one lineage" in conf.verdict

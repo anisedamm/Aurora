@@ -91,7 +91,18 @@ from .alignment import (
     RECOGNITION_THRESHOLD,
     CORROBORATION_TARGET,
 )
-from .memory import Remembrance, remember, MemoryChain, MemoryLink, memory_chain
+from .memory import (
+    Remembrance,
+    remember,
+    MemoryChain,
+    MemoryLink,
+    memory_chain,
+    Confluence,
+    Lineage,
+    ConfluencePair,
+    confluence,
+    CONVERGENCE_THRESHOLD,
+)
 from .imprint import Imprinter, ImprintReceipt, DEFAULT_AUTHOR
 from .manifest import build_manifest, write_manifest
 
@@ -169,6 +180,11 @@ __all__ = [
     "MemoryChain",
     "MemoryLink",
     "memory_chain",
+    "Confluence",
+    "Lineage",
+    "ConfluencePair",
+    "confluence",
+    "CONVERGENCE_THRESHOLD",
     # active recorder + publication
     "Imprinter",
     "ImprintReceipt",

@@ -90,6 +90,13 @@ def test_chain_traces_the_transmission_lineage(capsys):
     assert "ouroboros-jung" in out and "restored" in out
 
 
+def test_confluence_corroborates_or_forks(capsys):
+    assert main(_g("confluence", "ouroboros")) == 0
+    assert "independently corroborated" in capsys.readouterr().out
+    assert main(_g("confluence", "labrys")) == 0
+    assert "DIVERGENCE" in capsys.readouterr().out
+
+
 def test_regime_shows_the_threshold_and_sides(capsys):
     assert main(_g("regime", "divine-order")) == 0
     out = capsys.readouterr().out

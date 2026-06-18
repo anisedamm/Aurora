@@ -35,7 +35,7 @@ from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
 from .ledger import Ledger
 from .manifest import write_manifest
-from .memory import memory_chain, remember
+from .memory import confluence, memory_chain, remember
 from .reading import attest, drift, project, read, read_symbol
 from .regime import SCRIPT_CONCEPTUAL, SCRIPT_PHONETIC
 from .weighting import WeightedField
@@ -170,6 +170,12 @@ def cmd_remember(args: argparse.Namespace) -> int:
 def cmd_chain(args: argparse.Namespace) -> int:
     g = _glossary(args)
     print(memory_chain(args.concept, g).summary)
+    return 0
+
+
+def cmd_confluence(args: argparse.Namespace) -> int:
+    g = _glossary(args)
+    print(confluence(args.concept, g).summary)
     return 0
 
 
@@ -326,6 +332,9 @@ def build_parser() -> argparse.ArgumentParser:
     sp = sub.add_parser("chain", help="trace a truth's transmission lineage: decay and restoration across rememberings")
     sp.add_argument("concept")
 
+    sp = sub.add_parser("confluence", help="weigh independent lineages: do they corroborate the source or diverge?")
+    sp.add_argument("concept")
+
     sp = sub.add_parser("regime", help="show a concept's breath/pump threshold and which side each sense sits")
     sp.add_argument("concept")
 
@@ -379,6 +388,7 @@ _COMMANDS = {
     "weigh": cmd_weigh,
     "remember": cmd_remember,
     "chain": cmd_chain,
+    "confluence": cmd_confluence,
     "regime": cmd_regime,
     "sense": cmd_sense,
     "align": cmd_align,

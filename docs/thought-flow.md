@@ -302,6 +302,26 @@ single faithful carry but along a lineage that can, and sometimes does, find its
 back. Descriptive, never a gate — it traces the transmission; it does not grade the
 tradition.
 
+## Step 20 — Confluence: independent lineages corroborate the source, or fork from it
+
+A chain follows one lineage of memory; but a truth important enough to keep is often
+carried by *several* lineages that never touched. When two paths that never copied
+each other arrive at the same conceptual field, that convergence is evidence — the
+return-path mirror of the sibling system's rule that corroboration must be
+*independent* (your own derivations grow influence but not truth; only distinct
+sources corroborate). `confluence` groups the rememberings of a truth into independent
+lineages — distinct precisely when neither remembers the other — and weighs their
+witnesses against the source and against each other. Independent lineages that
+**converge** corroborate the retained truth: it is not an artifact of one
+transmission. Independent lineages that **diverge** mark a **fork** — incompatible
+memories of one sign. The two seeded cases show both faces: the ouroboros is
+corroborated, an Egyptian-rooted alchemical path and a modern reading independently
+recovering its unity-of-opposites (0.90); the labrys has forked, a religious-historical
+lineage keeping its paradoxical equilibrium while a later emblematic one re-reads it as
+sovereign power and group identity (0.40). As with `dispute` in the sibling system, the
+framework records the fork and withholds adjudication — it surfaces that the tradition
+split; it does not decide which branch is right. Descriptive, never a gate.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

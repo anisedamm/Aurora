@@ -252,3 +252,151 @@ def memory_chain(concept_id: str, glossary: Glossary) -> MemoryChain:
         prev_to_origin = to_origin
 
     return MemoryChain(concept=concept_id, origin_year=origin_year, links=links)
+
+
+# --- confluence: where independent lineages of memory meet -------------------
+
+# Two independent lineages whose witnesses resonate at or above this line are taken
+# to converge (and so to corroborate the source); below it, they have diverged.
+CONVERGENCE_THRESHOLD = 0.5
+
+
+def _lineage_root(usage_id: str, glossary: Glossary) -> str:
+    """The carrier at the head of a lineage: the one that remembers the concept
+    *directly*. Walking `remembers` up from any carrier lands on its root, so two
+    carriers share a lineage exactly when they share a root - and distinct roots are
+    independent paths back to the truth (neither remembers the other)."""
+    cur = usage_id
+    seen: set[str] = set()
+    while cur not in seen:
+        seen.add(cur)
+        try:
+            u = glossary.usage(cur)
+        except KeyError:
+            return cur
+        if u.remembers in glossary.concepts or not u.remembers:
+            return cur                      # remembers the source directly (or dangles): a root
+        try:
+            glossary.usage(u.remembers)
+        except KeyError:
+            return cur                      # remembers something unknown: treat as a root
+        cur = u.remembers
+    return cur
+
+
+@dataclass
+class Lineage:
+    """One independent path of memory back to a source truth."""
+
+    root: str
+    members: list[str]
+    witness: str               # the best-preserved member (max resonance with origin)
+    witness_to_origin: float
+
+
+@dataclass
+class ConfluencePair:
+    """How two independent lineages stand to each other."""
+
+    a: str
+    b: str
+    convergence: float         # mutual resonance of the two lineages' witnesses
+    converges: bool
+
+
+@dataclass
+class Confluence:
+    """Where independent lineages remembering one truth meet - or fail to."""
+
+    concept: str
+    lineages: list[Lineage] = field(default_factory=list)
+    pairs: list[ConfluencePair] = field(default_factory=list)
+
+    @property
+    def corroborating(self) -> list[Lineage]:
+        """Lineages whose best witness genuinely preserves the source truth."""
+        return [ln for ln in self.lineages if ln.witness_to_origin >= CONVERGENCE_THRESHOLD]
+
+    @property
+    def independently_corroborated(self) -> bool:
+        """True when >= 2 independent lineages preserve the source and converge on it -
+        separate paths arriving at the same truth, the strongest evidence it is real."""
+        roots = {ln.root for ln in self.corroborating}
+        if len(roots) < 2:
+            return False
+        among = [p for p in self.pairs if p.a in roots and p.b in roots]
+        return bool(among) and all(p.converges for p in among)
+
+    @property
+    def verdict(self) -> str:
+        n = len(self.lineages)
+        if n < 2:
+            return f"only one lineage remembers '{self.concept}' — no confluence to weigh"
+        if self.independently_corroborated:
+            return (
+                f"CONFLUENCE: {len(self.corroborating)} independent lineages converge on "
+                f"'{self.concept}' — the retained truth is independently corroborated"
+            )
+        return (
+            f"DIVERGENCE: of {n} lineages remembering '{self.concept}', "
+            f"{len(self.corroborating)} preserve(s) the source; the lineages have forked "
+            f"into incompatible memories"
+        )
+
+    @property
+    def summary(self) -> str:
+        rows = [self.verdict, "  lineages:"]
+        for ln in self.lineages:
+            mark = "preserves" if ln.witness_to_origin >= CONVERGENCE_THRESHOLD else "diverged"
+            path = " -> ".join(ln.members)
+            rows.append(f"    {ln.root:<20} [{path}]  witness {ln.witness} "
+                        f"to-origin {ln.witness_to_origin:.2f} ({mark})")
+        if self.pairs:
+            rows.append("  between lineages:")
+            for p in self.pairs:
+                rel = "converge" if p.converges else "diverge"
+                rows.append(f"    {p.a} x {p.b}: {p.convergence:.2f} ({rel})")
+        rows.append("  note: convergence of independent paths corroborates the source; "
+                    "divergence marks a fork. Descriptive, never a gate.")
+        return "\n".join(rows)
+
+
+def confluence(concept_id: str, glossary: Glossary) -> Confluence:
+    """Weigh the independent lineages that remember a truth.
+
+    The return-path analogue of the sibling system's *independent corroboration*: a
+    truth carried back by two paths that never copied each other, arriving at the same
+    conceptual field, is corroborated the way a claim restated by distinct authors is.
+    The same machinery surfaces the opposite case - independent lineages that have
+    diverged into incompatible memories (a fork in the tradition). Descriptive.
+    """
+    concept = glossary.concept(concept_id)
+    origin = WeightedField(concept.retained_field())
+
+    carriers = _carriers_of(concept_id, glossary)
+    by_root: dict[str, list[Usage]] = {}
+    for u in carriers:
+        by_root.setdefault(_lineage_root(u.id, glossary), []).append(u)
+
+    lineages: list[Lineage] = []
+    witness_field: dict[str, WeightedField] = {}
+    for root, members in by_root.items():
+        members = sorted(members, key=lambda u: u.year)
+        scored = [(u, origin.resonance(WeightedField(dict(u.field)))) for u in members]
+        wu, w_to_origin = max(scored, key=lambda t: t[1])
+        lineages.append(Lineage(
+            root=root, members=[u.id for u in members],
+            witness=wu.id, witness_to_origin=round(w_to_origin, 4),
+        ))
+        witness_field[root] = WeightedField(dict(wu.field))
+
+    lineages.sort(key=lambda ln: ln.root)
+    pairs: list[ConfluencePair] = []
+    for i in range(len(lineages)):
+        for j in range(i + 1, len(lineages)):
+            a, b = lineages[i].root, lineages[j].root
+            conv = witness_field[a].resonance(witness_field[b])
+            pairs.append(ConfluencePair(a=a, b=b, convergence=round(conv, 4),
+                                        converges=conv >= CONVERGENCE_THRESHOLD))
+
+    return Confluence(concept=concept_id, lineages=lineages, pairs=pairs)

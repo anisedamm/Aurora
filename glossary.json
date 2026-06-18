@@ -21,6 +21,30 @@
           "period": "Minoan palatial, c. 1700–1450 BCE",
           "field": {"paradoxical-equilibrium": 0.30, "sovereignty": 0.25, "divinity": 0.25, "unity-belonging": 0.20},
           "committed_because": "to hold and transmit the society's axis — balanced sovereignty, the divine, and belonging — in a form that outlived any one voice and bound everyone who stood under it"
+        },
+        {
+          "id": "labrys-religious",
+          "word": "labrys",
+          "regime": "pump",
+          "mode": "phonetic",
+          "quotation": "the labrys, sign of the goddess, holds the opposed blades of heaven and earth in balance",
+          "citation": "after religious-historical studies of Minoan iconography",
+          "year": 1960,
+          "period": "20th c. scholarship",
+          "remembers": "labrys",
+          "field": {"divinity": 0.30, "sovereignty": 0.25, "paradoxical-equilibrium": 0.25, "unity-belonging": 0.20}
+        },
+        {
+          "id": "labrys-emblem",
+          "word": "labrys",
+          "regime": "pump",
+          "mode": "phonetic",
+          "quotation": "the labrys borne as an emblem of sovereign power and the identity of the group",
+          "citation": "after later political and heraldic adoptions of the double axe",
+          "year": 1930,
+          "period": "20th c.",
+          "remembers": "labrys",
+          "field": {"sovereignty": 0.30, "group-identity": 0.35, "militancy": 0.20, "unity-belonging": 0.15}
         }
       ]
     },

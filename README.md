@@ -70,13 +70,13 @@ interpretation/
   glossary.py      # the authored map: concepts, attested usages (phonetic + conceptual)
   reading.py       # the three layers: attest (L1) / read (L2) / drift + project (L3)
   alignment.py     # purpose x fidelity (phonetic) / purpose x resonance (conceptual)
-  memory.py        # the return path: remember() + memory_chain() — inverse of projection
+  memory.py        # the return path: remember() / memory_chain() / confluence()
   imprint.py       # the active recorder (default author: anise.damm)
   manifest.py      # defensive-publication manifest
 glossary.json              # breath signs (labrys, ankh, ouroboros, myth) + pump words
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (89 tests)
+tests/                     # the suite (94 tests)
 ```
 
 ## Quickstart
@@ -225,6 +225,35 @@ record can recover a truth an earlier one let slip — which is how a breath soc
 values survive the great change in attention, not in one carry but down a lineage.
 This is the sibling system's `trace` (the thread of conclusions) turned on the return
 path. Descriptive, never a gate.
+
+**Confluence: independent paths that corroborate — or fork.** When *two lineages that
+never copied each other* remember the same source truth, their meeting is evidence.
+`confluence` groups the rememberings into independent paths (by whether one remembers
+the other) and weighs them: independent lineages that **converge** on the same
+conceptual field corroborate the source — the return-path analogue of the sibling
+system's *independent corroboration* — while lineages that **diverge** mark a fork in
+the tradition.
+
+```
+$ python -m interpretation confluence ouroboros
+CONFLUENCE: 2 independent lineages converge on 'ouroboros' — the retained truth is independently corroborated
+    ouroboros-alchemy  [ouroboros-alchemy -> ouroboros-medieval]  witness ... to-origin 0.90 (preserves)
+    ouroboros-jung     [ouroboros-jung]                           witness ... to-origin 0.85 (preserves)
+    ouroboros-alchemy x ouroboros-jung: 0.90 (converge)
+
+$ python -m interpretation confluence labrys
+DIVERGENCE: of 2 lineages remembering 'labrys', 1 preserve(s) the source; the lineages have forked into incompatible memories
+    labrys-emblem     witness ... to-origin 0.40 (diverged)     # re-read as sovereign power and group identity
+    labrys-religious  witness ... to-origin 0.95 (preserves)    # the sacred equilibrium kept
+    labrys-emblem x labrys-religious: 0.40 (diverge)
+```
+
+The Egyptian-rooted alchemical reading of the ouroboros and a modern reading arrive
+*independently* at its unity-of-opposites (0.90) — so the truth is corroborated, not
+an artifact of one transmission. The labrys, by contrast, has **forked**: a
+religious-historical lineage keeps its paradoxical equilibrium while a later emblematic
+one re-reads it as sovereign power and group identity — incompatible memories of one
+sign, surfaced and named, never adjudicated.
 
 ## The worked example: *revolution* (the pump-regime contrast)
 
