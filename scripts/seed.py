@@ -2,9 +2,11 @@
 
 Builds `interpretation_ledger.jsonl` and `MANIFEST.md` from scratch: it imprints
 the framework, the thought-flow journal, the glossary map, then each concept, its
-attested usages, and one in-period reading per usage - every record authored by
-**anise.damm**, anchored to the current git commit. Re-runnable: it rewrites the
-ledger so the chain is deterministic in structure (timestamps aside).
+attested usages, and one reading per usage - a weighted reading for a breath-era
+conceptual sign, a sense reading for a pump-era phonetic word - plus one recorded
+*foil*: the labrys read phonetically, so the published record shows the framework
+catching a phonetic projection. Every record is authored by **anise.damm**,
+anchored to the current git commit. Re-runnable: it rewrites the ledger.
 
     python scripts/seed.py            # anchor to HEAD
     python scripts/seed.py <git-sha>  # anchor to a specific commit
@@ -23,18 +25,20 @@ from interpretation.glossary import load_glossary           # noqa: E402
 from interpretation.imprint import DEFAULT_AUTHOR, Imprinter  # noqa: E402
 from interpretation.ledger import Ledger                    # noqa: E402
 from interpretation.manifest import write_manifest          # noqa: E402
+from interpretation.weighting import WeightedField          # noqa: E402
 
 LEDGER = ROOT / "interpretation_ledger.jsonl"
 GLOSSARY = ROOT / "glossary.json"
 MANIFEST = ROOT / "MANIFEST.md"
 
-# The in-period sense each seeded usage is read in (none anachronistic).
-READINGS = {
+# The in-period sense each seeded *phonetic* usage is read in (none anachronistic).
+PHONETIC_READINGS = {
     "rev-copernicus": "celestial-return",
     "rev-1688": "political-restoration",
     "rev-1789": "irreversible-rupture",
     "dem-aristotle": "mob-rule",
     "dem-tocqueville": "popular-self-government",
+    "theogony": "olympian",
 }
 
 
@@ -75,23 +79,43 @@ def main() -> int:
 
     for c in g.concepts.values():
         cid = f"concept-{c.id}"
-        senses = "; ".join(
-            f"{s.label} ({s.period})" for s in c.lattice.senses.values()
-        )
-        imprint(artifact_id=cid, title=f"Concept: {c.name}", concept=c.id, kind="concept",
-                parents=["glossary-map"], text=f"{c.name}: {c.gloss}\nSenses: {senses}")
+        is_symbol = c.regime == "breath" and not c.lattice.senses
+        summary = "; ".join(f"{s.label} ({s.period})" for s in c.lattice.senses.values())
+        imprint(artifact_id=cid, title=f"Concept: {c.name}", concept=c.id,
+                kind="symbol" if is_symbol else "concept", regime=c.regime or None,
+                parents=["glossary-map"],
+                text=f"{c.name}: {c.gloss}" + (f"\nSenses: {summary}" if summary else ""))
         for u in sorted(c.usages.values(), key=lambda u: u.year):
-            imprint(artifact_id=u.id, title=f"Usage: {u.citation}", concept=c.id, kind="usage",
-                    word=u.word, citation=u.citation, period=u.period, year=u.year,
-                    parents=[cid], text=u.quotation)
-            sense_id = READINGS.get(u.id)
-            if sense_id:
-                s = c.lattice.senses[sense_id]
-                imprint(artifact_id=f"read-{u.id}", title=f"Reading: {u.word} as {s.label}",
-                        concept=c.id, sense=sense_id, kind="interpretation", parents=[u.id],
-                        period=u.period, year=u.year,
-                        text=(f"Read in its own period, '{u.word}' here carries the sense "
-                              f"'{s.label}': {s.gloss}"))
+            imprint(artifact_id=u.id, title=f"Usage: {u.citation or u.artifact}", concept=c.id,
+                    kind="usage", word=u.word, citation=u.citation or u.artifact, period=u.period,
+                    year=u.year, regime=u.regime, mode=u.mode,
+                    weights=(dict(u.field) or None), artifact=(u.artifact or None),
+                    parents=[cid], text=(u.quotation or u.artifact))
+            if u.mode == "conceptual":
+                dom = ", ".join(k for k, _ in WeightedField(u.field).dominant())
+                imprint(artifact_id=f"read-{u.id}",
+                        title=f"Reading: {u.word} as a weighted field",
+                        concept=c.id, kind="interpretation", regime="breath", mode="conceptual",
+                        weights=dict(u.field), parents=[u.id], period=u.period, year=u.year,
+                        text=f"Read as a weighted field ({dom}): {c.gloss}")
+            else:
+                sid = PHONETIC_READINGS.get(u.id)
+                if sid:
+                    s = c.lattice.senses[sid]
+                    imprint(artifact_id=f"read-{u.id}", title=f"Reading: {u.word} as {s.label}",
+                            concept=c.id, sense=sid, kind="interpretation", regime="pump",
+                            mode="phonetic", parents=[u.id], period=u.period, year=u.year,
+                            text=(f"Read in its own period, '{u.word}' here carries the sense "
+                                  f"'{s.label}': {s.gloss}"))
+
+    # The foil: the labrys read phonetically, recorded so the error can be named.
+    imprint(artifact_id="read-labrys-lexical",
+            title="Reading (lexical foil): the labrys as a mere syllabic sign",
+            concept="labrys", kind="interpretation", regime="pump", mode="phonetic",
+            weights={"syllabic-sign": 1.0}, parents=["labrys-knossos"], year=-1600,
+            text=("Read phonetically: the double axe taken as nothing but a written "
+                  "syllable, the conceptual field discarded — the projection this "
+                  "framework exists to catch."))
 
     led = imp.ledger
     write_manifest(led, MANIFEST, g)

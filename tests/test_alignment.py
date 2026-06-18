@@ -6,10 +6,15 @@ from pathlib import Path
 
 import pytest
 
-from interpretation.alignment import interpretive_alignment_of
+from interpretation.alignment import (
+    align_record,
+    interpretive_alignment_of,
+    weighted_alignment_of,
+)
 from interpretation.glossary import load_glossary
 from interpretation.imprint import Imprinter
 from interpretation.ledger import Ledger
+from interpretation.regime import SCRIPT_CONCEPTUAL
 
 GLOSSARY = Path(__file__).resolve().parents[1] / "glossary.json"
 
@@ -97,3 +102,49 @@ def test_alignment_of_a_missing_record_raises(world):
     led, g = world
     with pytest.raises(KeyError):
         interpretive_alignment_of("nope", led, g)
+
+
+# --- the conceptual regime: alignment = purpose x resonance -----------------
+
+@pytest.fixture
+def breath_world(tmp_path):
+    g = load_glossary(GLOSSARY)
+    led = Ledger(tmp_path / "ledger.jsonl")
+    imp = Imprinter(led)
+    field = g.usage("labrys-knossos").field
+    imp.imprint(artifact_id="labrys-knossos", title="usage", kind="usage", mode="conceptual",
+                regime="breath", weights=dict(field), artifact="seals", concept="labrys",
+                text="the double axe at Knossos")
+    # a faithful reading that resonates with the retained field
+    imp.imprint(artifact_id="read-labrys", title="faithful reading", kind="interpretation",
+                mode="conceptual", regime="breath", weights=dict(field), parents=["labrys-knossos"],
+                concept="labrys", text="held in balance: equilibrium, sovereignty, divinity, belonging")
+    # the foil: the same sign read phonetically (the projection)
+    imp.imprint(artifact_id="read-labrys-lexical", title="lexical foil", kind="interpretation",
+                mode="phonetic", regime="pump", weights={"syllabic-sign": 1.0},
+                parents=["labrys-knossos"], concept="labrys", text="just a syllable a-ka")
+    return led, g
+
+
+def test_faithful_conceptual_reading_resonates(breath_world):
+    led, g = breath_world
+    a = weighted_alignment_of("read-labrys", led, g)
+    assert a.mode == SCRIPT_CONCEPTUAL
+    assert a.resonance == 1.0
+    assert not a.projected
+    assert a.value == 1.0          # purpose 1.0 (first reading) x resonance 1.0
+
+
+def test_phonetic_projection_zeroes_resonance(breath_world):
+    led, g = breath_world
+    a = weighted_alignment_of("read-labrys-lexical", led, g)
+    assert a.projected
+    assert a.fidelity == 0.0
+    assert a.value == 0.0
+    assert "phonetic" in a.gloss
+
+
+def test_align_record_dispatches_on_regime(breath_world):
+    led, g = breath_world
+    assert align_record("read-labrys", led, g).mode == SCRIPT_CONCEPTUAL
+    assert align_record("read-labrys-lexical", led, g).projected

@@ -49,6 +49,8 @@ KIND_USAGE = "usage"
 KIND_INTERPRETATION = "interpretation"
 KIND_SENSE = "sense"
 KIND_REASONING = "reasoning"
+KIND_SYMBOL = "symbol"   # a breath-era conceptual sign with a retained weighted field
+KIND_MYTH = "myth"       # conceptual memory: an earlier truth abstracted into narrative
 
 # Records that are metadata *about* readings rather than readings themselves
 # (reserved for retraction/contradiction, as in the sibling system); recognition,
@@ -78,12 +80,17 @@ class InterpretationRecord:
     concept: str | None = None   # the headword this record concerns ("revolution")
     sense: str | None = None     # for an interpretation: the sense id it reads in
     word: str | None = None      # for a usage: the word as it appears in the text
-    citation: str | None = None  # for a usage: where the word is attested
+    citation: str | None = None  # for a usage: where the word/symbol is attested
     period: str | None = None    # human-readable period label ("post-1789")
     year: int | None = None      # representative year for drift comparison (BCE negative)
+    # --- the attention axis (breath vs pump) ----------------------------
+    regime: str | None = None    # mode of attention: breath (holistic) / pump (analytic)
+    mode: str | None = None      # script/reading mode: conceptual / phonetic
+    weights: dict | None = None  # for a symbol/conceptual reading: the weighted field
+    artifact: str | None = None  # for a conceptual usage: the material attestation
     # --- standing -------------------------------------------------------
     license: str | None = None
-    schema_version: int = 1
+    schema_version: int = 2
     created_claimed: str | None = None   # author-stated date (unverified)
     external_anchor: str | None = None   # git SHA / URL, if any
     prev_hash: str = GENESIS_HASH
@@ -150,6 +157,10 @@ class Ledger:
         citation: str | None = None,
         period: str | None = None,
         year: int | None = None,
+        regime: str | None = None,
+        mode: str | None = None,
+        weights: dict | None = None,
+        artifact: str | None = None,
         license: str | None = None,
         created_claimed: str | None = None,
         external_anchor: str | None = None,
@@ -180,6 +191,10 @@ class Ledger:
             citation=citation,
             period=period,
             year=year,
+            regime=regime,
+            mode=mode,
+            weights=weights,
+            artifact=artifact,
             license=license,
             created_claimed=created_claimed,
             external_anchor=external_anchor,

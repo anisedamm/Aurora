@@ -41,11 +41,11 @@ def build_manifest(
     # Per-record alignment, computed only for interpretations when a glossary is given.
     aligns: dict[int, str] = {}
     if glossary is not None:
-        from .alignment import interpretive_alignment_of
+        from .alignment import align_record
 
         for i, r in enumerate(ledger.records):
             if r.kind == KIND_INTERPRETATION:
-                a = interpretive_alignment_of(r.id, ledger, glossary)
+                a = align_record(r.id, ledger, glossary)
                 aligns[i] = f"{a.value:.2f}/{a.influence}"
 
     lines = [
@@ -67,15 +67,16 @@ def build_manifest(
         "this file to git and push) to turn 'recorded' into real-world provable",
         "'recorded by this date'.",
         "",
-        "| # | id | title | owner | source | kind | concept | sense | recorded_at | content_hash | align | anchor |",
-        "|---|----|-------|-------|--------|------|---------|-------|-------------|--------------|-------|--------|",
+        "| # | id | title | owner | source | kind | concept | regime/mode | sense | align | anchor |",
+        "|---|----|-------|-------|--------|------|---------|-------------|-------|-------|--------|",
     ]
     for i, r in enumerate(ledger.records):
         anchor = r.external_anchor or "—"
+        rm = "/".join(x for x in (r.regime, r.mode) if x) or "—"
         lines.append(
             f"| {i} | `{r.id}` | {r.title} | {r.author} | {r.source} | {r.kind} "
-            f"| {r.concept or '—'} | {r.sense or '—'} | {r.recorded_at} "
-            f"| `{_short(r.content_hash)}` | {aligns.get(i, '—')} | `{anchor}` |"
+            f"| {r.concept or '—'} | {rm} | {r.sense or '—'} "
+            f"| {aligns.get(i, '—')} | `{anchor}` |"
         )
 
     lines += [

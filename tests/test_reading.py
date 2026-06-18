@@ -5,7 +5,8 @@ from __future__ import annotations
 from pathlib import Path
 
 from interpretation.glossary import Usage, load_glossary
-from interpretation.reading import attest, drift, read
+from interpretation.reading import attest, drift, project, read, read_symbol
+from interpretation.regime import SCRIPT_CONCEPTUAL, SCRIPT_PHONETIC
 
 GLOSSARY = Path(__file__).resolve().parents[1] / "glossary.json"
 
@@ -74,3 +75,51 @@ def test_democracy_anachronism_spans_millennia():
               g.lattice_for_usage("dem-aristotle"))
     assert d.anachronistic
     assert d.anachronism_years == 1780 - (-350)
+
+
+# --- L1 for conceptual signs ------------------------------------------------
+
+def test_a_conceptual_symbol_is_attested_by_artifact_and_field():
+    g = load_glossary(GLOSSARY)
+    assert attest(g.usage("labrys-knossos")).ok
+    assert attest(g.usage("ankh-relief")).ok
+
+
+def test_a_symbol_without_a_weighted_field_is_not_attested():
+    bare = Usage(id="x", word="labrys", quotation="", citation="",
+                 mode="conceptual", artifact="a seal", field={})
+    result = attest(bare)
+    assert not result.ok
+    assert any("weighted field" in r for r in result.reasons)
+
+
+# --- L2 for conceptual signs ------------------------------------------------
+
+def test_read_symbol_restates_the_retained_field_with_full_resonance():
+    g = load_glossary(GLOSSARY)
+    wr = read_symbol(g.usage("labrys-knossos"))
+    assert wr.resonance == 1.0
+
+
+def test_read_symbol_with_a_divergent_weighting_lowers_resonance():
+    g = load_glossary(GLOSSARY)
+    wr = read_symbol(g.usage("labrys-knossos"), {"sovereignty": 1.0})
+    assert wr.resonance < 1.0
+
+
+# --- L3 phonetic projection (the ghost lag) ---------------------------------
+
+def test_reading_a_breath_symbol_phonetically_is_a_projection():
+    g = load_glossary(GLOSSARY)
+    usage = g.usage("labrys-knossos")
+    threshold = g.concept("labrys").threshold     # -800
+    p = project(usage, SCRIPT_PHONETIC, threshold=threshold)
+    assert p.phonetic_projection
+    assert p.ghost_lag_years == threshold - usage.year   # 800 years across the threshold
+
+
+def test_reading_a_breath_symbol_conceptually_is_in_regime():
+    g = load_glossary(GLOSSARY)
+    p = project(g.usage("labrys-knossos"), SCRIPT_CONCEPTUAL, threshold=-800)
+    assert not p.phonetic_projection
+    assert p.ghost_lag_years == 0

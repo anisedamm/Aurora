@@ -24,7 +24,9 @@ from dataclasses import dataclass, field
 
 from .fingerprint import normalize
 from .glossary import Usage
+from .regime import BREATH, SCRIPT_CONCEPTUAL, SCRIPT_PHONETIC, is_phonetic_projection
 from .semantics import SenseLattice
+from .weighting import WeightedField
 
 
 # --- L1: Attestation --------------------------------------------------------
@@ -63,21 +65,34 @@ def _word_in_quotation(word: str, quotation: str) -> bool:
 def attest(usage: Usage) -> Attestation:
     """L1: is this usage attested? The one gate in the framework.
 
-    A usage is admissible only if it cites a source, carries a quotation, and the
-    word can actually be shown within that quotation. An interpretation built on a
-    usage that fails attestation is built on sand - so this is the gate, and the
-    only one.
+    It dispatches on the script mode, because the two regimes are shown differently:
+
+      * a **phonetic** usage is admissible only if it cites a source, carries a
+        quotation, and the word can be shown within that quotation;
+      * a **conceptual** usage (a breath-era symbol) is admissible only if it names
+        the material `artifact` (or a source) it is attested in *and* carries a
+        non-empty weighted field - you cannot read a symbol that holds no recorded
+        conceptual content.
+
+    An interpretation built on a usage that fails attestation is built on sand - so
+    this is the gate, and the only one.
     """
     reasons: list[str] = []
-    if not usage.citation.strip():
-        reasons.append("no citation: the usage names no source")
-    if not usage.quotation.strip():
-        reasons.append("no quotation: nothing to show the word in")
-    elif not _word_in_quotation(usage.word, usage.quotation):
-        reasons.append(
-            f"the word {usage.word!r} does not appear in the quotation - "
-            f"the citation does not show the usage it claims"
-        )
+    if usage.mode == SCRIPT_CONCEPTUAL:
+        if not usage.artifact.strip() and not usage.citation.strip():
+            reasons.append("no material attestation: the symbol names no artifact or source")
+        if not usage.field:
+            reasons.append("no weighted field: a symbol with no recorded conceptual content cannot be read")
+    else:
+        if not usage.citation.strip():
+            reasons.append("no citation: the usage names no source")
+        if not usage.quotation.strip():
+            reasons.append("no quotation: nothing to show the word in")
+        elif not _word_in_quotation(usage.word, usage.quotation):
+            reasons.append(
+                f"the word {usage.word!r} does not appear in the quotation - "
+                f"the citation does not show the usage it claims"
+            )
     return Attestation(usage_id=usage.id, ok=not reasons, reasons=reasons)
 
 
@@ -120,6 +135,47 @@ def read(usage: Usage, sense_id: str, lattice: SenseLattice) -> Reading:
         usage_year=usage.year,
         sense_year=sense.year,
     )
+
+
+@dataclass
+class WeightedReading:
+    """L2 for a conceptual sign: a proposed weighting against the retained field.
+
+    A symbol is not read by picking a lexeme but by proposing how its weight is
+    distributed across conceptual values. The reading is *true* insofar as it
+    resonates with the field the culture retained - but, like every L2 here, it is a
+    description, never a verdict on the symbol's one meaning.
+    """
+
+    usage_id: str
+    proposed: WeightedField   # the reading's weighting
+    retained: WeightedField   # the symbol's recorded field
+
+    @property
+    def resonance(self) -> float:
+        return self.proposed.resonance(self.retained)
+
+    @property
+    def summary(self) -> str:
+        dom = ", ".join(f"{k} ({w:.2f})" for k, w in self.proposed.dominant())
+        return (
+            f"reading {self.usage_id} as a weighted field: {dom}\n"
+            f"  resonance with the retained field: {self.resonance:.2f}\n"
+            f"  note: a symbol holds its values at once; this is a proposed weighting, "
+            f"not a lexical meaning."
+        )
+
+
+def read_symbol(usage: Usage, reading_field: dict | None = None) -> WeightedReading:
+    """L2 for a conceptual usage: describe its weighted field (or a proposed reading).
+
+    With no `reading_field`, the reading is the symbol's own retained field (a
+    faithful re-statement, resonance 1.0). Pass a weighting to read it your way and
+    see how far it resonates. Descriptive, never a gate.
+    """
+    retained = WeightedField(dict(usage.field))
+    proposed = WeightedField(dict(reading_field)) if reading_field is not None else retained
+    return WeightedReading(usage_id=usage.id, proposed=proposed, retained=retained)
 
 
 # --- L3: Anachronism drift --------------------------------------------------
@@ -181,4 +237,56 @@ def drift(usage: Usage, sense_id: str, lattice: SenseLattice) -> Drift:
         sense_year=sense.year,
         anachronism_years=max(0, gap),
         archaism_years=max(0, -gap),
+    )
+
+
+@dataclass
+class Projection:
+    """L3 across the attention threshold: is a breath-era sign read in the pump mode?
+
+    The deeper sibling of anachronism. Anachronism projects a later *sense* onto an
+    earlier usage; **phonetic projection** projects a later *mode of attention* -
+    reading a conceptual symbol as if it spelled a word, or a myth as if it reported
+    a fact. The `ghost_lag_years` is how far back across the breath->pump threshold
+    that pump-mode reading reaches.
+    """
+
+    usage_id: str
+    read_mode: str
+    usage_regime: str
+    usage_mode: str
+    phonetic_projection: bool
+    ghost_lag_years: int
+
+    @property
+    def verdict(self) -> str:
+        if self.phonetic_projection:
+            lag = f"; ghost lag {self.ghost_lag_years} year(s) across the threshold" if self.ghost_lag_years else ""
+            return (
+                f"PHONETIC PROJECTION: reading {self.usage_id} "
+                f"({self.usage_regime}/{self.usage_mode}) in the phonetic mode - "
+                f"imposing a later mode of attention, as if the sign spelled a word{lag}"
+            )
+        return (
+            f"in regime: {self.usage_id} read in a mode consonant with its attention "
+            f"({self.usage_regime}/{self.usage_mode})"
+        )
+
+
+def project(usage: Usage, read_mode: str, *, threshold: int | None = None) -> Projection:
+    """L3: does reading `usage` in `read_mode` impose a later mode of attention?
+
+    The cardinal error of the breath/pump threshold (Step 11 in the thought-flow):
+    reading a conceptual, breath-era sign phonetically. Descriptive - it reports the
+    ghost lag; a human decides whether the projection is defensible.
+    """
+    proj = is_phonetic_projection(usage.regime or "", usage.mode or "", read_mode)
+    lag = max(0, threshold - usage.year) if (proj and threshold is not None) else 0
+    return Projection(
+        usage_id=usage.id,
+        read_mode=read_mode,
+        usage_regime=usage.regime or "",
+        usage_mode=usage.mode or "",
+        phonetic_projection=proj,
+        ghost_lag_years=lag,
     )

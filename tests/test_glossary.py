@@ -38,3 +38,27 @@ def test_democracy_is_an_amelioration():
     g = load_glossary(GLOSSARY)
     dem = g.concept("democracy")
     assert dem.lattice.shift_into("popular-self-government") == "amelioration"
+
+
+def test_breath_concept_carries_a_threshold_and_conceptual_usage():
+    g = load_glossary(GLOSSARY)
+    labrys = g.concept("labrys")
+    assert labrys.regime == "breath"
+    assert labrys.threshold == -800
+    u = g.usage("labrys-knossos")
+    assert u.mode == "conceptual"
+    assert u.field["paradoxical-equilibrium"] > 0
+    assert u.artifact            # attested in material culture, not a quotation
+
+
+def test_myth_ladder_is_a_descent_of_abstraction():
+    g = load_glossary(GLOSSARY)
+    lat = g.concept("divine-order").lattice
+    assert lat.precedes("elemental", "olympian")        # the memory abstracts upward
+    assert lat.shift_into("olympian") == "abstraction"
+
+
+def test_pump_concepts_remain_phonetic():
+    g = load_glossary(GLOSSARY)
+    assert g.usage("rev-1789").mode == "phonetic"
+    assert g.concept("revolution").regime == "pump"

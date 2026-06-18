@@ -41,6 +41,8 @@ from .fingerprint import jaccard
 from .glossary import Glossary
 from .ledger import KIND_INTERPRETATION, KIND_USAGE, NON_WORK_KINDS, Ledger
 from .reading import attest, drift
+from .regime import BREATH, SCRIPT_CONCEPTUAL, is_phonetic_projection
+from .weighting import WeightedField
 
 # A similarity at or above this counts two readings as the same interpretation.
 RECOGNITION_THRESHOLD = 0.2
@@ -51,10 +53,13 @@ CORROBORATION_TARGET = 2
 @dataclass
 class Alignment:
     purpose: float                 # contribution to the recorded reading [0,1]
-    fidelity: float                # faithfulness to the concept's history [0,1]
+    fidelity: float                # faithfulness: corroboration (phonetic) or resonance (conceptual)
     novelty_verdict: str
+    mode: str = "phonetic"         # which regime's measure this is
     grounded: bool = False
     anachronistic: bool = False
+    projected: bool = False        # conceptual: read in the phonetic mode (phonetic projection)
+    resonance: float | None = None  # conceptual: weighted-field coherence with the retained field
     soundness_ok: bool = True
     corroborators: list[str] = field(default_factory=list)
     influence: int = 0             # distinct downstream readings that build on it
@@ -64,7 +69,22 @@ class Alignment:
         return round(self.purpose * self.fidelity, 4)
 
     @property
+    def second_factor(self) -> str:
+        return "resonance" if self.mode == SCRIPT_CONCEPTUAL else "fidelity"
+
+    @property
     def gloss(self) -> str:
+        if self.mode == SCRIPT_CONCEPTUAL:
+            if self.projected:
+                return "read phonetically — a later mode of attention projected onto a breath-era sign (no resonance)"
+            hi_p, hi_r = self.purpose >= 0.5, (self.resonance or 0) >= 0.5
+            if hi_p and hi_r:
+                return "a new reading that resonates with the retained conceptual field"
+            if hi_p and not hi_r:
+                return "a new reading that does not yet resonate with the retained field"
+            if not hi_p and hi_r:
+                return "a faithful restatement of the retained field (adds little new)"
+            return "neither new nor resonant with the retained field"
         if self.anachronistic:
             return "a later sense read into an earlier usage (anachronism: no fidelity)"
         if not self.grounded:
@@ -82,22 +102,34 @@ class Alignment:
     def verdict(self) -> str:
         return (
             f"interpretive alignment = purpose({self.purpose:.2f}) x "
-            f"fidelity({self.fidelity:.2f}) = {self.value:.2f}  ->  {self.gloss}"
+            f"{self.second_factor}({self.fidelity:.2f}) = {self.value:.2f}  ->  {self.gloss}"
         )
 
     @property
     def summary(self) -> str:
-        lines = [
+        if self.mode == SCRIPT_CONCEPTUAL:
+            basis = (
+                f"  resonance: {self.fidelity:.2f}  (weighted-field coherence with the "
+                f"retained truth; phonetic projection: {self.projected}; chain sound: "
+                f"{self.soundness_ok})"
+            )
+            note = ("  note: resonance is weighted alignment to the retained conceptual "
+                    "field, a proxy - not the symbol's one meaning.")
+        else:
+            basis = (
+                f"  fidelity:  {self.fidelity:.2f}  (grounded: {self.grounded}; "
+                f"anachronistic: {self.anachronistic}; chain sound: {self.soundness_ok}; "
+                f"corroborated by: {self.corroborators or 'none'})"
+            )
+            note = ("  note: fidelity is faithfulness to the recorded usage, a proxy - "
+                    "not a verdict on the word's absolute meaning.")
+        return "\n".join([
             self.verdict,
             f"  purpose:  {self.purpose:.2f}  (novelty: {self.novelty_verdict})",
-            f"  fidelity: {self.fidelity:.2f}  (grounded: {self.grounded}; "
-            f"anachronistic: {self.anachronistic}; chain sound: {self.soundness_ok}; "
-            f"corroborated by: {self.corroborators or 'none'})",
+            basis,
             f"  influence: {self.influence} downstream reading(s) build on it (accrues over time)",
-            "  note: fidelity is faithfulness to the recorded usage, a proxy - "
-            "not a verdict on the word's absolute meaning.",
-        ]
-        return "\n".join(lines)
+            note,
+        ])
 
 
 def _descendants(record_id: str, records: list) -> set[str]:
@@ -220,6 +252,7 @@ def interpretive_alignment_of(
         purpose=purpose,
         fidelity=round(fidelity, 4),
         novelty_verdict=novelty_verdict,
+        mode="phonetic",
         grounded=grounded,
         anachronistic=anachronistic,
         soundness_ok=soundness_ok,
@@ -236,3 +269,111 @@ def _novelty_label(best_prior: float, exact: bool) -> str:
     if best_prior >= RECOGNITION_THRESHOLD:
         return "VARIANT"
     return "NOVEL"
+
+
+def _latest_interpretation(record_id: str, records: list):
+    rec, pos = None, -1
+    for i, r in enumerate(records):
+        if r.id == record_id and r.kind == KIND_INTERPRETATION:
+            rec, pos = r, i
+    if rec is None:
+        raise KeyError(f"no interpretation record '{record_id}' in the ledger")
+    return rec, pos
+
+
+def _parent_usage(rec, glossary: Glossary):
+    """The first parent that resolves to a usage in the glossary (or None)."""
+    for pid in rec.parents:
+        try:
+            return glossary.usage(pid)
+        except KeyError:
+            continue
+    return None
+
+
+def _retained_field_and_usage(rec, glossary: Glossary):
+    """The weighted field and usage of the symbol this reading descends from."""
+    usage = _parent_usage(rec, glossary)
+    return (dict(usage.field) if usage else {}), usage
+
+
+def weighted_alignment_of(
+    record_id: str,
+    ledger: Ledger,
+    glossary: Glossary,
+    *,
+    corroboration_target: int = CORROBORATION_TARGET,
+) -> Alignment:
+    """Conceptual-regime alignment: alignment = purpose x resonance.
+
+    `purpose` is novelty of the reading against prior readings of the same concept;
+    `resonance` is how well the reading's weighted field coheres with the symbol's
+    *retained* field - what the culture kept. Phonetic projection (reading a
+    breath-era sign in the pump mode) zeroes resonance, exactly as anachronism zeroes
+    fidelity in the phonetic regime. Descriptive, never a gate.
+    """
+    records = ledger.records
+    rec, pos = _latest_interpretation(record_id, records)
+
+    prior = [
+        r for r in records[:pos]
+        if r.kind == KIND_INTERPRETATION and r.concept == rec.concept
+    ]
+    exact_prior = any(rec.normalized_hash == p.normalized_hash for p in prior)
+    best_prior = 1.0 if exact_prior else max(
+        (jaccard(tuple(rec.signature), tuple(p.signature)) for p in prior), default=0.0
+    )
+    purpose = round(1.0 - best_prior, 4)
+
+    retained, usage = _retained_field_and_usage(rec, glossary)
+    resonance = WeightedField(dict(rec.weights or {})).resonance(WeightedField(dict(retained)))
+
+    projected = bool(usage) and is_phonetic_projection(
+        usage.regime or "", usage.mode or "", rec.mode or SCRIPT_CONCEPTUAL
+    )
+    grounded = bool(usage) and attest(usage).ok
+    soundness_ok = ledger.verify().ok
+
+    descendants = _descendants(record_id, records)
+    corroborators = sorted({
+        o.author for o in records
+        if o.kind == KIND_INTERPRETATION and o.id != record_id
+        and o.concept == rec.concept and o.author != rec.author
+        and (o.id in descendants
+             or WeightedField(dict(o.weights or {})).resonance(WeightedField(dict(rec.weights or {})))
+             >= 0.6)
+    })
+
+    fidelity = (1.0 if soundness_ok else 0.0) * (0.0 if projected else 1.0) * resonance
+
+    return Alignment(
+        purpose=purpose,
+        fidelity=round(fidelity, 4),
+        novelty_verdict=_novelty_label(best_prior, exact_prior),
+        mode=SCRIPT_CONCEPTUAL,
+        grounded=grounded,
+        projected=projected,
+        resonance=round(resonance, 4),
+        soundness_ok=soundness_ok,
+        corroborators=corroborators,
+        influence=len(descendants),
+    )
+
+
+def align_record(record_id: str, ledger: Ledger, glossary: Glossary) -> Alignment:
+    """Align a recorded reading, dispatching on its regime.
+
+    A conceptual reading is measured by resonance with the retained field; a phonetic
+    reading by grounding, anachronism and corroboration. The mode is read from the
+    record itself, so one command serves both regimes.
+    """
+    rec, _ = _latest_interpretation(record_id, ledger.records)
+    # Dispatch on what is *being read* - the parent usage's regime - so that a
+    # phonetic reading of a breath-era sign is judged in the conceptual regime and
+    # caught as a projection, not waved through as an ordinary phonetic reading.
+    usage = _parent_usage(rec, glossary)
+    if usage is not None and (usage.mode == SCRIPT_CONCEPTUAL or usage.regime == BREATH):
+        return weighted_alignment_of(record_id, ledger, glossary)
+    if (rec.mode or "") == SCRIPT_CONCEPTUAL:
+        return weighted_alignment_of(record_id, ledger, glossary)
+    return interpretive_alignment_of(record_id, ledger, glossary)

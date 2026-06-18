@@ -30,12 +30,14 @@ import argparse
 import sys
 from pathlib import Path
 
-from .alignment import interpretive_alignment_of
+from .alignment import align_record
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
 from .ledger import Ledger
 from .manifest import write_manifest
-from .reading import attest, drift, read
+from .reading import attest, drift, project, read, read_symbol
+from .regime import SCRIPT_CONCEPTUAL, SCRIPT_PHONETIC
+from .weighting import WeightedField
 
 DEFAULT_LEDGER = "interpretation_ledger.jsonl"
 DEFAULT_GLOSSARY = "glossary.json"
@@ -53,6 +55,22 @@ def _parents(value: str | None) -> list[str]:
     return [p.strip() for p in value.split(",") if p.strip()] if value else []
 
 
+def _weights(value: str | None) -> dict | None:
+    """Parse a weighted field from JSON ('{\"unity\":0.4}') or 'k=v,k=v'."""
+    if not value:
+        return None
+    value = value.strip()
+    if value.startswith("{"):
+        import json
+        return json.loads(value)
+    out: dict[str, float] = {}
+    for pair in value.split(","):
+        if "=" in pair:
+            k, v = pair.split("=", 1)
+            out[k.strip()] = float(v)
+    return out or None
+
+
 # --- the authored map -------------------------------------------------------
 
 def cmd_concepts(args: argparse.Namespace) -> int:
@@ -68,18 +86,25 @@ def cmd_concepts(args: argparse.Namespace) -> int:
 def cmd_trace(args: argparse.Namespace) -> int:
     g = _glossary(args)
     c = g.concept(args.concept)
-    print(f"{c.name} ({c.id}) — {c.gloss}\n")
+    thr = f"; breath→pump threshold {c.threshold}" if c.threshold is not None else ""
+    print(f"{c.name} ({c.id}) — {c.gloss}")
+    print(f"  regime: {c.regime or '—'}{thr}\n")
     print("senses, in order of descent:")
     for sid in c.lattice.diachronic_order(c.lattice.senses.keys()):
         s = c.lattice.senses[sid]
         edge = c.lattice.shift_into(sid)
         marker = f"  [{edge}]" if edge != "origin" else "  [origin]"
-        print(f"  {s.period:>10}  {sid}: {s.label}{marker}")
+        print(f"  {s.period:>14}  {sid}: {s.label}{marker}")
         if s.gloss:
-            print(f"              {s.gloss}")
+            print(f"                  {s.gloss}")
     print("\nattested usages:")
     for u in sorted(c.usages.values(), key=lambda u: u.year):
-        print(f"  {u.period:>10}  {u.id}: \"{u.word}\" — {u.citation}")
+        tag = f"{u.regime}/{u.mode}"
+        if u.mode == SCRIPT_CONCEPTUAL:
+            print(f"  {u.period:>20}  [{tag}]  {u.id}: {u.word} — {WeightedField(u.field).gloss}")
+            print(f"                        attested: {u.artifact or u.citation}")
+        else:
+            print(f"  {u.period:>20}  [{tag}]  {u.id}: \"{u.word}\" — {u.citation}")
     return 0
 
 
@@ -95,17 +120,56 @@ def cmd_attest(args: argparse.Namespace) -> int:
 def cmd_read(args: argparse.Namespace) -> int:
     g = _glossary(args)
     usage = g.usage(args.usage)
-    lattice = g.lattice_for_usage(args.usage)
-    print(read(usage, args.sense, lattice).summary)
+    if usage.mode == SCRIPT_CONCEPTUAL:
+        print(read_symbol(usage).summary)        # weighted reading (L2 for a symbol)
+    else:
+        if not args.sense:
+            print("error: a phonetic usage is read in a sense; pass a sense id", file=sys.stderr)
+            return 1
+        print(read(usage, args.sense, g.lattice_for_usage(args.usage)).summary)
     return 0
 
 
 def cmd_drift(args: argparse.Namespace) -> int:
     g = _glossary(args)
     usage = g.usage(args.usage)
-    lattice = g.lattice_for_usage(args.usage)
-    d = drift(usage, args.sense, lattice)
+    d = drift(usage, args.sense, g.lattice_for_usage(args.usage))
     print(d.verdict)
+    return 0
+
+
+def cmd_weigh(args: argparse.Namespace) -> int:
+    g = _glossary(args)
+    usage = g.usage(args.usage)
+    if usage.mode != SCRIPT_CONCEPTUAL:
+        print(f"{args.usage} is a phonetic usage — it carries a sense, not a weighted field",
+              file=sys.stderr)
+        return 1
+    print(f"{usage.word} ({usage.id}) — a {usage.regime}/{usage.mode} sign")
+    print(f"  retained field: {WeightedField(usage.field).gloss}")
+    if usage.committed_because:
+        print(f"  committed to writing because: {usage.committed_because}")
+    return 0
+
+
+def cmd_project(args: argparse.Namespace) -> int:
+    g = _glossary(args)
+    usage = g.usage(args.usage)
+    threshold = g.concept(usage.concept).threshold
+    print(project(usage, SCRIPT_PHONETIC, threshold=threshold).verdict)
+    return 0
+
+
+def cmd_regime(args: argparse.Namespace) -> int:
+    g = _glossary(args)
+    c = g.concept(args.concept)
+    thr = c.threshold
+    print(f"{c.name} ({c.id}) — dominant regime: {c.regime or '—'}; "
+          f"breath→pump threshold: {thr if thr is not None else '—'}")
+    for sid in c.lattice.diachronic_order(c.lattice.senses.keys()):
+        s = c.lattice.senses[sid]
+        side = s.regime or ("breath" if (thr is not None and s.year < thr) else "pump")
+        print(f"  {s.period:>14}  {side:>6}  {sid}: {s.label}")
     return 0
 
 
@@ -141,7 +205,7 @@ def cmd_sense(args: argparse.Namespace) -> int:
 def cmd_align(args: argparse.Namespace) -> int:
     g = _glossary(args)
     led = _ledger(args)
-    print(interpretive_alignment_of(args.record, led, g).summary)
+    print(align_record(args.record, led, g).summary)
     return 0
 
 
@@ -163,6 +227,10 @@ def cmd_imprint(args: argparse.Namespace) -> int:
         citation=args.citation,
         period=args.period,
         year=args.year,
+        regime=args.regime,
+        mode=args.mode,
+        weights=_weights(args.weights),
+        artifact=args.artifact,
         license=args.license,
         external_anchor=args.anchor,
     )
@@ -225,13 +293,22 @@ def build_parser() -> argparse.ArgumentParser:
     sp = sub.add_parser("attest", help="L1: is a usage attested? (the word, shown, cited)")
     sp.add_argument("usage")
 
-    sp = sub.add_parser("read", help="L2: describe the sense a usage is read in")
+    sp = sub.add_parser("read", help="L2: describe a reading (a sense, or a symbol's weighted field)")
+    sp.add_argument("usage")
+    sp.add_argument("sense", nargs="?", help="sense id (phonetic usages only)")
+
+    sp = sub.add_parser("drift", help="L3 (phonetic): is a reading anachronistic?")
     sp.add_argument("usage")
     sp.add_argument("sense")
 
-    sp = sub.add_parser("drift", help="L3: is a reading anachronistic?")
+    sp = sub.add_parser("project", help="L3 (conceptual): is a symbol being read phonetically? (the ghost lag)")
     sp.add_argument("usage")
-    sp.add_argument("sense")
+
+    sp = sub.add_parser("weigh", help="show a conceptual sign's retained weighted field")
+    sp.add_argument("usage")
+
+    sp = sub.add_parser("regime", help="show a concept's breath/pump threshold and which side each sense sits")
+    sp.add_argument("concept")
 
     sp = sub.add_parser("sense", help="the diachronic algebra of a word's senses")
     sp.add_argument("op", choices=["order", "ancestry", "common", "precedes"])
@@ -258,6 +335,10 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--citation")
     sp.add_argument("--period")
     sp.add_argument("--year", type=int)
+    sp.add_argument("--regime", help="attention regime: breath / pump")
+    sp.add_argument("--mode", help="script mode: conceptual / phonetic")
+    sp.add_argument("--weights", help='weighted field, JSON or "k=v,k=v" (conceptual readings)')
+    sp.add_argument("--artifact", help="material attestation (conceptual usages)")
     sp.add_argument("--license")
     sp.add_argument("--anchor", help="external anchor, e.g. git:<sha>")
 
@@ -275,6 +356,9 @@ _COMMANDS = {
     "attest": cmd_attest,
     "read": cmd_read,
     "drift": cmd_drift,
+    "project": cmd_project,
+    "weigh": cmd_weigh,
+    "regime": cmd_regime,
     "sense": cmd_sense,
     "align": cmd_align,
     "imprint": cmd_imprint,

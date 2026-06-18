@@ -173,6 +173,95 @@ readings — it does not pronounce what the word *truly* meant. That pronounceme
 the historian's, and an interpretation framework that made it would have become the
 very thing it exists to catch: a proxy wearing the proof's clothes.
 
+## Step 11 — The threshold beneath the word: breath and pump
+
+Steps 1–10 read a *word* carrying a *sense*. But there is a threshold beneath the
+word, and it is the real subject. A culture's **mode of attention** governs how it
+commits meaning to a lasting form. A **breath** attention is participatory and
+holistic: it meets the world whole, and its natural writing is the **conceptual**
+sign — a mark that holds a weighted field of meaning at once. A **pump** attention
+is analytic and segmenting: it breaks the world into re-combinable units, and its
+natural writing is the **phonetic** sign — a mark that spells a sound and defers
+meaning to a lexicon. (Barfield's *original participation* giving way to the
+*evolution of consciousness*; McGilchrist's right hemisphere — present, living,
+contextual — ceding to the left's grasping re-presentation.) The script *follows*
+the attention; symbol-vs-phoneme is downstream of how a culture attends.
+
+## Step 12 — The inversion: writing was not meant to be phonetic
+
+The load-bearing inversion. We read the past assuming writing *is* phonetic — that
+a mark stands for a sound, which stands for a word, which has a lexical meaning. But
+the breath-era sign was never built to spell. The labrys, the ankh, the ouroboros
+do not encode phonemes; they hold concepts. To treat them as phonetic is to run a
+pump-era assumption over a breath-era artifact — and the assumption is invisible
+precisely because it is ours. The framework makes it visible by making the regime a
+declared property of a sign (`regime.py`), so a reading can be checked against the
+mode of attention the sign actually belongs to, not the one we bring.
+
+## Step 13 — Meaning as a weighted field, not a lexical entry
+
+If a sign is conceptual, "what does it mean?" has the wrong shape: it expects one
+answer. The labrys means *paradoxical equilibrium* and *sovereignty* and *divinity*
+and *belonging* — at once, in proportion. So meaning here is a **weighted field**
+(`weighting.py`), and to read a sign is to propose a weighting, not to look one up.
+A reading is *true* insofar as it **resonates** with the field the culture
+retained — `resonance` is the histogram intersection of the two normalised fields,
+a number in [0,1], honestly a *proxy* for fit to a retained conceptual truth, never
+proof of what the sign "really" meant. This is "meaning shown through weighted
+alignment concepts," made computable: the question stops being *which lexeme* and
+becomes *how does the weight fall, and does it cohere with what was kept*.
+
+## Step 14 — Phonetic projection: the deeper anachronism (the ghost lag)
+
+Now the cardinal error has a name and a magnitude. Anachronism (Step 5) projects a
+later *sense* onto an earlier word. **Phonetic projection** projects a later *mode
+of attention* onto an earlier sign — reading a breath-era symbol as if it spelled a
+word. It is the same shape (reading the present into the past) one layer down, and
+it is the **ghost lag** itself: the residue of breath-meaning still moving under
+pump-language. `project()` measures it as the years back across the breath→pump
+threshold that the pump-mode reading reaches (the labrys, read phonetically, drags
+a post-alphabetic habit some 800 years back over a Minoan sign). Descriptive, never
+a gate — but now the projection cannot pass unseen.
+
+## Step 15 — Why a thing was written at all: weighted importance
+
+A breath culture does not write everything; it writes what is profound enough to
+need a form that outlives word of mouth. So the *act* of inscription is itself a
+signal — and the framework records *why it crossed the threshold into writing*
+(`committed_because`): the action behind the intention, and its result. "What and
+why did this become so important it required a specific way to translate it, and be
+available to everyone?" is not a footnote; it is part of the datum. A sign carries
+not only its weighted field but the reason its weight was great enough to be fixed.
+
+## Step 16 — Myth as conceptual memory, abstracted up a ladder
+
+Through this lens a myth is not a story but a **memory**: a state-shift, embedded
+deeply enough to keep its place in a culture, then *abstracted* — lifted up a ladder
+of forms, each more transmissible than the last. Elemental forces become primal
+powers, become an ordered Olympian court, become philosophy's allegories; each rung
+is the `abstraction` shift in the sense lattice (`semantics.py`), a descent that
+preserves a remembered truth by making it more comprehensible. The written
+*Theogony* (c. 700 BCE) is recorded as the **crossing**: a breath-era memory fixed
+in phonetic form *at* the threshold, so it would survive the change in attention. To
+read it literally is phonetic projection; to read it as conceptual memory is to hear
+it in its own regime. Going back through breath societies this way, one sees the same
+systemic alignment and underlying values retained across time and culture — a society
+kept alive in where it placed its values among conceptual truths.
+
+## Step 17 — Fidelity re-read as resonance; one measure, two regimes
+
+The second factor of alignment was *fidelity* (corroboration + grounding, Step 7).
+For a breath-era sign it is re-read as **resonance** — weighted-field coherence with
+the retained conceptual truth — so `alignment = purpose × resonance`. The two
+regimes now share one `Alignment` and one `align` command, which dispatches on the
+regime of the *sign being read*, not the reading's own mode — so a phonetic reading
+of a breath sign is judged in the conceptual regime and caught as a projection, not
+waved through. Phonetic projection zeroes resonance exactly as anachronism zeroes
+fidelity: the two errors, one structure. The published manifest carries the labrys
+read faithfully (resonance 1.0) beside a recorded *foil* (the labrys read as a
+syllable, resonance 0.0), so the evidence record shows the error being caught, never
+merely asserted.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a
@@ -180,6 +269,11 @@ very thing it exists to catch: a proxy wearing the proof's clothes.
 > what was said, describe what it meant *then*, and measure the distance between
 > that and what we are tempted to hear now — but never let the reading that
 > resonates today pass for the meaning it had in its own time.
+>
+> And beneath the word, the threshold: a breath-era sign holds its meaning whole,
+> and was never built to spell. Read it in its own regime — as a weighted field, a
+> memory — not through the pump-era assumption that writing is phonetic. The ghost
+> lag is real; measure it, and do not mistake it for the thing itself.
 
 This is the same spine as the sibling system: tell the truth about which of your
 signals is a measurement and which is a substitute, and keep watching the gap

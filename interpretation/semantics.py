@@ -54,6 +54,7 @@ SHIFT_KINDS = frozenset({
     "amelioration",   # the sense rises in standing (democracy: mob-rule -> self-rule)
     "pejoration",     # the sense falls in standing
     "inversion",      # the sense flips into its opposite (return -> rupture)
+    "abstraction",    # a remembered truth lifted into a more transmissible form (myth)
     "specialisation", # bound to a technical domain
     "generalisation", # loosed from a technical domain
     "descent",        # an unmarked continuation (default)
@@ -71,6 +72,7 @@ class Sense:
     gloss: str = ""
     descends_from: tuple[str, ...] = ()
     shift: str = "descent"             # the kind of change on the edge from its parent(s)
+    regime: str = ""                   # the attention regime this sense belongs to (breath/pump)
 
 
 @dataclass(frozen=True)
@@ -340,6 +342,7 @@ def lattice_from_senses(raw_senses: list[dict], concept: str = "") -> SenseLatti
             gloss=s.get("gloss", ""),
             descends_from=tuple(s.get("descends_from", ())),
             shift=s.get("shift", "descent"),
+            regime=s.get("regime", ""),
         )
         for s in raw_senses
     }

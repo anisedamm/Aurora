@@ -64,6 +64,36 @@ def test_imprint_align_manifest_verify_roundtrip(tmp_path, capsys):
     assert "defensive publication" in Path(out).read_text()
 
 
+def test_weigh_shows_the_retained_field(capsys):
+    assert main(_g("weigh", "labrys-knossos")) == 0
+    out = capsys.readouterr().out
+    assert "paradoxical-equilibrium" in out and "committed to writing because" in out
+
+
+def test_project_flags_the_ghost_lag(capsys):
+    assert main(_g("project", "labrys-knossos")) == 0
+    out = capsys.readouterr().out
+    assert "PHONETIC PROJECTION" in out and "ghost lag" in out
+
+
+def test_regime_shows_the_threshold_and_sides(capsys):
+    assert main(_g("regime", "divine-order")) == 0
+    out = capsys.readouterr().out
+    assert "threshold" in out and "breath" in out and "pump" in out
+
+
+def test_read_conceptual_shows_a_weighted_reading(capsys):
+    assert main(_g("read", "labrys-knossos")) == 0
+    out = capsys.readouterr().out
+    assert "weighted field" in out and "resonance" in out
+
+
+def test_trace_breath_concept_shows_regime_and_field(capsys):
+    assert main(_g("trace", "labrys")) == 0
+    out = capsys.readouterr().out
+    assert "breath/conceptual" in out
+
+
 def test_mirror_source_without_lineage_warns(tmp_path, capsys):
     led = str(tmp_path / "ledger.jsonl")
     rc = main(["--ledger", led, "imprint", "--id", "m", "--title", "mirror reading",

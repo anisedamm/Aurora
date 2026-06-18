@@ -25,10 +25,16 @@ from .semantics import SenseLattice, lattice_from_senses
 
 @dataclass(frozen=True)
 class Usage:
-    """An attested occurrence of a word in a text at a date.
+    """An attested occurrence of a sign at a date - a word, or a conceptual symbol.
 
-    The unit L1-Attestation gates on: a usage is admissible only if the word can
-    actually be shown in the quotation, and the quotation is cited.
+    The unit L1-Attestation gates on. A **phonetic** usage is admissible only if the
+    word can be shown in a cited quotation. A **conceptual** usage (a breath-era
+    symbol such as the labrys) is admissible only if it is shown in a cited material
+    `artifact` and carries a non-empty weighted `field` - you cannot read a symbol
+    that holds no recorded conceptual content.
+
+    `committed_because` records *why this crossed the threshold into writing at all*:
+    what made it profound enough to need a form that outlives word of mouth.
     """
 
     id: str
@@ -38,6 +44,12 @@ class Usage:
     year: int = 0
     period: str = ""
     concept: str = ""
+    # the attention axis
+    regime: str = "pump"             # breath (holistic) / pump (analytic)
+    mode: str = "phonetic"           # conceptual / phonetic
+    field: dict = field(default_factory=dict)   # weighted conceptual field (conceptual usages)
+    artifact: str = ""               # the material attestation (conceptual usages)
+    committed_because: str = ""      # why it was worth translating into a lasting form
 
 
 @dataclass
@@ -49,6 +61,8 @@ class Concept:
     gloss: str
     lattice: SenseLattice
     usages: dict[str, Usage] = field(default_factory=dict)
+    regime: str = ""             # the dominant attention regime of the concept
+    threshold: int | None = None  # the breath->pump year for this tradition (the ghost lag's edge)
 
     def usage(self, usage_id: str) -> Usage:
         if usage_id not in self.usages:
@@ -95,12 +109,17 @@ def from_mapping(raw: dict) -> Glossary:
         usages = {
             u["id"]: Usage(
                 id=u["id"],
-                word=u["word"],
+                word=u.get("word", ""),
                 quotation=u.get("quotation", ""),
                 citation=u.get("citation", ""),
                 year=int(u.get("year", 0)),
                 period=u.get("period", ""),
                 concept=cid,
+                regime=u.get("regime", "pump"),
+                mode=u.get("mode", "phonetic"),
+                field=dict(u.get("field", {})),
+                artifact=u.get("artifact", ""),
+                committed_because=u.get("committed_because", ""),
             )
             for u in c.get("usages", [])
         }
@@ -110,6 +129,8 @@ def from_mapping(raw: dict) -> Glossary:
             gloss=c.get("gloss", ""),
             lattice=lattice,
             usages=usages,
+            regime=c.get("regime", ""),
+            threshold=c.get("threshold"),
         )
     return Glossary(concepts=concepts, title=raw.get("title", ""), note=raw.get("note", ""))
 

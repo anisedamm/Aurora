@@ -41,8 +41,21 @@ from .ledger import (
     KIND_INTERPRETATION,
     KIND_SENSE,
     KIND_REASONING,
+    KIND_SYMBOL,
+    KIND_MYTH,
     NON_WORK_KINDS,
 )
+from .regime import (
+    BREATH,
+    PUMP,
+    SCRIPT_CONCEPTUAL,
+    SCRIPT_PHONETIC,
+    VALID_REGIMES,
+    VALID_MODES,
+    NATIVE_SCRIPT,
+    is_phonetic_projection,
+)
+from .weighting import WeightedField
 from .semantics import (
     Sense,
     SemanticField,
@@ -62,13 +75,19 @@ from .reading import (
     Attestation,
     Reading,
     Drift,
+    WeightedReading,
+    Projection,
     attest,
     read,
     drift,
+    read_symbol,
+    project,
 )
 from .alignment import (
     Alignment,
     interpretive_alignment_of,
+    weighted_alignment_of,
+    align_record,
     RECOGNITION_THRESHOLD,
     CORROBORATION_TARGET,
 )
@@ -99,7 +118,19 @@ __all__ = [
     "KIND_INTERPRETATION",
     "KIND_SENSE",
     "KIND_REASONING",
+    "KIND_SYMBOL",
+    "KIND_MYTH",
     "NON_WORK_KINDS",
+    # the attention axis (breath vs pump)
+    "BREATH",
+    "PUMP",
+    "SCRIPT_CONCEPTUAL",
+    "SCRIPT_PHONETIC",
+    "VALID_REGIMES",
+    "VALID_MODES",
+    "NATIVE_SCRIPT",
+    "is_phonetic_projection",
+    "WeightedField",
     # diachronic sense algebra
     "Sense",
     "SemanticField",
@@ -117,12 +148,18 @@ __all__ = [
     "Attestation",
     "Reading",
     "Drift",
+    "WeightedReading",
+    "Projection",
     "attest",
     "read",
     "drift",
-    # interpretive alignment = purpose x fidelity
+    "read_symbol",
+    "project",
+    # alignment: purpose x fidelity (phonetic) / purpose x resonance (conceptual)
     "Alignment",
     "interpretive_alignment_of",
+    "weighted_alignment_of",
+    "align_record",
     "RECOGNITION_THRESHOLD",
     "CORROBORATION_TARGET",
     # active recorder + publication

@@ -17,6 +17,16 @@ sequence of attested usages — and the cardinal danger is letting *our* sense o
 word stand in for the sense it had *then*. This framework makes that danger
 measurable.
 
+Beneath that sits a deeper threshold the framework now names. A culture's
+**mode of attention** decides how it writes: a **breath** culture (participatory,
+holistic) writes in *conceptual* signs that hold a weighted field of meaning at
+once — the Minoan labrys, the Egyptian ankh; a **pump** culture (analytic,
+segmenting) writes in *phonetic* signs that spell a sound and defer meaning to a
+lexicon. We assume writing is phonetic — but it wasn't meant to be. The **ghost
+lag** is breath-meaning still moving under pump-language, and the cardinal error
+becomes **phonetic projection**: reading a breath-era sign (or a myth) as if it
+spelled a word, when the context dictates the manifestation of what is meant.
+
 It is **pure standard library** (no dependencies), authored by **anise.damm**, and
 its readings are kept in a tamper-evident, timestamped, openly-publishable ledger.
 
@@ -32,30 +42,40 @@ same three, because the failure modes are the same.
 | **L2 Reading** | What did the word mean *here*, in its own context? | a described sense, never "the meaning" | no |
 | **L3 Anachronism** | Has our reading drifted from the usage's own time into a later sense? | the usage-to-reading gap, in years | no |
 
-L1 is the **only gate**: you cannot interpret a word you cannot show was used. L2
+L1 is the **only gate**: you cannot interpret a sign you cannot show was used. L2
 and L3 *describe* and never block — a surprising reading may be perfectly
 defensible; the framework reports the shape and leaves the judgement to a human.
 
 The headline output is deliberately **not** "the meaning." It is L3's gap: the
-live answer to *"is this reading hearing the word's own time, or ours?"*
+live answer to *"is this reading hearing the sign's own time, or ours?"*
+
+Each layer **generalises across the two regimes**. L1 attests a *phonetic* word by
+showing it in a cited quotation, and a *conceptual* sign by citing the material
+artifact it survives on and the weighted field it carries. L2 reads a word into a
+**sense**, and a symbol into a **weighted field**. L3 catches two forms of the same
+mistake — reading the present into the past: **anachronism** (a later *sense*
+projected onto an earlier word) and **phonetic projection** (a later *mode of
+attention* projected onto a breath-era sign).
 
 ## Layout
 
 ```
 interpretation/
+  regime.py        # the attention axis: breath (holistic) vs pump (analytic)
+  weighting.py     # weighted meaning: a conceptual sign's field + resonance
   fingerprint.py   # content hash (exact) + MinHash recognition (a similarity proxy)
   provenance.py    # the source axis: author vs mirror vs collaboration vs external
   ledger.py        # append-only, hash-chained, timestamped record of readings
-  semantics.py     # a diachronic algebra of a word's senses (descent lattice)
-  glossary.py      # the authored map: concepts, attested usages, senses
-  reading.py       # the three layers: attest (L1) / read (L2) / drift (L3)
-  alignment.py     # interpretive alignment = purpose x fidelity (descriptive)
+  semantics.py     # a diachronic algebra of senses (descent lattice; incl. abstraction)
+  glossary.py      # the authored map: concepts, attested usages (phonetic + conceptual)
+  reading.py       # the three layers: attest (L1) / read (L2) / drift + project (L3)
+  alignment.py     # purpose x fidelity (phonetic) / purpose x resonance (conceptual)
   imprint.py       # the active recorder (default author: anise.damm)
   manifest.py      # defensive-publication manifest
-glossary.json              # the authored conceptual histories (revolution, democracy)
+glossary.json              # breath signs (labrys, ankh, ouroboros, myth) + pump words
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (49 tests)
+tests/                     # the suite (77 tests)
 ```
 
 ## Quickstart
@@ -76,10 +96,92 @@ python -m interpretation read   rev-1688 political-restoration      # L2
 python -m interpretation drift  rev-1688 irreversible-rupture       # L3 -> ANACHRONISM
 ```
 
-## The worked example: *revolution*
+## The breath/pump threshold: attention before the phoneme
 
-The textbook case of conceptual history (Koselleck's own). The **word** held
-still while the **concept** inverted:
+The deepest reading the framework supports. A culture's **mode of attention**
+governs how it commits meaning to a lasting form:
+
+- **breath** — a participatory, holistic attention. Meaning is carried *whole*, by
+  a **conceptual** sign: a symbol that holds a weighted field of values at once.
+  Writing is reserved for what is profound enough to need a form that outlives word
+  of mouth. (Barfield's "original participation"; McGilchrist's right hemisphere.)
+- **pump** — an analytic, segmenting attention. Meaning is mechanised into
+  discrete, re-combinable **phonetic** units that spell a sound and defer meaning to
+  a lexicon. (The left hemisphere's grasping, re-presenting world.)
+
+The script follows the attention. So the **labrys** — the Minoan double axe — is
+not the word "axe": it is a breath-era sign holding *paradoxical equilibrium*
+(opposed blades in balance), *sovereignty*, *divinity*, and *belonging*, all at
+once and in proportion.
+
+```
+$ python -m interpretation weigh labrys-knossos
+labrys (labrys-knossos) — a breath/conceptual sign
+  retained field: paradoxical-equilibrium (0.30), divinity (0.25), sovereignty (0.25), unity-belonging (0.20)
+  committed to writing because: to hold and transmit the society's axis — balanced
+    sovereignty, the divine, and belonging — in a form that outlived any one voice
+```
+
+That last line is the framework's answer to *what made a thing important enough to
+require a way to translate it, available to everyone* — the action behind the
+intention, recorded on the sign itself.
+
+**Reading meaning as weighted alignment, not strict lexicon.** A symbol is not
+looked up; it is *read* by proposing how its weight is distributed. A reading is
+true insofar as it **resonates** with the field the culture retained:
+
+```
+$ python -m interpretation read labrys-knossos
+reading labrys-knossos as a weighted field: paradoxical-equilibrium (0.30), divinity (0.25), ...
+  resonance with the retained field: 1.00
+```
+
+**The ghost lag, made catchable.** The cardinal error is to read a breath-era sign
+in the pump mode — as if it spelled a word. That is **phonetic projection**, and it
+is the deeper sibling of anachronism: where anachronism projects a later *sense*,
+this projects a later *mode of attention*.
+
+```
+$ python -m interpretation project labrys-knossos
+PHONETIC PROJECTION: reading labrys-knossos (breath/conceptual) in the phonetic mode
+  - imposing a later mode of attention, as if the sign spelled a word;
+    ghost lag 800 year(s) across the threshold
+```
+
+**Myth as conceptual memory.** Going back through this lens, a myth is not a story
+but a *memory* — a remembered state-shift, embedded enough to keep its place,
+lifted up a ladder of abstraction (each rung the `abstraction` shift in the sense
+lattice), each form making the memory more transmissible:
+
+```
+$ python -m interpretation trace divine-order
+    pre-literate  elemental: the elements as living powers  [origin]
+      Bronze Age  primal: primal/chthonic powers, personified  [abstraction]
+  Archaic Greece  olympian: the ordered Olympian pantheon  [abstraction]
+      Classical–  allegorical: gods as allegories of forces  [abstraction]
+```
+
+Hesiod's *Theogony* (c. 700 BCE) is recorded as the **phonetic crossing**: a
+breath-era memory written down *at* the threshold, "so the memory would not be lost
+as the mode of attention changed." To read it literally — as a genealogy of actual
+beings — is phonetic projection; to read it as conceptual memory is to hear it in
+its own regime.
+
+So the second factor of alignment is re-read for this regime as **resonance**:
+
+> **interpretive alignment = purpose × resonance** (conceptual regime)
+
+where `resonance` is the weighted-field coherence with the retained conceptual
+truth. A reading that imposes the phonetic mode forfeits all resonance — the
+published `MANIFEST.md` carries the labrys read faithfully (value `1.00`) beside a
+recorded *foil*, the labrys read as a syllable (value `0.00`, "phonetic
+projection"), so the evidence record shows the error being caught.
+
+## The worked example: *revolution* (the pump-regime contrast)
+
+The textbook case of conceptual history (Koselleck's own), and the **phonetic
+contrast** to the breath-era signs above. The **word** held still while the
+**concept** inverted:
 
 ```
 $ python -m interpretation trace revolution
@@ -146,11 +248,13 @@ word, not the history itself. A malformed order — a descent **cycle** or a
 **dangling** edge — is **surfaced, never silently patched**: `validate_senses`
 reports it and `SenseLattice` refuses to build.
 
-## Interpretive alignment = purpose × fidelity
+## Interpretive alignment = purpose × fidelity (phonetic regime)
 
-Where does one reading sit among the others recorded for a concept? The sibling
-system's `alignment = purpose × truth`, with **truth re-read as fidelity to the
-historical usage**:
+Where does one reading sit among the others recorded for a concept? In the **pump
+/ phonetic** regime, the framework uses the sibling system's `alignment = purpose ×
+truth`, with **truth re-read as fidelity to the historical usage** (in the **breath
+/ conceptual** regime the second factor is **resonance**, above; one command,
+`align`, dispatches on the regime of the sign being read):
 
 - **purpose** — its contribution: how much the reading adds that is not already on
   record (novelty, `1 − similarity`). A restatement adds little; a fresh reading
