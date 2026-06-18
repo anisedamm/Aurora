@@ -1,0 +1,235 @@
+{
+  "title": "A glossary of conceptual histories — read across the breath/pump threshold",
+  "note": "An authored map, and it says so: a proxy for real histories of meaning and consciousness, carrying its provenance, never the histories themselves. Two regimes of attention are distinguished. BREATH: a participatory, holistic attention whose natural writing is the CONCEPTUAL sign — a symbol holding a weighted field of values at once (the labrys, the ankh, the ouroboros). PUMP: an analytic, segmenting attention whose natural writing is the PHONETIC sign — a mark spelling a sound, deferring meaning to a lexicon (revolution, democracy). The ghost lag is breath-meaning still moving under pump-language, and the cardinal error is phonetic projection: reading a breath-era sign as if it spelled a word. Weighted fields and dated attestations are authored readings; resonance is a proxy for fit to a retained conceptual truth, not proof of what a sign 'really' meant.",
+  "value_aliases": {
+    "_note": "An authored grouping of the conceptual-value vocabulary: which raw value names name one underlying value across signs. Used by the constellation to see the breath web's shared values. A proxy, surfaced here rather than hidden — not a claim that these values are identical, only that they are kin.",
+    "eternity-continuity": "eternity",
+    "cyclical-unity": "unity",
+    "unity-belonging": "unity",
+    "totality": "unity",
+    "paradoxical-equilibrium": "equilibrium",
+    "kingship": "sovereignty",
+    "life-breath": "life",
+    "primal-powers": "divinity",
+    "cosmic-order": "order",
+    "succession": "order",
+    "genesis-from-chaos": "genesis"
+  },
+  "migrations": {
+    "_note": "Authored dispersals: how a value held whole in the breath web was segmented, after the pump transition, into separate lexemes — each carving off one facet and, usually, losing the holism (in equilibrium's case, the paradox) that made it one. A proxy reading of the redistribution, surfaced here, not a claim of strict etymology.",
+    "equilibrium": {
+      "note": "The labrys held opposed blades in balance as one paradoxical whole; the pump regime carved that holism into separate analytic concepts, each taking one facet and dropping the paradox of opposites-held-as-one.",
+      "shards": [
+        {"term": "balance", "aspect": "the static evenness of two weights — the physical facet, the paradox flattened", "citation": "the scales; mechanics", "period": "—"},
+        {"term": "justice", "aspect": "balance moralised — giving each their due", "citation": "Dike and her scales", "period": "—"},
+        {"term": "moderation", "aspect": "balance as a personal virtue, the mean between extremes", "citation": "after Aristotle's mean", "period": "4th c. BCE"},
+        {"term": "symmetry", "aspect": "balance as formal, aesthetic correspondence", "citation": "Greek architecture and mathematics", "period": "—"}
+      ]
+    },
+    "unity": {
+      "note": "The wholeness the ouroboros and the labrys held as a living one became, in the pump regime, several distinct lexemes — the living unity flattened to an aggregate or an abstraction.",
+      "shards": [
+        {"term": "totality", "aspect": "the sum of all parts — unity as aggregate", "citation": "—", "period": "—"},
+        {"term": "community", "aspect": "belonging-together as a social bond", "citation": "—", "period": "—"},
+        {"term": "the One", "aspect": "unity abstracted into a metaphysical principle", "citation": "after Neoplatonism", "period": "3rd c. CE"}
+      ]
+    },
+    "divinity": {
+      "note": "The divine that suffused the breath signs as a present, participatory power was, after the threshold, divided into separate terms — set apart from the world it had pervaded.",
+      "shards": [
+        {"term": "the sacred", "aspect": "what is set apart from the profane", "citation": "—", "period": "—"},
+        {"term": "the holy", "aspect": "the divine as moral purity and awe", "citation": "—", "period": "—"},
+        {"term": "transcendence", "aspect": "the divine removed beyond the world", "citation": "—", "period": "—"}
+      ]
+    }
+  },
+  "concepts": [
+    {
+      "id": "labrys",
+      "name": "Labrys (the Minoan double axe)",
+      "gloss": "Not a tool and not a word: a breath-era sign holding, at once and in proportion, a paradoxical equilibrium — opposed blades in balance — with sovereignty, divinity and belonging.",
+      "regime": "breath",
+      "threshold": -800,
+      "senses": [],
+      "usages": [
+        {
+          "id": "labrys-knossos",
+          "word": "labrys",
+          "regime": "breath",
+          "mode": "conceptual",
+          "artifact": "double-axe motifs incised through the Palace of Knossos and recurring on Minoan seals and larnakes",
+          "citation": "Evans, The Palace of Minos; the Minoan seal corpus (CMS)",
+          "year": -1600,
+          "period": "Minoan palatial, c. 1700–1450 BCE",
+          "field": {"paradoxical-equilibrium": 0.30, "sovereignty": 0.25, "divinity": 0.25, "unity-belonging": 0.20},
+          "committed_because": "to hold and transmit the society's axis — balanced sovereignty, the divine, and belonging — in a form that outlived any one voice and bound everyone who stood under it"
+        },
+        {
+          "id": "labrys-religious",
+          "word": "labrys",
+          "regime": "pump",
+          "mode": "phonetic",
+          "quotation": "the labrys, sign of the goddess, holds the opposed blades of heaven and earth in balance",
+          "citation": "after religious-historical studies of Minoan iconography",
+          "year": 1960,
+          "period": "20th c. scholarship",
+          "remembers": "labrys",
+          "field": {"divinity": 0.30, "sovereignty": 0.25, "paradoxical-equilibrium": 0.25, "unity-belonging": 0.20}
+        },
+        {
+          "id": "labrys-emblem",
+          "word": "labrys",
+          "regime": "pump",
+          "mode": "phonetic",
+          "quotation": "the labrys borne as an emblem of sovereign power and the identity of the group",
+          "citation": "after later political and heraldic adoptions of the double axe",
+          "year": 1930,
+          "period": "20th c.",
+          "remembers": "labrys",
+          "field": {"sovereignty": 0.30, "group-identity": 0.35, "militancy": 0.20, "unity-belonging": 0.15}
+        }
+      ]
+    },
+    {
+      "id": "ankh",
+      "name": "Ankh (the Egyptian sign of life)",
+      "gloss": "Literally the breath of life: carried in the hand of gods, held to the nostrils of the king. A conceptual sign whose whole content is living continuity given and divine.",
+      "regime": "breath",
+      "threshold": -1000,
+      "senses": [],
+      "usages": [
+        {
+          "id": "ankh-relief",
+          "word": "ankh",
+          "regime": "breath",
+          "mode": "conceptual",
+          "artifact": "the ankh held by deities and offered to the king's nostrils in tomb and temple relief",
+          "citation": "New Kingdom tomb and temple reliefs",
+          "year": -1400,
+          "period": "New Kingdom, c. 1550–1070 BCE",
+          "field": {"life-breath": 0.40, "divinity": 0.25, "eternity-continuity": 0.20, "kingship": 0.15},
+          "committed_because": "to make the gift of life itself visible and transmissible beyond the spoken blessing — a thing too profound to leave to word of mouth"
+        }
+      ]
+    },
+    {
+      "id": "ouroboros",
+      "name": "Ouroboros (the tail-eating serpent)",
+      "gloss": "The serpent that consumes its own tail: cyclical unity, the paradox of consumption and renewal held as one totality.",
+      "regime": "breath",
+      "threshold": -300,
+      "senses": [],
+      "usages": [
+        {
+          "id": "ouroboros-netherworld",
+          "word": "ouroboros",
+          "regime": "breath",
+          "mode": "conceptual",
+          "artifact": "the encircling serpent around the sun-god in the Enigmatic Book of the Netherworld",
+          "citation": "Tomb of Tutankhamun, the Enigmatic Book of the Netherworld",
+          "year": -1300,
+          "period": "New Kingdom, c. 1330 BCE",
+          "field": {"cyclical-unity": 0.35, "paradoxical-equilibrium": 0.30, "eternity": 0.20, "totality": 0.15},
+          "committed_because": "to set down the wholeness of time's return — end as beginning — in a single form that a culture could carry across generations"
+        },
+        {
+          "id": "ouroboros-alchemy",
+          "word": "ouroboros",
+          "regime": "pump",
+          "mode": "phonetic",
+          "quotation": "the ouroboros, hen to pan — the one is the all — the serpent devouring and renewing itself end to end",
+          "citation": "the Greco-Egyptian alchemical corpus (the Chrysopoeia of Kleopatra)",
+          "year": 300,
+          "period": "c. 300 CE",
+          "remembers": "ouroboros",
+          "field": {"cyclical-unity": 0.35, "totality": 0.25, "eternity": 0.20, "paradoxical-equilibrium": 0.20}
+        },
+        {
+          "id": "ouroboros-medieval",
+          "word": "ouroboros",
+          "regime": "pump",
+          "mode": "phonetic",
+          "quotation": "the ouroboros borne upon the device, a serpent in a ring, token of an unending line",
+          "citation": "after late-medieval heraldry and emblem books",
+          "year": 1478,
+          "period": "late 15th c.",
+          "remembers": "ouroboros-alchemy",
+          "field": {"eternity": 0.40, "cyclical-unity": 0.35, "ornament": 0.25}
+        },
+        {
+          "id": "ouroboros-jung",
+          "word": "ouroboros",
+          "regime": "pump",
+          "mode": "phonetic",
+          "quotation": "the ouroboros, slaying and wedding and renewing itself, the One that is the All — a symbol of the integration of opposites",
+          "citation": "after Jung, on the ouroboros as a symbol of wholeness",
+          "year": 1950,
+          "period": "20th c.",
+          "remembers": "ouroboros",
+          "field": {"cyclical-unity": 0.30, "paradoxical-equilibrium": 0.25, "totality": 0.30, "eternity": 0.15}
+        }
+      ]
+    },
+    {
+      "id": "divine-order",
+      "name": "Divine order (myth as conceptual memory)",
+      "gloss": "Myth read not as report but as memory: a remembered state-shift, embedded enough to keep its place, lifted up a ladder of abstraction — elemental forces, then primal powers, then ordered Olympians, then allegory — each form making the memory more transmissible.",
+      "regime": "breath",
+      "threshold": -700,
+      "year": -3000,
+      "retained": {"primal-powers": 0.30, "cosmic-order": 0.30, "succession": 0.25, "genesis-from-chaos": 0.15},
+      "senses": [
+        {"id": "elemental", "label": "the elements as living powers", "year": -3000, "period": "pre-literate", "regime": "breath", "gloss": "sky, earth, sea, storm attended as living forces — not yet persons, not yet named"},
+        {"id": "primal", "label": "primal/chthonic powers, personified", "year": -1500, "period": "Bronze Age", "regime": "breath", "descends_from": ["elemental"], "shift": "abstraction", "gloss": "the older generation — Titans, chthonic powers — the forces given face and lineage"},
+        {"id": "olympian", "label": "the ordered Olympian pantheon", "year": -800, "period": "Archaic Greece", "regime": "pump", "descends_from": ["primal"], "shift": "abstraction", "gloss": "anthropomorphic persons in a ruled cosmos — the memory organised into a court"},
+        {"id": "allegorical", "label": "gods as allegories of forces", "year": -400, "period": "Classical–", "regime": "pump", "descends_from": ["olympian"], "shift": "abstraction", "gloss": "the gods read as personified virtues and forces — philosophy's segmenting reduction of the memory"}
+      ],
+      "usages": [
+        {
+          "id": "theogony",
+          "word": "Theogony",
+          "regime": "pump",
+          "mode": "phonetic",
+          "quotation": "This Theogony sings how, at the first, Chaos came to be, and next wide-bosomed Earth, and the succession of the powers",
+          "citation": "Hesiod, Theogony, c. 700 BCE",
+          "year": -700,
+          "period": "c. 700 BCE",
+          "committed_because": "to fix in lasting, phonetic form a breath-era memory of how the powers came to be — written down precisely at the threshold, so the memory would not be lost as the mode of attention changed",
+          "remembers": "divine-order",
+          "field": {"genesis-from-chaos": 0.30, "primal-powers": 0.30, "cosmic-order": 0.25, "succession": 0.15}
+        }
+      ]
+    },
+    {
+      "id": "revolution",
+      "name": "Revolution",
+      "gloss": "A pump-regime word whose concept inverted: from a turning-back to a breaking-forward. The phonetic contrast to the breath-era signs above.",
+      "regime": "pump",
+      "senses": [
+        {"id": "celestial-return", "label": "cyclical return (astronomical)", "year": 1543, "period": "1543", "regime": "pump", "gloss": "the revolving of the heavenly spheres back through their course; a cyclical, lawful return to the starting point"},
+        {"id": "political-restoration", "label": "return to a prior rightful order", "year": 1660, "period": "c. 1660", "regime": "pump", "descends_from": ["celestial-return"], "shift": "metaphor", "gloss": "a turning-back in politics: the restoration of an ancient, legitimate order that had been usurped"},
+        {"id": "irreversible-rupture", "label": "irreversible forward rupture", "year": 1789, "period": "post-1789", "regime": "pump", "descends_from": ["political-restoration"], "shift": "inversion", "gloss": "a fundamental, irreversible break that founds a wholly new order and cannot be turned back — the meaning inverted"},
+        {"id": "modern-transformation", "label": "any profound, rapid transformation", "year": 1830, "period": "19th c.–", "regime": "pump", "descends_from": ["irreversible-rupture"], "shift": "broadening", "gloss": "the sense loosed from politics onto any sweeping change: industrial, scientific, digital revolution"}
+      ],
+      "usages": [
+        {"id": "rev-copernicus", "word": "revolutionibus", "regime": "pump", "mode": "phonetic", "quotation": "De revolutionibus orbium coelestium", "citation": "Copernicus, De revolutionibus orbium coelestium, 1543", "year": 1543, "period": "1543"},
+        {"id": "rev-1688", "word": "revolution", "regime": "pump", "mode": "phonetic", "quotation": "the late happy Revolution, whereby our ancient laws and liberties were restored to us", "citation": "English political pamphlet, c. 1689 (the Glorious Revolution)", "year": 1689, "period": "1688–89"},
+        {"id": "rev-1789", "word": "revolution", "regime": "pump", "mode": "phonetic", "quotation": "the Revolution is not a return but the beginning of a wholly new age, from which there is no going back", "citation": "after the French Revolutionary press, c. 1791", "year": 1789, "period": "post-1789"}
+      ]
+    },
+    {
+      "id": "democracy",
+      "name": "Democracy",
+      "gloss": "A pump-regime word whose standing rose: from a term of abuse for mob-rule to an honorific ideal.",
+      "regime": "pump",
+      "senses": [
+        {"id": "mob-rule", "label": "rule by the unqualified many (pejorative)", "year": -350, "period": "4th c. BCE", "regime": "pump", "gloss": "in classical political theory, the deviant form of popular rule — government by the many in their own narrow interest, prone to disorder"},
+        {"id": "popular-self-government", "label": "legitimate popular self-government (honorific)", "year": 1780, "period": "late 18th c.", "regime": "pump", "descends_from": ["mob-rule"], "shift": "amelioration", "gloss": "self-rule by the people as a legitimate, even ideal, form of government — the standing of the word reversed"}
+      ],
+      "usages": [
+        {"id": "dem-aristotle", "word": "demokratia", "regime": "pump", "mode": "phonetic", "quotation": "demokratia, the rule of the demos, is counted the deviant form, prone to disorder", "citation": "after Aristotle, Politics, 4th c. BCE", "year": -350, "period": "4th c. BCE"},
+        {"id": "dem-tocqueville", "word": "democracy", "regime": "pump", "mode": "phonetic", "quotation": "democracy is the gradual development of the equality of conditions, a providential fact to which all must adapt", "citation": "after Tocqueville, Democracy in America, 1835", "year": 1835, "period": "1835"}
+      ]
+    }
+  ]
+}

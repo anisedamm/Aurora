@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "conceptual-interpretation"
+version = "0.1.0"
+description = "Conceptual history as language interpretation — with a provenance/alignment backing"
+requires-python = ">=3.10"
+dependencies = []   # pure standard library
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+
+[tool.setuptools]
+packages = ["interpretation"]
+
+[tool.pytest.ini_options]
+# Put the repo root on sys.path so `import interpretation` works whether pytest is
+# invoked as `pytest` (console script) or `python -m pytest` — the same false-green
+# trap the sibling system documents in its thought-flow.
+pythonpath = ["."]
+testpaths = ["tests"]
