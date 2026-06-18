@@ -1,0 +1,116 @@
+{
+  "title": "A glossary of conceptual histories — read as language interpretation",
+  "note": "An authored map. Each concept gathers a history of senses (with the order of descent and the kind of semantic change on each edge) and a set of attested usages (the word, shown in a cited text, at a date). The map is a proxy for the real history of each word, carrying its provenance; it is not the history itself. A malformed order of descent is surfaced, never silently patched. Senses and usages carry a representative `year` (BCE negative) so a reading can be checked for anachronism against the usage's own time.",
+  "concepts": [
+    {
+      "id": "revolution",
+      "name": "Revolution",
+      "gloss": "The word whose concept inverted: from a turning-back to a breaking-forward.",
+      "senses": [
+        {
+          "id": "celestial-return",
+          "label": "cyclical return (astronomical)",
+          "year": 1543,
+          "period": "1543",
+          "gloss": "the revolving of the heavenly spheres back through their course; a cyclical, lawful return to the starting point",
+          "descends_from": []
+        },
+        {
+          "id": "political-restoration",
+          "label": "return to a prior rightful order",
+          "year": 1660,
+          "period": "c. 1660",
+          "gloss": "a turning-back in politics: the restoration of an ancient, legitimate order that had been usurped",
+          "descends_from": ["celestial-return"],
+          "shift": "metaphor"
+        },
+        {
+          "id": "irreversible-rupture",
+          "label": "irreversible forward rupture",
+          "year": 1789,
+          "period": "post-1789",
+          "gloss": "a fundamental, irreversible break that founds a wholly new order and cannot be turned back — the meaning inverted",
+          "descends_from": ["political-restoration"],
+          "shift": "inversion"
+        },
+        {
+          "id": "modern-transformation",
+          "label": "any profound, rapid transformation",
+          "year": 1830,
+          "period": "19th c.–",
+          "gloss": "the sense loosed from politics onto any sweeping change: industrial, scientific, digital revolution",
+          "descends_from": ["irreversible-rupture"],
+          "shift": "broadening"
+        }
+      ],
+      "usages": [
+        {
+          "id": "rev-copernicus",
+          "word": "revolutionibus",
+          "quotation": "De revolutionibus orbium coelestium",
+          "citation": "Copernicus, De revolutionibus orbium coelestium, 1543",
+          "year": 1543,
+          "period": "1543"
+        },
+        {
+          "id": "rev-1688",
+          "word": "revolution",
+          "quotation": "the late happy Revolution, whereby our ancient laws and liberties were restored to us",
+          "citation": "English political pamphlet, c. 1689 (the Glorious Revolution)",
+          "year": 1689,
+          "period": "1688–89"
+        },
+        {
+          "id": "rev-1789",
+          "word": "revolution",
+          "quotation": "the Revolution is not a return but the beginning of a wholly new age, from which there is no going back",
+          "citation": "after the French Revolutionary press, c. 1791",
+          "year": 1789,
+          "period": "post-1789"
+        }
+      ]
+    },
+    {
+      "id": "democracy",
+      "name": "Democracy",
+      "gloss": "The word whose standing rose: from a term of abuse for mob-rule to an honorific ideal.",
+      "senses": [
+        {
+          "id": "mob-rule",
+          "label": "rule by the unqualified many (pejorative)",
+          "year": -350,
+          "period": "4th c. BCE",
+          "gloss": "in classical political theory, the deviant form of popular rule — government by the many in their own narrow interest, prone to disorder",
+          "descends_from": []
+        },
+        {
+          "id": "popular-self-government",
+          "label": "legitimate popular self-government (honorific)",
+          "year": 1780,
+          "period": "late 18th c.",
+          "gloss": "self-rule by the people as a legitimate, even ideal, form of government — the standing of the word reversed",
+          "descends_from": ["mob-rule"],
+          "shift": "amelioration"
+        }
+      ],
+      "usages": [
+        {
+          "id": "dem-aristotle",
+          "word": "demokratia",
+          "quotation": "demokratia, the rule of the demos, is counted the deviant form, prone to disorder",
+          "citation": "after Aristotle, Politics, 4th c. BCE",
+          "year": -350,
+          "period": "4th c. BCE"
+        },
+        {
+          "id": "dem-tocqueville",
+          "word": "democracy",
+          "quotation": "democracy is the gradual development of the equality of conditions, a providential fact to which all must adapt",
+          "citation": "after Tocqueville, Democracy in America, 1835",
+          "year": 1835,
+          "period": "1835"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+# The framework itself is pure standard library and needs nothing.
+# Only the test runner is required to reproduce the suite.
+pytest>=7.0
