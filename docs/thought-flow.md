@@ -409,6 +409,26 @@ standing in the sibling. So the framework holds itself to the discipline it hold
 everything else to: it does not exempt its own record from the gap it was built to
 keep honest. That is the whole spine, turned last upon itself.
 
+## Step 25 — The arc: one thread followed unbroken across the whole history
+
+`migrate` and `proliferation` are one threshold read in two directions; this step puts
+them on a single timeline for a single value, so the whole history of one thread can be
+followed end to end. `arc.py` joins the breath side (the sign that held the value
+whole, and the shards it dispersed into) to the pump side (which shards re-entered the
+lexicon, and the definitional thread they then climbed). The flagship is where the
+framework began — the labrys and *paradoxical equilibrium*. Held whole in the labrys
+and the ouroboros, equilibrium scattered at the threshold into balance, justice,
+moderation, symmetry; one shard, justice, was re-lexicalised; and from justice the
+definitional web climbs through virtue and freedom to wellbeing, the sieve->success
+alignment rising 0.60 -> 0.92 across some 3,590 years. The thread runs unbroken from a
+Bronze-Age double axe to *flourishing* named - the holism the breath regime could hold
+in one sign, lost to segmentation at the threshold, and slowly re-won, word by word, as
+the phonetic web cohered. A shard no lexeme carried is reported as dispersed-but-not-
+retraced: the arc claims only what the record can show. This is the single view the
+whole project was building toward - not the breath regime or the pump regime, but the
+one continuous human attempt to hold meaning, read across the change in how we attend.
+Descriptive, never a gate.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

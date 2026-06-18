@@ -74,6 +74,7 @@ interpretation/
   constellation.py # the system-level web: which values were load-bearing across a regime
   migration.py     # a value across the threshold: held whole, then dispersed into lexemes
   lexicon.py       # phonetic language over time: the explosion, sieve->success, coherence
+  arc.py           # one thread traced unbroken across both regimes (migrate + proliferation)
   signal.py        # the capstone: signal = integrity x direction(truth) — the record on itself
   imprint.py       # the active recorder (default author: anise.damm)
   manifest.py      # defensive-publication manifest
@@ -81,7 +82,7 @@ glossary.json              # breath signs + pump words + value_aliases + migrati
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (120 tests)
+tests/                     # the suite (124 tests)
 ```
 
 ## Quickstart
@@ -380,6 +381,38 @@ ever-finer, ever-more-coherent vocabulary back up toward the inner life — the 
 (holism → segmentation) and the proliferation (segmentation → re-coherence) are the
 same threshold, read in both directions. As ever, an authored map and a proxy
 throughout; descriptive, never a gate.
+
+### The arc: one thread, unbroken across both regimes
+
+`migrate` and `proliferation` are the same threshold read in opposite directions;
+`arc` puts them on **one timeline** for a single value — the breath sign that held it
+whole, the threshold where it dispersed, and the lexeme-thread it then climbed back up.
+The flagship is the framework's first example, *paradoxical equilibrium*:
+
+```
+$ python -m interpretation arc equilibrium
+arc of 'equilibrium' across the threshold:
+  breath    — held whole in labrys (0.30), ouroboros (0.30)
+  threshold — dispersed into 4 shard(s): balance, justice, moderation, symmetry
+  pump      — 1 shard re-lexicalised: justice->justice
+  re-coherence (the thread climbs):
+      -500  justice      align 0.60
+      -450  virtue       align 0.62
+      1700  freedom      align 0.74
+      1844  alienation   align 0.85
+      1990  wellbeing    align 0.92
+  the thread reaches align 0.92 over ~3590 year(s) — from a sign held whole to
+  flourishing named, unbroken across the ghost lag
+```
+
+The Minoan labrys held equilibrium **whole**; the threshold scattered it into
+*balance, justice, moderation, symmetry*; one shard, **justice**, re-entered the
+phonetic web; and from there the definitional thread climbs — justice → virtue,
+freedom → … → *wellbeing* — the sieve→success alignment rising the whole way, from
+`0.60` to `0.92`. A single conceptual thread, traced unbroken from a Bronze-Age double
+axe to *flourishing* named, across ~3,590 years and the great change in attention. A
+shard no lexeme carried (e.g. *divinity*'s) is reported, honestly, as dispersed but not
+re-traced. Descriptive, never a gate.
 
 ## The worked example: *revolution* (the pump-regime contrast)
 

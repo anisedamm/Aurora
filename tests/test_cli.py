@@ -131,6 +131,13 @@ def test_signal_reports_the_one_verdict(capsys):
     assert rc == 0 and "= 1" in out and "trustworthy backing" in out
 
 
+def test_arc_traces_one_thread_across_both_regimes(capsys):
+    assert main(_g("arc", "equilibrium")) == 0
+    out = capsys.readouterr().out
+    assert "arc of 'equilibrium'" in out
+    assert "justice" in out and "wellbeing" in out and "unbroken across the ghost lag" in out
+
+
 def test_regime_shows_the_threshold_and_sides(capsys):
     assert main(_g("regime", "divine-order")) == 0
     out = capsys.readouterr().out

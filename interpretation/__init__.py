@@ -125,6 +125,7 @@ from .lexicon import (
 )
 from .imprint import Imprinter, ImprintReceipt, DEFAULT_AUTHOR
 from .manifest import build_manifest, write_manifest
+from .arc import Arc, ArcStop, arc
 from .signal import Signal, compute_signal
 
 __all__ = [
@@ -233,6 +234,10 @@ __all__ = [
     "DEFAULT_AUTHOR",
     "build_manifest",
     "write_manifest",
+    # the arc: one thread traced unbroken across both regimes
+    "Arc",
+    "ArcStop",
+    "arc",
     # the capstone: signal = integrity x direction(truth)
     "Signal",
     "compute_signal",
