@@ -1,6 +1,20 @@
 {
   "title": "A glossary of conceptual histories — read across the breath/pump threshold",
   "note": "An authored map, and it says so: a proxy for real histories of meaning and consciousness, carrying its provenance, never the histories themselves. Two regimes of attention are distinguished. BREATH: a participatory, holistic attention whose natural writing is the CONCEPTUAL sign — a symbol holding a weighted field of values at once (the labrys, the ankh, the ouroboros). PUMP: an analytic, segmenting attention whose natural writing is the PHONETIC sign — a mark spelling a sound, deferring meaning to a lexicon (revolution, democracy). The ghost lag is breath-meaning still moving under pump-language, and the cardinal error is phonetic projection: reading a breath-era sign as if it spelled a word. Weighted fields and dated attestations are authored readings; resonance is a proxy for fit to a retained conceptual truth, not proof of what a sign 'really' meant.",
+  "value_aliases": {
+    "_note": "An authored grouping of the conceptual-value vocabulary: which raw value names name one underlying value across signs. Used by the constellation to see the breath web's shared values. A proxy, surfaced here rather than hidden — not a claim that these values are identical, only that they are kin.",
+    "eternity-continuity": "eternity",
+    "cyclical-unity": "unity",
+    "unity-belonging": "unity",
+    "totality": "unity",
+    "paradoxical-equilibrium": "equilibrium",
+    "kingship": "sovereignty",
+    "life-breath": "life",
+    "primal-powers": "divinity",
+    "cosmic-order": "order",
+    "succession": "order",
+    "genesis-from-chaos": "genesis"
+  },
   "concepts": [
     {
       "id": "labrys",

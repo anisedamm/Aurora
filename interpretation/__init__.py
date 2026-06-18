@@ -103,6 +103,13 @@ from .memory import (
     confluence,
     CONVERGENCE_THRESHOLD,
 )
+from .constellation import (
+    Constellation,
+    ValueWeight,
+    SignAffinity,
+    constellation,
+    AFFINITY_THRESHOLD,
+)
 from .imprint import Imprinter, ImprintReceipt, DEFAULT_AUTHOR
 from .manifest import build_manifest, write_manifest
 
@@ -185,6 +192,12 @@ __all__ = [
     "ConfluencePair",
     "confluence",
     "CONVERGENCE_THRESHOLD",
+    # the constellation: the system-level web of a regime's shared values
+    "Constellation",
+    "ValueWeight",
+    "SignAffinity",
+    "constellation",
+    "AFFINITY_THRESHOLD",
     # active recorder + publication
     "Imprinter",
     "ImprintReceipt",

@@ -322,6 +322,27 @@ sovereign power and group identity (0.40). As with `dispute` in the sibling syst
 framework records the fork and withholds adjudication — it surfaces that the tradition
 split; it does not decide which branch is right. Descriptive, never a gate.
 
+## Step 21 — The constellation: the values a whole web was built on
+
+The single sign holds a field; the chain follows one truth; the confluence weighs two
+paths. The last lift is to the whole web at once. `constellation` reads every sign of
+a regime together and asks which conceptual *values* were **load-bearing** — recurring,
+with weight, across many signs — and how the signs cluster by the values they share.
+For the breath civilisation the answer is legible: **divinity** is the keystone (it
+carries the labrys, the ankh, and the remembered divine order), with unity,
+equilibrium, eternity and sovereignty beneath it; the labrys is the hub that binds the
+web, and the cosmogonic divine-order stands apart as an island. This is the precise,
+system-level form of the user's thesis — "systemic alignment and underlying values
+retained across time and culture" — and it needed one authored move to be honest: a
+harmonised value vocabulary (`value_aliases` in the glossary), so *eternity* and
+*eternity-continuity* are seen as the one value they are. That grouping is a proxy,
+surfaced in the map rather than buried in code, exactly as every threshold here carries
+its provenance. And the contrast completes the breath/pump thesis from the top: asked
+the same question, the pump regime holds *no weighted web at all* — it segments meaning
+into lexical senses instead of holding it whole in fields. The constellation is the
+participatory web made visible, and its absence on the pump side is the segmentation
+that replaced it. Descriptive, never a ranking of worth.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

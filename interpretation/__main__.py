@@ -31,6 +31,7 @@ import sys
 from pathlib import Path
 
 from .alignment import align_record
+from .constellation import constellation
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
 from .ledger import Ledger
@@ -176,6 +177,12 @@ def cmd_chain(args: argparse.Namespace) -> int:
 def cmd_confluence(args: argparse.Namespace) -> int:
     g = _glossary(args)
     print(confluence(args.concept, g).summary)
+    return 0
+
+
+def cmd_constellation(args: argparse.Namespace) -> int:
+    g = _glossary(args)
+    print(constellation(g, regime=args.regime).summary)
     return 0
 
 
@@ -335,6 +342,9 @@ def build_parser() -> argparse.ArgumentParser:
     sp = sub.add_parser("confluence", help="weigh independent lineages: do they corroborate the source or diverge?")
     sp.add_argument("concept")
 
+    sp = sub.add_parser("constellation", help="the system-level web: which values were load-bearing across a regime")
+    sp.add_argument("--regime", default="breath", help="breath (default) or pump")
+
     sp = sub.add_parser("regime", help="show a concept's breath/pump threshold and which side each sense sits")
     sp.add_argument("concept")
 
@@ -389,6 +399,7 @@ _COMMANDS = {
     "remember": cmd_remember,
     "chain": cmd_chain,
     "confluence": cmd_confluence,
+    "constellation": cmd_constellation,
     "regime": cmd_regime,
     "sense": cmd_sense,
     "align": cmd_align,

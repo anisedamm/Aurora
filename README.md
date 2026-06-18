@@ -71,12 +71,13 @@ interpretation/
   reading.py       # the three layers: attest (L1) / read (L2) / drift + project (L3)
   alignment.py     # purpose x fidelity (phonetic) / purpose x resonance (conceptual)
   memory.py        # the return path: remember() / memory_chain() / confluence()
+  constellation.py # the system-level web: which values were load-bearing across a regime
   imprint.py       # the active recorder (default author: anise.damm)
   manifest.py      # defensive-publication manifest
-glossary.json              # breath signs (labrys, ankh, ouroboros, myth) + pump words
+glossary.json              # breath signs (labrys, ankh, ouroboros, myth) + pump words + value_aliases
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (94 tests)
+tests/                     # the suite (100 tests)
 ```
 
 ## Quickstart
@@ -254,6 +255,41 @@ an artifact of one transmission. The labrys, by contrast, has **forked**: a
 religious-historical lineage keeps its paradoxical equilibrium while a later emblematic
 one re-reads it as sovereign power and group identity — incompatible memories of one
 sign, surfaced and named, never adjudicated.
+
+### The constellation: the web's load-bearing values
+
+The single sign, the chain, the confluence — then the whole web. `constellation`
+lifts to the system level and asks which conceptual *values* were load-bearing
+*across* a regime: recurring, with weight, across many signs. It is "systemic
+alignment and underlying values retained across time and culture" made a measurement.
+
+```
+$ python -m interpretation constellation
+constellation of the breath web: 4 sign(s), 5 load-bearing value(s)
+  keystone value: divinity (reach 3, weight 0.80)
+  load-bearing values (carried across signs):
+    divinity     reach 3  weight 0.80
+    unity        reach 2  weight 0.70
+    equilibrium  reach 2  weight 0.60
+    eternity     reach 2  weight 0.40
+    sovereignty  reach 2  weight 0.40
+  kinships (signs sharing a value-field):
+    labrys x ouroboros: 0.50
+    ankh x labrys: 0.40
+  clusters: [['ankh', 'labrys', 'ouroboros'], ['divine-order']]; islands ['divine-order']
+```
+
+Across the Minoan labrys, the Egyptian ankh, the ouroboros, and the remembered divine
+order, **divinity** is the keystone — the value the breath web rests on — with unity,
+equilibrium, eternity, and sovereignty carried across signs beneath it. The **labrys
+is the hub** (it shares equilibrium with the ouroboros, divinity and sovereignty with
+the ankh), while the cosmogonic *divine-order* sits apart as an **island**. The value
+vocabulary is harmonised through the glossary's *authored* `value_aliases` (so
+*eternity* and *eternity-continuity* are seen as one value) — a proxy grouping
+surfaced in the map, not hidden. And the pump regime, asked the same question, holds
+**no weighted web at all** (`constellation --regime pump` → 0 signs): it segments
+meaning into lexical senses rather than holding it in fields — the breath/pump
+difference, seen from the top. Descriptive, never a ranking of worth.
 
 ## The worked example: *revolution* (the pump-regime contrast)
 

@@ -97,6 +97,13 @@ def test_confluence_corroborates_or_forks(capsys):
     assert "DIVERGENCE" in capsys.readouterr().out
 
 
+def test_constellation_shows_the_load_bearing_values(capsys):
+    assert main(_g("constellation")) == 0
+    out = capsys.readouterr().out
+    assert "keystone value: divinity" in out
+    assert "load-bearing values" in out and "island" in out
+
+
 def test_regime_shows_the_threshold_and_sides(capsys):
     assert main(_g("regime", "divine-order")) == 0
     out = capsys.readouterr().out

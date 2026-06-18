@@ -98,6 +98,7 @@ class Glossary:
     concepts: dict[str, Concept] = field(default_factory=dict)
     title: str = ""
     note: str = ""
+    value_aliases: dict = field(default_factory=dict)  # authored grouping of synonymous conceptual values
 
     def concept(self, concept_id: str) -> Concept:
         if concept_id not in self.concepts:
@@ -156,7 +157,12 @@ def from_mapping(raw: dict) -> Glossary:
             retained=dict(c.get("retained", {})),
             year=c.get("year"),
         )
-    return Glossary(concepts=concepts, title=raw.get("title", ""), note=raw.get("note", ""))
+    return Glossary(
+        concepts=concepts,
+        title=raw.get("title", ""),
+        note=raw.get("note", ""),
+        value_aliases=dict(raw.get("value_aliases", {})),
+    )
 
 
 def load_glossary(path) -> Glossary:
