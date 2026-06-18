@@ -99,6 +99,7 @@ class Glossary:
     title: str = ""
     note: str = ""
     value_aliases: dict = field(default_factory=dict)  # authored grouping of synonymous conceptual values
+    migrations: dict = field(default_factory=dict)     # authored dispersal of a value into pump-era lexemes
 
     def concept(self, concept_id: str) -> Concept:
         if concept_id not in self.concepts:
@@ -162,6 +163,7 @@ def from_mapping(raw: dict) -> Glossary:
         title=raw.get("title", ""),
         note=raw.get("note", ""),
         value_aliases=dict(raw.get("value_aliases", {})),
+        migrations=dict(raw.get("migrations", {})),
     )
 
 

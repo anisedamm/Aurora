@@ -15,6 +15,34 @@
     "succession": "order",
     "genesis-from-chaos": "genesis"
   },
+  "migrations": {
+    "_note": "Authored dispersals: how a value held whole in the breath web was segmented, after the pump transition, into separate lexemes — each carving off one facet and, usually, losing the holism (in equilibrium's case, the paradox) that made it one. A proxy reading of the redistribution, surfaced here, not a claim of strict etymology.",
+    "equilibrium": {
+      "note": "The labrys held opposed blades in balance as one paradoxical whole; the pump regime carved that holism into separate analytic concepts, each taking one facet and dropping the paradox of opposites-held-as-one.",
+      "shards": [
+        {"term": "balance", "aspect": "the static evenness of two weights — the physical facet, the paradox flattened", "citation": "the scales; mechanics", "period": "—"},
+        {"term": "justice", "aspect": "balance moralised — giving each their due", "citation": "Dike and her scales", "period": "—"},
+        {"term": "moderation", "aspect": "balance as a personal virtue, the mean between extremes", "citation": "after Aristotle's mean", "period": "4th c. BCE"},
+        {"term": "symmetry", "aspect": "balance as formal, aesthetic correspondence", "citation": "Greek architecture and mathematics", "period": "—"}
+      ]
+    },
+    "unity": {
+      "note": "The wholeness the ouroboros and the labrys held as a living one became, in the pump regime, several distinct lexemes — the living unity flattened to an aggregate or an abstraction.",
+      "shards": [
+        {"term": "totality", "aspect": "the sum of all parts — unity as aggregate", "citation": "—", "period": "—"},
+        {"term": "community", "aspect": "belonging-together as a social bond", "citation": "—", "period": "—"},
+        {"term": "the One", "aspect": "unity abstracted into a metaphysical principle", "citation": "after Neoplatonism", "period": "3rd c. CE"}
+      ]
+    },
+    "divinity": {
+      "note": "The divine that suffused the breath signs as a present, participatory power was, after the threshold, divided into separate terms — set apart from the world it had pervaded.",
+      "shards": [
+        {"term": "the sacred", "aspect": "what is set apart from the profane", "citation": "—", "period": "—"},
+        {"term": "the holy", "aspect": "the divine as moral purity and awe", "citation": "—", "period": "—"},
+        {"term": "transcendence", "aspect": "the divine removed beyond the world", "citation": "—", "period": "—"}
+      ]
+    }
+  },
   "concepts": [
     {
       "id": "labrys",

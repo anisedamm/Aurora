@@ -343,6 +343,25 @@ into lexical senses instead of holding it whole in fields. The constellation is 
 participatory web made visible, and its absence on the pump side is the segmentation
 that replaced it. Descriptive, never a ranking of worth.
 
+## Step 22 — Migration: a value across the threshold, and the loop closed
+
+The framework began from a question about the labrys and *paradoxical equilibrium*;
+this step returns to it with everything the apparatus has built. `migrate` tracks one
+value across the breath→pump threshold: the breath side is **measured** — which signs
+held it, with what weight, when it was held *whole*, alongside other values, in one
+participatory field — and the pump side is the **authored** record of how it dispersed,
+segmented into separate lexemes once the analytic regime carved the holism apart. The
+labrys's equilibrium, opposed blades held as one, becomes *balance* (mechanics),
+*justice* (law), *moderation* (virtue), *symmetry* (form): four domains, each a shard,
+all having let go of the paradox that made them one. Divinity, the keystone, scatters
+into *the sacred*, *the holy*, *transcendence* — the present, pervading power set apart
+from its world. This is the redistribution the founding intuition named, now literally
+traceable, and it is the through-line of the whole project seen once more: the breath
+held meaning whole and the pump segments it; what looks like several unrelated words
+can be the shards of one broken wholeness, still carrying — in the ghost lag — a
+fragment of what they were. Measured where it can be measured, authored where it must
+be, a proxy throughout, and descriptive, never a gate.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

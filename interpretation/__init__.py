@@ -110,6 +110,7 @@ from .constellation import (
     constellation,
     AFFINITY_THRESHOLD,
 )
+from .migration import Migration, Shard, migrate
 from .imprint import Imprinter, ImprintReceipt, DEFAULT_AUTHOR
 from .manifest import build_manifest, write_manifest
 
@@ -198,6 +199,10 @@ __all__ = [
     "SignAffinity",
     "constellation",
     "AFFINITY_THRESHOLD",
+    # migration: a value tracked across the breath->pump threshold
+    "Migration",
+    "Shard",
+    "migrate",
     # active recorder + publication
     "Imprinter",
     "ImprintReceipt",

@@ -104,6 +104,13 @@ def test_constellation_shows_the_load_bearing_values(capsys):
     assert "load-bearing values" in out and "island" in out
 
 
+def test_migrate_tracks_a_value_across_the_threshold(capsys):
+    assert main(_g("migrate", "equilibrium")) == 0
+    out = capsys.readouterr().out
+    assert "MIGRATION of 'equilibrium'" in out
+    assert "held whole" in out and "balance" in out
+
+
 def test_regime_shows_the_threshold_and_sides(capsys):
     assert main(_g("regime", "divine-order")) == 0
     out = capsys.readouterr().out

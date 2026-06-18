@@ -72,12 +72,13 @@ interpretation/
   alignment.py     # purpose x fidelity (phonetic) / purpose x resonance (conceptual)
   memory.py        # the return path: remember() / memory_chain() / confluence()
   constellation.py # the system-level web: which values were load-bearing across a regime
+  migration.py     # a value across the threshold: held whole, then dispersed into lexemes
   imprint.py       # the active recorder (default author: anise.damm)
   manifest.py      # defensive-publication manifest
-glossary.json              # breath signs (labrys, ankh, ouroboros, myth) + pump words + value_aliases
+glossary.json              # breath signs + pump words + value_aliases + migrations
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (100 tests)
+tests/                     # the suite (105 tests)
 ```
 
 ## Quickstart
@@ -290,6 +291,38 @@ surfaced in the map, not hidden. And the pump regime, asked the same question, h
 **no weighted web at all** (`constellation --regime pump` → 0 signs): it segments
 meaning into lexical senses rather than holding it in fields — the breath/pump
 difference, seen from the top. Descriptive, never a ranking of worth.
+
+### Migration: a value across the threshold (how the transition redistributed it)
+
+The constellation says which values the breath web rested on; `migrate` tracks *one*
+value across the breath→pump threshold — where it concentrated when held **whole**, and
+into which separate pump-era lexemes it dispersed when meaning was **segmented**. This
+is the founding question made traceable: *how the pump transition redistributed the
+values.*
+
+```
+$ python -m interpretation migrate equilibrium
+MIGRATION of 'equilibrium': held whole across 2 breath sign(s) (weight 0.60); dispersed into 4 pump-era lexeme(s)
+  The labrys held opposed blades in balance as one paradoxical whole; the pump regime
+  carved that holism into separate analytic concepts ...
+  breath side (held whole, with other values): labrys (0.30), ouroboros (0.30)
+  pump side (segmented into separate lexemes):
+    balance      — the static evenness of two weights — the physical facet, the paradox flattened
+    justice      — balance moralised — giving each their due
+    moderation   — balance as a personal virtue, the mean between extremes
+    symmetry     — balance as formal, aesthetic correspondence
+```
+
+The labrys's **paradoxical equilibrium** — opposed blades held as one — is the case
+the whole framework began from. The pump regime split it into *balance* (mechanics),
+*justice* (law), *moderation* (virtue), *symmetry* (form): four lexical domains, each
+keeping a shard, all dropping the *paradox* of opposites-held-as-one that made it one.
+`divinity`, the keystone, likewise disperses into *the sacred*, *the holy*,
+*transcendence* — set apart from the world it had pervaded. The breath side is
+**measured** from the signs; the dispersal is **authored** (`migrations` in the
+glossary) — a proxy reading of the redistribution, surfaced in the map, not a claim of
+strict etymology. Holism becomes segmentation, and you can watch it happen,
+value by value.
 
 ## The worked example: *revolution* (the pump-regime contrast)
 
