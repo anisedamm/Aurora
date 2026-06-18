@@ -76,13 +76,14 @@ interpretation/
   lexicon.py       # phonetic language over time: the explosion, sieve->success, coherence
   arc.py           # one thread traced unbroken across both regimes (migrate + proliferation)
   signal.py        # the capstone: signal = integrity x direction(truth) — the record on itself
+  atlas.py         # the whole history of meaning composed on one screen (a reader, not a ruler)
   imprint.py       # the active recorder (default author: anise.damm)
   manifest.py      # defensive-publication manifest
 glossary.json              # breath signs + pump words + value_aliases + migrations
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (124 tests)
+tests/                     # the suite (127 tests)
 ```
 
 ## Quickstart
@@ -584,6 +585,32 @@ A recorded *projection* — the labrys read phonetically, kept as a named foil �
 reads its alignment as zero. That is the system working, the way a retraction is
 standing, not a break. CI runs `signal` on every push, so the repository proves its own
 `signal == 1`. This closes the arc back to the sibling the framework was born from.
+
+## The atlas: the whole on one screen
+
+Every module reads one thing; `atlas` reads them *together*, composing the tested
+measures into a single narrative of the arc the framework has traced — a reader, not a
+ruler (the sibling system's `status` move), introducing no new measure and gating
+nothing:
+
+```
+$ python -m interpretation atlas
+== atlas: the history of meaning this record assembles ==
+  signal:    1  (trustworthy backing)
+  breath web — keystone value: divinity (reach 3); hub sign: labrys; islands ['divine-order']
+  the threshold — values held whole, then dispersed:
+    divinity     held 0.80 across 3 sign(s) -> 3 lexeme(s)
+    equilibrium  held 0.60 across 2 sign(s) -> 4 lexeme(s)
+    unity        held 0.70 across 2 sign(s) -> 3 lexeme(s)
+  the pump explosion — lexicon 4->27 over 5 eras; sieve->success 0.09->0.59; experiential 0.00->0.48; coherence 0.25->1.00
+  the unbroken arc — equilibrium: justice(0.60) -> ... -> wellbeing(0.92), reaching 0.92 over ~3590 year(s)
+```
+
+The whole journey at a glance: the backing is sound; the breath web rests on
+*divinity*, hubbed at the *labrys*; those whole-held values dispersed at the threshold;
+the phonetic lexicon then exploded and re-cohered, climbing from survival toward the
+inner life; and one thread — *equilibrium* — runs unbroken from a Bronze-Age sign to
+*flourishing* named. One screen for the entire arc.
 
 ## Relationship to `integrity-alignment-system`
 

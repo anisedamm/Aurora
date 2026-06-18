@@ -127,6 +127,7 @@ from .imprint import Imprinter, ImprintReceipt, DEFAULT_AUTHOR
 from .manifest import build_manifest, write_manifest
 from .arc import Arc, ArcStop, arc
 from .signal import Signal, compute_signal
+from .atlas import Atlas, atlas
 
 __all__ = [
     # fingerprinting
@@ -241,4 +242,7 @@ __all__ = [
     # the capstone: signal = integrity x direction(truth)
     "Signal",
     "compute_signal",
+    # the atlas: the whole history of meaning, composed on one screen
+    "Atlas",
+    "atlas",
 ]

@@ -429,6 +429,23 @@ whole project was building toward - not the breath regime or the pump regime, bu
 one continuous human attempt to hold meaning, read across the change in how we attend.
 Descriptive, never a gate.
 
+## Step 26 — The atlas: reading the whole at once
+
+The arc followed one thread end to end; the atlas steps back and reads the whole record
+at once. `atlas.py` composes - it introduces no new measure - the already-tested
+readings into one screen: the backing's signal, the breath web's keystone and hub, the
+threshold's dispersals, the pump explosion's climb, and the unbroken arc. It is the
+sibling system's `status` turned on the content rather than the integrity: a reader,
+not a ruler, gating nothing. The point of gathering them is that the whole says
+something the parts do not - that the framework has, across every lens, told one story:
+meaning was once held whole in a participatory sign; the change in attention segmented
+it into phonetic words; and the long labour of language has been to re-cohere those
+words, climbing from survival back toward the inner life, with a few threads (like
+equilibrium) traceable unbroken the entire way. The atlas is where that one story
+becomes legible on a single screen - the end the project's every measure was quietly
+building toward. Read-only, descriptive, composed of nothing but what the tested
+functions already say.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

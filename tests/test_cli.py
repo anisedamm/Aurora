@@ -138,6 +138,13 @@ def test_arc_traces_one_thread_across_both_regimes(capsys):
     assert "justice" in out and "wellbeing" in out and "unbroken across the ghost lag" in out
 
 
+def test_atlas_reads_the_whole_on_one_screen(capsys):
+    assert main(["atlas"]) == 0
+    out = capsys.readouterr().out
+    assert "history of meaning this record assembles" in out
+    assert "breath web" in out and "pump explosion" in out and "unbroken arc" in out
+
+
 def test_regime_shows_the_threshold_and_sides(capsys):
     assert main(_g("regime", "divine-order")) == 0
     out = capsys.readouterr().out
