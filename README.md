@@ -73,12 +73,14 @@ interpretation/
   memory.py        # the return path: remember() / memory_chain() / confluence()
   constellation.py # the system-level web: which values were load-bearing across a regime
   migration.py     # a value across the threshold: held whole, then dispersed into lexemes
+  lexicon.py       # phonetic language over time: the explosion, sieve->success, coherence
   imprint.py       # the active recorder (default author: anise.damm)
   manifest.py      # defensive-publication manifest
 glossary.json              # breath signs + pump words + value_aliases + migrations
+lexicon.json               # the phonetic lexicon traced over time (the explosion)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (105 tests)
+tests/                     # the suite (113 tests)
 ```
 
 ## Quickstart
@@ -323,6 +325,60 @@ keeping a shard, all dropping the *paradox* of opposites-held-as-one that made i
 glossary) — a proxy reading of the redistribution, surfaced in the map, not a claim of
 strict etymology. Holism becomes segmentation, and you can watch it happen,
 value by value.
+
+## The phonetic web over time: the explosion of understanding
+
+The breath apparatus reads signs that held meaning whole. Its **pump-side
+counterpart** reads phonetic language the other way — *forward*, as it proliferates.
+Phonetic language does not hold meaning whole; it explodes into words, each a concept
+a culture deemed worth a name (a lexeme's `valued_for` — the phonetic echo of
+`committed_because`). Traced over time, that explosion is the record of how human
+understanding of conceptual meaning grew, and three things move together inside it:
+
+```
+$ python -m interpretation proliferation
+the explosion of phonetic language, traced era by era:
+  era         new  total  align   exp  coher
+  primal        4      4   0.09  0.00   0.25
+  agrarian      5      9   0.22  0.00   0.89
+  classical     5     14   0.35  0.07   0.93
+  modern        6     20   0.48  0.30   1.00
+  reflexive     7     27   0.59  0.48   1.00
+  over 5 eras the lexicon grew 4->27; sieve->success alignment rose 0.09->0.59;
+  experiential share 0.00->0.48; coherence 0.25->1.00
+```
+
+- **The explosion** — the count of lexicalised concepts climbs era over era (4 → 27).
+- **The sieve→success gradient** — what gets named drifts from *sieve-aligned* (a
+  discriminating filter on raw experience: *water*, *danger*, *kin* — concrete
+  necessity) toward *success-aligned* (abstract, experiential, aspirational: *soul*,
+  *freedom*, *empathy*, *wellbeing* — what a thriving society values). Mean alignment
+  climbs 0.09 → 0.59.
+- **Coherence and experience, together** — later words are defined in terms of earlier
+  ones, so the lexicon's definitional web connects; as it coheres (0.25 → 1.00), more
+  abstract and *experiential* concepts become sayable (inner-experience share 0.00 →
+  0.48). Understanding of human experience grew *as* the web cohered — exactly the
+  higher-coherence society's deepening self-understanding, made a measurement.
+
+And lexicalisation is **valuation** — which is why dialects differ in what they name.
+A concept earns a word when a tongue values it enough, and `untranslatables` reads the
+concepts one tongue valued that the shared lexicon left unnamed:
+
+```
+$ python -m interpretation untranslatables
+4 concept(s) a single tongue valued enough to name:
+  hygge (Danish) — cosy, safe togetherness worth seeking
+  ubuntu (Nguni) — I am because we are — personhood through others
+  saudade (Portuguese) — a longing for an absent, perhaps unrecoverable beloved or time
+  mamihlapinatapai (Yaghan) — the wordless shared look of two who each wish the other would begin
+```
+
+So the two regimes meet from opposite directions: the breath web held many values
+*whole* in few signs; the pump web *segments* them and then, over millennia, builds an
+ever-finer, ever-more-coherent vocabulary back up toward the inner life — the migration
+(holism → segmentation) and the proliferation (segmentation → re-coherence) are the
+same threshold, read in both directions. As ever, an authored map and a proxy
+throughout; descriptive, never a gate.
 
 ## The worked example: *revolution* (the pump-regime contrast)
 

@@ -111,6 +111,18 @@ from .constellation import (
     AFFINITY_THRESHOLD,
 )
 from .migration import Migration, Shard, migrate
+from .lexicon import (
+    Lexeme,
+    Lexicon,
+    load_lexicon,
+    lexical_coherence,
+    EraPoint,
+    Proliferation,
+    proliferation,
+    Untranslatable,
+    untranslatables,
+    SHARED_LANGUAGE,
+)
 from .imprint import Imprinter, ImprintReceipt, DEFAULT_AUTHOR
 from .manifest import build_manifest, write_manifest
 
@@ -203,6 +215,17 @@ __all__ = [
     "Migration",
     "Shard",
     "migrate",
+    # the lexicon over time: phonetic language as the record of growing understanding
+    "Lexeme",
+    "Lexicon",
+    "load_lexicon",
+    "lexical_coherence",
+    "EraPoint",
+    "Proliferation",
+    "proliferation",
+    "Untranslatable",
+    "untranslatables",
+    "SHARED_LANGUAGE",
     # active recorder + publication
     "Imprinter",
     "ImprintReceipt",

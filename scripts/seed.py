@@ -76,6 +76,9 @@ def main() -> int:
     imprint(artifact_id="glossary-map", title="The authored glossary of conceptual histories",
             text=GLOSSARY.read_text(encoding="utf-8"), kind="concept",
             parents=["language-framework"])
+    imprint(artifact_id="lexicon-map", title="The phonetic lexicon traced over time",
+            text=(ROOT / "lexicon.json").read_text(encoding="utf-8"), kind="concept",
+            regime="pump", parents=["language-framework"])
 
     for c in g.concepts.values():
         cid = f"concept-{c.id}"

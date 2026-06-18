@@ -111,6 +111,19 @@ def test_migrate_tracks_a_value_across_the_threshold(capsys):
     assert "held whole" in out and "balance" in out
 
 
+def test_proliferation_traces_the_explosion(capsys):
+    assert main(["proliferation"]) == 0
+    out = capsys.readouterr().out
+    assert "explosion of phonetic language" in out
+    assert "primal" in out and "reflexive" in out and "coherence" in out
+
+
+def test_untranslatables_lists_single_tongue_concepts(capsys):
+    assert main(["untranslatables"]) == 0
+    out = capsys.readouterr().out
+    assert "hygge" in out and "Danish" in out
+
+
 def test_regime_shows_the_threshold_and_sides(capsys):
     assert main(_g("regime", "divine-order")) == 0
     out = capsys.readouterr().out

@@ -362,6 +362,35 @@ can be the shards of one broken wholeness, still carrying — in the ghost lag �
 fragment of what they were. Measured where it can be measured, authored where it must
 be, a proxy throughout, and descriptive, never a gate.
 
+## Step 23 — The phonetic web over time: the explosion read forward
+
+Every step so far read the breath side, or read the pump side as a *loss* (projection,
+segmentation). This step turns the lens forward and reads phonetic language as a
+*gain*: the explosion of words as the record of human understanding deepening. Where a
+breath sign holds many values whole, phonetic language proliferates — and the
+proliferation is not noise but a trace, in which three things move together
+(`lexicon.py`). The lexicon **explodes** (each era names more than the last). What it
+names **climbs the sieve→success axis** — from a discriminating filter on raw
+experience (water, danger, kin: concrete necessity, what must be told apart to survive)
+toward the abstract, experiential, aspirational (soul, freedom, empathy, wellbeing:
+what a thriving society values). And because later words are *defined in terms of*
+earlier ones, the lexicon's definitional web **coheres** as it grows — and as it
+coheres, more of the inner life becomes sayable. Coherence and the experiential share
+rise together: the higher-coherence society's deepening understanding of human
+experience, made a measurement, exactly as the founding intuition held.
+
+Two through-lines from the rest of the framework close here. Lexicalisation is
+**valuation** — a concept earns a word when a tongue values it enough (`valued_for`,
+the phonetic echo of the breath regime's `committed_because`) — which is why dialects
+differ in what they name, and why `untranslatables` (hygge, saudade, ubuntu,
+mamihlapinatapai) are legible as the concepts one people held dear enough to give a
+single word. And the two regimes are revealed as one threshold read in both
+directions: `migrate` showed a value held *whole* dispersing into segmented lexemes
+(holism → segmentation); `proliferation` shows the segmented lexemes slowly re-cohering,
+over millennia, back up toward the inner life (segmentation → re-coherence). The ghost
+lag is not only a loss to guard against; it is also the long climb by which a
+segmenting tongue earns its way back to wholeness. Descriptive, never a gate.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

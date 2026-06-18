@@ -34,6 +34,7 @@ from .alignment import align_record
 from .constellation import constellation
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
+from .lexicon import load_lexicon, proliferation, untranslatables
 from .migration import migrate
 from .ledger import Ledger
 from .manifest import write_manifest
@@ -44,10 +45,15 @@ from .weighting import WeightedField
 
 DEFAULT_LEDGER = "interpretation_ledger.jsonl"
 DEFAULT_GLOSSARY = "glossary.json"
+DEFAULT_LEXICON = "lexicon.json"
 
 
 def _glossary(args: argparse.Namespace):
     return load_glossary(getattr(args, "glossary", None) or DEFAULT_GLOSSARY)
+
+
+def _lexicon(args: argparse.Namespace):
+    return load_lexicon(getattr(args, "lexicon", None) or DEFAULT_LEXICON)
 
 
 def _ledger(args: argparse.Namespace) -> Ledger:
@@ -193,6 +199,20 @@ def cmd_migrate(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_proliferation(args: argparse.Namespace) -> int:
+    print(proliferation(_lexicon(args)).summary)
+    return 0
+
+
+def cmd_untranslatables(args: argparse.Namespace) -> int:
+    lex = _lexicon(args)
+    items = untranslatables(lex)
+    print(f"{len(items)} concept(s) a single tongue valued enough to name:")
+    for u in items:
+        print(f"  {u.word} ({u.language}) — {u.gloss}")
+    return 0
+
+
 def cmd_regime(args: argparse.Namespace) -> int:
     g = _glossary(args)
     c = g.concept(args.concept)
@@ -316,6 +336,7 @@ def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="interpretation", description=__doc__)
     p.add_argument("--ledger", help=f"ledger path (default {DEFAULT_LEDGER})")
     p.add_argument("--glossary", help=f"glossary path (default {DEFAULT_GLOSSARY})")
+    p.add_argument("--lexicon", help=f"lexicon path (default {DEFAULT_LEXICON})")
     sub = p.add_subparsers(dest="command", required=True)
 
     sub.add_parser("concepts", help="list the concepts in the glossary")
@@ -354,6 +375,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     sp = sub.add_parser("migrate", help="track a value across the threshold: held whole, then dispersed into lexemes")
     sp.add_argument("value")
+
+    sub.add_parser("proliferation", help="the explosion of phonetic language: the sieve->success climb and coherence over time")
+    sub.add_parser("untranslatables", help="concepts a single tongue valued enough to name (differential lexicalisation)")
 
     sp = sub.add_parser("regime", help="show a concept's breath/pump threshold and which side each sense sits")
     sp.add_argument("concept")
@@ -411,6 +435,8 @@ _COMMANDS = {
     "confluence": cmd_confluence,
     "constellation": cmd_constellation,
     "migrate": cmd_migrate,
+    "proliferation": cmd_proliferation,
+    "untranslatables": cmd_untranslatables,
     "regime": cmd_regime,
     "sense": cmd_sense,
     "align": cmd_align,
