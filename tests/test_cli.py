@@ -82,6 +82,14 @@ def test_remember_shows_the_return_path(capsys):
     assert "REMEMBRANCE" in out and "carries 'divine-order'" in out and "faithful" in out
 
 
+def test_chain_traces_the_transmission_lineage(capsys):
+    assert main(_g("chain", "ouroboros")) == 0
+    out = capsys.readouterr().out
+    assert "memory chain of 'ouroboros'" in out
+    assert "decayed then restored" in out
+    assert "ouroboros-jung" in out and "restored" in out
+
+
 def test_regime_shows_the_threshold_and_sides(capsys):
     assert main(_g("regime", "divine-order")) == 0
     out = capsys.readouterr().out

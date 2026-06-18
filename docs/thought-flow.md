@@ -282,6 +282,26 @@ half of the breath/pump thesis: the framework does not only catch the present re
 into the past — it can recognise the past faithfully kept, which is how a society
 retained its values across the great change in attention. Descriptive, never a gate.
 
+## Step 19 — The transmission lineage: decay and restoration down a memory chain
+
+A single `remember` scores one hop. But a truth is carried across the ages in
+*many* hops, each remembering the last, and the interesting thing is what happens to
+it along the way. `memory_chain` (Step 33 of the sibling system was `trace`, the
+thread of conclusions; this is its mirror on the return path) walks the lineage of a
+truth in time order and reports, at each link, two resonances: **to-origin** (how far
+the carried field has drifted from the *source* truth — cumulative fidelity) and
+**to-prev** (how faithfully *this* hop carried what it received). The difference
+between them is the whole point: a chain can lose the origin steadily while each hop
+looks locally faithful, or it can **restore** — a later record reaching past its
+immediate predecessor back to the source. The ouroboros makes it concrete: carried
+intact into alchemy (0.90), worn to ornament in heraldry (0.55, the memory nearly
+lapsed), then restored by a modern reading that returns to the source (0.85). Decay
+is not destiny; a truth let slip can be recovered. This is the affirmative thesis at
+its fullest: a breath society's values survive the change in attention not by a
+single faithful carry but along a lineage that can, and sometimes does, find its way
+back. Descriptive, never a gate — it traces the transmission; it does not grade the
+tradition.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

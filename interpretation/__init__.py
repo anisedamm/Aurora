@@ -91,7 +91,7 @@ from .alignment import (
     RECOGNITION_THRESHOLD,
     CORROBORATION_TARGET,
 )
-from .memory import Remembrance, remember
+from .memory import Remembrance, remember, MemoryChain, MemoryLink, memory_chain
 from .imprint import Imprinter, ImprintReceipt, DEFAULT_AUTHOR
 from .manifest import build_manifest, write_manifest
 
@@ -166,6 +166,9 @@ __all__ = [
     # the return path (inverse of projection): remembrance across the ghost lag
     "Remembrance",
     "remember",
+    "MemoryChain",
+    "MemoryLink",
+    "memory_chain",
     # active recorder + publication
     "Imprinter",
     "ImprintReceipt",

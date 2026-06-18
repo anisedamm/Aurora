@@ -70,13 +70,13 @@ interpretation/
   glossary.py      # the authored map: concepts, attested usages (phonetic + conceptual)
   reading.py       # the three layers: attest (L1) / read (L2) / drift + project (L3)
   alignment.py     # purpose x fidelity (phonetic) / purpose x resonance (conceptual)
-  memory.py        # the return path: remember() — the inverse of phonetic projection
+  memory.py        # the return path: remember() + memory_chain() — inverse of projection
   imprint.py       # the active recorder (default author: anise.damm)
   manifest.py      # defensive-publication manifest
 glossary.json              # breath signs (labrys, ankh, ouroboros, myth) + pump words
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (84 tests)
+tests/                     # the suite (89 tests)
 ```
 
 ## Quickstart
@@ -202,6 +202,29 @@ When the carried field no longer resonates with the retained truth, the memory h
 *lapsed* — "a projection in disguise" — so the same number that scores a faithful
 return also catches a return that failed. Like every measure here but attestation, it
 is **descriptive, never a gate**: it measures the return; a human judges the memory.
+
+**The transmission lineage.** A truth is rarely carried in one hop. `chain` traces
+it through *successive* rememberings, reporting at each link its **to-origin**
+resonance (cumulative drift from the source truth) and its **to-prev** resonance (the
+faithfulness of that single hop), and marking whether the memory **decayed** or was
+**restored**:
+
+```
+$ python -m interpretation chain ouroboros
+memory chain of 'ouroboros': 3 remembering(s) over 3250 year(s); survival 0.85, low-water 0.55 (decayed then restored)
+   origin  ouroboros               to-origin 1.00  to-prev —
+      300  ouroboros-alchemy       to-origin 0.90  to-prev 0.90  [decayed -0.10]
+     1478  ouroboros-medieval      to-origin 0.55  to-prev 0.55  [decayed -0.35]
+     1950  ouroboros-jung          to-origin 0.85  to-prev 0.45  [restored +0.30]
+```
+
+The serpent's unity-of-opposites is carried faithfully into Greco-Egyptian alchemy,
+worn down to mere ornament in late-medieval heraldry, then **restored** by a modern
+reading that returns to the source. Restoration is real and measurable: a later
+record can recover a truth an earlier one let slip — which is how a breath society's
+values survive the great change in attention, not in one carry but down a lineage.
+This is the sibling system's `trace` (the thread of conclusions) turned on the return
+path. Descriptive, never a gate.
 
 ## The worked example: *revolution* (the pump-regime contrast)
 

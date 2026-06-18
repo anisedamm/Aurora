@@ -77,6 +77,30 @@
           "period": "c. 300 CE",
           "remembers": "ouroboros",
           "field": {"cyclical-unity": 0.35, "totality": 0.25, "eternity": 0.20, "paradoxical-equilibrium": 0.20}
+        },
+        {
+          "id": "ouroboros-medieval",
+          "word": "ouroboros",
+          "regime": "pump",
+          "mode": "phonetic",
+          "quotation": "the ouroboros borne upon the device, a serpent in a ring, token of an unending line",
+          "citation": "after late-medieval heraldry and emblem books",
+          "year": 1478,
+          "period": "late 15th c.",
+          "remembers": "ouroboros-alchemy",
+          "field": {"eternity": 0.40, "cyclical-unity": 0.35, "ornament": 0.25}
+        },
+        {
+          "id": "ouroboros-jung",
+          "word": "ouroboros",
+          "regime": "pump",
+          "mode": "phonetic",
+          "quotation": "the ouroboros, slaying and wedding and renewing itself, the One that is the All — a symbol of the integration of opposites",
+          "citation": "after Jung, on the ouroboros as a symbol of wholeness",
+          "year": 1950,
+          "period": "20th c.",
+          "remembers": "ouroboros",
+          "field": {"cyclical-unity": 0.30, "paradoxical-equilibrium": 0.25, "totality": 0.30, "eternity": 0.15}
         }
       ]
     },
