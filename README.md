@@ -70,12 +70,13 @@ interpretation/
   glossary.py      # the authored map: concepts, attested usages (phonetic + conceptual)
   reading.py       # the three layers: attest (L1) / read (L2) / drift + project (L3)
   alignment.py     # purpose x fidelity (phonetic) / purpose x resonance (conceptual)
+  memory.py        # the return path: remember() — the inverse of phonetic projection
   imprint.py       # the active recorder (default author: anise.damm)
   manifest.py      # defensive-publication manifest
 glossary.json              # breath signs (labrys, ankh, ouroboros, myth) + pump words
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (77 tests)
+tests/                     # the suite (84 tests)
 ```
 
 ## Quickstart
@@ -176,6 +177,31 @@ truth. A reading that imposes the phonetic mode forfeits all resonance — the
 published `MANIFEST.md` carries the labrys read faithfully (value `1.00`) beside a
 recorded *foil*, the labrys read as a syllable (value `0.00`, "phonetic
 projection"), so the evidence record shows the error being caught.
+
+### The return path: remembrance (the inverse of projection)
+
+Projection and remembrance both traverse the ghost lag, in opposite directions and
+with opposite valence. **Projection** drags the *present* mode of attention *back*
+over a *past* sign — an error, it imposes. **Remembrance** carries a *past*
+conceptual truth *forward* into a *later* record — a virtue, when faithful, it
+preserves. Myth is the paradigm: a pump-era text that keeps a breath-era truth alive
+across the threshold. `remember` scores how faithfully it does so — the resonance of
+what the record carries with what the culture retained, and the span it reached back:
+
+```
+$ python -m interpretation remember theogony
+REMEMBRANCE: theogony carries 'divine-order' back 2300 year(s) across the threshold
+  (resonance 0.85)  ->  a faithful remembrance: the breath-era truth is carried back intact
+
+$ python -m interpretation remember ouroboros-alchemy
+REMEMBRANCE: ouroboros-alchemy carries 'ouroboros' back 1600 year(s) across the threshold
+  (resonance 0.90)  ->  a faithful remembrance: the breath-era truth is carried back intact
+```
+
+When the carried field no longer resonates with the retained truth, the memory has
+*lapsed* — "a projection in disguise" — so the same number that scores a faithful
+return also catches a return that failed. Like every measure here but attestation, it
+is **descriptive, never a gate**: it measures the return; a human judges the memory.
 
 ## The worked example: *revolution* (the pump-regime contrast)
 

@@ -50,6 +50,7 @@ class Usage:
     field: dict = field(default_factory=dict)   # weighted conceptual field (conceptual usages)
     artifact: str = ""               # the material attestation (conceptual usages)
     committed_because: str = ""      # why it was worth translating into a lasting form
+    remembers: str = ""              # the return path: an earlier breath-truth this carries back
 
 
 @dataclass
@@ -63,6 +64,26 @@ class Concept:
     usages: dict[str, Usage] = field(default_factory=dict)
     regime: str = ""             # the dominant attention regime of the concept
     threshold: int | None = None  # the breath->pump year for this tradition (the ghost lag's edge)
+    retained: dict = field(default_factory=dict)  # the concept's retained conceptual truth (a weighted field)
+    year: int | None = None      # representative origin year of the breath-truth (BCE negative)
+
+    def retained_field(self) -> dict:
+        """The concept's retained conceptual truth: its declared field, or the field
+        of its first conceptual usage (so a symbol's truth is its attested field)."""
+        if self.retained:
+            return dict(self.retained)
+        for u in self.usages.values():
+            if u.field:
+                return dict(u.field)
+        return {}
+
+    def origin_year(self) -> int | None:
+        """When the breath-truth began: the declared year, else the earliest sense
+        or usage on record."""
+        if self.year is not None:
+            return self.year
+        years = [s.year for s in self.lattice.senses.values()] + [u.year for u in self.usages.values()]
+        return min(years) if years else None
 
     def usage(self, usage_id: str) -> Usage:
         if usage_id not in self.usages:
@@ -120,6 +141,7 @@ def from_mapping(raw: dict) -> Glossary:
                 field=dict(u.get("field", {})),
                 artifact=u.get("artifact", ""),
                 committed_because=u.get("committed_because", ""),
+                remembers=u.get("remembers", ""),
             )
             for u in c.get("usages", [])
         }
@@ -131,6 +153,8 @@ def from_mapping(raw: dict) -> Glossary:
             usages=usages,
             regime=c.get("regime", ""),
             threshold=c.get("threshold"),
+            retained=dict(c.get("retained", {})),
+            year=c.get("year"),
         )
     return Glossary(concepts=concepts, title=raw.get("title", ""), note=raw.get("note", ""))
 

@@ -65,6 +65,18 @@
           "period": "New Kingdom, c. 1330 BCE",
           "field": {"cyclical-unity": 0.35, "paradoxical-equilibrium": 0.30, "eternity": 0.20, "totality": 0.15},
           "committed_because": "to set down the wholeness of time's return — end as beginning — in a single form that a culture could carry across generations"
+        },
+        {
+          "id": "ouroboros-alchemy",
+          "word": "ouroboros",
+          "regime": "pump",
+          "mode": "phonetic",
+          "quotation": "the ouroboros, hen to pan — the one is the all — the serpent devouring and renewing itself end to end",
+          "citation": "the Greco-Egyptian alchemical corpus (the Chrysopoeia of Kleopatra)",
+          "year": 300,
+          "period": "c. 300 CE",
+          "remembers": "ouroboros",
+          "field": {"cyclical-unity": 0.35, "totality": 0.25, "eternity": 0.20, "paradoxical-equilibrium": 0.20}
         }
       ]
     },
@@ -74,6 +86,8 @@
       "gloss": "Myth read not as report but as memory: a remembered state-shift, embedded enough to keep its place, lifted up a ladder of abstraction — elemental forces, then primal powers, then ordered Olympians, then allegory — each form making the memory more transmissible.",
       "regime": "breath",
       "threshold": -700,
+      "year": -3000,
+      "retained": {"primal-powers": 0.30, "cosmic-order": 0.30, "succession": 0.25, "genesis-from-chaos": 0.15},
       "senses": [
         {"id": "elemental", "label": "the elements as living powers", "year": -3000, "period": "pre-literate", "regime": "breath", "gloss": "sky, earth, sea, storm attended as living forces — not yet persons, not yet named"},
         {"id": "primal", "label": "primal/chthonic powers, personified", "year": -1500, "period": "Bronze Age", "regime": "breath", "descends_from": ["elemental"], "shift": "abstraction", "gloss": "the older generation — Titans, chthonic powers — the forces given face and lineage"},
@@ -86,11 +100,13 @@
           "word": "Theogony",
           "regime": "pump",
           "mode": "phonetic",
-          "quotation": "Verily at the first Chaos came to be, and next wide-bosomed Earth, and Eros",
+          "quotation": "This Theogony sings how, at the first, Chaos came to be, and next wide-bosomed Earth, and the succession of the powers",
           "citation": "Hesiod, Theogony, c. 700 BCE",
           "year": -700,
           "period": "c. 700 BCE",
-          "committed_because": "to fix in lasting, phonetic form a breath-era memory of how the powers came to be — written down precisely at the threshold, so the memory would not be lost as the mode of attention changed"
+          "committed_because": "to fix in lasting, phonetic form a breath-era memory of how the powers came to be — written down precisely at the threshold, so the memory would not be lost as the mode of attention changed",
+          "remembers": "divine-order",
+          "field": {"genesis-from-chaos": 0.30, "primal-powers": 0.30, "cosmic-order": 0.25, "succession": 0.15}
         }
       ]
     },

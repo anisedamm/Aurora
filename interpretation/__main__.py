@@ -35,6 +35,7 @@ from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
 from .ledger import Ledger
 from .manifest import write_manifest
+from .memory import remember
 from .reading import attest, drift, project, read, read_symbol
 from .regime import SCRIPT_CONCEPTUAL, SCRIPT_PHONETIC
 from .weighting import WeightedField
@@ -157,6 +158,12 @@ def cmd_project(args: argparse.Namespace) -> int:
     usage = g.usage(args.usage)
     threshold = g.concept(usage.concept).threshold
     print(project(usage, SCRIPT_PHONETIC, threshold=threshold).verdict)
+    return 0
+
+
+def cmd_remember(args: argparse.Namespace) -> int:
+    g = _glossary(args)
+    print(remember(g.usage(args.usage), g).verdict)
     return 0
 
 
@@ -307,6 +314,9 @@ def build_parser() -> argparse.ArgumentParser:
     sp = sub.add_parser("weigh", help="show a conceptual sign's retained weighted field")
     sp.add_argument("usage")
 
+    sp = sub.add_parser("remember", help="the return path: how faithfully a later record carries an earlier truth back")
+    sp.add_argument("usage")
+
     sp = sub.add_parser("regime", help="show a concept's breath/pump threshold and which side each sense sits")
     sp.add_argument("concept")
 
@@ -358,6 +368,7 @@ _COMMANDS = {
     "drift": cmd_drift,
     "project": cmd_project,
     "weigh": cmd_weigh,
+    "remember": cmd_remember,
     "regime": cmd_regime,
     "sense": cmd_sense,
     "align": cmd_align,

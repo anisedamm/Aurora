@@ -262,6 +262,26 @@ read faithfully (resonance 1.0) beside a recorded *foil* (the labrys read as a
 syllable, resonance 0.0), so the evidence record shows the error being caught, never
 merely asserted.
 
+## Step 18 — The return path: remembrance, the inverse of projection
+
+Projection (Step 14) named the error — dragging the present mode of attention back
+over a past sign. But the ghost lag is crossed in *both* directions, and the other
+direction is not an error but the thing myth was *for*. **Remembrance** carries a
+breath-era truth *forward* into a later, pump-era record, and `memory.py` scores how
+faithfully: the resonance of what the record carries with what the culture retained,
+across the span of years it reaches back. The two are one structure, mirrored:
+projection imposes the present on the past (later→earlier, and false); remembrance
+preserves the past into the present (earlier→later, and true when it resonates). The
+same number does both jobs — a remembrance whose carried field no longer resonates
+with the retained truth has *lapsed*, "a projection in disguise," so the measure that
+honours a faithful memory also catches a memory that has failed. The *Theogony*,
+read as conceptual memory rather than literal genealogy, carries the cosmogonic
+succession back 2,300 years across the threshold (resonance 0.85); a Greco-Egyptian
+alchemical text carries the ouroboros 1,600 years (0.90). This is the affirmative
+half of the breath/pump thesis: the framework does not only catch the present read
+into the past — it can recognise the past faithfully kept, which is how a society
+retained its values across the great change in attention. Descriptive, never a gate.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

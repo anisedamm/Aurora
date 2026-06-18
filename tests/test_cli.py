@@ -76,6 +76,12 @@ def test_project_flags_the_ghost_lag(capsys):
     assert "PHONETIC PROJECTION" in out and "ghost lag" in out
 
 
+def test_remember_shows_the_return_path(capsys):
+    assert main(_g("remember", "theogony")) == 0
+    out = capsys.readouterr().out
+    assert "REMEMBRANCE" in out and "carries 'divine-order'" in out and "faithful" in out
+
+
 def test_regime_shows_the_threshold_and_sides(capsys):
     assert main(_g("regime", "divine-order")) == 0
     out = capsys.readouterr().out
