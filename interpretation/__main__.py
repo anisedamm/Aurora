@@ -41,6 +41,7 @@ from .manifest import write_manifest
 from .memory import confluence, memory_chain, remember
 from .reading import attest, drift, project, read, read_symbol
 from .regime import SCRIPT_CONCEPTUAL, SCRIPT_PHONETIC
+from .signal import compute_signal
 from .weighting import WeightedField
 
 DEFAULT_LEDGER = "interpretation_ledger.jsonl"
@@ -313,23 +314,38 @@ def cmd_verify(args: argparse.Namespace) -> int:
     return 1
 
 
+def cmd_signal(args: argparse.Namespace) -> int:
+    led = _ledger(args)
+    g = _glossary(args)
+    s = compute_signal(led, g, manifest_path=getattr(args, "manifest", None) or "MANIFEST.md")
+    print(s.summary)
+    return 0 if s.value else 1
+
+
 def cmd_status(args: argparse.Namespace) -> int:
     led = _ledger(args)
     v = led.verify()
     print("== interpretation status ==")
+    sig = None
+    try:
+        g = _glossary(args)
+        sig = compute_signal(led, g, manifest_path="MANIFEST.md")
+    except (OSError, ValueError):
+        g = None
+    if sig is not None:
+        print(f"  signal:   {sig.value}  ({'trustworthy backing' if sig.value else 'not yet trustworthy'})")
     print(f"  chain:    {'OK' if v.ok else 'BROKEN: ' + v.reason}")
     print(f"  records:  {v.n_records}")
     concepts = sorted({r.concept for r in led.records if r.concept})
     print(f"  concepts: {', '.join(concepts) or '—'}")
-    try:
-        g = _glossary(args)
+    if g is not None:
         attested = sum(1 for c in g.concepts.values() for u in c.usages.values() if attest(u).ok)
         total = sum(len(c.usages) for c in g.concepts.values())
         print(f"  glossary: {len(g.concepts)} concept(s), {attested}/{total} usage(s) attested")
-    except (OSError, ValueError) as exc:
-        print(f"  glossary: (not loaded: {exc})")
+    else:
+        print("  glossary: (not loaded)")
     print(f"  head:     {led.head_hash[:12]}...")
-    return 0 if v.ok else 1
+    return 0 if (v.ok and (sig is None or sig.value)) else 1
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -417,8 +433,11 @@ def build_parser() -> argparse.ArgumentParser:
     sp = sub.add_parser("manifest", help="publish the ledger as a defensive-publication manifest")
     sp.add_argument("--out", default="MANIFEST.md")
 
+    sp = sub.add_parser("signal", help="the one verdict: signal = integrity x direction(truth)")
+    sp.add_argument("--manifest", help="manifest path (default MANIFEST.md)")
+
     sub.add_parser("verify", help="recompute the chain; any edit breaks it")
-    sub.add_parser("status", help="one screen: chain, records, glossary")
+    sub.add_parser("status", help="one screen: signal, chain, records, glossary")
     return p
 
 
@@ -442,6 +461,7 @@ _COMMANDS = {
     "align": cmd_align,
     "imprint": cmd_imprint,
     "manifest": cmd_manifest,
+    "signal": cmd_signal,
     "verify": cmd_verify,
     "status": cmd_status,
 }

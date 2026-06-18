@@ -391,6 +391,24 @@ over millennia, back up toward the inner life (segmentation → re-coherence). T
 lag is not only a loss to guard against; it is also the long climb by which a
 segmenting tongue earns its way back to wholeness. Descriptive, never a gate.
 
+## Step 24 — The capstone: the framework's signal on itself, and the arc closed
+
+The project began at the sibling *integrity-alignment-system*, whose one verdict is
+`signal = alignment(integrity) x direction(truth)`. This step earns the same verdict
+here, and so closes the circle. `signal.py` asks two questions of the framework's own
+record and multiplies them, a product so that either factor at zero zeros the whole.
+**Integrity**: is the record sound — the chain intact, the published manifest still
+committing to the current ledger? **Direction(truth)**: is it pointed at the truth —
+every reading grounded in a sign that passes attestation, every record naming its
+author and provenance? When both hold, the backing is what it set out to be, and CI
+proves `signal == 1` on every push. The one subtlety is the one that matters: the
+recorded projection foil (the labrys read phonetically) does *not* lower the signal -
+it is grounded and attributed, and the framework correctly reads its alignment as
+zero. A named error is the system working, not a break, exactly as a retraction is
+standing in the sibling. So the framework holds itself to the discipline it holds
+everything else to: it does not exempt its own record from the gap it was built to
+keep honest. That is the whole spine, turned last upon itself.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

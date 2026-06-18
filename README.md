@@ -74,13 +74,14 @@ interpretation/
   constellation.py # the system-level web: which values were load-bearing across a regime
   migration.py     # a value across the threshold: held whole, then dispersed into lexemes
   lexicon.py       # phonetic language over time: the explosion, sieve->success, coherence
+  signal.py        # the capstone: signal = integrity x direction(truth) — the record on itself
   imprint.py       # the active recorder (default author: anise.damm)
   manifest.py      # defensive-publication manifest
 glossary.json              # breath signs + pump words + value_aliases + migrations
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (113 tests)
+tests/                     # the suite (120 tests)
 ```
 
 ## Quickstart
@@ -520,6 +521,36 @@ the one honest gate, attestation; the authored map carries its provenance and is
 never mistaken for the subject; and no reading is ever blocked from being recorded.
 It guards the reading and the usage — it does not decide what the word *truly*
 meant. That is the human's work, which no system should pretend to do for them.
+
+## The capstone: signal = integrity × direction(truth)
+
+The framework turns its discipline on itself, exactly as the sibling system does. One
+verdict, a **product** — either factor at zero zeros it, because a failsafe is
+trustworthy or it is not:
+
+```
+$ python -m interpretation signal
+signal = integrity(1) x direction(truth)(1) = 1  ->  a trustworthy backing for the interpretation of conceptual history
+  integrity = 1
+    chain:    OK
+    manifest: OK (head still commits to the ledger)
+  direction(truth) = 1
+    grounded:   OK (every reading rests on an attested sign)
+    provenance: OK (every record names author and source)
+```
+
+- **integrity** — the record is *sound*: the hash chain verifies (no reading altered
+  or reordered) and the published manifest is *fresh* (its head still commits to the
+  current ledger).
+- **direction(truth)** — the record is *pointed at the truth*: every reading is
+  grounded in a sign that passes L1 attestation, and every record names its author and
+  provenance.
+
+A recorded *projection* — the labrys read phonetically, kept as a named foil — does
+**not** lower the signal: it is grounded and attributed, and the framework correctly
+reads its alignment as zero. That is the system working, the way a retraction is
+standing, not a break. CI runs `signal` on every push, so the repository proves its own
+`signal == 1`. This closes the arc back to the sibling the framework was born from.
 
 ## Relationship to `integrity-alignment-system`
 

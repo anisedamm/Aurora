@@ -124,6 +124,13 @@ def test_untranslatables_lists_single_tongue_concepts(capsys):
     assert "hygge" in out and "Danish" in out
 
 
+def test_signal_reports_the_one_verdict(capsys):
+    rc = main(["signal"])
+    out = capsys.readouterr().out
+    assert "signal = integrity" in out
+    assert rc == 0 and "= 1" in out and "trustworthy backing" in out
+
+
 def test_regime_shows_the_threshold_and_sides(capsys):
     assert main(_g("regime", "divine-order")) == 0
     out = capsys.readouterr().out

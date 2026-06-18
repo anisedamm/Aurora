@@ -44,5 +44,6 @@ jobs:
 
       - name: Ledger integrity self-check
         run: |
-          python -m interpretation verify    # the readings chain is untampered
-          python -m interpretation status     # one screen: chain, records, attestation
+          python -m interpretation verify     # the readings chain is untampered
+          python -m interpretation signal      # signal = integrity x direction(truth) == 1
+          python -m interpretation status      # one screen (exit 0 iff signal == 1)

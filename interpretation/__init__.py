@@ -125,6 +125,7 @@ from .lexicon import (
 )
 from .imprint import Imprinter, ImprintReceipt, DEFAULT_AUTHOR
 from .manifest import build_manifest, write_manifest
+from .signal import Signal, compute_signal
 
 __all__ = [
     # fingerprinting
@@ -232,4 +233,7 @@ __all__ = [
     "DEFAULT_AUTHOR",
     "build_manifest",
     "write_manifest",
+    # the capstone: signal = integrity x direction(truth)
+    "Signal",
+    "compute_signal",
 ]
