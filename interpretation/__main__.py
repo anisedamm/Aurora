@@ -38,6 +38,7 @@ from .constellation import constellation
 from .cornerstone import cornerstones
 from .dimension import meaning_space
 from .dimensionless import dimensionless, load_invariants
+from .fold import fold, folding, DEFAULT_TRUTH_THRESHOLD
 from .frontier import frontier
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
@@ -289,6 +290,21 @@ def cmd_dimensions(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_fold(args: argparse.Namespace) -> int:
+    lex = _lexicon(args)
+    threshold = getattr(args, "threshold", None) or DEFAULT_TRUTH_THRESHOLD
+    if args.concept:
+        print(fold(args.concept, lex, threshold=threshold).summary)
+        return 0
+    rel = None
+    try:
+        rel = _relations(args)
+    except (OSError, ValueError):
+        pass  # the fold strata read without the weave audit
+    print(folding(lex, rel, threshold=threshold).summary)
+    return 0
+
+
 def cmd_dimensionless(args: argparse.Namespace) -> int:
     invariants = load_invariants(getattr(args, "invariants", None) or DEFAULT_INVARIANTS)
     print(dimensionless(invariants, _glossary(args), _lexicon(args)).summary)
@@ -502,6 +518,10 @@ def build_parser() -> argparse.ArgumentParser:
 
     sub.add_parser("dimensions", help="the tree as a system: conveyance (symbol/story/word) × culture × time × depth — dimensional meaning")
 
+    sp = sub.add_parser("fold", help="corroborating layers of depth: a concept is deemed true (and woveable) by folding deep enough")
+    sp.add_argument("concept", nargs="?", help="a concept to fold (omit for the whole tree + weave audit)")
+    sp.add_argument("--threshold", type=int, help=f"truth threshold in layers (default {DEFAULT_TRUTH_THRESHOLD})")
+
     sub.add_parser("dimensionless", help="meaning that may outlast time: invariants proposed as universal truth, and the gap the record cannot cross")
 
     sp = sub.add_parser("arc", help="one value traced unbroken across both regimes: breath sign -> dispersal -> re-coherence")
@@ -576,6 +596,7 @@ _COMMANDS = {
     "frontier": cmd_frontier,
     "cornerstones": cmd_cornerstones,
     "dimensions": cmd_dimensions,
+    "fold": cmd_fold,
     "dimensionless": cmd_dimensionless,
     "arc": cmd_arc,
     "atlas": cmd_atlas,

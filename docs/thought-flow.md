@@ -645,6 +645,41 @@ record's integrity, the dimensionless turns it on the record's *reach* — and f
 truth a proxy can never become a proof of. Descriptive, never a gate; here, for the first
 and only time, not even measurable. The honest end of an honest framework.
 
+## Step 33 — Folding: corroborating depth, the threshold of truth, and the order before the weave
+
+A gap the earlier steps left open: `condensation` (Step 27) gathered meaning *laterally* —
+the field on the bit — and `weave` (Step 28) connected concepts into the relational web,
+but nothing said *what earns a concept its place in that web*. The missing motion is
+**folding**: meaning accreted not in breadth but in **depth** — layer on layer of
+corroborating grounding, each resting on established truth beneath it. Condensation is
+breadth (how much associated sense rides on a distinction); folding is depth (how many
+strata of already-established meaning a concept rests on, down to the given base). The two
+are orthogonal, and the framework had only the first.
+
+The load-bearing claim is a **precedence**: a concept cannot legitimately be **woven**
+until it has **folded deep enough to be deemed true**. So the order the whole framework
+tacitly runs on becomes explicit — *attest → condense → fold → weave* — with folding the
+step that turns accumulated depth into the right to be related as a truth. `fold.py` reads
+each concept's fold-depth (the longest chain of grounding beneath it, 0 at the cornerstones)
+and sorts the tree into three states: **given** (depth 0 — an axiom, true without folding:
+a cornerstone like *fire*, or an a-priori distinction like *true*; woveable as the ground,
+not by earning), **folding** (below the truth threshold — gaining depth but not yet true,
+like *season* or *hygge*; not yet woveable), and **deemed-true** (at or above the threshold
+— folded enough to be held true and admitted to the weave: *justice* at four layers, up to
+*wellbeing* and *alienation* at six).
+
+Two things make it more than a relabelling of depth. First, it **audits the weave**: every
+substantive woven term in the relations map has either folded to truth or is a given axiom,
+so the web rests on earned depth — and raising the threshold surfaces *justice*, *self*,
+*soul* as **provisional** (woven before they folded that deep), surfaced and named, never
+silently blocked, exactly as the projection foil is kept standing rather than hidden.
+Second, it closes the framework's shape: folding is the depth-wise twin of condensation's
+breadth, the cornerstone (Step 30) is where folding bottoms out (the given base every fold
+rests on), and the frontier word *hygge* is revealed as singular and reaching yet folded
+only one layer — at the edge, but not yet deemed true. The threshold is an authored proxy
+for "deep enough to corroborate," not a proof of truth; folding *reports* where a
+connection outran its grounding. Descriptive, never a gate.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

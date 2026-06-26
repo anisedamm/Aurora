@@ -130,6 +130,17 @@ from .condensation import (
 from .weave import Couple, Node, Weave, weave
 from .frontier import Frontier, FrontierWord, frontier
 from .cornerstone import Cornerstones, CornerstoneWord, cornerstones
+from .fold import (
+    Fold,
+    Folding,
+    Layer,
+    fold,
+    folding,
+    GIVEN,
+    FOLDING,
+    DEEMED_TRUE,
+    DEFAULT_TRUTH_THRESHOLD,
+)
 from .dimension import Axis, MeaningSpace, meaning_space, SYMBOL, STORY, WORD
 from .dimensionless import (
     Invariant,
@@ -275,6 +286,16 @@ __all__ = [
     "Cornerstones",
     "CornerstoneWord",
     "cornerstones",
+    # folding: corroborating layers of depth, until a concept is deemed true (and woveable)
+    "Fold",
+    "Folding",
+    "Layer",
+    "fold",
+    "folding",
+    "GIVEN",
+    "FOLDING",
+    "DEEMED_TRUE",
+    "DEFAULT_TRUTH_THRESHOLD",
     # dimensional meaning: the tree as a system of axes (conveyance × culture × time × depth)
     "Axis",
     "MeaningSpace",

@@ -74,6 +74,7 @@ interpretation/
   constellation.py # the system-level web: which values were load-bearing across a regime
   migration.py     # a value across the threshold: held whole, then dispersed into lexemes
   condensation.py  # binary thought (compression) vs relational meaning (condensation): the bit + its field
+  fold.py          # corroborating layers of depth: a concept is deemed true (and woveable) by folding deep enough
   weave.py         # the antonym couples as one web: root couples, the branching hubs, the keystone word
   frontier.py      # the leaf-edge of the tree: unpolarised, singular, experiential words at the frontier
   cornerstone.py   # the root-base of the tree: innate, self-standing words built on nothing (frontier's dual)
@@ -91,7 +92,7 @@ invariants.json            # proposed invariants — claims of universal truth (
 relations.json             # the authored map of meaning-connections (antonyms + synonyms)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (173 tests)
+tests/                     # the suite (181 tests)
 ```
 
 ## Quickstart
@@ -398,6 +399,54 @@ ASSOCIATED: freedom … wellbeing — connected by a shared field (overlap 0.60)
 The relations are an **authored map** (`relations.json`), a proxy carrying its
 provenance, not a real thesaurus; the compounding is read from the lexicon. As ever,
 descriptive, never a gate.
+
+### Folding: corroborating depth, until a concept is deemed true
+
+Condensation gathers meaning *laterally* — the field on the bit. But meaning is also
+**folded** *vertically*: layer on layer of **corroborating depth**, each resting on
+established truth beneath it, until a concept has gathered enough depth to be **deemed
+true**. And folding has **precedence over weaving** — a concept cannot legitimately enter
+the relational web until it has folded deep enough to cross the **truth threshold**. The
+order the framework runs on, made explicit at last:
+
+> **attest → condense → fold** (gain corroborating depth to be deemed true) **→ weave**
+
+```
+$ python -m interpretation fold justice
+DEEMED TRUE: 'justice' folded 4 layers of depth (8 corroborating concept(s)) — truth earned, woveable
+    the given base fire, kin, water
+    fold 1         boundary, season, seed
+    fold 2         harvest
+    fold 3         debt
+
+$ python -m interpretation fold
+folding (truth threshold 3): 4 given, 6 folding, 17 deemed true; the weave is legitimate
+  given (axioms, true without folding): danger, fire, kin, water
+  folding (gaining depth, not yet truth): harvest, time, boundary, hygge, season, seed
+  deemed true (folded ≥ 3, woveable): justice, freedom, self, soul, wellbeing, alienation, …
+  every woven concept is folded to truth or given — the weave rests on earned depth.
+```
+
+Three states fall out, by fold-depth (the corroborating layers beneath a concept, down to
+the given base):
+
+- **given** — depth 0: an *axiom*. A cornerstone (*fire*, *kin*) or an a-priori
+  distinction (*true*, *signal*): true without folding, because it is what folding rests
+  on. Woveable as the ground, not by earning depth.
+- **folding** — below the threshold: meaning is accruing layers but has *not yet* been
+  deemed true (*season*, *hygge*). It cannot yet be woven; a connection drawn to it is
+  **provisional**.
+- **deemed-true** — at or above the threshold: folded enough to be held as true, and so
+  admissible to the weave. Truth earned by depth — *justice* (4 layers), up to *wellbeing*
+  and *alienation* (6).
+
+Crucially, `fold` **audits the weave**: every substantive woven term has either folded to
+truth or is a given axiom, so the web rests on earned depth. Raise the bar
+(`fold --threshold 5`) and *justice*, *self*, *soul* turn **provisional** — woven before
+they were folded that deep — surfaced, never silently blocked. (Note *hygge*, a frontier
+word: singular and reaching, yet folded only one layer — at the edge, but not yet deemed
+true.) Depth corroborates; breadth condenses; the threshold is an authored proxy.
+Descriptive, never a gate.
 
 ### The weave: the antonym couples as one relational web
 
