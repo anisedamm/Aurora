@@ -111,6 +111,68 @@ from .constellation import (
     AFFINITY_THRESHOLD,
 )
 from .migration import Migration, Shard, migrate
+from .condensation import (
+    Term,
+    Relations,
+    load_relations,
+    Condensation,
+    condense,
+    Connection,
+    connect,
+    RELATION_ANTONYM,
+    RELATION_SYNONYM,
+    RELATION_ASSOCIATE,
+    RELATION_NONE,
+    KIND_BIT,
+    KIND_CONDENSED,
+    KIND_UNPOLARISED,
+)
+from .weave import Couple, Node, Weave, weave
+from .frontier import Frontier, FrontierWord, frontier
+from .cornerstone import Cornerstones, CornerstoneWord, cornerstones
+from .fold import (
+    Fold,
+    Folding,
+    Layer,
+    fold,
+    folding,
+    GIVEN,
+    FOLDING,
+    DEEMED_TRUE,
+    DEFAULT_TRUTH_THRESHOLD,
+)
+from .tension import (
+    Tension,
+    Tensions,
+    HeldParadox,
+    tension,
+    tensions,
+    HELD,
+    EXCLUDED,
+    SEGMENTED,
+    OPPOSED,
+    NEUTRAL,
+    SYNCHRONIC,
+    DIACHRONIC,
+)
+from .gradient import (
+    Gradient,
+    Gradients,
+    Step,
+    load_gradients,
+    find_gradient,
+    read_gradients,
+)
+from .dimension import Axis, MeaningSpace, meaning_space, SYMBOL, STORY, WORD
+from .dimensionless import (
+    Invariant,
+    Dimensionless,
+    Dimensionlessness,
+    load_invariants,
+    dimensionless,
+    KIND_APRIORI,
+    KIND_MANIFEST,
+)
 from .lexicon import (
     Lexeme,
     Lexicon,
@@ -218,6 +280,79 @@ __all__ = [
     "Migration",
     "Shard",
     "migrate",
+    # condensation: binary thought (compression) vs relational meaning (condensation)
+    "Term",
+    "Relations",
+    "load_relations",
+    "Condensation",
+    "condense",
+    "Connection",
+    "connect",
+    "RELATION_ANTONYM",
+    "RELATION_SYNONYM",
+    "RELATION_ASSOCIATE",
+    "RELATION_NONE",
+    "KIND_BIT",
+    "KIND_CONDENSED",
+    "KIND_UNPOLARISED",
+    # the weave: paired antonym couples as one relational web (roots, hubs, keystone)
+    "Couple",
+    "Node",
+    "Weave",
+    "weave",
+    # the frontier: meaning at the leaf-edge of the tree (unpolarised, singular, reaching)
+    "Frontier",
+    "FrontierWord",
+    "frontier",
+    # the cornerstones: meaning at the root-base of the tree (innate, self-standing roots)
+    "Cornerstones",
+    "CornerstoneWord",
+    "cornerstones",
+    # folding: corroborating layers of depth, until a concept is deemed true (and woveable)
+    "Fold",
+    "Folding",
+    "Layer",
+    "fold",
+    "folding",
+    "GIVEN",
+    "FOLDING",
+    "DEEMED_TRUE",
+    "DEFAULT_TRUTH_THRESHOLD",
+    # tension: held opposite (paradox) vs excluded opposite (binary), and segmentation between
+    "Tension",
+    "Tensions",
+    "HeldParadox",
+    "tension",
+    "tensions",
+    "HELD",
+    "EXCLUDED",
+    "SEGMENTED",
+    "OPPOSED",
+    "NEUTRAL",
+    "SYNCHRONIC",
+    "DIACHRONIC",
+    # proportion: the gradient of degrees between two opposed poles
+    "Gradient",
+    "Gradients",
+    "Step",
+    "load_gradients",
+    "find_gradient",
+    "read_gradients",
+    # dimensional meaning: the tree as a system of axes (conveyance × culture × time × depth)
+    "Axis",
+    "MeaningSpace",
+    "meaning_space",
+    "SYMBOL",
+    "STORY",
+    "WORD",
+    # the dimensionless: invariants proposed as universal truth, and the unattestable gap
+    "Invariant",
+    "Dimensionless",
+    "Dimensionlessness",
+    "load_invariants",
+    "dimensionless",
+    "KIND_APRIORI",
+    "KIND_MANIFEST",
     # the lexicon over time: phonetic language as the record of growing understanding
     "Lexeme",
     "Lexicon",

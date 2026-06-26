@@ -33,7 +33,15 @@ from pathlib import Path
 from .alignment import align_record
 from .arc import arc
 from .atlas import atlas
+from .condensation import condense, connect, load_relations
 from .constellation import constellation
+from .cornerstone import cornerstones
+from .dimension import meaning_space
+from .dimensionless import dimensionless, load_invariants
+from .fold import fold, folding, DEFAULT_TRUTH_THRESHOLD
+from .frontier import frontier
+from .gradient import find_gradient, load_gradients, read_gradients
+from .tension import tension, tensions
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
 from .lexicon import load_lexicon, proliferation, untranslatables
@@ -44,11 +52,15 @@ from .memory import confluence, memory_chain, remember
 from .reading import attest, drift, project, read, read_symbol
 from .regime import SCRIPT_CONCEPTUAL, SCRIPT_PHONETIC
 from .signal import compute_signal
+from .weave import weave
 from .weighting import WeightedField
 
 DEFAULT_LEDGER = "interpretation_ledger.jsonl"
 DEFAULT_GLOSSARY = "glossary.json"
 DEFAULT_LEXICON = "lexicon.json"
+DEFAULT_RELATIONS = "relations.json"
+DEFAULT_INVARIANTS = "invariants.json"
+DEFAULT_GRADIENTS = "gradients.json"
 
 
 def _glossary(args: argparse.Namespace):
@@ -57,6 +69,10 @@ def _glossary(args: argparse.Namespace):
 
 def _lexicon(args: argparse.Namespace):
     return load_lexicon(getattr(args, "lexicon", None) or DEFAULT_LEXICON)
+
+
+def _relations(args: argparse.Namespace):
+    return load_relations(getattr(args, "relations", None) or DEFAULT_RELATIONS)
 
 
 def _ledger(args: argparse.Namespace) -> Ledger:
@@ -214,8 +230,144 @@ def cmd_arc(args: argparse.Namespace) -> int:
 
 def cmd_atlas(args: argparse.Namespace) -> int:
     led = _ledger(args)
-    print(atlas(led, _glossary(args), _lexicon(args),
+    rel = invs = None
+    try:
+        rel = _relations(args)
+    except (OSError, ValueError):
+        pass  # the meaning-tree web/edges fold in only when the relations map is present
+    try:
+        invs = load_invariants(getattr(args, "invariants", None) or DEFAULT_INVARIANTS)
+    except (OSError, ValueError):
+        pass  # the dimensionless line folds in only when the invariants map is present
+    grads = None
+    try:
+        grads = load_gradients(getattr(args, "gradients", None) or DEFAULT_GRADIENTS)
+    except (OSError, ValueError):
+        pass  # the proportion line folds in only when the gradients map is present
+    print(atlas(led, _glossary(args), _lexicon(args), relations=rel, invariants=invs,
+                gradients=grads,
                 manifest_path=getattr(args, "manifest", None) or "MANIFEST.md").summary)
+    return 0
+
+
+def cmd_condense(args: argparse.Namespace) -> int:
+    rel = _relations(args)
+    lex = None
+    try:
+        lex = _lexicon(args)
+    except (OSError, ValueError):
+        pass  # the binary/field reading stands without the compounding web
+    print(condense(args.term, rel, lex).summary)
+    return 0
+
+
+def cmd_connect(args: argparse.Namespace) -> int:
+    rel = _relations(args)
+    lex = None
+    try:
+        lex = _lexicon(args)
+    except (OSError, ValueError):
+        pass
+    print(connect(args.a, args.b, rel, lex).summary)
+    return 0
+
+
+def cmd_weave(args: argparse.Namespace) -> int:
+    rel = _relations(args)
+    lex = None
+    try:
+        lex = _lexicon(args)
+    except (OSError, ValueError):
+        pass  # the couples and branches read without the compounding web
+    print(weave(rel, lex).summary)
+    return 0
+
+
+def cmd_frontier(args: argparse.Namespace) -> int:
+    rel = None
+    try:
+        rel = _relations(args)
+    except (OSError, ValueError):
+        pass  # the tree's leaves read without the polarity/synonymy map
+    print(frontier(_lexicon(args), rel).summary)
+    return 0
+
+
+def cmd_cornerstones(args: argparse.Namespace) -> int:
+    rel = None
+    try:
+        rel = _relations(args)
+    except (OSError, ValueError):
+        pass  # the tree's roots read without the self-standing check
+    print(cornerstones(_lexicon(args), rel).summary)
+    return 0
+
+
+def cmd_dimensions(args: argparse.Namespace) -> int:
+    print(meaning_space(_glossary(args), _lexicon(args)).summary)
+    return 0
+
+
+def cmd_fold(args: argparse.Namespace) -> int:
+    lex = _lexicon(args)
+    threshold = getattr(args, "threshold", None) or DEFAULT_TRUTH_THRESHOLD
+    if args.concept:
+        print(fold(args.concept, lex, threshold=threshold).summary)
+        return 0
+    rel = None
+    try:
+        rel = _relations(args)
+    except (OSError, ValueError):
+        pass  # the fold strata read without the weave audit
+    print(folding(lex, rel, threshold=threshold).summary)
+    return 0
+
+
+def cmd_gradient(args: argparse.Namespace) -> int:
+    grads = load_gradients(getattr(args, "gradients", None) or DEFAULT_GRADIENTS)
+    if args.axis:
+        g, focus = find_gradient(args.axis, grads)
+        if g is not None:
+            print(g.summary(focus=focus))
+            return 0
+        # not a gradient — is it a bare binary (a bit) from the relations map?
+        try:
+            rel = _relations(args)
+        except (OSError, ValueError):
+            rel = None
+        if rel is not None and rel.known(args.axis) and rel.antonyms_of(args.axis):
+            poles = "|".join((args.axis, *rel.antonyms_of(args.axis)))
+            print(f"BINARY: '{poles}' — no gradient on record: an axis collapsed to its two "
+                  "poles (the bit), no proportion between")
+            return 0
+        print(f"no gradient or axis on record for {args.axis!r}", file=sys.stderr)
+        return 1
+    rel = None
+    try:
+        rel = _relations(args)
+    except (OSError, ValueError):
+        pass  # the bare-binary contrast reads only with the relations map
+    print(read_gradients(grads, rel).summary)
+    return 0
+
+
+def cmd_tension(args: argparse.Namespace) -> int:
+    g = _glossary(args)
+    rel = None
+    try:
+        rel = _relations(args)
+    except (OSError, ValueError):
+        pass  # the held paradoxes read without the binary contrast
+    if args.concept:
+        print(tension(args.concept, g, rel).summary)
+        return 0
+    print(tensions(g, rel).summary)
+    return 0
+
+
+def cmd_dimensionless(args: argparse.Namespace) -> int:
+    invariants = load_invariants(getattr(args, "invariants", None) or DEFAULT_INVARIANTS)
+    print(dimensionless(invariants, _glossary(args), _lexicon(args)).summary)
     return 0
 
 
@@ -367,6 +519,8 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--ledger", help=f"ledger path (default {DEFAULT_LEDGER})")
     p.add_argument("--glossary", help=f"glossary path (default {DEFAULT_GLOSSARY})")
     p.add_argument("--lexicon", help=f"lexicon path (default {DEFAULT_LEXICON})")
+    p.add_argument("--relations", help=f"relations map path (default {DEFAULT_RELATIONS})")
+    p.add_argument("--invariants", help=f"invariants map path (default {DEFAULT_INVARIANTS})")
     sub = p.add_subparsers(dest="command", required=True)
 
     sub.add_parser("concepts", help="list the concepts in the glossary")
@@ -408,6 +562,33 @@ def build_parser() -> argparse.ArgumentParser:
 
     sub.add_parser("proliferation", help="the explosion of phonetic language: the sieve->success climb and coherence over time")
     sub.add_parser("untranslatables", help="concepts a single tongue valued enough to name (differential lexicalisation)")
+
+    sp = sub.add_parser("condense", help="a term's binary pole (compression) vs the field condensed on it (condensation)")
+    sp.add_argument("term")
+
+    sp = sub.add_parser("connect", help="the meaning-connection between two terms: antonym (binary axis) or synonym (condensed)")
+    sp.add_argument("a")
+    sp.add_argument("b")
+
+    sub.add_parser("weave", help="the antonym web: root couples, the most-branching hubs, and the keystone defining word")
+
+    sub.add_parser("frontier", help="the leaf-edge of the tree: unpolarised, singular, experiential words at the frontier of comprehension")
+
+    sub.add_parser("cornerstones", help="the root-base of the tree: innate, self-standing words built on nothing — where depth begins")
+
+    sub.add_parser("dimensions", help="the tree as a system: conveyance (symbol/story/word) × culture × time × depth — dimensional meaning")
+
+    sp = sub.add_parser("fold", help="corroborating layers of depth: a concept is deemed true (and woveable) by folding deep enough")
+    sp.add_argument("concept", nargs="?", help="a concept to fold (omit for the whole tree + weave audit)")
+    sp.add_argument("--threshold", type=int, help=f"truth threshold in layers (default {DEFAULT_TRUTH_THRESHOLD})")
+
+    sp = sub.add_parser("tension", help="held opposite (paradox) vs excluded opposite (binary): the breath holds, the bit excludes, the pump segments")
+    sp.add_argument("concept", nargs="?", help="a concept to read (omit for the whole corpus's stances)")
+
+    sp = sub.add_parser("gradient", help="the proportional scale of degrees between two poles (the 'proportional' meant thought)")
+    sp.add_argument("axis", nargs="?", help="a gradient id or a term on it (omit for the whole proportional picture)")
+
+    sub.add_parser("dimensionless", help="meaning that may outlast time: invariants proposed as universal truth, and the gap the record cannot cross")
 
     sp = sub.add_parser("arc", help="one value traced unbroken across both regimes: breath sign -> dispersal -> re-coherence")
     sp.add_argument("value")
@@ -475,6 +656,16 @@ _COMMANDS = {
     "migrate": cmd_migrate,
     "proliferation": cmd_proliferation,
     "untranslatables": cmd_untranslatables,
+    "condense": cmd_condense,
+    "connect": cmd_connect,
+    "weave": cmd_weave,
+    "frontier": cmd_frontier,
+    "cornerstones": cmd_cornerstones,
+    "dimensions": cmd_dimensions,
+    "fold": cmd_fold,
+    "tension": cmd_tension,
+    "gradient": cmd_gradient,
+    "dimensionless": cmd_dimensionless,
     "arc": cmd_arc,
     "atlas": cmd_atlas,
     "regime": cmd_regime,

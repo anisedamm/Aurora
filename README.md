@@ -73,17 +73,30 @@ interpretation/
   memory.py        # the return path: remember() / memory_chain() / confluence()
   constellation.py # the system-level web: which values were load-bearing across a regime
   migration.py     # a value across the threshold: held whole, then dispersed into lexemes
+  condensation.py  # binary thought (compression) vs relational meaning (condensation): the bit + its field
+  tension.py       # holding the opposite (paradox) vs excluding it (binary): breath holds, bit excludes, pump segments
+  gradient.py      # proportion: the scale of degrees between two poles (relational/proportional/associated — the third)
+  fold.py          # corroborating layers of depth: a concept is deemed true (and woveable) by folding deep enough
+  weave.py         # the antonym couples as one web: root couples, the branching hubs, the keystone word
+  frontier.py      # the leaf-edge of the tree: unpolarised, singular, experiential words at the frontier
+  cornerstone.py   # the root-base of the tree: innate, self-standing words built on nothing (frontier's dual)
+  dimension.py     # the tree as a system: conveyance (symbol/story/word) × culture × time × depth
+  dimensionless.py # meaning that may outlast time: invariants proposed as universal truth, and the unattestable gap
   lexicon.py       # phonetic language over time: the explosion, sieve->success, coherence
   arc.py           # one thread traced unbroken across both regimes (migrate + proliferation)
   signal.py        # the capstone: signal = integrity x direction(truth) — the record on itself
   atlas.py         # the whole history of meaning composed on one screen (a reader, not a ruler)
   imprint.py       # the active recorder (default author: anise.damm)
   manifest.py      # defensive-publication manifest
-glossary.json              # breath signs + pump words + value_aliases + migrations
+glossary.json              # breath signs + pump words + value_aliases + migrations + paradoxes
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
+invariants.json            # proposed invariants — claims of universal truth (the dimensionless)
+gradients.json             # authored gradients — the proportional scale between two poles
+relations.json             # the authored map of meaning-connections (antonyms + synonyms)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (127 tests)
+docs/architecture.md       # the map of the whole: pillars, dependency tiers, the reading arc
+tests/                     # the suite (199 tests)
 ```
 
 ## Quickstart
@@ -328,6 +341,437 @@ keeping a shard, all dropping the *paradox* of opposites-held-as-one that made i
 glossary) — a proxy reading of the redistribution, surfaced in the map, not a claim of
 strict etymology. Holism becomes segmentation, and you can watch it happen,
 value by value.
+
+## Binary and relational meaning: compression vs condensation
+
+Beneath every sign, breath or pump, lies the bare unit of natural computing: the
+**bit**. Information reads `0` or `1` — *yes/no*, *signal/noise*, *true/false*,
+*right/wrong*. A bit is a **pure distinction**: it separates two states and carries
+nothing else. That is **compression** — meaning squeezed to the single yes/no that
+transmits with perfect fidelity, fixed, singular, exact, and empty of all but the cut.
+
+Human thought is built on the same distinction — a word draws a boundary, and its
+sharpest form is the **antonym**, the pole it stands against. So a word is *binary in
+structure*: under it lies the one bit. But a word does not stop at the cut. Onto that
+binary skeleton it **condenses** an associated field — its **synonyms** and its
+connections to other concepts — so the fixed bit takes on a relational, proportional,
+*meant* content the bit alone can never hold. **Condensation** is the opposite gesture
+to compression: not the loss-less squeezing of meaning into one bit, but the accretion
+of associated sense *around* a distinction, so one token carries far more than one bit.
+
+```
+$ python -m interpretation condense signal
+BIT: 'signal' is pure compression — the distinction signal|noise, one bit, no field condensed upon it
+  compression (the bit): 1  [pole(s): noise]
+  condensation (meaning on the bit): 0
+
+$ python -m interpretation condense justice
+CONDENSED: 'justice' keeps the bit (justice|injustice) and condenses 14 meaning(s) upon it (ratio 14:1)
+  compression (the bit): 1  [pole(s): injustice]
+  condensation (meaning on the bit): 14
+    associated field (synonyms / connections): boundary, debt, equilibrium, equity, fairness, freedom
+    compounded over time over ~39500 year(s) from 8 earlier word(s): water, fire, kin, seed, ...
+```
+
+*signal* is the floor: a pole, no field — the bit. *justice* keeps that very bit
+(*justice* | *injustice*) and condenses a field of associated meaning on it. The
+`ratio` is the headline — **compression (binary) vs condensation (meaning)** as one
+number: how much meant content rides on the single yes/no.
+
+**Compounded meaning over time.** The field is not assembled at once. Language is the
+**compounded creation of meaning over time**: a later word is *defined in terms of*
+earlier ones (the lexicon's web, §the explosion), so its meaning is its whole ancestry
+compounded into it. *wellbeing* condenses *flow* and *freedom*, which condense *self*
+and *justice*, down to *water* and *fire* — ~42,000 years of meaning condensed into one
+token. The deeper the ancestry, the more time the word carries.
+
+**Synonyms and antonyms — the two kinds of meaning-connection.** An **antonym** is the
+binary axis itself (the compression — a single distinction); a **synonym** is condensed
+meaning shared (the relational content). `connect` reads which a pair are, and for
+terms neither opposed nor kin but sharing a field, reports them *associated* with the
+overlap of their gathered meanings:
+
+```
+$ python -m interpretation connect signal noise
+ANTONYM: signal|noise — opposed poles, the binary axis: one distinction (compression)
+
+$ python -m interpretation connect freedom wellbeing
+ASSOCIATED: freedom … wellbeing — connected by a shared field (overlap 0.60)
+  shared meaning: boundary, debt, fire, harvest, justice, kin, season, seed, self, soul, time, water
+```
+
+The relations are an **authored map** (`relations.json`), a proxy carrying its
+provenance, not a real thesaurus; the compounding is read from the lexicon. As ever,
+descriptive, never a gate.
+
+### Tension: holding the opposite (paradox) vs excluding it (the binary)
+
+Condensation reads the bit and the field gathered on it; `tension` reads the bit's
+**opposite** — and the three stances a concept can take toward it. This is the founding
+image made measurable: the labrys holds *opposed blades in balance as one*; the ouroboros
+holds *consumption and renewal as one cycle*. A breath sign does not resolve an opposition
+into a distinction — it **holds** it, taut, as a living unity.
+
+```
+$ python -m interpretation tension
+== tension: how concepts stand toward their opposite ==
+  HELD — paradox (breath: the opposite carried as one living whole):
+    equilibrium (opposed blades held in balance) — held by labrys (0.30), ouroboros (0.30); tension 0.60
+        → pump segments it into: balance, justice, moderation, symmetry (the paradox dropped)
+    unity       (end and beginning as one) — held by ouroboros (0.35); tension 0.35
+        → pump segments it into: totality, community, the One (the paradox dropped)
+  INVERTED — diachronic paradox (pump: the opposite held across the word's life):
+    revolution — a sense that inverted into its opposite over time
+  EXCLUDED — binary (the bit: the opposite set cleanly outside, no holding):
+    right, signal, true, yes
+```
+
+Four stances:
+
+- **held — paradox** (breath): the opposite is carried *within*, as one whole. The tension
+  is retained — the two poles pull against each other and balance, and the meaning *is*
+  that pull. The bit can never hold it. `tension ouroboros` is the densest (0.65 — it holds
+  *two* paradoxes at once).
+- **excluded — binary** (the bit): the opposite is set cleanly *outside* — `signal|noise`,
+  `true|false`, 0 xor 1. The tension is *resolved to a cut*; no holding, only difference.
+- **segmented** (pump): a shard carved from a once-held paradox. *equilibrium* — opposed
+  forces held as one — was split into *balance, justice, moderation, symmetry*, each
+  keeping a facet and **dropping the paradox**. The showpiece is `tension justice`: a shard
+  of *equilibrium* that then took its own clean antonym (*injustice*) — the paradox first
+  segmented, then fully resolved into a distinction.
+- **inverted — diachronic paradox** (across time): a word whose sense flipped to its
+  opposite. *revolution* meant a turning-*back* (restoration), then a breaking-*forward*
+  (rupture) — the one word held opposed meanings across its history (detected via the
+  `inversion` shift in the sense lattice). A synchronic paradox holds its opposite at once
+  (the labrys); a diachronic one holds it across the word's life.
+
+So the founding thesis, finally measured directly: **the bit EXCLUDES its opposite, the
+breath sign HOLDS it as one, and the pump regime SEGMENTS the holding away.** The
+held-opposition markers are authored (`paradoxes` in `glossary.json`), grounded in the
+signs' own glosses and linked to the migrations that segment them — a proxy, surfaced, not
+a proof. Descriptive, never a gate.
+
+### Proportion: the gradient of degrees between the poles
+
+The first prompt named meaning as *relational, **proportional**, associated*. The weave
+gave the **relational** (antonym couples), condensation the **associated** (the field on a
+distinction) — but **proportional** was missing, and it is the one the bit most flatly
+denies. A bit collapses an opposition to two points (0/1, no between); the weave keeps that
+shape (an antonym couple is a binary *axis*, a clean cut). But most meaning lives *between*
+the poles, as a **degree** — warmth is not hot-or-cold but a position on a scale. A
+`gradient` fills the binary axis with the proportion the cut leaves out.
+
+```
+$ python -m interpretation gradient temperature
+GRADIENT 'temperature' (cold ↔ hot): 5 degrees of proportion (proportionality 0.75)
+    cold          0.00  [●··········]  (the low pole)
+    cool          0.25  [··●········]
+    lukewarm      0.50  [·····●·····]  ← the balance (the mean between the extremes)
+    warm          0.75  [········●··]
+    hot           1.00  [··········●]  (the high pole)
+
+$ python -m interpretation gradient warm
+  'warm' sits at 0.75 — 75% toward hot, 25% toward cold
+
+$ python -m interpretation gradient signal
+BINARY: 'signal|noise' — no gradient on record: an axis collapsed to its two poles (the bit), no proportion between
+```
+
+And the centre of a gradient is where the whole framework began. The **midpoint (~0.50) is
+the balance** — the mean between the extremes — which is *exactly* the point a breath sign
+holds as a paradox: the labrys's opposed blades in balance, equilibrium. So the gradient and
+the paradox (`tension`) are **one opposition seen two ways**: the paradox *holds* both poles
+at once at the balance point; the gradient *lays out* the degrees between them, balance at
+the centre. The proof is in the data — the `the-mean` gradient (deficiency ↔ excess) centres
+on **moderation**, which is equilibrium's *own* pump-era migration shard ("the mean between
+extremes"). Proportion recovers, as a scale's centre, the balance the breath held whole.
+
+```
+$ python -m interpretation gradient
+  proportional axes (a continuum filled with degrees):
+    temperature  cold ↔ hot       5 degrees; balance: lukewarm (0.50)
+    the-mean     deficiency ↔ excess   3 degrees; balance: moderation (0.50)
+    regard       hate ↔ love      5 degrees; balance: indifference (0.50)
+  bare binary axes (no proportion — collapsed to two poles, the bit):
+    false|true, noise|signal, no|yes, right|wrong
+```
+
+A reading reports an axis's **resolution** (degrees distinguished — a bit is 2, the poles
+alone), its **proportionality** (how far from a pure cut, 0 for a bare bit), and each term's
+**position** between the poles. The closing turn is the deepest: **proportion can be found
+beneath any apparent binary** — refuse the cut as final, and a continuum opens. The gradients
+are an authored map (`gradients.json`), a proxy for where degrees fall, not a measurement;
+descriptive, never a gate.
+
+### Folding: corroborating depth, until a concept is deemed true
+
+Condensation gathers meaning *laterally* — the field on the bit. But meaning is also
+**folded** *vertically*: layer on layer of **corroborating depth**, each resting on
+established truth beneath it, until a concept has gathered enough depth to be **deemed
+true**. And folding has **precedence over weaving** — a concept cannot legitimately enter
+the relational web until it has folded deep enough to cross the **truth threshold**. The
+order the framework runs on, made explicit at last:
+
+> **attest → condense → fold** (gain corroborating depth to be deemed true) **→ weave**
+
+```
+$ python -m interpretation fold justice
+DEEMED TRUE: 'justice' folded 4 layers of depth (8 corroborating concept(s)) — truth earned, woveable
+    the given base fire, kin, water
+    fold 1         boundary, season, seed
+    fold 2         harvest
+    fold 3         debt
+
+$ python -m interpretation fold
+folding (truth threshold 3): 4 given, 6 folding, 17 deemed true; the weave is legitimate
+  given (axioms, true without folding): danger, fire, kin, water
+  folding (gaining depth, not yet truth): harvest, time, boundary, hygge, season, seed
+  deemed true (folded ≥ 3, woveable): justice, freedom, self, soul, wellbeing, alienation, …
+  every woven concept is folded to truth or given — the weave rests on earned depth.
+```
+
+Three states fall out, by fold-depth (the corroborating layers beneath a concept, down to
+the given base):
+
+- **given** — depth 0: an *axiom*. A cornerstone (*fire*, *kin*) or an a-priori
+  distinction (*true*, *signal*): true without folding, because it is what folding rests
+  on. Woveable as the ground, not by earning depth.
+- **folding** — below the threshold: meaning is accruing layers but has *not yet* been
+  deemed true (*season*, *hygge*). It cannot yet be woven; a connection drawn to it is
+  **provisional**.
+- **deemed-true** — at or above the threshold: folded enough to be held as true, and so
+  admissible to the weave. Truth earned by depth — *justice* (4 layers), up to *wellbeing*
+  and *alienation* (6).
+
+Crucially, `fold` **audits the weave**: every substantive woven term has either folded to
+truth or is a given axiom, so the web rests on earned depth. Raise the bar
+(`fold --threshold 5`) and *justice*, *self*, *soul* turn **provisional** — woven before
+they were folded that deep — surfaced, never silently blocked. (Note *hygge*, a frontier
+word: singular and reaching, yet folded only one layer — at the edge, but not yet deemed
+true.) Depth corroborates; breadth condenses; the threshold is an authored proxy.
+Descriptive, never a gate.
+
+### The weave: the antonym couples as one relational web
+
+`condense` and `connect` read a term or a pair; `weave` lifts them to the **whole
+web** — the way `constellation` lifts a single breath sign to the system-level web of a
+regime's shared values. It reads every antonym couple and every shared-meaning edge at
+once, and answers the three questions only the web entire can:
+
+```
+$ python -m interpretation weave
+the meaning web: 14 antonym couple(s), 4 root(s), 14 term(s)
+  root antonyms (always paired, no matter how derived — both poles irreducible):
+    false|true
+    noise|signal
+    no|yes
+    right|wrong
+  hubs (the most branches and overlap of synonyms and antonyms):
+    freedom      branches 7  overlap 5  [pole(s): bondage]
+    justice      branches 7  overlap 3  [pole(s): injustice]
+  keystone — the key defining word the most truth of meaning lies in: self
+    7 other word(s) are defined in terms of 'self'; branches 6, overlap 4
+```
+
+- **Which root antonyms are always paired, no matter how derived?** The couples where
+  *neither* pole carries a condensed field — both are irreducible bits:
+  **true|false**, **signal|noise**, **yes|no**, **right|wrong**. However much meaning is
+  later condensed and compounded on top, a derived opposition (*justice* | *injustice*)
+  is a *refinement* — a root distinction with a field grown on it; it bottoms out on
+  these four. They are the web's binary bedrock.
+- **Which words have the most branches and overlap?** The **hubs**: *freedom* and
+  *justice*, tied at seven branches, *freedom* edging ahead on overlap. They are where
+  the most synonym/antonym/associate edges meet — the knots that bind the web.
+- **In which key defining word does the most truth of meaning lie?** The **keystone**:
+  **self**. Seven other words — *soul, freedom, flow, empathy, alienation, ubuntu,
+  mamihlapinatapai* — are defined *in terms of* it. Meaning is relational, so the truth
+  of it gathers where the web leans hardest: the reflexive *I* that the inner-life
+  vocabulary is built upon. (It is the gateway of the framework's own arc — *self* →
+  *freedom* → *wellbeing* — now shown to be the word the rest most depend on to mean
+  what they mean.)
+
+The keystone is read, not crowned: `weave` surfaces where the web's truth gathers and,
+like every measure here but attestation, **gates nothing**.
+
+### The frontier: meaning at the leaf-edge of the tree
+
+The `weave` reads the web's *settled* structure; `frontier` reads its **edge**, where
+comprehension is still reaching. Three kinds of word live there — and they are one kind
+seen from three sides:
+
+- **no absolute antonym** (*unpolarised*) — the word draws no clean distinction; it
+  names a *positive presence*, a perception held in itself. Where a bit is all boundary
+  and no content, these are all content and no boundary.
+- **no synonym** (*singular*) — no other word can stand in for it, so it cannot be
+  compressed away. It carries meaning nothing else carries: maximal information, zero
+  redundancy — the exact opposite of a bit, which any yes/no can replace.
+- **a leaf of the tree** — nothing is yet *defined in terms of* it; it sits at the
+  growing tip. The interior is comprehended and load-bearing; the leaves are the
+  frontier.
+
+```
+$ python -m interpretation frontier
+the frontier of the tree: 9 experiential leaf-word(s), 6 unwoven (no antonym, no synonym); furthest out: mamihlapinatapai
+  the reaching edge (leaf, experiential — abstract perception newly named):
+    mamihlapinatapai    1860  align 0.90  no-antonym no-synonym    score 0.90  — a singular perception, unwoven — pure frontier
+    ubuntu              1846  align 0.88  no-antonym no-synonym    score 0.88  — a singular perception, unwoven — pure frontier
+    hygge               1920  align 0.85  no-antonym no-synonym    score 0.85  — a singular perception, unwoven — pure frontier
+    saudade             1400  align 0.85  no-antonym no-synonym    score 0.85  — a singular perception, unwoven — pure frontier
+    sublime             1750  align 0.83  no-antonym no-synonym    score 0.83  — a singular perception, unwoven — pure frontier
+    nostalgia           1688  align 0.82  no-antonym no-synonym    score 0.82  — a singular perception, unwoven — pure frontier
+    empathy             1909  align 0.88  polarised  redund 0.50   score 0.26  — an experiential edge, partly woven in
+    ...
+  furthest out: 'mamihlapinatapai' — the wordless shared look of two who each wish the other would begin
+  contrast — unpolarised but interior (no antonym, yet long comprehended): flow, melancholy, time, …
+```
+
+A word that is all three — an unpolarised, singular, experiential leaf — is meaning at
+**the frontier of comprehended knowledge we can communicate**: an *abstract
+representation of contextual perception*, named once and not yet woven into the web of
+oppositions and equivalences. The untranslatables are the paradigm, and **mamihlapinatapai**
+— *the wordless shared look of two who each wish the other would begin* — sits furthest
+out: a leaf with no opposite and no equivalent, meaning at the very edge of what language
+has managed to say.
+
+The score is a **product** (the framework's signature): leaf, experiential, unpolarised
+and singular all push a word out; any pull toward the settled interior lowers it. So the
+listing is a gradient — from *wellbeing* (an experiential leaf, but already given an
+opposite, *suffering*, and equivalents, *flourishing/welfare* — partly woven in) out to
+the wholly singular untranslatables. And the honest contrast is kept: being unpolarised
+is *not* the frontier — *time* has no antonym yet sits deep in the interior, long since
+comprehended and built upon. **The map's silence about a word — no opposite, no
+equivalent — is itself the mark of the frontier**, and an authored proxy, not a proof.
+Descriptive, never a gate.
+
+### The cornerstones: meaning at the root-base of the tree
+
+`frontier` reads the leaf-edge; `cornerstones` reads its **dual** — the **root-base**,
+the words built on *nothing*, so fundamental and innate that the whole tree rests on
+them. If the frontier is where comprehension is still reaching, the cornerstones are
+where it *begins*: the base of the depth itself.
+
+```
+$ python -m interpretation cornerstones
+the root-base of the tree: 4 cornerstone(s) (built on nothing); the base of the depth: fire (20 rest on it)
+  the cornerstones (built on nothing, innate, self-standing — the given base):
+    fire     primal    innate 0.95  support 20  self-standing  score 0.95  — a cornerstone — built on nothing, needs no relational associate: the given base
+    kin      primal    innate 0.85  support 18  self-standing  score 0.77  — a cornerstone — built on nothing, needs no relational associate: the given base
+    water    primal    innate 0.95  support  8  self-standing  score 0.38  — a cornerstone ...
+    danger   primal    innate 0.90  support  1  self-standing  score 0.04  — a cornerstone ...
+  contrast — derived pillars (load-bearing, yet built on earlier words): season (support 19, depth 1), time (support 14, depth 2), soul (support 12, depth 4)
+```
+
+A cornerstone is one kind of word seen three ways: **a root of the tree** (nothing in
+its ancestry — built on nothing, with maximal *support*, the count of words that rest on
+it); **innate / given** (the sieve end of the axis — *water*, *fire*, *kin*, *danger*, the
+concrete necessities given before abstraction begins); and **self-standing** (needing
+*no relational associate* — *water* means water with no opposite to define it against and
+no synonym to replace it).
+
+That last property is the deep symmetry with the frontier: **both the cornerstone and the
+frontier word stand without a relational associate, for opposite reasons.** The frontier
+word has none because the web has *not yet reached* it (it reaches outward); the
+cornerstone has none because it is so foundational it *needs* none (everything reaches
+back to it). Same silence on the map, opposite nature — the two ends of the tree.
+
+The **base of the depth itself** is the cornerstone the most rests on: **fire** (the
+elemental given, 20 of 27 words ultimately compound down to it), with **kin** beside it
+(the social given, 18). And the honest contrast the framework always keeps: *season*,
+*time* and *soul* bear enormous weight but are **derived pillars**, not roots — *time* is
+built on *season*, which is built on *fire*. Being relied upon is not being a root; the
+base is what is built on nothing.
+
+### Dimensional meaning: the tree as a system of layered axes
+
+Step back from the single tree and a larger shape appears, the one every layer has been
+building toward: **the conceptual language tree is the system**, and meaning is not laid
+along one line but located in a space of several **dimensions**, each a distinct way
+meaning is layered — each conveyance adding meaning the others cannot reach.
+
+```
+$ python -m interpretation dimensions
+the tree as a system: 3 conveyance mode(s) × 5 culture(s) × 5 era(s) = 75 cell(s) of dimensional meaning, over depth 0–14
+  the conveyance dimension (each a way of conveying meaning the others cannot reach):
+    symbol     3  (non-phonetic)
+    story      6  (non-phonetic)
+    word      32  (phonetic)
+  the culture dimension (each tongue its own derivation): shared, Danish, Nguni, Portuguese, Yaghan
+  the time dimension (layered over history, breath stratum beneath): primal, agrarian, classical, modern, reflexive
+  the depth dimension (the vertical): cornerstone 0 → frontier 14
+  cross-dimensional values (carried as symbol AND word — the richest dimensional meaning):
+    divinity, equilibrium, unity
+```
+
+- **conveyance** — *how* meaning is committed to a lasting form. Two are non-phonetic,
+  holding meaning whole: the **symbol** (a breath/conceptual sign — the labrys, the ankh)
+  and the **story** (a breath truth carried in phonetic words — a myth like the
+  *Theogony*). One is phonetic: the **word**. A thing said in a symbol is not the thing
+  said in a word — each mode is a dimension.
+- **culture** — each language/dialect has its own derivation (the shared lexicon, and
+  each tongue the untranslatables come from), layered like constellations and webs that
+  need not coincide.
+- **time** — the eras, over history, with the breath stratum beneath the threshold.
+- **depth** — the vertical the rest of the framework reads: cornerstone (0) → frontier.
+
+A concept in one cell — a single modern shared word, one mode, one culture, one era — is
+*flat*. A value carried as a **symbol** in the breath regime and re-derived as **words**
+in the pump regime is **cross-dimensional**: *equilibrium*, *divinity*, *unity* (the
+values `migrate` and `arc` already trace) occupy the conveyance dimension in more than
+one mode, and their meaning has extent the flat word's cannot. The space is an authored
+proxy of the system's shape — descriptive, never a gate.
+
+### The dimensionless: meaning that may outlast time
+
+`dimension` measured a concept's *extent* — how many cells it occupies, and how it is
+*transformed* in each. `dimensionless` reads the **inversion**: meaning that does *not*
+change as it crosses the dimensions — **invariant** under time, culture, conveyance and
+depth. A concept so fundamental it is the same in every cell, or prior to the cells
+entirely: the candidate for a **universal truth that supersedes human experience**.
+
+This is where the framework's one thesis — *a check is a proxy, not a proof* — reaches
+its limit. The framework can *measure* how invariant a concept has demonstrably been
+across the record; it **cannot** measure whether it outlasts time, because the record is
+itself within time. So invariance-across-the-record is a proxy for universality, the
+residual gap is **unattestable**, and this layer ranks candidates yet **certifies none** —
+finding the deepest paradox in its own discipline: the most universal concepts are
+precisely the ones the record can *least* witness.
+
+```
+$ python -m interpretation dimensionless
+== the dimensionless: meaning that may outlast time ==
+  a-priori (presupposed by the record, not recorded in it — most dimensionless, least witnessable):
+    the distinction (0/1)  [a-priori; domains: information, logic]
+      grounding: a distinction is the irreducible unit of information, prior to any mind … natural computing reads 0 or 1
+      presupposed by every sign, never entering the record as content — gap to universal: total (a thing all evidence rests on is witnessed by none)
+    identity (A is A)  [a-priori; domains: logic]
+    truth  [a-priori; domains: logic]
+  manifest (demonstrably invariant across the record's own span — a proxy for the universal):
+    equilibrium / balance  [manifest; domains: physics, mathematics]
+      held whole in 2 sign(s), crossing into 4 pump lexeme(s); shown invariant across ~3590 year(s) — the leap to 'outlasts time' is unattestable
+    recurrence / the cycle  [manifest; domains: mathematics, cosmology]   # the ouroboros, ~3250 year(s) on record
+    unity / oneness        [manifest; domains: mathematics, ontology]
+```
+
+Two kinds of invariant fall out, on opposite sides of attestation:
+
+- **a-priori** — presupposed by the record, never recorded *in* it. The **distinction**
+  (0/1 — the bit the whole project opened on), **identity** (A is A), **truth**. They
+  ground logic and information themselves, so every sign already rests on them — which is
+  exactly why none can be attested: *a thing presupposed by all evidence is witnessed by
+  none.* The most dimensionless, the least witnessable.
+- **manifest** — demonstrably invariant across the record's own span: a breath value held
+  whole in a sign and carried across the threshold into pump words (**equilibrium**,
+  **unity**, the **recurrence** of the ouroboros). The record shows how many signs held it
+  and across how many years it has *demonstrably* lasted (equilibrium ~3,590; recurrence
+  ~3,250) — but the leap from a finite span to "outlasts time" is the unattestable gap.
+
+The invariants are an **authored map of claims** (`invariants.json`) — the strongest the
+framework makes and the only ones it cannot, even in principle, ground in attestation. It
+measures their invariance against the corpus, names the grounding that might make each
+universal, and then **stops honestly at the edge of what a record within time can
+witness**. The nearest thing to dimensionless it can point to is the **distinction
+itself** — 0/1 — which is exactly where the framework began. Descriptive, never a gate;
+and here, uniquely, it cannot even measure the final gap.
 
 ## The phonetic web over time: the explosion of understanding
 
@@ -604,13 +1048,26 @@ $ python -m interpretation atlas
     unity        held 0.70 across 2 sign(s) -> 3 lexeme(s)
   the pump explosion — lexicon 4->27 over 5 eras; sieve->success 0.09->0.59; experiential 0.00->0.48; coherence 0.25->1.00
   the unbroken arc — equilibrium: justice(0.60) -> ... -> wellbeing(0.92), reaching 0.92 over ~3590 year(s)
+  -- the meaning tree --
+  tension — the bit excludes its opposite, the breath holds it (most held: equilibrium (0.60)), the pump segments it away
+  base & edge — cornerstone: fire (20 rest on it); frontier: mamihlapinatapai (furthest out)
+  the web — keystone: self (7 defined on it); 4 root antonym couple(s)
+  folding to truth — threshold 3: the weave rests on earned depth
+  the meaning space — 3 conveyance × 5 culture × 5 era = 75 cells, depth 0-14
+  the dimensionless — nearest: the distinction (0/1); the gap to 'outlasts time' is unattestable
 ```
 
 The whole journey at a glance: the backing is sound; the breath web rests on
 *divinity*, hubbed at the *labrys*; those whole-held values dispersed at the threshold;
 the phonetic lexicon then exploded and re-cohered, climbing from survival toward the
 inner life; and one thread — *equilibrium* — runs unbroken from a Bronze-Age sign to
-*flourishing* named. One screen for the entire arc.
+*flourishing* named. Then **the meaning tree** the later layers built folds into the same
+screen: how the bit holds or excludes its opposite (`tension`), the tree's base (`fire`)
+and reaching edge (`mamihlapinatapai`), the web it earns by `folding` to truth and the
+keystone *self* it rests on, the dimensions it spans, and the dimensionless it can only
+point at — the **distinction** (0/1) where the whole project began. One screen for the
+entire arc, breath to bit. The meaning-tree lines appear when the `relations.json` and
+`invariants.json` maps are present (the default); the atlas reads only what it is given.
 
 ## Relationship to `integrity-alignment-system`
 
@@ -619,4 +1076,6 @@ This is a **sibling**, not a fork. It carries over that project's spine, its
 never letting a proxy wear a proof's clothes — and turns them from *information
 integrity* toward *the interpretation of conceptual history*. The full reasoning,
 in the order it arrived, is the living journal in
-[`docs/thought-flow.md`](docs/thought-flow.md).
+[`docs/thought-flow.md`](docs/thought-flow.md); the map of how the modules fit
+together — the three pillars, the dependency tiers, and the reading arc — is
+[`docs/architecture.md`](docs/architecture.md).
