@@ -479,6 +479,40 @@ shared (the relational content), and a pair that is neither but shares a field i
 relations are an authored map (`relations.json`), a proxy carrying its provenance, not a
 real thesaurus; the compounding is the lexicon's. Descriptive, never a gate.
 
+## Step 28 — The weave: the antonym couples as one relational web
+
+Step 27 read one term (its bit, its condensed field) and one connection (antonym or
+synonym). This step lifts that to the **whole web**, exactly as `constellation` (Step 21)
+lifted a single breath sign to the system-level web of a regime's shared values — the
+same move, now on the relations map. `weave.py` reads every antonym couple and every
+shared-meaning edge at once and answers the three questions only the web entire can, the
+ones the user posed:
+
+*Which root antonyms are always paired, no matter how derived?* A couple is a **root**
+when *neither* pole carries a condensed field of its own — both are irreducible bits.
+The web yields four: **true|false**, **signal|noise**, **yes|no**, **right|wrong**.
+Every condensed couple (*justice* | *injustice*, *self* | *other*) is a *refinement* — a
+root distinction with a field grown on it — and however far meaning is derived, it
+bottoms out on these four. This is Step 27's bit/word contrast read across the whole
+graph: the bedrock of pure compression beneath all the condensation.
+
+*Which words have the most branches and overlap?* The **hubs** — highest degree across
+antonym/synonym/associate edges, ties ordered by how much meaning they share with
+others. The web answers *freedom* and *justice* (seven branches each, *freedom* ahead on
+overlap): the knots that bind the relational web, the meaning-connection analogue of the
+constellation's hub *sign* (the labrys).
+
+*In which key defining word does the most truth of meaning lie?* The **keystone** — the
+word the most *others are defined in terms of*, its defining reach read from synonyms,
+associates, and the lexicon's compounding (Step 27's "compounded over time," reused). The
+web answers **self**: seven words (*soul, freedom, flow, empathy, alienation*, and the
+untranslatables *ubuntu*, *mamihlapinatapai*) are built on it. This is the relational
+analogue of the constellation's keystone *value* (*divinity*), and it lands on the
+gateway of the framework's own arc — *self* → *freedom* → *wellbeing* — now shown, not
+asserted, to be the word the rest most lean on. Meaning is relational; the truth of it
+gathers where the web leans hardest. Like the constellation, the keystone is **read, not
+crowned**: descriptive, never a gate.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

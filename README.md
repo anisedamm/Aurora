@@ -74,6 +74,7 @@ interpretation/
   constellation.py # the system-level web: which values were load-bearing across a regime
   migration.py     # a value across the threshold: held whole, then dispersed into lexemes
   condensation.py  # binary thought (compression) vs relational meaning (condensation): the bit + its field
+  weave.py         # the antonym couples as one web: root couples, the branching hubs, the keystone word
   lexicon.py       # phonetic language over time: the explosion, sieve->success, coherence
   arc.py           # one thread traced unbroken across both regimes (migrate + proliferation)
   signal.py        # the capstone: signal = integrity x direction(truth) — the record on itself
@@ -85,7 +86,7 @@ lexicon.json               # the phonetic lexicon traced over time (the explosio
 relations.json             # the authored map of meaning-connections (antonyms + synonyms)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (139 tests)
+tests/                     # the suite (146 tests)
 ```
 
 ## Quickstart
@@ -392,6 +393,48 @@ ASSOCIATED: freedom … wellbeing — connected by a shared field (overlap 0.60)
 The relations are an **authored map** (`relations.json`), a proxy carrying its
 provenance, not a real thesaurus; the compounding is read from the lexicon. As ever,
 descriptive, never a gate.
+
+### The weave: the antonym couples as one relational web
+
+`condense` and `connect` read a term or a pair; `weave` lifts them to the **whole
+web** — the way `constellation` lifts a single breath sign to the system-level web of a
+regime's shared values. It reads every antonym couple and every shared-meaning edge at
+once, and answers the three questions only the web entire can:
+
+```
+$ python -m interpretation weave
+the meaning web: 14 antonym couple(s), 4 root(s), 14 term(s)
+  root antonyms (always paired, no matter how derived — both poles irreducible):
+    false|true
+    noise|signal
+    no|yes
+    right|wrong
+  hubs (the most branches and overlap of synonyms and antonyms):
+    freedom      branches 7  overlap 5  [pole(s): bondage]
+    justice      branches 7  overlap 3  [pole(s): injustice]
+  keystone — the key defining word the most truth of meaning lies in: self
+    7 other word(s) are defined in terms of 'self'; branches 6, overlap 4
+```
+
+- **Which root antonyms are always paired, no matter how derived?** The couples where
+  *neither* pole carries a condensed field — both are irreducible bits:
+  **true|false**, **signal|noise**, **yes|no**, **right|wrong**. However much meaning is
+  later condensed and compounded on top, a derived opposition (*justice* | *injustice*)
+  is a *refinement* — a root distinction with a field grown on it; it bottoms out on
+  these four. They are the web's binary bedrock.
+- **Which words have the most branches and overlap?** The **hubs**: *freedom* and
+  *justice*, tied at seven branches, *freedom* edging ahead on overlap. They are where
+  the most synonym/antonym/associate edges meet — the knots that bind the web.
+- **In which key defining word does the most truth of meaning lie?** The **keystone**:
+  **self**. Seven other words — *soul, freedom, flow, empathy, alienation, ubuntu,
+  mamihlapinatapai* — are defined *in terms of* it. Meaning is relational, so the truth
+  of it gathers where the web leans hardest: the reflexive *I* that the inner-life
+  vocabulary is built upon. (It is the gateway of the framework's own arc — *self* →
+  *freedom* → *wellbeing* — now shown to be the word the rest most depend on to mean
+  what they mean.)
+
+The keystone is read, not crowned: `weave` surfaces where the web's truth gathers and,
+like every measure here but attestation, **gates nothing**.
 
 ## The phonetic web over time: the explosion of understanding
 

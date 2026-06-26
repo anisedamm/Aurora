@@ -127,6 +127,7 @@ from .condensation import (
     KIND_CONDENSED,
     KIND_UNPOLARISED,
 )
+from .weave import Couple, Node, Weave, weave
 from .lexicon import (
     Lexeme,
     Lexicon,
@@ -249,6 +250,11 @@ __all__ = [
     "KIND_BIT",
     "KIND_CONDENSED",
     "KIND_UNPOLARISED",
+    # the weave: paired antonym couples as one relational web (roots, hubs, keystone)
+    "Couple",
+    "Node",
+    "Weave",
+    "weave",
     # the lexicon over time: phonetic language as the record of growing understanding
     "Lexeme",
     "Lexicon",

@@ -45,6 +45,7 @@ from .memory import confluence, memory_chain, remember
 from .reading import attest, drift, project, read, read_symbol
 from .regime import SCRIPT_CONCEPTUAL, SCRIPT_PHONETIC
 from .signal import compute_signal
+from .weave import weave
 from .weighting import WeightedField
 
 DEFAULT_LEDGER = "interpretation_ledger.jsonl"
@@ -247,6 +248,17 @@ def cmd_connect(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_weave(args: argparse.Namespace) -> int:
+    rel = _relations(args)
+    lex = None
+    try:
+        lex = _lexicon(args)
+    except (OSError, ValueError):
+        pass  # the couples and branches read without the compounding web
+    print(weave(rel, lex).summary)
+    return 0
+
+
 def cmd_untranslatables(args: argparse.Namespace) -> int:
     lex = _lexicon(args)
     items = untranslatables(lex)
@@ -445,6 +457,8 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("a")
     sp.add_argument("b")
 
+    sub.add_parser("weave", help="the antonym web: root couples, the most-branching hubs, and the keystone defining word")
+
     sp = sub.add_parser("arc", help="one value traced unbroken across both regimes: breath sign -> dispersal -> re-coherence")
     sp.add_argument("value")
 
@@ -513,6 +527,7 @@ _COMMANDS = {
     "untranslatables": cmd_untranslatables,
     "condense": cmd_condense,
     "connect": cmd_connect,
+    "weave": cmd_weave,
     "arc": cmd_arc,
     "atlas": cmd_atlas,
     "regime": cmd_regime,
