@@ -776,6 +776,32 @@ recovered when the between is allowed back in. The gradients are an authored map
 imprinted into the record like every other; a proxy for where degrees fall, descriptive, never
 a gate.
 
+## Step 37 — The architecture: the map of the whole, the code's atlas
+
+The framework had grown to twenty-seven modules across three concerns and thirty-four
+commands, and — like the content before the `atlas` (Step 26) — the *code* had no single
+view of itself. Every module was legible alone; the shape they made together was not. This
+step supplies the missing reader, one level up: `docs/architecture.md` is to the repository
+what the atlas is to the history of meaning — a composition, introducing nothing new,
+gathering what is already there so the whole can be seen at once.
+
+The map makes three things explicit that had only ever been implicit. First, the framework
+is **three pillars around three hubs**: the conceptual-history reading (hub `glossary`), the
+meaning tree (hub `condensation`, which owns the `Relations` map and the `_compound`
+ancestry the whole tree leans on), and the integrity spine (hub `ledger`) — gathered by two
+capstones, `signal` (the record's verdict on itself) and `atlas` (the whole reading). Second,
+the **dependency tiers**, read from the actual imports rather than asserted: primitives with
+no internal dependencies, then the hubs, then the readings, then the capstones, then the
+CLI/API surface — a clean order with no cycles, so any module can be understood with only the
+tiers above it in view. Third, the **reading arc** in dependency order, the two pipelines and
+their join: attest→read→drift for a usage, and condense→tension→gradient→fold→weave→
+frontier/cornerstone→dimension→dimensionless for a concept, with the bit/breath/pump stances
+toward opposition running through the middle of it. The map is a legibility artifact, not a
+new measure, and it earns its keep by the same logic as the atlas: the whole says something
+the parts do not — that what looks like two dozen separate readings is one apparatus, three
+hubs and two capstones, telling a single story from the bit to the dimensionless. Descriptive,
+of the code now standing; it gates nothing.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

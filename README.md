@@ -95,6 +95,7 @@ gradients.json             # authored gradients — the proportional scale betwe
 relations.json             # the authored map of meaning-connections (antonyms + synonyms)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
+docs/architecture.md       # the map of the whole: pillars, dependency tiers, the reading arc
 tests/                     # the suite (199 tests)
 ```
 
@@ -1075,4 +1076,6 @@ This is a **sibling**, not a fork. It carries over that project's spine, its
 never letting a proxy wear a proof's clothes — and turns them from *information
 integrity* toward *the interpretation of conceptual history*. The full reasoning,
 in the order it arrived, is the living journal in
-[`docs/thought-flow.md`](docs/thought-flow.md).
+[`docs/thought-flow.md`](docs/thought-flow.md); the map of how the modules fit
+together — the three pillars, the dependency tiers, and the reading arc — is
+[`docs/architecture.md`](docs/architecture.md).
