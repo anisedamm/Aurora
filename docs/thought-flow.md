@@ -473,6 +473,41 @@ of signs; language took millennia to say what one of them held — and the
 chronicle is where that whole sentence can be read at once, on a single line of time.
 Descriptive, never a gate.
 
+## Step 28 — Equilibrium points: where cultures unite, across geography and medium
+
+The chronicle (Step 27) read the record as *one* experience along a line of time. But the
+question underneath was relational: not one culture's timescale, but the relation
+*between* cultures — separated by geography, by millennia, and by **medium** — who,
+attending the world each in their own way, arrive at and hold *the same retained concept*.
+`equilibria.py` reads those meeting-places as **equilibrium points**. It needed one
+honest addition to the authored map: a `culture` and `region` on each sign (surfaced as
+provenance, like every threshold here), so "geographically united" could be *measured*
+rather than asserted — a Minoan double axe, an Egyptian serpent, a Greek cosmogony, set in
+their places. Then the union is computed: a value is an equilibrium *point* only when
+**distinct cultures** hold it whole, so *divinity* (Minoan, Egyptian, Greek, across myth
+and symbol) is a true point, while *eternity* — carried by two signs that are *both
+Egyptian* — is reported honestly as held-but-local, a holding and not yet a union. The
+measure discriminates, which is how one trusts it.
+
+Two readings sit on each point, and they are the user's question made computable. First,
+the **relational timescale**: the holdings sorted by date are cultures meeting on one
+truth across thousands of years and miles, each in its own medium. Second — the deepest of
+the asks — **high density to explicit refinement in the same space of meaning**: a breath
+sign holds a value at *high density*, one mark carrying it alongside several others, all at
+once (the labrys holds equilibrium among four values); the pump regime, attending
+analytically, *refines* that same space into separate explicit words, each carrying one
+facet alone (balance, justice, moderation, symmetry — density 1). This is the migration
+(Step 22) re-seen as a **density gradient**: meaning did not only disperse, it fell from
+high-density holding to explicit refinement, and the equilibrium point shows both ends in
+one frame. And beside them, *how what was worth translating changed*: the sign's
+`committed_because` — why a culture fixed the whole field in a lasting form — set against
+the refinements' aspects, what each explicit word was carved off to name. The holdings are
+measured; the cultures and the dispersal are authored and surfaced, a proxy for where
+understanding *converged*, never a claim of strict diffusion. A reader, not a ruler — the
+relational completion of the breath/pump thesis: not one regime or one culture, but the
+several human attempts to hold a truth, meeting at the points where they held the same one.
+Descriptive, never a gate.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

@@ -78,13 +78,14 @@ interpretation/
   signal.py        # the capstone: signal = integrity x direction(truth) — the record on itself
   atlas.py         # the whole history of meaning composed on one screen (a reader, not a ruler)
   chronicle.py     # the whole system on one linear time axis: mythology + the explosion, read as experience
+  equilibria.py    # equilibrium points: where cultures unite (across geography + medium) on one truth, held whole then refined
   imprint.py       # the active recorder (default author: anise.damm)
   manifest.py      # defensive-publication manifest
 glossary.json              # breath signs + pump words + value_aliases + migrations
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (134 tests)
+tests/                     # the suite (142 tests)
 ```
 
 ## Quickstart
@@ -652,6 +653,63 @@ axis, does the phonetic web **explode and climb** back toward saying the inside 
 signs; language took millennia to say what one of them held. Like the atlas, it
 is a **reader, not a ruler** — composed from the tested measures, ordered by date rather
 than by lens; it introduces no new measure and gates nothing. Descriptive, never a gate.
+
+### Equilibrium points: where cultures unite on one truth, across geography and medium
+
+The chronicle reads the record as *one* culture's experience along a line. But the deeper
+relation is *between* cultures: separated by geography, by millennia, and by **medium** —
+a Minoan double axe, an Egyptian serpent, a Greek cosmogony — different peoples, each
+attending the world in their own way, **arrive at and hold the same retained concept**.
+`equilibria` finds those meeting-places: **equilibrium points**, a single conceptual truth
+that more than one culture united on, however it was committed (non-phonetic symbol,
+myth, or — as the data grows — phonetic word).
+
+```
+$ python -m interpretation equilibria
+conceptual equilibrium points — where cultures unite across geography and medium: 4 point(s)
+  divinity     3 cultures: Egyptian, Greek, Minoan  | held density 3.7 → refined into 3 explicit word(s)
+  sovereignty  2 cultures: Egyptian, Minoan  | held density 4.0 → its dispersal not yet mapped
+  equilibrium  2 cultures: Egyptian, Minoan  | held density 3.5 → refined into 4 explicit word(s)
+  unity        2 cultures: Egyptian, Minoan  | held density 3.5 → refined into 3 explicit word(s)
+  held, but within a single culture (not yet a geographic union):
+    eternity     Egyptian only
+    ...
+```
+
+A value is an equilibrium *point* only when **distinct cultures** unite on it — a
+geographic union, not one culture holding it in two signs. So *eternity*, carried by two
+**Egyptian** signs, is reported honestly as *held-but-local*, while *divinity* — Minoan,
+Egyptian and Greek alike, across myth and symbol — is a true point. Focused, each point
+shows the user's whole question at once: the **relational timescale** of cultures meeting
+on one truth, and how that truth moved **from high density to explicit refinement in the
+same space of meaning**:
+
+```
+$ python -m interpretation equilibria equilibrium
+EQUILIBRIUM POINT 'equilibrium': 2 culture(s) unite on it across symbol, word — Egyptian, Minoan
+  held whole at high density (mean 3.5 values per sign), each culture in its own medium:
+     -1600  Minoan    symbol labrys — held among 4 values; Crete (Aegean)
+     -1300  Egyptian  symbol ouroboros — held among 3 values; Nile Valley (North Africa)
+  then refined — the same space made explicit — into 4 single-value word(s) (density 1):
+    balance      — the static evenness of two weights — the physical facet, the paradox flattened
+    justice      — balance moralised — giving each their due
+    moderation   — balance as a personal virtue, the mean between extremes
+    symmetry     — balance as formal, aesthetic correspondence
+  what was worth committing, then: "to hold and transmit the society's axis …"
+  density moved high→1: one truth held whole across cultures, then segmented into
+    explicit words — high density to explicit refinement.
+```
+
+A breath sign holds a value at **high density** — one mark carrying it *alongside* several
+others, all at once (the labrys holds *equilibrium* among four values). The pump regime,
+attending analytically, **refines** that same space into separate explicit words, each
+carrying one facet alone (*balance*, *justice*, *moderation*, *symmetry* — density 1). And
+beside it, **how what was worth translating changed**: the sign's `committed_because` (why
+a culture fixed the *whole field* in a lasting form) set against the refinements' aspects
+(what each explicit word was carved off to name). The holdings are **measured** from the
+signs; the cultures and the dispersal are **authored** and surfaced — a proxy for where
+understanding converged, never a claim of strict diffusion. A reader, not a ruler:
+descriptive, never a gate.
 
 ## Relationship to `integrity-alignment-system`
 

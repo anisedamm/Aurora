@@ -66,6 +66,8 @@ class Concept:
     threshold: int | None = None  # the breath->pump year for this tradition (the ghost lag's edge)
     retained: dict = field(default_factory=dict)  # the concept's retained conceptual truth (a weighted field)
     year: int | None = None      # representative origin year of the breath-truth (BCE negative)
+    culture: str = ""            # the culture that held the sign (authored provenance, surfaced)
+    region: str = ""             # where, geographically, it was held (authored provenance)
 
     def retained_field(self) -> dict:
         """The concept's retained conceptual truth: its declared field, or the field
@@ -157,6 +159,8 @@ def from_mapping(raw: dict) -> Glossary:
             threshold=c.get("threshold"),
             retained=dict(c.get("retained", {})),
             year=c.get("year"),
+            culture=c.get("culture", ""),
+            region=c.get("region", ""),
         )
     return Glossary(
         concepts=concepts,
