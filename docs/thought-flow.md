@@ -607,6 +607,44 @@ culture invents — symbol, story, word — adds a dimension the others could no
 space is an authored proxy of the system's shape; it maps where meaning is layered, and,
 like all but attestation, it gates nothing.
 
+## Step 32 — The dimensionless: meaning that may outlast time, and the gap no record crosses
+
+Step 31 read meaning's *extent* across the dimensions; this step reads its **inversion** —
+meaning that does not change as it crosses them, **invariant** under time, culture,
+conveyance and depth: the candidate for a universal truth that supersedes human
+experience. And it is where the framework's one thesis — *a check is a proxy, not a
+proof* — reaches the only place it cannot follow. The framework can measure how invariant
+a concept has *demonstrably* been across the record; it cannot measure whether it
+**outlasts time**, because the record is itself within time. Invariance-across-the-record
+is a proxy for universality, and the residual gap is **unattestable**. So `dimensionless.py`
+ranks candidates and **certifies none** — the one reading in the whole framework that
+cannot even measure its own gap.
+
+The candidates split on opposite sides of attestation, and the split is the insight. The
+**a-priori** invariants — the **distinction** (0/1), **identity** (A is A), **truth** —
+are presupposed by the record, never recorded *in* it: they ground logic and information
+themselves, so every sign already rests on them, which is *exactly* why none can be
+attested — a thing presupposed by all evidence is witnessed by none. They are the most
+dimensionless and the least witnessable. The **manifest** invariants — **equilibrium**,
+**unity**, the **recurrence** of the ouroboros — are demonstrably invariant across the
+record's own span: held whole in a breath sign and carried across the threshold into pump
+words, shown to have lasted ~3,590 and ~3,250 years on record — but the leap from a finite
+span to "outlasts time" is the unattestable gap. The framework measures their invariance
+against the corpus (reusing `migrate` and `arc`, not re-deriving), names the grounding
+that might make each universal — physics, mathematics, logic, information, the domains that
+hold without a mind — and then stops, honestly, at the edge of what a record within time
+can witness.
+
+The paradox is the capstone of the whole edifice: the most universal concepts are
+precisely those the record can least witness, so the measure of nearness-to-dimensionless
+is, in the same motion, the measure of distance-from-attestation. And the nearest thing to
+dimensionless the framework can point to is the **distinction itself** — 0/1, the bit —
+which is exactly where the project began: *natural computing reads 0 or 1*. The arc closes
+on its own first premise. Where the sibling system's `signal` turned the discipline on the
+record's integrity, the dimensionless turns it on the record's *reach* — and finds the one
+truth a proxy can never become a proof of. Descriptive, never a gate; here, for the first
+and only time, not even measurable. The honest end of an honest framework.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

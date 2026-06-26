@@ -37,6 +37,7 @@ from .condensation import condense, connect, load_relations
 from .constellation import constellation
 from .cornerstone import cornerstones
 from .dimension import meaning_space
+from .dimensionless import dimensionless, load_invariants
 from .frontier import frontier
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
@@ -55,6 +56,7 @@ DEFAULT_LEDGER = "interpretation_ledger.jsonl"
 DEFAULT_GLOSSARY = "glossary.json"
 DEFAULT_LEXICON = "lexicon.json"
 DEFAULT_RELATIONS = "relations.json"
+DEFAULT_INVARIANTS = "invariants.json"
 
 
 def _glossary(args: argparse.Namespace):
@@ -287,6 +289,12 @@ def cmd_dimensions(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_dimensionless(args: argparse.Namespace) -> int:
+    invariants = load_invariants(getattr(args, "invariants", None) or DEFAULT_INVARIANTS)
+    print(dimensionless(invariants, _glossary(args), _lexicon(args)).summary)
+    return 0
+
+
 def cmd_untranslatables(args: argparse.Namespace) -> int:
     lex = _lexicon(args)
     items = untranslatables(lex)
@@ -436,6 +444,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--glossary", help=f"glossary path (default {DEFAULT_GLOSSARY})")
     p.add_argument("--lexicon", help=f"lexicon path (default {DEFAULT_LEXICON})")
     p.add_argument("--relations", help=f"relations map path (default {DEFAULT_RELATIONS})")
+    p.add_argument("--invariants", help=f"invariants map path (default {DEFAULT_INVARIANTS})")
     sub = p.add_subparsers(dest="command", required=True)
 
     sub.add_parser("concepts", help="list the concepts in the glossary")
@@ -492,6 +501,8 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("cornerstones", help="the root-base of the tree: innate, self-standing words built on nothing — where depth begins")
 
     sub.add_parser("dimensions", help="the tree as a system: conveyance (symbol/story/word) × culture × time × depth — dimensional meaning")
+
+    sub.add_parser("dimensionless", help="meaning that may outlast time: invariants proposed as universal truth, and the gap the record cannot cross")
 
     sp = sub.add_parser("arc", help="one value traced unbroken across both regimes: breath sign -> dispersal -> re-coherence")
     sp.add_argument("value")
@@ -565,6 +576,7 @@ _COMMANDS = {
     "frontier": cmd_frontier,
     "cornerstones": cmd_cornerstones,
     "dimensions": cmd_dimensions,
+    "dimensionless": cmd_dimensionless,
     "arc": cmd_arc,
     "atlas": cmd_atlas,
     "regime": cmd_regime,

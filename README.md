@@ -78,6 +78,7 @@ interpretation/
   frontier.py      # the leaf-edge of the tree: unpolarised, singular, experiential words at the frontier
   cornerstone.py   # the root-base of the tree: innate, self-standing words built on nothing (frontier's dual)
   dimension.py     # the tree as a system: conveyance (symbol/story/word) × culture × time × depth
+  dimensionless.py # meaning that may outlast time: invariants proposed as universal truth, and the unattestable gap
   lexicon.py       # phonetic language over time: the explosion, sieve->success, coherence
   arc.py           # one thread traced unbroken across both regimes (migrate + proliferation)
   signal.py        # the capstone: signal = integrity x direction(truth) — the record on itself
@@ -86,10 +87,11 @@ interpretation/
   manifest.py      # defensive-publication manifest
 glossary.json              # breath signs + pump words + value_aliases + migrations
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
+invariants.json            # proposed invariants — claims of universal truth (the dimensionless)
 relations.json             # the authored map of meaning-connections (antonyms + synonyms)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (166 tests)
+tests/                     # the suite (173 tests)
 ```
 
 ## Quickstart
@@ -565,6 +567,59 @@ in the pump regime is **cross-dimensional**: *equilibrium*, *divinity*, *unity* 
 values `migrate` and `arc` already trace) occupy the conveyance dimension in more than
 one mode, and their meaning has extent the flat word's cannot. The space is an authored
 proxy of the system's shape — descriptive, never a gate.
+
+### The dimensionless: meaning that may outlast time
+
+`dimension` measured a concept's *extent* — how many cells it occupies, and how it is
+*transformed* in each. `dimensionless` reads the **inversion**: meaning that does *not*
+change as it crosses the dimensions — **invariant** under time, culture, conveyance and
+depth. A concept so fundamental it is the same in every cell, or prior to the cells
+entirely: the candidate for a **universal truth that supersedes human experience**.
+
+This is where the framework's one thesis — *a check is a proxy, not a proof* — reaches
+its limit. The framework can *measure* how invariant a concept has demonstrably been
+across the record; it **cannot** measure whether it outlasts time, because the record is
+itself within time. So invariance-across-the-record is a proxy for universality, the
+residual gap is **unattestable**, and this layer ranks candidates yet **certifies none** —
+finding the deepest paradox in its own discipline: the most universal concepts are
+precisely the ones the record can *least* witness.
+
+```
+$ python -m interpretation dimensionless
+== the dimensionless: meaning that may outlast time ==
+  a-priori (presupposed by the record, not recorded in it — most dimensionless, least witnessable):
+    the distinction (0/1)  [a-priori; domains: information, logic]
+      grounding: a distinction is the irreducible unit of information, prior to any mind … natural computing reads 0 or 1
+      presupposed by every sign, never entering the record as content — gap to universal: total (a thing all evidence rests on is witnessed by none)
+    identity (A is A)  [a-priori; domains: logic]
+    truth  [a-priori; domains: logic]
+  manifest (demonstrably invariant across the record's own span — a proxy for the universal):
+    equilibrium / balance  [manifest; domains: physics, mathematics]
+      held whole in 2 sign(s), crossing into 4 pump lexeme(s); shown invariant across ~3590 year(s) — the leap to 'outlasts time' is unattestable
+    recurrence / the cycle  [manifest; domains: mathematics, cosmology]   # the ouroboros, ~3250 year(s) on record
+    unity / oneness        [manifest; domains: mathematics, ontology]
+```
+
+Two kinds of invariant fall out, on opposite sides of attestation:
+
+- **a-priori** — presupposed by the record, never recorded *in* it. The **distinction**
+  (0/1 — the bit the whole project opened on), **identity** (A is A), **truth**. They
+  ground logic and information themselves, so every sign already rests on them — which is
+  exactly why none can be attested: *a thing presupposed by all evidence is witnessed by
+  none.* The most dimensionless, the least witnessable.
+- **manifest** — demonstrably invariant across the record's own span: a breath value held
+  whole in a sign and carried across the threshold into pump words (**equilibrium**,
+  **unity**, the **recurrence** of the ouroboros). The record shows how many signs held it
+  and across how many years it has *demonstrably* lasted (equilibrium ~3,590; recurrence
+  ~3,250) — but the leap from a finite span to "outlasts time" is the unattestable gap.
+
+The invariants are an **authored map of claims** (`invariants.json`) — the strongest the
+framework makes and the only ones it cannot, even in principle, ground in attestation. It
+measures their invariance against the corpus, names the grounding that might make each
+universal, and then **stops honestly at the edge of what a record within time can
+witness**. The nearest thing to dimensionless it can point to is the **distinction
+itself** — 0/1 — which is exactly where the framework began. Descriptive, never a gate;
+and here, uniquely, it cannot even measure the final gap.
 
 ## The phonetic web over time: the explosion of understanding
 
