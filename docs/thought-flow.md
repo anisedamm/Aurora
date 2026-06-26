@@ -508,6 +508,36 @@ relational completion of the breath/pump thesis: not one regime or one culture, 
 several human attempts to hold a truth, meeting at the points where they held the same one.
 Descriptive, never a gate.
 
+## Step 29 — The phonetic equilibrium: tongues converging at the refined end
+
+Step 28 found the equilibrium points where breath cultures unite — by holding a truth
+*whole*, at high density, each in its own non-phonetic medium. But the equilibria layer
+named only half of a gradient, and the other half was waiting in the pump web. The breath
+cultures unite by holding a value whole; the pump regime, by its nature, does the
+opposite — it *segments*, each phonetic word naming one concept explicitly. So where could
+tongues unite? Not by holding-whole, which the phonetic mode forsook, but at the **refined
+end**: independent tongues, far apart, each carving the *same family of inner experience*
+into its own single word. Portuguese *saudade*, Welsh *hiraeth* and Romanian *dor* on a
+longing for the absent; Danish *hygge*, Dutch *gezelligheid* and German *Gemütlichkeit* on
+a cosy togetherness. The two unions are the two ends of the one density gradient: the
+breath web meets by holding a truth whole (density high), the tongues meet by each naming
+the same experience (density 1).
+
+The honesty turn is the one the whole framework runs on, and it is sharp here. These kin
+words are exactly the **untranslatables** (Step 23) — each precisely its own, *saudade* not
+*hiraeth* not *dor*. So the convergence cannot be modelled as identity without destroying
+the very thing that made them worth naming. The answer was the move the breath web already
+used: an **authored kinship**, a `kinships` map in the lexicon that is the phonetic mirror
+of `value_aliases` — surfaced, a proxy, never a claim the words are the same, only that
+independent tongues, separated by geography, reached for the same experience. `untranslatables`
+still sees each as its own single-tongue concept; `equilibria` reads the kinship to find the
+convergence. Both true at once: each word untranslatable, and the family they meet on real.
+And the inner life is *where* the tongues converge — the experiential end of the lexicon's
+own climb (Step 23), now read across tongues rather than along one. The relational thesis
+completes: not one regime, not one culture, not one medium — the several human attempts to
+hold a truth, meeting both where they held it whole and where they each, at last, found a
+word for it. Descriptive, never a gate.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

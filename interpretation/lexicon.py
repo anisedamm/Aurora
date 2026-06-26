@@ -47,6 +47,7 @@ class Lexeme:
     experiential: bool
     valued_for: str
     defined_in_terms_of: tuple[str, ...] = ()
+    region: str = ""           # where the tongue is spoken (authored provenance)
 
 
 @dataclass
@@ -54,6 +55,7 @@ class Lexicon:
     lexemes: dict[str, Lexeme] = field(default_factory=dict)
     title: str = ""
     note: str = ""
+    kinships: dict = field(default_factory=dict)  # authored kin-concept families across tongues
 
     def by_era(self) -> dict[str, list[Lexeme]]:
         out: dict[str, list[Lexeme]] = {}
@@ -72,10 +74,14 @@ def load_lexicon(path) -> Lexicon:
             alignment=float(e.get("alignment", 0.0)), experiential=bool(e.get("experiential", False)),
             valued_for=e.get("valued_for", ""),
             defined_in_terms_of=tuple(e.get("defined_in_terms_of", ())),
+            region=e.get("region", ""),
         )
         for e in raw.get("lexemes", [])
     }
-    return Lexicon(lexemes=lexemes, title=raw.get("title", ""), note=raw.get("note", ""))
+    return Lexicon(
+        lexemes=lexemes, title=raw.get("title", ""), note=raw.get("note", ""),
+        kinships=dict(raw.get("kinships", {})),
+    )
 
 
 def _largest_component_fraction(lexemes: list[Lexeme]) -> float:

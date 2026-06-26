@@ -4,18 +4,27 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from interpretation.equilibria import MYTH, SYMBOL, WORD, equilibria
+from interpretation.equilibria import (
+    HELD_WHOLE,
+    MYTH,
+    NAMED,
+    SYMBOL,
+    WORD,
+    equilibria,
+)
 from interpretation.glossary import load_glossary
+from interpretation.lexicon import load_lexicon
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def _glossary():
-    return load_glossary(ROOT / "glossary.json")
+def _world():
+    return load_glossary(ROOT / "glossary.json"), load_lexicon(ROOT / "lexicon.json")
 
 
 def test_cultures_unite_on_shared_equilibrium_points():
-    eq = equilibria(_glossary())
+    g, lex = _world()
+    eq = equilibria(g, lex)
     points = {p.value for p in eq.points}
     # values distinct cultures arrived at, each in their own way
     assert {"divinity", "equilibrium", "unity", "sovereignty"} <= points
@@ -26,7 +35,8 @@ def test_cultures_unite_on_shared_equilibrium_points():
 
 
 def test_a_value_held_within_one_culture_is_not_a_geographic_union():
-    eq = equilibria(_glossary())
+    g, lex = _world()
+    eq = equilibria(g, lex)
     # eternity is held by two signs, but both are Egyptian — held, not a union
     assert eq.point("eternity") is None
     local = {p.value for p in eq.held_local}
@@ -34,8 +44,8 @@ def test_a_value_held_within_one_culture_is_not_a_geographic_union():
 
 
 def test_the_union_crosses_media_not_only_geography():
-    eq = equilibria(_glossary())
-    divinity = eq.point("divinity")
+    g, lex = _world()
+    divinity = equilibria(g, lex).point("divinity")
     # carried as a myth (divine-order), a symbol (labrys, ankh) — non-phonetic both
     assert MYTH in divinity.media and SYMBOL in divinity.media
     media_of = {e.label: e.medium for e in divinity.holdings}
@@ -44,8 +54,9 @@ def test_the_union_crosses_media_not_only_geography():
 
 
 def test_meaning_moves_from_high_density_to_explicit_refinement():
-    eq = equilibria(_glossary())
-    equilibrium = eq.point("equilibrium")
+    g, lex = _world()
+    equilibrium = equilibria(g, lex).point("equilibrium")
+    assert equilibrium.union_mode == HELD_WHOLE
     # held whole at high density: each sign carries the value among several others
     assert equilibrium.hold_density > 1
     assert all(e.density > 1 for e in equilibrium.holdings)
@@ -57,8 +68,8 @@ def test_meaning_moves_from_high_density_to_explicit_refinement():
 
 
 def test_the_holdings_form_a_relational_timescale_across_cultures():
-    eq = equilibria(_glossary())
-    divinity = eq.point("divinity")
+    g, lex = _world()
+    divinity = equilibria(g, lex).point("divinity")
     years = sorted(e.year for e in divinity.holdings)
     # cultures meet on the same truth across a span of time and place
     assert years == [-3000, -1600, -1400]
@@ -67,23 +78,60 @@ def test_the_holdings_form_a_relational_timescale_across_cultures():
 
 
 def test_what_was_worth_committing_is_carried_on_the_point():
-    eq = equilibria(_glossary())
-    s = eq.point("equilibrium").summary
+    g, lex = _world()
+    s = equilibria(g, lex).point("equilibrium").summary
     assert "what was worth committing" in s
     assert "high density to explicit refinement" in s
 
 
 def test_a_point_whose_dispersal_is_unmapped_is_reported_honestly():
-    eq = equilibria(_glossary())
+    g, lex = _world()
     # sovereignty unites Minoan and Egyptian but has no authored dispersal yet
-    sovereignty = eq.point("sovereignty")
+    sovereignty = equilibria(g, lex).point("sovereignty")
     assert sovereignty is not None
     assert sovereignty.refinements == []
     assert "not yet mapped" in sovereignty.summary
 
 
+def test_tongues_converge_on_one_experience_at_the_refined_end():
+    g, lex = _world()
+    eq = equilibria(g, lex)
+    longing = eq.point("longing-for-the-absent")
+    assert longing is not None
+    assert longing.union_mode == NAMED
+    # distinct tongues, separated by geography, each named the same family of experience
+    assert longing.cultures == ["Portuguese", "Romanian", "Welsh"]
+    # at the refined end: every holding is a single explicit word (density 1)
+    assert all(e.density == 1 and e.medium == WORD for e in longing.holdings)
+    assert longing.refinements == []
+    assert "kin, not identical" in longing.summary
+
+
+def test_cosy_togetherness_unites_three_tongues():
+    g, lex = _world()
+    cosy = equilibria(g, lex).point("cosy-togetherness")
+    assert {e.label for e in cosy.holdings} == {"hygge", "gezelligheid", "Gemütlichkeit"}
+    assert cosy.cultures == ["Danish", "Dutch", "German"]
+
+
+def test_held_whole_and_named_points_are_grouped():
+    g, lex = _world()
+    eq = equilibria(g, lex)
+    assert {p.value for p in eq.held_whole} == {"divinity", "sovereignty", "equilibrium", "unity"}
+    assert {p.value for p in eq.named} == {"longing-for-the-absent", "cosy-togetherness"}
+
+
+def test_without_a_lexicon_only_the_breath_points_are_found():
+    g, _ = _world()
+    eq = equilibria(g)   # lexicon optional — breath web still reads
+    assert {p.value for p in eq.named} == set()
+    assert eq.point("divinity") is not None
+
+
 def test_equilibria_is_a_reader_not_a_ruler():
-    s = equilibria(_glossary()).summary
+    g, lex = _world()
+    s = equilibria(g, lex).summary
     assert "where cultures unite across geography and medium" in s
+    assert "named across tongues" in s
     assert "a reader, not a ruler" in s
     assert "Descriptive, never a gate" in s

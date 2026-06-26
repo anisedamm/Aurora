@@ -227,7 +227,7 @@ def cmd_chronicle(args: argparse.Namespace) -> int:
 
 
 def cmd_equilibria(args: argparse.Namespace) -> int:
-    eq = equilibria(_glossary(args))
+    eq = equilibria(_glossary(args), _lexicon(args))
     value = getattr(args, "value", None)
     if value:
         p = eq.point(value)

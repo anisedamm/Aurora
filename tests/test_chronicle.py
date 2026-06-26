@@ -60,7 +60,7 @@ def test_the_inner_life_enters_late_and_climbs():
     # the inner-experience words cluster in the later axis, none among the earliest namings
     assert min(exp_years) == -400
     assert all(m.year >= -400 for m in ch.experiential)
-    assert len(ch.experiential) == 13
+    assert len(ch.experiential) == 17
 
 
 def test_remembrances_and_thresholds_link_the_two_regimes():
