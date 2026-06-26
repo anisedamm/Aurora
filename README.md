@@ -75,6 +75,7 @@ interpretation/
   migration.py     # a value across the threshold: held whole, then dispersed into lexemes
   condensation.py  # binary thought (compression) vs relational meaning (condensation): the bit + its field
   weave.py         # the antonym couples as one web: root couples, the branching hubs, the keystone word
+  frontier.py      # the leaf-edge of the tree: unpolarised, singular, experiential words at the frontier
   lexicon.py       # phonetic language over time: the explosion, sieve->success, coherence
   arc.py           # one thread traced unbroken across both regimes (migrate + proliferation)
   signal.py        # the capstone: signal = integrity x direction(truth) — the record on itself
@@ -86,7 +87,7 @@ lexicon.json               # the phonetic lexicon traced over time (the explosio
 relations.json             # the authored map of meaning-connections (antonyms + synonyms)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (146 tests)
+tests/                     # the suite (153 tests)
 ```
 
 ## Quickstart
@@ -435,6 +436,56 @@ the meaning web: 14 antonym couple(s), 4 root(s), 14 term(s)
 
 The keystone is read, not crowned: `weave` surfaces where the web's truth gathers and,
 like every measure here but attestation, **gates nothing**.
+
+### The frontier: meaning at the leaf-edge of the tree
+
+The `weave` reads the web's *settled* structure; `frontier` reads its **edge**, where
+comprehension is still reaching. Three kinds of word live there — and they are one kind
+seen from three sides:
+
+- **no absolute antonym** (*unpolarised*) — the word draws no clean distinction; it
+  names a *positive presence*, a perception held in itself. Where a bit is all boundary
+  and no content, these are all content and no boundary.
+- **no synonym** (*singular*) — no other word can stand in for it, so it cannot be
+  compressed away. It carries meaning nothing else carries: maximal information, zero
+  redundancy — the exact opposite of a bit, which any yes/no can replace.
+- **a leaf of the tree** — nothing is yet *defined in terms of* it; it sits at the
+  growing tip. The interior is comprehended and load-bearing; the leaves are the
+  frontier.
+
+```
+$ python -m interpretation frontier
+the frontier of the tree: 9 experiential leaf-word(s), 6 unwoven (no antonym, no synonym); furthest out: mamihlapinatapai
+  the reaching edge (leaf, experiential — abstract perception newly named):
+    mamihlapinatapai    1860  align 0.90  no-antonym no-synonym    score 0.90  — a singular perception, unwoven — pure frontier
+    ubuntu              1846  align 0.88  no-antonym no-synonym    score 0.88  — a singular perception, unwoven — pure frontier
+    hygge               1920  align 0.85  no-antonym no-synonym    score 0.85  — a singular perception, unwoven — pure frontier
+    saudade             1400  align 0.85  no-antonym no-synonym    score 0.85  — a singular perception, unwoven — pure frontier
+    sublime             1750  align 0.83  no-antonym no-synonym    score 0.83  — a singular perception, unwoven — pure frontier
+    nostalgia           1688  align 0.82  no-antonym no-synonym    score 0.82  — a singular perception, unwoven — pure frontier
+    empathy             1909  align 0.88  polarised  redund 0.50   score 0.26  — an experiential edge, partly woven in
+    ...
+  furthest out: 'mamihlapinatapai' — the wordless shared look of two who each wish the other would begin
+  contrast — unpolarised but interior (no antonym, yet long comprehended): flow, melancholy, time, …
+```
+
+A word that is all three — an unpolarised, singular, experiential leaf — is meaning at
+**the frontier of comprehended knowledge we can communicate**: an *abstract
+representation of contextual perception*, named once and not yet woven into the web of
+oppositions and equivalences. The untranslatables are the paradigm, and **mamihlapinatapai**
+— *the wordless shared look of two who each wish the other would begin* — sits furthest
+out: a leaf with no opposite and no equivalent, meaning at the very edge of what language
+has managed to say.
+
+The score is a **product** (the framework's signature): leaf, experiential, unpolarised
+and singular all push a word out; any pull toward the settled interior lowers it. So the
+listing is a gradient — from *wellbeing* (an experiential leaf, but already given an
+opposite, *suffering*, and equivalents, *flourishing/welfare* — partly woven in) out to
+the wholly singular untranslatables. And the honest contrast is kept: being unpolarised
+is *not* the frontier — *time* has no antonym yet sits deep in the interior, long since
+comprehended and built upon. **The map's silence about a word — no opposite, no
+equivalent — is itself the mark of the frontier**, and an authored proxy, not a proof.
+Descriptive, never a gate.
 
 ## The phonetic web over time: the explosion of understanding
 

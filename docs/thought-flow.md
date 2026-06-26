@@ -513,6 +513,46 @@ asserted, to be the word the rest most lean on. Meaning is relational; the truth
 gathers where the web leans hardest. Like the constellation, the keystone is **read, not
 crowned**: descriptive, never a gate.
 
+## Step 29 — The frontier: meaning at the leaf-edge of the tree
+
+Step 28's `weave` read the web's *settled* structure — the roots, the hubs, the keystone
+the rest are built on. This step reads its **edge**, the place comprehension is still
+reaching, and answers the user's last question: the nature of words with *no absolute
+antonym* and *minimal synonyms*, and what lives at the frontier of what we can
+communicate. The insight is that the two qualities and the frontier are one thing seen
+three ways. A word with **no antonym** is *unpolarised*: it draws no distinction, names a
+positive presence rather than a this-against-that — where a bit (Step 27) is all boundary
+and no content, these are all content and no boundary. A word with **no synonym** is
+*singular*: nothing can stand in for it, so it cannot be compressed away — maximal
+information, zero redundancy, the exact inverse of the bit that any yes/no replaces. And a
+word nothing is yet *defined in terms of* is a **leaf** of the definitional tree (the same
+`defined_in_terms_of` web read as a tree): the growing tip, where the interior is
+comprehended and load-bearing and the edge is still being named.
+
+A word that is all three — an unpolarised, singular, *experiential* leaf — is meaning at
+the frontier of comprehended knowledge: an abstract representation of contextual
+perception, named once and not yet woven into any opposition or equivalence. `frontier.py`
+scores it as a product (leaf × experiential × unpolarised × singular × alignment), so the
+result is a gradient, not a line: from *wellbeing* (an experiential leaf already given an
+opposite, *suffering*, and equivalents, *flourishing/welfare* — partly woven in) out to
+the wholly singular untranslatables, with **mamihlapinatapai** — the wordless shared look
+of two who each wish the other would begin — furthest out, a leaf with no opposite and no
+equivalent. The untranslatables (Step 23) return here in a new light: they were the
+concepts one tongue valued enough to name; they are *also* the words at the edge of the
+sayable, precise enough to name and singular enough that no other word in any tongue on
+the map carries them. The framework's own arc lands on its leading edge: the keystone is
+*self* (Step 28, the interior the web leans on), and the frontier is *mamihlapinatapai*
+(the perception the web has only just touched).
+
+Two honesties hold it to the spine. First, the contrast is kept: being unpolarised is not
+the frontier — *time* has no antonym yet sits deep in the interior, long comprehended and
+built upon; being a *leaf* is what makes the edge. Second, the measure rests on the map's
+**silence** — no recorded opposite, no recorded equivalent — and the relations map is
+authored and partial, so that silence is a proxy for the frontier, not a proof of it; a
+word reads as frontier partly because the web has not yet reached it, which is exactly
+what being at the frontier means, and exactly why it must be marked a proxy. Descriptive,
+never a gate.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

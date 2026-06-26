@@ -128,6 +128,7 @@ from .condensation import (
     KIND_UNPOLARISED,
 )
 from .weave import Couple, Node, Weave, weave
+from .frontier import Frontier, FrontierWord, frontier
 from .lexicon import (
     Lexeme,
     Lexicon,
@@ -255,6 +256,10 @@ __all__ = [
     "Node",
     "Weave",
     "weave",
+    # the frontier: meaning at the leaf-edge of the tree (unpolarised, singular, reaching)
+    "Frontier",
+    "FrontierWord",
+    "frontier",
     # the lexicon over time: phonetic language as the record of growing understanding
     "Lexeme",
     "Lexicon",

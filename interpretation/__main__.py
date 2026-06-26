@@ -35,6 +35,7 @@ from .arc import arc
 from .atlas import atlas
 from .condensation import condense, connect, load_relations
 from .constellation import constellation
+from .frontier import frontier
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
 from .lexicon import load_lexicon, proliferation, untranslatables
@@ -259,6 +260,16 @@ def cmd_weave(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_frontier(args: argparse.Namespace) -> int:
+    rel = None
+    try:
+        rel = _relations(args)
+    except (OSError, ValueError):
+        pass  # the tree's leaves read without the polarity/synonymy map
+    print(frontier(_lexicon(args), rel).summary)
+    return 0
+
+
 def cmd_untranslatables(args: argparse.Namespace) -> int:
     lex = _lexicon(args)
     items = untranslatables(lex)
@@ -459,6 +470,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     sub.add_parser("weave", help="the antonym web: root couples, the most-branching hubs, and the keystone defining word")
 
+    sub.add_parser("frontier", help="the leaf-edge of the tree: unpolarised, singular, experiential words at the frontier of comprehension")
+
     sp = sub.add_parser("arc", help="one value traced unbroken across both regimes: breath sign -> dispersal -> re-coherence")
     sp.add_argument("value")
 
@@ -528,6 +541,7 @@ _COMMANDS = {
     "condense": cmd_condense,
     "connect": cmd_connect,
     "weave": cmd_weave,
+    "frontier": cmd_frontier,
     "arc": cmd_arc,
     "atlas": cmd_atlas,
     "regime": cmd_regime,
