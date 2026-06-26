@@ -76,6 +76,8 @@ interpretation/
   condensation.py  # binary thought (compression) vs relational meaning (condensation): the bit + its field
   weave.py         # the antonym couples as one web: root couples, the branching hubs, the keystone word
   frontier.py      # the leaf-edge of the tree: unpolarised, singular, experiential words at the frontier
+  cornerstone.py   # the root-base of the tree: innate, self-standing words built on nothing (frontier's dual)
+  dimension.py     # the tree as a system: conveyance (symbol/story/word) × culture × time × depth
   lexicon.py       # phonetic language over time: the explosion, sieve->success, coherence
   arc.py           # one thread traced unbroken across both regimes (migrate + proliferation)
   signal.py        # the capstone: signal = integrity x direction(truth) — the record on itself
@@ -87,7 +89,7 @@ lexicon.json               # the phonetic lexicon traced over time (the explosio
 relations.json             # the authored map of meaning-connections (antonyms + synonyms)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (153 tests)
+tests/                     # the suite (166 tests)
 ```
 
 ## Quickstart
@@ -486,6 +488,83 @@ is *not* the frontier — *time* has no antonym yet sits deep in the interior, l
 comprehended and built upon. **The map's silence about a word — no opposite, no
 equivalent — is itself the mark of the frontier**, and an authored proxy, not a proof.
 Descriptive, never a gate.
+
+### The cornerstones: meaning at the root-base of the tree
+
+`frontier` reads the leaf-edge; `cornerstones` reads its **dual** — the **root-base**,
+the words built on *nothing*, so fundamental and innate that the whole tree rests on
+them. If the frontier is where comprehension is still reaching, the cornerstones are
+where it *begins*: the base of the depth itself.
+
+```
+$ python -m interpretation cornerstones
+the root-base of the tree: 4 cornerstone(s) (built on nothing); the base of the depth: fire (20 rest on it)
+  the cornerstones (built on nothing, innate, self-standing — the given base):
+    fire     primal    innate 0.95  support 20  self-standing  score 0.95  — a cornerstone — built on nothing, needs no relational associate: the given base
+    kin      primal    innate 0.85  support 18  self-standing  score 0.77  — a cornerstone — built on nothing, needs no relational associate: the given base
+    water    primal    innate 0.95  support  8  self-standing  score 0.38  — a cornerstone ...
+    danger   primal    innate 0.90  support  1  self-standing  score 0.04  — a cornerstone ...
+  contrast — derived pillars (load-bearing, yet built on earlier words): season (support 19, depth 1), time (support 14, depth 2), soul (support 12, depth 4)
+```
+
+A cornerstone is one kind of word seen three ways: **a root of the tree** (nothing in
+its ancestry — built on nothing, with maximal *support*, the count of words that rest on
+it); **innate / given** (the sieve end of the axis — *water*, *fire*, *kin*, *danger*, the
+concrete necessities given before abstraction begins); and **self-standing** (needing
+*no relational associate* — *water* means water with no opposite to define it against and
+no synonym to replace it).
+
+That last property is the deep symmetry with the frontier: **both the cornerstone and the
+frontier word stand without a relational associate, for opposite reasons.** The frontier
+word has none because the web has *not yet reached* it (it reaches outward); the
+cornerstone has none because it is so foundational it *needs* none (everything reaches
+back to it). Same silence on the map, opposite nature — the two ends of the tree.
+
+The **base of the depth itself** is the cornerstone the most rests on: **fire** (the
+elemental given, 20 of 27 words ultimately compound down to it), with **kin** beside it
+(the social given, 18). And the honest contrast the framework always keeps: *season*,
+*time* and *soul* bear enormous weight but are **derived pillars**, not roots — *time* is
+built on *season*, which is built on *fire*. Being relied upon is not being a root; the
+base is what is built on nothing.
+
+### Dimensional meaning: the tree as a system of layered axes
+
+Step back from the single tree and a larger shape appears, the one every layer has been
+building toward: **the conceptual language tree is the system**, and meaning is not laid
+along one line but located in a space of several **dimensions**, each a distinct way
+meaning is layered — each conveyance adding meaning the others cannot reach.
+
+```
+$ python -m interpretation dimensions
+the tree as a system: 3 conveyance mode(s) × 5 culture(s) × 5 era(s) = 75 cell(s) of dimensional meaning, over depth 0–14
+  the conveyance dimension (each a way of conveying meaning the others cannot reach):
+    symbol     3  (non-phonetic)
+    story      6  (non-phonetic)
+    word      32  (phonetic)
+  the culture dimension (each tongue its own derivation): shared, Danish, Nguni, Portuguese, Yaghan
+  the time dimension (layered over history, breath stratum beneath): primal, agrarian, classical, modern, reflexive
+  the depth dimension (the vertical): cornerstone 0 → frontier 14
+  cross-dimensional values (carried as symbol AND word — the richest dimensional meaning):
+    divinity, equilibrium, unity
+```
+
+- **conveyance** — *how* meaning is committed to a lasting form. Two are non-phonetic,
+  holding meaning whole: the **symbol** (a breath/conceptual sign — the labrys, the ankh)
+  and the **story** (a breath truth carried in phonetic words — a myth like the
+  *Theogony*). One is phonetic: the **word**. A thing said in a symbol is not the thing
+  said in a word — each mode is a dimension.
+- **culture** — each language/dialect has its own derivation (the shared lexicon, and
+  each tongue the untranslatables come from), layered like constellations and webs that
+  need not coincide.
+- **time** — the eras, over history, with the breath stratum beneath the threshold.
+- **depth** — the vertical the rest of the framework reads: cornerstone (0) → frontier.
+
+A concept in one cell — a single modern shared word, one mode, one culture, one era — is
+*flat*. A value carried as a **symbol** in the breath regime and re-derived as **words**
+in the pump regime is **cross-dimensional**: *equilibrium*, *divinity*, *unity* (the
+values `migrate` and `arc` already trace) occupy the conveyance dimension in more than
+one mode, and their meaning has extent the flat word's cannot. The space is an authored
+proxy of the system's shape — descriptive, never a gate.
 
 ## The phonetic web over time: the explosion of understanding
 

@@ -35,6 +35,8 @@ from .arc import arc
 from .atlas import atlas
 from .condensation import condense, connect, load_relations
 from .constellation import constellation
+from .cornerstone import cornerstones
+from .dimension import meaning_space
 from .frontier import frontier
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
@@ -270,6 +272,21 @@ def cmd_frontier(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_cornerstones(args: argparse.Namespace) -> int:
+    rel = None
+    try:
+        rel = _relations(args)
+    except (OSError, ValueError):
+        pass  # the tree's roots read without the self-standing check
+    print(cornerstones(_lexicon(args), rel).summary)
+    return 0
+
+
+def cmd_dimensions(args: argparse.Namespace) -> int:
+    print(meaning_space(_glossary(args), _lexicon(args)).summary)
+    return 0
+
+
 def cmd_untranslatables(args: argparse.Namespace) -> int:
     lex = _lexicon(args)
     items = untranslatables(lex)
@@ -472,6 +489,10 @@ def build_parser() -> argparse.ArgumentParser:
 
     sub.add_parser("frontier", help="the leaf-edge of the tree: unpolarised, singular, experiential words at the frontier of comprehension")
 
+    sub.add_parser("cornerstones", help="the root-base of the tree: innate, self-standing words built on nothing — where depth begins")
+
+    sub.add_parser("dimensions", help="the tree as a system: conveyance (symbol/story/word) × culture × time × depth — dimensional meaning")
+
     sp = sub.add_parser("arc", help="one value traced unbroken across both regimes: breath sign -> dispersal -> re-coherence")
     sp.add_argument("value")
 
@@ -542,6 +563,8 @@ _COMMANDS = {
     "connect": cmd_connect,
     "weave": cmd_weave,
     "frontier": cmd_frontier,
+    "cornerstones": cmd_cornerstones,
+    "dimensions": cmd_dimensions,
     "arc": cmd_arc,
     "atlas": cmd_atlas,
     "regime": cmd_regime,

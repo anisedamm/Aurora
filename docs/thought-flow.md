@@ -553,6 +553,60 @@ word reads as frontier partly because the web has not yet reached it, which is e
 what being at the frontier means, and exactly why it must be marked a proxy. Descriptive,
 never a gate.
 
+## Step 30 — The cornerstones: the root-base, the frontier's dual
+
+Step 29 read the leaf-edge of the tree; this step reads its **dual**, the root-base —
+the words built on *nothing*, so fundamental the whole tree rests on them. The frontier
+and the cornerstone are the two ends of the same vertical axis: the frontier word has
+maximal *depth* (a long ancestry) and zero *support* (nothing built on it yet); the
+cornerstone has zero depth and maximal support (everything built on it). `cornerstone.py`
+reads, for each word, whether it is a **root** (no `defined_in_terms_of`), how much
+**support** it bears (how many words transitively rest on it), and whether it is
+**self-standing** (needs no antonym or synonym). The base of the depth is the cornerstone
+the most rests on — **fire** (20 of 27 words compound down to it), with **kin** beside it
+(18): the elemental given and the social given, the floor of the recorded tree.
+
+The load-bearing insight is the symmetry with Step 29. *Both* the cornerstone and the
+frontier word stand **without a relational associate** — no opposite, no equivalent — and
+the framework had to be honest that this is the *same surface for opposite reasons*: the
+frontier word lacks an associate because the web has **not yet reached** it (it reaches
+outward into the unsaid); the cornerstone lacks one because it is so innate it **needs**
+none (everything reaches back to it). The map's silence means *not-yet-related* at one end
+and *needs-no-relation* at the other. And the contrast the framework always keeps holds
+here too: a word can *feel* fundamental and bear great weight yet be **derived** — *time*
+is a load-bearing pillar built on *season*, built on *fire*; being relied upon is not being
+a root. The user's "like time" is answered precisely: time is not a cornerstone; it only
+sits near the base. Descriptive, never a gate.
+
+## Step 31 — Dimensional meaning: the tree as a system of layered axes
+
+The last step lifts to the whole shape the framework has been building toward. Until now
+each reading walked one structure; this one names the **system**: the conceptual language
+tree is not a single line of descent but a space of several **dimensions**, each a
+distinct way meaning is layered, and each conveyance a dimension the others cannot reach
+(`dimension.py`). The **conveyance** axis is the one the user pressed: meaning is committed
+to a lasting form as a **symbol** (a breath/conceptual sign, non-phonetic, holding a field
+whole), a **story** (a breath truth carried in phonetic words — a myth, the threshold
+crossing), or a **word** (a pump-era phonetic lexeme) — three modes, and a thing said in
+one is not the thing said in another. Beside it run **culture** (each tongue its own
+derivation — the shared lexicon and the untranslatables' separate languages, layered like
+constellations and webs that need not coincide), **time** (the eras, with the breath
+stratum beneath the threshold), and **depth** (Steps 29–30's vertical, cornerstone to
+frontier).
+
+The synthesis the whole project pointed at: a concept in one cell — a single modern shared
+word, one mode, one culture, one era — is *flat*; a value carried as a **symbol** in the
+breath regime and re-derived as **words** in the pump regime is **cross-dimensional**, and
+its meaning has extent the flat word's cannot. Those are exactly the values `migrate` and
+`arc` already trace across the threshold — *equilibrium*, *divinity*, *unity* — now read
+as occupying the conveyance dimension in more than one mode. So the reading reuses the
+migration rather than re-deriving it (the discipline the sibling system runs on), and the
+threshold the framework began from is re-seen as one face of a larger truth: meaning grows
+not only along the tree's depth but across its dimensions, and every mode of conveyance a
+culture invents — symbol, story, word — adds a dimension the others could not hold. The
+space is an authored proxy of the system's shape; it maps where meaning is layered, and,
+like all but attestation, it gates nothing.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

@@ -129,6 +129,8 @@ from .condensation import (
 )
 from .weave import Couple, Node, Weave, weave
 from .frontier import Frontier, FrontierWord, frontier
+from .cornerstone import Cornerstones, CornerstoneWord, cornerstones
+from .dimension import Axis, MeaningSpace, meaning_space, SYMBOL, STORY, WORD
 from .lexicon import (
     Lexeme,
     Lexicon,
@@ -260,6 +262,17 @@ __all__ = [
     "Frontier",
     "FrontierWord",
     "frontier",
+    # the cornerstones: meaning at the root-base of the tree (innate, self-standing roots)
+    "Cornerstones",
+    "CornerstoneWord",
+    "cornerstones",
+    # dimensional meaning: the tree as a system of axes (conveyance × culture × time × depth)
+    "Axis",
+    "MeaningSpace",
+    "meaning_space",
+    "SYMBOL",
+    "STORY",
+    "WORD",
     # the lexicon over time: phonetic language as the record of growing understanding
     "Lexeme",
     "Lexicon",
