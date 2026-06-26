@@ -446,6 +446,39 @@ becomes legible on a single screen - the end the project's every measure was qui
 building toward. Read-only, descriptive, composed of nothing but what the tested
 functions already say.
 
+## Step 27 — Binary thought and relational meaning: compression vs condensation
+
+Every layer so far read meaning at the level of the *sign* or the *word*. This step
+goes under both, to the bare unit natural computing reads: the **bit**, which is `0` or
+`1` — yes/no, signal/noise, true/false, right/wrong. A bit is a *pure distinction*: it
+separates two states and carries nothing else. That is **compression** — meaning
+squeezed to the single yes/no, fixed and exact and empty of all but the cut. Human
+thought is built on the same distinction (a word's sharpest form is its **antonym**,
+the pole it stands against), so a word is binary *in structure*: under it lies the one
+bit. But a word does not stop at the cut — onto that skeleton it **condenses** an
+associated field (its **synonyms** and connections), so the fixed bit takes on a
+relational, proportional, *meant* content the bit alone cannot hold. Condensation is the
+inverse gesture to compression: not squeezing meaning into one bit, but the accretion of
+associated sense *around* the distinction, so one token carries far more than one bit
+(`condensation.py`). `condense` reads the two facets the framework had only ever
+embodied — its own `signal == 1` is the bit; its `WeightedField` is the condensed field
+— and now names them on a single term: *signal* is the floor (a pole, condensation 0,
+the bit); *justice* keeps that very bit (*justice* | *injustice*) and condenses a field
+on it, the `ratio` reading "how much meant content rides on the one yes/no."
+
+Two through-lines close here. The field is not assembled at once: language is the
+**compounded creation of meaning over time**, so a word's meaning is its whole ancestry
+compounded into it — and rather than invent a second web, the compounding is *read from
+the lexicon's existing `defined_in_terms_of`*, so *wellbeing* condenses *flow* and
+*freedom* down to *water* and *fire*, ~42,000 years compounded into one token (reuse,
+not duplication — the discipline the sibling system runs on). And the user's "synonyms
+and antonyms and meaning connection" become the two kinds of edge: an **antonym** is the
+binary axis (the compression — one distinction), a **synonym** is condensed meaning
+shared (the relational content), and a pair that is neither but shares a field is
+*associated*, weighed by the overlap of their gathered meanings (`connect`). The
+relations are an authored map (`relations.json`), a proxy carrying its provenance, not a
+real thesaurus; the compounding is the lexicon's. Descriptive, never a gate.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

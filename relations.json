@@ -1,0 +1,22 @@
+{
+  "title": "An authored map of meaning-connections — the binary pole (antonym) and the condensed field (synonyms) of a term",
+  "note": "A proxy carrying its provenance, not a real thesaurus. Each term records `antonyms` — the pole(s) it stands against, its binary structure (the compression: one bit, a fixed yes/no) — and `synonyms` / `associates` — the field of associated meaning condensed upon that bit (the relational, proportional, meant content a bit cannot hold). Connections are read symmetrically: a pole named one way holds both ways, so a bare opposite (noise against signal) need not be spelled out twice. Where a term is also a lexicon lexeme, its compounded ancestry (`defined_in_terms_of`) is read from the lexicon — language as the compounded creation of meaning over time. Bit-like terms (signal/noise, true/false, right/wrong) are the compression floor: a pole, no field. Condensed terms keep the bit and gather a field on it.",
+  "terms": [
+    {"id": "signal", "word": "signal", "gloss": "the meant, against the meaningless", "antonyms": ["noise"], "synonyms": [], "associates": []},
+    {"id": "yes", "word": "yes", "gloss": "assent — the 1", "antonyms": ["no"], "synonyms": [], "associates": []},
+    {"id": "true", "word": "true", "gloss": "what holds — the 1", "antonyms": ["false"], "synonyms": [], "associates": []},
+    {"id": "right", "word": "right", "gloss": "the correct, against the mistaken", "antonyms": ["wrong"], "synonyms": [], "associates": []},
+
+    {"id": "justice", "word": "justice", "gloss": "each being given their due", "antonyms": ["injustice"], "synonyms": ["fairness", "equity"], "associates": ["debt", "boundary"]},
+    {"id": "freedom", "word": "freedom", "gloss": "self-determination as a value", "antonyms": ["bondage"], "synonyms": ["liberty", "autonomy"], "associates": ["self", "justice"]},
+    {"id": "soul", "word": "soul", "gloss": "the inner animating self", "antonyms": ["body"], "synonyms": ["psyche", "spirit"], "associates": ["self"]},
+    {"id": "self", "word": "self", "gloss": "the reflexive I that regards itself", "antonyms": ["other"], "synonyms": ["ego"], "associates": ["soul"]},
+    {"id": "wellbeing", "word": "wellbeing", "gloss": "flourishing as a state one can seek", "antonyms": ["suffering"], "synonyms": ["flourishing", "welfare"], "associates": ["flow", "freedom"]},
+    {"id": "empathy", "word": "empathy", "gloss": "feeling into another's experience", "antonyms": ["indifference"], "synonyms": ["compassion"], "associates": ["self", "kin"]},
+    {"id": "alienation", "word": "alienation", "gloss": "estrangement from self, others, and work", "antonyms": ["belonging"], "synonyms": ["estrangement"], "associates": ["self", "freedom"]},
+
+    {"id": "unity", "word": "unity", "gloss": "wholeness, the many held as one", "antonyms": ["division"], "synonyms": ["wholeness", "oneness"], "associates": []},
+    {"id": "equilibrium", "word": "equilibrium", "gloss": "opposed forces held in balance", "antonyms": ["imbalance"], "synonyms": ["balance"], "associates": ["justice", "symmetry"]},
+    {"id": "divinity", "word": "divinity", "gloss": "the sacred, set against the profane", "antonyms": ["the-profane"], "synonyms": ["the-sacred", "the-holy"], "associates": []}
+  ]
+}

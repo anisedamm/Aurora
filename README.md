@@ -73,6 +73,7 @@ interpretation/
   memory.py        # the return path: remember() / memory_chain() / confluence()
   constellation.py # the system-level web: which values were load-bearing across a regime
   migration.py     # a value across the threshold: held whole, then dispersed into lexemes
+  condensation.py  # binary thought (compression) vs relational meaning (condensation): the bit + its field
   lexicon.py       # phonetic language over time: the explosion, sieve->success, coherence
   arc.py           # one thread traced unbroken across both regimes (migrate + proliferation)
   signal.py        # the capstone: signal = integrity x direction(truth) — the record on itself
@@ -81,9 +82,10 @@ interpretation/
   manifest.py      # defensive-publication manifest
 glossary.json              # breath signs + pump words + value_aliases + migrations
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
+relations.json             # the authored map of meaning-connections (antonyms + synonyms)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (127 tests)
+tests/                     # the suite (139 tests)
 ```
 
 ## Quickstart
@@ -328,6 +330,68 @@ keeping a shard, all dropping the *paradox* of opposites-held-as-one that made i
 glossary) — a proxy reading of the redistribution, surfaced in the map, not a claim of
 strict etymology. Holism becomes segmentation, and you can watch it happen,
 value by value.
+
+## Binary and relational meaning: compression vs condensation
+
+Beneath every sign, breath or pump, lies the bare unit of natural computing: the
+**bit**. Information reads `0` or `1` — *yes/no*, *signal/noise*, *true/false*,
+*right/wrong*. A bit is a **pure distinction**: it separates two states and carries
+nothing else. That is **compression** — meaning squeezed to the single yes/no that
+transmits with perfect fidelity, fixed, singular, exact, and empty of all but the cut.
+
+Human thought is built on the same distinction — a word draws a boundary, and its
+sharpest form is the **antonym**, the pole it stands against. So a word is *binary in
+structure*: under it lies the one bit. But a word does not stop at the cut. Onto that
+binary skeleton it **condenses** an associated field — its **synonyms** and its
+connections to other concepts — so the fixed bit takes on a relational, proportional,
+*meant* content the bit alone can never hold. **Condensation** is the opposite gesture
+to compression: not the loss-less squeezing of meaning into one bit, but the accretion
+of associated sense *around* a distinction, so one token carries far more than one bit.
+
+```
+$ python -m interpretation condense signal
+BIT: 'signal' is pure compression — the distinction signal|noise, one bit, no field condensed upon it
+  compression (the bit): 1  [pole(s): noise]
+  condensation (meaning on the bit): 0
+
+$ python -m interpretation condense justice
+CONDENSED: 'justice' keeps the bit (justice|injustice) and condenses 14 meaning(s) upon it (ratio 14:1)
+  compression (the bit): 1  [pole(s): injustice]
+  condensation (meaning on the bit): 14
+    associated field (synonyms / connections): boundary, debt, equilibrium, equity, fairness, freedom
+    compounded over time over ~39500 year(s) from 8 earlier word(s): water, fire, kin, seed, ...
+```
+
+*signal* is the floor: a pole, no field — the bit. *justice* keeps that very bit
+(*justice* | *injustice*) and condenses a field of associated meaning on it. The
+`ratio` is the headline — **compression (binary) vs condensation (meaning)** as one
+number: how much meant content rides on the single yes/no.
+
+**Compounded meaning over time.** The field is not assembled at once. Language is the
+**compounded creation of meaning over time**: a later word is *defined in terms of*
+earlier ones (the lexicon's web, §the explosion), so its meaning is its whole ancestry
+compounded into it. *wellbeing* condenses *flow* and *freedom*, which condense *self*
+and *justice*, down to *water* and *fire* — ~42,000 years of meaning condensed into one
+token. The deeper the ancestry, the more time the word carries.
+
+**Synonyms and antonyms — the two kinds of meaning-connection.** An **antonym** is the
+binary axis itself (the compression — a single distinction); a **synonym** is condensed
+meaning shared (the relational content). `connect` reads which a pair are, and for
+terms neither opposed nor kin but sharing a field, reports them *associated* with the
+overlap of their gathered meanings:
+
+```
+$ python -m interpretation connect signal noise
+ANTONYM: signal|noise — opposed poles, the binary axis: one distinction (compression)
+
+$ python -m interpretation connect freedom wellbeing
+ASSOCIATED: freedom … wellbeing — connected by a shared field (overlap 0.60)
+  shared meaning: boundary, debt, fire, harvest, justice, kin, season, seed, self, soul, time, water
+```
+
+The relations are an **authored map** (`relations.json`), a proxy carrying its
+provenance, not a real thesaurus; the compounding is read from the lexicon. As ever,
+descriptive, never a gate.
 
 ## The phonetic web over time: the explosion of understanding
 

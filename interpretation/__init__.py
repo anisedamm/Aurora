@@ -111,6 +111,22 @@ from .constellation import (
     AFFINITY_THRESHOLD,
 )
 from .migration import Migration, Shard, migrate
+from .condensation import (
+    Term,
+    Relations,
+    load_relations,
+    Condensation,
+    condense,
+    Connection,
+    connect,
+    RELATION_ANTONYM,
+    RELATION_SYNONYM,
+    RELATION_ASSOCIATE,
+    RELATION_NONE,
+    KIND_BIT,
+    KIND_CONDENSED,
+    KIND_UNPOLARISED,
+)
 from .lexicon import (
     Lexeme,
     Lexicon,
@@ -218,6 +234,21 @@ __all__ = [
     "Migration",
     "Shard",
     "migrate",
+    # condensation: binary thought (compression) vs relational meaning (condensation)
+    "Term",
+    "Relations",
+    "load_relations",
+    "Condensation",
+    "condense",
+    "Connection",
+    "connect",
+    "RELATION_ANTONYM",
+    "RELATION_SYNONYM",
+    "RELATION_ASSOCIATE",
+    "RELATION_NONE",
+    "KIND_BIT",
+    "KIND_CONDENSED",
+    "KIND_UNPOLARISED",
     # the lexicon over time: phonetic language as the record of growing understanding
     "Lexeme",
     "Lexicon",
