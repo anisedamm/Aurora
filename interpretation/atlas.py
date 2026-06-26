@@ -27,6 +27,7 @@ from .dimensionless import Dimensionlessness, Invariant, dimensionless
 from .fold import Folding, folding
 from .frontier import Frontier, frontier
 from .glossary import Glossary
+from .gradient import Gradient, Gradients, read_gradients
 from .ledger import Ledger
 from .lexicon import Lexicon, Proliferation, proliferation
 from .migration import Migration, migrate
@@ -50,6 +51,7 @@ class Atlas:
     base: Cornerstones | None = None
     truth: Folding | None = None
     beyond: Dimensionlessness | None = None
+    proportion: Gradients | None = None
 
     @property
     def hub(self) -> str:
@@ -112,6 +114,11 @@ class Atlas:
             held = f"most held: {k.value} ({k.held_tension:.2f})" if k else "—"
             rows.append(f"  tension — the bit excludes its opposite, the breath holds it "
                         f"({held}), the pump segments it away")
+        if self.proportion is not None and self.proportion.finest:
+            f = self.proportion.finest
+            bal = f.balance.term if f.balance else "—"
+            rows.append(f"  proportion — between the poles lie degrees, not a cut; finest: "
+                        f"{f.id} ({f.resolution} degrees, balance {bal})")
         if self.base is not None and self.base.base and self.frontier is not None and self.frontier.leading:
             b, fr = self.base.base, self.frontier.leading
             rows.append(f"  base & edge — cornerstone: {b.word} ({b.support} rest on it); "
@@ -142,6 +149,7 @@ def atlas(
     *,
     relations: Relations | None = None,
     invariants: list[Invariant] | None = None,
+    gradients: list[Gradient] | None = None,
     manifest_path="MANIFEST.md",
 ) -> Atlas:
     """Compose the whole reading: signal, the breath web, the threshold, the explosion,
@@ -168,10 +176,11 @@ def atlas(
         truth = folding(lexicon, relations)
     if invariants is not None:
         beyond = dimensionless(invariants, glossary, lexicon)
+    proportion = read_gradients(gradients, relations) if gradients is not None else None
 
     return Atlas(
         signal=sig, breath=breath, explosion=explosion,
         migrations=migrations, arcs=arcs,
         tension=tension_, space=space, web=web, frontier=frontier_,
-        base=base, truth=truth, beyond=beyond,
+        base=base, truth=truth, beyond=beyond, proportion=proportion,
     )

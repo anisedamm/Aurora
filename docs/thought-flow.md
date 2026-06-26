@@ -742,6 +742,40 @@ still stands. The whole arc, breath to bit, now legible on one screen and held i
 the coherence the fast-built layers were missing. Read-only, descriptive; it gates nothing,
 and it leaves nothing of the record's own discipline unapplied to itself.
 
+## Step 36 — Proportion: the gradient between the poles, the triad's missing third
+
+The very first prompt named meaning as *relational, proportional, associated*, and two of
+the three had been built — the `weave` gave the relational (antonym couples, synonym kin),
+`condensation` the associated (the field gathered on a distinction) — but **proportional**
+was still missing, and it is precisely the one the bit denies. A bit collapses an opposition
+to two points (0/1, no between); the weave inherits that shape, giving an antonym couple as a
+binary *axis*, a clean cut. Yet most meaning does not sit at the poles. It lives *between*
+them, as a **degree**: warmth is not hot-or-cold but a position on a scale, regard not
+love-or-hate but a continuum with indifference at its centre. `gradient.py` fills the binary
+axis with the proportion the cut leaves out — reporting an axis's resolution (the degrees it
+distinguishes; a bit is 2), its proportionality (how far from a pure cut), and each term's
+position between the poles.
+
+The reason this is not a side-measure but a closing of the circle is the midpoint. The centre
+of a gradient (~0.50) is the **balance** — the mean between the extremes — and that is exactly
+the point a breath sign holds as a *paradox* (Step 34): the labrys's opposed blades *in
+balance*, equilibrium. So the gradient and the paradox are one opposition seen two ways — the
+paradox holds both poles at once at the balance point; the gradient lays out the degrees
+between them, balance at the centre. The data proves it rather than asserting it: the `the-mean`
+gradient (deficiency↔excess) centres on **moderation**, which is *equilibrium's own pump-era
+migration shard* ("the mean between extremes"). The value the breath held whole, the threshold
+segmented into shards, and one of those shards turns out to be the midpoint of a proportional
+scale — proportion recovers, as a centre, the balance the breath held as a unity. The atlas
+gains the paired line: tension *cuts* the axis, proportion *fills* it.
+
+The deepest turn is the closing remark. Proportion can be found beneath *any* apparent binary —
+even signal|noise has its ratio — so the cut is never truly final; refuse it and a continuum
+opens. That is the same gesture as the move from compression to condensation read at the level
+of the axis itself: the bit is where proportion has been thrown away, and meaning is what is
+recovered when the between is allowed back in. The gradients are an authored map, surfaced and
+imprinted into the record like every other; a proxy for where degrees fall, descriptive, never
+a gate.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

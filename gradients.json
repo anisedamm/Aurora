@@ -1,0 +1,52 @@
+{
+  "title": "Authored gradients — the proportional scale of degrees between two opposed poles",
+  "note": "The relational/proportional/associated triad's missing third. Where the weave gives an antonym couple as a binary AXIS (a clean cut) and a bit collapses an axis to its two poles (0/1, no between), a gradient FILLS the axis with degrees — proportion, meaning that is not yes/no but a position on a scale. `position` places each term in [0,1] from the low pole to the high; the midpoint (~0.50) is the BALANCE — the mean between the extremes, the very point a breath sign holds as a paradox (the labrys's opposed blades in balance; equilibrium). So the gradient and the paradox are one opposition seen two ways: the paradox holds both poles at the balance point; the gradient lays out the degrees between them. An authored proxy, surfaced here, not a measurement of where a word 'really' sits; descriptive, never a gate.",
+  "gradients": [
+    {
+      "id": "temperature",
+      "axis": "temperature",
+      "note": "The plainest physical gradient — the paradigm of proportion: between cold and hot lie not one cut but a continuum of degrees.",
+      "steps": [
+        {"term": "cold", "position": 0.0},
+        {"term": "cool", "position": 0.25},
+        {"term": "lukewarm", "position": 0.5},
+        {"term": "warm", "position": 0.75},
+        {"term": "hot", "position": 1.0}
+      ]
+    },
+    {
+      "id": "the-mean",
+      "axis": "the mean between extremes",
+      "note": "Aristotle's doctrine of the mean — and equilibrium's own pump-era shard 'moderation': the balance between too little and too much. The midpoint of this gradient is the balance the labrys held whole as a paradox.",
+      "steps": [
+        {"term": "deficiency", "position": 0.0},
+        {"term": "moderation", "position": 0.5},
+        {"term": "excess", "position": 1.0}
+      ]
+    },
+    {
+      "id": "regard",
+      "axis": "regard (feeling toward another)",
+      "note": "An experiential gradient: regard is not love-or-hate but a scale of degrees, with indifference the balance at its centre.",
+      "steps": [
+        {"term": "hate", "position": 0.0},
+        {"term": "dislike", "position": 0.25},
+        {"term": "indifference", "position": 0.5},
+        {"term": "fondness", "position": 0.75},
+        {"term": "love", "position": 1.0}
+      ]
+    },
+    {
+      "id": "luminance",
+      "axis": "luminance",
+      "note": "A perceptual gradient between dark and light, twilight the balance — perception reads degrees, not a switch.",
+      "steps": [
+        {"term": "dark", "position": 0.0},
+        {"term": "dim", "position": 0.25},
+        {"term": "twilight", "position": 0.5},
+        {"term": "glow", "position": 0.75},
+        {"term": "light", "position": 1.0}
+      ]
+    }
+  ]
+}

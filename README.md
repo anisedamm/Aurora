@@ -75,6 +75,7 @@ interpretation/
   migration.py     # a value across the threshold: held whole, then dispersed into lexemes
   condensation.py  # binary thought (compression) vs relational meaning (condensation): the bit + its field
   tension.py       # holding the opposite (paradox) vs excluding it (binary): breath holds, bit excludes, pump segments
+  gradient.py      # proportion: the scale of degrees between two poles (relational/proportional/associated — the third)
   fold.py          # corroborating layers of depth: a concept is deemed true (and woveable) by folding deep enough
   weave.py         # the antonym couples as one web: root couples, the branching hubs, the keystone word
   frontier.py      # the leaf-edge of the tree: unpolarised, singular, experiential words at the frontier
@@ -90,10 +91,11 @@ interpretation/
 glossary.json              # breath signs + pump words + value_aliases + migrations + paradoxes
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
 invariants.json            # proposed invariants — claims of universal truth (the dimensionless)
+gradients.json             # authored gradients — the proportional scale between two poles
 relations.json             # the authored map of meaning-connections (antonyms + synonyms)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (192 tests)
+tests/                     # the suite (199 tests)
 ```
 
 ## Quickstart
@@ -447,6 +449,58 @@ breath sign HOLDS it as one, and the pump regime SEGMENTS the holding away.** Th
 held-opposition markers are authored (`paradoxes` in `glossary.json`), grounded in the
 signs' own glosses and linked to the migrations that segment them — a proxy, surfaced, not
 a proof. Descriptive, never a gate.
+
+### Proportion: the gradient of degrees between the poles
+
+The first prompt named meaning as *relational, **proportional**, associated*. The weave
+gave the **relational** (antonym couples), condensation the **associated** (the field on a
+distinction) — but **proportional** was missing, and it is the one the bit most flatly
+denies. A bit collapses an opposition to two points (0/1, no between); the weave keeps that
+shape (an antonym couple is a binary *axis*, a clean cut). But most meaning lives *between*
+the poles, as a **degree** — warmth is not hot-or-cold but a position on a scale. A
+`gradient` fills the binary axis with the proportion the cut leaves out.
+
+```
+$ python -m interpretation gradient temperature
+GRADIENT 'temperature' (cold ↔ hot): 5 degrees of proportion (proportionality 0.75)
+    cold          0.00  [●··········]  (the low pole)
+    cool          0.25  [··●········]
+    lukewarm      0.50  [·····●·····]  ← the balance (the mean between the extremes)
+    warm          0.75  [········●··]
+    hot           1.00  [··········●]  (the high pole)
+
+$ python -m interpretation gradient warm
+  'warm' sits at 0.75 — 75% toward hot, 25% toward cold
+
+$ python -m interpretation gradient signal
+BINARY: 'signal|noise' — no gradient on record: an axis collapsed to its two poles (the bit), no proportion between
+```
+
+And the centre of a gradient is where the whole framework began. The **midpoint (~0.50) is
+the balance** — the mean between the extremes — which is *exactly* the point a breath sign
+holds as a paradox: the labrys's opposed blades in balance, equilibrium. So the gradient and
+the paradox (`tension`) are **one opposition seen two ways**: the paradox *holds* both poles
+at once at the balance point; the gradient *lays out* the degrees between them, balance at
+the centre. The proof is in the data — the `the-mean` gradient (deficiency ↔ excess) centres
+on **moderation**, which is equilibrium's *own* pump-era migration shard ("the mean between
+extremes"). Proportion recovers, as a scale's centre, the balance the breath held whole.
+
+```
+$ python -m interpretation gradient
+  proportional axes (a continuum filled with degrees):
+    temperature  cold ↔ hot       5 degrees; balance: lukewarm (0.50)
+    the-mean     deficiency ↔ excess   3 degrees; balance: moderation (0.50)
+    regard       hate ↔ love      5 degrees; balance: indifference (0.50)
+  bare binary axes (no proportion — collapsed to two poles, the bit):
+    false|true, noise|signal, no|yes, right|wrong
+```
+
+A reading reports an axis's **resolution** (degrees distinguished — a bit is 2, the poles
+alone), its **proportionality** (how far from a pure cut, 0 for a bare bit), and each term's
+**position** between the poles. The closing turn is the deepest: **proportion can be found
+beneath any apparent binary** — refuse the cut as final, and a continuum opens. The gradients
+are an authored map (`gradients.json`), a proxy for where degrees fall, not a measurement;
+descriptive, never a gate.
 
 ### Folding: corroborating depth, until a concept is deemed true
 

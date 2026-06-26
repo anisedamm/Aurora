@@ -87,6 +87,10 @@ def main() -> int:
             title="Proposed invariants — claims of universal truth (the dimensionless)",
             text=(ROOT / "invariants.json").read_text(encoding="utf-8"), kind="concept",
             parents=["language-framework"])
+    imprint(artifact_id="gradients-map",
+            title="Authored gradients — the proportional scale between two opposed poles",
+            text=(ROOT / "gradients.json").read_text(encoding="utf-8"), kind="concept",
+            parents=["language-framework"])
 
     for c in g.concepts.values():
         cid = f"concept-{c.id}"

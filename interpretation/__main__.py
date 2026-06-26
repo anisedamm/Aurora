@@ -40,6 +40,7 @@ from .dimension import meaning_space
 from .dimensionless import dimensionless, load_invariants
 from .fold import fold, folding, DEFAULT_TRUTH_THRESHOLD
 from .frontier import frontier
+from .gradient import find_gradient, load_gradients, read_gradients
 from .tension import tension, tensions
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
@@ -59,6 +60,7 @@ DEFAULT_GLOSSARY = "glossary.json"
 DEFAULT_LEXICON = "lexicon.json"
 DEFAULT_RELATIONS = "relations.json"
 DEFAULT_INVARIANTS = "invariants.json"
+DEFAULT_GRADIENTS = "gradients.json"
 
 
 def _glossary(args: argparse.Namespace):
@@ -237,7 +239,13 @@ def cmd_atlas(args: argparse.Namespace) -> int:
         invs = load_invariants(getattr(args, "invariants", None) or DEFAULT_INVARIANTS)
     except (OSError, ValueError):
         pass  # the dimensionless line folds in only when the invariants map is present
+    grads = None
+    try:
+        grads = load_gradients(getattr(args, "gradients", None) or DEFAULT_GRADIENTS)
+    except (OSError, ValueError):
+        pass  # the proportion line folds in only when the gradients map is present
     print(atlas(led, _glossary(args), _lexicon(args), relations=rel, invariants=invs,
+                gradients=grads,
                 manifest_path=getattr(args, "manifest", None) or "MANIFEST.md").summary)
     return 0
 
@@ -312,6 +320,34 @@ def cmd_fold(args: argparse.Namespace) -> int:
     except (OSError, ValueError):
         pass  # the fold strata read without the weave audit
     print(folding(lex, rel, threshold=threshold).summary)
+    return 0
+
+
+def cmd_gradient(args: argparse.Namespace) -> int:
+    grads = load_gradients(getattr(args, "gradients", None) or DEFAULT_GRADIENTS)
+    if args.axis:
+        g, focus = find_gradient(args.axis, grads)
+        if g is not None:
+            print(g.summary(focus=focus))
+            return 0
+        # not a gradient — is it a bare binary (a bit) from the relations map?
+        try:
+            rel = _relations(args)
+        except (OSError, ValueError):
+            rel = None
+        if rel is not None and rel.known(args.axis) and rel.antonyms_of(args.axis):
+            poles = "|".join((args.axis, *rel.antonyms_of(args.axis)))
+            print(f"BINARY: '{poles}' — no gradient on record: an axis collapsed to its two "
+                  "poles (the bit), no proportion between")
+            return 0
+        print(f"no gradient or axis on record for {args.axis!r}", file=sys.stderr)
+        return 1
+    rel = None
+    try:
+        rel = _relations(args)
+    except (OSError, ValueError):
+        pass  # the bare-binary contrast reads only with the relations map
+    print(read_gradients(grads, rel).summary)
     return 0
 
 
@@ -549,6 +585,9 @@ def build_parser() -> argparse.ArgumentParser:
     sp = sub.add_parser("tension", help="held opposite (paradox) vs excluded opposite (binary): the breath holds, the bit excludes, the pump segments")
     sp.add_argument("concept", nargs="?", help="a concept to read (omit for the whole corpus's stances)")
 
+    sp = sub.add_parser("gradient", help="the proportional scale of degrees between two poles (the 'proportional' meant thought)")
+    sp.add_argument("axis", nargs="?", help="a gradient id or a term on it (omit for the whole proportional picture)")
+
     sub.add_parser("dimensionless", help="meaning that may outlast time: invariants proposed as universal truth, and the gap the record cannot cross")
 
     sp = sub.add_parser("arc", help="one value traced unbroken across both regimes: breath sign -> dispersal -> re-coherence")
@@ -625,6 +664,7 @@ _COMMANDS = {
     "dimensions": cmd_dimensions,
     "fold": cmd_fold,
     "tension": cmd_tension,
+    "gradient": cmd_gradient,
     "dimensionless": cmd_dimensionless,
     "arc": cmd_arc,
     "atlas": cmd_atlas,

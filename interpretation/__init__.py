@@ -155,6 +155,14 @@ from .tension import (
     SYNCHRONIC,
     DIACHRONIC,
 )
+from .gradient import (
+    Gradient,
+    Gradients,
+    Step,
+    load_gradients,
+    find_gradient,
+    read_gradients,
+)
 from .dimension import Axis, MeaningSpace, meaning_space, SYMBOL, STORY, WORD
 from .dimensionless import (
     Invariant,
@@ -323,6 +331,13 @@ __all__ = [
     "NEUTRAL",
     "SYNCHRONIC",
     "DIACHRONIC",
+    # proportion: the gradient of degrees between two opposed poles
+    "Gradient",
+    "Gradients",
+    "Step",
+    "load_gradients",
+    "find_gradient",
+    "read_gradients",
     # dimensional meaning: the tree as a system of axes (conveyance × culture × time × depth)
     "Axis",
     "MeaningSpace",
