@@ -79,6 +79,14 @@ def main() -> int:
     imprint(artifact_id="lexicon-map", title="The phonetic lexicon traced over time",
             text=(ROOT / "lexicon.json").read_text(encoding="utf-8"), kind="concept",
             regime="pump", parents=["language-framework"])
+    imprint(artifact_id="relations-map",
+            title="The authored map of meaning-connections (antonyms + synonyms)",
+            text=(ROOT / "relations.json").read_text(encoding="utf-8"), kind="concept",
+            parents=["language-framework"])
+    imprint(artifact_id="invariants-map",
+            title="Proposed invariants — claims of universal truth (the dimensionless)",
+            text=(ROOT / "invariants.json").read_text(encoding="utf-8"), kind="concept",
+            parents=["language-framework"])
 
     for c in g.concepts.values():
         cid = f"concept-{c.id}"

@@ -714,6 +714,34 @@ opposition first dissipated into a facet, then fully resolved into a distinction
 segmented → excluded, traced in one word. The markers are authored and surfaced, a proxy
 grounded in the signs' glosses; descriptive, never a gate.
 
+## Step 35 — Integration: folding the meaning tree back into the record and the atlas
+
+The layers from Step 27 onward (condensation, tension, folding, the weave, the frontier and
+cornerstone, the dimensions and the dimensionless) were built fast, and they had drifted
+*beside* the framework rather than *inside* it. Two seams had opened. First, the new authored
+maps — `relations.json`, `invariants.json`, and the `paradoxes` added to the glossary — were
+claims of exactly the kind the ledger exists to timestamp and attribute, yet none were in the
+hash-chained record; the framework could prove its glossary sound and say nothing of the maps
+the later layers rest on. Second, the `atlas`, which calls itself "the whole history of
+meaning on one screen," predated all of it: it composed only the breath web, the threshold,
+the explosion and the arc, and knew nothing of the bit, the held paradox, the truth threshold,
+the keystone, the edges, or the dimensionless. The synthesis no longer matched the framework.
+
+This step closes both seams, and it is deliberately an *integration*, not a new measure. The
+seed now imprints the relations map and the invariants map alongside the glossary and lexicon,
+so re-seeding draws the whole authored apparatus — including the glossary's new paradoxes and
+this journal's own later steps — into the append-only chain; `signal` then covers them as it
+covers everything else, and the repository again proves its own record sound with nothing left
+outside it. And the atlas grows a second movement, "the meaning tree", composed (as ever) from
+already-tested readings: tension's held/excluded opposite, the base and the reaching edge, the
+web and the keystone it earns by folding to truth, the dimensions it spans, and the
+dimensionless it can only point at — the distinction, 0/1, where the project began. The atlas
+reads only what it is given: supply the relations and invariants maps and the tree folds in;
+withhold them and it composes just what the glossary and lexicon supply, so the older reading
+still stands. The whole arc, breath to bit, now legible on one screen and held in one chain —
+the coherence the fast-built layers were missing. Read-only, descriptive; it gates nothing,
+and it leaves nothing of the record's own discipline unapplied to itself.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

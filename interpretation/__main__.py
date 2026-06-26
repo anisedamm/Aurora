@@ -228,7 +228,16 @@ def cmd_arc(args: argparse.Namespace) -> int:
 
 def cmd_atlas(args: argparse.Namespace) -> int:
     led = _ledger(args)
-    print(atlas(led, _glossary(args), _lexicon(args),
+    rel = invs = None
+    try:
+        rel = _relations(args)
+    except (OSError, ValueError):
+        pass  # the meaning-tree web/edges fold in only when the relations map is present
+    try:
+        invs = load_invariants(getattr(args, "invariants", None) or DEFAULT_INVARIANTS)
+    except (OSError, ValueError):
+        pass  # the dimensionless line folds in only when the invariants map is present
+    print(atlas(led, _glossary(args), _lexicon(args), relations=rel, invariants=invs,
                 manifest_path=getattr(args, "manifest", None) or "MANIFEST.md").summary)
     return 0
 

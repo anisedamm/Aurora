@@ -93,7 +93,7 @@ invariants.json            # proposed invariants — claims of universal truth (
 relations.json             # the authored map of meaning-connections (antonyms + synonyms)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (190 tests)
+tests/                     # the suite (192 tests)
 ```
 
 ## Quickstart
@@ -993,13 +993,26 @@ $ python -m interpretation atlas
     unity        held 0.70 across 2 sign(s) -> 3 lexeme(s)
   the pump explosion — lexicon 4->27 over 5 eras; sieve->success 0.09->0.59; experiential 0.00->0.48; coherence 0.25->1.00
   the unbroken arc — equilibrium: justice(0.60) -> ... -> wellbeing(0.92), reaching 0.92 over ~3590 year(s)
+  -- the meaning tree --
+  tension — the bit excludes its opposite, the breath holds it (most held: equilibrium (0.60)), the pump segments it away
+  base & edge — cornerstone: fire (20 rest on it); frontier: mamihlapinatapai (furthest out)
+  the web — keystone: self (7 defined on it); 4 root antonym couple(s)
+  folding to truth — threshold 3: the weave rests on earned depth
+  the meaning space — 3 conveyance × 5 culture × 5 era = 75 cells, depth 0-14
+  the dimensionless — nearest: the distinction (0/1); the gap to 'outlasts time' is unattestable
 ```
 
 The whole journey at a glance: the backing is sound; the breath web rests on
 *divinity*, hubbed at the *labrys*; those whole-held values dispersed at the threshold;
 the phonetic lexicon then exploded and re-cohered, climbing from survival toward the
 inner life; and one thread — *equilibrium* — runs unbroken from a Bronze-Age sign to
-*flourishing* named. One screen for the entire arc.
+*flourishing* named. Then **the meaning tree** the later layers built folds into the same
+screen: how the bit holds or excludes its opposite (`tension`), the tree's base (`fire`)
+and reaching edge (`mamihlapinatapai`), the web it earns by `folding` to truth and the
+keystone *self* it rests on, the dimensions it spans, and the dimensionless it can only
+point at — the **distinction** (0/1) where the whole project began. One screen for the
+entire arc, breath to bit. The meaning-tree lines appear when the `relations.json` and
+`invariants.json` maps are present (the default); the atlas reads only what it is given.
 
 ## Relationship to `integrity-alignment-system`
 
