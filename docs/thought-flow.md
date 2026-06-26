@@ -446,6 +446,33 @@ becomes legible on a single screen - the end the project's every measure was qui
 building toward. Read-only, descriptive, composed of nothing but what the tested
 functions already say.
 
+## Step 27 — The chronicle: the whole system as experience over linear time
+
+Every step so far reads the record by *kind*. Even the two that reach across the
+threshold hold a single thread: `arc` follows one value end to end; `atlas` composes the
+measures but groups them by lens. The question that remained was the simplest and the
+most human: what if the whole record were laid on **one linear time axis** and read
+*forward*, the way a life is lived — in order, one moment after another? `chronicle.py`
+does exactly that, and on that one scale the framework's two halves stop being separate
+chapters and become **interleaved strands of a single experience**: the **non-phonetic
+mythology** that held meaning whole (the breath signs, fixed in their Bronze-Age moments)
+and the **language explosion** (the phonetic lexicon proliferating word by word), with
+the crossings that link them — the threshold edges, the remembrances — set in their place
+between. Read in absolute time the shape is plain and is the point: the concrete
+necessities are named first (water, kin — survival's sieve); the great signs hold meaning
+whole in a few marks; the threshold is crossed and the memory written down to survive the
+change in attention (the *Theogony*); and only then, far down the axis, does the phonetic
+web explode and earn its way back toward the inner life (soul → … → wellbeing), the
+inner-experience words clustering late, none among the earliest namings. The "experience"
+is literal: the axis carries the lexicon's inner-life flag, so one can watch the inside of
+a life become sayable, late and slowly, long after mythology held its truths whole. This
+is the atlas's stance — a **reader, not a ruler** — turned from *lens* to *date*: it
+introduces no new measure and gates nothing, composing what the tested functions already
+record, now ordered by when each thing happened. Mythology held meaning whole in a handful
+of signs; language took millennia to say what one of them held — and the
+chronicle is where that whole sentence can be read at once, on a single line of time.
+Descriptive, never a gate.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

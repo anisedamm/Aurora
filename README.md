@@ -77,13 +77,14 @@ interpretation/
   arc.py           # one thread traced unbroken across both regimes (migrate + proliferation)
   signal.py        # the capstone: signal = integrity x direction(truth) — the record on itself
   atlas.py         # the whole history of meaning composed on one screen (a reader, not a ruler)
+  chronicle.py     # the whole system on one linear time axis: mythology + the explosion, read as experience
   imprint.py       # the active recorder (default author: anise.damm)
   manifest.py      # defensive-publication manifest
 glossary.json              # breath signs + pump words + value_aliases + migrations
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (127 tests)
+tests/                     # the suite (134 tests)
 ```
 
 ## Quickstart
@@ -611,6 +612,46 @@ The whole journey at a glance: the backing is sound; the breath web rests on
 the phonetic lexicon then exploded and re-cohered, climbing from survival toward the
 inner life; and one thread — *equilibrium* — runs unbroken from a Bronze-Age sign to
 *flourishing* named. One screen for the entire arc.
+
+### The chronicle: the whole system as experience over linear time
+
+The atlas reads the record by *lens* — signal, web, threshold, explosion, arc. The
+`chronicle` reads it by **date**: it lays the whole record on **one linear time axis**
+and walks it forward, the way a life is lived. On that one scale the framework's two
+halves stop being separate chapters and become **interleaved strands of a single
+experience** — the **non-phonetic mythology** that held meaning *whole* (the labrys, the
+ankh, the ouroboros, the remembered divine order) and the **language explosion** (the
+phonetic lexicon proliferating, word by word) — with the crossings that link them (the
+threshold edges, the remembrances) set in their place between.
+
+```
+$ python -m interpretation chronicle
+the system as one experience over linear time: 46 moment(s), -40000 BCE … 1990 CE
+   -40000  pump      lexeme      water — the drinkable, life-sustaining
+      ...
+    -3000  breath    mythology   Divine order — sky, earth, sea, storm attended as living for…
+    -1600  breath    mythology   labrys — paradoxical-equilibrium (0.30), divinity (0.2…
+    -1400  breath    mythology   ankh — life-breath (0.40), divinity (0.25), eternity…
+    -1300  breath    mythology   ouroboros — cyclical-unity (0.35), paradoxical-equilibriu…
+     -700  pump      remembrance Theogony — carries 'divine-order' across the threshold
+     -400  pump      lexeme      soul * — the inner animating self
+      ...
+     1990  pump      lexeme      wellbeing * — flourishing as a state one can seek and measu…
+  4 sign(s) of non-phonetic mythology held meaning whole; the phonetic explosion named
+  27 concept(s), 13 of them inner-experience — the inner life entering at -400 BCE (soul).
+  Meaning was held whole early, in a few signs; language climbed late and slowly back
+  toward the inside of a life.
+```
+
+Read in absolute time the shape is plain and is the point. The **concrete necessities**
+are named first (*water*, *kin* — survival's sieve); the **great signs hold meaning
+whole** in a few Bronze-Age marks; the **threshold** is crossed and the memory written
+down to survive the change in attention (the *Theogony*); and only then, far down the
+axis, does the phonetic web **explode and climb** back toward saying the inside of a life
+(*soul* → … → *wellbeing*, marked `*`). Mythology held meaning whole in a handful of
+signs; language took millennia to say what one of them held. Like the atlas, it
+is a **reader, not a ruler** — composed from the tested measures, ordered by date rather
+than by lens; it introduces no new measure and gates nothing. Descriptive, never a gate.
 
 ## Relationship to `integrity-alignment-system`
 
