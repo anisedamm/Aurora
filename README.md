@@ -74,6 +74,7 @@ interpretation/
   constellation.py # the system-level web: which values were load-bearing across a regime
   migration.py     # a value across the threshold: held whole, then dispersed into lexemes
   condensation.py  # binary thought (compression) vs relational meaning (condensation): the bit + its field
+  tension.py       # holding the opposite (paradox) vs excluding it (binary): breath holds, bit excludes, pump segments
   fold.py          # corroborating layers of depth: a concept is deemed true (and woveable) by folding deep enough
   weave.py         # the antonym couples as one web: root couples, the branching hubs, the keystone word
   frontier.py      # the leaf-edge of the tree: unpolarised, singular, experiential words at the frontier
@@ -86,13 +87,13 @@ interpretation/
   atlas.py         # the whole history of meaning composed on one screen (a reader, not a ruler)
   imprint.py       # the active recorder (default author: anise.damm)
   manifest.py      # defensive-publication manifest
-glossary.json              # breath signs + pump words + value_aliases + migrations
+glossary.json              # breath signs + pump words + value_aliases + migrations + paradoxes
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
 invariants.json            # proposed invariants — claims of universal truth (the dimensionless)
 relations.json             # the authored map of meaning-connections (antonyms + synonyms)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (181 tests)
+tests/                     # the suite (190 tests)
 ```
 
 ## Quickstart
@@ -399,6 +400,53 @@ ASSOCIATED: freedom … wellbeing — connected by a shared field (overlap 0.60)
 The relations are an **authored map** (`relations.json`), a proxy carrying its
 provenance, not a real thesaurus; the compounding is read from the lexicon. As ever,
 descriptive, never a gate.
+
+### Tension: holding the opposite (paradox) vs excluding it (the binary)
+
+Condensation reads the bit and the field gathered on it; `tension` reads the bit's
+**opposite** — and the three stances a concept can take toward it. This is the founding
+image made measurable: the labrys holds *opposed blades in balance as one*; the ouroboros
+holds *consumption and renewal as one cycle*. A breath sign does not resolve an opposition
+into a distinction — it **holds** it, taut, as a living unity.
+
+```
+$ python -m interpretation tension
+== tension: how concepts stand toward their opposite ==
+  HELD — paradox (breath: the opposite carried as one living whole):
+    equilibrium (opposed blades held in balance) — held by labrys (0.30), ouroboros (0.30); tension 0.60
+        → pump segments it into: balance, justice, moderation, symmetry (the paradox dropped)
+    unity       (end and beginning as one) — held by ouroboros (0.35); tension 0.35
+        → pump segments it into: totality, community, the One (the paradox dropped)
+  INVERTED — diachronic paradox (pump: the opposite held across the word's life):
+    revolution — a sense that inverted into its opposite over time
+  EXCLUDED — binary (the bit: the opposite set cleanly outside, no holding):
+    right, signal, true, yes
+```
+
+Four stances:
+
+- **held — paradox** (breath): the opposite is carried *within*, as one whole. The tension
+  is retained — the two poles pull against each other and balance, and the meaning *is*
+  that pull. The bit can never hold it. `tension ouroboros` is the densest (0.65 — it holds
+  *two* paradoxes at once).
+- **excluded — binary** (the bit): the opposite is set cleanly *outside* — `signal|noise`,
+  `true|false`, 0 xor 1. The tension is *resolved to a cut*; no holding, only difference.
+- **segmented** (pump): a shard carved from a once-held paradox. *equilibrium* — opposed
+  forces held as one — was split into *balance, justice, moderation, symmetry*, each
+  keeping a facet and **dropping the paradox**. The showpiece is `tension justice`: a shard
+  of *equilibrium* that then took its own clean antonym (*injustice*) — the paradox first
+  segmented, then fully resolved into a distinction.
+- **inverted — diachronic paradox** (across time): a word whose sense flipped to its
+  opposite. *revolution* meant a turning-*back* (restoration), then a breaking-*forward*
+  (rupture) — the one word held opposed meanings across its history (detected via the
+  `inversion` shift in the sense lattice). A synchronic paradox holds its opposite at once
+  (the labrys); a diachronic one holds it across the word's life.
+
+So the founding thesis, finally measured directly: **the bit EXCLUDES its opposite, the
+breath sign HOLDS it as one, and the pump regime SEGMENTS the holding away.** The
+held-opposition markers are authored (`paradoxes` in `glossary.json`), grounded in the
+signs' own glosses and linked to the migrations that segment them — a proxy, surfaced, not
+a proof. Descriptive, never a gate.
 
 ### Folding: corroborating depth, until a concept is deemed true
 

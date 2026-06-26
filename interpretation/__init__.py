@@ -141,6 +141,20 @@ from .fold import (
     DEEMED_TRUE,
     DEFAULT_TRUTH_THRESHOLD,
 )
+from .tension import (
+    Tension,
+    Tensions,
+    HeldParadox,
+    tension,
+    tensions,
+    HELD,
+    EXCLUDED,
+    SEGMENTED,
+    OPPOSED,
+    NEUTRAL,
+    SYNCHRONIC,
+    DIACHRONIC,
+)
 from .dimension import Axis, MeaningSpace, meaning_space, SYMBOL, STORY, WORD
 from .dimensionless import (
     Invariant,
@@ -296,6 +310,19 @@ __all__ = [
     "FOLDING",
     "DEEMED_TRUE",
     "DEFAULT_TRUTH_THRESHOLD",
+    # tension: held opposite (paradox) vs excluded opposite (binary), and segmentation between
+    "Tension",
+    "Tensions",
+    "HeldParadox",
+    "tension",
+    "tensions",
+    "HELD",
+    "EXCLUDED",
+    "SEGMENTED",
+    "OPPOSED",
+    "NEUTRAL",
+    "SYNCHRONIC",
+    "DIACHRONIC",
     # dimensional meaning: the tree as a system of axes (conveyance × culture × time × depth)
     "Axis",
     "MeaningSpace",

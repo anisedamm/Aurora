@@ -680,6 +680,40 @@ only one layer — at the edge, but not yet deemed true. The threshold is an aut
 for "deep enough to corroborate," not a proof of truth; folding *reports* where a
 connection outran its grounding. Descriptive, never a gate.
 
+## Step 34 — Tension: holding the opposite, the paradox the binary cannot hold
+
+The framework began from the labrys — *opposed blades held in balance as one* — and built
+outward through condensation, folding, the weave, the tree's edges, the dimensions, the
+dimensionless. But it never turned back to measure the founding image itself: what it *is*
+to hold an opposition rather than resolve it. That is the missing centre, and this step
+supplies it. A concept can take one of a few stances toward its opposite, and the stance
+*is* the binary/relational distinction the whole project turns on.
+
+A **bit excludes** its opposite: signal|noise, true|false, 0 xor 1 — a clean distinction,
+the poles mutually exclusive, the tension resolved to a cut. A **breath sign holds** its
+opposite: the labrys carries *paradoxical-equilibrium* (opposed forces as one), the
+ouroboros *cyclical-unity* (end as beginning) — the tension retained, the meaning *being*
+the pull between the poles. And the **pump regime segments** the holding: it took
+*equilibrium* and split it into *balance, justice, moderation, symmetry*, each a shard that
+kept a facet and dropped the paradox of opposites-held-as-one (the glossary's own words).
+`tension.py` reads all three from data already present — the held-opposition markers
+authored as `paradoxes` (grounded in the signs' glosses, linked to the migrations that
+segment them), the breath fields that carry them, and the bit terms of the relations map
+that exclude. The founding thesis, at last a measurement: **the bit excludes, the breath
+holds, the pump segments.**
+
+Two refinements made it whole. First, opposition runs in *time* as well as at once: a word
+whose sense **inverted** (the `inversion` shift already in the sense lattice — *revolution*,
+return → rupture) holds its opposite *diachronically*, across its own life, even when it is
+synchronically a clean word. So the layer unifies two scales the framework had kept apart —
+the held paradox of a breath sign (synchronic) and the inverted sense of a pump word
+(diachronic) are one phenomenon, opposition carried rather than cut. Second, the segmented
+case completes an arc the migration only hinted: *justice* is a shard carved from the
+paradox *equilibrium* that then took its *own* clean antonym (*injustice*) — the held
+opposition first dissipated into a facet, then fully resolved into a distinction. Held →
+segmented → excluded, traced in one word. The markers are authored and surfaced, a proxy
+grounded in the signs' glosses; descriptive, never a gate.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

@@ -43,6 +43,12 @@
       ]
     }
   },
+  "paradoxes": {
+    "_note": "Authored markers of held-oppositions — conceptual values that carry two opposed poles as one living whole (a paradox), not a clean either/or. Three stances toward an opposite are distinguished by the framework: the breath regime HOLDS it (tension retained, a paradox); the pump regime SEGMENTS it into separate non-opposed lexemes (see migrations), dropping the paradox; a bit EXCLUDES it outright (a clean distinction, no holding). `value` links each paradox to its migrated (segmented) value; `opposites` names the poles held as one. A proxy reading, surfaced here rather than hidden in code, grounded in the signs' own glosses.",
+    "paradoxical-equilibrium": {"value": "equilibrium", "opposites": "opposed blades held in balance", "gloss": "two opposed forces carried as one equilibrium — the labrys"},
+    "cyclical-unity": {"value": "unity", "opposites": "end and beginning as one", "gloss": "consumption and renewal held as one cycle — the ouroboros eating its tail"},
+    "genesis-from-chaos": {"value": "genesis", "opposites": "order out of chaos", "gloss": "cosmos brought forth from its opposite — the cosmogonic tension remembered in myth"}
+  },
   "concepts": [
     {
       "id": "labrys",

@@ -40,6 +40,7 @@ from .dimension import meaning_space
 from .dimensionless import dimensionless, load_invariants
 from .fold import fold, folding, DEFAULT_TRUTH_THRESHOLD
 from .frontier import frontier
+from .tension import tension, tensions
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
 from .lexicon import load_lexicon, proliferation, untranslatables
@@ -305,6 +306,20 @@ def cmd_fold(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_tension(args: argparse.Namespace) -> int:
+    g = _glossary(args)
+    rel = None
+    try:
+        rel = _relations(args)
+    except (OSError, ValueError):
+        pass  # the held paradoxes read without the binary contrast
+    if args.concept:
+        print(tension(args.concept, g, rel).summary)
+        return 0
+    print(tensions(g, rel).summary)
+    return 0
+
+
 def cmd_dimensionless(args: argparse.Namespace) -> int:
     invariants = load_invariants(getattr(args, "invariants", None) or DEFAULT_INVARIANTS)
     print(dimensionless(invariants, _glossary(args), _lexicon(args)).summary)
@@ -522,6 +537,9 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("concept", nargs="?", help="a concept to fold (omit for the whole tree + weave audit)")
     sp.add_argument("--threshold", type=int, help=f"truth threshold in layers (default {DEFAULT_TRUTH_THRESHOLD})")
 
+    sp = sub.add_parser("tension", help="held opposite (paradox) vs excluded opposite (binary): the breath holds, the bit excludes, the pump segments")
+    sp.add_argument("concept", nargs="?", help="a concept to read (omit for the whole corpus's stances)")
+
     sub.add_parser("dimensionless", help="meaning that may outlast time: invariants proposed as universal truth, and the gap the record cannot cross")
 
     sp = sub.add_parser("arc", help="one value traced unbroken across both regimes: breath sign -> dispersal -> re-coherence")
@@ -597,6 +615,7 @@ _COMMANDS = {
     "cornerstones": cmd_cornerstones,
     "dimensions": cmd_dimensions,
     "fold": cmd_fold,
+    "tension": cmd_tension,
     "dimensionless": cmd_dimensionless,
     "arc": cmd_arc,
     "atlas": cmd_atlas,
