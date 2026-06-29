@@ -71,6 +71,8 @@ interpretation/
   reading.py       # the three layers: attest (L1) / read (L2) / drift + project (L3)
   alignment.py     # purpose x fidelity (phonetic) / purpose x resonance (conceptual)
   memory.py        # the return path: remember() / memory_chain() / confluence()
+  inertia.py       # the mechanics of meaning: bit-density (mass), inertia, ghost-lag crystallization
+  metabolism.py    # the metabolism of meaning: significance turnover (transmit) + complexity branching
   constellation.py # the system-level web: which values were load-bearing across a regime
   migration.py     # a value across the threshold: held whole, then dispersed into lexemes
   lexicon.py       # phonetic language over time: the explosion, sieve->success, coherence
@@ -83,7 +85,7 @@ glossary.json              # breath signs + pump words + value_aliases + migrati
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (127 tests)
+tests/                     # the suite (173 tests)
 ```
 
 ## Quickstart
@@ -328,6 +330,210 @@ keeping a shard, all dropping the *paradox* of opposites-held-as-one that made i
 glossary) — a proxy reading of the redistribution, surfaced in the map, not a claim of
 strict etymology. Holism becomes segmentation, and you can watch it happen,
 value by value.
+
+### The mechanics of meaning: density, inertia, and ghost-lag crystallization
+
+Every layer so far read meaning as a *field* (a weighted distribution) or a *lineage*
+(a truth carried down a chain). This one borrows a vocabulary from physics and asks what
+that field does *as it moves through time* — its **bit-density**, its **inertia**, and
+what the **ghost lag** crystallizes out of it. It is the founding intuition stated in
+one more register: *the weight of conceptual meaning held determines its dissipation rate
+as memory, and chosen memory is retained but overwritten.*
+
+**Bit-density is informational mass.** A weighted field is a distribution, so its Shannon
+entropy (in bits) measures how much distinction it packs. A breath sign that holds
+*paradoxical-equilibrium*, *sovereignty*, *divinity* and *belonging* at once is
+**massive**; the same sign read as a bare syllable (`{syllabic-sign: 1.0}`) is
+**massless** (entropy 0) — which is the phonetic-projection foil shown as a *loss of
+mass*:
+
+```
+$ python -m interpretation density labrys-knossos
+density of labrys (labrys-knossos): 1.99 bits across 4 value(s) — massive: meaning held whole across many values at once (a breath sign)
+  field: paradoxical-equilibrium (0.30), divinity (0.25), sovereignty (0.25), unity-belonging (0.20)
+```
+
+**Inertia and momentum are the two faces of motion; crystallization is what the ghost lag
+makes of the outcome.** Along a truth's `memory_chain`, each remembering displaces the
+carried field; summed and scaled, that is the meaning's **velocity**. Mass and velocity
+then read two ways: `inertia = mass / velocity` (how strongly the weight *resisted*
+moving) and `momentum = mass × velocity` (the quantity of meaning *in motion* — much
+meaning carried far). At the end of the lag the carried field splits against the source
+truth into **signal** (the truth that crystallized) and **noise** (weight that drifted
+onto values the source never held). The ouroboros, carried 2,250 years under
+pump-language, crystallizes 85% signal:
+
+```
+$ python -m interpretation inertia ouroboros
+MECHANICS of 'ouroboros': mass 1.93 bits, inertia 5.7, crystallization 85% signal across 2250 year(s) of ghost lag  ->  the truth crystallized as signal - carried whole across the lag
+  density (mass): 1.93 bits of meaning held by the source truth
+  motion: 3 remembering(s) over 3250 year(s); velocity 0.339/millennium
+  forces: momentum 0.65 (meaning carried in motion) vs inertia 5.7 (mass resisting the drift)
+  crystallization: signal 0.85 / noise 0.15 across 2250 year(s) of ghost lag
+  dissipation: phased out 14% from its peak significance (1.93 at the source); deepest 55% before recovering; half-life ~15139 year(s)
+  cycle: born full → faded → recovered
+  direction: the meaning reverted, then recovered through time
+```
+
+**Dissipation is a proportional phase-out, not a cutoff.** Rather than asking whether the
+signal fell below some absolute line, the framework tracks a meaning's **significance**
+(`mass × fidelity` — the meaning it holds times how much of the source memory survives),
+finds its **peak** — its fullest moment — and reads dissipation as the *proportional* fall
+*from that peak*. So a meaning that ends at its peak has dissipated nothing; one fallen to
+half its peak has dissipated 50%, whatever its absolute level. The ouroboros above shows
+why it matters: it **phased out 55% at the medieval nadir** (worn to a heraldic ring) and
+then *re-cohered*, ending only 14% off its peak — a dissipation that happened and was
+reversed, which an end-state cutoff would miss entirely. Every memory carries this number;
+the terminal `dissipated` **state** is just its far end — a meaning fallen past half its
+own peak that did not recover (none of the seeded breath truths reach it: each recovers,
+forks, or is kept — reported honestly).
+
+**The full cycle: phase in → peak → suspended stall → phase out.** Phasing out is one arc
+of a lifecycle, and the layer now reads all of it. A meaning can **phase in** (rise toward
+its peak), hold in a **suspended stall** (significance flat — neither rising nor falling,
+its outcome held open), and **phase out** (decline), sometimes **recovering**. The
+seeded breath truths share one signature — they are **born full**, their peak *is* the
+source, so they never phase in:
+
+```
+$ python -m interpretation inertia ouroboros | grep cycle
+  cycle: born full → faded → recovered
+```
+
+That "born full" is the breath thesis in the cycle's own terms: a breath sign held its
+meaning whole at the source, so its life is all transmission — fade, stall, recovery —
+never a climb. A meaning that *does* climb (a sparse source enriched over time) reads
+`phased in 40% → …`; one that settles and holds at a reduced level reads
+`born full → faded → stalled 700 yr` and lands in the new **`suspended`** state — neither
+crystallized nor dissipated, its verdict deferred, which is the framework's whole stance
+made a state.
+
+**Chosen memory is retained but overwritten.** The framework's founding image becomes a
+measurable terminal state. Composing the chain with `confluence`, a truth either
+**crystallized**, **dissipated** (phased out past half its peak, not recovered), or was
+**retained-but-overwritten** — the *sign* still carried (chosen, kept in use) while its
+*content* was replaced in a forked lineage. The labrys is the paradigm: borne still as an
+emblem, its paradoxical equilibrium overwritten by sovereign power and group identity.
+
+```
+$ python -m interpretation inertia labrys
+MECHANICS of 'labrys': mass 1.99 bits, inertia 5.9; signal 0.95 kept on one lineage but 0.40 on another across 2760 year(s) of ghost lag  ->  chosen memory retained but overwritten - the sign kept, its content replaced
+  ...
+  overwritten: the sign is retained, but lineage 'labrys-emblem' overwrote its content (to-origin 0.40)
+```
+
+Run `inertia` with no argument to read the whole web at once — the system-level companion
+to the constellation, seen through the physics. The breath truths are **uniformly
+massive** (each held meaning whole); what separates them is the *outcome* the ghost lag
+crystallized, not the mass:
+
+```
+$ python -m interpretation inertia
+the mechanics of the breath web: 4 truth(s), by informational mass
+  concept        mass  momentum  inertia  signal  state
+  labrys         1.99      0.67      5.9    0.95  retained-overwritten
+  divine-order   1.95      0.13     29.9    0.85  crystallized
+  ouroboros      1.93      0.65      5.7    0.85  crystallized
+  ankh           1.90         —        —       —  held-no-return
+```
+
+The **momentum** column tells the truths apart where their masses cannot: the ouroboros
+and labrys were sent on journeys (momentum ~0.65 — much meaning carried far, fading and
+recovering across millennia), while the divine order, as massive, *barely moved* (momentum
+0.13, inertia 29.9 — it held). Same weight, opposite motion.
+
+**Overwritten vs thinned, made visible.** `--profile` traces the mass *hop by hop* beside
+the to-origin signal — and because the two move **independently**, it separates two failures
+resonance alone could not. A hop that stays **massive** while its signal falls was
+*overwritten* (the sign still says a great deal, just not about the source); a hop whose
+mass **falls with** its signal was *thinned* (worn toward ornament). The labrys is
+overwritten, the ouroboros (briefly) thinned:
+
+```
+$ python -m interpretation inertia ouroboros --profile
+  ...
+mass profile of 'ouroboros' (informational weight, hop by hop):
+     year  id                       mass  to-origin  movement
+   origin  ouroboros                1.93       1.00
+      300  ouroboros-alchemy        1.96       0.90  decayed
+     1478  ouroboros-medieval       1.56       0.55  decayed     # thinned: mass falls *with* signal
+     1950  ouroboros-jung           1.95       0.85  restored
+```
+
+Where the labrys-emblem hop stays at 1.93 bits while its signal drops to 0.40 — dense, but
+overwritten — the ouroboros worn to a heraldic ring *loses informational weight itself*
+(1.56), then both recover. Same chain machinery; a distinction the resonance could not draw.
+
+Mass is entropy, motion is resonance-distance — **borrowed-physics proxies** over the
+already-tested chain, never an oracle of how much a meaning "really" weighed. Like every
+measure here but attestation, it is **descriptive, never a gate**: it weighs the memory;
+a human judges it.
+
+### The metabolism of meaning: transmitting and branching
+
+If the mechanics read a meaning as a body in motion, `metabolism` reads it as a *living
+thing* — how actively it is **worked** over time, in the one pursuit the whole framework
+takes meaning to be after: *more understanding*. A meaning metabolises two ways, and they
+turn out to be the breath/pump threshold once more:
+
+- **significance metabolism** (the transmission side) — how much significance a truth
+  *turns over* down its memory chain: the total work, `Σ|Δ significance|`, per millennium
+  (not the net phase-out — the dip *and* the recovery both count). This is how a **breath
+  sign** lives: transmitted, worn, recovered, without ever branching.
+- **complexity metabolism** (the branching side) — how fast a concept **branches and
+  refines** into finer senses: the senses, the descent branches, the depth, the *kinds* of
+  semantic work, and new senses per century. This is how a **pump concept** lives:
+  differentiating one word into a history of distinct meanings.
+
+So the modes are the regimes: a breath sign **transmits** but does not branch; a pump
+concept **branches** but is not transmitted; and the cosmogonic **divine order** does
+**both** — a remembered truth that also climbed a ladder of abstraction across the lag:
+
+```
+$ python -m interpretation metabolism
+the metabolism of meaning: 6 concept(s), by mode
+  concept       mode          sig/millen  senses  branch/cent
+  divine-order  both                0.13       4         0.12
+  labrys        transmitting        0.65       —            —
+  ouroboros     transmitting        0.58       —            —
+  revolution    branching              —       4         1.05
+  democracy     branching              —       2         0.05
+  ankh          dormant                —       —            —
+```
+
+*Revolution* metabolises fast — four senses in under three centuries, refined by metaphor,
+**inversion**, and broadening — where *democracy* turned over a single amelioration across
+two millennia. The breath signs do not branch at all (they hold meaning whole), but they
+**transmit**: the labrys and ouroboros turn over significance down their chains, fading and
+recovering. And the *ankh*, never carried forward and never branched, lies **dormant** —
+held whole at the source, its metabolism at rest. Two ways of pursuing understanding —
+holding it whole and carrying it, or differentiating it ever finer — read as one rate.
+A borrowed-biology proxy; descriptive, never a gate.
+
+**The forward, civilisational arc.** Per concept a meaning branches; lifted to the whole
+phonetic web, the *civilisation* branches and climbs — and `metabolism --arc` reads that
+climb as a **rate**, the pursuit of understanding made a metabolism at the scale of a
+culture. It composes the `proliferation` below into era-over-era *gains*: how fast naming
+ascends the sieve→success gradient (survival → flourishing), the coherence and experiential
+share rising with it.
+
+```
+$ python -m interpretation metabolism --arc
+the pursuit of more understanding — the lexicon's civilisational arc:
+  era        new  align  +align  coher   exp   +exp
+  primal       4   0.09       —   0.25  0.00      —
+  agrarian     5   0.22   +0.13   0.89  0.00  +0.00
+  classical    5   0.35   +0.13   0.93  0.07  +0.07
+  modern       6   0.48   +0.14   1.00  0.30  +0.23
+  reflexive    7   0.59   +0.10   1.00  0.48  +0.18
+  over 5 eras (~41844 year(s)): understanding climbed 0.09->0.59 (+0.50) at +0.12/era; ...
+```
+
+Understanding climbs ~**+0.12 per era** (per developmental stage, not per year — the eras
+are spaced too unevenly for that), steadily, as the web coheres (0.25 → 1.00) and the inner
+life becomes sayable (experiential 0.00 → 0.48). The same hunger the per-concept metabolism
+measures, now at the scale of a civilisation: the forward face of *the pursuit of more
+understanding*.
 
 ## The phonetic web over time: the explosion of understanding
 

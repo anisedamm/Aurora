@@ -36,10 +36,12 @@ from .atlas import atlas
 from .constellation import constellation
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
+from .inertia import bit_density, mass_profile, mechanics, mechanics_web
 from .lexicon import load_lexicon, proliferation, untranslatables
 from .migration import migrate
 from .ledger import Ledger
 from .manifest import write_manifest
+from .metabolism import metabolism, metabolism_map, understanding_arc
 from .memory import confluence, memory_chain, remember
 from .reading import attest, drift, project, read, read_symbol
 from .regime import SCRIPT_CONCEPTUAL, SCRIPT_PHONETIC
@@ -187,6 +189,42 @@ def cmd_chain(args: argparse.Namespace) -> int:
 def cmd_confluence(args: argparse.Namespace) -> int:
     g = _glossary(args)
     print(confluence(args.concept, g).summary)
+    return 0
+
+
+def cmd_density(args: argparse.Namespace) -> int:
+    g = _glossary(args)
+    usage = g.usage(args.usage)
+    if not usage.field:                       # a phonetic word with no carried field
+        print(f"{args.usage} carries no weighted field to weigh for density", file=sys.stderr)
+        return 1
+    d = bit_density(usage.field)
+    dom = ", ".join(f"{k} ({w:.2f})" for k, w in d.dominant)
+    print(f"density of {usage.word} ({usage.id}): {d.bits:.2f} bits across {d.held} value(s) — {d.gloss}")
+    print(f"  field: {dom}")
+    return 0
+
+
+def cmd_inertia(args: argparse.Namespace) -> int:
+    g = _glossary(args)
+    if not args.concept:
+        print(mechanics_web(g, regime=args.regime).summary)   # the whole web at once
+        return 0
+    print(mechanics(args.concept, g).summary)
+    if getattr(args, "profile", False):
+        print(mass_profile(args.concept, g).summary)          # the mass, hop by hop
+    return 0
+
+
+def cmd_metabolism(args: argparse.Namespace) -> int:
+    if getattr(args, "arc", False):
+        print(understanding_arc(_lexicon(args)).summary)   # the civilisational climb
+        return 0
+    g = _glossary(args)
+    if args.concept:
+        print(metabolism(args.concept, g).summary)
+    else:
+        print(metabolism_map(g).summary)          # the whole map, by mode
     return 0
 
 
@@ -400,6 +438,20 @@ def build_parser() -> argparse.ArgumentParser:
     sp = sub.add_parser("confluence", help="weigh independent lineages: do they corroborate the source or diverge?")
     sp.add_argument("concept")
 
+    sp = sub.add_parser("density", help="the bit-density (informational mass) a conceptual sign holds")
+    sp.add_argument("usage")
+
+    sp = sub.add_parser("inertia", help="the mechanics of a truth: mass, inertia, and ghost-lag crystallization")
+    sp.add_argument("concept", nargs="?", help="omit to read the whole web at once")
+    sp.add_argument("--regime", default="breath", help="breath (default) or pump")
+    sp.add_argument("--profile", action="store_true",
+                    help="also trace the informational mass hop by hop down the chain")
+
+    sp = sub.add_parser("metabolism", help="how actively a meaning is worked: significance turnover and complexity branching")
+    sp.add_argument("concept", nargs="?", help="omit to read every concept's metabolism by mode")
+    sp.add_argument("--arc", action="store_true",
+                    help="read the lexicon's civilisational climb: the pursuit of understanding as a rate")
+
     sp = sub.add_parser("constellation", help="the system-level web: which values were load-bearing across a regime")
     sp.add_argument("--regime", default="breath", help="breath (default) or pump")
 
@@ -471,6 +523,9 @@ _COMMANDS = {
     "remember": cmd_remember,
     "chain": cmd_chain,
     "confluence": cmd_confluence,
+    "density": cmd_density,
+    "inertia": cmd_inertia,
+    "metabolism": cmd_metabolism,
     "constellation": cmd_constellation,
     "migrate": cmd_migrate,
     "proliferation": cmd_proliferation,

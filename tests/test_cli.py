@@ -97,6 +97,62 @@ def test_confluence_corroborates_or_forks(capsys):
     assert "DIVERGENCE" in capsys.readouterr().out
 
 
+def test_density_weighs_a_signs_informational_mass(capsys):
+    assert main(_g("density", "labrys-knossos")) == 0
+    out = capsys.readouterr().out
+    assert "bits" in out and "massive" in out
+
+
+def test_inertia_reads_the_mechanics_of_a_truth(capsys):
+    assert main(_g("inertia", "labrys")) == 0
+    out = capsys.readouterr().out
+    assert "MECHANICS of 'labrys'" in out
+    assert "retained but overwritten" in out and "ghost lag" in out
+
+
+def test_inertia_with_no_concept_reads_the_whole_web(capsys):
+    assert main(_g("inertia")) == 0
+    out = capsys.readouterr().out
+    assert "mechanics of the breath web" in out
+    assert "labrys" in out and "ankh" in out
+    assert "momentum" in out and "inertia" in out
+
+
+def test_inertia_reports_momentum_and_inertia_as_forces(capsys):
+    assert main(_g("inertia", "ouroboros")) == 0
+    out = capsys.readouterr().out
+    assert "momentum" in out and "meaning carried in motion" in out
+
+
+def test_inertia_profile_traces_the_mass_hop_by_hop(capsys):
+    assert main(_g("inertia", "ouroboros", "--profile")) == 0
+    out = capsys.readouterr().out
+    assert "mass profile of 'ouroboros'" in out
+    assert "ouroboros-medieval" in out and "to-origin" in out
+
+
+def test_metabolism_reads_a_concepts_mode(capsys):
+    assert main(_g("metabolism", "revolution")) == 0
+    out = capsys.readouterr().out
+    assert "metabolism of 'revolution'" in out
+    assert "branching" in out and "refined by" in out and "inversion" in out
+
+
+def test_metabolism_map_shows_the_breath_pump_modes(capsys):
+    assert main(_g("metabolism")) == 0
+    out = capsys.readouterr().out
+    assert "metabolism of meaning" in out
+    assert "transmitting" in out and "branching" in out and "both" in out
+    assert "pursuing more understanding" in out
+
+
+def test_metabolism_arc_reads_the_civilisational_climb(capsys):
+    assert main(_g("metabolism", "--arc")) == 0
+    out = capsys.readouterr().out
+    assert "civilisational arc" in out
+    assert "primal" in out and "reflexive" in out and "/era" in out
+
+
 def test_constellation_shows_the_load_bearing_values(capsys):
     assert main(_g("constellation")) == 0
     out = capsys.readouterr().out

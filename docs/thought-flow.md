@@ -446,6 +446,135 @@ becomes legible on a single screen - the end the project's every measure was qui
 building toward. Read-only, descriptive, composed of nothing but what the tested
 functions already say.
 
+## Step 27 — The mechanics of meaning: density, inertia, and ghost-lag crystallization
+
+Every step so far read meaning as a *field* (a weighted distribution) or a *lineage* (a
+truth carried down a chain). This step reads the same material through a borrowed
+vocabulary — the **physics** of that field as it moves through time — because the user's
+founding intuition was already physical: *informational bit-density and weight*,
+*inertia (how fast a meaning progressed)*, the *ghost lag determining the signal/noise
+crystallization of the outcome*, *the weight of meaning held determining its dissipation
+rate as memory*, and *chosen memory retained but overwritten*. `inertia.py` makes each a
+measurement, composing the already-tested `weighting` and `memory` with one new proxy.
+
+**Mass is entropy.** A weighted field is a distribution, so its Shannon entropy (in bits)
+is exactly "informational bit-density" — how much distinction the sign packs. A breath
+sign holding four values in proportion is *massive* (~1.99 bits); the same sign read as a
+bare syllable (`{syllabic-sign: 1.0}`) is *massless* (entropy 0). So phonetic projection,
+named in Step 14 as an error and in Step 17 as zero resonance, is here a **loss of mass** —
+the same error in a third register. **Velocity** is the field-distance a truth travels per
+millennium along its `memory_chain` (each hop's `1 - to_prev`, summed over its span), and
+mass and velocity then read two ways: **inertia** is `mass / velocity`, the weight
+*resisting* the drift, and **momentum** is `mass × velocity`, the quantity of meaning *in
+motion*. The two separate truths their equal masses cannot — the divine order, massive and
+barely moved, is all inertia (29.9) and little momentum (0.13); the ouroboros, as massive
+but sent on a journey of fading and recovery, carries the momentum (0.65). The founding
+claim — weight determines dissipation rate — falls out: a massive, inertial truth shows a
+long **half-life** (read off the chain's net erosion), a light one dissipates fast.
+
+**The ghost lag crystallizes signal from noise.** Carried across the breath→pump
+threshold, a memory's final field splits against the source truth: the overlap is
+**signal** (the truth that crystallized), the remainder **noise** (weight drifted onto
+values the source never held). The ghost lag — the years of breath-meaning still moving
+under pump-language up to the outcome — is the distance over which that crystallization
+had to survive. The ouroboros crystallizes 85% signal across 2,250 years of lag; its mass
+is the inertia that carried it.
+
+**Dissipation is a proportional phase-out, not a cutoff.** The first cut classified the
+outcome with an absolute line (signal below 0.6 = dissipated), which is both arbitrary and
+blind to the *shape* of a memory's life. The truer reading — and the one the user pressed
+for — is **relative to the meaning's own peak**. Significance at each remembering is
+proxied as `mass × fidelity` (the *meaning* it holds times how much of the source *memory*
+survives in it); over time that significance rises to a **peak** — the 'peak meaning
+period' — and dissipation is how far it has phased out *from that peak*, a proportion in
+[0,1] that every memory carries, not a binary only some trip. This finally makes the
+ouroboros legible as a *curve*: it phased out 55% at the medieval nadir (worn to a heraldic
+ring) and then re-cohered to 14% off its peak — a dissipation that genuinely happened and
+was reversed, which an end-state cutoff erases. The half-life follows honestly from the
+peak (not a fitted endpoint), and the terminal `dissipated` **state** becomes the far end
+of the same gradient: a meaning fallen past half its own peak that did not recover. None of
+the seeded breath truths reach it — each recovers, forks, or is kept — so the corpus has no
+terminal dissipation, and the framework says so rather than manufacturing one.
+
+**Completing the cycle: phase in and the suspended stall.** Phasing out is one arc of a
+lifecycle, and significance has the whole of it: a meaning can **phase in** (rise toward
+its peak), hold in a **suspended stall** (flat — neither rising nor falling), and **phase
+out** (decline), sometimes recovering. Reading the seeded truths through it yields the
+breath thesis in the cycle's own terms — they are **born full**: their peak *is* the
+source, so they never phase in, and their whole life is transmission (`born full → faded →
+recovered`). A meaning that climbs into a later peak (a sparse source enriched over time)
+phases in; one that settles and holds at a reduced level enters the new **suspended**
+state — neither crystallized nor dissipated, its verdict deferred, the framework's own
+withholding stance made a terminal state. The cycle now closes on itself: phase in → peak →
+suspended stall → phase out → (recovery), each arc a measured aspect, none a gate.
+
+**And "chosen memory is retained but overwritten" becomes a terminal state.** Composing the
+chain with `confluence` (Step 20), a truth either **crystallized** (its lineage held the
+signal), **dissipated** (the signal fell to noise and no record kept it), or was
+**retained-but-overwritten** — the *sign* still carried, chosen, kept in use, while its
+*content* was replaced in a forked lineage. The labrys is the paradigm of the last: borne
+still as an emblem (the sign retained), its paradoxical equilibrium overwritten by
+sovereign power and group identity (to-origin 0.40). This is the fork of Step 20 read from
+the outcome's side — not "which branch is right" (the framework still withholds that) but
+*what physically became of the memory*: kept, but written over. Mass is a proxy for held
+meaning, resonance-distance a proxy for motion; borrowed physics over the tested chain,
+introducing measure but never a gate. Lifted to the whole web (`inertia` with no argument,
+the constellation's companion read through the physics), the breath truths come out
+*uniformly massive* — each held meaning whole — so what separates them is not the mass but
+the **outcome** the ghost lag crystallized: the labrys overwritten, the ouroboros and the
+divine order crystallized, the ankh held with no return path. And because `density` reads
+any carried field, the mass can be traced *hop by hop* (`inertia --profile`) beside the
+to-origin signal — the two moving **independently**, which finally separates a memory
+**overwritten** (mass held, signal fallen — the labrys-emblem still dense, but no longer of
+the source) from one **thinned** (mass fallen with signal — the ouroboros worn to a heraldic
+ring), a distinction the resonance alone could not draw. Notably this measure is
+**not** folded into the atlas (Step 26), which by its charter introduces none — the
+mechanics stay a lens you turn on a truth, not part of the read-only whole. Descriptive,
+never a gate.
+
+## Step 28 — The metabolism of meaning: transmitting and branching
+
+The mechanics (Step 27) read a meaning as a body in motion. This step reads it as a *living
+thing* — how actively it **metabolises**, in the one pursuit the whole framework takes
+meaning to be after: *more understanding*. The user's intuition was that meaning has a
+metabolic rate, in two registers — significance, and conceptual complexity branched and
+refined over time — and the striking thing is that those two registers are the breath/pump
+threshold seen once more.
+
+**Significance metabolism** is the transmission side: how much significance a truth *turns
+over* down its `memory_chain` — the total work, `Σ|Δ significance|`, per millennium, not the
+net phase-out. A truth that fell to ornament and was restored metabolised a great deal; one
+held flat, little. This is how a **breath sign** lives — transmitted, worn, recovered —
+without ever branching, because it holds its meaning whole. **Complexity metabolism** is the
+branching side: how fast a concept **branches and refines** into finer senses — the count of
+senses, the descent branches, the depth of the deepest refinement, the *kinds* of semantic
+work (metaphor, inversion, amelioration, abstraction), and new senses per century. This is
+how a **pump concept** lives — differentiating one word into a history of distinct meanings —
+without being carried as a weighted field.
+
+So the modes are the regimes, read as two ways of pursuing understanding. A breath sign
+**transmits** but does not branch (the labrys, the ouroboros turn over significance down
+their chains, never splitting into senses); a pump concept **branches** but is not
+transmitted (*revolution* metabolises four senses in under three centuries — metaphor,
+inversion, broadening — and carries no field); the cosmogonic **divine order** does **both**,
+a remembered truth that also climbed a ladder of abstraction across the lag; and the *ankh*,
+never carried and never branched, lies **dormant**, held whole at the source. Holding meaning
+whole and carrying it, or differentiating it ever finer — these are the same hunger, and the
+metabolism reads them as one rate in two registers. The proxy is borrowed from biology —
+turnover for how hard a memory worked, branching for how fast a concept refined — never a
+measure of how much was truly understood. As ever, descriptive, never a gate.
+
+And the branching has a **forward, civilisational arc**. Per concept a meaning refines; lifted
+to the whole phonetic web, the *culture* refines — so `metabolism --arc` reads the lexicon's
+`proliferation` (Step 23) as a *rate*: how fast naming climbs the sieve→success gradient,
+era over era, the coherence and experiential share rising with it. Understanding climbs about
++0.12 per developmental era (per era, not per year — the prehistoric 'primal' dwarfs the
+later stages, so a per-year rate would be swamped by that one gap), steadily, across some
+forty millennia. This is the same hunger the per-concept metabolism measures, now at the
+scale of a civilisation — the forward face of *the pursuit of more understanding*, the common
+thread the whole framework takes meaning to be after, made a metabolic rate. Descriptive,
+never a gate.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a
