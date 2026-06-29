@@ -95,3 +95,15 @@ def test_an_empty_record_is_handled():
     assert ch.span is None
     assert ch.inner_life_dawn is None
     assert "empty record" in ch.verdict
+
+
+def test_a_record_with_moments_but_no_inner_life_does_not_crash():
+    # moments exist (from the glossary's signs) but the lexicon names no inner experience,
+    # so inner_life_dawn is None — the verdict must still render, not raise on _epoch(None)
+    from interpretation.lexicon import Lexicon
+
+    g, _ = _world()
+    ch = chronicle(g, Lexicon())
+    assert ch.moments and ch.experiential == [] and ch.inner_life_dawn is None
+    assert "none of them yet naming an inner experience" in ch.verdict
+    assert ch.summary                              # the whole summary renders without error

@@ -280,7 +280,11 @@ def _sign_holdings(glossary: Glossary, regime: str) -> dict[str, list[Expression
         conceptual = [u for u in c.usages.values() if u.mode == SCRIPT_CONCEPTUAL]
         medium = SYMBOL if conceptual else MYTH
         label = conceptual[0].word if conceptual else c.id
-        rationale = next((u.committed_because for u in c.usages.values() if u.committed_because), "")
+        # the holding's reason is why the *breath sign* was fixed whole — so take it only
+        # from a conceptual usage, never from a phonetic crossing (e.g. divine-order's
+        # committed_because lives on the phonetic Theogony, which is a remembrance, not the
+        # holding); a myth with no conceptual attestation simply carries no holding-reason.
+        rationale = next((u.committed_because for u in conceptual if u.committed_because), "")
         for value in canon:
             by_value.setdefault(value, []).append(Expression(
                 value=value, source=c.id, label=label, culture=c.culture, region=c.region,

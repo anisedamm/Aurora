@@ -109,14 +109,16 @@ class Chronicle:
     def verdict(self) -> str:
         if not self.moments:
             return "an empty record - no moments to place on the axis"
-        first, last = self.span
         dawn = self.inner_life_dawn
-        dawn_word = next((m.label for m in self.experiential if m.year == dawn), "—")
+        if dawn is not None:
+            dawn_word = next((m.label for m in self.experiential if m.year == dawn), "—")
+            inner = (f"{len(self.experiential)} of them inner-experience — the inner life "
+                     f"entering at {_epoch(dawn)} ({dawn_word})")
+        else:
+            inner = "none of them yet naming an inner experience"
         return (
             f"{len(self.mythology)} sign(s) of non-phonetic mythology held meaning whole; "
-            f"the phonetic explosion named {len(self.explosion)} concept(s), "
-            f"{len(self.experiential)} of them inner-experience — the inner life entering "
-            f"at {_epoch(dawn)} ({dawn_word}). "
+            f"the phonetic explosion named {len(self.explosion)} concept(s), {inner}. "
             f"Meaning was held whole early, in a few signs; language climbed late and "
             f"slowly back toward the inside of a life."
         )

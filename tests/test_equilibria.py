@@ -114,6 +114,19 @@ def test_cosy_togetherness_unites_three_tongues():
     assert cosy.cultures == ["Danish", "Dutch", "German"]
 
 
+def test_the_holding_reason_comes_from_a_breath_sign_not_a_phonetic_crossing():
+    g, lex = _world()
+    divinity = equilibria(g, lex).point("divinity")
+    s = divinity.summary
+    # divine-order's only usage (theogony) is phonetic — a crossing, not a breath holding —
+    # so its committed_because must NOT be surfaced as 'what was worth committing'
+    assert "phonetic form" not in s
+    # the reason must come from a breath sign actually held whole (the labrys)
+    assert "to hold and transmit the society's axis" in s
+    # divine-order is still listed as a held-whole myth, just without a holding-reason
+    assert any(e.label == "divine-order" and e.rationale == "" for e in divinity.holdings)
+
+
 def test_held_whole_and_named_points_are_grouped():
     g, lex = _world()
     eq = equilibria(g, lex)
