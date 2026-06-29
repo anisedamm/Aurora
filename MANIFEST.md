@@ -5,9 +5,9 @@ authorship over a body of conceptual-history readings. It is published
 openly: the goal is to establish priority *and* keep the readings
 available to scholarship, not to hide them.
 
-- generated_at: `2026-06-29T07:39:54.837311+00:00`
+- generated_at: `2026-06-29T10:06:28.415538+00:00`
 - records: **34**
-- chain head hash: `7702530acdf25870695e17c113104db85c6ddabf82b892bffae87dfe68f2f8fe`
+- chain head hash: `e78eecec7fab0f2816120a784abc369e0ee4206834b8784ce3e2828af780274a`
 - chain status: **intact**
 - concepts: `ankh`, `democracy`, `divine-order`, `labrys`, `ouroboros`, `revolution`
 - record kinds: concept×5, framework×1, interpretation×10, reasoning×1, symbol×3, usage×14
@@ -18,40 +18,40 @@ this file to git and push) to turn 'recorded' into real-world provable
 
 | # | id | title | owner | source | kind | concept | regime/mode | sense | align | anchor |
 |---|----|-------|-------|--------|------|---------|-------------|-------|-------|--------|
-| 0 | `language-framework` | Conceptual history as language interpretation | anise.damm | author | framework | — | — | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 1 | `thought-flow` | Thought flow — the living reasoning journal | anise.damm | collaboration | reasoning | — | — | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 2 | `glossary-map` | The authored glossary of conceptual histories | anise.damm | author | concept | — | — | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 3 | `lexicon-map` | The phonetic lexicon traced over time | anise.damm | author | concept | — | pump | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 4 | `concept-labrys` | Concept: Labrys (the Minoan double axe) | anise.damm | author | symbol | labrys | breath | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 5 | `labrys-knossos` | Usage: Evans, The Palace of Minos; the Minoan seal corpus (CMS) | anise.damm | author | usage | labrys | breath/conceptual | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 6 | `read-labrys-knossos` | Reading: labrys as a weighted field | anise.damm | author | interpretation | labrys | breath/conceptual | — | 1.00/0 | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 7 | `labrys-emblem` | Usage: after later political and heraldic adoptions of the double axe | anise.damm | author | usage | labrys | pump/phonetic | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 8 | `labrys-religious` | Usage: after religious-historical studies of Minoan iconography | anise.damm | author | usage | labrys | pump/phonetic | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 9 | `concept-ankh` | Concept: Ankh (the Egyptian sign of life) | anise.damm | author | symbol | ankh | breath | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 10 | `ankh-relief` | Usage: New Kingdom tomb and temple reliefs | anise.damm | author | usage | ankh | breath/conceptual | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 11 | `read-ankh-relief` | Reading: ankh as a weighted field | anise.damm | author | interpretation | ankh | breath/conceptual | — | 1.00/0 | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 12 | `concept-ouroboros` | Concept: Ouroboros (the tail-eating serpent) | anise.damm | author | symbol | ouroboros | breath | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 13 | `ouroboros-netherworld` | Usage: Tomb of Tutankhamun, the Enigmatic Book of the Netherworld | anise.damm | author | usage | ouroboros | breath/conceptual | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 14 | `read-ouroboros-netherworld` | Reading: ouroboros as a weighted field | anise.damm | author | interpretation | ouroboros | breath/conceptual | — | 1.00/0 | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 15 | `ouroboros-alchemy` | Usage: the Greco-Egyptian alchemical corpus (the Chrysopoeia of Kleopatra) | anise.damm | author | usage | ouroboros | pump/phonetic | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 16 | `ouroboros-medieval` | Usage: after late-medieval heraldry and emblem books | anise.damm | author | usage | ouroboros | pump/phonetic | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 17 | `ouroboros-jung` | Usage: after Jung, on the ouroboros as a symbol of wholeness | anise.damm | author | usage | ouroboros | pump/phonetic | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 18 | `concept-divine-order` | Concept: Divine order (myth as conceptual memory) | anise.damm | author | concept | divine-order | breath | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 19 | `theogony` | Usage: Hesiod, Theogony, c. 700 BCE | anise.damm | author | usage | divine-order | pump/phonetic | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 20 | `read-theogony` | Reading: Theogony as the ordered Olympian pantheon | anise.damm | author | interpretation | divine-order | pump/phonetic | olympian | 0.50/0 | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 21 | `concept-revolution` | Concept: Revolution | anise.damm | author | concept | revolution | pump | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 22 | `rev-copernicus` | Usage: Copernicus, De revolutionibus orbium coelestium, 1543 | anise.damm | author | usage | revolution | pump/phonetic | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 23 | `read-rev-copernicus` | Reading: revolutionibus as cyclical return (astronomical) | anise.damm | author | interpretation | revolution | pump/phonetic | celestial-return | 0.50/0 | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 24 | `rev-1688` | Usage: English political pamphlet, c. 1689 (the Glorious Revolution) | anise.damm | author | usage | revolution | pump/phonetic | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 25 | `read-rev-1688` | Reading: revolution as return to a prior rightful order | anise.damm | author | interpretation | revolution | pump/phonetic | political-restoration | 0.43/0 | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 26 | `rev-1789` | Usage: after the French Revolutionary press, c. 1791 | anise.damm | author | usage | revolution | pump/phonetic | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 27 | `read-rev-1789` | Reading: revolution as irreversible forward rupture | anise.damm | author | interpretation | revolution | pump/phonetic | irreversible-rupture | 0.40/0 | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 28 | `concept-democracy` | Concept: Democracy | anise.damm | author | concept | democracy | pump | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 29 | `dem-aristotle` | Usage: after Aristotle, Politics, 4th c. BCE | anise.damm | author | usage | democracy | pump/phonetic | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 30 | `read-dem-aristotle` | Reading: demokratia as rule by the unqualified many (pejorative) | anise.damm | author | interpretation | democracy | pump/phonetic | mob-rule | 0.50/0 | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 31 | `dem-tocqueville` | Usage: after Tocqueville, Democracy in America, 1835 | anise.damm | author | usage | democracy | pump/phonetic | — | — | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 32 | `read-dem-tocqueville` | Reading: democracy as legitimate popular self-government (honorific) | anise.damm | author | interpretation | democracy | pump/phonetic | popular-self-government | 0.45/0 | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
-| 33 | `read-labrys-lexical` | Reading (lexical foil): the labrys as a mere syllabic sign | anise.damm | author | interpretation | labrys | pump/phonetic | — | 0.00/0 | `git:15a6ca676194a71c9f5569f21e457472cc1d84c0` |
+| 0 | `language-framework` | Conceptual history as language interpretation | anise.damm | author | framework | — | — | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 1 | `thought-flow` | Thought flow — the living reasoning journal | anise.damm | collaboration | reasoning | — | — | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 2 | `glossary-map` | The authored glossary of conceptual histories | anise.damm | author | concept | — | — | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 3 | `lexicon-map` | The phonetic lexicon traced over time | anise.damm | author | concept | — | pump | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 4 | `concept-labrys` | Concept: Labrys (the Minoan double axe) | anise.damm | author | symbol | labrys | breath | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 5 | `labrys-knossos` | Usage: Evans, The Palace of Minos; the Minoan seal corpus (CMS) | anise.damm | author | usage | labrys | breath/conceptual | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 6 | `read-labrys-knossos` | Reading: labrys as a weighted field | anise.damm | author | interpretation | labrys | breath/conceptual | — | 1.00/0 | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 7 | `labrys-emblem` | Usage: after later political and heraldic adoptions of the double axe | anise.damm | author | usage | labrys | pump/phonetic | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 8 | `labrys-religious` | Usage: after religious-historical studies of Minoan iconography | anise.damm | author | usage | labrys | pump/phonetic | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 9 | `concept-ankh` | Concept: Ankh (the Egyptian sign of life) | anise.damm | author | symbol | ankh | breath | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 10 | `ankh-relief` | Usage: New Kingdom tomb and temple reliefs | anise.damm | author | usage | ankh | breath/conceptual | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 11 | `read-ankh-relief` | Reading: ankh as a weighted field | anise.damm | author | interpretation | ankh | breath/conceptual | — | 1.00/0 | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 12 | `concept-ouroboros` | Concept: Ouroboros (the tail-eating serpent) | anise.damm | author | symbol | ouroboros | breath | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 13 | `ouroboros-netherworld` | Usage: Tomb of Tutankhamun, the Enigmatic Book of the Netherworld | anise.damm | author | usage | ouroboros | breath/conceptual | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 14 | `read-ouroboros-netherworld` | Reading: ouroboros as a weighted field | anise.damm | author | interpretation | ouroboros | breath/conceptual | — | 1.00/0 | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 15 | `ouroboros-alchemy` | Usage: the Greco-Egyptian alchemical corpus (the Chrysopoeia of Kleopatra) | anise.damm | author | usage | ouroboros | pump/phonetic | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 16 | `ouroboros-medieval` | Usage: after late-medieval heraldry and emblem books | anise.damm | author | usage | ouroboros | pump/phonetic | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 17 | `ouroboros-jung` | Usage: after Jung, on the ouroboros as a symbol of wholeness | anise.damm | author | usage | ouroboros | pump/phonetic | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 18 | `concept-divine-order` | Concept: Divine order (myth as conceptual memory) | anise.damm | author | concept | divine-order | breath | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 19 | `theogony` | Usage: Hesiod, Theogony, c. 700 BCE | anise.damm | author | usage | divine-order | pump/phonetic | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 20 | `read-theogony` | Reading: Theogony as the ordered Olympian pantheon | anise.damm | author | interpretation | divine-order | pump/phonetic | olympian | 0.50/0 | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 21 | `concept-revolution` | Concept: Revolution | anise.damm | author | concept | revolution | pump | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 22 | `rev-copernicus` | Usage: Copernicus, De revolutionibus orbium coelestium, 1543 | anise.damm | author | usage | revolution | pump/phonetic | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 23 | `read-rev-copernicus` | Reading: revolutionibus as cyclical return (astronomical) | anise.damm | author | interpretation | revolution | pump/phonetic | celestial-return | 0.50/0 | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 24 | `rev-1688` | Usage: English political pamphlet, c. 1689 (the Glorious Revolution) | anise.damm | author | usage | revolution | pump/phonetic | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 25 | `read-rev-1688` | Reading: revolution as return to a prior rightful order | anise.damm | author | interpretation | revolution | pump/phonetic | political-restoration | 0.43/0 | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 26 | `rev-1789` | Usage: after the French Revolutionary press, c. 1791 | anise.damm | author | usage | revolution | pump/phonetic | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 27 | `read-rev-1789` | Reading: revolution as irreversible forward rupture | anise.damm | author | interpretation | revolution | pump/phonetic | irreversible-rupture | 0.40/0 | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 28 | `concept-democracy` | Concept: Democracy | anise.damm | author | concept | democracy | pump | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 29 | `dem-aristotle` | Usage: after Aristotle, Politics, 4th c. BCE | anise.damm | author | usage | democracy | pump/phonetic | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 30 | `read-dem-aristotle` | Reading: demokratia as rule by the unqualified many (pejorative) | anise.damm | author | interpretation | democracy | pump/phonetic | mob-rule | 0.50/0 | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 31 | `dem-tocqueville` | Usage: after Tocqueville, Democracy in America, 1835 | anise.damm | author | usage | democracy | pump/phonetic | — | — | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 32 | `read-dem-tocqueville` | Reading: democracy as legitimate popular self-government (honorific) | anise.damm | author | interpretation | democracy | pump/phonetic | popular-self-government | 0.45/0 | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
+| 33 | `read-labrys-lexical` | Reading (lexical foil): the labrys as a mere syllabic sign | anise.damm | author | interpretation | labrys | pump/phonetic | — | 0.00/0 | `git:16a2750152ce8c80c1328f7374c8a671fb336203` |
 
 ## How to verify
 
