@@ -490,7 +490,12 @@ introducing measure but never a gate. Lifted to the whole web (`inertia` with no
 the constellation's companion read through the physics), the breath truths come out
 *uniformly massive* — each held meaning whole — so what separates them is not the mass but
 the **outcome** the ghost lag crystallized: the labrys overwritten, the ouroboros and the
-divine order crystallized, the ankh held with no return path. Notably this measure is
+divine order crystallized, the ankh held with no return path. And because `density` reads
+any carried field, the mass can be traced *hop by hop* (`inertia --profile`) beside the
+to-origin signal — the two moving **independently**, which finally separates a memory
+**overwritten** (mass held, signal fallen — the labrys-emblem still dense, but no longer of
+the source) from one **thinned** (mass fallen with signal — the ouroboros worn to a heraldic
+ring), a distinction the resonance alone could not draw. Notably this measure is
 **not** folded into the atlas (Step 26), which by its charter introduces none — the
 mechanics stay a lens you turn on a truth, not part of the read-only whole. Descriptive,
 never a gate.

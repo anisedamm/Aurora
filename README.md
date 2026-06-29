@@ -84,7 +84,7 @@ glossary.json              # breath signs + pump words + value_aliases + migrati
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (144 tests)
+tests/                     # the suite (150 tests)
 ```
 
 ## Quickstart
@@ -399,6 +399,28 @@ the mechanics of the breath web: 4 truth(s), by informational mass
   ouroboros      1.93      5.7    0.85  crystallized
   ankh           1.90        —       —  held-no-return
 ```
+
+**Overwritten vs thinned, made visible.** `--profile` traces the mass *hop by hop* beside
+the to-origin signal — and because the two move **independently**, it separates two failures
+resonance alone could not. A hop that stays **massive** while its signal falls was
+*overwritten* (the sign still says a great deal, just not about the source); a hop whose
+mass **falls with** its signal was *thinned* (worn toward ornament). The labrys is
+overwritten, the ouroboros (briefly) thinned:
+
+```
+$ python -m interpretation inertia ouroboros --profile
+  ...
+mass profile of 'ouroboros' (informational weight, hop by hop):
+     year  id                       mass  to-origin  movement
+   origin  ouroboros                1.93       1.00
+      300  ouroboros-alchemy        1.96       0.90  decayed
+     1478  ouroboros-medieval       1.56       0.55  decayed     # thinned: mass falls *with* signal
+     1950  ouroboros-jung           1.95       0.85  restored
+```
+
+Where the labrys-emblem hop stays at 1.93 bits while its signal drops to 0.40 — dense, but
+overwritten — the ouroboros worn to a heraldic ring *loses informational weight itself*
+(1.56), then both recover. Same chain machinery; a distinction the resonance could not draw.
 
 Mass is entropy, motion is resonance-distance — **borrowed-physics proxies** over the
 already-tested chain, never an oracle of how much a meaning "really" weighed. Like every

@@ -359,3 +359,103 @@ def mechanics_web(glossary: Glossary, *, regime: str = BREATH) -> MechanicsWeb:
     items = [mechanics(c.id, glossary) for c in signs]
     items.sort(key=lambda m: (-m.mass, m.concept))
     return MechanicsWeb(regime=regime, items=items)
+
+
+# --- the mass profile: informational weight, hop by hop down the chain --------
+
+@dataclass
+class MassStop:
+    """The informational weight a single remembering held, beside its fidelity."""
+
+    by_id: str
+    year: int | None
+    mass: float           # bits of meaning this hop holds (entropy of its carried field)
+    to_origin: float      # how much of the *source* truth it still holds (from the chain)
+    is_origin: bool
+    movement: str         # origin / held / decayed / restored (from the chain link)
+
+
+@dataclass
+class MassProfile:
+    """How a truth's informational mass moved, hop by hop, beside its signal.
+
+    Mass (how much a hop holds) and to-origin (how much of the *source* it holds) move
+    **independently** - which is the point. A hop can stay massive while its signal
+    falls: the sign kept saying a great deal, but no longer about the source truth - it
+    was **overwritten**, not thinned. Or both can fall together: the meaning **thinned**,
+    worn down toward ornament. The profile makes the two cases visibly different.
+    """
+
+    concept: str
+    stops: list[MassStop] = field(default_factory=list)
+
+    @property
+    def carriers(self) -> list[MassStop]:
+        return [s for s in self.stops if not s.is_origin]
+
+    @property
+    def origin_mass(self) -> float:
+        return self.stops[0].mass if self.stops else 0.0
+
+    @property
+    def final_mass(self) -> float:
+        return self.stops[-1].mass if self.stops else 0.0
+
+    @property
+    def low_mass(self) -> float:
+        return min((s.mass for s in self.stops), default=0.0)
+
+    @property
+    def final_signal(self) -> float:
+        return self.carriers[-1].to_origin if self.carriers else 1.0
+
+    @property
+    def low_water(self) -> float:
+        return min((s.to_origin for s in self.carriers), default=1.0)
+
+    @property
+    def summary(self) -> str:
+        head = f"mass profile of '{self.concept}' (informational weight, hop by hop):"
+        if not self.carriers:
+            return head + "\n  no rememberings on record to profile the mass across."
+        rows = [head, f"  {'year':>7}  {'id':<22}  {'mass':>5}  {'to-origin':>9}  movement"]
+        for s in self.stops:
+            year = "origin" if s.is_origin else str(s.year)
+            move = "" if s.is_origin else s.movement
+            rows.append(f"  {year:>7}  {s.by_id:<22}  {s.mass:>5.2f}  {s.to_origin:>9.2f}  {move}")
+        rows.append(
+            f"  mass {self.origin_mass:.2f} -> {self.final_mass:.2f} (low {self.low_mass:.2f}); "
+            f"to-origin 1.00 -> {self.final_signal:.2f} (low {self.low_water:.2f})"
+        )
+        rows.append("  note: mass is how much a hop holds; to-origin is how much of the source it "
+                    "still holds.\n        They move independently — a hop can stay massive while its "
+                    "signal falls (overwritten),\n        or thin out while staying on-truth. "
+                    "Descriptive, never a gate.")
+        return "\n".join(rows)
+
+
+def mass_profile(concept_id: str, glossary: Glossary) -> MassProfile:
+    """Trace a truth's informational mass down its memory chain, beside its signal.
+
+    Composes the tested `memory_chain` (for each hop's year, to-origin and movement) with
+    `bit_density` (for the mass of the field that hop actually carried). Reading the two
+    columns together separates a memory that was **overwritten** (mass held, signal fell)
+    from one that **thinned** (both fell) - a distinction the resonance alone could not
+    draw. Descriptive, never a gate.
+    """
+    concept = glossary.concept(concept_id)
+    chain = memory_chain(concept_id, glossary)
+    stops: list[MassStop] = []
+    for ln in chain.links:
+        if ln.is_origin:
+            field_weights = concept.retained_field()
+        else:
+            try:
+                field_weights = glossary.usage(ln.by_id).field
+            except KeyError:
+                field_weights = {}
+        stops.append(MassStop(
+            by_id=ln.by_id, year=ln.year, mass=bit_density(field_weights).bits,
+            to_origin=ln.to_origin, is_origin=ln.is_origin, movement=ln.movement,
+        ))
+    return MassProfile(concept=concept_id, stops=stops)

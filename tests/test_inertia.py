@@ -7,7 +7,7 @@ from pathlib import Path
 import pytest
 
 from interpretation.glossary import load_glossary
-from interpretation.inertia import bit_density, mechanics, mechanics_web
+from interpretation.inertia import bit_density, mass_profile, mechanics, mechanics_web
 
 GLOSSARY = Path(__file__).resolve().parents[1] / "glossary.json"
 
@@ -140,3 +140,39 @@ def test_the_pump_web_holds_no_field_mechanics():
     web = mechanics_web(g, regime="pump")
     assert web.items == []
     assert "no weighted-field web" in web.summary
+
+
+# --- the mass profile: overwritten (mass holds) vs thinned (mass falls) -------
+
+def test_overwriting_holds_the_mass_while_the_signal_falls():
+    # The labrys-emblem hop stays massive but stops speaking the source truth.
+    g = load_glossary(GLOSSARY)
+    prof = mass_profile("labrys", g)
+    emblem = next(s for s in prof.stops if s.by_id == "labrys-emblem")
+    assert emblem.mass > 1.7                  # still dense - the sign keeps saying a great deal
+    assert emblem.to_origin < 0.5             # but no longer about the source: overwritten
+    assert prof.low_mass > 1.7                # mass never really thinned across the chain
+
+
+def test_thinning_drops_the_mass_with_the_signal():
+    # The ouroboros worn to heraldic ornament loses informational weight *and* signal.
+    g = load_glossary(GLOSSARY)
+    prof = mass_profile("ouroboros", g)
+    medieval = next(s for s in prof.stops if s.by_id == "ouroboros-medieval")
+    assert medieval.mass < 1.7                # thinned - fewer values, an ornament
+    assert medieval.to_origin < 0.7
+    assert prof.low_mass < prof.origin_mass   # the mass genuinely dipped (unlike the labrys)
+
+
+def test_the_profile_opens_at_the_origin():
+    g = load_glossary(GLOSSARY)
+    prof = mass_profile("ouroboros", g)
+    assert prof.stops[0].is_origin and prof.stops[0].to_origin == 1.0
+    assert [s.is_origin for s in prof.carriers] == [False, False, False]
+
+
+def test_a_truth_with_no_return_path_has_an_empty_profile():
+    g = load_glossary(GLOSSARY)
+    prof = mass_profile("ankh", g)
+    assert prof.carriers == []
+    assert "no rememberings on record" in prof.summary

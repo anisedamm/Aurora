@@ -36,7 +36,7 @@ from .atlas import atlas
 from .constellation import constellation
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
-from .inertia import bit_density, mechanics, mechanics_web
+from .inertia import bit_density, mass_profile, mechanics, mechanics_web
 from .lexicon import load_lexicon, proliferation, untranslatables
 from .migration import migrate
 from .ledger import Ledger
@@ -206,10 +206,12 @@ def cmd_density(args: argparse.Namespace) -> int:
 
 def cmd_inertia(args: argparse.Namespace) -> int:
     g = _glossary(args)
-    if args.concept:
-        print(mechanics(args.concept, g).summary)
-    else:
+    if not args.concept:
         print(mechanics_web(g, regime=args.regime).summary)   # the whole web at once
+        return 0
+    print(mechanics(args.concept, g).summary)
+    if getattr(args, "profile", False):
+        print(mass_profile(args.concept, g).summary)          # the mass, hop by hop
     return 0
 
 
@@ -429,6 +431,8 @@ def build_parser() -> argparse.ArgumentParser:
     sp = sub.add_parser("inertia", help="the mechanics of a truth: mass, inertia, and ghost-lag crystallization")
     sp.add_argument("concept", nargs="?", help="omit to read the whole web at once")
     sp.add_argument("--regime", default="breath", help="breath (default) or pump")
+    sp.add_argument("--profile", action="store_true",
+                    help="also trace the informational mass hop by hop down the chain")
 
     sp = sub.add_parser("constellation", help="the system-level web: which values were load-bearing across a regime")
     sp.add_argument("--regime", default="breath", help="breath (default) or pump")

@@ -110,6 +110,20 @@ def test_inertia_reads_the_mechanics_of_a_truth(capsys):
     assert "retained but overwritten" in out and "ghost lag" in out
 
 
+def test_inertia_with_no_concept_reads_the_whole_web(capsys):
+    assert main(_g("inertia")) == 0
+    out = capsys.readouterr().out
+    assert "mechanics of the breath web" in out
+    assert "labrys" in out and "ankh" in out
+
+
+def test_inertia_profile_traces_the_mass_hop_by_hop(capsys):
+    assert main(_g("inertia", "ouroboros", "--profile")) == 0
+    out = capsys.readouterr().out
+    assert "mass profile of 'ouroboros'" in out
+    assert "ouroboros-medieval" in out and "to-origin" in out
+
+
 def test_constellation_shows_the_load_bearing_values(capsys):
     assert main(_g("constellation")) == 0
     out = capsys.readouterr().out
