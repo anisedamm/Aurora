@@ -33,7 +33,9 @@ from pathlib import Path
 from .alignment import align_record
 from .arc import arc
 from .atlas import atlas
+from .chronicle import chronicle
 from .constellation import constellation
+from .equilibria import equilibria
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
 from .lexicon import load_lexicon, proliferation, untranslatables
@@ -216,6 +218,26 @@ def cmd_atlas(args: argparse.Namespace) -> int:
     led = _ledger(args)
     print(atlas(led, _glossary(args), _lexicon(args),
                 manifest_path=getattr(args, "manifest", None) or "MANIFEST.md").summary)
+    return 0
+
+
+def cmd_chronicle(args: argparse.Namespace) -> int:
+    print(chronicle(_glossary(args), _lexicon(args)).summary)
+    return 0
+
+
+def cmd_equilibria(args: argparse.Namespace) -> int:
+    eq = equilibria(_glossary(args), _lexicon(args))
+    value = getattr(args, "value", None)
+    if value:
+        p = eq.point(value)
+        if p is None:
+            print(f"'{value}' is not a cross-cultural equilibrium point "
+                  f"(no two distinct cultures are recorded uniting on it)", file=sys.stderr)
+            return 1
+        print(p.summary)
+    else:
+        print(eq.summary)
     return 0
 
 
@@ -413,6 +435,10 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("value")
 
     sub.add_parser("atlas", help="the whole history of meaning on one screen (signal, breath web, threshold, explosion, arc)")
+    sub.add_parser("chronicle", help="the whole system on one linear time axis: non-phonetic mythology and the language explosion, read forward as experience")
+
+    sp = sub.add_parser("equilibria", help="equilibrium points: where cultures unite across geography and medium on one truth, held whole then refined into explicit words")
+    sp.add_argument("value", nargs="?", help="focus one value (e.g. equilibrium); omit to list all points")
 
     sp = sub.add_parser("regime", help="show a concept's breath/pump threshold and which side each sense sits")
     sp.add_argument("concept")
@@ -477,6 +503,8 @@ _COMMANDS = {
     "untranslatables": cmd_untranslatables,
     "arc": cmd_arc,
     "atlas": cmd_atlas,
+    "chronicle": cmd_chronicle,
+    "equilibria": cmd_equilibria,
     "regime": cmd_regime,
     "sense": cmd_sense,
     "align": cmd_align,

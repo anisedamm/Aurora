@@ -1,6 +1,6 @@
 {
   "title": "A glossary of conceptual histories — read across the breath/pump threshold",
-  "note": "An authored map, and it says so: a proxy for real histories of meaning and consciousness, carrying its provenance, never the histories themselves. Two regimes of attention are distinguished. BREATH: a participatory, holistic attention whose natural writing is the CONCEPTUAL sign — a symbol holding a weighted field of values at once (the labrys, the ankh, the ouroboros). PUMP: an analytic, segmenting attention whose natural writing is the PHONETIC sign — a mark spelling a sound, deferring meaning to a lexicon (revolution, democracy). The ghost lag is breath-meaning still moving under pump-language, and the cardinal error is phonetic projection: reading a breath-era sign as if it spelled a word. Weighted fields and dated attestations are authored readings; resonance is a proxy for fit to a retained conceptual truth, not proof of what a sign 'really' meant.",
+  "note": "An authored map, and it says so: a proxy for real histories of meaning and consciousness, carrying its provenance, never the histories themselves. Two regimes of attention are distinguished. BREATH: a participatory, holistic attention whose natural writing is the CONCEPTUAL sign — a symbol holding a weighted field of values at once (the labrys, the ankh, the ouroboros). PUMP: an analytic, segmenting attention whose natural writing is the PHONETIC sign — a mark spelling a sound, deferring meaning to a lexicon (revolution, democracy). The ghost lag is breath-meaning still moving under pump-language, and the cardinal error is phonetic projection: reading a breath-era sign as if it spelled a word. Weighted fields and dated attestations are authored readings; resonance is a proxy for fit to a retained conceptual truth, not proof of what a sign 'really' meant. Each sign's `culture` and `region` are authored provenance too — surfaced here, a proxy for where a culture attended, used to read the equilibrium points where distinct cultures unite on one truth; never a claim of strict diffusion.",
   "value_aliases": {
     "_note": "An authored grouping of the conceptual-value vocabulary: which raw value names name one underlying value across signs. Used by the constellation to see the breath web's shared values. A proxy, surfaced here rather than hidden — not a claim that these values are identical, only that they are kin.",
     "eternity-continuity": "eternity",
@@ -49,6 +49,8 @@
       "name": "Labrys (the Minoan double axe)",
       "gloss": "Not a tool and not a word: a breath-era sign holding, at once and in proportion, a paradoxical equilibrium — opposed blades in balance — with sovereignty, divinity and belonging.",
       "regime": "breath",
+      "culture": "Minoan",
+      "region": "Crete (Aegean)",
       "threshold": -800,
       "senses": [],
       "usages": [
@@ -95,6 +97,8 @@
       "name": "Ankh (the Egyptian sign of life)",
       "gloss": "Literally the breath of life: carried in the hand of gods, held to the nostrils of the king. A conceptual sign whose whole content is living continuity given and divine.",
       "regime": "breath",
+      "culture": "Egyptian",
+      "region": "Nile Valley (North Africa)",
       "threshold": -1000,
       "senses": [],
       "usages": [
@@ -117,6 +121,8 @@
       "name": "Ouroboros (the tail-eating serpent)",
       "gloss": "The serpent that consumes its own tail: cyclical unity, the paradox of consumption and renewal held as one totality.",
       "regime": "breath",
+      "culture": "Egyptian",
+      "region": "Nile Valley (North Africa)",
       "threshold": -300,
       "senses": [],
       "usages": [
@@ -175,6 +181,8 @@
       "name": "Divine order (myth as conceptual memory)",
       "gloss": "Myth read not as report but as memory: a remembered state-shift, embedded enough to keep its place, lifted up a ladder of abstraction — elemental forces, then primal powers, then ordered Olympians, then allegory — each form making the memory more transmissible.",
       "regime": "breath",
+      "culture": "Greek",
+      "region": "Aegean (Eastern Mediterranean)",
       "threshold": -700,
       "year": -3000,
       "retained": {"primal-powers": 0.30, "cosmic-order": 0.30, "succession": 0.25, "genesis-from-chaos": 0.15},
@@ -205,6 +213,8 @@
       "name": "Revolution",
       "gloss": "A pump-regime word whose concept inverted: from a turning-back to a breaking-forward. The phonetic contrast to the breath-era signs above.",
       "regime": "pump",
+      "culture": "European",
+      "region": "Europe",
       "senses": [
         {"id": "celestial-return", "label": "cyclical return (astronomical)", "year": 1543, "period": "1543", "regime": "pump", "gloss": "the revolving of the heavenly spheres back through their course; a cyclical, lawful return to the starting point"},
         {"id": "political-restoration", "label": "return to a prior rightful order", "year": 1660, "period": "c. 1660", "regime": "pump", "descends_from": ["celestial-return"], "shift": "metaphor", "gloss": "a turning-back in politics: the restoration of an ancient, legitimate order that had been usurped"},
@@ -222,6 +232,8 @@
       "name": "Democracy",
       "gloss": "A pump-regime word whose standing rose: from a term of abuse for mob-rule to an honorific ideal.",
       "regime": "pump",
+      "culture": "Greek → European",
+      "region": "Aegean → Europe",
       "senses": [
         {"id": "mob-rule", "label": "rule by the unqualified many (pejorative)", "year": -350, "period": "4th c. BCE", "regime": "pump", "gloss": "in classical political theory, the deviant form of popular rule — government by the many in their own narrow interest, prone to disorder"},
         {"id": "popular-self-government", "label": "legitimate popular self-government (honorific)", "year": 1780, "period": "late 18th c.", "regime": "pump", "descends_from": ["mob-rule"], "shift": "amelioration", "gloss": "self-rule by the people as a legitimate, even ideal, form of government — the standing of the word reversed"}

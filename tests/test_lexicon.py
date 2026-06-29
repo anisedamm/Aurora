@@ -16,7 +16,7 @@ LEXICON = Path(__file__).resolve().parents[1] / "lexicon.json"
 
 def test_lexicon_loads():
     lex = load_lexicon(LEXICON)
-    assert len(lex.lexemes) == 27
+    assert len(lex.lexemes) == 31
     assert lex.lexemes["water"].alignment < 0.2 and not lex.lexemes["water"].experiential
     assert lex.lexemes["wellbeing"].alignment > 0.85 and lex.lexemes["wellbeing"].experiential
 
@@ -52,7 +52,10 @@ def test_untranslatables_are_what_one_tongue_valued():
     items = untranslatables(load_lexicon(LEXICON))
     langs = {u.language for u in items}
     words = {u.word for u in items}
-    assert langs == {"Danish", "Nguni", "Portuguese", "Yaghan"}
-    assert {"hygge", "saudade", "ubuntu", "mamihlapinatapai"} == words
+    # each tongue's word is its own untranslatable concept — even the kin words, which
+    # name a shared *family* of experience but are precisely distinct (saudade ≠ hiraeth)
+    assert langs == {"Danish", "Dutch", "German", "Nguni", "Portuguese", "Romanian", "Welsh", "Yaghan"}
+    assert {"hygge", "gezelligheid", "Gemütlichkeit", "saudade", "hiraeth", "dor",
+            "ubuntu", "mamihlapinatapai"} == words
     # a shared concept (freedom) is not claimed by any single tongue
     assert "freedom" not in words

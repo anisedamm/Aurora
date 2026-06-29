@@ -77,13 +77,15 @@ interpretation/
   arc.py           # one thread traced unbroken across both regimes (migrate + proliferation)
   signal.py        # the capstone: signal = integrity x direction(truth) — the record on itself
   atlas.py         # the whole history of meaning composed on one screen (a reader, not a ruler)
+  chronicle.py     # the whole system on one linear time axis: mythology + the explosion, read as experience
+  equilibria.py    # equilibrium points: where cultures unite on one truth — held whole (breath) or each-named across tongues (phonetic)
   imprint.py       # the active recorder (default author: anise.damm)
   manifest.py      # defensive-publication manifest
 glossary.json              # breath signs + pump words + value_aliases + migrations
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (127 tests)
+tests/                     # the suite (146 tests)
 ```
 
 ## Quickstart
@@ -345,22 +347,22 @@ the explosion of phonetic language, traced era by era:
   primal        4      4   0.09  0.00   0.25
   agrarian      5      9   0.22  0.00   0.89
   classical     5     14   0.35  0.07   0.93
-  modern        6     20   0.48  0.30   1.00
-  reflexive     7     27   0.59  0.48   1.00
-  over 5 eras the lexicon grew 4->27; sieve->success alignment rose 0.09->0.59;
-  experiential share 0.00->0.48; coherence 0.25->1.00
+  modern        8     22   0.52  0.36   1.00
+  reflexive     9     31   0.62  0.55   1.00
+  over 5 eras the lexicon grew 4->31; sieve->success alignment rose 0.09->0.62;
+  experiential share 0.00->0.55; coherence 0.25->1.00
 ```
 
-- **The explosion** — the count of lexicalised concepts climbs era over era (4 → 27).
+- **The explosion** — the count of lexicalised concepts climbs era over era (4 → 31).
 - **The sieve→success gradient** — what gets named drifts from *sieve-aligned* (a
   discriminating filter on raw experience: *water*, *danger*, *kin* — concrete
   necessity) toward *success-aligned* (abstract, experiential, aspirational: *soul*,
   *freedom*, *empathy*, *wellbeing* — what a thriving society values). Mean alignment
-  climbs 0.09 → 0.59.
+  climbs 0.09 → 0.62.
 - **Coherence and experience, together** — later words are defined in terms of earlier
   ones, so the lexicon's definitional web connects; as it coheres (0.25 → 1.00), more
   abstract and *experiential* concepts become sayable (inner-experience share 0.00 →
-  0.48). Understanding of human experience grew *as* the web cohered — exactly the
+  0.55). Understanding of human experience grew *as* the web cohered — exactly the
   higher-coherence society's deepening self-understanding, made a measurement.
 
 And lexicalisation is **valuation** — which is why dialects differ in what they name.
@@ -369,12 +371,22 @@ concepts one tongue valued that the shared lexicon left unnamed:
 
 ```
 $ python -m interpretation untranslatables
-4 concept(s) a single tongue valued enough to name:
+8 concept(s) a single tongue valued enough to name:
   hygge (Danish) — cosy, safe togetherness worth seeking
+  gezelligheid (Dutch) — the warm ease of convivial togetherness
+  Gemütlichkeit (German) — a warm, unhurried belonging and ease
   ubuntu (Nguni) — I am because we are — personhood through others
   saudade (Portuguese) — a longing for an absent, perhaps unrecoverable beloved or time
+  dor (Romanian) — an aching longing for an absent person or place
+  hiraeth (Welsh) — a grief-tinged longing for a home or time that may never have been
   mamihlapinatapai (Yaghan) — the wordless shared look of two who each wish the other would begin
 ```
+
+Some of those untranslatable words are **kin** — distinct, each its own, yet naming one
+shared *family* of inner experience that independent tongues, far apart, all reached for:
+*saudade*, *hiraeth* and *dor* on a longing for the absent; *hygge*, *gezelligheid* and
+*Gemütlichkeit* on a cosy togetherness. Those convergences are read below as the phonetic
+**equilibrium points**.
 
 So the two regimes meet from opposite directions: the breath web held many values
 *whole* in few signs; the pump web *segments* them and then, over millennia, builds an
@@ -602,7 +614,7 @@ $ python -m interpretation atlas
     divinity     held 0.80 across 3 sign(s) -> 3 lexeme(s)
     equilibrium  held 0.60 across 2 sign(s) -> 4 lexeme(s)
     unity        held 0.70 across 2 sign(s) -> 3 lexeme(s)
-  the pump explosion — lexicon 4->27 over 5 eras; sieve->success 0.09->0.59; experiential 0.00->0.48; coherence 0.25->1.00
+  the pump explosion — lexicon 4->31 over 5 eras; sieve->success 0.09->0.62; experiential 0.00->0.55; coherence 0.25->1.00
   the unbroken arc — equilibrium: justice(0.60) -> ... -> wellbeing(0.92), reaching 0.92 over ~3590 year(s)
 ```
 
@@ -611,6 +623,133 @@ The whole journey at a glance: the backing is sound; the breath web rests on
 the phonetic lexicon then exploded and re-cohered, climbing from survival toward the
 inner life; and one thread — *equilibrium* — runs unbroken from a Bronze-Age sign to
 *flourishing* named. One screen for the entire arc.
+
+### The chronicle: the whole system as experience over linear time
+
+The atlas reads the record by *lens* — signal, web, threshold, explosion, arc. The
+`chronicle` reads it by **date**: it lays the whole record on **one linear time axis**
+and walks it forward, the way a life is lived. On that one scale the framework's two
+halves stop being separate chapters and become **interleaved strands of a single
+experience** — the **non-phonetic mythology** that held meaning *whole* (the labrys, the
+ankh, the ouroboros, the remembered divine order) and the **language explosion** (the
+phonetic lexicon proliferating, word by word) — with the crossings that link them (the
+threshold edges, the remembrances) set in their place between.
+
+```
+$ python -m interpretation chronicle
+the system as one experience over linear time: 50 moment(s), -40000 BCE … 1990 CE
+   -40000  pump      lexeme      water — the drinkable, life-sustaining
+      ...
+    -3000  breath    mythology   Divine order — sky, earth, sea, storm attended as living for…
+    -1600  breath    mythology   labrys — paradoxical-equilibrium (0.30), divinity (0.2…
+    -1400  breath    mythology   ankh — life-breath (0.40), divinity (0.25), eternity…
+    -1300  breath    mythology   ouroboros — cyclical-unity (0.35), paradoxical-equilibriu…
+     -700  pump      remembrance Theogony — carries 'divine-order' across the threshold
+     -400  pump      lexeme      soul * — the inner animating self
+      ...
+     1990  pump      lexeme      wellbeing * — flourishing as a state one can seek and measu…
+  4 sign(s) of non-phonetic mythology held meaning whole; the phonetic explosion named
+  31 concept(s), 17 of them inner-experience — the inner life entering at -400 BCE (soul).
+  Meaning was held whole early, in a few signs; language climbed late and slowly back
+  toward the inside of a life.
+```
+
+Read in absolute time the shape is plain and is the point. The **concrete necessities**
+are named first (*water*, *kin* — survival's sieve); the **great signs hold meaning
+whole** in a few Bronze-Age marks; the **threshold** is crossed and the memory written
+down to survive the change in attention (the *Theogony*); and only then, far down the
+axis, does the phonetic web **explode and climb** back toward saying the inside of a life
+(*soul* → … → *wellbeing*, marked `*`). Mythology held meaning whole in a handful of
+signs; language took millennia to say what one of them held. Like the atlas, it
+is a **reader, not a ruler** — composed from the tested measures, ordered by date rather
+than by lens; it introduces no new measure and gates nothing. Descriptive, never a gate.
+
+### Equilibrium points: where cultures unite on one truth, across geography and medium
+
+The chronicle reads the record as *one* culture's experience along a line. But the deeper
+relation is *between* cultures: separated by geography, by millennia, and by **medium** —
+a Minoan double axe, an Egyptian serpent, a Greek cosmogony — different peoples, each
+attending the world in their own way, **arrive at and hold the same retained concept**.
+`equilibria` finds those meeting-places: **equilibrium points**, a single conceptual truth
+that more than one culture united on, however it was committed (non-phonetic symbol,
+myth, or phonetic word). A truth is united on in **two opposite ways**, one at each end of
+the density gradient, and the framework reads both:
+
+```
+$ python -m interpretation equilibria
+conceptual equilibrium points — where cultures unite across geography and medium: 6 point(s)
+  held whole across cultures (breath — high density, then refined):
+    divinity               3 cultures: Egyptian, Greek, Minoan  | held density 3.7 → refined into 3 explicit word(s)
+    sovereignty            2 cultures: Egyptian, Minoan  | held density 4.0 → its dispersal not yet mapped
+    equilibrium            2 cultures: Egyptian, Minoan  | held density 3.5 → refined into 4 explicit word(s)
+    unity                  2 cultures: Egyptian, Minoan  | held density 3.5 → refined into 3 explicit word(s)
+  named across tongues (phonetic — the inner life each tongue refined into a word):
+    cosy-togetherness      3 tongues: Danish, Dutch, German  | each tongue named it (the inner life, refined)
+    longing-for-the-absent 3 tongues: Portuguese, Romanian, Welsh  | each tongue named it (the inner life, refined)
+  held, but within a single culture (not yet a union):
+    eternity               Egyptian only
+    ...
+```
+
+A value is an equilibrium *point* only when **distinct cultures** unite on it — a
+geographic union, not one culture holding it in two signs. So *eternity*, carried by two
+**Egyptian** signs, is reported honestly as *held-but-local*, while *divinity* — Minoan,
+Egyptian and Greek alike, across myth and symbol — is a true point. Focused, each point
+shows the user's whole question at once: the **relational timescale** of cultures meeting
+on one truth, and how that truth moved **from high density to explicit refinement in the
+same space of meaning**:
+
+```
+$ python -m interpretation equilibria equilibrium
+EQUILIBRIUM POINT 'equilibrium': 2 culture(s) unite on it across symbol, word — Egyptian, Minoan
+  held whole at high density (mean 3.5 values per sign), each culture in its own medium:
+     -1600  Minoan    symbol labrys — held among 4 values; Crete (Aegean)
+     -1300  Egyptian  symbol ouroboros — held among 3 values; Nile Valley (North Africa)
+  then refined — the same space made explicit — into 4 single-value word(s) (density 1):
+    balance      — the static evenness of two weights — the physical facet, the paradox flattened
+    justice      — balance moralised — giving each their due
+    moderation   — balance as a personal virtue, the mean between extremes
+    symmetry     — balance as formal, aesthetic correspondence
+  what was worth committing, then: "to hold and transmit the society's axis …"
+  density moved high→1: one truth held whole across cultures, then segmented into
+    explicit words — high density to explicit refinement.
+```
+
+A breath sign holds a value at **high density** — one mark carrying it *alongside* several
+others, all at once (the labrys holds *equilibrium* among four values). The pump regime,
+attending analytically, **refines** that same space into separate explicit words, each
+carrying one facet alone (*balance*, *justice*, *moderation*, *symmetry* — density 1). And
+beside it, **how what was worth translating changed**: the sign's `committed_because` (why
+a culture fixed the *whole field* in a lasting form) set against the refinements' aspects
+(what each explicit word was carved off to name).
+
+**The phonetic union — tongues converging at the refined end.** The breath cultures unite
+by holding a truth *whole*; the other union sits at the opposite end of the same gradient.
+The pump regime segments — each phonetic word names one concept explicitly — yet
+independent **tongues**, separated by geography, converge on naming the *same family of
+inner experience*. These words are **kin, not identical** (each is precisely
+untranslatable), and their convergence is an equilibrium point at the *refined* end:
+
+```
+$ python -m interpretation equilibria longing-for-the-absent
+EQUILIBRIUM POINT 'longing-for-the-absent': 3 tongue(s) converge on naming it — Portuguese, Romanian, Welsh
+  each tongue independently refined the same experience into its own word (density 1):
+      1400  Portuguese  word  saudade — …; Iberia (Atlantic)
+      1480  Welsh       word  hiraeth — …; Wales (Britain)
+      1500  Romanian    word  dor — …; Romania (Carpathians)
+  these words are kin, not identical — each tongue's is untranslatable, yet they meet on
+    one family of experience: the convergence is the point.
+  where the breath web united by holding a truth whole at high density, the tongues unite
+    at the refined end — each naming one facet of the inner life.
+```
+
+So the two ways of uniting sit at the two ends of the one gradient: the breath cultures
+meet by **holding a truth whole** (high density, *divinity* across Minoan, Egyptian and
+Greek); the tongues meet by **each naming the same experience** (density 1, *saudade* ↔
+*hiraeth* ↔ *dor*). The holdings are **measured** from the signs and lexemes; the cultures,
+the dispersal, and the cross-tongue kinships are **authored** and surfaced — a proxy for
+where understanding converged, never a claim of strict diffusion or that kin words are the
+same word. A reader, not a ruler: descriptive, never a gate.
 
 ## Relationship to `integrity-alignment-system`
 

@@ -446,6 +446,98 @@ becomes legible on a single screen - the end the project's every measure was qui
 building toward. Read-only, descriptive, composed of nothing but what the tested
 functions already say.
 
+## Step 27 — The chronicle: the whole system as experience over linear time
+
+Every step so far reads the record by *kind*. Even the two that reach across the
+threshold hold a single thread: `arc` follows one value end to end; `atlas` composes the
+measures but groups them by lens. The question that remained was the simplest and the
+most human: what if the whole record were laid on **one linear time axis** and read
+*forward*, the way a life is lived — in order, one moment after another? `chronicle.py`
+does exactly that, and on that one scale the framework's two halves stop being separate
+chapters and become **interleaved strands of a single experience**: the **non-phonetic
+mythology** that held meaning whole (the breath signs, fixed in their Bronze-Age moments)
+and the **language explosion** (the phonetic lexicon proliferating word by word), with
+the crossings that link them — the threshold edges, the remembrances — set in their place
+between. Read in absolute time the shape is plain and is the point: the concrete
+necessities are named first (water, kin — survival's sieve); the great signs hold meaning
+whole in a few marks; the threshold is crossed and the memory written down to survive the
+change in attention (the *Theogony*); and only then, far down the axis, does the phonetic
+web explode and earn its way back toward the inner life (soul → … → wellbeing), the
+inner-experience words clustering late, none among the earliest namings. The "experience"
+is literal: the axis carries the lexicon's inner-life flag, so one can watch the inside of
+a life become sayable, late and slowly, long after mythology held its truths whole. This
+is the atlas's stance — a **reader, not a ruler** — turned from *lens* to *date*: it
+introduces no new measure and gates nothing, composing what the tested functions already
+record, now ordered by when each thing happened. Mythology held meaning whole in a handful
+of signs; language took millennia to say what one of them held — and the
+chronicle is where that whole sentence can be read at once, on a single line of time.
+Descriptive, never a gate.
+
+## Step 28 — Equilibrium points: where cultures unite, across geography and medium
+
+The chronicle (Step 27) read the record as *one* experience along a line of time. But the
+question underneath was relational: not one culture's timescale, but the relation
+*between* cultures — separated by geography, by millennia, and by **medium** — who,
+attending the world each in their own way, arrive at and hold *the same retained concept*.
+`equilibria.py` reads those meeting-places as **equilibrium points**. It needed one
+honest addition to the authored map: a `culture` and `region` on each sign (surfaced as
+provenance, like every threshold here), so "geographically united" could be *measured*
+rather than asserted — a Minoan double axe, an Egyptian serpent, a Greek cosmogony, set in
+their places. Then the union is computed: a value is an equilibrium *point* only when
+**distinct cultures** hold it whole, so *divinity* (Minoan, Egyptian, Greek, across myth
+and symbol) is a true point, while *eternity* — carried by two signs that are *both
+Egyptian* — is reported honestly as held-but-local, a holding and not yet a union. The
+measure discriminates, which is how one trusts it.
+
+Two readings sit on each point, and they are the user's question made computable. First,
+the **relational timescale**: the holdings sorted by date are cultures meeting on one
+truth across thousands of years and miles, each in its own medium. Second — the deepest of
+the asks — **high density to explicit refinement in the same space of meaning**: a breath
+sign holds a value at *high density*, one mark carrying it alongside several others, all at
+once (the labrys holds equilibrium among four values); the pump regime, attending
+analytically, *refines* that same space into separate explicit words, each carrying one
+facet alone (balance, justice, moderation, symmetry — density 1). This is the migration
+(Step 22) re-seen as a **density gradient**: meaning did not only disperse, it fell from
+high-density holding to explicit refinement, and the equilibrium point shows both ends in
+one frame. And beside them, *how what was worth translating changed*: the sign's
+`committed_because` — why a culture fixed the whole field in a lasting form — set against
+the refinements' aspects, what each explicit word was carved off to name. The holdings are
+measured; the cultures and the dispersal are authored and surfaced, a proxy for where
+understanding *converged*, never a claim of strict diffusion. A reader, not a ruler — the
+relational completion of the breath/pump thesis: not one regime or one culture, but the
+several human attempts to hold a truth, meeting at the points where they held the same one.
+Descriptive, never a gate.
+
+## Step 29 — The phonetic equilibrium: tongues converging at the refined end
+
+Step 28 found the equilibrium points where breath cultures unite — by holding a truth
+*whole*, at high density, each in its own non-phonetic medium. But the equilibria layer
+named only half of a gradient, and the other half was waiting in the pump web. The breath
+cultures unite by holding a value whole; the pump regime, by its nature, does the
+opposite — it *segments*, each phonetic word naming one concept explicitly. So where could
+tongues unite? Not by holding-whole, which the phonetic mode forsook, but at the **refined
+end**: independent tongues, far apart, each carving the *same family of inner experience*
+into its own single word. Portuguese *saudade*, Welsh *hiraeth* and Romanian *dor* on a
+longing for the absent; Danish *hygge*, Dutch *gezelligheid* and German *Gemütlichkeit* on
+a cosy togetherness. The two unions are the two ends of the one density gradient: the
+breath web meets by holding a truth whole (density high), the tongues meet by each naming
+the same experience (density 1).
+
+The honesty turn is the one the whole framework runs on, and it is sharp here. These kin
+words are exactly the **untranslatables** (Step 23) — each precisely its own, *saudade* not
+*hiraeth* not *dor*. So the convergence cannot be modelled as identity without destroying
+the very thing that made them worth naming. The answer was the move the breath web already
+used: an **authored kinship**, a `kinships` map in the lexicon that is the phonetic mirror
+of `value_aliases` — surfaced, a proxy, never a claim the words are the same, only that
+independent tongues, separated by geography, reached for the same experience. `untranslatables`
+still sees each as its own single-tongue concept; `equilibria` reads the kinship to find the
+convergence. Both true at once: each word untranslatable, and the family they meet on real.
+And the inner life is *where* the tongues converge — the experiential end of the lexicon's
+own climb (Step 23), now read across tongues rather than along one. The relational thesis
+completes: not one regime, not one culture, not one medium — the several human attempts to
+hold a truth, meeting both where they held it whole and where they each, at last, found a
+word for it. Descriptive, never a gate.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a
