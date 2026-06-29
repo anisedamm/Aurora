@@ -200,28 +200,67 @@ def test_every_memory_carries_a_dissipation_in_the_unit_interval():
         assert 0.0 <= m.deepest_dissipation <= 1.0
 
 
-def _faded_glossary():
-    # A breath truth carried once into a late record that keeps almost none of it - a
-    # genuine terminal dissipation, which the seeded corpus (all recovering or kept) lacks.
-    return from_mapping({
-        "concepts": [{
-            "id": "faded", "name": "Faded", "regime": "breath", "threshold": -500, "year": -2000,
-            "retained": {"a": 0.4, "b": 0.3, "c": 0.3}, "senses": [],
-            "usages": [
-                {"id": "faded-src", "regime": "breath", "mode": "conceptual",
-                 "artifact": "a relief", "citation": "a source", "year": -2000,
-                 "field": {"a": 0.4, "b": 0.3, "c": 0.3}},
-                {"id": "faded-late", "regime": "pump", "mode": "phonetic",
-                 "quotation": "a faint, ornamental echo", "citation": "a late record",
-                 "year": 500, "remembers": "faded", "field": {"x": 0.7, "a": 0.15, "b": 0.15}},
-            ],
-        }],
-    })
+def _built(retained, carriers):
+    """A one-concept breath glossary: a source field plus a list of remembering usages."""
+    src = {"id": "src", "regime": "breath", "mode": "conceptual", "artifact": "a relief",
+           "citation": "a source", "year": -2000, "field": retained}
+    return from_mapping({"concepts": [{
+        "id": "c", "name": "C", "regime": "breath", "threshold": -500, "year": -2000,
+        "retained": retained, "senses": [], "usages": [src] + carriers,
+    }]})
+
+
+def _carrier(cid, year, remembers, field):
+    return {"id": cid, "regime": "pump", "mode": "phonetic", "quotation": "q",
+            "citation": "a record", "year": year, "remembers": remembers, "field": field}
 
 
 def test_a_genuine_phase_out_reaches_the_dissipated_state():
-    m = mechanics("faded", _faded_glossary())
+    # A breath truth carried once into a late record that keeps almost none of it - a
+    # genuine terminal dissipation, which the seeded corpus (all recovering or kept) lacks.
+    g = _built({"a": 0.4, "b": 0.3, "c": 0.3},
+               [_carrier("late", 500, "c", {"x": 0.7, "a": 0.15, "b": 0.15})])
+    m = mechanics("c", g)
     assert m.state == "dissipated"
     assert m.dissipation >= 0.5            # fell past half its own peak significance
     assert "faded, not kept" in m.state_gloss
     assert m.direction == "reverted"
+
+
+# --- completing the cycle: phase in, suspended stall ---------------------------
+
+def test_seeded_breath_truths_are_born_full():
+    # A breath truth's peak is the source itself: it never phases in - the breath signature.
+    g = load_glossary(GLOSSARY)
+    for cid in ("ouroboros", "labrys", "divine-order"):
+        m = mechanics(cid, g)
+        assert m.peak_at_origin
+        assert m.phase_in == 0.0
+        assert m.cycle.startswith("born full")
+
+
+def test_a_meaning_can_phase_in_to_a_later_peak():
+    # A sparse source that grows into a richer, on-source remembering peaks *after* origin.
+    g = _built({"a": 0.5, "b": 0.5}, [
+        _carrier("c1", 0, "c", {"a": 0.35, "b": 0.35, "c": 0.30}),
+        _carrier("c2", 600, "c1", {"a": 0.2, "x": 0.8}),
+    ])
+    m = mechanics("c", g)
+    assert not m.peak_at_origin
+    assert m.phase_in > 0.05
+    assert m.cycle.startswith("phased in")
+
+
+def test_a_meaning_can_suspend_in_a_stall():
+    # Falls to a middling level, then holds flat to the end: suspended, its outcome open.
+    field = {"a": 0.3, "b": 0.2, "x": 0.25, "y": 0.25}
+    g = _built({"a": 0.4, "b": 0.3, "c": 0.3}, [
+        _carrier("s1", 0, "c", field),
+        _carrier("s2", 700, "s1", dict(field)),
+    ])
+    m = mechanics("c", g)
+    assert m.state == "suspended"
+    assert m.stall_span == 700
+    assert "stalled" in m.cycle
+    assert 0.15 <= m.dissipation < 0.5
+    assert "outcome held open" in m.state_gloss

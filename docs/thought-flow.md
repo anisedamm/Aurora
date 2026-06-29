@@ -492,6 +492,18 @@ of the same gradient: a meaning fallen past half its own peak that did not recov
 the seeded breath truths reach it — each recovers, forks, or is kept — so the corpus has no
 terminal dissipation, and the framework says so rather than manufacturing one.
 
+**Completing the cycle: phase in and the suspended stall.** Phasing out is one arc of a
+lifecycle, and significance has the whole of it: a meaning can **phase in** (rise toward
+its peak), hold in a **suspended stall** (flat — neither rising nor falling), and **phase
+out** (decline), sometimes recovering. Reading the seeded truths through it yields the
+breath thesis in the cycle's own terms — they are **born full**: their peak *is* the
+source, so they never phase in, and their whole life is transmission (`born full → faded →
+recovered`). A meaning that climbs into a later peak (a sparse source enriched over time)
+phases in; one that settles and holds at a reduced level enters the new **suspended**
+state — neither crystallized nor dissipated, its verdict deferred, the framework's own
+withholding stance made a terminal state. The cycle now closes on itself: phase in → peak →
+suspended stall → phase out → (recovery), each arc a measured aspect, none a gate.
+
 **And "chosen memory is retained but overwritten" becomes a terminal state.** Composing the
 chain with `confluence` (Step 20), a truth either **crystallized** (its lineage held the
 signal), **dissipated** (the signal fell to noise and no record kept it), or was

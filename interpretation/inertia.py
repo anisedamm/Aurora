@@ -28,19 +28,23 @@ as it moves through time:
     pump-language up to the outcome - is the distance over which that crystallization
     had to survive.
 
-  * **dissipation as memory** - not an absolute cutoff but a **proportional phase-out**.
-    A meaning's **significance** at each remembering is proxied as `mass x fidelity` (the
-    *meaning* it holds times how much of the source *memory* survives in it); tracked over
-    time, that significance has a **peak** - its fullest moment - and dissipation is read
-    as how far the memory has phased out *relative to that peak*, not against a fixed line.
-    A meaning at its peak has dissipated nothing; one fallen to half its peak has
-    dissipated 50%, whatever its absolute level. Anchored at the peak, the half-life
-    follows: at the post-peak rate, the years to lose half the peak significance.
+  * **the cycle of significance** - a meaning's **significance** at each remembering is
+    proxied as `mass x fidelity` (the *meaning* it holds times how much of the source
+    *memory* survives in it), and over time it traces a lifecycle: it can **phase in**
+    (rise toward its fullest moment), reach a **peak** (the 'peak meaning period'), hold
+    in a **suspended stall** (significance flat - neither rising nor falling), and **phase
+    out** (decline from the peak), sometimes **recovering**. A breath truth is typically
+    *born full* - its peak is the source itself, so it has no phase-in: the breath
+    signature. **Dissipation** is the phase-out read *proportionally*, relative to that
+    peak rather than an absolute line: a meaning at its peak has dissipated nothing, one
+    fallen to half its peak has dissipated 50%, whatever the absolute level. Anchored at
+    the peak, the half-life follows.
 
   * **the terminal state** - and so the founding image, "chosen memory is retained but
     overwritten," becomes a measurable outcome. Composing the chain with `confluence`,
     a truth either **crystallized** (its lineage held the signal), **dissipated** (it
-    phased out past half its peak significance and did not recover), or was
+    phased out past half its peak significance and did not recover), is **suspended** (it
+    settled into a stall at a reduced level, its outcome held open), or was
     **retained-but-overwritten** -
     the *sign* still carried (chosen, kept in use) while its *content* was replaced in
     a forked lineage. The labrys is the paradigm of the last: borne still as an emblem,
@@ -70,6 +74,10 @@ MILLENNIUM = 1000
 # half of its fullest moment, and not recovered - is read as dissipated. A proportional
 # line relative to the meaning's peak, not an absolute signal cutoff.
 DISSIPATED_FRACTION = 0.5
+
+# A step whose significance changes by less than this fraction of the peak is a **stall** -
+# the meaning suspended, neither phasing in nor out. The flat band of the cycle.
+STALL_BAND = 0.05
 
 
 # --- bit-density: how much meaning a field holds -----------------------------
@@ -127,12 +135,15 @@ class Mechanics:
     signal: float                  # the truth that crystallized (final to-origin)
     peak_significance: float       # the fullest significance (mass x fidelity) the memory reached
     peak_year: int | None          # when that peak fell - the 'peak meaning period'
-    peak_at_origin: bool           # was the source itself its fullest moment?
+    peak_at_origin: bool           # was the source itself its fullest moment? (born full)
+    phase_in: float                # proportional rise from the start up to the peak, in [0, 1]
+    stall_span: int                # the longest suspended (flat) span, in years
     dissipation: float             # proportional phase-out from peak at the end, in [0, 1]
     deepest_dissipation: float     # the deepest phase-out reached (before any recovery), in [0, 1]
     half_life: int | None          # years to lose half the peak significance (None: held)
+    cycle: str                     # the lifecycle phrase: phase in -> peak -> stall -> phase out
     direction: str                 # evolved / reverted / recovered / held
-    state: str                     # crystallized / retained-overwritten / dissipated / held-no-return
+    state: str                     # crystallized / retained-overwritten / dissipated / suspended / held-no-return
     overwritten: tuple | None = field(default=None)  # (lineage id, its to-origin) when forked
 
     @property
@@ -151,6 +162,7 @@ class Mechanics:
             "crystallized": "the truth crystallized as signal - carried whole across the lag",
             "retained-overwritten": "chosen memory retained but overwritten - the sign kept, its content replaced",
             "dissipated": "phased out past half its peak significance - the memory faded, not kept",
+            "suspended": "suspended in a stall - significance settled at a reduced level, its outcome held open",
             "held-no-return": "held at the source - no return path recorded to measure",
             "no-field": "no weighted field to weigh - a pump concept segments meaning into senses, not a field",
         }[self.state]
@@ -177,6 +189,9 @@ class Mechanics:
                     f"{self.overwritten[1]:.2f} on another {self.lag_phrase}  ->  {self.state_gloss}")
         if self.state == "dissipated":
             return (f"{head}, inertia {inert}; phased out {self.dissipation:.0%} from its peak "
+                    f"{self.lag_phrase}  ->  {self.state_gloss}")
+        if self.state == "suspended":
+            return (f"{head}, inertia {inert}; suspended at {self.dissipation:.0%} off its peak "
                     f"{self.lag_phrase}  ->  {self.state_gloss}")
         return (f"{head}, inertia {inert}, crystallization {self.crystallization}% signal "
                 f"{self.lag_phrase}  ->  {self.state_gloss}")
@@ -211,6 +226,7 @@ class Mechanics:
                 f"  dissipation: phased out {self.dissipation:.0%} from its peak significance "
                 f"({self.peak_significance:.2f} {peak_loc}){deepest}{hl}"
             )
+            rows.append(f"  cycle: {self.cycle}")
             rows.append(f"  direction: the meaning {self.direction} through time")
             if self.overwritten is not None:
                 lid, to_origin = self.overwritten
@@ -244,24 +260,64 @@ def _velocity(links) -> tuple[float, int]:
 
 @dataclass
 class _PhaseOut:
-    """Significance over time, read as a proportional phase-out from its peak."""
+    """Significance over time, read as the full cycle: phase in, stall, phase out."""
 
     peak: float                # the fullest significance reached (mass x fidelity)
     peak_year: int | None
     peak_at_origin: bool
+    phase_in: float            # proportional rise from the start to the peak, in [0, 1]
+    stall_span: int            # the longest suspended (flat) span, in years
+    terminal_stall: bool       # did the memory end on a stall (a flat final step)?
     final_dissipation: float   # 1 - final/peak, clamped to [0, 1]
     deepest_dissipation: float # 1 - lowest carrier significance / peak
     half_life: int | None      # years to halve the peak significance, at the post-peak rate
+    cycle: str                 # the lifecycle phrase
+
+
+def _cycle_phrase(sig, peak_val: float, peak_at_origin: bool, phase_in: float,
+                  stall_span: int) -> str:
+    """Name the lifecycle a meaning's significance traced, in time order.
+
+    Each step is a rise (phase in / recovery), a fall (phase out), or a stall (suspended);
+    consecutive like steps are merged, and a rise after a fall reads as a recovery. A
+    born-full truth (peak at the source) is prefixed as such - it never phased in.
+    """
+    if len(sig) < 2 or peak_val <= 0:
+        return "held at the source"
+    steps = []
+    for i in range(1, len(sig)):
+        d = (sig[i][2] - sig[i - 1][2]) / peak_val
+        steps.append("stall" if abs(d) < STALL_BAND else ("rise" if d > 0 else "fall"))
+    merged: list[str] = []
+    for s in steps:
+        if not merged or merged[-1] != s:
+            merged.append(s)
+    tokens: list[str] = []
+    seen_fall = False
+    rise_used = False
+    for s in merged:
+        if s == "rise":
+            tokens.append("recovered" if seen_fall else f"phased in {phase_in:.0%}")
+            rise_used = True
+        elif s == "fall":
+            tokens.append("faded")
+            seen_fall = True
+        else:
+            tokens.append(f"stalled {stall_span} yr" if stall_span else "stalled")
+    if peak_at_origin:
+        tokens = ["born full"] + tokens
+    return " → ".join(tokens) if tokens else "held"
 
 
 def _phase_out(concept, chain, glossary: Glossary) -> _PhaseOut | None:
-    """Track significance (`mass x fidelity`) down the chain and phase it out from its peak.
+    """Track significance (`mass x fidelity`) down the chain across its whole cycle.
 
     Significance at a remembering is the informational mass it holds times how much of the
     source truth survives in it - the *meaning* weighted by the *memory*. The peak is the
-    fullest such moment (the 'peak meaning period'); dissipation is the proportional fall
-    from it, so the measure is relative to the meaning's own height, never an absolute line.
-    Returns None when there is no remembering to phase out.
+    fullest such moment (the 'peak meaning period'); the memory may **phase in** up to it,
+    **stall** (hold flat), and **phase out** from it - dissipation read proportionally,
+    relative to the meaning's own height rather than an absolute line. Returns None when
+    there is no remembering to trace.
     """
     sig: list[tuple[int | None, bool, float]] = []
     for ln in chain.links:
@@ -284,7 +340,21 @@ def _phase_out(concept, chain, glossary: Glossary) -> _PhaseOut | None:
             peak = t
     peak_year, peak_at_origin, peak_val = peak[0], peak[1], peak[2]
     if peak_val <= 0:
-        return _PhaseOut(0.0, peak_year, peak_at_origin, 0.0, 0.0, None)
+        return _PhaseOut(0.0, peak_year, peak_at_origin, 0.0, 0, False, 0.0, 0.0, None,
+                         "held at the source")
+
+    phase_in = min(1.0, max(0.0, (peak_val - sig[0][2]) / peak_val))
+
+    stall_span = 0
+    terminal_stall = False
+    for i in range(1, len(sig)):
+        y0, y1 = sig[i - 1][0], sig[i][0]
+        if y0 is None or y1 is None or y1 <= y0:
+            continue
+        if abs(sig[i][2] - sig[i - 1][2]) < STALL_BAND * peak_val:
+            stall_span = max(stall_span, int(y1 - y0))
+            if i == len(sig) - 1:
+                terminal_stall = True
 
     final_val = carriers[-1][2]
     deepest_val = min(t[2] for t in carriers)
@@ -300,8 +370,10 @@ def _phase_out(concept, chain, glossary: Glossary) -> _PhaseOut | None:
 
     return _PhaseOut(
         peak=round(peak_val, 4), peak_year=peak_year, peak_at_origin=peak_at_origin,
+        phase_in=round(phase_in, 4), stall_span=stall_span, terminal_stall=terminal_stall,
         final_dissipation=round(final_diss, 4), deepest_dissipation=round(deepest_diss, 4),
         half_life=half_life,
+        cycle=_cycle_phrase(sig, peak_val, peak_at_origin, phase_in, stall_span),
     )
 
 
@@ -364,6 +436,8 @@ def mechanics(concept_id: str, glossary: Glossary) -> Mechanics:
         overwritten = (worst.witness, round(worst.witness_to_origin, 4))
     elif po is not None and po.final_dissipation >= DISSIPATED_FRACTION:
         state = "dissipated"        # phased out past half its own peak, not recovered
+    elif po is not None and po.terminal_stall and 0.15 <= po.final_dissipation < DISSIPATED_FRACTION:
+        state = "suspended"         # settled into a stall at a reduced level - outcome held open
     else:
         state = "crystallized"
 
@@ -381,9 +455,12 @@ def mechanics(concept_id: str, glossary: Glossary) -> Mechanics:
         peak_significance=po.peak if po else round(mass, 4),
         peak_year=po.peak_year if po else chain.origin_year,
         peak_at_origin=po.peak_at_origin if po else True,
+        phase_in=po.phase_in if po else 0.0,
+        stall_span=po.stall_span if po else 0,
         dissipation=po.final_dissipation if po else 0.0,
         deepest_dissipation=po.deepest_dissipation if po else 0.0,
         half_life=po.half_life if po else None,
+        cycle=po.cycle if po else "held at the source",
         direction=direction,
         state=state,
         overwritten=overwritten,

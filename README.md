@@ -84,7 +84,7 @@ glossary.json              # breath signs + pump words + value_aliases + migrati
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (153 tests)
+tests/                     # the suite (156 tests)
 ```
 
 ## Quickstart
@@ -383,6 +383,26 @@ reversed, which an end-state cutoff would miss entirely. Every memory carries th
 the terminal `dissipated` **state** is just its far end — a meaning fallen past half its
 own peak that did not recover (none of the seeded breath truths reach it: each recovers,
 forks, or is kept — reported honestly).
+
+**The full cycle: phase in → peak → suspended stall → phase out.** Phasing out is one arc
+of a lifecycle, and the layer now reads all of it. A meaning can **phase in** (rise toward
+its peak), hold in a **suspended stall** (significance flat — neither rising nor falling,
+its outcome held open), and **phase out** (decline), sometimes **recovering**. The
+seeded breath truths share one signature — they are **born full**, their peak *is* the
+source, so they never phase in:
+
+```
+$ python -m interpretation inertia ouroboros | grep cycle
+  cycle: born full → faded → recovered
+```
+
+That "born full" is the breath thesis in the cycle's own terms: a breath sign held its
+meaning whole at the source, so its life is all transmission — fade, stall, recovery —
+never a climb. A meaning that *does* climb (a sparse source enriched over time) reads
+`phased in 40% → …`; one that settles and holds at a reduced level reads
+`born full → faded → stalled 700 yr` and lands in the new **`suspended`** state — neither
+crystallized nor dissipated, its verdict deferred, which is the framework's whole stance
+made a state.
 
 **Chosen memory is retained but overwritten.** The framework's founding image becomes a
 measurable terminal state. Composing the chain with `confluence`, a truth either
