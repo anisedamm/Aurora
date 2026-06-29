@@ -36,6 +36,7 @@ from .atlas import atlas
 from .constellation import constellation
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
+from .inertia import bit_density, mechanics
 from .lexicon import load_lexicon, proliferation, untranslatables
 from .migration import migrate
 from .ledger import Ledger
@@ -187,6 +188,25 @@ def cmd_chain(args: argparse.Namespace) -> int:
 def cmd_confluence(args: argparse.Namespace) -> int:
     g = _glossary(args)
     print(confluence(args.concept, g).summary)
+    return 0
+
+
+def cmd_density(args: argparse.Namespace) -> int:
+    g = _glossary(args)
+    usage = g.usage(args.usage)
+    if usage.mode != SCRIPT_CONCEPTUAL or not usage.field:
+        print(f"{args.usage} carries no weighted field to weigh for density", file=sys.stderr)
+        return 1
+    d = bit_density(usage.field)
+    dom = ", ".join(f"{k} ({w:.2f})" for k, w in d.dominant)
+    print(f"density of {usage.word} ({usage.id}): {d.bits:.2f} bits across {d.held} value(s) — {d.gloss}")
+    print(f"  field: {dom}")
+    return 0
+
+
+def cmd_inertia(args: argparse.Namespace) -> int:
+    g = _glossary(args)
+    print(mechanics(args.concept, g).summary)
     return 0
 
 
@@ -400,6 +420,12 @@ def build_parser() -> argparse.ArgumentParser:
     sp = sub.add_parser("confluence", help="weigh independent lineages: do they corroborate the source or diverge?")
     sp.add_argument("concept")
 
+    sp = sub.add_parser("density", help="the bit-density (informational mass) a conceptual sign holds")
+    sp.add_argument("usage")
+
+    sp = sub.add_parser("inertia", help="the mechanics of a truth: mass, inertia, and ghost-lag crystallization")
+    sp.add_argument("concept")
+
     sp = sub.add_parser("constellation", help="the system-level web: which values were load-bearing across a regime")
     sp.add_argument("--regime", default="breath", help="breath (default) or pump")
 
@@ -471,6 +497,8 @@ _COMMANDS = {
     "remember": cmd_remember,
     "chain": cmd_chain,
     "confluence": cmd_confluence,
+    "density": cmd_density,
+    "inertia": cmd_inertia,
     "constellation": cmd_constellation,
     "migrate": cmd_migrate,
     "proliferation": cmd_proliferation,

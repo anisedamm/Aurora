@@ -71,6 +71,7 @@ interpretation/
   reading.py       # the three layers: attest (L1) / read (L2) / drift + project (L3)
   alignment.py     # purpose x fidelity (phonetic) / purpose x resonance (conceptual)
   memory.py        # the return path: remember() / memory_chain() / confluence()
+  inertia.py       # the mechanics of meaning: bit-density (mass), inertia, ghost-lag crystallization
   constellation.py # the system-level web: which values were load-bearing across a regime
   migration.py     # a value across the threshold: held whole, then dispersed into lexemes
   lexicon.py       # phonetic language over time: the explosion, sieve->success, coherence
@@ -83,7 +84,7 @@ glossary.json              # breath signs + pump words + value_aliases + migrati
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (127 tests)
+tests/                     # the suite (140 tests)
 ```
 
 ## Quickstart
@@ -328,6 +329,66 @@ keeping a shard, all dropping the *paradox* of opposites-held-as-one that made i
 glossary) — a proxy reading of the redistribution, surfaced in the map, not a claim of
 strict etymology. Holism becomes segmentation, and you can watch it happen,
 value by value.
+
+### The mechanics of meaning: density, inertia, and ghost-lag crystallization
+
+Every layer so far read meaning as a *field* (a weighted distribution) or a *lineage*
+(a truth carried down a chain). This one borrows a vocabulary from physics and asks what
+that field does *as it moves through time* — its **bit-density**, its **inertia**, and
+what the **ghost lag** crystallizes out of it. It is the founding intuition stated in
+one more register: *the weight of conceptual meaning held determines its dissipation rate
+as memory, and chosen memory is retained but overwritten.*
+
+**Bit-density is informational mass.** A weighted field is a distribution, so its Shannon
+entropy (in bits) measures how much distinction it packs. A breath sign that holds
+*paradoxical-equilibrium*, *sovereignty*, *divinity* and *belonging* at once is
+**massive**; the same sign read as a bare syllable (`{syllabic-sign: 1.0}`) is
+**massless** (entropy 0) — which is the phonetic-projection foil shown as a *loss of
+mass*:
+
+```
+$ python -m interpretation density labrys-knossos
+density of labrys (labrys-knossos): 1.99 bits across 4 value(s) — massive: meaning held whole across many values at once (a breath sign)
+  field: paradoxical-equilibrium (0.30), divinity (0.25), sovereignty (0.25), unity-belonging (0.20)
+```
+
+**Inertia is mass resisting drift; crystallization is what the ghost lag makes of the
+outcome.** Along a truth's `memory_chain`, each remembering displaces the carried field;
+summed and scaled, that is the meaning's **velocity**, and `inertia = mass / velocity`
+is how strongly the weight held it still. At the end of the lag the carried field splits
+against the source truth into **signal** (the truth that crystallized) and **noise**
+(weight that drifted onto values the source never held). The ouroboros, carried 2,250
+years under pump-language, crystallizes 85% signal — and its mass is the inertia that
+got it there:
+
+```
+$ python -m interpretation inertia ouroboros
+MECHANICS of 'ouroboros': mass 1.93 bits, inertia 5.7, crystallization 85% signal across 2250 year(s) of ghost lag  ->  the truth crystallized as signal - carried whole across the lag
+  density (mass): 1.93 bits of meaning held by the source truth
+  motion: 3 remembering(s) over 3250 year(s); velocity 0.339/millennium, inertia 5.7 (mass resisting the drift)
+  crystallization: signal 0.85 / noise 0.15 across 2250 year(s) of ghost lag
+  dissipation: half-life ~13861 year(s) (the weight is the inertia against it)
+  direction: the meaning reverted, then recovered through time
+```
+
+**Chosen memory is retained but overwritten.** The framework's founding image becomes a
+measurable terminal state. Composing the chain with `confluence`, a truth either
+**crystallized**, **dissipated** into noise, or was **retained-but-overwritten** — the
+*sign* still carried (chosen, kept in use) while its *content* was replaced in a forked
+lineage. The labrys is the paradigm: borne still as an emblem, its paradoxical
+equilibrium overwritten by sovereign power and group identity.
+
+```
+$ python -m interpretation inertia labrys
+MECHANICS of 'labrys': mass 1.99 bits, inertia 5.9; signal 0.95 kept on one lineage but 0.40 on another across 2760 year(s) of ghost lag  ->  chosen memory retained but overwritten - the sign kept, its content replaced
+  ...
+  overwritten: the sign is retained, but lineage 'labrys-emblem' overwrote its content (to-origin 0.40)
+```
+
+Mass is entropy, motion is resonance-distance — **borrowed-physics proxies** over the
+already-tested chain, never an oracle of how much a meaning "really" weighed. Like every
+measure here but attestation, it is **descriptive, never a gate**: it weighs the memory;
+a human judges it.
 
 ## The phonetic web over time: the explosion of understanding
 

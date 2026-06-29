@@ -97,6 +97,19 @@ def test_confluence_corroborates_or_forks(capsys):
     assert "DIVERGENCE" in capsys.readouterr().out
 
 
+def test_density_weighs_a_signs_informational_mass(capsys):
+    assert main(_g("density", "labrys-knossos")) == 0
+    out = capsys.readouterr().out
+    assert "bits" in out and "massive" in out
+
+
+def test_inertia_reads_the_mechanics_of_a_truth(capsys):
+    assert main(_g("inertia", "labrys")) == 0
+    out = capsys.readouterr().out
+    assert "MECHANICS of 'labrys'" in out
+    assert "retained but overwritten" in out and "ghost lag" in out
+
+
 def test_constellation_shows_the_load_bearing_values(capsys):
     assert main(_g("constellation")) == 0
     out = capsys.readouterr().out

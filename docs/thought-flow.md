@@ -446,6 +446,50 @@ becomes legible on a single screen - the end the project's every measure was qui
 building toward. Read-only, descriptive, composed of nothing but what the tested
 functions already say.
 
+## Step 27 — The mechanics of meaning: density, inertia, and ghost-lag crystallization
+
+Every step so far read meaning as a *field* (a weighted distribution) or a *lineage* (a
+truth carried down a chain). This step reads the same material through a borrowed
+vocabulary — the **physics** of that field as it moves through time — because the user's
+founding intuition was already physical: *informational bit-density and weight*,
+*inertia (how fast a meaning progressed)*, the *ghost lag determining the signal/noise
+crystallization of the outcome*, *the weight of meaning held determining its dissipation
+rate as memory*, and *chosen memory retained but overwritten*. `inertia.py` makes each a
+measurement, composing the already-tested `weighting` and `memory` with one new proxy.
+
+**Mass is entropy.** A weighted field is a distribution, so its Shannon entropy (in bits)
+is exactly "informational bit-density" — how much distinction the sign packs. A breath
+sign holding four values in proportion is *massive* (~1.99 bits); the same sign read as a
+bare syllable (`{syllabic-sign: 1.0}`) is *massless* (entropy 0). So phonetic projection,
+named in Step 14 as an error and in Step 17 as zero resonance, is here a **loss of mass** —
+the same error in a third register. **Velocity** is the field-distance a truth travels per
+millennium along its `memory_chain` (each hop's `1 - to_prev`, summed over its span);
+**inertia** is `mass / velocity`, the weight resisting the drift. The founding claim —
+weight determines dissipation rate — falls out: a massive, inertial truth shows a long
+**half-life** (read off the chain's net erosion), a light one dissipates fast.
+
+**The ghost lag crystallizes signal from noise.** Carried across the breath→pump
+threshold, a memory's final field splits against the source truth: the overlap is
+**signal** (the truth that crystallized), the remainder **noise** (weight drifted onto
+values the source never held). The ghost lag — the years of breath-meaning still moving
+under pump-language up to the outcome — is the distance over which that crystallization
+had to survive. The ouroboros crystallizes 85% signal across 2,250 years of lag; its mass
+is the inertia that carried it.
+
+**And "chosen memory is retained but overwritten" becomes a terminal state.** Composing the
+chain with `confluence` (Step 20), a truth either **crystallized** (its lineage held the
+signal), **dissipated** (the signal fell to noise and no record kept it), or was
+**retained-but-overwritten** — the *sign* still carried, chosen, kept in use, while its
+*content* was replaced in a forked lineage. The labrys is the paradigm of the last: borne
+still as an emblem (the sign retained), its paradoxical equilibrium overwritten by
+sovereign power and group identity (to-origin 0.40). This is the fork of Step 20 read from
+the outcome's side — not "which branch is right" (the framework still withholds that) but
+*what physically became of the memory*: kept, but written over. Mass is a proxy for held
+meaning, resonance-distance a proxy for motion; borrowed physics over the tested chain,
+introducing measure but never a gate. Notably this measure is **not** folded into the
+atlas (Step 26), which by its charter introduces none — the mechanics stay a lens you turn
+on a truth, not part of the read-only whole. Descriptive, never a gate.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a
