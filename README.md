@@ -84,7 +84,7 @@ glossary.json              # breath signs + pump words + value_aliases + migrati
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (140 tests)
+tests/                     # the suite (144 tests)
 ```
 
 ## Quickstart
@@ -383,6 +383,21 @@ $ python -m interpretation inertia labrys
 MECHANICS of 'labrys': mass 1.99 bits, inertia 5.9; signal 0.95 kept on one lineage but 0.40 on another across 2760 year(s) of ghost lag  ->  chosen memory retained but overwritten - the sign kept, its content replaced
   ...
   overwritten: the sign is retained, but lineage 'labrys-emblem' overwrote its content (to-origin 0.40)
+```
+
+Run `inertia` with no argument to read the whole web at once — the system-level companion
+to the constellation, seen through the physics. The breath truths are **uniformly
+massive** (each held meaning whole); what separates them is the *outcome* the ghost lag
+crystallized, not the mass:
+
+```
+$ python -m interpretation inertia
+the mechanics of the breath web: 4 truth(s), by informational mass
+  concept        mass  inertia  signal  state
+  labrys         1.99      5.9    0.95  retained-overwritten
+  divine-order   1.95     29.9    0.85  crystallized
+  ouroboros      1.93      5.7    0.85  crystallized
+  ankh           1.90        —       —  held-no-return
 ```
 
 Mass is entropy, motion is resonance-distance — **borrowed-physics proxies** over the

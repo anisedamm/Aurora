@@ -7,7 +7,7 @@ from pathlib import Path
 import pytest
 
 from interpretation.glossary import load_glossary
-from interpretation.inertia import bit_density, mechanics
+from interpretation.inertia import bit_density, mechanics, mechanics_web
 
 GLOSSARY = Path(__file__).resolve().parents[1] / "glossary.json"
 
@@ -105,3 +105,38 @@ def test_a_dissipating_memory_has_a_finite_half_life():
     g = load_glossary(GLOSSARY)
     m = mechanics("ouroboros", g)
     assert m.half_life is not None and m.half_life > 0
+
+
+def test_a_pump_concept_has_no_weighted_field_to_weigh():
+    # revolution/democracy segment meaning into senses, not a field - honestly reported.
+    g = load_glossary(GLOSSARY)
+    m = mechanics("revolution", g)
+    assert m.state == "no-field"
+    assert m.mass == 0.0
+    assert "segments meaning into senses" in m.state_gloss
+
+
+def test_density_weighs_a_remembrances_carried_field():
+    # A remembrance (a pump-mode usage on the return path) still carries a weighted
+    # field; its mass is measurable - the earlier guard wrongly refused it.
+    g = load_glossary(GLOSSARY)
+    d = bit_density(g.usage("theogony").field)
+    assert d.held == 4 and d.bits > 1.5
+
+
+def test_the_web_reads_every_breath_truth_by_mass():
+    g = load_glossary(GLOSSARY)
+    web = mechanics_web(g)
+    assert [m.concept for m in web.items] == ["labrys", "divine-order", "ouroboros", "ankh"]
+    # uniformly massive; the outcome is what differs, not the mass
+    assert all(m.mass >= 1.5 for m in web.items)
+    states = {m.concept: m.state for m in web.items}
+    assert states["labrys"] == "retained-overwritten"
+    assert states["ankh"] == "held-no-return"
+
+
+def test_the_pump_web_holds_no_field_mechanics():
+    g = load_glossary(GLOSSARY)
+    web = mechanics_web(g, regime="pump")
+    assert web.items == []
+    assert "no weighted-field web" in web.summary

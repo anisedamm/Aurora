@@ -53,6 +53,7 @@ from dataclasses import dataclass, field
 
 from .glossary import Glossary
 from .memory import CONVERGENCE_THRESHOLD, confluence, memory_chain
+from .regime import BREATH
 from .weighting import WeightedField
 
 # Years per millennium - velocity and dissipation are reported per-millennium, the
@@ -81,7 +82,7 @@ class Density:
         if self.held == 1:
             return "massless: one value carries all the weight (a single lexeme - entropy 0)"
         if self.bits >= 1.5:
-            return "massive: meaning held whole across many values at once (a breath sign)"
+            return "massive: meaning held whole across many values at once"
         return "light: meaning concentrated in few values (segmented)"
 
 
@@ -139,6 +140,7 @@ class Mechanics:
             "retained-overwritten": "chosen memory retained but overwritten - the sign kept, its content replaced",
             "dissipated": "the signal fell to noise - the memory dissipated, not kept",
             "held-no-return": "held at the source - no return path recorded to measure",
+            "no-field": "no weighted field to weigh - a pump concept segments meaning into senses, not a field",
         }[self.state]
 
     @property
@@ -152,6 +154,8 @@ class Mechanics:
 
     @property
     def verdict(self) -> str:
+        if self.state == "no-field":
+            return f"MECHANICS of '{self.concept}': no weighted field to weigh  ->  {self.state_gloss}"
         head = f"MECHANICS of '{self.concept}': mass {self.mass:.2f} bits"
         if self.carriers == 0:
             return f"{head}  ->  {self.state_gloss}"
@@ -165,6 +169,12 @@ class Mechanics:
     @property
     def summary(self) -> str:
         rows = [self.verdict]
+        if self.state == "no-field":
+            rows.append("  (the mechanics layer weighs breath-era weighted fields; this concept "
+                        "holds a sense-history, not a field)")
+            rows.append("  note: a borrowed-physics proxy over the tested chain - entropy for mass, "
+                        "resonance-distance for motion. Descriptive, never a gate.")
+            return "\n".join(rows)
         rows.append(f"  density (mass): {self.mass:.2f} bits of meaning held by the source truth")
         if self.carriers == 0:
             rows.append("  motion: no rememberings on record - the truth was not carried forward to measure")
@@ -244,7 +254,8 @@ def mechanics(concept_id: str, glossary: Glossary) -> Mechanics:
     chain = memory_chain(concept_id, glossary)
     conf = confluence(concept_id, glossary)
 
-    mass = bit_density(concept.retained_field()).bits
+    density = bit_density(concept.retained_field())
+    mass = density.bits
     velocity, span = _velocity(chain.links)
     inertia = round(mass / velocity, 4) if velocity > 0 else None
 
@@ -274,7 +285,9 @@ def mechanics(concept_id: str, glossary: Glossary) -> Mechanics:
     forked = len(conf.lineages) >= 2 and not conf.independently_corroborated
     diverged = [ln for ln in conf.lineages if ln.witness_to_origin < CONVERGENCE_THRESHOLD]
     overwritten = None
-    if not chain.carriers:
+    if density.held == 0:
+        state = "no-field"          # a pump concept holds senses, not a weighted field
+    elif not chain.carriers:
         state = "held-no-return"
     elif forked and diverged:
         state = "retained-overwritten"
@@ -301,3 +314,48 @@ def mechanics(concept_id: str, glossary: Glossary) -> Mechanics:
         state=state,
         overwritten=overwritten,
     )
+
+
+# --- the whole web: the mechanics of every breath truth at once --------------
+
+@dataclass
+class MechanicsWeb:
+    """The mechanics of a regime's truths together - mass against outcome."""
+
+    regime: str
+    items: list  # Mechanics, by mass descending
+
+    @property
+    def summary(self) -> str:
+        head = (f"the mechanics of the {self.regime} web: {len(self.items)} truth(s), "
+                "by informational mass")
+        if not self.items:
+            return (f"{head}\n  the {self.regime} regime holds no weighted-field web to weigh — "
+                    "it segments meaning into senses, not fields (see `proliferation`).")
+        rows = [head, f"  {'concept':<14}{'mass':>5}  {'inertia':>7}  {'signal':>6}  state"]
+        for m in self.items:
+            inert = f"{m.inertia:.1f}" if m.inertia is not None else "—"
+            signal = f"{m.signal:.2f}" if m.carriers > 0 else "—"
+            rows.append(f"  {m.concept:<14}{m.mass:>5.2f}  {inert:>7}  {signal:>6}  {m.state}")
+        rows.append("  note: the breath truths are uniformly massive (meaning held whole); what "
+                    "differs is the\n        outcome the ghost lag crystallized, not the mass. "
+                    "Descriptive, never a ranking of worth.")
+        return "\n".join(rows)
+
+
+def mechanics_web(glossary: Glossary, *, regime: str = BREATH) -> MechanicsWeb:
+    """The mechanics of every sign of a regime that holds a weighted field, by mass.
+
+    Lifts `mechanics` from one truth to the whole web - the system-level companion to
+    `constellation`, read through the borrowed physics. It shows that the breath web's
+    truths are uniformly *massive* (they held meaning whole) and that what separates them
+    is the **outcome** the ghost lag made of each: crystallized, retained-but-overwritten,
+    or held with no return path. Descriptive, never a gate.
+    """
+    signs = sorted(
+        (c for c in glossary.concepts.values() if c.regime == regime and c.retained_field()),
+        key=lambda c: c.id,
+    )
+    items = [mechanics(c.id, glossary) for c in signs]
+    items.sort(key=lambda m: (-m.mass, m.concept))
+    return MechanicsWeb(regime=regime, items=items)

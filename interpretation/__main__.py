@@ -36,7 +36,7 @@ from .atlas import atlas
 from .constellation import constellation
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
-from .inertia import bit_density, mechanics
+from .inertia import bit_density, mechanics, mechanics_web
 from .lexicon import load_lexicon, proliferation, untranslatables
 from .migration import migrate
 from .ledger import Ledger
@@ -194,7 +194,7 @@ def cmd_confluence(args: argparse.Namespace) -> int:
 def cmd_density(args: argparse.Namespace) -> int:
     g = _glossary(args)
     usage = g.usage(args.usage)
-    if usage.mode != SCRIPT_CONCEPTUAL or not usage.field:
+    if not usage.field:                       # a phonetic word with no carried field
         print(f"{args.usage} carries no weighted field to weigh for density", file=sys.stderr)
         return 1
     d = bit_density(usage.field)
@@ -206,7 +206,10 @@ def cmd_density(args: argparse.Namespace) -> int:
 
 def cmd_inertia(args: argparse.Namespace) -> int:
     g = _glossary(args)
-    print(mechanics(args.concept, g).summary)
+    if args.concept:
+        print(mechanics(args.concept, g).summary)
+    else:
+        print(mechanics_web(g, regime=args.regime).summary)   # the whole web at once
     return 0
 
 
@@ -424,7 +427,8 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("usage")
 
     sp = sub.add_parser("inertia", help="the mechanics of a truth: mass, inertia, and ghost-lag crystallization")
-    sp.add_argument("concept")
+    sp.add_argument("concept", nargs="?", help="omit to read the whole web at once")
+    sp.add_argument("--regime", default="breath", help="breath (default) or pump")
 
     sp = sub.add_parser("constellation", help="the system-level web: which values were load-bearing across a regime")
     sp.add_argument("--regime", default="breath", help="breath (default) or pump")

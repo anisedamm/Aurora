@@ -486,9 +486,14 @@ sovereign power and group identity (to-origin 0.40). This is the fork of Step 20
 the outcome's side — not "which branch is right" (the framework still withholds that) but
 *what physically became of the memory*: kept, but written over. Mass is a proxy for held
 meaning, resonance-distance a proxy for motion; borrowed physics over the tested chain,
-introducing measure but never a gate. Notably this measure is **not** folded into the
-atlas (Step 26), which by its charter introduces none — the mechanics stay a lens you turn
-on a truth, not part of the read-only whole. Descriptive, never a gate.
+introducing measure but never a gate. Lifted to the whole web (`inertia` with no argument,
+the constellation's companion read through the physics), the breath truths come out
+*uniformly massive* — each held meaning whole — so what separates them is not the mass but
+the **outcome** the ghost lag crystallized: the labrys overwritten, the ouroboros and the
+divine order crystallized, the ankh held with no return path. Notably this measure is
+**not** folded into the atlas (Step 26), which by its charter introduces none — the
+mechanics stay a lens you turn on a truth, not part of the read-only whole. Descriptive,
+never a gate.
 
 ## The through-line
 
