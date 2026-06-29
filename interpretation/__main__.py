@@ -41,6 +41,7 @@ from .lexicon import load_lexicon, proliferation, untranslatables
 from .migration import migrate
 from .ledger import Ledger
 from .manifest import write_manifest
+from .metabolism import metabolism, metabolism_map
 from .memory import confluence, memory_chain, remember
 from .reading import attest, drift, project, read, read_symbol
 from .regime import SCRIPT_CONCEPTUAL, SCRIPT_PHONETIC
@@ -212,6 +213,15 @@ def cmd_inertia(args: argparse.Namespace) -> int:
     print(mechanics(args.concept, g).summary)
     if getattr(args, "profile", False):
         print(mass_profile(args.concept, g).summary)          # the mass, hop by hop
+    return 0
+
+
+def cmd_metabolism(args: argparse.Namespace) -> int:
+    g = _glossary(args)
+    if args.concept:
+        print(metabolism(args.concept, g).summary)
+    else:
+        print(metabolism_map(g).summary)          # the whole map, by mode
     return 0
 
 
@@ -434,6 +444,9 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--profile", action="store_true",
                     help="also trace the informational mass hop by hop down the chain")
 
+    sp = sub.add_parser("metabolism", help="how actively a meaning is worked: significance turnover and complexity branching")
+    sp.add_argument("concept", nargs="?", help="omit to read every concept's metabolism by mode")
+
     sp = sub.add_parser("constellation", help="the system-level web: which values were load-bearing across a regime")
     sp.add_argument("--regime", default="breath", help="breath (default) or pump")
 
@@ -507,6 +520,7 @@ _COMMANDS = {
     "confluence": cmd_confluence,
     "density": cmd_density,
     "inertia": cmd_inertia,
+    "metabolism": cmd_metabolism,
     "constellation": cmd_constellation,
     "migrate": cmd_migrate,
     "proliferation": cmd_proliferation,

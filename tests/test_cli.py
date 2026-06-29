@@ -131,6 +131,21 @@ def test_inertia_profile_traces_the_mass_hop_by_hop(capsys):
     assert "ouroboros-medieval" in out and "to-origin" in out
 
 
+def test_metabolism_reads_a_concepts_mode(capsys):
+    assert main(_g("metabolism", "revolution")) == 0
+    out = capsys.readouterr().out
+    assert "metabolism of 'revolution'" in out
+    assert "branching" in out and "refined by" in out and "inversion" in out
+
+
+def test_metabolism_map_shows_the_breath_pump_modes(capsys):
+    assert main(_g("metabolism")) == 0
+    out = capsys.readouterr().out
+    assert "metabolism of meaning" in out
+    assert "transmitting" in out and "branching" in out and "both" in out
+    assert "pursuing more understanding" in out
+
+
 def test_constellation_shows_the_load_bearing_values(capsys):
     assert main(_g("constellation")) == 0
     out = capsys.readouterr().out

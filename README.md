@@ -72,6 +72,7 @@ interpretation/
   alignment.py     # purpose x fidelity (phonetic) / purpose x resonance (conceptual)
   memory.py        # the return path: remember() / memory_chain() / confluence()
   inertia.py       # the mechanics of meaning: bit-density (mass), inertia, ghost-lag crystallization
+  metabolism.py    # the metabolism of meaning: significance turnover (transmit) + complexity branching
   constellation.py # the system-level web: which values were load-bearing across a regime
   migration.py     # a value across the threshold: held whole, then dispersed into lexemes
   lexicon.py       # phonetic language over time: the explosion, sieve->success, coherence
@@ -84,7 +85,7 @@ glossary.json              # breath signs + pump words + value_aliases + migrati
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (160 tests)
+tests/                     # the suite (169 tests)
 ```
 
 ## Quickstart
@@ -467,6 +468,47 @@ Mass is entropy, motion is resonance-distance — **borrowed-physics proxies** o
 already-tested chain, never an oracle of how much a meaning "really" weighed. Like every
 measure here but attestation, it is **descriptive, never a gate**: it weighs the memory;
 a human judges it.
+
+### The metabolism of meaning: transmitting and branching
+
+If the mechanics read a meaning as a body in motion, `metabolism` reads it as a *living
+thing* — how actively it is **worked** over time, in the one pursuit the whole framework
+takes meaning to be after: *more understanding*. A meaning metabolises two ways, and they
+turn out to be the breath/pump threshold once more:
+
+- **significance metabolism** (the transmission side) — how much significance a truth
+  *turns over* down its memory chain: the total work, `Σ|Δ significance|`, per millennium
+  (not the net phase-out — the dip *and* the recovery both count). This is how a **breath
+  sign** lives: transmitted, worn, recovered, without ever branching.
+- **complexity metabolism** (the branching side) — how fast a concept **branches and
+  refines** into finer senses: the senses, the descent branches, the depth, the *kinds* of
+  semantic work, and new senses per century. This is how a **pump concept** lives:
+  differentiating one word into a history of distinct meanings.
+
+So the modes are the regimes: a breath sign **transmits** but does not branch; a pump
+concept **branches** but is not transmitted; and the cosmogonic **divine order** does
+**both** — a remembered truth that also climbed a ladder of abstraction across the lag:
+
+```
+$ python -m interpretation metabolism
+the metabolism of meaning: 6 concept(s), by mode
+  concept       mode          sig/millen  senses  branch/cent
+  divine-order  both                0.13       4         0.12
+  labrys        transmitting        0.65       —            —
+  ouroboros     transmitting        0.58       —            —
+  revolution    branching              —       4         1.05
+  democracy     branching              —       2         0.05
+  ankh          dormant                —       —            —
+```
+
+*Revolution* metabolises fast — four senses in under three centuries, refined by metaphor,
+**inversion**, and broadening — where *democracy* turned over a single amelioration across
+two millennia. The breath signs do not branch at all (they hold meaning whole), but they
+**transmit**: the labrys and ouroboros turn over significance down their chains, fading and
+recovering. And the *ankh*, never carried forward and never branched, lies **dormant** —
+held whole at the source, its metabolism at rest. Two ways of pursuing understanding —
+holding it whole and carrying it, or differentiating it ever finer — read as one rate.
+A borrowed-biology proxy; descriptive, never a gate.
 
 ## The phonetic web over time: the explosion of understanding
 

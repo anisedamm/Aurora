@@ -532,6 +532,38 @@ ring), a distinction the resonance alone could not draw. Notably this measure is
 mechanics stay a lens you turn on a truth, not part of the read-only whole. Descriptive,
 never a gate.
 
+## Step 28 — The metabolism of meaning: transmitting and branching
+
+The mechanics (Step 27) read a meaning as a body in motion. This step reads it as a *living
+thing* — how actively it **metabolises**, in the one pursuit the whole framework takes
+meaning to be after: *more understanding*. The user's intuition was that meaning has a
+metabolic rate, in two registers — significance, and conceptual complexity branched and
+refined over time — and the striking thing is that those two registers are the breath/pump
+threshold seen once more.
+
+**Significance metabolism** is the transmission side: how much significance a truth *turns
+over* down its `memory_chain` — the total work, `Σ|Δ significance|`, per millennium, not the
+net phase-out. A truth that fell to ornament and was restored metabolised a great deal; one
+held flat, little. This is how a **breath sign** lives — transmitted, worn, recovered —
+without ever branching, because it holds its meaning whole. **Complexity metabolism** is the
+branching side: how fast a concept **branches and refines** into finer senses — the count of
+senses, the descent branches, the depth of the deepest refinement, the *kinds* of semantic
+work (metaphor, inversion, amelioration, abstraction), and new senses per century. This is
+how a **pump concept** lives — differentiating one word into a history of distinct meanings —
+without being carried as a weighted field.
+
+So the modes are the regimes, read as two ways of pursuing understanding. A breath sign
+**transmits** but does not branch (the labrys, the ouroboros turn over significance down
+their chains, never splitting into senses); a pump concept **branches** but is not
+transmitted (*revolution* metabolises four senses in under three centuries — metaphor,
+inversion, broadening — and carries no field); the cosmogonic **divine order** does **both**,
+a remembered truth that also climbed a ladder of abstraction across the lag; and the *ankh*,
+never carried and never branched, lies **dormant**, held whole at the source. Holding meaning
+whole and carrying it, or differentiating it ever finer — these are the same hunger, and the
+metabolism reads them as one rate in two registers. The proxy is borrowed from biology —
+turnover for how hard a memory worked, branching for how fast a concept refined — never a
+measure of how much was truly understood. As ever, descriptive, never a gate.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a
