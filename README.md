@@ -85,7 +85,7 @@ glossary.json              # breath signs + pump words + value_aliases + migrati
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (169 tests)
+tests/                     # the suite (173 tests)
 ```
 
 ## Quickstart
@@ -509,6 +509,31 @@ recovering. And the *ankh*, never carried forward and never branched, lies **dor
 held whole at the source, its metabolism at rest. Two ways of pursuing understanding —
 holding it whole and carrying it, or differentiating it ever finer — read as one rate.
 A borrowed-biology proxy; descriptive, never a gate.
+
+**The forward, civilisational arc.** Per concept a meaning branches; lifted to the whole
+phonetic web, the *civilisation* branches and climbs — and `metabolism --arc` reads that
+climb as a **rate**, the pursuit of understanding made a metabolism at the scale of a
+culture. It composes the `proliferation` below into era-over-era *gains*: how fast naming
+ascends the sieve→success gradient (survival → flourishing), the coherence and experiential
+share rising with it.
+
+```
+$ python -m interpretation metabolism --arc
+the pursuit of more understanding — the lexicon's civilisational arc:
+  era        new  align  +align  coher   exp   +exp
+  primal       4   0.09       —   0.25  0.00      —
+  agrarian     5   0.22   +0.13   0.89  0.00  +0.00
+  classical    5   0.35   +0.13   0.93  0.07  +0.07
+  modern       6   0.48   +0.14   1.00  0.30  +0.23
+  reflexive    7   0.59   +0.10   1.00  0.48  +0.18
+  over 5 eras (~41844 year(s)): understanding climbed 0.09->0.59 (+0.50) at +0.12/era; ...
+```
+
+Understanding climbs ~**+0.12 per era** (per developmental stage, not per year — the eras
+are spaced too unevenly for that), steadily, as the web coheres (0.25 → 1.00) and the inner
+life becomes sayable (experiential 0.00 → 0.48). The same hunger the per-concept metabolism
+measures, now at the scale of a civilisation: the forward face of *the pursuit of more
+understanding*.
 
 ## The phonetic web over time: the explosion of understanding
 

@@ -564,6 +564,17 @@ metabolism reads them as one rate in two registers. The proxy is borrowed from b
 turnover for how hard a memory worked, branching for how fast a concept refined — never a
 measure of how much was truly understood. As ever, descriptive, never a gate.
 
+And the branching has a **forward, civilisational arc**. Per concept a meaning refines; lifted
+to the whole phonetic web, the *culture* refines — so `metabolism --arc` reads the lexicon's
+`proliferation` (Step 23) as a *rate*: how fast naming climbs the sieve→success gradient,
+era over era, the coherence and experiential share rising with it. Understanding climbs about
++0.12 per developmental era (per era, not per year — the prehistoric 'primal' dwarfs the
+later stages, so a per-year rate would be swamped by that one gap), steadily, across some
+forty millennia. This is the same hunger the per-concept metabolism measures, now at the
+scale of a civilisation — the forward face of *the pursuit of more understanding*, the common
+thread the whole framework takes meaning to be after, made a metabolic rate. Descriptive,
+never a gate.
+
 ## The through-line
 
 > A word is a proxy for a concept; a reading is a proxy for the meaning; a

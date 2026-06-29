@@ -146,6 +146,13 @@ def test_metabolism_map_shows_the_breath_pump_modes(capsys):
     assert "pursuing more understanding" in out
 
 
+def test_metabolism_arc_reads_the_civilisational_climb(capsys):
+    assert main(_g("metabolism", "--arc")) == 0
+    out = capsys.readouterr().out
+    assert "civilisational arc" in out
+    assert "primal" in out and "reflexive" in out and "/era" in out
+
+
 def test_constellation_shows_the_load_bearing_values(capsys):
     assert main(_g("constellation")) == 0
     out = capsys.readouterr().out

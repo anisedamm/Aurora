@@ -39,6 +39,7 @@ from dataclasses import dataclass, field
 
 from .glossary import Glossary
 from .inertia import mass_profile
+from .lexicon import Lexicon, proliferation
 
 MILLENNIUM = 1000
 CENTURY = 100
@@ -221,3 +222,96 @@ def metabolism_map(glossary: Glossary) -> MetabolismMap:
         m.concept,
     ))
     return MetabolismMap(items=items)
+
+
+# --- the civilisational arc: the whole lexicon's metabolism of understanding -
+
+@dataclass
+class UnderstandingStep:
+    """One era's standing in the climb, with the gain it made over the last."""
+
+    era: str
+    year: int
+    new: int                         # words first named this era - the era's metabolic output
+    align: float                     # cumulative sieve->success alignment
+    gain_align: float | None         # its rise over the previous era
+    coherence: float
+    gain_coherence: float | None
+    experiential: float
+    gain_experiential: float | None
+
+
+@dataclass
+class UnderstandingArc:
+    """The pursuit of more understanding read forward, as the lexicon's metabolic climb."""
+
+    steps: list = field(default_factory=list)
+    span_years: int = 0
+
+    @property
+    def climb_align(self) -> float:
+        return round(self.steps[-1].align - self.steps[0].align, 4) if self.steps else 0.0
+
+    @property
+    def total_named(self) -> int:
+        return sum(s.new for s in self.steps)
+
+    @property
+    def rate(self) -> float:
+        """Sieve->success alignment climbed per era - the rate of understanding.
+
+        Per *era* (the natural developmental stage), not per year: the eras are spaced
+        wildly unevenly (the prehistoric 'primal' dwarfs the rest), so a per-year rate would
+        be swamped by that one gap. The metabolic unit of a civilisation's lexicon is the era.
+        """
+        return round(self.climb_align / (len(self.steps) - 1), 4) if len(self.steps) >= 2 else 0.0
+
+    @property
+    def summary(self) -> str:
+        rows = ["the pursuit of more understanding — the lexicon's civilisational arc:",
+                f"  {'era':<10}{'new':>4}{'align':>7}{'+align':>8}{'coher':>7}{'exp':>6}{'+exp':>7}"]
+        for s in self.steps:
+            ga = "—" if s.gain_align is None else f"{s.gain_align:+.2f}"
+            ge = "—" if s.gain_experiential is None else f"{s.gain_experiential:+.2f}"
+            rows.append(f"  {s.era:<10}{s.new:>4}{s.align:>7.2f}{ga:>8}{s.coherence:>7.2f}"
+                        f"{s.experiential:>6.2f}{ge:>7}")
+        if self.steps:
+            a, z = self.steps[0], self.steps[-1]
+            rows.append(
+                f"  over {len(self.steps)} eras (~{self.span_years} year(s)): understanding climbed "
+                f"{a.align:.2f}->{z.align:.2f} (+{self.climb_align:.2f}) at +{self.rate:.2f}/era; "
+                f"\n        coherence {a.coherence:.2f}->{z.coherence:.2f}, experiential "
+                f"{a.experiential:.2f}->{z.experiential:.2f}, {self.total_named} words named"
+            )
+        rows.append("  note: per concept a meaning *branches*; here the whole lexicon branches and "
+                    "climbs —\n        the civilisational metabolism of understanding, the same hunger at "
+                    "the scale of a\n        culture. The forward arc of the pursuit. Descriptive, never a gate.")
+        return "\n".join(rows)
+
+
+def understanding_arc(lexicon: Lexicon) -> UnderstandingArc:
+    """Read the lexicon's `proliferation` as the metabolic arc of the pursuit of understanding.
+
+    The per-concept `metabolism` reads one meaning branching; this lifts to the whole
+    phonetic web and reads its forward climb as a *rate* - not how high understanding rose
+    but how fast the civilisation pursued it: the sieve->success alignment gained per era and
+    per millennium, the coherence and experiential share rising with it. The system-wide
+    complement to complexity-branching, and the forward, civilisational face of the one
+    thread the framework runs on. Descriptive, never a gate.
+    """
+    pts = proliferation(lexicon).points
+    steps: list[UnderstandingStep] = []
+    prev = None
+    for p in pts:
+        steps.append(UnderstandingStep(
+            era=p.era, year=p.year, new=p.new,
+            align=p.mean_alignment,
+            gain_align=None if prev is None else round(p.mean_alignment - prev.mean_alignment, 4),
+            coherence=p.coherence,
+            gain_coherence=None if prev is None else round(p.coherence - prev.coherence, 4),
+            experiential=p.experiential_share,
+            gain_experiential=None if prev is None else round(p.experiential_share - prev.experiential_share, 4),
+        ))
+        prev = p
+    span = int(pts[-1].year - pts[0].year) if len(pts) >= 2 else 0
+    return UnderstandingArc(steps=steps, span_years=span)

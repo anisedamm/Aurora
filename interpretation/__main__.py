@@ -41,7 +41,7 @@ from .lexicon import load_lexicon, proliferation, untranslatables
 from .migration import migrate
 from .ledger import Ledger
 from .manifest import write_manifest
-from .metabolism import metabolism, metabolism_map
+from .metabolism import metabolism, metabolism_map, understanding_arc
 from .memory import confluence, memory_chain, remember
 from .reading import attest, drift, project, read, read_symbol
 from .regime import SCRIPT_CONCEPTUAL, SCRIPT_PHONETIC
@@ -217,6 +217,9 @@ def cmd_inertia(args: argparse.Namespace) -> int:
 
 
 def cmd_metabolism(args: argparse.Namespace) -> int:
+    if getattr(args, "arc", False):
+        print(understanding_arc(_lexicon(args)).summary)   # the civilisational climb
+        return 0
     g = _glossary(args)
     if args.concept:
         print(metabolism(args.concept, g).summary)
@@ -446,6 +449,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     sp = sub.add_parser("metabolism", help="how actively a meaning is worked: significance turnover and complexity branching")
     sp.add_argument("concept", nargs="?", help="omit to read every concept's metabolism by mode")
+    sp.add_argument("--arc", action="store_true",
+                    help="read the lexicon's civilisational climb: the pursuit of understanding as a rate")
 
     sp = sub.add_parser("constellation", help="the system-level web: which values were load-bearing across a regime")
     sp.add_argument("--regime", default="breath", help="breath (default) or pump")

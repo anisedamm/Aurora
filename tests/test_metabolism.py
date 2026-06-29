@@ -7,9 +7,11 @@ from pathlib import Path
 import pytest
 
 from interpretation.glossary import load_glossary
-from interpretation.metabolism import metabolism, metabolism_map
+from interpretation.lexicon import load_lexicon
+from interpretation.metabolism import metabolism, metabolism_map, understanding_arc
 
 GLOSSARY = Path(__file__).resolve().parents[1] / "glossary.json"
+LEXICON = Path(__file__).resolve().parents[1] / "lexicon.json"
 
 
 def test_a_breath_sign_transmits_but_does_not_branch():
@@ -75,3 +77,30 @@ def test_the_map_orders_by_mode_then_rate():
     assert modes == sorted(modes, key=lambda x: {"both": 0, "transmitting": 1,
                                                  "branching": 2, "dormant": 3}[x])
     assert "pursuing more understanding" in mp.summary
+
+
+# --- the civilisational arc: the lexicon's metabolism of understanding -------
+
+def test_the_understanding_arc_climbs_sieve_to_success():
+    lex = load_lexicon(LEXICON)
+    arc = understanding_arc(lex)
+    assert [s.era for s in arc.steps] == ["primal", "agrarian", "classical", "modern", "reflexive"]
+    assert arc.steps[0].align < arc.steps[-1].align          # understanding climbed
+    assert arc.climb_align == pytest.approx(0.50, abs=0.05)   # ~0.09 -> ~0.59
+    assert arc.total_named == 27
+
+
+def test_the_arc_reports_per_era_gains():
+    lex = load_lexicon(LEXICON)
+    arc = understanding_arc(lex)
+    assert arc.steps[0].gain_align is None                    # no era before the first
+    assert all(s.gain_align is not None and s.gain_align > 0 for s in arc.steps[1:])
+    # the rate is per era (developmental stage), not per year - eras are unevenly spaced
+    assert arc.rate == pytest.approx(arc.climb_align / (len(arc.steps) - 1), abs=1e-3)
+
+
+def test_coherence_and_experience_rise_across_the_arc():
+    lex = load_lexicon(LEXICON)
+    arc = understanding_arc(lex)
+    assert arc.steps[0].coherence < arc.steps[-1].coherence
+    assert arc.steps[0].experiential < arc.steps[-1].experiential
