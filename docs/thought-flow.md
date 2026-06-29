@@ -476,6 +476,22 @@ under pump-language up to the outcome — is the distance over which that crysta
 had to survive. The ouroboros crystallizes 85% signal across 2,250 years of lag; its mass
 is the inertia that carried it.
 
+**Dissipation is a proportional phase-out, not a cutoff.** The first cut classified the
+outcome with an absolute line (signal below 0.6 = dissipated), which is both arbitrary and
+blind to the *shape* of a memory's life. The truer reading — and the one the user pressed
+for — is **relative to the meaning's own peak**. Significance at each remembering is
+proxied as `mass × fidelity` (the *meaning* it holds times how much of the source *memory*
+survives in it); over time that significance rises to a **peak** — the 'peak meaning
+period' — and dissipation is how far it has phased out *from that peak*, a proportion in
+[0,1] that every memory carries, not a binary only some trip. This finally makes the
+ouroboros legible as a *curve*: it phased out 55% at the medieval nadir (worn to a heraldic
+ring) and then re-cohered to 14% off its peak — a dissipation that genuinely happened and
+was reversed, which an end-state cutoff erases. The half-life follows honestly from the
+peak (not a fitted endpoint), and the terminal `dissipated` **state** becomes the far end
+of the same gradient: a meaning fallen past half its own peak that did not recover. None of
+the seeded breath truths reach it — each recovers, forks, or is kept — so the corpus has no
+terminal dissipation, and the framework says so rather than manufacturing one.
+
 **And "chosen memory is retained but overwritten" becomes a terminal state.** Composing the
 chain with `confluence` (Step 20), a truth either **crystallized** (its lineage held the
 signal), **dissipated** (the signal fell to noise and no record kept it), or was

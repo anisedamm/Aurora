@@ -84,7 +84,7 @@ glossary.json              # breath signs + pump words + value_aliases + migrati
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (150 tests)
+tests/                     # the suite (153 tests)
 ```
 
 ## Quickstart
@@ -367,16 +367,29 @@ MECHANICS of 'ouroboros': mass 1.93 bits, inertia 5.7, crystallization 85% signa
   density (mass): 1.93 bits of meaning held by the source truth
   motion: 3 remembering(s) over 3250 year(s); velocity 0.339/millennium, inertia 5.7 (mass resisting the drift)
   crystallization: signal 0.85 / noise 0.15 across 2250 year(s) of ghost lag
-  dissipation: half-life ~13861 year(s) (the weight is the inertia against it)
+  dissipation: phased out 14% from its peak significance (1.93 at the source); deepest 55% before recovering; half-life ~15139 year(s)
   direction: the meaning reverted, then recovered through time
 ```
 
+**Dissipation is a proportional phase-out, not a cutoff.** Rather than asking whether the
+signal fell below some absolute line, the framework tracks a meaning's **significance**
+(`mass × fidelity` — the meaning it holds times how much of the source memory survives),
+finds its **peak** — its fullest moment — and reads dissipation as the *proportional* fall
+*from that peak*. So a meaning that ends at its peak has dissipated nothing; one fallen to
+half its peak has dissipated 50%, whatever its absolute level. The ouroboros above shows
+why it matters: it **phased out 55% at the medieval nadir** (worn to a heraldic ring) and
+then *re-cohered*, ending only 14% off its peak — a dissipation that happened and was
+reversed, which an end-state cutoff would miss entirely. Every memory carries this number;
+the terminal `dissipated` **state** is just its far end — a meaning fallen past half its
+own peak that did not recover (none of the seeded breath truths reach it: each recovers,
+forks, or is kept — reported honestly).
+
 **Chosen memory is retained but overwritten.** The framework's founding image becomes a
 measurable terminal state. Composing the chain with `confluence`, a truth either
-**crystallized**, **dissipated** into noise, or was **retained-but-overwritten** — the
-*sign* still carried (chosen, kept in use) while its *content* was replaced in a forked
-lineage. The labrys is the paradigm: borne still as an emblem, its paradoxical
-equilibrium overwritten by sovereign power and group identity.
+**crystallized**, **dissipated** (phased out past half its peak, not recovered), or was
+**retained-but-overwritten** — the *sign* still carried (chosen, kept in use) while its
+*content* was replaced in a forked lineage. The labrys is the paradigm: borne still as an
+emblem, its paradoxical equilibrium overwritten by sovereign power and group identity.
 
 ```
 $ python -m interpretation inertia labrys

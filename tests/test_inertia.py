@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from interpretation.glossary import load_glossary
+from interpretation.glossary import from_mapping, load_glossary
 from interpretation.inertia import bit_density, mass_profile, mechanics, mechanics_web
 
 GLOSSARY = Path(__file__).resolve().parents[1] / "glossary.json"
@@ -176,3 +176,52 @@ def test_a_truth_with_no_return_path_has_an_empty_profile():
     prof = mass_profile("ankh", g)
     assert prof.carriers == []
     assert "no rememberings on record" in prof.summary
+
+
+# --- dissipation as a proportional phase-out from peak (not an absolute cutoff) ---
+
+def test_dissipation_is_proportional_to_the_peak():
+    # The ouroboros dipped deeply (to the heraldic ornament) then recovered: the *deepest*
+    # phase-out is large, the *final* phase-out small, both read relative to its own peak.
+    g = load_glossary(GLOSSARY)
+    m = mechanics("ouroboros", g)
+    assert m.peak_at_origin                       # its fullest moment was the source
+    assert 0.5 < m.deepest_dissipation < 0.6      # phased out ~55% at the medieval nadir
+    assert m.dissipation < 0.2                    # but recovered to ~14% off its peak
+    assert m.deepest_dissipation > m.dissipation  # it dissipated, then re-cohered
+    assert m.state == "crystallized"              # so the *terminal* state still holds
+
+
+def test_every_memory_carries_a_dissipation_in_the_unit_interval():
+    g = load_glossary(GLOSSARY)
+    for cid in ("ouroboros", "labrys", "divine-order"):
+        m = mechanics(cid, g)
+        assert 0.0 <= m.dissipation <= 1.0
+        assert 0.0 <= m.deepest_dissipation <= 1.0
+
+
+def _faded_glossary():
+    # A breath truth carried once into a late record that keeps almost none of it - a
+    # genuine terminal dissipation, which the seeded corpus (all recovering or kept) lacks.
+    return from_mapping({
+        "concepts": [{
+            "id": "faded", "name": "Faded", "regime": "breath", "threshold": -500, "year": -2000,
+            "retained": {"a": 0.4, "b": 0.3, "c": 0.3}, "senses": [],
+            "usages": [
+                {"id": "faded-src", "regime": "breath", "mode": "conceptual",
+                 "artifact": "a relief", "citation": "a source", "year": -2000,
+                 "field": {"a": 0.4, "b": 0.3, "c": 0.3}},
+                {"id": "faded-late", "regime": "pump", "mode": "phonetic",
+                 "quotation": "a faint, ornamental echo", "citation": "a late record",
+                 "year": 500, "remembers": "faded", "field": {"x": 0.7, "a": 0.15, "b": 0.15}},
+            ],
+        }],
+    })
+
+
+def test_a_genuine_phase_out_reaches_the_dissipated_state():
+    m = mechanics("faded", _faded_glossary())
+    assert m.state == "dissipated"
+    assert m.dissipation >= 0.5            # fell past half its own peak significance
+    assert "faded, not kept" in m.state_gloss
+    assert m.direction == "reverted"

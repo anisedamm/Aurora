@@ -28,14 +28,20 @@ as it moves through time:
     pump-language up to the outcome - is the distance over which that crystallization
     had to survive.
 
-  * **dissipation as memory** - read off the chain as a half-life: at the net rate the
-    signal eroded, how many years to lose half of what remains. A massive, inertial
-    truth shows a long half-life (or none - it held); a light one dissipates fast.
+  * **dissipation as memory** - not an absolute cutoff but a **proportional phase-out**.
+    A meaning's **significance** at each remembering is proxied as `mass x fidelity` (the
+    *meaning* it holds times how much of the source *memory* survives in it); tracked over
+    time, that significance has a **peak** - its fullest moment - and dissipation is read
+    as how far the memory has phased out *relative to that peak*, not against a fixed line.
+    A meaning at its peak has dissipated nothing; one fallen to half its peak has
+    dissipated 50%, whatever its absolute level. Anchored at the peak, the half-life
+    follows: at the post-peak rate, the years to lose half the peak significance.
 
   * **the terminal state** - and so the founding image, "chosen memory is retained but
     overwritten," becomes a measurable outcome. Composing the chain with `confluence`,
-    a truth either **crystallized** (its lineage held the signal), **dissipated** (the
-    signal fell to noise and no record kept it), or was **retained-but-overwritten** -
+    a truth either **crystallized** (its lineage held the signal), **dissipated** (it
+    phased out past half its peak significance and did not recover), or was
+    **retained-but-overwritten** -
     the *sign* still carried (chosen, kept in use) while its *content* was replaced in
     a forked lineage. The labrys is the paradigm of the last: borne still as an emblem,
     its paradoxical equilibrium overwritten by sovereign power and group identity.
@@ -60,9 +66,10 @@ from .weighting import WeightedField
 # natural scale of a breath->pump transmission (these spans run to thousands of years).
 MILLENNIUM = 1000
 
-# A final signal at or above this is read as having crystallized; below it, as having
-# dissipated into noise (mirrors memory.CONVERGENCE_THRESHOLD's role on the chain).
-CRYSTALLIZED = 0.6
+# A memory that ends below this *fraction of its own peak* significance - phased out past
+# half of its fullest moment, and not recovered - is read as dissipated. A proportional
+# line relative to the meaning's peak, not an absolute signal cutoff.
+DISSIPATED_FRACTION = 0.5
 
 
 # --- bit-density: how much meaning a field holds -----------------------------
@@ -118,7 +125,12 @@ class Mechanics:
     velocity: float                # field-distance travelled per millennium
     inertia: float | None          # mass / velocity (None if it never moved)
     signal: float                  # the truth that crystallized (final to-origin)
-    half_life: int | None          # years to lose half the remaining signal (None: held)
+    peak_significance: float       # the fullest significance (mass x fidelity) the memory reached
+    peak_year: int | None          # when that peak fell - the 'peak meaning period'
+    peak_at_origin: bool           # was the source itself its fullest moment?
+    dissipation: float             # proportional phase-out from peak at the end, in [0, 1]
+    deepest_dissipation: float     # the deepest phase-out reached (before any recovery), in [0, 1]
+    half_life: int | None          # years to lose half the peak significance (None: held)
     direction: str                 # evolved / reverted / recovered / held
     state: str                     # crystallized / retained-overwritten / dissipated / held-no-return
     overwritten: tuple | None = field(default=None)  # (lineage id, its to-origin) when forked
@@ -138,7 +150,7 @@ class Mechanics:
         return {
             "crystallized": "the truth crystallized as signal - carried whole across the lag",
             "retained-overwritten": "chosen memory retained but overwritten - the sign kept, its content replaced",
-            "dissipated": "the signal fell to noise - the memory dissipated, not kept",
+            "dissipated": "phased out past half its peak significance - the memory faded, not kept",
             "held-no-return": "held at the source - no return path recorded to measure",
             "no-field": "no weighted field to weigh - a pump concept segments meaning into senses, not a field",
         }[self.state]
@@ -163,6 +175,9 @@ class Mechanics:
         if self.state == "retained-overwritten" and self.overwritten is not None:
             return (f"{head}, inertia {inert}; signal {self.signal:.2f} kept on one lineage but "
                     f"{self.overwritten[1]:.2f} on another {self.lag_phrase}  ->  {self.state_gloss}")
+        if self.state == "dissipated":
+            return (f"{head}, inertia {inert}; phased out {self.dissipation:.0%} from its peak "
+                    f"{self.lag_phrase}  ->  {self.state_gloss}")
         return (f"{head}, inertia {inert}, crystallization {self.crystallization}% signal "
                 f"{self.lag_phrase}  ->  {self.state_gloss}")
 
@@ -188,8 +203,14 @@ class Mechanics:
                 f"  crystallization: signal {self.signal:.2f} / noise {self.noise:.2f} "
                 f"{self.lag_phrase}"
             )
-            hl = "none — the meaning held against the lag" if self.half_life is None else f"~{self.half_life} year(s)"
-            rows.append(f"  dissipation: half-life {hl} (the weight is the inertia against it)")
+            peak_loc = "at the source" if self.peak_at_origin else f"at {self.peak_year}"
+            deepest = (f"; deepest {self.deepest_dissipation:.0%} before recovering"
+                       if self.deepest_dissipation > self.dissipation + 0.01 else "")
+            hl = "" if self.half_life is None else f"; half-life ~{self.half_life} year(s)"
+            rows.append(
+                f"  dissipation: phased out {self.dissipation:.0%} from its peak significance "
+                f"({self.peak_significance:.2f} {peak_loc}){deepest}{hl}"
+            )
             rows.append(f"  direction: the meaning {self.direction} through time")
             if self.overwritten is not None:
                 lid, to_origin = self.overwritten
@@ -221,21 +242,67 @@ def _velocity(links) -> tuple[float, int]:
     return path / span * MILLENNIUM, int(span)
 
 
-def _half_life(signal: float, span: int, decayed: bool) -> int | None:
-    """Years to lose half the remaining signal, at the chain's net erosion rate.
+@dataclass
+class _PhaseOut:
+    """Significance over time, read as a proportional phase-out from its peak."""
 
-    Only defined when the memory net-decayed (`signal < 1` with a decaying hop): then
-    the signal is modelled as `exp(-lambda*t)` through the endpoint and the half-life is
-    `ln2 / lambda`. A memory that held or fully recovered has no net dissipation to fit,
-    so this is None - reported honestly as "the meaning held against the lag".
+    peak: float                # the fullest significance reached (mass x fidelity)
+    peak_year: int | None
+    peak_at_origin: bool
+    final_dissipation: float   # 1 - final/peak, clamped to [0, 1]
+    deepest_dissipation: float # 1 - lowest carrier significance / peak
+    half_life: int | None      # years to halve the peak significance, at the post-peak rate
+
+
+def _phase_out(concept, chain, glossary: Glossary) -> _PhaseOut | None:
+    """Track significance (`mass x fidelity`) down the chain and phase it out from its peak.
+
+    Significance at a remembering is the informational mass it holds times how much of the
+    source truth survives in it - the *meaning* weighted by the *memory*. The peak is the
+    fullest such moment (the 'peak meaning period'); dissipation is the proportional fall
+    from it, so the measure is relative to the meaning's own height, never an absolute line.
+    Returns None when there is no remembering to phase out.
     """
-    if not decayed or span <= 0 or signal >= 0.999:
+    sig: list[tuple[int | None, bool, float]] = []
+    for ln in chain.links:
+        if ln.is_origin:
+            field_weights = concept.retained_field()
+        else:
+            try:
+                field_weights = glossary.usage(ln.by_id).field
+            except KeyError:
+                field_weights = {}
+        sig.append((ln.year, ln.is_origin, bit_density(field_weights).bits * max(0.0, ln.to_origin)))
+
+    carriers = [t for t in sig if not t[1]]
+    if not carriers:
         return None
-    s = max(signal, 1e-6)
-    lam = -math.log(s) / span
-    if lam <= 0:
-        return None
-    return int(round(math.log(2) / lam))
+
+    peak = sig[0]
+    for t in sig[1:]:
+        if t[2] > peak[2]:        # strictly greater keeps the earliest peak on ties
+            peak = t
+    peak_year, peak_at_origin, peak_val = peak[0], peak[1], peak[2]
+    if peak_val <= 0:
+        return _PhaseOut(0.0, peak_year, peak_at_origin, 0.0, 0.0, None)
+
+    final_val = carriers[-1][2]
+    deepest_val = min(t[2] for t in carriers)
+    final_diss = min(1.0, max(0.0, 1.0 - final_val / peak_val))
+    deepest_diss = min(1.0, max(0.0, 1.0 - deepest_val / peak_val))
+
+    half_life = None
+    final_year = carriers[-1][0]
+    if final_val < peak_val and peak_year is not None and final_year is not None and final_year > peak_year:
+        lam = -math.log(max(final_val / peak_val, 1e-6)) / (final_year - peak_year)
+        if lam > 0:
+            half_life = int(round(math.log(2) / lam))
+
+    return _PhaseOut(
+        peak=round(peak_val, 4), peak_year=peak_year, peak_at_origin=peak_at_origin,
+        final_dissipation=round(final_diss, 4), deepest_dissipation=round(deepest_diss, 4),
+        half_life=half_life,
+    )
 
 
 def mechanics(concept_id: str, glossary: Glossary) -> Mechanics:
@@ -245,10 +312,11 @@ def mechanics(concept_id: str, glossary: Glossary) -> Mechanics:
     `confluence` (whether the lineages converged or forked) with one new, borrowed
     measure - bit-density as informational mass. The mass is the entropy of the source
     truth; the velocity and inertia come from the chain's displacements; the
-    signal/noise split is the final to-origin against the ghost lag; and the terminal
-    state distinguishes a truth that **crystallized** from one **dissipated** into noise
-    and from a sign **retained but overwritten** (a fork that kept the sign and replaced
-    its content). Descriptive, never a gate.
+    signal/noise split is the final to-origin against the ghost lag; dissipation is the
+    proportional phase-out of significance from its peak; and the terminal state
+    distinguishes a truth that **crystallized** from one that **dissipated** (phased out
+    past half its peak and did not recover) and from a sign **retained but overwritten** (a
+    fork that kept the sign and replaced its content). Descriptive, never a gate.
     """
     concept = glossary.concept(concept_id)
     chain = memory_chain(concept_id, glossary)
@@ -260,8 +328,7 @@ def mechanics(concept_id: str, glossary: Glossary) -> Mechanics:
     inertia = round(mass / velocity, 4) if velocity > 0 else None
 
     signal = round(chain.survival, 4)
-    decayed = any((ln.delta is not None and ln.delta < -0.001) for ln in chain.links)
-    half_life = _half_life(signal, span, decayed)
+    po = _phase_out(concept, chain, glossary)
 
     threshold = concept.threshold
     last_year = chain.carriers[-1].year if chain.carriers else None
@@ -271,16 +338,18 @@ def mechanics(concept_id: str, glossary: Glossary) -> Mechanics:
         else 0
     )
 
-    # Direction along the chain's net path through time.
+    # Direction along the chain's net path through time. With a single carrier there is no
+    # carrier-to-carrier trend, so it is read against the source (1.0) instead.
     if not chain.carriers:
         direction = "held"
     elif chain.restored:
         direction = "reverted, then recovered"
     else:
-        net = chain.carriers[-1].to_origin - chain.carriers[0].to_origin
+        net = (chain.carriers[-1].to_origin - chain.carriers[0].to_origin
+               if len(chain.carriers) > 1 else chain.carriers[-1].to_origin - 1.0)
         direction = "reverted" if net < -0.001 else "progressed" if net > 0.001 else "held"
 
-    # Terminal state: the fork (retained-but-overwritten) is read before the signal, so a
+    # Terminal state: the fork (retained-but-overwritten) is read before dissipation, so a
     # sign whose latest lineage re-crystallized it still surfaces the branch that overwrote it.
     forked = len(conf.lineages) >= 2 and not conf.independently_corroborated
     diverged = [ln for ln in conf.lineages if ln.witness_to_origin < CONVERGENCE_THRESHOLD]
@@ -293,10 +362,10 @@ def mechanics(concept_id: str, glossary: Glossary) -> Mechanics:
         state = "retained-overwritten"
         worst = min(diverged, key=lambda ln: ln.witness_to_origin)
         overwritten = (worst.witness, round(worst.witness_to_origin, 4))
-    elif signal >= CRYSTALLIZED:
-        state = "crystallized"
+    elif po is not None and po.final_dissipation >= DISSIPATED_FRACTION:
+        state = "dissipated"        # phased out past half its own peak, not recovered
     else:
-        state = "dissipated"
+        state = "crystallized"
 
     return Mechanics(
         concept=concept_id,
@@ -309,7 +378,12 @@ def mechanics(concept_id: str, glossary: Glossary) -> Mechanics:
         velocity=round(velocity, 4),
         inertia=inertia,
         signal=signal,
-        half_life=half_life,
+        peak_significance=po.peak if po else round(mass, 4),
+        peak_year=po.peak_year if po else chain.origin_year,
+        peak_at_origin=po.peak_at_origin if po else True,
+        dissipation=po.final_dissipation if po else 0.0,
+        deepest_dissipation=po.deepest_dissipation if po else 0.0,
+        half_life=po.half_life if po else None,
         direction=direction,
         state=state,
         overwritten=overwritten,
