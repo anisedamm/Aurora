@@ -115,6 +115,13 @@ def test_inertia_with_no_concept_reads_the_whole_web(capsys):
     out = capsys.readouterr().out
     assert "mechanics of the breath web" in out
     assert "labrys" in out and "ankh" in out
+    assert "momentum" in out and "inertia" in out
+
+
+def test_inertia_reports_momentum_and_inertia_as_forces(capsys):
+    assert main(_g("inertia", "ouroboros")) == 0
+    out = capsys.readouterr().out
+    assert "momentum" in out and "meaning carried in motion" in out
 
 
 def test_inertia_profile_traces_the_mass_hop_by_hop(capsys):

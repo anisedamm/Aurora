@@ -84,7 +84,7 @@ glossary.json              # breath signs + pump words + value_aliases + migrati
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (156 tests)
+tests/                     # the suite (160 tests)
 ```
 
 ## Quickstart
@@ -352,22 +352,25 @@ density of labrys (labrys-knossos): 1.99 bits across 4 value(s) — massive: mea
   field: paradoxical-equilibrium (0.30), divinity (0.25), sovereignty (0.25), unity-belonging (0.20)
 ```
 
-**Inertia is mass resisting drift; crystallization is what the ghost lag makes of the
-outcome.** Along a truth's `memory_chain`, each remembering displaces the carried field;
-summed and scaled, that is the meaning's **velocity**, and `inertia = mass / velocity`
-is how strongly the weight held it still. At the end of the lag the carried field splits
-against the source truth into **signal** (the truth that crystallized) and **noise**
-(weight that drifted onto values the source never held). The ouroboros, carried 2,250
-years under pump-language, crystallizes 85% signal — and its mass is the inertia that
-got it there:
+**Inertia and momentum are the two faces of motion; crystallization is what the ghost lag
+makes of the outcome.** Along a truth's `memory_chain`, each remembering displaces the
+carried field; summed and scaled, that is the meaning's **velocity**. Mass and velocity
+then read two ways: `inertia = mass / velocity` (how strongly the weight *resisted*
+moving) and `momentum = mass × velocity` (the quantity of meaning *in motion* — much
+meaning carried far). At the end of the lag the carried field splits against the source
+truth into **signal** (the truth that crystallized) and **noise** (weight that drifted
+onto values the source never held). The ouroboros, carried 2,250 years under
+pump-language, crystallizes 85% signal:
 
 ```
 $ python -m interpretation inertia ouroboros
 MECHANICS of 'ouroboros': mass 1.93 bits, inertia 5.7, crystallization 85% signal across 2250 year(s) of ghost lag  ->  the truth crystallized as signal - carried whole across the lag
   density (mass): 1.93 bits of meaning held by the source truth
-  motion: 3 remembering(s) over 3250 year(s); velocity 0.339/millennium, inertia 5.7 (mass resisting the drift)
+  motion: 3 remembering(s) over 3250 year(s); velocity 0.339/millennium
+  forces: momentum 0.65 (meaning carried in motion) vs inertia 5.7 (mass resisting the drift)
   crystallization: signal 0.85 / noise 0.15 across 2250 year(s) of ghost lag
   dissipation: phased out 14% from its peak significance (1.93 at the source); deepest 55% before recovering; half-life ~15139 year(s)
+  cycle: born full → faded → recovered
   direction: the meaning reverted, then recovered through time
 ```
 
@@ -426,12 +429,17 @@ crystallized, not the mass:
 ```
 $ python -m interpretation inertia
 the mechanics of the breath web: 4 truth(s), by informational mass
-  concept        mass  inertia  signal  state
-  labrys         1.99      5.9    0.95  retained-overwritten
-  divine-order   1.95     29.9    0.85  crystallized
-  ouroboros      1.93      5.7    0.85  crystallized
-  ankh           1.90        —       —  held-no-return
+  concept        mass  momentum  inertia  signal  state
+  labrys         1.99      0.67      5.9    0.95  retained-overwritten
+  divine-order   1.95      0.13     29.9    0.85  crystallized
+  ouroboros      1.93      0.65      5.7    0.85  crystallized
+  ankh           1.90         —        —       —  held-no-return
 ```
+
+The **momentum** column tells the truths apart where their masses cannot: the ouroboros
+and labrys were sent on journeys (momentum ~0.65 — much meaning carried far, fading and
+recovering across millennia), while the divine order, as massive, *barely moved* (momentum
+0.13, inertia 29.9 — it held). Same weight, opposite motion.
 
 **Overwritten vs thinned, made visible.** `--profile` traces the mass *hop by hop* beside
 the to-origin signal — and because the two move **independently**, it separates two failures

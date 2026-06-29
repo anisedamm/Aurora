@@ -75,6 +75,29 @@ def test_mass_resists_drift_as_inertia():
     assert m.inertia == pytest.approx(m.mass / m.velocity, rel=1e-3)
 
 
+def test_momentum_is_mass_times_velocity():
+    g = load_glossary(GLOSSARY)
+    m = mechanics("ouroboros", g)
+    assert m.momentum == pytest.approx(m.mass * m.velocity, rel=1e-3)
+
+
+def test_momentum_and_inertia_are_the_two_faces_of_motion():
+    # The ouroboros was sent on a journey (high momentum); the divine order, as massive,
+    # barely moved (high inertia, low momentum) - the two faces of mass-and-velocity.
+    g = load_glossary(GLOSSARY)
+    journeyed = mechanics("ouroboros", g)
+    held = mechanics("divine-order", g)
+    assert journeyed.mass == pytest.approx(held.mass, abs=0.1)   # ~equally massive
+    assert journeyed.momentum > held.momentum                    # but the ouroboros moved
+    assert journeyed.inertia < held.inertia                      # the divine order resisted
+
+
+def test_a_truth_that_never_moved_has_no_momentum():
+    g = load_glossary(GLOSSARY)
+    m = mechanics("ankh", g)        # no rememberings - nothing in motion
+    assert m.momentum is None and m.inertia is None
+
+
 def test_a_truth_with_no_return_path_is_held_at_the_source():
     g = load_glossary(GLOSSARY)
     m = mechanics("ankh", g)            # no usage remembers the ankh

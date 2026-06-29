@@ -12,13 +12,16 @@ as it moves through time:
     shard, or the labrys read as a bare syllable (`{syllabic-sign: 1.0}`), is
     near-**massless** (entropy 0). Mass is the informational weight of the meaning.
 
-  * **velocity / inertia** - how fast the meaning *moved*. Along a truth's
+  * **velocity / inertia / momentum** - how the meaning *moved*. Along a truth's
     `memory_chain` each hop displaces the carried field by `1 - to_prev` over its
     span of years; summed and scaled, that is the meaning's **velocity** (distance
-    travelled per millennium). **Inertia** is `mass / velocity`: a heavy meaning that
-    nonetheless barely moved scores high - the weight resisted the change, exactly as
-    the founding intuition held ("the weight of conceptual meaning held determines its
-    dissipation rate as memory").
+    travelled per millennium). Mass and velocity then have two faces. **Inertia** is
+    `mass / velocity`: a heavy meaning that barely moved scores high - the weight
+    *resisted* the change. **Momentum** is `mass x velocity`: the quantity of meaning
+    *in motion* - a heavy meaning that nonetheless travelled far scores high, much
+    meaning carried a long way through history. The divine order, massive and barely
+    moved, is all inertia; the ouroboros, as massive but sent on a journey (worn to
+    ornament, then restored), carries the momentum.
 
   * **crystallization (signal / noise)** - what the **ghost lag** made of the
     outcome. Carried across the breath->pump threshold, a memory's final field splits
@@ -131,7 +134,8 @@ class Mechanics:
     carriers: int                  # rememberings on the chain
     span_years: int                # origin -> last carrier
     velocity: float                # field-distance travelled per millennium
-    inertia: float | None          # mass / velocity (None if it never moved)
+    inertia: float | None          # mass / velocity - resistance to drift (None if it never moved)
+    momentum: float | None         # mass x velocity - the quantity of meaning in motion
     signal: float                  # the truth that crystallized (final to-origin)
     peak_significance: float       # the fullest significance (mass x fidelity) the memory reached
     peak_year: int | None          # when that peak fell - the 'peak meaning period'
@@ -210,9 +214,14 @@ class Mechanics:
             rows.append("  motion: no rememberings on record - the truth was not carried forward to measure")
         else:
             inert = "—" if self.inertia is None else f"{self.inertia:.1f}"
+            mom = "—" if self.momentum is None else f"{self.momentum:.2f}"
             rows.append(
                 f"  motion: {self.carriers} remembering(s) over {self.span_years} year(s); "
-                f"velocity {self.velocity:.3f}/millennium, inertia {inert} (mass resisting the drift)"
+                f"velocity {self.velocity:.3f}/millennium"
+            )
+            rows.append(
+                f"  forces: momentum {mom} (meaning carried in motion) vs "
+                f"inertia {inert} (mass resisting the drift)"
             )
             rows.append(
                 f"  crystallization: signal {self.signal:.2f} / noise {self.noise:.2f} "
@@ -398,6 +407,7 @@ def mechanics(concept_id: str, glossary: Glossary) -> Mechanics:
     mass = density.bits
     velocity, span = _velocity(chain.links)
     inertia = round(mass / velocity, 4) if velocity > 0 else None
+    momentum = round(mass * velocity, 4) if velocity > 0 else None
 
     signal = round(chain.survival, 4)
     po = _phase_out(concept, chain, glossary)
@@ -451,6 +461,7 @@ def mechanics(concept_id: str, glossary: Glossary) -> Mechanics:
         span_years=span,
         velocity=round(velocity, 4),
         inertia=inertia,
+        momentum=momentum,
         signal=signal,
         peak_significance=po.peak if po else round(mass, 4),
         peak_year=po.peak_year if po else chain.origin_year,
@@ -483,14 +494,15 @@ class MechanicsWeb:
         if not self.items:
             return (f"{head}\n  the {self.regime} regime holds no weighted-field web to weigh — "
                     "it segments meaning into senses, not fields (see `proliferation`).")
-        rows = [head, f"  {'concept':<14}{'mass':>5}  {'inertia':>7}  {'signal':>6}  state"]
+        rows = [head, f"  {'concept':<14}{'mass':>5}  {'momentum':>8}  {'inertia':>7}  {'signal':>6}  state"]
         for m in self.items:
+            mom = f"{m.momentum:.2f}" if m.momentum is not None else "—"
             inert = f"{m.inertia:.1f}" if m.inertia is not None else "—"
             signal = f"{m.signal:.2f}" if m.carriers > 0 else "—"
-            rows.append(f"  {m.concept:<14}{m.mass:>5.2f}  {inert:>7}  {signal:>6}  {m.state}")
+            rows.append(f"  {m.concept:<14}{m.mass:>5.2f}  {mom:>8}  {inert:>7}  {signal:>6}  {m.state}")
         rows.append("  note: the breath truths are uniformly massive (meaning held whole); what "
-                    "differs is the\n        outcome the ghost lag crystallized, not the mass. "
-                    "Descriptive, never a ranking of worth.")
+                    "differs is how far\n        each moved (momentum) and the outcome the ghost lag "
+                    "crystallized, not the mass.\n        Descriptive, never a ranking of worth.")
         return "\n".join(rows)
 
 

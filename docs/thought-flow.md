@@ -463,10 +463,14 @@ sign holding four values in proportion is *massive* (~1.99 bits); the same sign 
 bare syllable (`{syllabic-sign: 1.0}`) is *massless* (entropy 0). So phonetic projection,
 named in Step 14 as an error and in Step 17 as zero resonance, is here a **loss of mass** —
 the same error in a third register. **Velocity** is the field-distance a truth travels per
-millennium along its `memory_chain` (each hop's `1 - to_prev`, summed over its span);
-**inertia** is `mass / velocity`, the weight resisting the drift. The founding claim —
-weight determines dissipation rate — falls out: a massive, inertial truth shows a long
-**half-life** (read off the chain's net erosion), a light one dissipates fast.
+millennium along its `memory_chain` (each hop's `1 - to_prev`, summed over its span), and
+mass and velocity then read two ways: **inertia** is `mass / velocity`, the weight
+*resisting* the drift, and **momentum** is `mass × velocity`, the quantity of meaning *in
+motion*. The two separate truths their equal masses cannot — the divine order, massive and
+barely moved, is all inertia (29.9) and little momentum (0.13); the ouroboros, as massive
+but sent on a journey of fading and recovery, carries the momentum (0.65). The founding
+claim — weight determines dissipation rate — falls out: a massive, inertial truth shows a
+long **half-life** (read off the chain's net erosion), a light one dissipates fast.
 
 **The ghost lag crystallizes signal from noise.** Carried across the breath→pump
 threshold, a memory's final field splits against the source truth: the overlap is
