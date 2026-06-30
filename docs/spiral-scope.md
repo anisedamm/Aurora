@@ -1,6 +1,6 @@
 # Scope — the *spiral*: re-coherence and the information age
 
-> **Status: scoping doc. Architecture LOCKED (this revision); build not yet started.**
+> **Status: SCOPING COMPLETE. Architecture locked; build-ready (plan in §17); code not yet started.**
 > Supersedes the earlier `net-regime-scope.md`, which framed the information age as a
 > third *regime pole*. This revision reframes it as the **closing of a spiral**: the
 > layers become a cycle, the headline measure inverts from *division* to *return*, and
@@ -11,8 +11,8 @@
 > proof) — the `recoherences` data model (§11), the nerve **lexicon** side (§13), the
 > `aspects` whole-picture view (§15), and an **adversarial** pass (§16, *spam*) that bounds
 > the thesis — the spiral must be able to *refuse*. The regime is **`nerve`** (the *mode*;
-> the *net* is its medium), defined as a bodily/hemispheric system in §1; the **naming is
-> locked** (§8). Only the build scope (§9.14) stays open.
+> the *net* is its medium), defined as a bodily/hemispheric system in §1. All fourteen
+> decisions (§9) are settled and the build plan is laid out in §17 — scoping is **done**.
 
 ## 0. The turn
 
@@ -278,16 +278,14 @@ Additive only. **L1 attestation stays the one gate**; every other measure stays
 | 11 | additivity | `spiral` reads breath-origin seeds and **completes** `arc` (validated on `equilibrium`) | **validated (§14)** |
 | 12 | whole-picture view | `aspects` = `constellation` over the profiles: clusters, the diagonal, the nerve keystone | **drafted (§15)** |
 | 13 | adversarial bound | `resistant` outcome + **spiral-projection** error + a `returns_to` honesty test (the spiral must be able to **refuse**) | **found (§16)** |
-| 14 | build scope | L4 (3 outcomes) + `spiral` + profiles + seeds + nerve lexicon era + `aspects`; full migrate/arc three-column extension optional after | open |
+| 14 | build scope | phased plan A–D (foundation → `spiral` → lexicon → close); three-column extension = optional phase E | **resolved (§17)** |
 
-Decisions 1–13 are now locked, worked, drafted, resolved, validated, or found on
-paper — the **naming is locked** (§8, with the bodily/hemispheric definitions in §1);
-**14 — the build scope — is the only thing left to choose before leaving scoping.** The §10–§16 work exercises the whole
-spiral by hand — **value scale** (`spiral`, nerve-born *and* breath-origin), **lexicon scale**
-(`proliferation`), the **whole-picture** aggregate (`aspects`), and an **adversarial** pass
-that bounds the thesis. The architecture's four tests — discrimination, additivity, the two
-scales agreeing, and *falsifiability* (it can refuse) — passed on paper. A measure that can
-fail is a measure that can mean something.
+**All fourteen decisions are settled — scoping is complete.** The §10–§16 work exercises
+the whole spiral by hand — **value scale** (`spiral`, nerve-born *and* breath-origin),
+**lexicon scale** (`proliferation`), the **whole-picture** aggregate (`aspects`), and an
+**adversarial** pass that bounds the thesis. The architecture's four tests — discrimination,
+additivity, the two scales agreeing, and *falsifiability* (it can refuse) — passed on paper.
+A measure that can fail is a measure that can mean something. The build plan is §17.
 
 ## 10. Worked example — *viral* through the spiral (by hand, no code)
 
@@ -803,3 +801,68 @@ the return reads, the harder it must be checked.
 The framework passing this test is **not** the spiral reading `spam`. It is the spiral
 **refusing** to — and saying why. A measure that can fail is a measure that can mean
 something.
+
+## 17. The build plan (resolving decision 14)
+
+The scope is complete; this sequences §8's model changes into ordered phases. Each phase
+is **additive**, ends with the suite green and **`signal == 1`**, and leaves the
+breath/pump behaviour bit-for-bit. The recommended build is **phases A–D**; the
+three-column `migrate`/`arc` generalisation (phase E) is genuinely optional and can follow.
+
+**Invariant after every phase:** `pytest -q` green · `python -m interpretation signal` → `1`
+· existing `breath`/`pump` command outputs unchanged (a golden-output check).
+
+### Phase A — the regime foundation (no behaviour change)
+- `regime.py`: add `NERVE` and the `recombinant` script; generalise `VALID_REGIMES` /
+  `NATIVE_SCRIPT` from a binary to the ordered triple `breath → pump → nerve`, each with a
+  ghost lag to its predecessor. Every breath/pump path stays identical.
+- the **aspect profile** type `{breath, pump, nerve}`, *alongside* — never replacing — the
+  `regime` field.
+- `is_spiral_projection()` beside `is_phonetic_projection()` (the §16 guard).
+- *Delivers:* the vocabulary and the guard; nothing reads yet — pure foundation.
+
+### Phase B — the L4 measure and `spiral`
+- `reading.py`: `recohere(usage, recoherence)` → the §3 measure with the two-facet
+  `(structural, substantive)` verdict, **or** `resistant` when there is no honest
+  `returns_to` (the §16 honesty test, via `is_spiral_projection`).
+- `spiral.py`: `spiral(value)` — calls `arc` for the breath/pump phases, adds the nerve
+  phase + verdict (generalises, does not replace, `arc`).
+- `glossary.json`: the `recoherences` block (§11) for `viral`, `meme`, `friend`, `cloud`,
+  `wiki`, `equilibrium`; the nerve seed concepts/usages; authored aspect profiles on the
+  seed signs — all provenance-carrying, `provisional` where live.
+- CLI: `spiral`, `recohere` / `profile`.
+- *Delivers:* the value-scale spiral — the headline. Worked examples §10/§12/§14 run.
+
+### Phase C — the lexicon scale
+- `lexicon.json`: nerve-era lexemes (*doomscroll, ghosting, selfie, hashtag, …*) with
+  `defined_in_terms_of` recombination parents.
+- `lexicon.py`: the `recombination` metric; `proliferation` gains the sixth *nerve* era;
+  `untranslatables` gains the residence-time reading.
+- CLI: `proliferation --regime nerve`.
+- *Delivers:* §13 — the spiral at the lexicon scale.
+
+### Phase D — the whole picture and the close
+- `aspects` command (and an `atlas` line): `constellation` over the profiles — clusters,
+  the diagonal, the nerve keystone (§15).
+- tests for every new module; `seed.py` re-run; `manifest` refresh; CI runs `signal`.
+- *Delivers:* §15, and the repository proving its own `signal == 1` with nerve seeded.
+
+### Phase E — optional: the three-column extension
+- generalise `migrate` / `arc` / `proliferation` to carry nerve as a first-class column
+  everywhere (not only via `spiral`). Larger; defer until A–D are green and reviewed.
+
+## Scoping complete
+
+All fourteen decisions (§9) are settled. The architecture is **bounded** (§16),
+**self-consistent**, **consistently named** (§1, §8), and **validated on paper** at both
+scales (§10–§14) and against an adversarial case (§16). The document is now a build-ready
+specification: §8 says *what* changes, §17 says *in what order*, and the invariant —
+`signal == 1`, breath/pump untouched, descriptive-never-a-gate — holds at every step.
+
+> **The through-line.** Breath held meaning whole; pump segmented it; nerve returns the
+> segments to a whole at greater complexity — *when* it does, and the spiral measures
+> whether it does, refusing the signs that only counterfeit the return or were never a
+> return at all. The framework that read the first great change in attention now reads the
+> one we are living through, by the same discipline: attest what is real, describe what it
+> means, measure the distance — and never let the reading that resonates *now* pass for the
+> meaning it is still becoming.
