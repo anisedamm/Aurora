@@ -96,6 +96,22 @@
         "structure/whole": "coherence"
       },
       "reading": "The anatomy of a held whole, and so of a faithful re-coherence: it remembers the source (memory), holds it richly (density), with many differentiated parts (complexity) bound into one (coherence). It is the framework's own measures unfolded -- complexity x coherence IS the re-coherence `complexity` (differentiation x coherence), and memory x density is the substance that `resonance` reads -- so weight(held meaning) = (memory x density) x (complexity x coherence), a binary of binaries. A faithful synthesis is high on all four; the synthetic breath is high complexity with low coherence-and-memory: differentiation that forgot what it was a whole of. Note: memory leans toward the diachronic (retention across time) -- the seam where this synchronic grid strains toward the triad, the same place time refuses the 2x2."
+    },
+    {
+      "id": "agency",
+      "name": "The animating source -- the springs of action and knowing",
+      "keystone": "the-animating-source",
+      "members": ["instinct", "intent", "innate", "abstractuate"],
+      "row_axis": "faculty", "row_poles": ["conation", "cognition"],
+      "col_axis": "origin", "col_poles": ["given", "made"],
+      "breath_pump_axis": "origin",
+      "grid": {
+        "conation/given": "instinct",
+        "conation/made": "intent",
+        "cognition/given": "innate",
+        "cognition/made": "abstractuate"
+      },
+      "reading": "Where action and knowing come from, crossed: conation (will) x cognition (intellect) against given (inborn) x made (constructed). instinct = an inborn drive; intent = a chosen, constructed aim; innate = inborn knowing (the a priori, the categories, universal grammar); abstractuate = constructed knowing (concepts built from experience) -- and abstractuate is the pump's own move, lifting the lived-concrete into the analytic-general, which is why given<->made is the breath<->pump axis here. breath held them as one living source attuned to the world (you do not abstract FROM experience, you are in it); pump split will from intellect and privileged abstraction, demoting instinct to mere drive; nerve re-coheres them MECHANICALLY -- an LLM realizes the whole quartet: innate (pretrained priors / architecture), abstractuate (abstraction learned from data), intent (the objective function), instinct (fast pattern-reflex) -- faithfully or counterfeit (misaligned intent, biased priors, statistical abstraction without understanding, reflex without grasp). The reader running these measures IS this quartet, mechanised (the reflexive turn). Note: instinct and innate are kin -- both inborn, sharing the `given` column, separated only by conation vs cognition (instinct is broadly an innate drive); the tightest pair of any quartet, the seam where this grid is least orthogonal -- flagged, not hidden."
     }
   ]
 }

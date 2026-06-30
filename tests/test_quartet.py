@@ -18,9 +18,10 @@ def _load():
 def test_the_quartets_load_with_their_keystones():
     qs = _load()
     ids = {q.id for q in qs.quartets}
-    assert ids == {"existential", "spine", "process", "substrate", "held"}
+    assert ids == {"existential", "spine", "process", "substrate", "held", "agency"}
     assert qs.keystones["spine"] == "the-logos"
     assert qs.keystones["held"] == "the-held-whole"
+    assert qs.keystones["agency"] == "the-animating-source"
 
 
 def test_the_held_quartet_is_a_clean_structural_2x2():
