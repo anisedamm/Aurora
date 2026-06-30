@@ -5,7 +5,8 @@
 > third *regime pole*. This revision reframes it as the **closing of a spiral**: the
 > layers become a cycle, the headline measure inverts from *division* to *return*, and
 > the information age (**net**) is named as the phase where the pump's segmentation
-> **re-coheres into a new whole at greater complexity**.
+> **re-coheres into a new whole at greater complexity**. It now carries a by-hand
+> worked example (§10, *viral*) that exercises the whole spiral on paper.
 
 ## 0. The turn
 
@@ -88,6 +89,13 @@ complexity   = differentiation (count of re-cohered segments)  ×  coherence (la
   returned whole, true to the source);
 - **high complexity × low resonance → counterfeit aggregation** (§4).
 
+The breath-value a net sign returns *toward*, and the pump shards it re-coheres, are an
+**authored declaration** — a `recoherences` map, the net-side mirror of the glossary's
+`migrations` (which records the breath→pump dispersal). It says, per net value: which
+retained value it returns to, and which shards it gathers — a proxy, surfaced and
+provenance-carrying, never a claim of strict etymology. (Worked through for *viral* in
+§10.)
+
 Breath scores trivially-whole (few pieces); net's achievement is to hold *many*
 differentiated pieces in one field and still resonate with the source — the spiral
 returning at greater complexity, made legible. Descriptive, never a gate.
@@ -104,6 +112,13 @@ measure reports whether it **succeeded**. A net sign can be:
 - a **counterfeit aggregation** — pieces piled into the *form* of a whole without the
   living unity: the **synthetic breath**. An LLM's plausible-but-hollow gloss; a meme
   that recombines fragments into noise; engagement-optimised slop.
+
+**The verdict is a spectrum, not a switch.** Re-coherence runs faithful ↔ counterfeit,
+and a real sign is usually **mixed** — faithful in one facet, counterfeit in another.
+The measure must report the mixture and stay **provisional** for live senses, never
+collapse it to a single crown. *`viral` is the proof case (§10): it restores
+participation and the shared field (faithful) while mechanising and hollowing them
+(counterfeit), and the framework reports both — the judgement stays the human's.*
 
 This is not a new failure mode to invent — `chain` already proves a return can **decay**
 as well as **restore** (the ouroboros worn to medieval ornament, then *restored* by
@@ -130,6 +145,15 @@ the **signature of the synthesis** — the meme is not homeless between regimes,
    pump, and which (the memes, the emoji, *viral*) light up on all three. This is the
    `constellation` move applied to the profiles — a map of where each sign sits on the
    spiral, surfaced as one screen (folded into `atlas`, or its own `aspects` view).
+
+Illustratively (authored proxies, 0–1 per aspect):
+
+| sign | breath | pump | net | reading |
+|------|:------:|:----:|:---:|---------|
+| `labrys` | 0.9 | 0.1 | 0.1 | a breath whole, barely segmented |
+| `water` (lexeme) | 0.1 | 0.9 | 0.2 | a pump word, one discrete sense |
+| `viral` | 0.6 | 0.7 | 0.8 | a pump word re-cohering into a net whole |
+| `meme` | 0.7 | 0.6 | 0.9 | lights up on all three — the spiral's close |
 
 A profile is an **authored proxy** carrying its provenance, like every map here — not a
 claim that a sign "is" 0.7 breath, only a reading of how its attention is distributed.
@@ -171,6 +195,8 @@ Additive only. **L1 attestation stays the one gate**; every other measure stays
    whole → segmented → re-cohered — with the re-coherence measure and verdict.
 4. `glossary.json` / `lexicon.json` — seed §6 (`viral`, `meme`, net untranslatables),
    provenance-carrying, `provisional` where live; profiles authored on the seed signs.
+   Add a **`recoherences`** block (the net-side mirror of `migrations`): per net value,
+   the breath value it returns toward and the pump shards it re-coheres (see §10).
 5. The **whole-picture** aspect view (§5.2) — folded into `atlas` and/or a new `aspects`
    command, `constellation`-style.
 6. Tests + `seed.py` re-run + `manifest` refresh; confirm **`signal == 1`**.
@@ -190,4 +216,93 @@ Additive only. **L1 attestation stays the one gate**; every other measure stays
 | 9 | build scope | L4 + `spiral` + profiles + seeds; full migrate/arc three-column extension optional after | open |
 
 Decisions 1–5 are locked. 6–8 are my proposed defaults (redline freely). 9 — the build
-scope — is the next thing to choose when you're ready to leave scoping.
+scope — is the next thing to choose when you're ready to leave scoping. The §10 worked
+example exercises the whole spiral by hand and confirms the guardrail yields a *mixed*
+verdict rather than a crown — the architecture's first real test, passed on paper.
+
+## 10. Worked example — *viral* through the spiral (by hand, no code)
+
+The first end-to-end test: trace one live word through all three phases and see whether
+the spiral reading is **disciplined** (it produces a verdict, not a coronation) and
+**non-trivial** (it says something the existing tools do not).
+
+### The value under the word
+
+The spiral reads a *value*, not a spelling. Under "viral" lies an old conceptual whole:
+**a living force passing through the whole collective by participation** — contagion
+*before* germ theory: miasma, blessing and curse passing by contact, the evil eye,
+sympathetic transmission. In the glossary's vocabulary this sits in the **life** (the
+ankh: the living breath/force) and **unity** (the collective as one shared field)
+region of the retained truth. *[authored mapping — a `recoherences` entry, a proxy,
+declared, not etymology.]*
+
+### Phase 1 — whole (breath)
+
+Contagion held *whole* and *participatory*: a potency moves through the collective and
+all share one field; to be in the community is to be in the contagion — of blessing or
+of plague. No discrete agent: the force and the field are one. (Not a written
+breath-*sign* here, but the breath *mode* — meaning held whole, participatory.)
+
+### Phase 2 — segmented (pump)
+
+The analytic mode splits the one participatory force into discrete, domain-separated
+mechanisms, each carving off a facet and dropping the participatory whole — the
+`migrate` move (holism → segmentation) applied to *transmission*:
+
+- **contagion** (medicine) — a *discrete agent*, the germ; the individual is infected,
+  not the field (germ theory localises what was holistic);
+- **transmission** (signal/mechanics) — a channel between a sender and a receiver;
+- **influence** (society) — one mind acting on another;
+- **propagation** (biology/physics) — mechanical replication;
+- **circulation** (economy) — the spread of money, goods, news.
+
+Each is a shard; the living, shared, whole field is gone.
+
+### Phase 3 — re-cohered (net)
+
+"Going viral" returns the shards to a whole *at greater complexity*: content spreads
+through a networked collective **by participation** (you share, you remix — the meme
+lives by your act); the field is again *one* (everyone connected); the force (affect,
+idea) genuinely passes through and transforms the whole — **and** it keeps the pump's
+analysis: it is measured (reach, R₀), mechanised (the algorithm), discrete-trackable.
+The breath whole returns *carrying* the pump segments inside it. That is the spiral
+closing: wholeness regained while keeping the differentiation.
+
+### The measure, by hand
+
+- **complexity** — *high*: ~5 distinct pump shards (contagion, transmission, influence,
+  propagation, circulation) re-cohere into **one connected** field — "going viral" names
+  them all at once. Many pieces, one whole.
+- **return-resonance** vs the retained truth (life-as-participatory-transmission,
+  unity-as-one-field) — **partial / contested**:
+  - *faithful*: virality genuinely restores **participation** (you don't receive, you
+    spread) and the **one shared field** (the collective is again a single contagious
+    whole) — a real return;
+  - *counterfeit*: the participation is **mechanised and harvested** — the field is an
+    engagement metric, the "life" is often hollow (slop, bots, manufactured virality),
+    and the contagion is frequently *pathological* (outrage, disinformation). The *form*
+    of the living whole without the living unity — the **synthetic breath**.
+
+### Verdict — and why it validates the architecture
+
+`viral` is a **mixed re-coherence**: faithful in restoring participation and the shared
+field, counterfeit in mechanising and hollowing them. The framework reports *both*,
+scaled by complexity and marked **provisional** (the sense is live, still settling), and
+**leaves the judgement to the human**. The spiral did not crown net as synthesis; it
+*measured* a real and a counterfeit return in the **same** sign — exactly what
+"re-cohere *to the truth*" was meant to do.
+
+### The aspect profile (embodies-all-three)
+
+As a sign in use, `viral` lights up on all three (§5): **breath** (it names a
+participatory, shared-field whole), **pump** (it is measured, mechanised, segmentable
+into metrics), **net** (its sense *is* its networked propagation). High on all three is
+the signature of the spiral's close — the same profile `meme` carries.
+
+### What the example changed in the design
+
+1. The spiral needs an authored **`recoherences`** map (§3, §8.4) to declare the
+   breath-value a net sign returns toward and the shards it gathers — without it,
+   `spiral viral` has no retained truth to resonate against.
+2. The verdict must be a **spectrum admitting "mixed"** (§4), not a binary — *viral*
+   is faithful and counterfeit at once, and forcing a single label would lie.
