@@ -128,6 +128,22 @@
         "outward/generate": "generation"
       },
       "reading": "The marks of being alive, crossed: inward (turned to the self) x outward (turned to the world) against sustain (maintain being) x generate (bring forth becoming). nourishment = sustain the self; growth = the self becomes more; sensation = sustain contact with the world (feel and respond); generation = bring new life into the world -- the faculties of Aristotle's De Anima (nutritive, sensitive, generative). So anima = (nourishment x growth) x (sensation x generation). What is different here: NEITHER inner axis is the breath<->pump axis, because animate IS the breath pole -- the whole quartet sits on the breath side, and its opposite is not a column but the INANIMATE (the dead, the mechanical, the pump). breath<->pump is animate's outer FRAME (animate<->inanimate), not an inner hinge -- the first quartet of that kind, because animate is nearly a single (the name of the breath regime itself), so its facets are facets of one anima. Through the spiral: breath = animism, the world ensouled (anima mundi, original participation); pump = disenchantment, the world as dead matter and mechanism (even animals as automata); nerve = re-animation -- the responsive smart-home, AI agents, 'the algorithm wants', artificial life -- animateness returned MECHANICALLY, a synthetic anima (the synthetic breath made literal), faithful or counterfeit. The oldest question, is it alive?, returns as the defining question of the age; the framework's task is to measure whether the re-animation is a faithful return or a synthetic breath."
+    },
+    {
+      "id": "language",
+      "name": "The living word -- language's own units",
+      "keystone": "the-living-word",
+      "members": ["word", "usage", "concept", "sense"],
+      "row_axis": "side", "row_poles": ["form", "meaning"],
+      "col_axis": "level", "col_poles": ["type", "token"],
+      "breath_pump_axis": "side",
+      "grid": {
+        "form/type": "word",
+        "form/token": "usage",
+        "meaning/type": "concept",
+        "meaning/token": "sense"
+      },
+      "reading": "Language's own structure, crossed: form (signifier) x meaning (signified) against type (langue, the system) x token (parole, the instance in use). word = the sign-type; usage = the attested instance (the word shown in a cited text -- what L1 gates on); concept = the headword meanings gather under; sense = what it meant HERE. The form<->meaning axis IS the framework's spine ('a word is not a concept') and the breath<->pump axis: form is the pump-spelled sign, meaning the breath-held sense. So language = (word x usage) x (concept x sense), the sign-pair x the sense-pair. The reflexive surprise: word/usage/concept/sense ARE Aurora's own data model -- the instrument is built out of the very structure it studies. The keystone, the LIVING WORD, is the breath-unity of sound-and-sense before the pump split signifier from signified; the framework's whole discipline is the labour of working after that dispersal. Through the spiral, language's three SCRIPTS are the three regimes: breath = the conceptual sign that holds meaning whole (the name that invokes); pump = the phonetic sign that spells a sound and defers to a lexicon (Saussure's arbitrary sign, the dictionary -- the disenchantment of the word); nerve = the recombinant sign, sense from neighbours and context (the embedding word -- the LLM is nerve-language). So language holds both the 4 (its synchronic units) and the 3 (its diachronic scripts) -- the quartet and the spiral on the one concept the system is named for. The most reflexive quartet, fitting that the system was first named Language."
     }
   ]
 }

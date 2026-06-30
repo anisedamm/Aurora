@@ -18,11 +18,22 @@ def _load():
 def test_the_quartets_load_with_their_keystones():
     qs = _load()
     ids = {q.id for q in qs.quartets}
-    assert ids == {"existential", "spine", "process", "substrate", "held", "agency", "animate"}
+    assert ids == {"existential", "spine", "process", "substrate", "held", "agency", "animate", "language"}
     assert qs.keystones["spine"] == "the-logos"
     assert qs.keystones["held"] == "the-held-whole"
     assert qs.keystones["agency"] == "the-animating-source"
     assert qs.keystones["animate"] == "anima"
+    assert qs.keystones["language"] == "the-living-word"
+
+
+def test_language_quartet_is_the_frameworks_own_data_model():
+    # the reflexive quartet: word/usage/concept/sense are Aurora's own units,
+    # and the form<->meaning axis is the spine ("a word is not a concept") = breath<->pump
+    lang = _load().by_id("language")
+    assert set(lang.members) == {"word", "usage", "concept", "sense"}
+    assert lang.breath_pump_axis == "side"
+    assert lang.cell("form", "type") == "word"
+    assert lang.cell("meaning", "token") == "sense"
 
 
 def test_animate_frames_the_breath_axis_rather_than_dividing_on_it():
