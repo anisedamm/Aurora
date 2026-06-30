@@ -38,6 +38,7 @@ from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
 from .lexicon import load_lexicon, proliferation, untranslatables
 from .migration import migrate
+from .quartet import load_quartets
 from .ledger import Ledger
 from .manifest import write_manifest
 from .memory import confluence, memory_chain, remember
@@ -49,6 +50,7 @@ from .weighting import WeightedField
 DEFAULT_LEDGER = "interpretation_ledger.jsonl"
 DEFAULT_GLOSSARY = "glossary.json"
 DEFAULT_LEXICON = "lexicon.json"
+DEFAULT_QUARTETS = "quartets.json"
 
 
 def _glossary(args: argparse.Namespace):
@@ -57,6 +59,10 @@ def _glossary(args: argparse.Namespace):
 
 def _lexicon(args: argparse.Namespace):
     return load_lexicon(getattr(args, "lexicon", None) or DEFAULT_LEXICON)
+
+
+def _quartets(args: argparse.Namespace):
+    return load_quartets(getattr(args, "quartets", None) or DEFAULT_QUARTETS)
 
 
 def _ledger(args: argparse.Namespace) -> Ledger:
@@ -219,6 +225,15 @@ def cmd_atlas(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_quartets(args: argparse.Namespace) -> int:
+    qs = _quartets(args)
+    if getattr(args, "quartet", None):
+        print(qs.by_id(args.quartet).summary)
+    else:
+        print(qs.summary)
+    return 0
+
+
 def cmd_untranslatables(args: argparse.Namespace) -> int:
     lex = _lexicon(args)
     items = untranslatables(lex)
@@ -367,6 +382,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--ledger", help=f"ledger path (default {DEFAULT_LEDGER})")
     p.add_argument("--glossary", help=f"glossary path (default {DEFAULT_GLOSSARY})")
     p.add_argument("--lexicon", help=f"lexicon path (default {DEFAULT_LEXICON})")
+    p.add_argument("--quartets", help=f"quartets path (default {DEFAULT_QUARTETS})")
     sub = p.add_subparsers(dest="command", required=True)
 
     sub.add_parser("concepts", help="list the concepts in the glossary")
@@ -405,6 +421,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     sp = sub.add_parser("migrate", help="track a value across the threshold: held whole, then dispersed into lexemes")
     sp.add_argument("value")
+
+    sp = sub.add_parser("quartets", help="the synchronic structure of meaning: the 2x2 quartets and their keystones")
+    sp.add_argument("quartet", nargs="?", help="one quartet id (e.g. existential, spine, process, substrate)")
 
     sub.add_parser("proliferation", help="the explosion of phonetic language: the sieve->success climb and coherence over time")
     sub.add_parser("untranslatables", help="concepts a single tongue valued enough to name (differential lexicalisation)")
@@ -473,6 +492,7 @@ _COMMANDS = {
     "confluence": cmd_confluence,
     "constellation": cmd_constellation,
     "migrate": cmd_migrate,
+    "quartets": cmd_quartets,
     "proliferation": cmd_proliferation,
     "untranslatables": cmd_untranslatables,
     "arc": cmd_arc,

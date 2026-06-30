@@ -93,6 +93,10 @@ def main() -> int:
     imprint(artifact_id="lexicon-map", title="The phonetic lexicon traced over time",
             text=(ROOT / "lexicon.json").read_text(encoding="utf-8"), kind="concept",
             regime="pump", parents=["language-framework"])
+    imprint(artifact_id="quartets-map",
+            title="The quartets — the synchronic structure of meaning",
+            text=(ROOT / "quartets.json").read_text(encoding="utf-8"), kind="concept",
+            parents=["language-framework"])
 
     for c in g.concepts.values():
         cid = f"concept-{c.id}"

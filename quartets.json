@@ -1,0 +1,85 @@
+{
+  "title": "The quartets — the synchronic structure of meaning (a 2x2 of crossed polarities)",
+  "note": "An authored map, and it says so. Tracing live values through the spiral (breath -> pump -> nerve), they would not come one at a time -- they came in fours, and each four is a 2x2: two crossed polarities, one of which (clearly, for the cognitive quartets) is the framework's own breath<->pump (whole<->part) axis. A meaning at rest is the crossing of the holistic/analytic polarity with one other. This is the SYNCHRONIC structure -- a meaning frozen and analysed; the spiral is the DIACHRONIC one. Bounded, never universal: time refuses the grid (it takes the triad / the flow), the singles (Being, the One, consciousness) refuse to split (they are the horizon of meaning, not a meaning), and a conceptual 'five' is the continuum showing through the grid. A proxy carrying its provenance; descriptive, never a gate. The full reasoning is the thought-flow entry 'The number of meaning, and the dawn that keeps it'.",
+  "number_structure": {
+    "_note": "The numbers are the regime operations. The binary measures are quadratic: signal = (chain x manifest) x (grounded x provenance); re-coherence = (structural x substantive) x (differentiation x coherence) -- a binary of binaries, a 2x2 collapsed to one number. 'Complextual significance' = complexity x resonance = the re-coherence measure read as a hierarchy.",
+    "1": "the undivided whole / the unsayable single (breath; Being, the One, consciousness)",
+    "2": "the first cut, the polarity (the threshold; the binary)",
+    "3": "the diachronic journey (time; the spiral breath->pump->nerve; past/present/future; thesis/antithesis/synthesis)",
+    "4": "the synchronic grid (the quartet; the pump's full segmentation; a 2x2)",
+    "infinity": "the continuum the pump cuts into nameable units to begin with"
+  },
+  "bound": {
+    "_note": "What keeps this a structure and not numerology -- stated so the next reader knows it was guarded.",
+    "synchronic_only": "The 2x2 is the structure of a meaning AT REST. Where meaning becomes temporal it goes triadic (time takes 3) or single (duree takes 1). The grid is space; time is the axis the cells are traversed along.",
+    "the_singles_resist": "The purest wholes split at the instant of naming (Being against Nothing; the One against the Many -- 'the One' is itself a pump-shard of unity; consciousness against its object). The only true single is the unnamed; it is the horizon, not a cell.",
+    "the_pentad_test": "A clean irreducible synchronic five would falsify the 2^n structure. Conceptual fives dissolve (the elements: Greeks cut at four -- hot/cold x wet/dry; Chinese at five; the senses, the Big Five, the five stages -- each a continuum sampled or a process sequenced). Irreducible fives exist in MATHEMATICS (the five Platonic solids; the quintic with no formula where the quartic has one), which bounds the claim rather than breaking it: 2^n is a tendency of conceptual meaning, not a law of all structure.",
+    "discipline": "Descriptive, never a gate. The grids are authored proxies. The resonance that expressibility tops out at four and breaks at five is held lightly -- as resonance, not proof; to take it for proof would be the very counterfeit the framework exists to catch."
+  },
+  "quartets": [
+    {
+      "id": "existential",
+      "name": "The existential coordinates of being-in-the-world",
+      "keystone": "being-in-the-world",
+      "members": ["self", "home", "world", "purpose"],
+      "row_axis": "mode", "row_poles": ["being", "telos"],
+      "col_axis": "scope", "col_poles": ["singular", "total"],
+      "breath_pump_axis": null,
+      "grid": {
+        "being/singular": "self",
+        "being/total": "world",
+        "telos/singular": "home",
+        "telos/total": "purpose"
+      },
+      "reading": "One motion across the regimes: a participatory whole, sealed by the pump into a bounded modern unit, returned by the nerve as a networked belonging WITHOUT ground. The nerve regime trades ground for connection -- you regain the web and lose the centre. Re-enchantment as capture."
+    },
+    {
+      "id": "spine",
+      "name": "The evaluative spine -- the dispersed logos",
+      "keystone": "the-logos",
+      "members": ["integrity", "truth", "alignment", "direction"],
+      "row_axis": "aspect", "row_poles": ["state", "vector"],
+      "col_axis": "reference", "col_poles": ["form", "content"],
+      "breath_pump_axis": null,
+      "grid": {
+        "state/form": "integrity",
+        "state/content": "truth",
+        "vector/form": "alignment",
+        "vector/content": "direction"
+      },
+      "reading": "Not subject matter but the framework's own instruments: the shattered logos that discloses (truth), makes whole (integrity), attunes (alignment), orients (direction). signal = integrity x direction(truth) is their re-coherence -- the logos returned as a verifiable trust-measure, not a god. The framework is its own faithful nerve artifact; its own wiki."
+    },
+    {
+      "id": "process",
+      "name": "The meaning-process -- how meaning moves",
+      "keystone": "the-movement-of-meaning",
+      "members": ["comprehension", "understanding", "synthesis", "transmission"],
+      "row_axis": "flow", "row_poles": ["intake", "output"],
+      "col_axis": "grain", "col_poles": ["part", "whole"],
+      "breath_pump_axis": "grain",
+      "grid": {
+        "intake/part": "comprehension",
+        "intake/whole": "understanding",
+        "output/whole": "synthesis",
+        "output/part": "transmission"
+      },
+      "reading": "A cycle (the ouroboros): comprehend (intake the parts) -> understand (grasp the whole) -> synthesize (make a new whole) -> transmit (pass it on) -> the next mind comprehends. The framework's own loop, and the spiral seen at the scale of a single act of meaning."
+    },
+    {
+      "id": "substrate",
+      "name": "The substrate -- where cognition happens",
+      "keystone": "the-embodied-knower",
+      "members": ["mind", "thought", "body", "experience"],
+      "row_axis": "register", "row_poles": ["faculty", "act"],
+      "col_axis": "ground", "col_poles": ["mental", "embodied"],
+      "breath_pump_axis": "ground",
+      "grid": {
+        "faculty/mental": "mind",
+        "act/mental": "thought",
+        "faculty/embodied": "body",
+        "act/embodied": "experience"
+      },
+      "reading": "The Cartesian cut, crossed with faculty/act. The mental<->embodied axis IS the breath<->pump axis (the left hemisphere re-presents; the right lives). breath held these as one embodied-lived knowing; pump cut mind from body; nerve both re-embodies (4E cognition, wearables) and hyper-disembodies (the LLM: thought without body or experience)."
+    }
+  ]
+}
