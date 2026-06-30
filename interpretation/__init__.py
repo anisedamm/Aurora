@@ -74,6 +74,9 @@ from .glossary import (
     Glossary,
     Concept,
     Usage,
+    Recoherence,
+    GatherShard,
+    CarryFacet,
     load_glossary,
     from_mapping,
 )
@@ -117,6 +120,14 @@ from .constellation import (
     AFFINITY_THRESHOLD,
 )
 from .migration import Migration, Shard, migrate
+from .spiral import (
+    Spiral,
+    RecohereReading,
+    spiral,
+    recohere,
+    scatter,
+    breath_values,
+)
 from .lexicon import (
     Lexeme,
     Lexicon,
@@ -230,6 +241,15 @@ __all__ = [
     "Migration",
     "Shard",
     "migrate",
+    "Recoherence",
+    "GatherShard",
+    "CarryFacet",
+    "Spiral",
+    "RecohereReading",
+    "spiral",
+    "recohere",
+    "scatter",
+    "breath_values",
     # the lexicon over time: phonetic language as the record of growing understanding
     "Lexeme",
     "Lexicon",

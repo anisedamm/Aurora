@@ -43,6 +43,112 @@
       ]
     }
   },
+  "recoherences": {
+    "_note": "Authored returns: how a value the pump segmented re-coheres, in the nerve regime, into a new whole at greater complexity — the mirror of `migrations`. Per nerve sign: `returns_to` (the breath value(s) the resonance is measured against, which must be values the breath web actually holds — a reached-for return is spiral projection, flagged not honoured), `gathers` (the pump shards re-cohered), and `carries` (the field the sign now holds, each facet scored on both facets of resonance: structural = does it have the SHAPE of the return; substantive = is the living substance present, or hollowed). A proxy, surfaced here; nerve senses are provisional — the crossing is lived, not hindsight. Descriptive, never a gate.",
+    "viral": {
+      "sign": "viral", "returns_to": ["life", "unity"], "year": 1996,
+      "note": "Contagion before germ theory — a living force passing through the whole collective by participation — segmented by the pump into discrete mechanisms, re-cohered by 'going viral' into networked, measured, participatory spread.",
+      "gathers": [
+        {"term": "contagion", "facet": "the discrete infectious agent", "domain": "medicine"},
+        {"term": "transmission", "facet": "a channel from sender to receiver", "domain": "signal"},
+        {"term": "influence", "facet": "one mind acting on another", "domain": "society"},
+        {"term": "propagation", "facet": "mechanical replication", "domain": "biology"},
+        {"term": "circulation", "facet": "the spread of money, goods, news", "domain": "economy"}
+      ],
+      "carries": [
+        {"facet": "participation", "weight": 0.30, "structural": 1.0, "substantive": 1.0},
+        {"facet": "shared-field", "weight": 0.30, "structural": 1.0, "substantive": 1.0},
+        {"facet": "measurement", "weight": 0.25, "structural": 0.8, "substantive": 0.2},
+        {"facet": "pathology", "weight": 0.15, "structural": 0.2, "substantive": 0.0}
+      ]
+    },
+    "meme": {
+      "sign": "meme", "returns_to": ["unity", "eternity"], "year": 2011,
+      "note": "Mimesis as participatory becoming, atomised by Dawkins (1976) into a discrete replicator, then re-cohered by the internet meme into a living, authorless, recombinant sign each sharer re-makes — a return of ideographic, weighted-field script inside a phonetic culture.",
+      "gathers": [
+        {"term": "replicator", "facet": "the selfish discrete unit (Dawkins)", "domain": "biology"},
+        {"term": "idea", "facet": "the transmissible thought", "domain": "psychology"},
+        {"term": "motif", "facet": "the recurring form", "domain": "art"},
+        {"term": "custom", "facet": "the imitated practice", "domain": "society"}
+      ],
+      "carries": [
+        {"facet": "creative-participation", "weight": 0.35, "structural": 1.0, "substantive": 1.0},
+        {"facet": "collective-pattern", "weight": 0.30, "structural": 1.0, "substantive": 0.9},
+        {"facet": "continuity", "weight": 0.20, "structural": 0.9, "substantive": 0.8},
+        {"facet": "reflex-noise", "weight": 0.15, "structural": 0.3, "substantive": 0.1}
+      ]
+    },
+    "wiki": {
+      "sign": "wiki", "returns_to": ["unity"], "year": 2001,
+      "note": "Knowledge, privately authored and segmented by the pump, re-cohered by the open commons (Wikipedia, open source) into one shared, participatory, recombinant whole — the clean faithful pole: high on both facets, non-proprietary.",
+      "gathers": [
+        {"term": "encyclopaedia", "facet": "knowledge as a closed, authored compendium", "domain": "letters"},
+        {"term": "the archive", "facet": "knowledge as stored record", "domain": "history"},
+        {"term": "the canon", "facet": "knowledge as authorised list", "domain": "culture"},
+        {"term": "expertise", "facet": "knowledge as credentialed authority", "domain": "profession"}
+      ],
+      "carries": [
+        {"facet": "distributed-authorship", "weight": 0.35, "structural": 1.0, "substantive": 1.0},
+        {"facet": "shared-commons", "weight": 0.30, "structural": 1.0, "substantive": 1.0},
+        {"facet": "non-proprietary", "weight": 0.20, "structural": 0.9, "substantive": 1.0},
+        {"facet": "capture-risk", "weight": 0.15, "structural": 0.4, "substantive": 0.2}
+      ]
+    },
+    "cloud": {
+      "sign": "cloud", "returns_to": ["divinity", "eternity"], "year": 2006,
+      "note": "The cloud of the heavens — immanent, hidden, everywhere-and-nowhere divine totality — segmented by the pump into weather, obscurity, suspicion, then re-cohered by 'the cloud' (computing) into a placeless networked ground: structurally a real return of placeless immanence, in fact a rented, surveilled, proprietary elsewhere.",
+      "gathers": [
+        {"term": "vapor", "facet": "the meteorological mass", "domain": "science"},
+        {"term": "obscurity", "facet": "the hidden, the clouded", "domain": "epistemics"},
+        {"term": "suspicion", "facet": "'under a cloud'", "domain": "morals"},
+        {"term": "storage", "facet": "the placeless data-store", "domain": "computing"}
+      ],
+      "carries": [
+        {"facet": "placeless-immanence", "weight": 0.40, "structural": 1.0, "substantive": 0.4},
+        {"facet": "hidden-ground", "weight": 0.25, "structural": 0.9, "substantive": 0.5},
+        {"facet": "utility", "weight": 0.20, "structural": 0.6, "substantive": 0.1},
+        {"facet": "proprietary-surveilled", "weight": 0.15, "structural": 0.3, "substantive": 0.0}
+      ]
+    },
+    "friend": {
+      "sign": "friend", "returns_to": ["unity"], "year": 2004,
+      "note": "Philia — the chosen bond of mutual affection — abstracted by the pump into functional roles, then re-aggregated by the platform 'friend' into one networked social field: the whole graph returns as a field, but the bond is flattened to an edge.",
+      "gathers": [
+        {"term": "acquaintance", "facet": "the known but unbonded", "domain": "society"},
+        {"term": "ally", "facet": "the bond as alliance", "domain": "politics"},
+        {"term": "associate", "facet": "the functional tie", "domain": "work"},
+        {"term": "companion", "facet": "the one who shares the way", "domain": "life"}
+      ],
+      "carries": [
+        {"facet": "connection", "weight": 0.45, "structural": 0.6, "substantive": 0.1},
+        {"facet": "shared-field", "weight": 0.20, "structural": 0.8, "substantive": 0.4},
+        {"facet": "count-metric", "weight": 0.20, "structural": 0.3, "substantive": 0.0},
+        {"facet": "affection", "weight": 0.15, "structural": 0.7, "substantive": 0.8}
+      ]
+    },
+    "equilibrium": {
+      "sign": "resilience", "returns_to": ["equilibrium"], "year": 1973,
+      "note": "The labrys's paradoxical equilibrium — opposed blades held as one living whole — flattened by the pump into static balance/justice/moderation/symmetry, then re-cohered by cybernetics and systems thinking into a dynamic, networked, self-regulating balance that recovers the living paradox the pump dropped. A breath-origin value returning to its own whole.",
+      "gathers": [
+        {"term": "balance", "facet": "static evenness of two weights", "domain": "mechanics"},
+        {"term": "justice", "facet": "balance moralised", "domain": "law"},
+        {"term": "moderation", "facet": "balance as personal virtue", "domain": "ethics"},
+        {"term": "symmetry", "facet": "balance as formal correspondence", "domain": "form"}
+      ],
+      "carries": [
+        {"facet": "dynamic-balance", "weight": 0.35, "structural": 1.0, "substantive": 0.9},
+        {"facet": "self-regulation", "weight": 0.30, "structural": 0.9, "substantive": 0.8},
+        {"facet": "paradox-recovered", "weight": 0.20, "structural": 1.0, "substantive": 0.9},
+        {"facet": "greenwash-risk", "weight": 0.15, "structural": 0.3, "substantive": 0.1}
+      ]
+    },
+    "spam": {
+      "sign": "spam", "returns_to": [], "year": 1994,
+      "note": "A tinned-meat brand routed through a sketch into unsolicited bulk noise — a nerve-native origin with no breath whole to return to. Any returns_to is reached for, not attested. The spiral declines to read a return where none exists: RESISTANT, not faithful or counterfeit.",
+      "gathers": [],
+      "carries": []
+    }
+  },
   "concepts": [
     {
       "id": "labrys",

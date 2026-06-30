@@ -53,6 +53,44 @@ class Usage:
     remembers: str = ""              # the return path: an earlier breath-truth this carries back
 
 
+@dataclass(frozen=True)
+class GatherShard:
+    """One pump-era shard a nerve sign re-coheres (the mirror of a migration shard)."""
+
+    term: str
+    facet: str = ""
+    domain: str = ""
+
+
+@dataclass(frozen=True)
+class CarryFacet:
+    """One facet of the weighted field a nerve sign now holds, scored on both facets of
+    resonance: `structural` (does it have the *shape* of the return?) and `substantive`
+    (is the *living substance* present, or hollowed?). Each in [0, 1]."""
+
+    facet: str
+    weight: float
+    structural: float
+    substantive: float
+
+
+@dataclass(frozen=True)
+class Recoherence:
+    """The nerve-side mirror of a migration: how a value the pump segmented returns to a
+    whole. `returns_to` names the breath value(s) the resonance is measured against;
+    `gathers` are the pump shards re-cohered; `carries` is the field the sign now holds.
+    An authored proxy, `provisional` where the sense is still live. Descriptive."""
+
+    id: str
+    sign: str
+    returns_to: tuple[str, ...] = ()
+    gathers: tuple[GatherShard, ...] = ()
+    carries: tuple[CarryFacet, ...] = ()
+    note: str = ""
+    year: int = 0
+    provisional: bool = True
+
+
 @dataclass
 class Concept:
     """A headword and the history of meanings gathered under it."""
@@ -100,6 +138,7 @@ class Glossary:
     note: str = ""
     value_aliases: dict = field(default_factory=dict)  # authored grouping of synonymous conceptual values
     migrations: dict = field(default_factory=dict)     # authored dispersal of a value into pump-era lexemes
+    recoherences: dict = field(default_factory=dict)   # authored return of a value into a nerve-era whole
 
     def concept(self, concept_id: str) -> Concept:
         if concept_id not in self.concepts:
@@ -158,12 +197,38 @@ def from_mapping(raw: dict) -> Glossary:
             retained=dict(c.get("retained", {})),
             year=c.get("year"),
         )
+    recoherences: dict[str, Recoherence] = {}
+    for rid, e in raw.get("recoherences", {}).items():
+        if rid.startswith("_"):
+            continue
+        recoherences[rid] = Recoherence(
+            id=rid,
+            sign=e.get("sign", rid),
+            returns_to=tuple(e.get("returns_to", ())),
+            gathers=tuple(
+                GatherShard(term=g["term"], facet=g.get("facet", ""), domain=g.get("domain", ""))
+                for g in e.get("gathers", [])
+            ),
+            carries=tuple(
+                CarryFacet(
+                    facet=c["facet"], weight=float(c.get("weight", 0.0)),
+                    structural=float(c.get("structural", 0.0)),
+                    substantive=float(c.get("substantive", 0.0)),
+                )
+                for c in e.get("carries", [])
+            ),
+            note=e.get("note", ""),
+            year=int(e.get("year", 0)),
+            provisional=bool(e.get("provisional", True)),
+        )
+
     return Glossary(
         concepts=concepts,
         title=raw.get("title", ""),
         note=raw.get("note", ""),
         value_aliases=dict(raw.get("value_aliases", {})),
         migrations=dict(raw.get("migrations", {})),
+        recoherences=recoherences,
     )
 
 

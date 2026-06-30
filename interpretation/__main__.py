@@ -39,6 +39,7 @@ from .imprint import DEFAULT_AUTHOR, Imprinter
 from .lexicon import load_lexicon, proliferation, untranslatables
 from .migration import migrate
 from .quartet import load_quartets
+from .spiral import breath_values, recohere, spiral
 from .ledger import Ledger
 from .manifest import write_manifest
 from .memory import confluence, memory_chain, remember
@@ -205,6 +206,23 @@ def cmd_constellation(args: argparse.Namespace) -> int:
 def cmd_migrate(args: argparse.Namespace) -> int:
     g = _glossary(args)
     print(migrate(args.value, g).summary)
+    return 0
+
+
+def cmd_spiral(args: argparse.Namespace) -> int:
+    g = _glossary(args)
+    print(spiral(args.sign, g).summary)
+    return 0
+
+
+def cmd_recohere(args: argparse.Namespace) -> int:
+    g = _glossary(args)
+    rec = g.recoherences.get(args.sign)
+    if rec is None:
+        print(f"error: unknown recoherence {args.sign!r}; have {sorted(g.recoherences)}",
+              file=sys.stderr)
+        return 1
+    print(recohere(rec, breath_values(g)).summary)
     return 0
 
 
@@ -422,6 +440,12 @@ def build_parser() -> argparse.ArgumentParser:
     sp = sub.add_parser("migrate", help="track a value across the threshold: held whole, then dispersed into lexemes")
     sp.add_argument("value")
 
+    sp = sub.add_parser("spiral", help="L4: trace a nerve sign across the cycle (held whole -> segmented -> re-cohered)")
+    sp.add_argument("sign", help="a recoherence id (e.g. viral, meme, wiki, cloud, friend, equilibrium, spam)")
+
+    sp = sub.add_parser("recohere", help="L4: the re-coherence verdict on a nerve sign (faithful / counterfeit / mixed / resistant)")
+    sp.add_argument("sign")
+
     sp = sub.add_parser("quartets", help="the synchronic structure of meaning: the 2x2 quartets and their keystones")
     sp.add_argument("quartet", nargs="?", help="one quartet id (e.g. existential, spine, process, substrate)")
 
@@ -492,6 +516,8 @@ _COMMANDS = {
     "confluence": cmd_confluence,
     "constellation": cmd_constellation,
     "migrate": cmd_migrate,
+    "spiral": cmd_spiral,
+    "recohere": cmd_recohere,
     "quartets": cmd_quartets,
     "proliferation": cmd_proliferation,
     "untranslatables": cmd_untranslatables,
