@@ -80,6 +80,22 @@
         "act/embodied": "experience"
       },
       "reading": "The Cartesian cut, crossed with faculty/act. The mental<->embodied axis IS the breath<->pump axis (the left hemisphere re-presents; the right lives). breath held these as one embodied-lived knowing; pump cut mind from body; nerve both re-embodies (4E cognition, wearables) and hyper-disembodies (the LLM: thought without body or experience)."
+    },
+    {
+      "id": "held",
+      "name": "The held whole -- the anatomy of a re-coherence",
+      "keystone": "the-held-whole",
+      "members": ["memory", "density", "complexity", "coherence"],
+      "row_axis": "dimension", "row_poles": ["content", "structure"],
+      "col_axis": "grain", "col_poles": ["part", "whole"],
+      "breath_pump_axis": "grain",
+      "grid": {
+        "content/part": "memory",
+        "content/whole": "density",
+        "structure/part": "complexity",
+        "structure/whole": "coherence"
+      },
+      "reading": "The anatomy of a held whole, and so of a faithful re-coherence: it remembers the source (memory), holds it richly (density), with many differentiated parts (complexity) bound into one (coherence). It is the framework's own measures unfolded -- complexity x coherence IS the re-coherence `complexity` (differentiation x coherence), and memory x density is the substance that `resonance` reads -- so weight(held meaning) = (memory x density) x (complexity x coherence), a binary of binaries. A faithful synthesis is high on all four; the synthetic breath is high complexity with low coherence-and-memory: differentiation that forgot what it was a whole of. Note: memory leans toward the diachronic (retention across time) -- the seam where this synchronic grid strains toward the triad, the same place time refuses the 2x2."
     }
   ]
 }

@@ -15,11 +15,23 @@ def _load():
     return load_quartets(QUARTETS)
 
 
-def test_the_four_quartets_load_with_their_keystones():
+def test_the_quartets_load_with_their_keystones():
     qs = _load()
     ids = {q.id for q in qs.quartets}
-    assert ids == {"existential", "spine", "process", "substrate"}
+    assert ids == {"existential", "spine", "process", "substrate", "held"}
     assert qs.keystones["spine"] == "the-logos"
+    assert qs.keystones["held"] == "the-held-whole"
+
+
+def test_the_held_quartet_is_a_clean_structural_2x2():
+    # memory/density/complexity/coherence cross content<->structure with the whole<->part axis;
+    # its breath<->pump axis is clean (named), not soft -- it is a structural quartet
+    held = _load().by_id("held")
+    assert held.breath_pump_axis == "grain"
+    assert held.cell("structure", "part") == "complexity"
+    assert held.cell("structure", "whole") == "coherence"
+    assert held.cell("content", "part") == "memory"
+    assert held.cell("content", "whole") == "density"
 
 
 def test_each_quartet_is_a_two_by_two_of_its_members():
