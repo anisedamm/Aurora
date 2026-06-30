@@ -34,6 +34,7 @@ from .alignment import align_record
 from .arc import arc
 from .atlas import atlas
 from .constellation import constellation
+from .crystallization import crystallise, frame
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
 from .lexicon import load_lexicon, proliferation, untranslatables
@@ -209,6 +210,15 @@ def cmd_proliferation(args: argparse.Namespace) -> int:
 
 def cmd_arc(args: argparse.Namespace) -> int:
     print(arc(args.value, _glossary(args), _lexicon(args)).summary)
+    return 0
+
+
+def cmd_crystal(args: argparse.Namespace) -> int:
+    stops = getattr(args, "path", None)
+    if stops:
+        print(crystallise(stops).summary)
+    else:
+        print(frame().summary)
     return 0
 
 
@@ -412,6 +422,9 @@ def build_parser() -> argparse.ArgumentParser:
     sp = sub.add_parser("arc", help="one value traced unbroken across both regimes: breath sign -> dispersal -> re-coherence")
     sp.add_argument("value")
 
+    sp = sub.add_parser("crystal", help="the crystallisation frame: order precipitated from the fluid (coherence/decoherence). Pass quadrants to read a process.")
+    sp.add_argument("path", nargs="*", help="quadrants in order, e.g. supersaturation fluctuation nucleus lattice")
+
     sub.add_parser("atlas", help="the whole history of meaning on one screen (signal, breath web, threshold, explosion, arc)")
 
     sp = sub.add_parser("regime", help="show a concept's breath/pump threshold and which side each sense sits")
@@ -476,6 +489,7 @@ _COMMANDS = {
     "proliferation": cmd_proliferation,
     "untranslatables": cmd_untranslatables,
     "arc": cmd_arc,
+    "crystal": cmd_crystal,
     "atlas": cmd_atlas,
     "regime": cmd_regime,
     "sense": cmd_sense,

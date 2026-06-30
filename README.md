@@ -75,6 +75,7 @@ interpretation/
   migration.py     # a value across the threshold: held whole, then dispersed into lexemes
   lexicon.py       # phonetic language over time: the explosion, sieve->success, coherence
   arc.py           # one thread traced unbroken across both regimes (migrate + proliferation)
+  crystallization.py # the crystal: order precipitated from the fluid — coherence/decoherence (a 2x2 quartet)
   signal.py        # the capstone: signal = integrity x direction(truth) — the record on itself
   atlas.py         # the whole history of meaning composed on one screen (a reader, not a ruler)
   imprint.py       # the active recorder (default author: anise.damm)
@@ -83,7 +84,7 @@ glossary.json              # breath signs + pump words + value_aliases + migrati
 lexicon.json               # the phonetic lexicon traced over time (the explosion)
 interpretation_ledger.jsonl  MANIFEST.md
 docs/thought-flow.md       # the living reasoning journal behind the design
-tests/                     # the suite (127 tests)
+tests/                     # the suite (137 tests)
 ```
 
 ## Quickstart
