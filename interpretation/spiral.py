@@ -32,7 +32,6 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 from .glossary import GatherShard, Glossary, Recoherence
-from .migration import migrate
 from .regime import BREATH, is_spiral_projection
 
 FACETS_FOR_FULL_COMPLEXITY = 5   # this many re-cohered shards reads as full complexity
@@ -46,6 +45,14 @@ OUTCOME_GLOSS = {
     "mixed": "a mixed re-coherence — faithful in one facet, counterfeit in another; the judgement is the human's",
     "resistant": "RESISTANT — no honest return to read; the spiral declines to manufacture one",
 }
+
+
+def returns_for(value: str, glossary: Glossary) -> list[Recoherence]:
+    """The nerve signs that re-cohere *toward* `value` - the recoherence entries whose
+    `returns_to` names it. The value-scale view of the return (one value, the signs that
+    bring it back), as `migrate`/`arc` read the same value's dispersal and climb."""
+    out = [rec for rec in glossary.recoherences.values() if value in rec.returns_to]
+    return sorted(out, key=lambda r: (r.year, r.sign))
 
 
 def breath_values(glossary: Glossary) -> set[str]:
@@ -175,6 +182,8 @@ def spiral(key: str, glossary: Glossary) -> Spiral:
         raise KeyError(
             f"unknown recoherence {key!r}; have {sorted(glossary.recoherences)}"
         )
+    from .migration import migrate   # local import: migration reads recohere from here
+
     rec = glossary.recoherences[key]
     reading = recohere(rec, breath_values(glossary))
 
