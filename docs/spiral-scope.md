@@ -5,8 +5,9 @@
 > third *regime pole*. This revision reframes it as the **closing of a spiral**: the
 > layers become a cycle, the headline measure inverts from *division* to *return*, and
 > the information age (**net**) is named as the phase where the pump's segmentation
-> **re-coheres into a new whole at greater complexity**. It now carries a by-hand
-> worked example (§10, *viral*) that exercises the whole spiral on paper.
+> **re-coheres into a new whole at greater complexity**. It now carries four by-hand
+> worked examples (§10 *viral*, §12 *meme* / *friend* / *cloud*) spanning the
+> faithful↔counterfeit spectrum, and a draft of the `recoherences` data model (§11).
 
 ## 0. The turn
 
@@ -164,10 +165,12 @@ claim that a sign "is" 0.7 breath, only a reading of how its attention is distri
   net-native unit of recombinant culture) and/or the **emoji** (a literal return of
   *ideographic, weighted-field* signs inside a phonetic-script culture). The profile
   (§5) is read directly on these.
-- **The live inversion** — **`viral`** (biology ~1898, contagion → culture: rapid,
-  self-replicating spread, now often *valued*). A clean, datable sense-inversion of a
-  pump word, the `trace`/`drift` pattern freshly attested — and a candidate first
-  `spiral` reading (a segmented sense returning toward a whole).
+- **The live inversions** — **`viral`** (biology ~1898, contagion → culture: rapid,
+  self-replicating spread, now often *valued*); and the spectrum companions worked in
+  §12 — **`friend`** (philia → network edge; the counterfeit pole) and **`cloud`**
+  (the heavens → placeless infrastructure; structurally faithful, morally counterfeit).
+  Clean, datable sense-inversions of pump words, the `trace`/`drift` pattern freshly
+  attested — and the first `spiral` readings (segmented senses returning toward a whole).
 - **The net untranslatables** — *doomscroll, ghosting, rizz, cringe, based* —
   concepts the networked culture valued enough to name; lexicalisation-as-valuation
   (§ `lexicon.py`), observable **live**, extending `proliferation` with a *net* era.
@@ -210,15 +213,18 @@ Additive only. **L1 attestation stays the one gate**; every other measure stays
 | 3 | honesty guardrail | **faithful synthesis vs counterfeit aggregation** — measured, never assumed | **locked** |
 | 4 | regime treatment | **profile + label** — aspect scores `{breath,pump,net}` alongside the binary regime, **and** a whole-picture aggregate | **locked** |
 | 5 | net's thesis | net = the phase where segmentation **re-coheres to a whole at greater complexity** | **locked** |
-| 6 | seeds | `viral` (live inversion), `meme`/`emoji` (synthesis exemplar), net untranslatables | proposed |
-| 7 | measure inputs | complexity = differentiation × coherence; resonance vs `constellation` keystone | proposed |
-| 8 | naming | layer/command `spiral`; L4 op `recohere`; regime `net`; native script `recombinant` | proposed |
-| 9 | build scope | L4 + `spiral` + profiles + seeds; full migrate/arc three-column extension optional after | open |
+| 6 | seeds | `meme` (synthesis exemplar); `viral`/`friend`/`cloud` (live inversions, §10/§12); net untranslatables | **worked (§10, §12)** |
+| 7 | measure inputs | complexity = differentiation × coherence; resonance vs the `returns_to` retained field | proposed |
+| 8 | naming | layer/command `spiral`; L4 op `recohere`; regime `net`; native script `recombinant`; data map `recoherences` | proposed |
+| 9 | data model | `recoherences` = net-side mirror of `migrations` (`sign` / `returns_to` / `gathers` / `carries`) | **drafted (§11)** |
+| 10 | build scope | L4 + `spiral` + profiles + seeds; full migrate/arc three-column extension optional after | open |
 
-Decisions 1–5 are locked. 6–8 are my proposed defaults (redline freely). 9 — the build
-scope — is the next thing to choose when you're ready to leave scoping. The §10 worked
-example exercises the whole spiral by hand and confirms the guardrail yields a *mixed*
-verdict rather than a crown — the architecture's first real test, passed on paper.
+Decisions 1–5 are locked; 6 and 9 are now worked/drafted on paper; 7–8 are proposed
+defaults (redline freely); 10 — the build scope — is the next thing to choose when you're
+ready to leave scoping. The §10–§12 worked examples exercise the whole spiral by hand and
+confirm the guardrail **discriminates** — four net signs land at four different points on
+the faithful↔counterfeit spectrum rather than all being crowned. The architecture's first
+two tests, passed on paper.
 
 ## 10. Worked example — *viral* through the spiral (by hand, no code)
 
@@ -306,3 +312,164 @@ the signature of the spiral's close — the same profile `meme` carries.
    `spiral viral` has no retained truth to resonate against.
 2. The verdict must be a **spectrum admitting "mixed"** (§4), not a binary — *viral*
    is faithful and counterfeit at once, and forcing a single label would lie.
+
+## 11. The `recoherences` data model (draft)
+
+Pinned **before** any further examples so each one fills a known shape. It is the
+net-side mirror of the glossary's `migrations`: where `migrations` records the
+breath→pump *dispersal* of a value into shards, `recoherences` records the pump→net
+*return* of those shards into a new whole. Authored, provenance-carrying, **provisional**
+(the crossing is lived, not hindsight). Drafted here as JSON; **not** yet written into
+`glossary.json` (that is a build step — it re-seeds the ledger).
+
+Per net value: the `sign` that carries the return; `returns_to`, the breath value(s) the
+retained-truth resonance is measured against; `gathers`, the pump shards re-cohered (the
+mirror of `migrations.shards`); and `carries`, the weighted field the net sign now holds
+— the resonance *input*, exactly as a breath sign carries a field. The verdict
+(faithful ↔ counterfeit, §4) is **computed** from these, never authored.
+
+```json
+"recoherences": {
+  "_note": "Authored returns: how a value the pump segmented re-coheres, in the net regime, into a new whole at greater complexity — the mirror of `migrations`. A proxy, surfaced here, never strict etymology; net entries are provisional.",
+  "viral": {
+    "sign": "viral",
+    "returns_to": ["life", "unity"],
+    "note": "Contagion before germ theory — a living force passing through the whole collective by participation — segmented by the pump into discrete mechanisms, re-cohered by 'going viral' into networked, measured, participatory spread.",
+    "gathers": [
+      {"term": "contagion",    "facet": "the discrete infectious agent",         "domain": "medicine"},
+      {"term": "transmission", "facet": "a channel from sender to receiver",      "domain": "signal"},
+      {"term": "influence",    "facet": "one mind acting on another",             "domain": "society"},
+      {"term": "propagation",  "facet": "mechanical replication",                 "domain": "biology"},
+      {"term": "circulation",  "facet": "the spread of money, goods, news",       "domain": "economy"}
+    ],
+    "carries": {"participation": 0.30, "shared-field": 0.30, "measurement": 0.25, "pathology": 0.15},
+    "provisional": true,
+    "year": 1996
+  }
+}
+```
+
+`complexity` reads off `gathers` (differentiation) × the connectedness of `carries`;
+`resonance` compares `carries` against the retained field of `returns_to`. For `viral`:
+five shards re-cohered (high complexity); `carries` resonates with *life/unity* through
+*participation* + *shared-field* (~0.60) but not through *measurement* + *pathology* —
+the **mixed** verdict, derived, not declared.
+
+## 12. Further worked examples — meme, friend, cloud (the spectrum's range)
+
+Three more, chosen to land at *different* points on the faithful↔counterfeit spectrum —
+the test being whether the measure **discriminates** rather than rubber-stamps net.
+
+### 12.1 `meme` — the synthesis exemplar (faithful-leaning)
+
+**Value:** mimesis as participatory becoming — culture transmitted by embodied imitation
+(ritual, mask, dance), held whole, in the *unity* (belonging) and *eternity* (continuity
+of the pattern) region. **Whole:** the participant *becomes* the imitated pattern; no
+discrete unit. **Segmented:** Dawkins's coinage (1976) is itself the pump move — it
+atomises cultural transmission into a discrete *replicator* (the gene analogy: selfish,
+countable, competing), beside *idea, motif, custom*. **Re-cohered:** the internet meme
+returns the unit to a living, **authorless, recombinant** whole that each sharer
+*re-makes* — and does so as an **image-macro**: a literal return of *conceptual,
+ideographic, weighted-field script* inside a phonetic culture. The profile (§5) lights up
+on all three: breath (holds a gestalt whole), pump (a bounded, named format), net (sense
+*is* its recombinant propagation). **Verdict — faithful-leaning:** the participation is
+genuinely *creative* (remix is making, not forwarding) and meaning is again held whole in
+a sign; the counterfeit risk is real but secondary (astroturfed virality, recombination
+into reflex/noise). The strongest single piece of evidence that the spiral *closes*.
+
+```json
+"meme": {
+  "sign": "meme",
+  "returns_to": ["unity", "eternity"],
+  "note": "Mimesis as participatory becoming, atomised by Dawkins (1976) into a discrete replicator, then re-cohered by the internet meme into a living, authorless, recombinant sign each sharer re-makes — a return of ideographic, weighted-field script inside a phonetic culture.",
+  "gathers": [
+    {"term": "replicator",     "facet": "the selfish discrete unit (Dawkins)", "domain": "biology"},
+    {"term": "idea",           "facet": "the transmissible thought",           "domain": "psychology"},
+    {"term": "motif / trope",  "facet": "the recurring form",                  "domain": "art"},
+    {"term": "custom / fashion","facet": "the imitated practice",              "domain": "society"}
+  ],
+  "carries": {"creative-participation": 0.35, "collective-pattern": 0.30, "continuity": 0.20, "reflex-noise": 0.15},
+  "provisional": true,
+  "year": 2011
+}
+```
+
+### 12.2 `friend` — the counterfeit pole
+
+**Value:** philia — the chosen bond of mutual affection and reciprocal loyalty,
+*belonging* (unity) held whole (xenia, kinship-by-choice, the oath-bond). **Whole:** you
+and the friend share one field of care and obligation. **Segmented:** the bond abstracted
+into functional roles — *acquaintance, ally, associate, contact, companion* — affection
+split from relation. **Re-cohered:** the platform "friend" (Facebook, 2004; the new verb
+*to friend*) re-aggregates the **whole social graph** into one networked field — the form
+of a holistic return. **Verdict — counterfeit-leaning:** high complexity (the entire
+graph as one field) × **low resonance** — the "friend" edge keeps the *form* of belonging
+(connection, co-presence) while shedding its *substance* (chosen mutual affection); philia
+flattened to a click. A genuine sliver survives (real bonds sustained across distance), so
+*mixed-leaning-counterfeit*, not zero — the **synthetic breath** in its sharpest form.
+
+```json
+"friend": {
+  "sign": "friend",
+  "returns_to": ["unity"],
+  "note": "Philia — the chosen bond of mutual affection — abstracted by the pump into functional roles, then re-aggregated by the platform 'friend' (Facebook, 2004) into one networked social field: the whole graph returns as a field, but the bond is flattened to an edge.",
+  "gathers": [
+    {"term": "acquaintance",      "facet": "the known but unbonded", "domain": "society"},
+    {"term": "ally",              "facet": "the bond as alliance",   "domain": "politics"},
+    {"term": "associate / contact","facet": "the functional tie",    "domain": "work"},
+    {"term": "companion",         "facet": "the one who shares the way","domain": "life"}
+  ],
+  "carries": {"connection": 0.45, "shared-field": 0.20, "count-metric": 0.20, "affection": 0.15},
+  "provisional": true,
+  "year": 2004
+}
+```
+
+### 12.3 `cloud` — structurally faithful, morally counterfeit
+
+**Value:** the cloud of the heavens — the immanent, hidden, everywhere-and-nowhere divine
+totality (Sinai's cloud, the shekhinah, the cloud-hidden god), in the *divinity* /
+*eternity* region. **Whole:** the present-but-hidden numinous ground from which rain,
+life, revelation descend. **Segmented:** carved into *vapor/weather* (meteorology),
+*obscurity* (epistemics), *suspicion* ("under a cloud"). **Re-cohered:** "the cloud"
+(computing, c. 2006) returns a **placeless, everywhere-present, hidden ground** in which
+our extended memory dwells — the net regime *literally instantiating* placeless
+immanence. **Verdict — split, a third texture:** structurally a *real* return (the
+network genuinely is an immanent, placeless, hidden whole — a true rhyme with the divine
+cloud) yet morally *counterfeit* (it is rented, proprietary, surveilled infrastructure;
+the "everywhere" abstracts over very located, owned data centres). The numinous
+hidden-whole becomes a *leased* hidden-whole — faithful in structure, counterfeit in
+ownership. A texture neither *viral* nor *friend* shows.
+
+```json
+"cloud": {
+  "sign": "cloud",
+  "returns_to": ["divinity", "eternity"],
+  "note": "The cloud of the heavens — immanent, hidden, everywhere-and-nowhere divine totality — segmented by the pump into weather, obscurity, suspicion, then re-cohered by 'the cloud' (computing, c. 2006) into a placeless networked ground; structurally a real return of placeless immanence, in fact a rented, surveilled, proprietary elsewhere.",
+  "gathers": [
+    {"term": "vapor / weather", "facet": "the meteorological mass", "domain": "science"},
+    {"term": "obscurity",       "facet": "the hidden, the clouded", "domain": "epistemics"},
+    {"term": "suspicion",       "facet": "'under a cloud'",         "domain": "morals"},
+    {"term": "storage",         "facet": "the placeless data-store","domain": "computing"}
+  ],
+  "carries": {"placeless-immanence": 0.40, "hidden-ground": 0.25, "utility": 0.20, "proprietary-surveilled": 0.15},
+  "provisional": true,
+  "year": 2006
+}
+```
+
+### The spectrum, seen across the four
+
+| sign | complexity | resonance | texture | where it lands |
+|------|:----------:|:---------:|---------|----------------|
+| `meme` | high | high-ish | creative participation; a literal return of conceptual script | **faithful-leaning** |
+| `viral` | high | partial | faithful participation, counterfeit mechanisation | **mixed (centre)** |
+| `cloud` | high | split | genuine placeless immanence, but proprietary & surveilled | **structurally faithful / morally counterfeit** |
+| `friend` | high | low | the whole graph as a field, the bond flattened to an edge | **counterfeit-leaning** |
+
+Four net signs, four *different* positions on the spectrum. The measure **discriminates**
+— it does not crown net wholesale, and it does not dismiss it wholesale. That spread is
+the architecture's second test, and the point of the guardrail: re-coherence is real,
+partial, and counterfeit by turns, and the framework's job is to *measure which*, never to
+decide. Descriptive, never a gate; provisional throughout, because the crossing is ours
+and still moving.
