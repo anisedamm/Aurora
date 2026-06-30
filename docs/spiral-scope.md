@@ -5,9 +5,10 @@
 > third *regime pole*. This revision reframes it as the **closing of a spiral**: the
 > layers become a cycle, the headline measure inverts from *division* to *return*, and
 > the information age (**net**) is named as the phase where the pump's segmentation
-> **re-coheres into a new whole at greater complexity**. It now carries four by-hand
-> worked examples (§10 *viral*, §12 *meme* / *friend* / *cloud*) spanning the
-> faithful↔counterfeit spectrum, and a draft of the `recoherences` data model (§11).
+> **re-coheres into a new whole at greater complexity**. It now carries five by-hand
+> worked examples (§10 *viral*; §12 *meme* / *friend* / *cloud* / *wiki*) spanning a
+> **two-facet** (structural × substantive) spectrum, a draft of the `recoherences` data
+> model (§11), and the net-era **lexicon** side (§13: recombination + globalisation).
 
 ## 0. The turn
 
@@ -82,13 +83,25 @@ many differentiated pieces it holds in one *connected* field (the `proliferation
 largest-connected-component measure already does exactly this).
 
 ```
-re-coherence = return_resonance( re-cohered field , retained keystone )  ×  complexity
+re-coherence = resonance( re-cohered field , retained truth )  ×  complexity
+resonance    = ( structural , substantive )          # two facets, NOT one scalar — see below
 complexity   = differentiation (count of re-cohered segments)  ×  coherence (largest-component fraction)
 ```
 
-- **high resonance × high complexity → faithful synthesis** (a larger, analysed field
-  returned whole, true to the source);
-- **high complexity × low resonance → counterfeit aggregation** (§4).
+**Resonance has two facets** (the `cloud` example forced this, §12.3). A net whole can
+rhyme with the retained truth in *shape* yet betray it in *substance*:
+
+- **structural fidelity** — does the re-cohered whole have the *form* of the retained
+  truth? (placeless immanence, participation, a single shared field)
+- **substantive fidelity** — is the *living substance* present, or hollowed/harvested?
+  (genuine affection, genuine life, freely given vs metered, owned, surveilled,
+  optimised)
+
+Collapsing the two into one number would lie about exactly the signs that matter most.
+So the verdict is a **pair**, never a scalar (§4). High on both → **faithful synthesis**;
+high complexity with substantive low → **counterfeit aggregation**; structural high /
+substantive low is the distinctive net pathology — *the form of the whole without the
+life* (the synthetic breath).
 
 The breath-value a net sign returns *toward*, and the pump shards it re-coheres, are an
 **authored declaration** — a `recoherences` map, the net-side mirror of the glossary's
@@ -114,12 +127,15 @@ measure reports whether it **succeeded**. A net sign can be:
   living unity: the **synthetic breath**. An LLM's plausible-but-hollow gloss; a meme
   that recombines fragments into noise; engagement-optimised slop.
 
-**The verdict is a spectrum, not a switch.** Re-coherence runs faithful ↔ counterfeit,
-and a real sign is usually **mixed** — faithful in one facet, counterfeit in another.
-The measure must report the mixture and stay **provisional** for live senses, never
-collapse it to a single crown. *`viral` is the proof case (§10): it restores
-participation and the shared field (faithful) while mechanising and hollowing them
-(counterfeit), and the framework reports both — the judgement stays the human's.*
+**The verdict is a spectrum, not a switch — and two-dimensional.** Re-coherence runs
+faithful ↔ counterfeit along *both* facets of resonance (§3): a sign can be structurally
+faithful yet substantively counterfeit (`cloud`: real placeless immanence, but rented and
+surveilled), or its very structure can be thin (`friend`: the bond flattened to an edge).
+A real sign is usually **mixed**, and the measure must report *which facet fails* and stay
+**provisional** for live senses, never collapse to a single crown. *`viral` is the proof
+case (§10): structurally faithful (it restores participation and the shared field),
+substantively partial (mechanised, sometimes pathological) — the framework reports both,
+the judgement stays the human's.*
 
 This is not a new failure mode to invent — `chain` already proves a return can **decay**
 as well as **restore** (the ouroboros worn to medieval ornament, then *restored* by
@@ -193,16 +209,19 @@ Additive only. **L1 attestation stays the one gate**; every other measure stays
    breath/pump binary and all its behaviour bit-for-bit. Add the **aspect profile**
    type `{breath, pump, net}` (alongside, never replacing, the `regime` field).
 2. `reading.py` — add **L4 `recohere()`** beside `attest`/`read`/`drift`/`project`,
-   returning the §3 measure and the §4 faithful/counterfeit verdict.
+   returning the §3 measure and a **two-facet** (structural, substantive) verdict (§4).
 3. A new **`spiral.py`** (generalising `arc`): one value read across all three phases —
    whole → segmented → re-cohered — with the re-coherence measure and verdict.
-4. `glossary.json` / `lexicon.json` — seed §6 (`viral`, `meme`, net untranslatables),
+4. `glossary.json` — seed §6 (`viral`, `meme`, `friend`, `cloud`, `wiki`),
    provenance-carrying, `provisional` where live; profiles authored on the seed signs.
-   Add a **`recoherences`** block (the net-side mirror of `migrations`): per net value,
-   the breath value it returns toward and the pump shards it re-coheres (see §10).
-5. The **whole-picture** aspect view (§5.2) — folded into `atlas` and/or a new `aspects`
+   Add a **`recoherences`** block (the net-side mirror of `migrations`, §11): per net
+   value, `sign` / `returns_to` / `gathers` / `carries`.
+5. `lexicon.py` / `lexicon.json` (§13) — seed net-era lexemes; add a **`recombination`**
+   metric and an `untranslatables` **residence-time** reading; `proliferation` gains the
+   sixth *net* era.
+6. The **whole-picture** aspect view (§5.2) — folded into `atlas` and/or a new `aspects`
    command, `constellation`-style.
-6. Tests + `seed.py` re-run + `manifest` refresh; confirm **`signal == 1`**.
+7. Tests + `seed.py` re-run + `manifest` refresh; confirm **`signal == 1`**.
 
 ## 9. Decisions
 
@@ -213,17 +232,19 @@ Additive only. **L1 attestation stays the one gate**; every other measure stays
 | 3 | honesty guardrail | **faithful synthesis vs counterfeit aggregation** — measured, never assumed | **locked** |
 | 4 | regime treatment | **profile + label** — aspect scores `{breath,pump,net}` alongside the binary regime, **and** a whole-picture aggregate | **locked** |
 | 5 | net's thesis | net = the phase where segmentation **re-coheres to a whole at greater complexity** | **locked** |
-| 6 | seeds | `meme` (synthesis exemplar); `viral`/`friend`/`cloud` (live inversions, §10/§12); net untranslatables | **worked (§10, §12)** |
-| 7 | measure inputs | complexity = differentiation × coherence; resonance vs the `returns_to` retained field | proposed |
+| 6 | seeds | `meme`/`wiki` (faithful exemplars); `viral`/`friend`/`cloud` (live inversions, §10/§12) | **worked (§10, §12)** |
+| 7 | measure inputs | complexity = differentiation × coherence; **resonance = (structural, substantive)**, two facets vs the `returns_to` retained field | **resolved (§3, §12)** |
 | 8 | naming | layer/command `spiral`; L4 op `recohere`; regime `net`; native script `recombinant`; data map `recoherences` | proposed |
 | 9 | data model | `recoherences` = net-side mirror of `migrations` (`sign` / `returns_to` / `gathers` / `carries`) | **drafted (§11)** |
-| 10 | build scope | L4 + `spiral` + profiles + seeds; full migrate/arc three-column extension optional after | open |
+| 10 | net lexicon | sixth *net* era; new `recombination` metric; `untranslatables` residence-time → 0 | **drafted (§13)** |
+| 11 | build scope | L4 + `spiral` + profiles + seeds + net lexicon era; full migrate/arc three-column extension optional after | open |
 
-Decisions 1–5 are locked; 6 and 9 are now worked/drafted on paper; 7–8 are proposed
-defaults (redline freely); 10 — the build scope — is the next thing to choose when you're
-ready to leave scoping. The §10–§12 worked examples exercise the whole spiral by hand and
-confirm the guardrail **discriminates** — four net signs land at four different points on
-the faithful↔counterfeit spectrum rather than all being crowned. The architecture's first
+Decisions 1–7 and 9–10 are now locked, worked, drafted, or resolved on paper; 8 is a
+proposed naming default (redline freely); 11 — the build scope — is the only thing left to
+choose before leaving scoping. The §10–§13 work exercises the whole spiral by hand —
+**value scale** (`spiral`) and **lexicon scale** (`proliferation`) — and confirms the
+guardrail **discriminates**: net signs land across the two-facet spectrum rather than all
+being crowned. The architecture's first
 two tests, passed on paper.
 
 ## 10. Worked example — *viral* through the spiral (by hand, no code)
@@ -460,12 +481,17 @@ ownership. A texture neither *viral* nor *friend* shows.
 
 ### The spectrum, seen across the four
 
-| sign | complexity | resonance | texture | where it lands |
-|------|:----------:|:---------:|---------|----------------|
-| `meme` | high | high-ish | creative participation; a literal return of conceptual script | **faithful-leaning** |
-| `viral` | high | partial | faithful participation, counterfeit mechanisation | **mixed (centre)** |
-| `cloud` | high | split | genuine placeless immanence, but proprietary & surveilled | **structurally faithful / morally counterfeit** |
-| `friend` | high | low | the whole graph as a field, the bond flattened to an edge | **counterfeit-leaning** |
+| sign | complexity | structural | substantive | where it lands |
+|------|:----------:|:----------:|:-----------:|----------------|
+| `meme` | high | high | high | **faithful-leaning** (creative participation; a literal return of conceptual script) |
+| `viral` | high | high | partial | **mixed (centre)** (real participation, counterfeit mechanisation) |
+| `cloud` | high | high | low | **structurally faithful / morally counterfeit** (real placeless immanence, but rented & surveilled) |
+| `friend` | high | mid | low | **counterfeit-leaning** (the graph returns as a field, but the bond is flattened to an edge) |
+
+Splitting resonance into two facets is what *separates* `cloud` from `friend` — both
+score substantively low, but `cloud`'s structural rhyme is genuine (the net **is** a
+placeless immanent ground) while `friend`'s structure is itself thinned (a graph edge is
+a weak image of philia's shared field). One scalar would have blurred them.
 
 Four net signs, four *different* positions on the spectrum. The measure **discriminates**
 — it does not crown net wholesale, and it does not dismiss it wholesale. That spread is
@@ -473,3 +499,65 @@ the architecture's second test, and the point of the guardrail: re-coherence is 
 partial, and counterfeit by turns, and the framework's job is to *measure which*, never to
 decide. Descriptive, never a gate; provisional throughout, because the crossing is ours
 and still moving.
+
+### 12.4 The clean faithful pole — `wiki` / the open commons
+
+To anchor the *top* of the spectrum (the four above top out at "faithful-leaning"), the
+clearest faithful synthesis is the **collaboratively authored commons** — *wiki*
+(Wikipedia, open source, the open encyclopaedia). It re-coheres the pump's segmented,
+privately-authored knowledge into one **shared, participatory, recombinant whole** —
+and, unusually, scores **high on both facets**: structural (a single connected web of
+knowledge co-held by all) *and* substantive (authorship is genuinely distributed and
+freely given; the whole is *non-proprietary*, the exact substance `cloud` forfeits). It
+is the net regime keeping its promise — the synthesis that is not synthetic. Worth seeding
+as the faithful anchor opposite `friend`. (Counterfeit risk remains real — vandalism,
+capture, astroturfed consensus — which is why it is an *anchor*, not an absolute.)
+
+## 13. The net lexicon — the explosion re-coheres into a shared field
+
+The `spiral <value>` measure (§3) reads the return at the scale of **one value**. The
+lexicon has its own, system-scale instrument — `proliferation` (§ `lexicon.py`), which
+already traced the pump explosion's coherence climbing `0.25 → 1.00` over five eras. The
+net regime is where that climb **completes into a new whole**: a sixth, *net* era whose
+signature is not merely *coherence* (already maxed) but **recombination** and
+**globalisation** — the lexicon-scale face of the spiral's close.
+
+Draft sixth row (authored proxy, extending the README's table):
+
+```
+era         new  total  align   exp  coher  recomb
+primal        4      4   0.09  0.00   0.25    0.00
+agrarian      5      9   0.22  0.00   0.89    0.00
+classical     5     14   0.35  0.07   0.93    0.05
+modern        6     20   0.48  0.30   1.00    0.15
+reflexive     7     27   0.59  0.48   1.00    0.25
+net           8     35   0.64  0.55   1.00    0.55     <- the new era
+```
+
+Two new movements the existing columns can't see, and one new column:
+
+- **recombination (the new column)** — net coins are increasingly **blends of existing
+  lexemes**: *doomscroll* (doom+scroll), *mansplain*, *hashtag*, *selfie*. The
+  definitional web stops merely *cohering* (words defined in terms of earlier words) and
+  turns **generative** (words *composed from* earlier words). The segmented lexicon
+  becomes a whole that **makes new wholes from its own parts** — re-coherence at the
+  lexicon scale, measurable as the fraction of new lexemes that are recombinations.
+- **globalisation of the untranslatable** — in the net era the per-tongue boundary
+  **dissolves**: *schadenfreude, hygge, saudade, ubuntu* become instant shared loanwords.
+  The `untranslatables` measure (which reads concepts a *single* tongue named) gains a
+  **residence-time** reading — how long a concept stays single-tongue before the network
+  shares it — and that time **collapses toward zero**. The segmented per-tongue lexicons
+  re-cohere into one shared global field. (Differential valuation does not vanish — it is
+  *shared faster*.)
+
+So the two scales agree. At the **value** scale, `migrate` disperses and `spiral`
+re-coheres one value across the threshold; at the **lexicon** scale, `proliferation`
+re-coheres the whole vocabulary, and the *net* era is where that re-coherence becomes
+**generative and global**. Same spiral, two magnifications.
+
+**Model change (build phase):** `lexicon.json` gains net-era lexemes (*doomscroll,
+ghosting, selfie, hashtag, stream, cloud, viral, meme, …*), each with `valued_for`,
+`experiential`, and `defined_in_terms_of` (its recombination parents); `lexicon.py` gains
+a **`recombination`** metric (fraction of an era's lexemes composed from existing ones)
+and `untranslatables` gains a **residence-time** reading. As ever: authored proxies,
+provisional, descriptive — never a gate. `proliferation --regime net` shows the close.
