@@ -20,7 +20,7 @@ def test_the_quartets_load_with_their_keystones():
     ids = {q.id for q in qs.quartets}
     assert ids == {"existential", "spine", "process", "substrate", "held", "agency",
                    "animate", "language", "conscious-state", "perception", "perspective",
-                   "intelligence"}
+                   "intelligence", "crystallisation"}
     assert qs.keystones["spine"] == "the-logos"
     assert qs.keystones["held"] == "the-held-whole"
     assert qs.keystones["agency"] == "the-animating-source"
@@ -29,6 +29,16 @@ def test_the_quartets_load_with_their_keystones():
     assert qs.keystones["perception"] == "the-percept"
     assert qs.keystones["perspective"] == "the-point-of-view"
     assert qs.keystones["intelligence"] == "nous"
+    assert qs.keystones["crystallisation"] == "the-crystal"
+
+
+def test_crystallisation_names_the_act_and_the_mother_liquor():
+    # the reflexive quartet: every quartet is a crystallisation; the singles won't crystallise
+    cryst = _load().by_id("crystallisation")
+    assert cryst.breath_pump_axis == "scale"
+    assert cryst.cell("field", "fixed") == "lattice"
+    assert "mother liquor" in cryst.reading.lower()
+    assert "the 3" in cryst.reading and "the 4" in cryst.reading   # process walks the grid
 
 
 def test_intelligence_grids_where_awareness_does_not():
