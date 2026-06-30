@@ -4,14 +4,15 @@
 > Supersedes the earlier `net-regime-scope.md`, which framed the information age as a
 > third *regime pole*. This revision reframes it as the **closing of a spiral**: the
 > layers become a cycle, the headline measure inverts from *division* to *return*, and
-> the information age (**net**) is named as the phase where the pump's segmentation
+> the information age (**nerve**) is named as the phase where the pump's segmentation
 > **re-coheres into a new whole at greater complexity**. It now carries worked examples
-> spanning a **two-facet** (structural × substantive) spectrum — net-born (§10 *viral*;
+> spanning a **two-facet** (structural × substantive) spectrum — nerve-born (§10 *viral*;
 > §12 *meme*/*friend*/*cloud*/*wiki*) and breath-origin (§14 *equilibrium*, the additivity
-> proof) — the `recoherences` data model (§11), the net **lexicon** side (§13), the
+> proof) — the `recoherences` data model (§11), the nerve **lexicon** side (§13), the
 > `aspects` whole-picture view (§15), and an **adversarial** pass (§16, *spam*) that bounds
-> the thesis — the spiral must be able to *refuse*. Only naming (§9.8) and build scope
-> (§9.14) stay open.
+> the thesis — the spiral must be able to *refuse*. The regime is **`nerve`** (the *mode*;
+> the *net* is its medium), defined as a bodily/hemispheric system in §1; the **naming is
+> locked** (§8). Only the build scope (§9.14) stays open.
 
 ## 0. The turn
 
@@ -28,26 +29,47 @@ spiral** the framework already half-draws:
 
 - breath **held meaning whole** (one sign, a weighted field of values, in proportion);
 - pump **segmented** it (one word, one sense, deferred to a lexicon);
-- **net returns the segmented pieces to a whole** — but a *differentiated* whole that
+- **nerve returns the segmented pieces to a whole** — but a *differentiated* whole that
   keeps the analysis it re-coheres. Wholeness regained *at greater complexity*.
 
 The framework already says this in two voices and never named the third phase:
 `migrate` reads holism → segmentation; `proliferation` reads segmentation →
 re-coherence (its coherence climbs `0.25 → 1.00`); `atlas` narrates *"the long labour
-of language has been to re-cohere those words."* **Net is the regime where that
+of language has been to re-cohere those words."* **Nerve is the regime where that
 re-coherence completes.** Its emblem is already in the glossary: the **ouroboros** —
 unity-of-opposites, the serpent returning to its own origin.
 
 ## 1. The spiral — three phases of a meaning
 
+Three phases, because there are **three modes of attention** — and the framework names
+them as a **bodily / hemispheric system**: each a great system of the body, each a
+hemisphere-world in McGilchrist's sense. The *technology* of each (its script, its medium)
+is **downstream** of the attention, never its name — which is exactly why the regime is
+**`nerve`**, not *net*: the net is its **medium**, as the alphabet is the pump's. This
+distinction is what keeps the term legible.
+
+| regime | the body | hemisphere-world | mode of attention | native script | its medium |
+|--------|----------|------------------|-------------------|---------------|------------|
+| **breath** | the lung — respiration | right: participatory, present, contextual | **holistic** — meaning carried *whole* | conceptual (a weighted-field sign) | the carved / incised symbol |
+| **pump** | the heart — circulation, the machine | left: grasping, abstracting, re-presenting | **analytic** — meaning *segmented* into units | phonetic (a sign spelling a sound) | the alphabet, the press |
+| **nerve** | the nervous system — the body's own network | the network of both, mechanised | **associative** — meaning *recombined* from a field | recombinant (sense from neighbours / remix) | the net, the internet |
+
+> **Read `nerve` as the *mode*, `net` as its *medium*.** The nerve regime is to the net
+> what the pump regime is to the alphabet: the attention, not the technology. (`breath`
+> and `pump` are inherited unchanged from the framework's `regime.py`; `nerve` is the
+> additive third.)
+
+Breath holds whole, pump segments, **nerve re-combines** — and the nerve regime is where
+the segmented pieces *can* return to a whole. Those are the three phases:
+
 | phase | regime | what happens to meaning | already in the code |
 |-------|--------|-------------------------|---------------------|
 | **whole** | breath | held as one weighted field | `weigh`, `read`-as-resonance |
 | **segmented** | pump | dispersed into discrete lexemes/senses | `migrate` (holism → segmentation) |
-| **re-cohered** | **net** | the segments return to a whole | `proliferation`, `confluence`, `arc` |
+| **re-cohered** | **nerve** | the segments return to a whole | `proliferation`, `confluence`, `arc` |
 
 It is a **spiral, not a circle**. Breath's whole was *undifferentiated* (whole because
-never divided); net's whole is *differentiated* (it re-coheres the pump's analysis
+never divided); nerve's whole is *differentiated* (it re-coheres the pump's analysis
 without discarding it — holding the unity **and** the segmentation at once). That extra
 content is the "greater complexity," and it is **measurable** (§3).
 
@@ -81,7 +103,7 @@ segmented field to a whole. It reuses the machinery already built for the return
 
 **What `spiral <value>` computes.** Take a value (e.g. *equilibrium*): show its
 breath-whole and its pump-segments, then measure the **return-resonance** of the
-re-cohered net-whole against the constellation keystone, **scaled by complexity** — how
+re-cohered nerve-whole against the constellation keystone, **scaled by complexity** — how
 many differentiated pieces it holds in one *connected* field (the `proliferation`
 largest-connected-component measure already does exactly this).
 
@@ -91,7 +113,7 @@ resonance    = ( structural , substantive )          # two facets, NOT one scala
 complexity   = differentiation (count of re-cohered segments)  ×  coherence (largest-component fraction)
 ```
 
-**Resonance has two facets** (the `cloud` example forced this, §12.3). A net whole can
+**Resonance has two facets** (the `cloud` example forced this, §12.3). A nerve whole can
 rhyme with the retained truth in *shape* yet betray it in *substance*:
 
 - **structural fidelity** — does the re-cohered whole have the *form* of the retained
@@ -103,26 +125,26 @@ rhyme with the retained truth in *shape* yet betray it in *substance*:
 Collapsing the two into one number would lie about exactly the signs that matter most.
 So the verdict is a **pair**, never a scalar (§4). High on both → **faithful synthesis**;
 high complexity with substantive low → **counterfeit aggregation**; structural high /
-substantive low is the distinctive net pathology — *the form of the whole without the
+substantive low is the distinctive nerve pathology — *the form of the whole without the
 life* (the synthetic breath).
 
-The breath-value a net sign returns *toward*, and the pump shards it re-coheres, are an
-**authored declaration** — a `recoherences` map, the net-side mirror of the glossary's
-`migrations` (which records the breath→pump dispersal). It says, per net value: which
+The breath-value a nerve sign returns *toward*, and the pump shards it re-coheres, are an
+**authored declaration** — a `recoherences` map, the nerve-side mirror of the glossary's
+`migrations` (which records the breath→pump dispersal). It says, per nerve value: which
 retained value it returns to, and which shards it gathers — a proxy, surfaced and
 provenance-carrying, never a claim of strict etymology. (Worked through for *viral* in
 §10.)
 
-Breath scores trivially-whole (few pieces); net's achievement is to hold *many*
+Breath scores trivially-whole (few pieces); nerve's achievement is to hold *many*
 differentiated pieces in one field and still resonate with the source — the spiral
 returning at greater complexity, made legible. Descriptive, never a gate.
 
 ## 4. The guardrail — faithful synthesis vs counterfeit aggregation
 
-"Net is the return to wholeness" is a strong, near-utopian thesis, and the framework's
+"Nerve is the return to wholeness" is a strong, near-utopian thesis, and the framework's
 spine is *descriptive, never a gate; it refuses to pre-decide.* So re-coherence is
-**measured, never assumed.** Net is the regime where re-coherence is **attempted**; the
-measure reports whether it **succeeded**. A net sign can be:
+**measured, never assumed.** Nerve is the regime where re-coherence is **attempted**; the
+measure reports whether it **succeeded**. A nerve sign can be:
 
 - a **faithful synthesis** — the segments genuinely re-cohere toward the retained truth
   (the `confluence` *converge* case); or
@@ -146,7 +168,7 @@ Jung's reading). The guardrail is what makes L4 re-cohere *to the truth* rather 
 merely re-cohere. Non-triumphalist, and faithful to the discipline.
 
 This guardrail governs the *verdict* — whether a return *succeeds*. §16 extends it to the
-*premise* — whether there is a return *at all*: some net signs are net-native origins or
+*premise* — whether there is a return *at all*: some nerve signs are nerve-native origins or
 refusals of meaning, and the spiral must **refuse** them (a third outcome, `resistant`)
 rather than manufacture a return. Re-coherence is measured per sign, **never assumed of the
 regime**.
@@ -156,14 +178,14 @@ regime**.
 The question shifts from **class** to **profile**: not *"what regime is a meme?"* but
 *"how does this meme embody all three?"* A meme **is** breath (an image-macro holds a
 whole gestalt at once), **is** pump (it spells words; segmentable components), **and is**
-net (sense recomputed by remix, context, virality). Scoring high on all three at once is
+nerve (sense recomputed by remix, context, virality). Scoring high on all three at once is
 the **signature of the synthesis** — the meme is not homeless between regimes, it is the
 *exemplar* of the spiral's close.
 
 **Both, as agreed:**
 
 1. **Alongside the binary label (additive — breath/pump untouched).** Every usage keeps
-   its existing single `regime` field; a new **aspect profile** `{breath, pump, net}`
+   its existing single `regime` field; a new **aspect profile** `{breath, pump, nerve}`
    (each 0–1) sits beside it. `profile <sign>` shows it; `trace` surfaces it. The old
    binary classification is never removed or rewritten.
 2. **The whole picture.** A system-level view aggregates the aspect profiles across
@@ -171,15 +193,15 @@ the **signature of the synthesis** — the meme is not homeless between regimes,
    pump, and which (the memes, the emoji, *viral*) light up on all three. This is the
    `constellation` move applied to the profiles — a map of where each sign sits on the
    spiral, surfaced as one screen (folded into `atlas`, or its own `aspects` view). **Its
-   shape is drafted in §15** (the clusters, the diagonal, the net keystone).
+   shape is drafted in §15** (the clusters, the diagonal, the nerve keystone).
 
 Illustratively (authored proxies, 0–1 per aspect):
 
-| sign | breath | pump | net | reading |
+| sign | breath | pump | nerve | reading |
 |------|:------:|:----:|:---:|---------|
 | `labrys` | 0.9 | 0.1 | 0.1 | a breath whole, barely segmented |
 | `water` (lexeme) | 0.1 | 0.9 | 0.2 | a pump word, one discrete sense |
-| `viral` | 0.6 | 0.7 | 0.8 | a pump word re-cohering into a net whole |
+| `viral` | 0.6 | 0.7 | 0.8 | a pump word re-cohering into a nerve whole |
 | `meme` | 0.7 | 0.6 | 0.9 | lights up on all three — the spiral's close |
 
 A profile is an **authored proxy** carrying its provenance, like every map here — not a
@@ -188,7 +210,7 @@ claim that a sign "is" 0.7 breath, only a reading of how its attention is distri
 ## 6. The seeds — the *labrys* and *revolution* of the spiral's close
 
 - **The synthesis exemplar** (embodies all three) — **`meme`** (Dawkins 1976 →
-  net-native unit of recombinant culture) and/or the **emoji** (a literal return of
+  nerve-native unit of recombinant culture) and/or the **emoji** (a literal return of
   *ideographic, weighted-field* signs inside a phonetic-script culture). The profile
   (§5) is read directly on these.
 - **The live inversions** — **`viral`** (biology ~1898, contagion → culture: rapid,
@@ -197,11 +219,11 @@ claim that a sign "is" 0.7 breath, only a reading of how its attention is distri
   (the heavens → placeless infrastructure; structurally faithful, morally counterfeit).
   Clean, datable sense-inversions of pump words, the `trace`/`drift` pattern freshly
   attested — and the first `spiral` readings (segmented senses returning toward a whole).
-- **The net untranslatables** — *doomscroll, ghosting, rizz, cringe, based* —
+- **The nerve untranslatables** — *doomscroll, ghosting, rizz, cringe, based* —
   concepts the networked culture valued enough to name; lexicalisation-as-valuation
-  (§ `lexicon.py`), observable **live**, extending `proliferation` with a *net* era.
+  (§ `lexicon.py`), observable **live**, extending `proliferation` with a *nerve* era.
 
-Because the net crossing is **lived, not hindsight**, net senses carry an explicit
+Because the nerve crossing is **lived, not hindsight**, nerve senses carry an explicit
 **provisional** marking: a contemporary reading is a proxy for a sense *not yet settled*,
 and the framework must never report a still-negotiated live sense as fixed. (L1
 attestation, by contrast, gets *easier* — the whole internet is cited usage.)
@@ -211,13 +233,13 @@ attestation, by contrast, gets *easier* — the whole internet is cited usage.)
 Additive only. **L1 attestation stays the one gate**; every other measure stays
 **descriptive, never a gate**; the **authored map carries its provenance**; the
 **ledger stays hash-chained**; **`signal == 1` must still hold** (CI runs it each push);
-**breath and pump regimes are unchanged** — net and the profiles sit alongside them.
+**breath and pump regimes are unchanged** — nerve and the profiles sit alongside them.
 
 ## 8. Model changes implied (for the build phase — not yet)
 
-1. `regime.py` — add `NET` and a **native script** for it (`recombinant`); keep the
+1. `regime.py` — add `NERVE` and a **native script** for it (`recombinant`); keep the
    breath/pump binary and all its behaviour bit-for-bit. Add the **aspect profile**
-   type `{breath, pump, net}` (alongside, never replacing, the `regime` field).
+   type `{breath, pump, nerve}` (alongside, never replacing, the `regime` field).
 2. `reading.py` — add **L4 `recohere()`** beside `attest`/`read`/`drift`/`project`,
    returning the §3 measure and a **two-facet** (structural, substantive) verdict (§4), or
    the third outcome **`resistant`** (§16) when there is no honest `returns_to`. Add a
@@ -225,17 +247,17 @@ Additive only. **L1 attestation stays the one gate**; every other measure stays
    `returns_to` reached for, not attested, is flagged, not honoured.
 3. A new **`spiral.py`** (generalising `arc`, validated on `equilibrium` in §14): one
    value read across all three phases — whole → segmented → re-cohered — with the
-   re-coherence measure and two-facet verdict. `spiral` *calls* `arc` for the pre-net
+   re-coherence measure and two-facet verdict. `spiral` *calls* `arc` for the pre-nerve
    phases and extends it; `arc` is not replaced.
 4. `glossary.json` — seed §6 (`viral`, `meme`, `friend`, `cloud`, `wiki`),
    provenance-carrying, `provisional` where live; profiles authored on the seed signs.
-   Add a **`recoherences`** block (the net-side mirror of `migrations`, §11): per net
+   Add a **`recoherences`** block (the nerve-side mirror of `migrations`, §11): per nerve
    value, `sign` / `returns_to` / `gathers` / `carries`.
-5. `lexicon.py` / `lexicon.json` (§13) — seed net-era lexemes; add a **`recombination`**
+5. `lexicon.py` / `lexicon.json` (§13) — seed nerve-era lexemes; add a **`recombination`**
    metric and an `untranslatables` **residence-time** reading; `proliferation` gains the
-   sixth *net* era.
+   sixth *nerve* era.
 6. The **whole-picture** aspect view (§5.2, drafted §15) — a new `aspects` command (and an
-   `atlas` line), reading the authored profiles and running `constellation` over the net
+   `atlas` line), reading the authored profiles and running `constellation` over the nerve
    cluster. A reader, not a ruler; gates nothing.
 7. Tests + `seed.py` re-run + `manifest` refresh; confirm **`signal == 1`**.
 
@@ -246,22 +268,22 @@ Additive only. **L1 attestation stays the one gate**; every other measure stays
 | 1 | layer structure | **spiral** — layers as a cycle (L4 closes to L1, one rung up) | **locked** |
 | 2 | headline measure | **re-coherence** — return-resonance × complexity (inverts gap→return) | **locked** |
 | 3 | honesty guardrail | **faithful synthesis vs counterfeit aggregation** — measured, never assumed | **locked** |
-| 4 | regime treatment | **profile + label** — aspect scores `{breath,pump,net}` alongside the binary regime, **and** a whole-picture aggregate | **locked** |
-| 5 | net's thesis | net = the phase where segmentation **can** re-cohere to a whole at greater complexity — **measured per sign, never assumed of the regime** | **locked, bounded (§16)** |
+| 4 | regime treatment | **profile + label** — aspect scores `{breath,pump,nerve}` alongside the binary regime, **and** a whole-picture aggregate | **locked** |
+| 5 | nerve's thesis | nerve = the phase where segmentation **can** re-cohere to a whole at greater complexity — **measured per sign, never assumed of the regime** | **locked, bounded (§16)** |
 | 6 | seeds | `meme`/`wiki` (faithful exemplars); `viral`/`friend`/`cloud` (live inversions, §10/§12) | **worked (§10, §12)** |
 | 7 | measure inputs | complexity = differentiation × coherence; **resonance = (structural, substantive)**, two facets vs the `returns_to` retained field | **resolved (§3, §12)** |
-| 8 | naming | layer/command `spiral`; L4 op `recohere`; regime `net`; native script `recombinant`; data map `recoherences` | proposed |
-| 9 | data model | `recoherences` = net-side mirror of `migrations` (`sign` / `returns_to` / `gathers` / `carries`) | **drafted (§11)** |
-| 10 | net lexicon | sixth *net* era; new `recombination` metric; `untranslatables` residence-time → 0 | **drafted (§13)** |
+| 8 | naming | regime **`nerve`** (mode; medium = the net) · script **`recombinant`** · layer/command **`spiral`** · L4 op **`recohere`** · data map **`recoherences`** · 3rd outcome **`resistant`** · error **`spiral projection`** (`is_spiral_projection`) · lexicon metric **`recombination`** · views **`profile`** / **`aspects`** | **locked (§1, §16)** |
+| 9 | data model | `recoherences` = nerve-side mirror of `migrations` (`sign` / `returns_to` / `gathers` / `carries`) | **drafted (§11)** |
+| 10 | nerve lexicon | sixth *nerve* era; new `recombination` metric; `untranslatables` residence-time → 0 | **drafted (§13)** |
 | 11 | additivity | `spiral` reads breath-origin seeds and **completes** `arc` (validated on `equilibrium`) | **validated (§14)** |
-| 12 | whole-picture view | `aspects` = `constellation` over the profiles: clusters, the diagonal, the net keystone | **drafted (§15)** |
+| 12 | whole-picture view | `aspects` = `constellation` over the profiles: clusters, the diagonal, the nerve keystone | **drafted (§15)** |
 | 13 | adversarial bound | `resistant` outcome + **spiral-projection** error + a `returns_to` honesty test (the spiral must be able to **refuse**) | **found (§16)** |
-| 14 | build scope | L4 (3 outcomes) + `spiral` + profiles + seeds + net lexicon era + `aspects`; full migrate/arc three-column extension optional after | open |
+| 14 | build scope | L4 (3 outcomes) + `spiral` + profiles + seeds + nerve lexicon era + `aspects`; full migrate/arc three-column extension optional after | open |
 
-Decisions 1–7 and 9–13 are now locked, worked, drafted, resolved, validated, or found on
-paper; 8 is a proposed naming default (redline freely); **14 — the build scope — is the
-only thing left to choose before leaving scoping.** The §10–§16 work exercises the whole
-spiral by hand — **value scale** (`spiral`, net-born *and* breath-origin), **lexicon scale**
+Decisions 1–13 are now locked, worked, drafted, resolved, validated, or found on
+paper — the **naming is locked** (§8, with the bodily/hemispheric definitions in §1);
+**14 — the build scope — is the only thing left to choose before leaving scoping.** The §10–§16 work exercises the whole
+spiral by hand — **value scale** (`spiral`, nerve-born *and* breath-origin), **lexicon scale**
 (`proliferation`), the **whole-picture** aggregate (`aspects`), and an **adversarial** pass
 that bounds the thesis. The architecture's four tests — discrimination, additivity, the two
 scales agreeing, and *falsifiability* (it can refuse) — passed on paper. A measure that can
@@ -305,7 +327,7 @@ mechanisms, each carving off a facet and dropping the participatory whole — th
 
 Each is a shard; the living, shared, whole field is gone.
 
-### Phase 3 — re-cohered (net)
+### Phase 3 — re-cohered (nerve)
 
 "Going viral" returns the shards to a whole *at greater complexity*: content spreads
 through a networked collective **by participation** (you share, you remix — the meme
@@ -335,7 +357,7 @@ closing: wholeness regained while keeping the differentiation.
 `viral` is a **mixed re-coherence**: faithful in restoring participation and the shared
 field, counterfeit in mechanising and hollowing them. The framework reports *both*,
 scaled by complexity and marked **provisional** (the sense is live, still settling), and
-**leaves the judgement to the human**. The spiral did not crown net as synthesis; it
+**leaves the judgement to the human**. The spiral did not crown nerve as synthesis; it
 *measured* a real and a counterfeit return in the **same** sign — exactly what
 "re-cohere *to the truth*" was meant to do.
 
@@ -343,13 +365,13 @@ scaled by complexity and marked **provisional** (the sense is live, still settli
 
 As a sign in use, `viral` lights up on all three (§5): **breath** (it names a
 participatory, shared-field whole), **pump** (it is measured, mechanised, segmentable
-into metrics), **net** (its sense *is* its networked propagation). High on all three is
+into metrics), **nerve** (its sense *is* its networked propagation). High on all three is
 the signature of the spiral's close — the same profile `meme` carries.
 
 ### What the example changed in the design
 
 1. The spiral needs an authored **`recoherences`** map (§3, §8.4) to declare the
-   breath-value a net sign returns toward and the shards it gathers — without it,
+   breath-value a nerve sign returns toward and the shards it gathers — without it,
    `spiral viral` has no retained truth to resonate against.
 2. The verdict must be a **spectrum admitting "mixed"** (§4), not a binary — *viral*
    is faithful and counterfeit at once, and forcing a single label would lie.
@@ -357,21 +379,21 @@ the signature of the spiral's close — the same profile `meme` carries.
 ## 11. The `recoherences` data model (draft)
 
 Pinned **before** any further examples so each one fills a known shape. It is the
-net-side mirror of the glossary's `migrations`: where `migrations` records the
-breath→pump *dispersal* of a value into shards, `recoherences` records the pump→net
+nerve-side mirror of the glossary's `migrations`: where `migrations` records the
+breath→pump *dispersal* of a value into shards, `recoherences` records the pump→nerve
 *return* of those shards into a new whole. Authored, provenance-carrying, **provisional**
 (the crossing is lived, not hindsight). Drafted here as JSON; **not** yet written into
 `glossary.json` (that is a build step — it re-seeds the ledger).
 
-Per net value: the `sign` that carries the return; `returns_to`, the breath value(s) the
+Per nerve value: the `sign` that carries the return; `returns_to`, the breath value(s) the
 retained-truth resonance is measured against; `gathers`, the pump shards re-cohered (the
-mirror of `migrations.shards`); and `carries`, the weighted field the net sign now holds
+mirror of `migrations.shards`); and `carries`, the weighted field the nerve sign now holds
 — the resonance *input*, exactly as a breath sign carries a field. The verdict
 (faithful ↔ counterfeit, §4) is **computed** from these, never authored.
 
 ```json
 "recoherences": {
-  "_note": "Authored returns: how a value the pump segmented re-coheres, in the net regime, into a new whole at greater complexity — the mirror of `migrations`. A proxy, surfaced here, never strict etymology; net entries are provisional.",
+  "_note": "Authored returns: how a value the pump segmented re-coheres, in the nerve regime, into a new whole at greater complexity — the mirror of `migrations`. A proxy, surfaced here, never strict etymology; nerve entries are provisional.",
   "viral": {
     "sign": "viral",
     "returns_to": ["life", "unity"],
@@ -399,7 +421,7 @@ the **mixed** verdict, derived, not declared.
 ## 12. Further worked examples — meme, friend, cloud (the spectrum's range)
 
 Three more, chosen to land at *different* points on the faithful↔counterfeit spectrum —
-the test being whether the measure **discriminates** rather than rubber-stamps net.
+the test being whether the measure **discriminates** rather than rubber-stamps nerve.
 
 ### 12.1 `meme` — the synthesis exemplar (faithful-leaning)
 
@@ -412,7 +434,7 @@ countable, competing), beside *idea, motif, custom*. **Re-cohered:** the interne
 returns the unit to a living, **authorless, recombinant** whole that each sharer
 *re-makes* — and does so as an **image-macro**: a literal return of *conceptual,
 ideographic, weighted-field script* inside a phonetic culture. The profile (§5) lights up
-on all three: breath (holds a gestalt whole), pump (a bounded, named format), net (sense
+on all three: breath (holds a gestalt whole), pump (a bounded, named format), nerve (sense
 *is* its recombinant propagation). **Verdict — faithful-leaning:** the participation is
 genuinely *creative* (remix is making, not forwarding) and meaning is again held whole in
 a sign; the counterfeit risk is real but secondary (astroturfed virality, recombination
@@ -474,7 +496,7 @@ totality (Sinai's cloud, the shekhinah, the cloud-hidden god), in the *divinity*
 life, revelation descend. **Segmented:** carved into *vapor/weather* (meteorology),
 *obscurity* (epistemics), *suspicion* ("under a cloud"). **Re-cohered:** "the cloud"
 (computing, c. 2006) returns a **placeless, everywhere-present, hidden ground** in which
-our extended memory dwells — the net regime *literally instantiating* placeless
+our extended memory dwells — the nerve regime *literally instantiating* placeless
 immanence. **Verdict — split, a third texture:** structurally a *real* return (the
 network genuinely is an immanent, placeless, hidden whole — a true rhyme with the divine
 cloud) yet morally *counterfeit* (it is rented, proprietary, surveilled infrastructure;
@@ -509,12 +531,12 @@ ownership. A texture neither *viral* nor *friend* shows.
 | `friend` | high | mid | low | **counterfeit-leaning** (the graph returns as a field, but the bond is flattened to an edge) |
 
 Splitting resonance into two facets is what *separates* `cloud` from `friend` — both
-score substantively low, but `cloud`'s structural rhyme is genuine (the net **is** a
+score substantively low, but `cloud`'s structural rhyme is genuine (the nerve **is** a
 placeless immanent ground) while `friend`'s structure is itself thinned (a graph edge is
 a weak image of philia's shared field). One scalar would have blurred them.
 
-Four net signs, four *different* positions on the spectrum. The measure **discriminates**
-— it does not crown net wholesale, and it does not dismiss it wholesale. That spread is
+Four nerve signs, four *different* positions on the spectrum. The measure **discriminates**
+— it does not crown nerve wholesale, and it does not dismiss it wholesale. That spread is
 the architecture's second test, and the point of the guardrail: re-coherence is real,
 partial, and counterfeit by turns, and the framework's job is to *measure which*, never to
 decide. Descriptive, never a gate; provisional throughout, because the crossing is ours
@@ -529,16 +551,16 @@ privately-authored knowledge into one **shared, participatory, recombinant whole
 and, unusually, scores **high on both facets**: structural (a single connected web of
 knowledge co-held by all) *and* substantive (authorship is genuinely distributed and
 freely given; the whole is *non-proprietary*, the exact substance `cloud` forfeits). It
-is the net regime keeping its promise — the synthesis that is not synthetic. Worth seeding
+is the nerve regime keeping its promise — the synthesis that is not synthetic. Worth seeding
 as the faithful anchor opposite `friend`. (Counterfeit risk remains real — vandalism,
 capture, astroturfed consensus — which is why it is an *anchor*, not an absolute.)
 
-## 13. The net lexicon — the explosion re-coheres into a shared field
+## 13. The nerve lexicon — the explosion re-coheres into a shared field
 
 The `spiral <value>` measure (§3) reads the return at the scale of **one value**. The
 lexicon has its own, system-scale instrument — `proliferation` (§ `lexicon.py`), which
 already traced the pump explosion's coherence climbing `0.25 → 1.00` over five eras. The
-net regime is where that climb **completes into a new whole**: a sixth, *net* era whose
+nerve regime is where that climb **completes into a new whole**: a sixth, *nerve* era whose
 signature is not merely *coherence* (already maxed) but **recombination** and
 **globalisation** — the lexicon-scale face of the spiral's close.
 
@@ -551,18 +573,18 @@ agrarian      5      9   0.22  0.00   0.89    0.00
 classical     5     14   0.35  0.07   0.93    0.05
 modern        6     20   0.48  0.30   1.00    0.15
 reflexive     7     27   0.59  0.48   1.00    0.25
-net           8     35   0.64  0.55   1.00    0.55     <- the new era
+nerve         8     35   0.64  0.55   1.00    0.55     <- the new era
 ```
 
 Two new movements the existing columns can't see, and one new column:
 
-- **recombination (the new column)** — net coins are increasingly **blends of existing
+- **recombination (the new column)** — nerve coins are increasingly **blends of existing
   lexemes**: *doomscroll* (doom+scroll), *mansplain*, *hashtag*, *selfie*. The
   definitional web stops merely *cohering* (words defined in terms of earlier words) and
   turns **generative** (words *composed from* earlier words). The segmented lexicon
   becomes a whole that **makes new wholes from its own parts** — re-coherence at the
   lexicon scale, measurable as the fraction of new lexemes that are recombinations.
-- **globalisation of the untranslatable** — in the net era the per-tongue boundary
+- **globalisation of the untranslatable** — in the nerve era the per-tongue boundary
   **dissolves**: *schadenfreude, hygge, saudade, ubuntu* become instant shared loanwords.
   The `untranslatables` measure (which reads concepts a *single* tongue named) gains a
   **residence-time** reading — how long a concept stays single-tongue before the network
@@ -572,19 +594,19 @@ Two new movements the existing columns can't see, and one new column:
 
 So the two scales agree. At the **value** scale, `migrate` disperses and `spiral`
 re-coheres one value across the threshold; at the **lexicon** scale, `proliferation`
-re-coheres the whole vocabulary, and the *net* era is where that re-coherence becomes
+re-coheres the whole vocabulary, and the *nerve* era is where that re-coherence becomes
 **generative and global**. Same spiral, two magnifications.
 
-**Model change (build phase):** `lexicon.json` gains net-era lexemes (*doomscroll,
+**Model change (build phase):** `lexicon.json` gains nerve-era lexemes (*doomscroll,
 ghosting, selfie, hashtag, stream, cloud, viral, meme, …*), each with `valued_for`,
 `experiential`, and `defined_in_terms_of` (its recombination parents); `lexicon.py` gains
 a **`recombination`** metric (fraction of an era's lexemes composed from existing ones)
 and `untranslatables` gains a **residence-time** reading. As ever: authored proxies,
-provisional, descriptive — never a gate. `proliferation --regime net` shows the close.
+provisional, descriptive — never a gate. `proliferation --regime nerve` shows the close.
 
 ## 14. Validation — `equilibrium` through the spiral (a breath-origin value)
 
-Every example so far began *in* the net (viral, meme, friend, cloud, wiki). The
+Every example so far began *in* the nerve (viral, meme, friend, cloud, wiki). The
 architecture claims to be **additive** — the same `spiral` reads the framework's existing
 seeds and **completes** the `arc` already shipped for them. The test: trace `equilibrium`,
 the project's flagship value (the labrys's *paradoxical equilibrium*), all the way through.
@@ -592,7 +614,7 @@ the project's flagship value (the labrys's *paradoxical equilibrium*), all the w
 The shipped `arc equilibrium` already gives the first phases — breath whole in
 labrys/ouroboros (0.30 each), dispersed at the threshold into *balance, justice,
 moderation, symmetry*, then the lexical thread climbing *justice (0.60) → … → wellbeing
-(0.92)*. `spiral equilibrium` re-reads that as the three phases and **adds the net phase
+(0.92)*. `spiral equilibrium` re-reads that as the three phases and **adds the nerve phase
 the arc stops short of**:
 
 - **whole (breath)** — the labrys held *paradoxical equilibrium*: opposed blades in
@@ -601,9 +623,9 @@ the arc stops short of**:
   (virtue), *symmetry* (form). Each shard keeps a facet and **drops the paradox** —
   balance becomes the static evenness of two weights, not opposites in living tension.
   (Exactly `migrate equilibrium`.)
-- **re-cohered (net)** — equilibrium returns as **dynamic, networked, self-regulating
+- **re-cohered (nerve)** — equilibrium returns as **dynamic, networked, self-regulating
   balance**: *homeostasis, resilience, sustainability, the feedback loop* — born of
-  cybernetics and systems theory (Wiener 1948; Holling 1973), the net regime's own root.
+  cybernetics and systems theory (Wiener 1948; Holling 1973), the nerve regime's own root.
   The static mean becomes a **living equilibrium held by a network**, and in doing so
   **recovers the paradox the pump had flattened**: opposites held in continuous tension, a
   balance that is *alive* and self-correcting — far closer to the labrys's living whole
@@ -611,7 +633,7 @@ the arc stops short of**:
 
 **Two-facet verdict:**
 - **structural — high, *higher than pump*:** dynamic balance-of-opposites-in-a-living-
-  system genuinely rhymes with the labrys's paradoxical equilibrium. The net re-coherence
+  system genuinely rhymes with the labrys's paradoxical equilibrium. The nerve re-coherence
   is structurally *more* faithful to the breath whole than the pump segmentation was — the
   clearest demonstration of "return at greater complexity."
 - **substantive — mixed:** genuine where the systemic balance is real (regenerative
@@ -636,19 +658,19 @@ the arc stops short of**:
 ```
 
 Note `returns_to` is **`equilibrium` itself** — a *breath-origin* value returns to its own
-whole, where a net-*born* word (`viral` → `life`/`unity`, `cloud` → `divinity`) returns to
+whole, where a nerve-*born* word (`viral` → `life`/`unity`, `cloud` → `divinity`) returns to
 the breath keystone its sense maps onto. The data model (§11) handles both without change.
 
 **What this validates:**
-1. `spiral` reads a **breath-origin seed**, not only net-born signs — additive, as claimed.
+1. `spiral` reads a **breath-origin seed**, not only nerve-born signs — additive, as claimed.
 2. `spiral` is the **generalisation of `arc`**: `arc` traced breath → pump →
-   pump-re-coherence (stopping at *wellbeing*, 1990); `spiral` adds the **net phase** and
-   the **two-facet verdict**. `arc` is the pre-net special case — in the build, `spiral`
+   pump-re-coherence (stopping at *wellbeing*, 1990); `spiral` adds the **nerve phase** and
+   the **two-facet verdict**. `arc` is the pre-nerve special case — in the build, `spiral`
    *calls* `arc` for the first phases and extends it, rather than replacing it.
 3. The spiral can **return a breath quality the pump lost** (the paradox) — "greater
    complexity" made concrete, not asserted.
 
-**One full turn of the cycle (§2).** Equilibrium's net whole — *resilience/homeostasis* —
+**One full turn of the cycle (§2).** Equilibrium's nerve whole — *resilience/homeostasis* —
 is itself a new sign that can be **re-attested (L1)** and, in principle, re-segmented and
 re-cohered again: the spiral turning once more, one rung up. The equilibrium trace is one
 complete revolution of the ouroboros-layer, start to start.
@@ -656,69 +678,69 @@ complete revolution of the ouroboros-layer, start to start.
 ## 15. The `aspects` whole-picture view (draft)
 
 §5.2 promised a system-level view of the regime profiles — *the spiral seen whole*. This
-pins its shape: the `constellation` move applied to the `{breath, pump, net}` profiles, so
+pins its shape: the `constellation` move applied to the `{breath, pump, nerve}` profiles, so
 every sign is placed at once and the clusters and the diagonal become visible.
 
 ```
 $ python -m interpretation aspects
 == the spiral seen whole: every sign by its regime profile ==
-  sign          breath  pump   net   reading
+  sign          breath  pump  nerve  reading
   ankh           0.90   0.10  0.05   pure breath — a whole held
   labrys         0.90   0.10  0.10   pure breath — the paradox held
-  ouroboros      0.85   0.15  0.25   breath, with a net echo (the cycle itself)
+  ouroboros      0.85   0.15  0.25   breath, with a nerve echo (the cycle itself)
   revolution     0.10   0.90  0.15   pure pump — a word, a sense
   democracy      0.10   0.90  0.10   pure pump
-  friend         0.30   0.60  0.75   net re-aggregation, breath thinned
-  cloud          0.55   0.50  0.80   net, with a real breath rhyme
+  friend         0.30   0.60  0.75   nerve re-aggregation, breath thinned
+  cloud          0.55   0.50  0.80   nerve, with a real breath rhyme
   viral          0.60   0.70  0.80   all three — the spiral's close
   wiki           0.65   0.55  0.85   all three — faithful (both facets)
   meme           0.70   0.60  0.90   all three — the synthesis exemplar
   ---
   clusters: breath {ankh, labrys, ouroboros} · pump {revolution, democracy}
-            net   {friend, cloud, viral, wiki, meme}
-  the diagonal: signs climb breath→pump→net as the spiral turns; the net cluster
+            nerve   {friend, cloud, viral, wiki, meme}
+  the diagonal: signs climb breath→pump→nerve as the spiral turns; the nerve cluster
                 lights up on all three at once — the regime that holds the others
-  net keystone: participation (reach 4) — the value the net cluster's re-coherence rests on
-  the ouroboros is the bridge: the one breath sign with a real net echo (it *is* the cycle)
+  nerve keystone: participation (reach 4) — the value the nerve cluster's re-coherence rests on
+  the ouroboros is the bridge: the one breath sign with a real nerve echo (it *is* the cycle)
 ```
 
 Three readings the aggregate adds that no single profile shows:
 
-- **the clusters** — pure-breath, pure-pump, and the net cluster that scores high on
-  *all three* (the signature §5/§12 predicted): net is not a fourth island but the regime
+- **the clusters** — pure-breath, pure-pump, and the nerve cluster that scores high on
+  *all three* (the signature §5/§12 predicted): nerve is not a fourth island but the regime
   that **holds the other two at once**;
-- **the diagonal** — the signs that climb breath→pump→net are the spiral made visible as a
+- **the diagonal** — the signs that climb breath→pump→nerve are the spiral made visible as a
   shape, not just asserted;
-- **the net keystone** — `constellation` run over the net cluster names the value its
-  re-coherence rests on (*participation*), the net-regime analogue of breath's *divinity*
+- **the nerve keystone** — `constellation` run over the nerve cluster names the value its
+  re-coherence rests on (*participation*), the nerve-regime analogue of breath's *divinity*
   keystone — the load-bearing truth of the information age, made a measurement.
 
-And a small grace note: the **ouroboros** is the one breath sign with a real net echo —
+And a small grace note: the **ouroboros** is the one breath sign with a real nerve echo —
 it *is* the cycle the whole framework turns out to be. The aggregate surfaces that
 without being told. Authored proxies throughout; descriptive, never a gate.
 
 **Model change (build phase):** a new `aspects` command (and an `atlas` line), reading the
-authored profiles off the glossary and running `constellation` over the net cluster. No
+authored profiles off the glossary and running `constellation` over the nerve cluster. No
 new measure — a *reader*, like `atlas`; gates nothing.
 
-## 16. Adversarial test — a net sign that resists the spiral
+## 16. Adversarial test — a nerve sign that resists the spiral
 
 The architecture has passed three *confirming* tests (§12, §13, §14). A scope is only
-honest if it also tries to **break** itself. So: hunt for a net sign the spiral *cannot*
+honest if it also tries to **break** itself. So: hunt for a nerve sign the spiral *cannot*
 read, and see what the failure teaches. This is the framework's own move — the labrys foil,
 the `signal` capstone — turned on the new layer.
 
-### The clean resister — `spam` (a net-native origin)
+### The clean resister — `spam` (a nerve-native origin)
 
 `spam`: a tinned-meat brand (Hormel, 1937), routed through a Monty Python sketch, lands as
 **unsolicited bulk noise**. Run the spiral and the *first* phase already fails — there is
 **no breath whole** it returns *to*. Watch the measure try to supply one — *noise*, *the
 swarm*, *the locust-plague*, *genesis-from-chaos* — and every candidate is **reached for**,
-not attested. Spam is not a *return* to primordial chaos; it is a **new thing**, net-born,
+not attested. Spam is not a *return* to primordial chaos; it is a **new thing**, nerve-born,
 with no holistic ancestor and no pump segmentation behind it. The honest output is not a
 faithful or counterfeit verdict but a **refusal**:
 
-> `spiral spam` → **RESISTANT**: net-native origin; no honest `returns_to`. The spiral
+> `spiral spam` → **RESISTANT**: nerve-native origin; no honest `returns_to`. The spiral
 > declines to read a return where none exists.
 
 This is the **L1 move lifted to L4**: attestation refuses what cannot be shown; the spiral
@@ -727,7 +749,7 @@ must refuse what cannot honestly be returned. The refusal *is* the finding.
 ### The subtler danger — the spiral over-accommodates
 
 Worse than a sign it cannot read is the discovery that the spiral can read *almost
-anything*: reach far enough up the abstraction ladder and every net sign acquires an
+anything*: reach far enough up the abstraction ladder and every nerve sign acquires an
 ancestor. `the algorithm` → *fate / the loom / moira / providence*; `deepfake` → *the idol
 / the simulacrum*; `doomscroll` → *apocalyptic vigilance*. These readings are **seductive**
 — and that is exactly the alarm. A framework that can narrate a return for *any* sign
@@ -737,8 +759,8 @@ the one to distrust most.**
 
 ### What resists, in two types
 
-- **Type A — net-native origin.** No honest breath whole to return to (`spam`, `deepfake`,
-  `doxx`, `bot`). The spiral assumes net is a *return*; some net signs are *origins*.
+- **Type A — nerve-native origin.** No honest breath whole to return to (`spam`, `deepfake`,
+  `doxx`, `bot`). The spiral assumes nerve is a *return*; some nerve signs are *origins*.
 - **Type B — meaning's refusal.** Signs whose content *negates* a stable whole — *post-
   irony*, the *shitpost*, "*random*", "lol nothing matters". There is no whole they fail to
   reach; the point is that there is none.
@@ -753,15 +775,15 @@ degrade**.
 Every layer has its projection. L3 catches **anachronism** (a later *sense* read into an
 earlier word) and **phonetic projection** (a later *mode of attention* read onto a breath
 sign). L4 has its own: **spiral projection** — reading the *re-coherence narrative* onto a
-net-native origin or a refusal of meaning, by **manufacturing a `returns_to`** it never
+nerve-native origin or a refusal of meaning, by **manufacturing a `returns_to`** it never
 honestly had. It is the framework's besetting temptation on this layer — and the prettier
 the return reads, the harder it must be checked.
 
 ### Consequences for the architecture
 
-1. **Bound the thesis (revise decision 5).** Net is **not** "the regime that re-coheres,"
+1. **Bound the thesis (revise decision 5).** Nerve is **not** "the regime that re-coheres,"
    full stop — *that was itself a pre-decided verdict, the very thing the framework
-   forbids.* Net is the regime where meaning *can* re-cohere, *and also* fragment past
+   forbids.* Nerve is the regime where meaning *can* re-cohere, *and also* fragment past
    anything pump did, *and also* be born new. **Re-coherence is measured per sign, never
    assumed of the regime.** This extends the §4 guardrail from the *verdict* to the
    *premise*: §4 refused to assume a return *succeeds*; §16 refuses to assume there *is* one.
@@ -771,8 +793,8 @@ the return reads, the harder it must be checked.
    conceptual lineage carrying its provenance — not an abstraction reached for to make the
    cycle run. When the only available ancestor is a vague keystone grabbed after the fact,
    the sign is `resistant`, not re-cohering. (The framework's own provenance discipline,
-   applied to the net-side map.)
-4. **Name net's other face.** The spiral is the *return* arm; the adversarial signs reveal
+   applied to the nerve-side map.)
+4. **Name nerve's other face.** The spiral is the *return* arm; the adversarial signs reveal
    a *fragmentation* arm — the infinite feed, context collapse, the filter bubble — that
    the framework should at least **name**, even while it only *measures* re-coherence and
    flags the rest `resistant`. (Whether to also *measure* fragmentation is a future
