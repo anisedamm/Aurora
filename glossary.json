@@ -149,6 +149,20 @@
       "carries": []
     }
   },
+  "aspects": {
+    "_note": "Authored aspect profiles: how each sign's attention is distributed across the three regimes (breath, pump, nerve), each in [0,1] — a reading ALONGSIDE the single regime label, never replacing it. Not 'this sign IS breath' but 'this is how its breath/pump/nerve aspects are weighted'. A meme lights up on all three; the labrys is almost pure breath; the ouroboros is the one breath sign with a real nerve echo (it IS the cycle). A proxy carrying its provenance; descriptive, never a gate.",
+    "ankh":         {"breath": 0.90, "pump": 0.10, "nerve": 0.05, "reading": "pure breath — a whole held (life)"},
+    "labrys":       {"breath": 0.90, "pump": 0.10, "nerve": 0.10, "reading": "pure breath — the paradox held"},
+    "ouroboros":    {"breath": 0.85, "pump": 0.15, "nerve": 0.25, "reading": "breath, with a nerve echo — it is the cycle"},
+    "divine-order": {"breath": 0.80, "pump": 0.30, "nerve": 0.10, "reading": "breath — myth as conceptual memory"},
+    "revolution":   {"breath": 0.10, "pump": 0.90, "nerve": 0.15, "reading": "pure pump — a word, a sense that turned"},
+    "democracy":    {"breath": 0.10, "pump": 0.90, "nerve": 0.10, "reading": "pure pump — an honorific won"},
+    "friend":       {"breath": 0.30, "pump": 0.60, "nerve": 0.75, "reading": "nerve re-aggregation, breath thinned"},
+    "cloud":        {"breath": 0.55, "pump": 0.50, "nerve": 0.80, "reading": "nerve, with a real breath rhyme"},
+    "viral":        {"breath": 0.60, "pump": 0.70, "nerve": 0.80, "reading": "all three — the spiral's close"},
+    "wiki":         {"breath": 0.65, "pump": 0.55, "nerve": 0.85, "reading": "all three — faithful on both facets"},
+    "meme":         {"breath": 0.70, "pump": 0.60, "nerve": 0.90, "reading": "all three — the synthesis exemplar"}
+  },
   "concepts": [
     {
       "id": "labrys",

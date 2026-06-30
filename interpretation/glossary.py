@@ -139,6 +139,7 @@ class Glossary:
     value_aliases: dict = field(default_factory=dict)  # authored grouping of synonymous conceptual values
     migrations: dict = field(default_factory=dict)     # authored dispersal of a value into pump-era lexemes
     recoherences: dict = field(default_factory=dict)   # authored return of a value into a nerve-era whole
+    aspects: dict = field(default_factory=dict)        # authored {breath,pump,nerve} profile per sign
 
     def concept(self, concept_id: str) -> Concept:
         if concept_id not in self.concepts:
@@ -229,6 +230,7 @@ def from_mapping(raw: dict) -> Glossary:
         value_aliases=dict(raw.get("value_aliases", {})),
         migrations=dict(raw.get("migrations", {})),
         recoherences=recoherences,
+        aspects={k: v for k, v in raw.get("aspects", {}).items() if not k.startswith("_")},
     )
 
 

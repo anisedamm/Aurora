@@ -40,6 +40,7 @@ from .lexicon import load_lexicon, proliferation, residence_times, untranslatabl
 from .migration import migrate
 from .quartet import load_quartets
 from .spiral import breath_values, recohere, spiral
+from .aspects import aspects
 from .ledger import Ledger
 from .manifest import write_manifest
 from .memory import confluence, memory_chain, remember
@@ -240,6 +241,27 @@ def cmd_atlas(args: argparse.Namespace) -> int:
     led = _ledger(args)
     print(atlas(led, _glossary(args), _lexicon(args),
                 manifest_path=getattr(args, "manifest", None) or "MANIFEST.md").summary)
+    return 0
+
+
+def cmd_aspects(args: argparse.Namespace) -> int:
+    print(aspects(_glossary(args)).summary)
+    return 0
+
+
+def cmd_profile(args: argparse.Namespace) -> int:
+    g = _glossary(args)
+    raw = g.aspects.get(args.sign)
+    if raw is None:
+        print(f"error: no aspect profile for {args.sign!r}; have {sorted(g.aspects)}",
+              file=sys.stderr)
+        return 1
+    print(f"{args.sign} — regime profile (alongside the single label):")
+    print(f"  breath {raw.get('breath', 0):.2f}  pump {raw.get('pump', 0):.2f}  "
+          f"nerve {raw.get('nerve', 0):.2f}   {raw.get('reading', '')}")
+    rec = g.recoherences.get(args.sign)
+    if rec is not None:
+        print("  " + recohere(rec, breath_values(g)).verdict)
     return 0
 
 
@@ -453,6 +475,11 @@ def build_parser() -> argparse.ArgumentParser:
     sp = sub.add_parser("recohere", help="L4: the re-coherence verdict on a nerve sign (faithful / counterfeit / mixed / resistant)")
     sp.add_argument("sign")
 
+    sub.add_parser("aspects", help="the spiral seen whole: every sign by its {breath,pump,nerve} profile")
+
+    sp = sub.add_parser("profile", help="one sign's regime profile (alongside its single label)")
+    sp.add_argument("sign")
+
     sp = sub.add_parser("quartets", help="the synchronic structure of meaning: the 2x2 quartets and their keystones")
     sp.add_argument("quartet", nargs="?", help="one quartet id (e.g. existential, spine, process, substrate)")
 
@@ -525,6 +552,8 @@ _COMMANDS = {
     "migrate": cmd_migrate,
     "spiral": cmd_spiral,
     "recohere": cmd_recohere,
+    "aspects": cmd_aspects,
+    "profile": cmd_profile,
     "quartets": cmd_quartets,
     "proliferation": cmd_proliferation,
     "untranslatables": cmd_untranslatables,

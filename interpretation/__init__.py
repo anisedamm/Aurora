@@ -128,6 +128,7 @@ from .spiral import (
     scatter,
     breath_values,
 )
+from .aspects import Aspects, SignAspect, aspects
 from .lexicon import (
     Lexeme,
     Lexicon,
@@ -252,6 +253,9 @@ __all__ = [
     "recohere",
     "scatter",
     "breath_values",
+    "Aspects",
+    "SignAspect",
+    "aspects",
     # the lexicon over time: phonetic language as the record of growing understanding
     "Lexeme",
     "Lexicon",
