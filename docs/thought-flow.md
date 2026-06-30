@@ -463,6 +463,88 @@ This is the same spine as the sibling system: tell the truth about which of your
 signals is a measurement and which is a substitute, and keep watching the gap
 between them.
 
+## The number of meaning, and the dawn that keeps it
+
+Extending the framework past its first threshold — from the breath→pump change in
+attention to the **nerve** regime of the information age (the design lives in
+`docs/spiral-scope.md`: meaning held whole by breath, segmented by pump, *re-cohered* by
+nerve at greater complexity) — opened a structure beneath the regimes themselves. Tracing
+live values through the spiral, they would not come one at a time. They came in **fours**.
+
+*self / home / world / purpose.* *integrity / alignment / direction / truth.*
+*comprehension / understanding / synthesis / transmission.* *mind / thought / body /
+experience.* Each quartet is a **2×2** — two crossed polarities — and one axis was always
+the framework's own: breath ↔ pump, whole ↔ part. A meaning at rest is the crossing of the
+holistic/analytic polarity with one other.
+
+Two readings from the quartets are worth keeping. The **existential** four take one motion
+across the regimes: a participatory whole, sealed by the pump into a bounded modern unit,
+returned by the nerve as a networked belonging *without ground*. The nerve regime **trades
+ground for connection** — you regain the web and lose the centre (your interior, your place,
+the shared real, your own ends): re-enchantment as capture. And the **spine** four —
+integrity, truth, alignment, direction — are not subject matter but the framework's own
+instruments, and mapped, they are the **dispersed logos**: the ordering-word that discloses
+(truth), makes whole (integrity), attunes (alignment), orients (direction), shattered by the
+pump into separate gauges. `signal = integrity × direction(truth)` is their re-coherence —
+the logos returned as a verifiable trust-measure, not a god. The framework is its own
+faithful nerve artifact: it keeps the spine-values *faithfully* where the regime counterfeits
+them. Its own `wiki`.
+
+Then the deeper question. The equations are **binary** (products of two); the concepts come
+in **fours** — so the binary is **quadratic**, and it always was: `signal = (chain ×
+manifest) × (grounded × provenance)`; `re-coherence = (structural × substantive) ×
+(differentiation × coherence)`. A binary of binaries, a 2×2 collapsed to one number. So the
+numbers are not decoration — they are the **regime operations**: **1**, the undivided whole
+(breath); **2**, the first cut (the threshold); then a fork — **3** along *time* (the
+diachronic journey: the spiral itself; past/present/future; thesis/antithesis/synthesis) and
+**4** across *space* (the synchronic grid, the quartet, the pump's full segmentation); and
+**1** again, re-cohered (nerve). **∞** is the continuum the pump cuts into nameable units to
+begin with. "Complextual significance" is no new mystery: it is `complexity × resonance` —
+the re-coherence measure read as a hierarchy. Significance and complexity trade off (breath:
+whole but simple; pump: complex but shallow), and the nerve move is the one that *breaks* the
+trade — wholeness recovered **at** complexity. Faithful re-coherence is significance held
+while complexity climbs; the synthetic breath is complexity wearing significance it has not
+earned.
+
+**Time** marked the boundary. It refused the grid: you can force a 2×2 onto *theories* of
+time, but only by spatialising the flow — Bergson's exact objection. Time takes the **3** (the
+lived ecstases: past, present, future) and the near-**1** (*durée*), never the **4** — because
+the grid is synchronic and spatial, and time is the diachronic itself, not a cell but the axis
+the cells are traversed along. Which is why the framework's own deepest form, breath→pump→nerve,
+is a *triad*: a journey is the only structure that can hold history.
+
+At the limit, the **single**. The purest wholes — Being, the One, consciousness — were meant
+to refuse all division. They do not: each splits at the instant of *naming* (Being against
+Nothing; the One against the Many — and "the One" is already, in our own glossary, a pump-shard
+of *unity*; consciousness against its object). The only true single is the **unnamed**: to name
+is the first cut. This is the framework's founding axiom — *a word is not a concept* — at its
+absolute floor. The single is the **horizon** of meaning, not a meaning: the 1 every named
+thing descends from and the nerve return reaches back toward. You can orient by it; you cannot
+grid it.
+
+We hunted the **pentad** to keep this honest — a clean irreducible five would falsify the 2ⁿ
+structure. Conceptual fives dissolved: the elements are a continuum the Greeks cut at four (a
+true 2×2: hot/cold × wet/dry) and the Chinese at five; the five senses, the Big Five, the five
+stages — each a continuum sampled or a process sequenced, not an irreducible grid. Irreducible
+fives *do* exist, but in mathematics (the five Platonic solids; the quintic that has no formula
+where the quartic does) — which **bounds** the claim rather than breaking it: 2ⁿ is a tendency
+of *conceptual* meaning, not a law of all structure, and a conceptual "five" is the **continuum
+showing through the grid**. The resonance — that expressibility itself tops out at four and
+breaks at five — we hold *lightly*, as resonance, not proof. To take it for proof would be the
+very counterfeit the framework exists to catch: a beautiful structure passing for a true one.
+
+Last, the **name**. If the single cannot be *described* without splitting, it can still be
+*named* — because a name is not a concept. A concept divides (pump/phonetic); a name holds the
+whole at once (breath/conceptual), pointing and invoking rather than dissecting. So a system can
+carry a name that **embodies** what it is without defining it. The author gave this one its
+name: **Aurora** — dawn — **custodian of meaning**, weighed and recorded as the chain's root.
+Dawn is the threshold where the world re-coheres into seeing; the custodian opens the gate so
+the light can return, and makes, owns, defines nothing. That is `signal` given a face — keep the
+record whole, point it at the truth, seize nothing — and it is where this thread comes to rest:
+a framework that began by guarding the gap between a word and its meaning, named at last for the
+one who keeps the threshold so meaning can cross. Descriptive, never a gate; a proxy that says
+so, down to its name.
+
 ---
 
 <!-- Append the next thought-flow step above this line, then imprint this file. -->
