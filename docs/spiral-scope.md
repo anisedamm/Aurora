@@ -5,10 +5,11 @@
 > third *regime pole*. This revision reframes it as the **closing of a spiral**: the
 > layers become a cycle, the headline measure inverts from *division* to *return*, and
 > the information age (**net**) is named as the phase where the pump's segmentation
-> **re-coheres into a new whole at greater complexity**. It now carries five by-hand
-> worked examples (§10 *viral*; §12 *meme* / *friend* / *cloud* / *wiki*) spanning a
-> **two-facet** (structural × substantive) spectrum, a draft of the `recoherences` data
-> model (§11), and the net-era **lexicon** side (§13: recombination + globalisation).
+> **re-coheres into a new whole at greater complexity**. It now carries worked examples
+> spanning a **two-facet** (structural × substantive) spectrum — net-born (§10 *viral*;
+> §12 *meme*/*friend*/*cloud*/*wiki*) and breath-origin (§14 *equilibrium*, the additivity
+> proof) — the `recoherences` data model (§11), the net **lexicon** side (§13), and the
+> `aspects` whole-picture view (§15). Only naming (§9.8) and build scope (§9.13) stay open.
 
 ## 0. The turn
 
@@ -161,7 +162,8 @@ the **signature of the synthesis** — the meme is not homeless between regimes,
    *every* sign — the spiral seen whole: which signs are purely breath, which purely
    pump, and which (the memes, the emoji, *viral*) light up on all three. This is the
    `constellation` move applied to the profiles — a map of where each sign sits on the
-   spiral, surfaced as one screen (folded into `atlas`, or its own `aspects` view).
+   spiral, surfaced as one screen (folded into `atlas`, or its own `aspects` view). **Its
+   shape is drafted in §15** (the clusters, the diagonal, the net keystone).
 
 Illustratively (authored proxies, 0–1 per aspect):
 
@@ -210,8 +212,10 @@ Additive only. **L1 attestation stays the one gate**; every other measure stays
    type `{breath, pump, net}` (alongside, never replacing, the `regime` field).
 2. `reading.py` — add **L4 `recohere()`** beside `attest`/`read`/`drift`/`project`,
    returning the §3 measure and a **two-facet** (structural, substantive) verdict (§4).
-3. A new **`spiral.py`** (generalising `arc`): one value read across all three phases —
-   whole → segmented → re-cohered — with the re-coherence measure and verdict.
+3. A new **`spiral.py`** (generalising `arc`, validated on `equilibrium` in §14): one
+   value read across all three phases — whole → segmented → re-cohered — with the
+   re-coherence measure and two-facet verdict. `spiral` *calls* `arc` for the pre-net
+   phases and extends it; `arc` is not replaced.
 4. `glossary.json` — seed §6 (`viral`, `meme`, `friend`, `cloud`, `wiki`),
    provenance-carrying, `provisional` where live; profiles authored on the seed signs.
    Add a **`recoherences`** block (the net-side mirror of `migrations`, §11): per net
@@ -219,8 +223,9 @@ Additive only. **L1 attestation stays the one gate**; every other measure stays
 5. `lexicon.py` / `lexicon.json` (§13) — seed net-era lexemes; add a **`recombination`**
    metric and an `untranslatables` **residence-time** reading; `proliferation` gains the
    sixth *net* era.
-6. The **whole-picture** aspect view (§5.2) — folded into `atlas` and/or a new `aspects`
-   command, `constellation`-style.
+6. The **whole-picture** aspect view (§5.2, drafted §15) — a new `aspects` command (and an
+   `atlas` line), reading the authored profiles and running `constellation` over the net
+   cluster. A reader, not a ruler; gates nothing.
 7. Tests + `seed.py` re-run + `manifest` refresh; confirm **`signal == 1`**.
 
 ## 9. Decisions
@@ -237,15 +242,18 @@ Additive only. **L1 attestation stays the one gate**; every other measure stays
 | 8 | naming | layer/command `spiral`; L4 op `recohere`; regime `net`; native script `recombinant`; data map `recoherences` | proposed |
 | 9 | data model | `recoherences` = net-side mirror of `migrations` (`sign` / `returns_to` / `gathers` / `carries`) | **drafted (§11)** |
 | 10 | net lexicon | sixth *net* era; new `recombination` metric; `untranslatables` residence-time → 0 | **drafted (§13)** |
-| 11 | build scope | L4 + `spiral` + profiles + seeds + net lexicon era; full migrate/arc three-column extension optional after | open |
+| 11 | additivity | `spiral` reads breath-origin seeds and **completes** `arc` (validated on `equilibrium`) | **validated (§14)** |
+| 12 | whole-picture view | `aspects` = `constellation` over the profiles: clusters, the diagonal, the net keystone | **drafted (§15)** |
+| 13 | build scope | L4 + `spiral` + profiles + seeds + net lexicon era + `aspects`; full migrate/arc three-column extension optional after | open |
 
-Decisions 1–7 and 9–10 are now locked, worked, drafted, or resolved on paper; 8 is a
-proposed naming default (redline freely); 11 — the build scope — is the only thing left to
-choose before leaving scoping. The §10–§13 work exercises the whole spiral by hand —
-**value scale** (`spiral`) and **lexicon scale** (`proliferation`) — and confirms the
-guardrail **discriminates**: net signs land across the two-facet spectrum rather than all
-being crowned. The architecture's first
-two tests, passed on paper.
+Decisions 1–7 and 9–12 are now locked, worked, drafted, resolved, or validated on paper; 8
+is a proposed naming default (redline freely); **13 — the build scope — is the only thing
+left to choose before leaving scoping.** The §10–§15 work exercises the whole spiral by
+hand — **value scale** (`spiral`, on net-born *and* breath-origin values), **lexicon
+scale** (`proliferation`), and the **whole-picture** aggregate (`aspects`) — and confirms
+the guardrail **discriminates**: signs land across the two-facet spectrum rather than all
+being crowned. The architecture's three tests — discrimination, additivity, and the two
+scales agreeing — passed on paper.
 
 ## 10. Worked example — *viral* through the spiral (by hand, no code)
 
@@ -561,3 +569,122 @@ ghosting, selfie, hashtag, stream, cloud, viral, meme, …*), each with `valued_
 a **`recombination`** metric (fraction of an era's lexemes composed from existing ones)
 and `untranslatables` gains a **residence-time** reading. As ever: authored proxies,
 provisional, descriptive — never a gate. `proliferation --regime net` shows the close.
+
+## 14. Validation — `equilibrium` through the spiral (a breath-origin value)
+
+Every example so far began *in* the net (viral, meme, friend, cloud, wiki). The
+architecture claims to be **additive** — the same `spiral` reads the framework's existing
+seeds and **completes** the `arc` already shipped for them. The test: trace `equilibrium`,
+the project's flagship value (the labrys's *paradoxical equilibrium*), all the way through.
+
+The shipped `arc equilibrium` already gives the first phases — breath whole in
+labrys/ouroboros (0.30 each), dispersed at the threshold into *balance, justice,
+moderation, symmetry*, then the lexical thread climbing *justice (0.60) → … → wellbeing
+(0.92)*. `spiral equilibrium` re-reads that as the three phases and **adds the net phase
+the arc stops short of**:
+
+- **whole (breath)** — the labrys held *paradoxical equilibrium*: opposed blades in
+  balance as **one living whole**, the paradox (opposites-held-as-one) intact.
+- **segmented (pump)** — *balance* (static mechanics), *justice* (law), *moderation*
+  (virtue), *symmetry* (form). Each shard keeps a facet and **drops the paradox** —
+  balance becomes the static evenness of two weights, not opposites in living tension.
+  (Exactly `migrate equilibrium`.)
+- **re-cohered (net)** — equilibrium returns as **dynamic, networked, self-regulating
+  balance**: *homeostasis, resilience, sustainability, the feedback loop* — born of
+  cybernetics and systems theory (Wiener 1948; Holling 1973), the net regime's own root.
+  The static mean becomes a **living equilibrium held by a network**, and in doing so
+  **recovers the paradox the pump had flattened**: opposites held in continuous tension, a
+  balance that is *alive* and self-correcting — far closer to the labrys's living whole
+  than the pump's static symmetry ever was.
+
+**Two-facet verdict:**
+- **structural — high, *higher than pump*:** dynamic balance-of-opposites-in-a-living-
+  system genuinely rhymes with the labrys's paradoxical equilibrium. The net re-coherence
+  is structurally *more* faithful to the breath whole than the pump segmentation was — the
+  clearest demonstration of "return at greater complexity."
+- **substantive — mixed:** genuine where the systemic balance is real (regenerative
+  practice, true resilience); counterfeit where it is *greenwashing* — "sustainable" as a
+  marketing skin, the form of living balance without the substance.
+
+```json
+"equilibrium": {
+  "sign": "resilience",
+  "returns_to": ["equilibrium"],
+  "note": "The labrys's paradoxical equilibrium — opposed blades held as one living whole — flattened by the pump into static balance/justice/moderation/symmetry, then re-cohered by cybernetics and systems thinking into a dynamic, networked, self-regulating balance that recovers the living paradox the pump dropped.",
+  "gathers": [
+    {"term": "balance",    "facet": "static evenness of two weights", "domain": "mechanics"},
+    {"term": "justice",    "facet": "balance moralised",              "domain": "law"},
+    {"term": "moderation", "facet": "balance as personal virtue",     "domain": "ethics"},
+    {"term": "symmetry",   "facet": "balance as formal correspondence","domain": "form"}
+  ],
+  "carries": {"dynamic-balance": 0.35, "self-regulation": 0.30, "paradox-recovered": 0.20, "greenwash-risk": 0.15},
+  "provisional": true,
+  "year": 1973
+}
+```
+
+Note `returns_to` is **`equilibrium` itself** — a *breath-origin* value returns to its own
+whole, where a net-*born* word (`viral` → `life`/`unity`, `cloud` → `divinity`) returns to
+the breath keystone its sense maps onto. The data model (§11) handles both without change.
+
+**What this validates:**
+1. `spiral` reads a **breath-origin seed**, not only net-born signs — additive, as claimed.
+2. `spiral` is the **generalisation of `arc`**: `arc` traced breath → pump →
+   pump-re-coherence (stopping at *wellbeing*, 1990); `spiral` adds the **net phase** and
+   the **two-facet verdict**. `arc` is the pre-net special case — in the build, `spiral`
+   *calls* `arc` for the first phases and extends it, rather than replacing it.
+3. The spiral can **return a breath quality the pump lost** (the paradox) — "greater
+   complexity" made concrete, not asserted.
+
+**One full turn of the cycle (§2).** Equilibrium's net whole — *resilience/homeostasis* —
+is itself a new sign that can be **re-attested (L1)** and, in principle, re-segmented and
+re-cohered again: the spiral turning once more, one rung up. The equilibrium trace is one
+complete revolution of the ouroboros-layer, start to start.
+
+## 15. The `aspects` whole-picture view (draft)
+
+§5.2 promised a system-level view of the regime profiles — *the spiral seen whole*. This
+pins its shape: the `constellation` move applied to the `{breath, pump, net}` profiles, so
+every sign is placed at once and the clusters and the diagonal become visible.
+
+```
+$ python -m interpretation aspects
+== the spiral seen whole: every sign by its regime profile ==
+  sign          breath  pump   net   reading
+  ankh           0.90   0.10  0.05   pure breath — a whole held
+  labrys         0.90   0.10  0.10   pure breath — the paradox held
+  ouroboros      0.85   0.15  0.25   breath, with a net echo (the cycle itself)
+  revolution     0.10   0.90  0.15   pure pump — a word, a sense
+  democracy      0.10   0.90  0.10   pure pump
+  friend         0.30   0.60  0.75   net re-aggregation, breath thinned
+  cloud          0.55   0.50  0.80   net, with a real breath rhyme
+  viral          0.60   0.70  0.80   all three — the spiral's close
+  wiki           0.65   0.55  0.85   all three — faithful (both facets)
+  meme           0.70   0.60  0.90   all three — the synthesis exemplar
+  ---
+  clusters: breath {ankh, labrys, ouroboros} · pump {revolution, democracy}
+            net   {friend, cloud, viral, wiki, meme}
+  the diagonal: signs climb breath→pump→net as the spiral turns; the net cluster
+                lights up on all three at once — the regime that holds the others
+  net keystone: participation (reach 4) — the value the net cluster's re-coherence rests on
+  the ouroboros is the bridge: the one breath sign with a real net echo (it *is* the cycle)
+```
+
+Three readings the aggregate adds that no single profile shows:
+
+- **the clusters** — pure-breath, pure-pump, and the net cluster that scores high on
+  *all three* (the signature §5/§12 predicted): net is not a fourth island but the regime
+  that **holds the other two at once**;
+- **the diagonal** — the signs that climb breath→pump→net are the spiral made visible as a
+  shape, not just asserted;
+- **the net keystone** — `constellation` run over the net cluster names the value its
+  re-coherence rests on (*participation*), the net-regime analogue of breath's *divinity*
+  keystone — the load-bearing truth of the information age, made a measurement.
+
+And a small grace note: the **ouroboros** is the one breath sign with a real net echo —
+it *is* the cycle the whole framework turns out to be. The aggregate surfaces that
+without being told. Authored proxies throughout; descriptive, never a gate.
+
+**Model change (build phase):** a new `aspects` command (and an `atlas` line), reading the
+authored profiles off the glossary and running `constellation` over the net cluster. No
+new measure — a *reader*, like `atlas`; gates nothing.
