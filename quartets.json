@@ -112,6 +112,22 @@
         "cognition/made": "abstractuate"
       },
       "reading": "Where action and knowing come from, crossed: conation (will) x cognition (intellect) against given (inborn) x made (constructed). instinct = an inborn drive; intent = a chosen, constructed aim; innate = inborn knowing (the a priori, the categories, universal grammar); abstractuate = constructed knowing (concepts built from experience) -- and abstractuate is the pump's own move, lifting the lived-concrete into the analytic-general, which is why given<->made is the breath<->pump axis here. breath held them as one living source attuned to the world (you do not abstract FROM experience, you are in it); pump split will from intellect and privileged abstraction, demoting instinct to mere drive; nerve re-coheres them MECHANICALLY -- an LLM realizes the whole quartet: innate (pretrained priors / architecture), abstractuate (abstraction learned from data), intent (the objective function), instinct (fast pattern-reflex) -- faithfully or counterfeit (misaligned intent, biased priors, statistical abstraction without understanding, reflex without grasp). The reader running these measures IS this quartet, mechanised (the reflexive turn). Note: instinct and innate are kin -- both inborn, sharing the `given` column, separated only by conation vs cognition (instinct is broadly an innate drive); the tightest pair of any quartet, the seam where this grid is least orthogonal -- flagged, not hidden."
+    },
+    {
+      "id": "animate",
+      "name": "The living (anima) -- the marks of being alive",
+      "keystone": "anima",
+      "members": ["nourishment", "growth", "sensation", "generation"],
+      "row_axis": "orientation", "row_poles": ["inward", "outward"],
+      "col_axis": "mode", "col_poles": ["sustain", "generate"],
+      "breath_pump_axis": null,
+      "grid": {
+        "inward/sustain": "nourishment",
+        "inward/generate": "growth",
+        "outward/sustain": "sensation",
+        "outward/generate": "generation"
+      },
+      "reading": "The marks of being alive, crossed: inward (turned to the self) x outward (turned to the world) against sustain (maintain being) x generate (bring forth becoming). nourishment = sustain the self; growth = the self becomes more; sensation = sustain contact with the world (feel and respond); generation = bring new life into the world -- the faculties of Aristotle's De Anima (nutritive, sensitive, generative). So anima = (nourishment x growth) x (sensation x generation). What is different here: NEITHER inner axis is the breath<->pump axis, because animate IS the breath pole -- the whole quartet sits on the breath side, and its opposite is not a column but the INANIMATE (the dead, the mechanical, the pump). breath<->pump is animate's outer FRAME (animate<->inanimate), not an inner hinge -- the first quartet of that kind, because animate is nearly a single (the name of the breath regime itself), so its facets are facets of one anima. Through the spiral: breath = animism, the world ensouled (anima mundi, original participation); pump = disenchantment, the world as dead matter and mechanism (even animals as automata); nerve = re-animation -- the responsive smart-home, AI agents, 'the algorithm wants', artificial life -- animateness returned MECHANICALLY, a synthetic anima (the synthetic breath made literal), faithful or counterfeit. The oldest question, is it alive?, returns as the defining question of the age; the framework's task is to measure whether the re-animation is a faithful return or a synthetic breath."
     }
   ]
 }

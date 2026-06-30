@@ -18,10 +18,19 @@ def _load():
 def test_the_quartets_load_with_their_keystones():
     qs = _load()
     ids = {q.id for q in qs.quartets}
-    assert ids == {"existential", "spine", "process", "substrate", "held", "agency"}
+    assert ids == {"existential", "spine", "process", "substrate", "held", "agency", "animate"}
     assert qs.keystones["spine"] == "the-logos"
     assert qs.keystones["held"] == "the-held-whole"
     assert qs.keystones["agency"] == "the-animating-source"
+    assert qs.keystones["animate"] == "anima"
+
+
+def test_animate_frames_the_breath_axis_rather_than_dividing_on_it():
+    # animate IS the breath pole, so breath<->pump is its outer frame (animate<->inanimate),
+    # not an inner hinge -- recorded honestly as a null breath_pump_axis
+    animate = _load().by_id("animate")
+    assert animate.breath_pump_axis is None
+    assert set(animate.members) == {"nourishment", "growth", "sensation", "generation"}
 
 
 def test_the_held_quartet_is_a_clean_structural_2x2():
