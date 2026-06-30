@@ -66,9 +66,23 @@ def main() -> int:
         kw.setdefault("external_anchor", anchor)
         return imp.imprint(**kw)
 
+    # The naming: the chain's root record. A breath/conceptual sign that holds the
+    # system's wholeness whole rather than dividing it into a definition — so the
+    # ledger itself remembers the dawn it was named, and all that follows descends from it.
+    imprint(artifact_id="aurora", title="Aurora — the naming (custodian of meaning)",
+            kind="naming", regime="breath", mode="conceptual",
+            weights={"threshold": 0.30, "re-coherence": 0.25, "return-of-meaning": 0.20,
+                     "custodianship": 0.15, "genesis": 0.10},
+            text=("Aurora — dawn — the name of this system, given by its author. A breath/"
+                  "conceptual sign that holds the whole at once rather than dividing it: the "
+                  "threshold where meaning re-coheres into seeing, and the custodian who keeps "
+                  "the gate so the light can return. Custodian of meaning — guard the record "
+                  "whole and point it at the truth; fix nothing, seize nothing."),
+            license="Apache-2.0")
+
     imprint(artifact_id="language-framework", title="Conceptual history as language interpretation",
             text=(ROOT / "README.md").read_text(encoding="utf-8"), kind="framework",
-            license="Apache-2.0")
+            parents=["aurora"], license="Apache-2.0")
     imprint(artifact_id="thought-flow", title="Thought flow — the living reasoning journal",
             text=(ROOT / "docs/thought-flow.md").read_text(encoding="utf-8"),
             kind="reasoning", source="collaboration", source_actor="claude",

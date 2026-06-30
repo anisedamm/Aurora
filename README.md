@@ -1,7 +1,11 @@
-# Language
+# Aurora
 
-A framework for reading **conceptual history as language interpretation** — and
-for keeping that reading honest.
+> *Custodian of meaning.*
+
+**Aurora** — a framework for reading **conceptual history as language
+interpretation**, and for keeping that reading honest. A custodian does not *fix*
+the meaning or seize it; she **guards the threshold** so meaning can cross
+faithfully. That is the whole stance of this system, and now its name.
 
 It is built on one idea, the hermeneutic turn of the spine its sibling
 [`integrity-alignment-system`](https://github.com/anisedamm/integrity-alignment-system)
@@ -29,6 +33,46 @@ spelled a word, when the context dictates the manifestation of what is meant.
 
 It is **pure standard library** (no dependencies), authored by **anise.damm**, and
 its readings are kept in a tamper-evident, timestamped, openly-publishable ledger.
+
+## The name
+
+The framework reads *conceptual signs* — symbols that hold a weighted field of
+meaning whole (the labrys, the ankh). Its own name is one. A **name** is not a
+*concept*: a concept divides (this, not that) in the pump/phonetic mode, while a
+name *holds the whole at once* in the breath/conceptual mode — it points and
+invokes rather than dissects. So the system can carry a name that **embodies** what
+it is without splitting it into a definition.
+
+That name is **Aurora** — dawn — recorded as the **chain's root** in the ledger
+(`python -m interpretation verify`), holding the retained field of a conceptual sign:
+
+```
+Aurora (dawn) — a breath/conceptual sign  [naming, the ledger's root record]
+  retained field:
+    threshold         (0.30)  — dawn is the crossing itself: night → day, the liminal gate
+    re-coherence      (0.25)  — first light: the world re-cohering into visibility each day
+    return-of-meaning (0.20)  — when form and seeing come back out of the dark
+    custodianship     (0.15)  — she who opens the gates of the sky so the light can return
+    genesis           (0.10)  — beginning renewed; the recurring, cyclical now
+  committed to writing because: to hold the moment meaning returns across a threshold —
+    and to keep faith with that return, age after age
+```
+
+The fit is exact. This is a system **about thresholds** (the change in a culture's
+mode of attention) and **about the return of meaning** across them — and dawn is the
+daily enactment of just that: the threshold where the world re-coheres into seeing.
+The Roman Aurora *opens the gates of the sky so the light can come*; she does not
+make the light, own it, or define it — she **keeps the gate so it can return**.
+
+So **custodian of meaning** is not decoration but this framework's own stance,
+named: it *protects the integrity of a reading and guards against anachronism, but
+neither fixes the meaning nor walks the interpreter's path.* Aurora is `signal`
+given a face — `integrity × direction(truth)`: keep the record **whole**, and point
+it at the **truth**, so that at every threshold meaning can be returned without being
+seized. The **naming is the chain's root record** (authored by `anise.damm`): the
+ledger itself remembers the dawn it was named, and everything the framework records
+descends from it. As with every sign here, the name is a *proxy that carries its
+provenance* — it holds the system's wholeness, it does not exhaust it.
 
 ## The three layers
 
