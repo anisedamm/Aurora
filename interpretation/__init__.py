@@ -48,12 +48,18 @@ from .ledger import (
 from .regime import (
     BREATH,
     PUMP,
+    NERVE,
     SCRIPT_CONCEPTUAL,
     SCRIPT_PHONETIC,
+    SCRIPT_RECOMBINANT,
     VALID_REGIMES,
     VALID_MODES,
     NATIVE_SCRIPT,
+    REGIME_ORDER,
+    AspectProfile,
+    predecessor,
     is_phonetic_projection,
+    is_spiral_projection,
 )
 from .weighting import WeightedField
 from .semantics import (
@@ -156,15 +162,21 @@ __all__ = [
     "KIND_SYMBOL",
     "KIND_MYTH",
     "NON_WORK_KINDS",
-    # the attention axis (breath vs pump)
+    # the attention axis (breath -> pump -> nerve)
     "BREATH",
     "PUMP",
+    "NERVE",
     "SCRIPT_CONCEPTUAL",
     "SCRIPT_PHONETIC",
+    "SCRIPT_RECOMBINANT",
     "VALID_REGIMES",
     "VALID_MODES",
     "NATIVE_SCRIPT",
+    "REGIME_ORDER",
+    "AspectProfile",
+    "predecessor",
     "is_phonetic_projection",
+    "is_spiral_projection",
     "WeightedField",
     # diachronic sense algebra
     "Sense",
