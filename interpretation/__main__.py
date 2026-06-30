@@ -36,7 +36,7 @@ from .atlas import atlas
 from .constellation import constellation
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
-from .lexicon import load_lexicon, proliferation, untranslatables
+from .lexicon import load_lexicon, proliferation, residence_times, untranslatables
 from .migration import migrate
 from .quartet import load_quartets
 from .spiral import breath_values, recohere, spiral
@@ -258,6 +258,13 @@ def cmd_untranslatables(args: argparse.Namespace) -> int:
     print(f"{len(items)} concept(s) a single tongue valued enough to name:")
     for u in items:
         print(f"  {u.word} ({u.language}) — {u.gloss}")
+    res = [r for r in residence_times(lex) if r.residence is not None]
+    if res:
+        print("\nresidence-time (years single-tongue before the shared lexicon adopted it):")
+        for r in res:
+            print(f"  {r.word} ({r.language}, {r.era}) — {r.residence} year(s)")
+        print("  the nerve era's signature: this time collapses toward zero — the network "
+              "shares what one tongue valued faster, the per-tongue boundary dissolving. Descriptive.")
     return 0
 
 

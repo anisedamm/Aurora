@@ -138,6 +138,8 @@ from .lexicon import (
     proliferation,
     Untranslatable,
     untranslatables,
+    Residence,
+    residence_times,
     SHARED_LANGUAGE,
 )
 from .imprint import Imprinter, ImprintReceipt, DEFAULT_AUTHOR
@@ -258,6 +260,8 @@ __all__ = [
     "EraPoint",
     "Proliferation",
     "proliferation",
+    "Residence",
+    "residence_times",
     "Untranslatable",
     "untranslatables",
     "SHARED_LANGUAGE",
