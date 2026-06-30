@@ -176,6 +176,22 @@
         "top-down/gestalt": "recognition"
       },
       "reading": "Where world and mind meet, crossed: bottom-up (sensory evidence) x top-down (prior expectation -- the predictive-processing axis) against feature (element) x gestalt (organized whole -- the breath<->pump axis). sensation = raw featural registration (an edge, a wavelength); grouping = features bound into a figure (Gestalt, stimulus-driven); prediction = the prior fed down to the features (predictive coding); recognition = the prior identifying the whole object. The percept is where they reconcile -- Bayes: posterior proportional to likelihood x prior, evidence x expectation -- so perception = (sensation x grouping) x (prediction x recognition). This is the UNFOLDING of the perception-cell of conscious-state: the first recorded instance of the fractal descent (conscious [the boundary] -> conscious-state [4] -> perception [4] -> ...), the 2^n layering made literal; only the boundary, consciousness, stops the regress upward. Through the spiral: breath = participatory perception (you perceive a presence that addresses you, perceiver and perceived not yet split); pump = detached observation (the world as measured stimulus); nerve = machine perception -- computer vision literally implements this quartet (pixels->sensation, feature-maps->grouping, weights->prediction, classification->recognition); the feed that perceives you, perception mediated by the screen, capturable (the deepfake fools it). The vision model IS nerve-perception, the quartet mechanised."
+    },
+    {
+      "id": "perspective",
+      "name": "The point of view -- situated seeing",
+      "keystone": "the-point-of-view",
+      "members": ["vantage", "blind spot", "foreground", "horizon"],
+      "row_axis": "pole", "row_poles": ["standpoint", "scene"],
+      "col_axis": "disclosure", "col_poles": ["reveal", "conceal"],
+      "breath_pump_axis": null,
+      "grid": {
+        "standpoint/reveal": "vantage",
+        "standpoint/conceal": "blind spot",
+        "scene/reveal": "foreground",
+        "scene/conceal": "horizon"
+      },
+      "reading": "Situated seeing -- the standpoint one apprehends FROM (where perception is the act, perspective is the position), crossed: standpoint (the from-which) x scene (the seen) against reveal (disclosed) x conceal (hidden) -- every perspective does both. vantage = what your position affords; blind spot = your position's own invisibility; foreground = what looms, salient from here; horizon = the limit beyond which the scene recedes. So perspective = (vantage x blind spot) x (foreground x horizon). The structural find: the BLIND SPOT cell IS the systematic boundary, localized -- you cannot see your own seeing (the eye cannot see itself). So the boundary has two locations: the horizon ABOVE (the single it descends from -- consciousness, origin) and the blind spot WITHIN (the standpoint that cannot appear in its own view) -- the same unseeable seeing, woven into every situated view, not only the ceiling of the system. Perspective is methodologically Aurora's whole concern: L3 anachronism IS a perspective error -- letting OUR standpoint (now) stand in for the past's, reading from a blind spot mistaken for a view; phonetic projection and spiral projection are the same failure. The discipline -- never let the reading that resonates now pass for the meaning it had then -- is the discipline of owning a perspective rather than universalizing it. Through the spiral: breath = participatory perspective (you are IN the scene, viewer and viewed not split); pump = the view from nowhere (objectivity, the God's-eye standpoint -- Renaissance linear perspective geometrized seeing into one fixed viewpoint and, by fixing it, denied it was one); nerve = fragmentation and capture (billions of perspectives, the filter bubble, 'my truth', and the curated feed -- the perspective you take for yours is the algorithm's; ties to world and truth). The breath<->pump axis is soft here, as in spine and existential -- recorded honestly, not forced."
     }
   ]
 }

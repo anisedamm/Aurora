@@ -19,13 +19,23 @@ def test_the_quartets_load_with_their_keystones():
     qs = _load()
     ids = {q.id for q in qs.quartets}
     assert ids == {"existential", "spine", "process", "substrate", "held", "agency",
-                   "animate", "language", "conscious-state", "perception"}
+                   "animate", "language", "conscious-state", "perception", "perspective"}
     assert qs.keystones["spine"] == "the-logos"
     assert qs.keystones["held"] == "the-held-whole"
     assert qs.keystones["agency"] == "the-animating-source"
     assert qs.keystones["animate"] == "anima"
     assert qs.keystones["language"] == "the-living-word"
     assert qs.keystones["perception"] == "the-percept"
+    assert qs.keystones["perspective"] == "the-point-of-view"
+
+
+def test_perspective_localizes_the_boundary_as_its_blind_spot():
+    # the systematic boundary appears WITHIN a quartet here: the blind-spot cell is the
+    # standpoint that cannot see itself (the boundary within, beside the boundary above)
+    persp = _load().by_id("perspective")
+    assert persp.cell("standpoint", "conceal") == "blind spot"
+    assert persp.breath_pump_axis is None     # soft, recorded honestly
+    assert "blind spot" in persp.reading.lower() and "boundary" in persp.reading.lower()
 
 
 def test_the_fractal_descent_perception_unfolds_a_conscious_state_cell():
