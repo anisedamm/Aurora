@@ -8,8 +8,10 @@
 > **re-coheres into a new whole at greater complexity**. It now carries worked examples
 > spanning a **two-facet** (structural × substantive) spectrum — net-born (§10 *viral*;
 > §12 *meme*/*friend*/*cloud*/*wiki*) and breath-origin (§14 *equilibrium*, the additivity
-> proof) — the `recoherences` data model (§11), the net **lexicon** side (§13), and the
-> `aspects` whole-picture view (§15). Only naming (§9.8) and build scope (§9.13) stay open.
+> proof) — the `recoherences` data model (§11), the net **lexicon** side (§13), the
+> `aspects` whole-picture view (§15), and an **adversarial** pass (§16, *spam*) that bounds
+> the thesis — the spiral must be able to *refuse*. Only naming (§9.8) and build scope
+> (§9.14) stay open.
 
 ## 0. The turn
 
@@ -143,6 +145,12 @@ as well as **restore** (the ouroboros worn to medieval ornament, then *restored*
 Jung's reading). The guardrail is what makes L4 re-cohere *to the truth* rather than
 merely re-cohere. Non-triumphalist, and faithful to the discipline.
 
+This guardrail governs the *verdict* — whether a return *succeeds*. §16 extends it to the
+*premise* — whether there is a return *at all*: some net signs are net-native origins or
+refusals of meaning, and the spiral must **refuse** them (a third outcome, `resistant`)
+rather than manufacture a return. Re-coherence is measured per sign, **never assumed of the
+regime**.
+
 ## 5. The regime profile — aspect scores *alongside* the label, and the whole picture
 
 The question shifts from **class** to **profile**: not *"what regime is a meme?"* but
@@ -211,7 +219,10 @@ Additive only. **L1 attestation stays the one gate**; every other measure stays
    breath/pump binary and all its behaviour bit-for-bit. Add the **aspect profile**
    type `{breath, pump, net}` (alongside, never replacing, the `regime` field).
 2. `reading.py` — add **L4 `recohere()`** beside `attest`/`read`/`drift`/`project`,
-   returning the §3 measure and a **two-facet** (structural, substantive) verdict (§4).
+   returning the §3 measure and a **two-facet** (structural, substantive) verdict (§4), or
+   the third outcome **`resistant`** (§16) when there is no honest `returns_to`. Add a
+   **spiral-projection** guard (the L4 analogue of `is_phonetic_projection`): a
+   `returns_to` reached for, not attested, is flagged, not honoured.
 3. A new **`spiral.py`** (generalising `arc`, validated on `equilibrium` in §14): one
    value read across all three phases — whole → segmented → re-cohered — with the
    re-coherence measure and two-facet verdict. `spiral` *calls* `arc` for the pre-net
@@ -236,7 +247,7 @@ Additive only. **L1 attestation stays the one gate**; every other measure stays
 | 2 | headline measure | **re-coherence** — return-resonance × complexity (inverts gap→return) | **locked** |
 | 3 | honesty guardrail | **faithful synthesis vs counterfeit aggregation** — measured, never assumed | **locked** |
 | 4 | regime treatment | **profile + label** — aspect scores `{breath,pump,net}` alongside the binary regime, **and** a whole-picture aggregate | **locked** |
-| 5 | net's thesis | net = the phase where segmentation **re-coheres to a whole at greater complexity** | **locked** |
+| 5 | net's thesis | net = the phase where segmentation **can** re-cohere to a whole at greater complexity — **measured per sign, never assumed of the regime** | **locked, bounded (§16)** |
 | 6 | seeds | `meme`/`wiki` (faithful exemplars); `viral`/`friend`/`cloud` (live inversions, §10/§12) | **worked (§10, §12)** |
 | 7 | measure inputs | complexity = differentiation × coherence; **resonance = (structural, substantive)**, two facets vs the `returns_to` retained field | **resolved (§3, §12)** |
 | 8 | naming | layer/command `spiral`; L4 op `recohere`; regime `net`; native script `recombinant`; data map `recoherences` | proposed |
@@ -244,16 +255,17 @@ Additive only. **L1 attestation stays the one gate**; every other measure stays
 | 10 | net lexicon | sixth *net* era; new `recombination` metric; `untranslatables` residence-time → 0 | **drafted (§13)** |
 | 11 | additivity | `spiral` reads breath-origin seeds and **completes** `arc` (validated on `equilibrium`) | **validated (§14)** |
 | 12 | whole-picture view | `aspects` = `constellation` over the profiles: clusters, the diagonal, the net keystone | **drafted (§15)** |
-| 13 | build scope | L4 + `spiral` + profiles + seeds + net lexicon era + `aspects`; full migrate/arc three-column extension optional after | open |
+| 13 | adversarial bound | `resistant` outcome + **spiral-projection** error + a `returns_to` honesty test (the spiral must be able to **refuse**) | **found (§16)** |
+| 14 | build scope | L4 (3 outcomes) + `spiral` + profiles + seeds + net lexicon era + `aspects`; full migrate/arc three-column extension optional after | open |
 
-Decisions 1–7 and 9–12 are now locked, worked, drafted, resolved, or validated on paper; 8
-is a proposed naming default (redline freely); **13 — the build scope — is the only thing
-left to choose before leaving scoping.** The §10–§15 work exercises the whole spiral by
-hand — **value scale** (`spiral`, on net-born *and* breath-origin values), **lexicon
-scale** (`proliferation`), and the **whole-picture** aggregate (`aspects`) — and confirms
-the guardrail **discriminates**: signs land across the two-facet spectrum rather than all
-being crowned. The architecture's three tests — discrimination, additivity, and the two
-scales agreeing — passed on paper.
+Decisions 1–7 and 9–13 are now locked, worked, drafted, resolved, validated, or found on
+paper; 8 is a proposed naming default (redline freely); **14 — the build scope — is the
+only thing left to choose before leaving scoping.** The §10–§16 work exercises the whole
+spiral by hand — **value scale** (`spiral`, net-born *and* breath-origin), **lexicon scale**
+(`proliferation`), the **whole-picture** aggregate (`aspects`), and an **adversarial** pass
+that bounds the thesis. The architecture's four tests — discrimination, additivity, the two
+scales agreeing, and *falsifiability* (it can refuse) — passed on paper. A measure that can
+fail is a measure that can mean something.
 
 ## 10. Worked example — *viral* through the spiral (by hand, no code)
 
@@ -688,3 +700,84 @@ without being told. Authored proxies throughout; descriptive, never a gate.
 **Model change (build phase):** a new `aspects` command (and an `atlas` line), reading the
 authored profiles off the glossary and running `constellation` over the net cluster. No
 new measure — a *reader*, like `atlas`; gates nothing.
+
+## 16. Adversarial test — a net sign that resists the spiral
+
+The architecture has passed three *confirming* tests (§12, §13, §14). A scope is only
+honest if it also tries to **break** itself. So: hunt for a net sign the spiral *cannot*
+read, and see what the failure teaches. This is the framework's own move — the labrys foil,
+the `signal` capstone — turned on the new layer.
+
+### The clean resister — `spam` (a net-native origin)
+
+`spam`: a tinned-meat brand (Hormel, 1937), routed through a Monty Python sketch, lands as
+**unsolicited bulk noise**. Run the spiral and the *first* phase already fails — there is
+**no breath whole** it returns *to*. Watch the measure try to supply one — *noise*, *the
+swarm*, *the locust-plague*, *genesis-from-chaos* — and every candidate is **reached for**,
+not attested. Spam is not a *return* to primordial chaos; it is a **new thing**, net-born,
+with no holistic ancestor and no pump segmentation behind it. The honest output is not a
+faithful or counterfeit verdict but a **refusal**:
+
+> `spiral spam` → **RESISTANT**: net-native origin; no honest `returns_to`. The spiral
+> declines to read a return where none exists.
+
+This is the **L1 move lifted to L4**: attestation refuses what cannot be shown; the spiral
+must refuse what cannot honestly be returned. The refusal *is* the finding.
+
+### The subtler danger — the spiral over-accommodates
+
+Worse than a sign it cannot read is the discovery that the spiral can read *almost
+anything*: reach far enough up the abstraction ladder and every net sign acquires an
+ancestor. `the algorithm` → *fate / the loom / moira / providence*; `deepfake` → *the idol
+/ the simulacrum*; `doomscroll` → *apocalyptic vigilance*. These readings are **seductive**
+— and that is exactly the alarm. A framework that can narrate a return for *any* sign
+**measures nothing**: it has gone unfalsifiable — the failure the whole project exists to
+forbid (a proxy wearing a proof's clothes). **The most beautiful re-coherence reading is
+the one to distrust most.**
+
+### What resists, in two types
+
+- **Type A — net-native origin.** No honest breath whole to return to (`spam`, `deepfake`,
+  `doxx`, `bot`). The spiral assumes net is a *return*; some net signs are *origins*.
+- **Type B — meaning's refusal.** Signs whose content *negates* a stable whole — *post-
+  irony*, the *shitpost*, "*random*", "lol nothing matters". There is no whole they fail to
+  reach; the point is that there is none.
+
+Both share one operational signature: **no honest `returns_to`** — which is exactly what
+separates *resistant* from *counterfeit*. `cloud` and `friend` have a real whole they
+*degrade* (so the two-facet verdict reads them); `spam` and the shitpost have **none to
+degrade**.
+
+### The new cardinal error — *spiral projection*
+
+Every layer has its projection. L3 catches **anachronism** (a later *sense* read into an
+earlier word) and **phonetic projection** (a later *mode of attention* read onto a breath
+sign). L4 has its own: **spiral projection** — reading the *re-coherence narrative* onto a
+net-native origin or a refusal of meaning, by **manufacturing a `returns_to`** it never
+honestly had. It is the framework's besetting temptation on this layer — and the prettier
+the return reads, the harder it must be checked.
+
+### Consequences for the architecture
+
+1. **Bound the thesis (revise decision 5).** Net is **not** "the regime that re-coheres,"
+   full stop — *that was itself a pre-decided verdict, the very thing the framework
+   forbids.* Net is the regime where meaning *can* re-cohere, *and also* fragment past
+   anything pump did, *and also* be born new. **Re-coherence is measured per sign, never
+   assumed of the regime.** This extends the §4 guardrail from the *verdict* to the
+   *premise*: §4 refused to assume a return *succeeds*; §16 refuses to assume there *is* one.
+2. **Add a third outcome: `resistant`** (beside faithful / counterfeit). The spiral, like
+   L1, must be able to say "no honest reading here" and refuse — surfaced, never forced.
+3. **A `returns_to` honesty test.** A `returns_to` must be a **specific, attested**
+   conceptual lineage carrying its provenance — not an abstraction reached for to make the
+   cycle run. When the only available ancestor is a vague keystone grabbed after the fact,
+   the sign is `resistant`, not re-cohering. (The framework's own provenance discipline,
+   applied to the net-side map.)
+4. **Name net's other face.** The spiral is the *return* arm; the adversarial signs reveal
+   a *fragmentation* arm — the infinite feed, context collapse, the filter bubble — that
+   the framework should at least **name**, even while it only *measures* re-coherence and
+   flags the rest `resistant`. (Whether to also *measure* fragmentation is a future
+   question; naming it bounds the present claim.)
+
+The framework passing this test is **not** the spiral reading `spam`. It is the spiral
+**refusing** to — and saying why. A measure that can fail is a measure that can mean
+something.
