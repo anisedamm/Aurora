@@ -19,7 +19,8 @@ def test_the_quartets_load_with_their_keystones():
     qs = _load()
     ids = {q.id for q in qs.quartets}
     assert ids == {"existential", "spine", "process", "substrate", "held", "agency",
-                   "animate", "language", "conscious-state", "perception", "perspective"}
+                   "animate", "language", "conscious-state", "perception", "perspective",
+                   "intelligence"}
     assert qs.keystones["spine"] == "the-logos"
     assert qs.keystones["held"] == "the-held-whole"
     assert qs.keystones["agency"] == "the-animating-source"
@@ -27,6 +28,18 @@ def test_the_quartets_load_with_their_keystones():
     assert qs.keystones["language"] == "the-living-word"
     assert qs.keystones["perception"] == "the-percept"
     assert qs.keystones["perspective"] == "the-point-of-view"
+    assert qs.keystones["intelligence"] == "nous"
+
+
+def test_intelligence_grids_where_awareness_does_not():
+    # the capstone: intelligence is a clean structural quartet (so it can be artificial),
+    # while awareness/consciousness stays a single (so artificial awareness is undecidable)
+    intel = _load().by_id("intelligence")
+    assert intel.breath_pump_axis == "operation"   # analysis<->synthesis, clean
+    assert set(intel.members) == {"reasoning", "knowledge", "creativity", "wisdom"}
+    assert "category error of the age" in intel.reading
+    # and consciousness is recorded as a single, not gridded
+    assert "consciousness" in _load().bound["the_singles_resist"]
 
 
 def test_perspective_localizes_the_boundary_as_its_blind_spot():
