@@ -1,6 +1,6 @@
 # Scope — the *spiral*: re-coherence and the information age
 
-> **Status: SCOPING COMPLETE. Architecture locked; build-ready (plan in §17); code not yet started.**
+> **Status: SCOPING COMPLETE. Architecture locked; build-ready (plan in §21); code not yet started.**
 > Supersedes the earlier `net-regime-scope.md`, which framed the information age as a
 > third *regime pole*. This revision reframes it as the **closing of a spiral**: the
 > layers become a cycle, the headline measure inverts from *division* to *return*, and
@@ -11,8 +11,10 @@
 > proof) — the `recoherences` data model (§11), the nerve **lexicon** side (§13), the
 > `aspects` whole-picture view (§15), and an **adversarial** pass (§16, *spam*) that bounds
 > the thesis — the spiral must be able to *refuse*. The regime is **`nerve`** (the *mode*;
-> the *net* is its medium), defined as a bodily/hemispheric system in §1. All fourteen
-> decisions (§9) are settled and the build plan is laid out in §17 — scoping is **done**.
+> the *net* is its medium), defined as a bodily/hemispheric system in §1. A review pass
+> added the fragmentation measure (§17 `scatter`), the reflexive-reader risk (§18), and
+> L1's nerve-regime traps (§19). All sixteen decisions (§9) are settled and the build plan
+> is in §21 — scoping is **done**.
 
 ## 0. The turn
 
@@ -278,14 +280,18 @@ Additive only. **L1 attestation stays the one gate**; every other measure stays
 | 11 | additivity | `spiral` reads breath-origin seeds and **completes** `arc` (validated on `equilibrium`) | **validated (§14)** |
 | 12 | whole-picture view | `aspects` = `constellation` over the profiles: clusters, the diagonal, the nerve keystone | **drafted (§15)** |
 | 13 | adversarial bound | `resistant` outcome + **spiral-projection** error + a `returns_to` honesty test (the spiral must be able to **refuse**) | **found (§16)** |
-| 14 | build scope | phased plan A–D (foundation → `spiral` → lexicon → close); three-column extension = optional phase E | **resolved (§17)** |
+| 14 | build scope | phased plan A–D (foundation → `spiral` → lexicon → close); three-column extension = optional phase E | **resolved (§21)** |
+| 15 | nerve's two faces | **`scatter`** — the fragmentation force within nerve, measured beside `recohere`; disambiguates `resistant` | **added (§17)** |
+| 16 | methodology | the **reflexive** risk (a recombinant reader is a spiral-projection engine, §18); L1's **superabundance** traps (§19); the **resisted** ideas recorded (§20) | **named (§18–§20)** |
 
-**All fourteen decisions are settled — scoping is complete.** The §10–§16 work exercises
+**All sixteen decisions are settled — scoping is complete.** The §10–§16 work exercises
 the whole spiral by hand — **value scale** (`spiral`, nerve-born *and* breath-origin),
 **lexicon scale** (`proliferation`), the **whole-picture** aggregate (`aspects`), and an
-**adversarial** pass that bounds the thesis. The architecture's four tests — discrimination,
-additivity, the two scales agreeing, and *falsifiability* (it can refuse) — passed on paper.
-A measure that can fail is a measure that can mean something. The build plan is §17.
+**adversarial** pass that bounds the thesis; a **review pass** (§17–§20) then measured
+nerve's fragmentation face, named the reflexive risk, and bounded what was deliberately
+left out. The architecture's four tests — discrimination, additivity, the two scales
+agreeing, and *falsifiability* (it can refuse) — passed on paper. A measure that can fail
+is a measure that can mean something. The build plan is §21.
 
 ## 10. Worked example — *viral* through the spiral (by hand, no code)
 
@@ -595,6 +601,17 @@ re-coheres one value across the threshold; at the **lexicon** scale, `proliferat
 re-coheres the whole vocabulary, and the *nerve* era is where that re-coherence becomes
 **generative and global**. Same spiral, two magnifications.
 
+**What the nerve coins reveal the culture values.** Lexicalisation is valuation
+(§ `lexicon.py`), so the nerve era's new words are a mirror of what the nerve culture
+holds and fears. They cluster tellingly — *doomscroll, ghosting, cringe, sus, parasocial,
+based, mid* — around **attention, authenticity, social calibration, and mental health**:
+the vocabulary of *mediated sociality* and its pathologies. Where the agrarian era named
+*water* and *kin*, and the reflexive era named *empathy* and *wellbeing*, the nerve era
+names the textures of a self performed to a network. That is the founding question — *use
+the past to understand the cultural change* — answered in the coins themselves: a culture
+names what it must newly navigate. (Descriptive; a reading the lexicon surfaces, not a
+verdict on the age.)
+
 **Model change (build phase):** `lexicon.json` gains nerve-era lexemes (*doomscroll,
 ghosting, selfie, hashtag, stream, cloud, viral, meme, …*), each with `valued_for`,
 `experiential`, and `defined_in_terms_of` (its recombination parents); `lexicon.py` gains
@@ -792,17 +809,125 @@ the return reads, the harder it must be checked.
    cycle run. When the only available ancestor is a vague keystone grabbed after the fact,
    the sign is `resistant`, not re-cohering. (The framework's own provenance discipline,
    applied to the nerve-side map.)
-4. **Name nerve's other face.** The spiral is the *return* arm; the adversarial signs reveal
-   a *fragmentation* arm — the infinite feed, context collapse, the filter bubble — that
-   the framework should at least **name**, even while it only *measures* re-coherence and
-   flags the rest `resistant`. (Whether to also *measure* fragmentation is a future
-   question; naming it bounds the present claim.)
+4. **Name nerve's other face — then measure it.** The spiral is the *return* arm; the
+   adversarial signs reveal a *fragmentation* arm — the infinite feed, context collapse,
+   the filter bubble. The scoping-review pass took this from a name to a measure: **`scatter`
+   (§17)**, the division force within the nerve regime, which also disambiguates the
+   overloaded `resistant` (a net-native origin scatters little; the feed scatters much).
 
 The framework passing this test is **not** the spiral reading `spam`. It is the spiral
 **refusing** to — and saying why. A measure that can fail is a measure that can mean
 something.
 
-## 17. The build plan (resolving decision 14)
+## 17. The fragmentation arm — nerve's other face, measured (`scatter`)
+
+§16 named a *fragmentation* arm and deferred measuring it — and that deferral left
+`resistant` overloaded, lumping three different things under one word: a net-native
+**origin** (`spam`), a **refusal** of meaning (the shitpost), and a sign that **actively
+dis-coheres** (the infinite feed, doomscroll, context collapse). The first is merely new;
+the others *do* something to meaning — the opposite of re-coherence. So the framework needs
+the counterpart measure.
+
+**`scatter` — division within the nerve regime.** Where `recohere` measures the *return* of
+segments to a whole, `scatter` measures the *re-dispersal* of a whole into context-collapsed
+fragments: how much a sign **decreases** the connectedness of a field (the inverse of §3's
+`complexity` / largest-component measure) — attention split, context stripped, the gestalt
+refused. The feed scatters (an infinite stream engineered against closure); doomscroll
+scatters (compulsive fragments, no synthesis); the shitpost scatters (meaning negated).
+
+This completes the picture the spiral half-drew — the full set of forces across the threshold:
+
+| force | direction | measure |
+|-------|-----------|---------|
+| **migrate** | breath → pump: a whole *dispersed* into shards | `migrate` |
+| **recohere** | pump → nerve: shards *returned* to a whole (the spiral) | `recohere` |
+| **scatter** | within nerve: a whole *re-dispersed* into fragments | `scatter` (new) |
+
+And it **disambiguates `resistant`**: a sign the spiral refuses is now read by `scatter`
+too — `spam` scatters *low* (a net-native origin, not an attack on an existing whole), while
+the feed and the shitpost scatter *high* (they take a whole and break it). Nerve's two faces
+are no longer one named and one flagged; both are **measured**.
+
+**The honest reading of a nerve sign is the pair** `(recohere, scatter)` — is it returning
+us to a whole, or scattering us further, and how much of each? Most do some of both: the
+`meme` re-coheres (a gestalt held) yet scatters (endless low-effort variants); `viral` does
+both at once. Reporting the pair, never collapsing it, is the same discipline as the
+two-facet resonance (§3): descriptive, never a gate.
+
+*Model change:* `scatter()` beside `recohere()` in `reading.py` (or a small `fragment.py`);
+CLI `scatter <sign>`; `aspects` (§15) can colour each nerve sign by its `(recohere, scatter)`
+balance. Authored proxies, provisional, never a gate.
+
+## 18. The reflexive turn — the instrument is a nerve artifact
+
+The framework has turned its discipline on its own record (`signal`) and its own foil (the
+labrys read phonetically). One mirror it has not yet held up: **the reader running these
+measures is itself a nerve-regime artifact.** A large language model is recombinant,
+statistical, authorless — sense computed from a field of neighbours — the nerve mode made a
+machine. And it is *optimised to produce fluent, plausible re-coherences on demand*, which
+makes it precisely a **spiral-projection engine** (§16): the tool most able to narrate a
+beautiful `returns_to` for any sign is the one least able to feel when the return is
+manufactured.
+
+This sharpens the guard rather than decorating it. **`is_spiral_projection` matters *most*
+when the reader is recombinant** — the prettier the gloss, the harder it must be checked —
+and the framework's existing rule already half-anticipates this: a **mirror**-produced
+reading (`provenance`) must declare its lineage and is never silently promoted to an
+origination. §16's `returns_to` honesty test is that same rule, aimed at the same risk, now
+named at its source. The framework reading the nerve regime *is the nerve regime reading
+itself* — the ouroboros (§2) one turn deeper than the metaphor.
+
+It also gives the **synthetic breath** (§4) its literal, present-day instance: LLM-generated
+text is the paradigm counterfeit re-coherence — high *structural* fidelity (the exact form
+of coherent, grounded meaning) over uncertain *substantive* fidelity (recombination without
+a ground or an intent). The counterfeit the framework was built to catch is now
+mass-produced — by tools like the one that helped write this. Naming that is the reflexive
+honesty the whole project runs on.
+
+## 19. L1 in the nerve regime — the superabundance trap
+
+The scope has said repeatedly that L1 attestation gets *easier* in the nerve regime: the
+whole internet is cited usage. True — and the one layer that genuinely **gates** deserves
+the harder half of the truth. Superabundant usage brings failure modes the earlier regimes
+never had:
+
+- **ephemerality** — the usage deletes itself: dead links, removed posts, edited threads.
+  An attestation can evaporate *after* it is cited (the inverse of the breath problem, where
+  scarce attestations *survive*). The ledger's rule — *anchor to a witness you do not
+  control* — becomes load-bearing: a nerve usage must be **archived** (a timestamped
+  capture), not merely linked.
+- **synthetic pollution** — much nerve-era text has **no human behind it**. A usage may be
+  bot- or AI-generated, so "shown in a cited text" no longer implies "a culture meant it."
+  L1 must attest not only that a sign was *used* but that it was used by a *cultural source*
+  — the corpus itself now needs provenance.
+- **personalised / owned context** — the "same" usage differs per viewer (no two feeds are
+  alike) and sits on owned infrastructure; there may be no single public text to point at,
+  and the citation is to a context that may be unreproducible.
+
+None of these blocks attestation — L1 stays the one gate — but they are **new ways for the
+gate to be fooled**, and the framework that prides itself on never letting a proxy wear a
+proof's clothes should name them before it trusts a nerve citation. The fix is its own
+discipline, intensified: capture and anchor; declare the corpus's provenance; treat
+synthetic usage as *evidence of the machine*, not of the culture, unless a human source is
+shown.
+
+## 20. Deliberately out of scope (considered and declined)
+
+Recording what was *resisted*, so the next reader knows it was weighed, not missed:
+
+- **A second spiral turn / a post-nerve regime.** Tempting to model where the nerve whole
+  goes next. Declined: we are inside the *first* nerve turn with no hindsight, and projecting
+  a future regime is exactly the unfalsifiable over-reach (`spiral projection`) the framework
+  forbids. The honest move is to mark it out of scope, not to model it.
+- **A third resonance facet (durability / persistence).** Nerve signs are famously
+  ephemeral, tempting a "does it last" axis beside structural and substantive (§3). Declined:
+  persistence belongs *inside* substantive fidelity (a re-coherence that evaporates was never
+  substantively whole), and adding axes is where measures lose their edge. Folded, not added.
+
+Both may earn their place once Phase A–D are built and the nerve regime affords more
+hindsight. Recorded here as **deferred, not dismissed**.
+
+## 21. The build plan (resolving decision 14)
 
 The scope is complete; this sequences §8's model changes into ordered phases. Each phase
 is **additive**, ends with the suite green and **`signal == 1`**, and leaves the
@@ -825,6 +950,8 @@ three-column `migrate`/`arc` generalisation (phase E) is genuinely optional and 
 - `reading.py`: `recohere(usage, recoherence)` → the §3 measure with the two-facet
   `(structural, substantive)` verdict, **or** `resistant` when there is no honest
   `returns_to` (the §16 honesty test, via `is_spiral_projection`).
+- `scatter()` (§17) beside `recohere()` — the fragmentation counterpart (division within
+  nerve); the honest reading of a nerve sign is the `(recohere, scatter)` pair.
 - `spiral.py`: `spiral(value)` — calls `arc` for the breath/pump phases, adds the nerve
   phase + verdict (generalises, does not replace, `arc`).
 - `glossary.json`: the `recoherences` block (§11) for `viral`, `meme`, `friend`, `cloud`,
@@ -843,7 +970,9 @@ three-column `migrate`/`arc` generalisation (phase E) is genuinely optional and 
 
 ### Phase D — the whole picture and the close
 - `aspects` command (and an `atlas` line): `constellation` over the profiles — clusters,
-  the diagonal, the nerve keystone (§15).
+  the diagonal, the nerve keystone (§15); colour each sign by its `(recohere, scatter)` balance.
+- the nerve-coin valuation reading (§13) and the L1-attestation cautions (§19) carried into
+  the seed data: nerve usages **archived and anchored**, synthetic usage marked.
 - tests for every new module; `seed.py` re-run; `manifest` refresh; CI runs `signal`.
 - *Delivers:* §15, and the repository proving its own `signal == 1` with nerve seeded.
 
@@ -853,11 +982,14 @@ three-column `migrate`/`arc` generalisation (phase E) is genuinely optional and 
 
 ## Scoping complete
 
-All fourteen decisions (§9) are settled. The architecture is **bounded** (§16),
-**self-consistent**, **consistently named** (§1, §8), and **validated on paper** at both
-scales (§10–§14) and against an adversarial case (§16). The document is now a build-ready
-specification: §8 says *what* changes, §17 says *in what order*, and the invariant —
-`signal == 1`, breath/pump untouched, descriptive-never-a-gate — holds at every step.
+All sixteen decisions (§9) are settled. The architecture is **bounded** (§16),
+**self-consistent**, **consistently named** (§1, §8), **validated on paper** at both
+scales (§10–§14) and against an adversarial case (§16), and **deepened by a review pass**:
+the fragmentation arm now measured (§17), the reflexive risk of a recombinant reader named
+(§18), L1's nerve-regime traps named (§19), and the resisted ideas recorded (§20). The
+document is now a build-ready specification: §8 says *what* changes, §21 says *in what
+order*, and the invariant — `signal == 1`, breath/pump untouched, descriptive-never-a-gate
+— holds at every step.
 
 > **The through-line.** Breath held meaning whole; pump segmented it; nerve returns the
 > segments to a whole at greater complexity — *when* it does, and the spiral measures
