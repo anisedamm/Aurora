@@ -46,7 +46,7 @@ def test_by_id_returns_the_latest_version(tmp_path):
 
 
 def test_domain_fields_survive_the_round_trip(tmp_path):
-    led = _seed(tmp_path)
+    _seed(tmp_path)
     reloaded = Ledger(tmp_path / "ledger.jsonl")
     usage = reloaded.by_id("u")
     assert usage.kind == "usage" and usage.word == "revolution" and usage.year == 1689

@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from interpretation.quartet import Quartet, load_quartets
+from interpretation.quartet import load_quartets
 
 QUARTETS = Path(__file__).resolve().parents[1] / "quartets.json"
 
