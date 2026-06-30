@@ -12,7 +12,7 @@
   "bound": {
     "_note": "What keeps this a structure and not numerology -- stated so the next reader knows it was guarded.",
     "synchronic_only": "The 2x2 is the structure of a meaning AT REST. Where meaning becomes temporal it goes triadic (time takes 3) or single (duree takes 1). The grid is space; time is the axis the cells are traversed along.",
-    "the_singles_resist": "The purest wholes split at the instant of naming (Being against Nothing; the One against the Many -- 'the One' is itself a pump-shard of unity; consciousness against its object). The only true single is the unnamed; it is the horizon, not a cell.",
+    "the_singles_resist": "The purest wholes split at the instant of naming (Being against Nothing; the One against the Many -- 'the One' is itself a pump-shard of unity; consciousness against its object; origin against what descends from it). The only true single is the unnamed; it is the horizon, not a cell. Such a single is a SYSTEMATIC BOUNDARY -- what a system looks FROM, not AT (the eye cannot see itself seeing): Being, consciousness, time, origin are one boundary worn four ways, the seam between the system and what it rests on. The framework keeps the boundary rather than crossing it -- L1 admits meaning from outside, signal's direction(truth) points outward to a witness it cannot author, and the chain's own root (the naming) was given from outside. See the thought-flow entry 'The origin as a systematic boundary'. NOTE: a single's downstream DOES grid -- origin is a single but origination (the four causes) is a quartet; consciousness is a single but the conscious-state grids; so the boundary stops the regress upward, not the analysis downward.",
     "the_pentad_test": "A clean irreducible synchronic five would falsify the 2^n structure. Conceptual fives dissolve (the elements: Greeks cut at four -- hot/cold x wet/dry; Chinese at five; the senses, the Big Five, the five stages -- each a continuum sampled or a process sequenced). Irreducible fives exist in MATHEMATICS (the five Platonic solids; the quintic with no formula where the quartic has one), which bounds the claim rather than breaking it: 2^n is a tendency of conceptual meaning, not a law of all structure.",
     "discipline": "Descriptive, never a gate. The grids are authored proxies. The resonance that expressibility tops out at four and breaks at five is held lightly -- as resonance, not proof; to take it for proof would be the very counterfeit the framework exists to catch."
   },
@@ -144,6 +144,38 @@
         "meaning/token": "sense"
       },
       "reading": "Language's own structure, crossed: form (signifier) x meaning (signified) against type (langue, the system) x token (parole, the instance in use). word = the sign-type; usage = the attested instance (the word shown in a cited text -- what L1 gates on); concept = the headword meanings gather under; sense = what it meant HERE. The form<->meaning axis IS the framework's spine ('a word is not a concept') and the breath<->pump axis: form is the pump-spelled sign, meaning the breath-held sense. So language = (word x usage) x (concept x sense), the sign-pair x the sense-pair. The reflexive surprise: word/usage/concept/sense ARE Aurora's own data model -- the instrument is built out of the very structure it studies. The keystone, the LIVING WORD, is the breath-unity of sound-and-sense before the pump split signifier from signified; the framework's whole discipline is the labour of working after that dispersal. Through the spiral, language's three SCRIPTS are the three regimes: breath = the conceptual sign that holds meaning whole (the name that invokes); pump = the phonetic sign that spells a sound and defers to a lexicon (Saussure's arbitrary sign, the dictionary -- the disenchantment of the word); nerve = the recombinant sign, sense from neighbours and context (the embedding word -- the LLM is nerve-language). So language holds both the 4 (its synchronic units) and the 3 (its diachronic scripts) -- the quartet and the spiral on the one concept the system is named for. The most reflexive quartet, fitting that the system was first named Language."
+    },
+    {
+      "id": "conscious-state",
+      "name": "The conscious state -- the dimensions of being aware",
+      "keystone": "the-conscious-field",
+      "members": ["wakefulness", "attention", "presence", "perception"],
+      "row_axis": "grain", "row_poles": ["field", "focus"],
+      "col_axis": "aspect", "col_poles": ["state", "content"],
+      "breath_pump_axis": "grain",
+      "grid": {
+        "field/state": "wakefulness",
+        "field/content": "presence",
+        "focus/state": "attention",
+        "focus/content": "perception"
+      },
+      "reading": "The dimensions of a conscious STATE -- not consciousness itself, which is a single (a systematic boundary: the observer can never get behind the seeing; its unity, the binding problem, is the resistance made constitutive). The state grids where the subject does not: field (the whole conscious field) x focus (the attended part -- the breath<->pump axis) against state (the level of being-on) x content (what is present). wakefulness = the field is on; presence = the ambient whole given peripherally; attention = the focal selecting; perception = the focal object -- which itself unfolds into its own quartet (the fractal descent). So conscious-state = (wakefulness x attention) x (presence x perception). Even these strain toward unity: the binding problem is consciousness-the-single reasserting inside its own analysis. Through the spiral: breath = participatory presence (the world addressing you); pump = detached observation (the spectator behind the eyes, the view from nowhere); nerve = the attention economy -- field and focus captured and metered, attention sold, presence scrolled away. Whether an LLM has a conscious state is undecidable from outside: attestation reaches behaviour, never the seeing -- the boundary again."
+    },
+    {
+      "id": "perception",
+      "name": "The percept -- where world and mind meet",
+      "keystone": "the-percept",
+      "members": ["sensation", "grouping", "prediction", "recognition"],
+      "row_axis": "source", "row_poles": ["bottom-up", "top-down"],
+      "col_axis": "grain", "col_poles": ["feature", "gestalt"],
+      "breath_pump_axis": "grain",
+      "grid": {
+        "bottom-up/feature": "sensation",
+        "bottom-up/gestalt": "grouping",
+        "top-down/feature": "prediction",
+        "top-down/gestalt": "recognition"
+      },
+      "reading": "Where world and mind meet, crossed: bottom-up (sensory evidence) x top-down (prior expectation -- the predictive-processing axis) against feature (element) x gestalt (organized whole -- the breath<->pump axis). sensation = raw featural registration (an edge, a wavelength); grouping = features bound into a figure (Gestalt, stimulus-driven); prediction = the prior fed down to the features (predictive coding); recognition = the prior identifying the whole object. The percept is where they reconcile -- Bayes: posterior proportional to likelihood x prior, evidence x expectation -- so perception = (sensation x grouping) x (prediction x recognition). This is the UNFOLDING of the perception-cell of conscious-state: the first recorded instance of the fractal descent (conscious [the boundary] -> conscious-state [4] -> perception [4] -> ...), the 2^n layering made literal; only the boundary, consciousness, stops the regress upward. Through the spiral: breath = participatory perception (you perceive a presence that addresses you, perceiver and perceived not yet split); pump = detached observation (the world as measured stimulus); nerve = machine perception -- computer vision literally implements this quartet (pixels->sensation, feature-maps->grouping, weights->prediction, classification->recognition); the feed that perceives you, perception mediated by the screen, capturable (the deepfake fools it). The vision model IS nerve-perception, the quartet mechanised."
     }
   ]
 }

@@ -18,12 +18,24 @@ def _load():
 def test_the_quartets_load_with_their_keystones():
     qs = _load()
     ids = {q.id for q in qs.quartets}
-    assert ids == {"existential", "spine", "process", "substrate", "held", "agency", "animate", "language"}
+    assert ids == {"existential", "spine", "process", "substrate", "held", "agency",
+                   "animate", "language", "conscious-state", "perception"}
     assert qs.keystones["spine"] == "the-logos"
     assert qs.keystones["held"] == "the-held-whole"
     assert qs.keystones["agency"] == "the-animating-source"
     assert qs.keystones["animate"] == "anima"
     assert qs.keystones["language"] == "the-living-word"
+    assert qs.keystones["perception"] == "the-percept"
+
+
+def test_the_fractal_descent_perception_unfolds_a_conscious_state_cell():
+    qs = _load()
+    # conscious-state has perception as one of its cells (focus x content);
+    # perception then unfolds into its own 2x2 -- the recursive layering
+    assert qs.by_id("conscious-state").cell("focus", "content") == "perception"
+    assert set(qs.by_id("perception").members) == {"sensation", "grouping", "prediction", "recognition"}
+    # the bound records that a single's downstream grids even though the single does not
+    assert "downstream DOES grid" in qs.bound["the_singles_resist"]
 
 
 def test_language_quartet_is_the_frameworks_own_data_model():
