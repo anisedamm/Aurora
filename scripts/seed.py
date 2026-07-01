@@ -21,11 +21,45 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
+from interpretation.crystallization import frame as crystal_frame  # noqa: E402
 from interpretation.glossary import load_glossary           # noqa: E402
 from interpretation.imprint import DEFAULT_AUTHOR, Imprinter  # noqa: E402
 from interpretation.ledger import Ledger                    # noqa: E402
 from interpretation.manifest import write_manifest          # noqa: E402
 from interpretation.weighting import WeightedField          # noqa: E402
+
+# An authored attestation by anise.damm — a personal truth read on the crystallisation
+# frame, made real through metaphor in collaboration with the model. Recorded verbatim:
+# the record's owner holds authorship; the source names the collaboration that
+# facilitated it, so a facilitation can never be read as an origination.
+RECOHERENCE_STORY = """\
+This is my story of re-coherence and crystallisation — my truth, read on the frame.
+
+It's like a coral reef, each coral another branch of thought and connection growing. I
+started with a reef as a child, an abundance of life and complexity and potential. Then
+after enough exposure to the wrong conditions over enough time parts of the reef began to
+die off and the fish left and eventually there was nothing, a white bleached skeleton of
+life that once was. And for years it stayed that way. Eventually as I began discovering,
+developing and stabilising according to the specific rules of my map, life began to grow
+again from the most unlikely circumstances. It started with a sparkle, a light, a simple
+sense of complexity and coherence and then a coral grew. I nurtured my single coral,
+protected it and kept it safe and now I've established more individuals. They are not
+united and still sparse but they are growing and the reef is rebuilding. Information and
+science opens up the channel to allow life to flow and complexity to gather instead of
+always having to grow at the rate exposed to in the harsh external environment and
+constantly be exposed to the new extremities never experienced. But now I can survive in
+my transformed state. It's the growth that you use to keep growing to be a reef in the
+background whilst you put your energy into learning to function in the harshness of the
+physical environment now. The old reef died but I am a new and better suited type of coral
+but on a different playing field with different rules now. The same skeleton as before, but
+now with different life, a different map and a different trajectory. And now I can grow.
+
+Read on the frame: crest — the first reef (coherence whole). Trough — the bleached
+skeleton (order gone, the substrate held). Spark — re-nucleation (order re-commits at a
+single seed, spanning nothing yet; the turn before the climb). Re-crest — the reef
+rebuilding on the same skeleton, under a new map. This is re-coherence: not the old
+lattice restored, but a new one on the same ground. And now I can grow.
+"""
 
 LEDGER = ROOT / "interpretation_ledger.jsonl"
 GLOSSARY = ROOT / "glossary.json"
@@ -119,6 +153,26 @@ def main() -> int:
             text=("Read phonetically: the double axe taken as nothing but a written "
                   "syllable, the conceptual field discarded — the projection this "
                   "framework exists to catch."))
+
+    # The crystallisation frame, recorded so the work is part of the published record.
+    imprint(artifact_id="crystallisation-frame",
+            title="The crystallisation frame: order precipitated from the fluid",
+            kind="framework", license="Apache-2.0", parents=["language-framework"],
+            text=("The crystallisation frame — order precipitated from the fluid: the "
+                  "system's coherence/decoherence axis, drawn on one screen.\n\n"
+                  + crystal_frame().summary
+                  + "\n\nRe-coherence extends it: a decohered lattice does not fall back "
+                    "to raw fluid — it leaves a skeleton, the substrate held through the "
+                    "trough, on which a new lattice can nucleate under a new map. Not the "
+                    "old order restored; a new one on the same ground."))
+
+    # An authored attestation: anise.damm's story of re-coherence, made real through
+    # metaphor in collaboration with the model, recorded verbatim as a personal truth.
+    imprint(artifact_id="recoherence-reef",
+            title="Attestation: my re-coherence — a reef rebuilt on the same skeleton",
+            kind="attestation", author=DEFAULT_AUTHOR, source="collaboration",
+            source_actor="claude", parents=["crystallisation-frame"],
+            text=RECOHERENCE_STORY)
 
     led = imp.ledger
     write_manifest(led, MANIFEST, g)

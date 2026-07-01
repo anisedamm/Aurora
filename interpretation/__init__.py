@@ -126,6 +126,31 @@ from .lexicon import (
 from .imprint import Imprinter, ImprintReceipt, DEFAULT_AUTHOR
 from .manifest import build_manifest, write_manifest
 from .arc import Arc, ArcStop, arc
+from .crystallization import (
+    Crystallisation,
+    Recoherence,
+    CrystalState,
+    CrystalFrame,
+    Quadrant,
+    crystallise,
+    recohere,
+    read_state,
+    memberships,
+    quadrant,
+    frame,
+    SKELETON,
+    SCALE_FIELD,
+    SCALE_SEED,
+    PHASE_FLUID,
+    PHASE_FIXED,
+    SUPERSATURATION,
+    LATTICE,
+    FLUCTUATION,
+    NUCLEUS,
+    KEYSTONE,
+    QUARTET,
+    PRECIPITATION,
+)
 from .signal import Signal, compute_signal
 from .atlas import Atlas, atlas
 
@@ -239,6 +264,30 @@ __all__ = [
     "Arc",
     "ArcStop",
     "arc",
+    # crystallisation: the crystal — order precipitated from the fluid (the quartet)
+    "Crystallisation",
+    "Recoherence",
+    "CrystalState",
+    "CrystalFrame",
+    "Quadrant",
+    "crystallise",
+    "recohere",
+    "read_state",
+    "memberships",
+    "quadrant",
+    "frame",
+    "SKELETON",
+    "SCALE_FIELD",
+    "SCALE_SEED",
+    "PHASE_FLUID",
+    "PHASE_FIXED",
+    "SUPERSATURATION",
+    "LATTICE",
+    "FLUCTUATION",
+    "NUCLEUS",
+    "KEYSTONE",
+    "QUARTET",
+    "PRECIPITATION",
     # the capstone: signal = integrity x direction(truth)
     "Signal",
     "compute_signal",
