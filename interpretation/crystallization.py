@@ -225,6 +225,9 @@ def _as_state(stop) -> CrystalState:
     if isinstance(stop, CrystalState):
         return stop
     if isinstance(stop, str):
+        if "," in stop:  # an "extent,order" coordinate pair, e.g. "0.3,1.0"
+            extent, order = (float(x) for x in stop.split(",", 1))
+            return read_state(extent, order)
         q = QUADRANTS.get(stop)
         if q is None:
             raise ValueError(f"unknown quadrant {stop!r}; expected one of {sorted(QUADRANTS)}")
@@ -288,6 +291,119 @@ def crystallise(stops) -> Crystallisation:
     crystallisation — order precipitating from the fluid; a fall is decoherence.
     """
     return Crystallisation(stops=[_as_state(s) for s in stops])
+
+
+# A decohered lattice does not fall back to raw fluid: it leaves a **skeleton** — the
+# substrate that once carried the order, held dormant through the trough. This is what
+# separates re-coherence from a first crystallisation: order re-nucleates on a *retained*
+# skeleton, under a new map, and climbs to a *new* lattice — not the old one restored.
+SKELETON = "skeleton"
+
+
+@dataclass
+class Recoherence:
+    """A second coherence, grown on the skeleton a decohered lattice left behind.
+
+    The arc: coherence → decoherence → a dormant skeleton → re-nucleation (a spark of
+    order re-committing at a seed, still spanning nothing) → re-coherence, climbing to a
+    *new* lattice. It is not the old lattice restored — it is a new one, on the same
+    substrate, under a new map. The same shape `arc.py` names when a whole sign,
+    dispersed across the threshold, re-coheres into the phonetic web in a new mode.
+    """
+
+    stops: list[CrystalState] = field(default_factory=list)
+    same_skeleton: bool = True   # authored: the substrate persisted through the trough
+    new_map: bool = True         # authored: the re-coherence follows new rules, not the old
+
+    @property
+    def coherences(self) -> list[float]:
+        return [s.coherence for s in self.stops]
+
+    @property
+    def _trough_index(self) -> int:
+        cs = self.coherences
+        if not cs:
+            return 0
+        return min(range(len(cs)), key=lambda i: (cs[i], i))
+
+    @property
+    def crest(self) -> float:
+        """The first reef: the highest coherence reached before the trough."""
+        return max(self.coherences[: self._trough_index + 1], default=0.0)
+
+    @property
+    def trough(self) -> float:
+        """The bleached skeleton: the lowest coherence — order gone, substrate held."""
+        cs = self.coherences
+        return cs[self._trough_index] if cs else 0.0
+
+    @property
+    def recrest(self) -> float:
+        """The rebuilding reef: the highest coherence reached after the trough."""
+        return max(self.coherences[self._trough_index :], default=0.0)
+
+    @property
+    def renucleation(self) -> int | None:
+        """The spark: the first stop after the trough where order re-commits at a seed.
+
+        Order has turned (phi fixed) but nothing spans yet (coherence still low) — the
+        turn happens before the climb is visible. 'It started with a sparkle, a light.'
+        """
+        for i in range(self._trough_index, len(self.stops)):
+            s = self.stops[i]
+            if s.order > 0.5 and s.coherence <= 0.5:
+                return i
+        return None
+
+    @property
+    def decohered(self) -> bool:
+        return self.crest - self.trough > 1e-9
+
+    @property
+    def re_cohered(self) -> bool:
+        return self.recrest - self.trough > 1e-9
+
+    @property
+    def is_recoherence(self) -> bool:
+        """A fall to a skeleton, then a new climb grown on it — not restoration."""
+        return self.decohered and self.re_cohered and self.same_skeleton
+
+    @property
+    def summary(self) -> str:
+        verdict = "re-coherence" if self.is_recoherence else "not yet re-coherence"
+        rows = [
+            f"{verdict}: a second climb on a retained skeleton",
+            f"  crest    — the first reef:        coherence {self.crest:.2f}",
+            f"  trough   — the bleached skeleton: coherence {self.trough:.2f}"
+            + ("  (substrate held)" if self.same_skeleton else "  (substrate lost)"),
+            f"  re-crest — the rebuilding reef:   coherence {self.recrest:.2f}",
+        ]
+        spark = self.renucleation
+        if spark is not None:
+            rows.append(f"  spark    — re-nucleation at stop {spark}: order re-commits at a seed, "
+                        "spanning nothing yet — the turn before the climb")
+        if self.is_recoherence:
+            rows.append("  this is re-coherence: not the old lattice restored, but a new one on the "
+                        "same skeleton" + (", under a new map" if self.new_map else ""))
+        rows.append("  note: an authored frame — the same skeleton, different life, a different "
+                    "trajectory. Descriptive, never a gate.")
+        return "\n".join(rows)
+
+
+def recohere(stops, *, same_skeleton: bool = True, new_map: bool = True) -> Recoherence:
+    """Read a process as re-coherence: a coherence that fell to a skeleton and climbed again.
+
+    Each stop becomes a `CrystalState`; the reading finds the first reef (crest), the
+    bleached skeleton it fell to (trough), the spark that re-committed order at a seed
+    (re-nucleation), and the reef rebuilding on that retained substrate (re-crest). Unlike
+    a first crystallisation, re-coherence starts from a *held skeleton*, not raw fluid,
+    and climbs to a *new* lattice — the same ground, a new map.
+    """
+    return Recoherence(
+        stops=[_as_state(s) for s in stops],
+        same_skeleton=same_skeleton,
+        new_map=new_map,
+    )
 
 
 @dataclass

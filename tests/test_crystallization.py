@@ -14,6 +14,7 @@ from interpretation.crystallization import (
     memberships,
     quadrant,
     read_state,
+    recohere,
 )
 
 
@@ -83,6 +84,39 @@ def test_states_accept_continuous_coordinates():
     assert c.direction == "crystallising"
     assert c.coherences[0] == 0.0
     assert c.coherences[-1] == 1.0
+
+
+def test_the_reef_rebuilds_as_recoherence():
+    # the whole arc: first reef -> bleaching -> dormant skeleton -> spark -> new reef
+    r = recohere([LATTICE, FLUCTUATION, FLUCTUATION, NUCLEUS, (0.3, 1.0), LATTICE])
+    assert r.is_recoherence
+    assert r.crest == 1.0          # the first reef
+    assert r.trough == 0.0         # the bleached skeleton
+    assert r.recrest == 1.0        # the rebuilding reef
+    assert r.renucleation == 3     # the spark: order re-commits at the nucleus
+
+
+def test_recoherence_is_not_the_same_as_a_first_crystallisation():
+    # a single climb from fluid never fell to a skeleton — it is not re-coherence
+    r = recohere(PRECIPITATION)
+    assert not r.decohered
+    assert not r.is_recoherence
+
+
+def test_a_lost_skeleton_is_not_recoherence():
+    # if the substrate did not persist, a second climb is a fresh crystallisation
+    r = recohere([LATTICE, FLUCTUATION, NUCLEUS, LATTICE], same_skeleton=False)
+    assert r.decohered and r.re_cohered
+    assert not r.is_recoherence
+
+
+def test_the_spark_precedes_the_visible_climb():
+    # at re-nucleation the coherence scalar is still ~0 — the turn happens before the climb
+    r = recohere([LATTICE, FLUCTUATION, NUCLEUS, (0.5, 1.0), LATTICE])
+    spark = r.renucleation
+    assert spark is not None
+    assert r.stops[spark].coherence <= 0.5
+    assert r.stops[spark].order > 0.5
 
 
 def test_frame_renders_the_keystone():

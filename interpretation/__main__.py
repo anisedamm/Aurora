@@ -34,7 +34,7 @@ from .alignment import align_record
 from .arc import arc
 from .atlas import atlas
 from .constellation import constellation
-from .crystallization import crystallise, frame
+from .crystallization import crystallise, frame, recohere
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
 from .lexicon import load_lexicon, proliferation, untranslatables
@@ -215,10 +215,12 @@ def cmd_arc(args: argparse.Namespace) -> int:
 
 def cmd_crystal(args: argparse.Namespace) -> int:
     stops = getattr(args, "path", None)
-    if stops:
-        print(crystallise(stops).summary)
-    else:
+    if not stops:
         print(frame().summary)
+    elif getattr(args, "recohere", False):
+        print(recohere(stops).summary)
+    else:
+        print(crystallise(stops).summary)
     return 0
 
 
@@ -424,6 +426,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     sp = sub.add_parser("crystal", help="the crystallisation frame: order precipitated from the fluid (coherence/decoherence). Pass quadrants to read a process.")
     sp.add_argument("path", nargs="*", help="quadrants in order, e.g. supersaturation fluctuation nucleus lattice")
+    sp.add_argument("--recohere", action="store_true", help="read the path as re-coherence: a fall to a skeleton, then a new climb grown on it")
 
     sub.add_parser("atlas", help="the whole history of meaning on one screen (signal, breath web, threshold, explosion, arc)")
 
