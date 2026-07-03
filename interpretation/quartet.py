@@ -55,7 +55,8 @@ class Quartet:
 
     @property
     def summary(self) -> str:
-        w = max((len(m) for m in self.members), default=8) + 2
+        labels = [*self.members, *self.row_poles, *self.col_poles]
+        w = max((len(x) for x in labels), default=8) + 2
         soft = "" if self.breath_pump_axis else "  (breath<->pump axis implicit, not a primary cross-axis)"
         rows = [
             f"{self.id} — {self.name}",
