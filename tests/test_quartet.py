@@ -20,7 +20,7 @@ def test_the_quartets_load_with_their_keystones():
     ids = {q.id for q in qs.quartets}
     assert ids == {"existential", "spine", "process", "substrate", "held", "agency",
                    "animate", "language", "conscious-state", "perception", "perspective",
-                   "intelligence", "crystallisation", "integrate", "resonance"}
+                   "intelligence", "crystallisation", "integrate", "resonance", "ethos"}
     assert qs.keystones["spine"] == "the-logos"
     assert qs.keystones["held"] == "the-held-whole"
     assert qs.keystones["agency"] == "the-animating-source"
@@ -152,6 +152,20 @@ def test_resonance_names_its_own_trap():
     assert reson.cell("between", "meaning") == "rapport"
     assert "never a gate" in reson.reading.lower()
     assert "blind spot" in reson.reading.lower()
+
+
+def test_ethos_splits_the_doublet_along_the_mode_axis():
+    # morals/ethics are one word twice (Cicero's moralis translating ethikos);
+    # English pushed the doublet apart to fill the lived/articulated cells --
+    # and the fact/value cut runs INSIDE the conviction row (belief vs value)
+    ethos = _load().by_id("ethos")
+    assert ethos.breath_pump_axis == "mode"      # lived<->articulated
+    assert ethos.cell("conduct", "lived") == "morals"
+    assert ethos.cell("conduct", "articulated") == "ethics"
+    assert ethos.cell("conviction", "lived") == "belief"
+    assert ethos.cell("conviction", "articulated") == "value"
+    assert "same word twice" in ethos.reading.lower()
+    assert "dwelt in" in ethos.reading                # an ethos cannot be specified
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
