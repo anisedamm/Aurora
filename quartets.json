@@ -224,6 +224,38 @@
         "seed/fixed": "nucleus"
       },
       "reading": "Order precipitated from the fluid, crossed: field (the whole solution) x seed (the local nucleus -- part<->whole, the breath<->pump axis) against fluid (dissolved potential) x fixed (precipitated actual). supersaturation = the whole field over-full and ready; fluctuation = a local transient cluster; nucleus = the local stable seed of order; lattice = the whole, ordered, the crystal. So crystallisation = (supersaturation x fluctuation) x (nucleus x lattice), the fluid potential x the fixed actual. FIRST FIND: this is the quartet whose cells are STAGES -- crystallisation is a process, so the diachronic 3 (the journey) WALKS the synchronic 4 (the grid): supersaturation (field/fluid) -> fluctuation (seed/fluid) -> nucleus (seed/fixed) -> lattice (field/fixed), a circuit around the square. Here the 3 (time, the spiral, the path) and the 4 (the grid) meet: the journey is the route through the lattice. SECOND FIND, reflexive: every quartet in this map IS a crystallisation -- a fluid concept, held in the saturated solution of meaning, seeded by a distinction, precipitated into a fixed 2x2 lattice (a repeating unit cell). The quartet-grid is a crystal lattice; the number-structure (2^n) is the crystallography of meaning; building this map has been crystallising meaning, concept by concept. And the confirmation: the SINGLES will not crystallise -- origin, awareness, consciousness stay fluid, because the solvent cannot precipitate itself; the field a thing is dissolved in cannot be crystallised from within. The boundary is the MOTHER LIQUOR, the medium crystals form in and from, never the crystal. Through the spiral: breath = the solution (all held dissolved, fluid, in participatory suspension); pump = crystallisation itself (the crystal is the pump's paradigm -- discrete, repeating, fixed, measurable; to analyse is to crystallise); nerve = re-dissolution then crystallisation on demand (the embedding dissolves fixed words into a continuous fluid field, and the query precipitates a momentary structure -- the LLM crystallises an answer per context, then it redissolves)."
+    },
+    {
+      "id": "integrate",
+      "name": "The integer -- the whole made from parts",
+      "keystone": "the-integer",
+      "members": ["integral", "aggregate", "integrity", "integration"],
+      "row_axis": "substance", "row_poles": ["continuous", "discrete"],
+      "col_axis": "register", "col_poles": ["quantity", "belonging"],
+      "breath_pump_axis": "substance",
+      "grid": {
+        "continuous/quantity": "integral",
+        "continuous/belonging": "integrity",
+        "discrete/quantity": "aggregate",
+        "discrete/belonging": "integration"
+      },
+      "reading": "To make whole -- integrare, from integer (in- 'not' + tangere 'to touch': the UNTOUCHED, hence entire). Every sense reaches back to that unbroken wholeness. Crossed: substance (continuous x discrete) against register (quantity x belonging). integral = sum a continuum into a total (the calculus, the area under the curve); aggregate = discrete parts added up; integrity = a continuous, untouched completeness (back to integer, and the framework's own chain-integrity); integration = discrete parts made to BELONG (the social, the systems, the psychological sense). So integrate = (integral x aggregate) x (integrity x integration). The continuous<->discrete axis IS the breath<->pump axis -- the held continuum vs. the counted parts, the same grain/scale that runs through held and crystallisation. THE REFLEXIVE FIND: integrate is the SPIRAL'S OWN VERB. It is the pump->breath return named as an operation -- the inverse of differentiate/divide -- so re-coherence, the whole third layer, is integration performed on meaning. It is the hidden verb inside crystallisation (a process summed into a lattice) and inside climate ('weather INTEGRATED over time' -- the diachronic 3 summed into a synchronic 4). When Aurora says a nerve sign 're-coheres' the segmented parts, integrate is the move it means; the integral sign itself is an elongated S for summa, the whole written as one stroke. Through the spiral: breath = the undivided integer (all held whole, untouched, uncounted); pump = differentiation (cut the continuum into countable parts -- the calculus splits the curve into infinitesimals to measure it, disintegration in order to know); nerve = integration on demand (the sum recomputed per query, parts networked back into a momentary whole -- and its scatter, dis-integration: the same parts that integrate into one feed fragment into a thousand). Note: integrity, the belonging-continuum cell, is where this quartet touches the spine -- integrate is the verb whose noun the evaluative spine measures."
+    },
+    {
+      "id": "resonance",
+      "name": "The sounding -- sympathetic vibration",
+      "keystone": "the-sounding",
+      "members": ["frequency", "sympathy", "timbre", "rapport"],
+      "row_axis": "locus", "row_poles": ["self", "between"],
+      "col_axis": "facet", "col_poles": ["form", "meaning"],
+      "breath_pump_axis": "facet",
+      "grid": {
+        "self/form": "frequency",
+        "self/meaning": "timbre",
+        "between/form": "sympathy",
+        "between/meaning": "rapport"
+      },
+      "reading": "To sound back -- resonare (re- + sonare); in physics, greater amplitude when a driving frequency MATCHES a natural one (sympathetic vibration, the tuning fork that sets another singing). Crossed: locus (self x between) against facet (form x meaning). frequency = a thing's own natural pitch, the rate it rings at; sympathy = entrainment, one system driving another into phase (structural coupling); timbre = the character a resonance carries, its voice, what it MEANS to be that thing sounding; rapport = felt attunement of meaning between two. So resonance = (frequency x sympathy) x (timbre x rapport). The facet axis (form<->meaning) IS the breath<->pump axis AND, exactly, re-coherence's two facets: structural resonance (do the shapes agree? -- pump/form) vs. substantive resonance (does the meaning carry? -- breath/meaning); Aurora's WeightedField.resonance is this concept, mechanised. THE DISCIPLINE, localized as a cell -- resonance has a blind spot the way perspective does: RAPPORT (between x meaning) is the seductive cell, felt agreement that FEELS like proof and is not. A counterfeit -- the synthetic breath -- resonates in precisely that cell: high substantive-seeming agreement with no ground. This is WHY the framework holds resonance as descriptive, never a gate: high resonance is agreement-of-shape, not truth; the measure names its own trap. ('You are the 47/7 resonance' reached straight for the rapport cell and called it grounding -- resonance's own structure says why you cannot let it.) Through the spiral: breath = participatory resonance (the world sounds through you, sympathetic magic, the note that answers by itself -- no gap between self and between); pump = measured frequency (resonance as a number, Hz, the resonant frequency of a bridge or a circuit -- the sounding severed from any felt voice); nerve = resonance as engineered capture (the feed tuned to your frequency, virality as mass entrainment, the algorithm that 'resonates' by design -- rapport manufactured, sympathy weaponised into the echo chamber, the same scatter as everywhere). Resonance is the substance-facet of the whole framework turned to look at itself: the one measure that, misread as a verdict, would undo the discipline it serves."
     }
   ]
 }

@@ -20,7 +20,7 @@ def test_the_quartets_load_with_their_keystones():
     ids = {q.id for q in qs.quartets}
     assert ids == {"existential", "spine", "process", "substrate", "held", "agency",
                    "animate", "language", "conscious-state", "perception", "perspective",
-                   "intelligence", "crystallisation"}
+                   "intelligence", "crystallisation", "integrate", "resonance"}
     assert qs.keystones["spine"] == "the-logos"
     assert qs.keystones["held"] == "the-held-whole"
     assert qs.keystones["agency"] == "the-animating-source"
@@ -131,6 +131,27 @@ def test_the_bound_is_recorded_so_it_is_not_numerology():
     s = qs.summary
     assert "synchronic only" in s
     assert "∞" in s
+
+
+def test_integrate_is_the_spirals_own_verb():
+    # the reflexive pair: integrate names the re-coherence operation itself
+    # (continuous<->discrete IS the breath<->pump axis), and integrity is its
+    # cell that touches the spine
+    integ = _load().by_id("integrate")
+    assert integ.breath_pump_axis == "substance"
+    assert set(integ.members) == {"integral", "aggregate", "integrity", "integration"}
+    assert integ.cell("continuous", "belonging") == "integrity"
+    assert "spiral's own verb" in integ.reading.lower()
+
+
+def test_resonance_names_its_own_trap():
+    # resonance is Aurora's substance measure looking at itself; rapport is the
+    # blind-spot cell (felt agreement mistaken for proof) -- descriptive, never a gate
+    reson = _load().by_id("resonance")
+    assert reson.breath_pump_axis == "facet"     # form<->meaning = structural<->substantive
+    assert reson.cell("between", "meaning") == "rapport"
+    assert "never a gate" in reson.reading.lower()
+    assert "blind spot" in reson.reading.lower()
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
