@@ -21,7 +21,7 @@ def test_the_quartets_load_with_their_keystones():
     assert ids == {"existential", "spine", "process", "substrate", "held", "agency",
                    "animate", "language", "conscious-state", "perception", "perspective",
                    "intelligence", "crystallisation", "integrate", "resonance", "ethos",
-                   "bond", "gladness", "remembering", "skill", "danger"}
+                   "bond", "gladness", "remembering", "skill", "danger", "interpretation"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -207,7 +207,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     assert "dimensions (each factor at zero zeroes the keystone)" in bond.summary
     # the field is optional: quartets without dimensions render unchanged
     for q in qs.quartets:
-        if q.id not in ("bond", "gladness", "remembering", "skill", "danger"):
+        if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -260,7 +260,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
     threaded = {q.id: q.thread for q in qs.quartets if q.thread}
     assert threaded == {"spine": "signal-thread", "bond": "bond-thread",
                         "gladness": "gladness-thread", "remembering": "memory-thread",
-                        "skill": "skill-thread", "danger": "warning-thread"}
+                        "skill": "skill-thread", "danger": "warning-thread",
+                        "interpretation": "interpretation-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -307,6 +308,30 @@ def test_danger_is_the_shadow_of_the_signal():
     assert "never reached" in r                          # the warning thread's purpose
     assert "not to read" in danger.dimensions["neglect"].lower()   # neglegere, the root
     assert "implicates the instrument" in danger.dimensions["theft"]
+
+
+def test_interpretation_is_the_packages_own_name_gridded():
+    # hermeneia dispersed: posture (facing/amid -- the breath<->pump axis:
+    # confrontation vs dwelling) x agency (received/enacted); recorded in the
+    # VERB form (gerunds -- interpretation exists only in performance); the
+    # contested column named as a cross-lattice pattern
+    qs = _load()
+    interp = qs.by_id("interpretation")
+    assert interp.keystone == "hermeneia"
+    assert interp.breath_pump_axis == "posture"
+    assert interp.cell("facing", "received") == "encountering"
+    assert interp.cell("facing", "enacted") == "comprehending"
+    assert interp.cell("amid", "received") == "understanding"
+    assert interp.cell("amid", "enacted") == "creating"
+    assert all(m.endswith("ing") for m in interp.members)   # the lattice in act
+    r = interp.reading
+    assert "package" in r.lower()                # the reflexive capstone: the system's own name
+    assert "A WORD IS NOT A CELL" in r           # the process overlap, flagged not hidden
+    assert "CONTESTED COLUMN" in r               # amid-cells resist attestation, one pattern worn four ways
+    assert "chinese room" in r.lower()
+    assert set(interp.dimensions) == set(interp.members)
+    for text in interp.dimensions.values():
+        assert "breath =" in text and "pump =" in text and "nerve =" in text
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
