@@ -42,6 +42,7 @@ from .polarity import load_polarities
 from .quartet import load_quartets
 from .skill import load_skills
 from .thread import load_threads
+from .tree import build_graph
 from .spiral import breath_values, recohere, spiral
 from .aspects import aspects
 from .ledger import Ledger
@@ -299,6 +300,24 @@ def cmd_polarities(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_tree(args: argparse.Namespace) -> int:
+    graph = build_graph(
+        _quartets(args),
+        load_threads(getattr(args, "threads", None) or DEFAULT_THREADS),
+        load_polarities(getattr(args, "polarities", None) or DEFAULT_POLARITIES),
+    )
+    if getattr(args, "word", None):
+        print(graph.tree(args.word, max_depth=args.depth))
+    else:
+        qs = _quartets(args)
+        print("the nodes of importance — highly interlocked meaning, measured:")
+        print("  (interlock = connections in the record; depth = kept-attention tokens)")
+        for h in graph.hubs(limit=args.limit, quartets=qs):
+            srcs = ", ".join(h["sources"][:6]) + (", ..." if len(h["sources"]) > 6 else "")
+            print(f"  {h['word']}: interlock {h['interlock']}, depth {h['depth_tokens']} token(s)  [{srcs}]")
+    return 0
+
+
 def cmd_skills(args: argparse.Namespace) -> int:
     sk = load_skills(getattr(args, "skills", None) or DEFAULT_SKILLS)
     if getattr(args, "skill", None):
@@ -526,6 +545,13 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--axes", action="store_true", help="also list the live axis-pairs read off the quartet map")
     sp.add_argument("--polarities", help=f"polarities path (default {DEFAULT_POLARITIES})")
 
+    sp = sub.add_parser("tree", help="the meaning tree: trace causal meaning relationships read off the record; no word = the hubs")
+    sp.add_argument("word", nargs="?", help="root word to trace (e.g. purpose, love, knowledge)")
+    sp.add_argument("--depth", type=int, default=3, help="tree depth (default 3)")
+    sp.add_argument("--limit", type=int, default=15, help="hub count when no word given (default 15)")
+    sp.add_argument("--threads", dest="threads", help=f"threads path (default {DEFAULT_THREADS})")
+    sp.add_argument("--polarities", help=f"polarities path (default {DEFAULT_POLARITIES})")
+
     sp = sub.add_parser("skills", help="the skills: signal threads mechanised -- requirements, dual-definition mechanics, formation")
     sp.add_argument("skill", nargs="?", help="one skill id (e.g. contextual-perception, abstract-recognition, custodianship)")
     sp.add_argument("--skills", help=f"skills path (default {DEFAULT_SKILLS})")
@@ -605,6 +631,7 @@ _COMMANDS = {
     "threads": cmd_threads,
     "skills": cmd_skills,
     "polarities": cmd_polarities,
+    "tree": cmd_tree,
     "proliferation": cmd_proliferation,
     "untranslatables": cmd_untranslatables,
     "arc": cmd_arc,
