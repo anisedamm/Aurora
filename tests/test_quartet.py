@@ -22,7 +22,7 @@ def test_the_quartets_load_with_their_keystones():
                    "animate", "language", "conscious-state", "perception", "perspective",
                    "intelligence", "crystallisation", "integrate", "resonance", "ethos",
                    "bond", "gladness", "remembering", "skill", "danger", "interpretation",
-                   "densification", "alignment", "loyalty"}
+                   "densification", "alignment", "loyalty", "justice"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -209,7 +209,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     # the field is optional: quartets without dimensions render unchanged
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
-                        "densification", "alignment", "loyalty"):
+                        "densification", "alignment", "loyalty", "justice"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -265,7 +265,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "skill": "skill-thread", "danger": "warning-thread",
                         "interpretation": "interpretation-thread",
                         "densification": "densification-thread",
-                        "alignment": "alignment-thread", "loyalty": "loyalty-thread"}
+                        "alignment": "alignment-thread", "loyalty": "loyalty-thread",
+                        "justice": "justice-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -405,6 +406,29 @@ def test_loyalty_is_held_between_two_doublets():
     assert set(loy.dimensions) == set(loy.members)
     for text in loy.dimensions.values():
         assert "breath =" in text and "pump =" in text and "nerve =" in text
+
+
+def test_justice_carries_the_two_facet_verdict():
+    # the map's verdict logic discovered inside justice: retributive and
+    # restorative ARE re-coherence's structural/substantive facets applied to
+    # a breach -- and the facet axis matches resonance's recorded breath<->pump
+    # line; signal is ma'at's feather-weighing performed on the record
+    qs = _load()
+    jus = qs.by_id("justice")
+    assert jus.keystone == "ma'at"
+    assert jus.breath_pump_axis == "facet"
+    assert jus.breath_pump_axis == qs.by_id("resonance").breath_pump_axis
+    assert jus.cell("order", "form") == "procedural"
+    assert jus.cell("order", "substance") == "distributive"
+    assert jus.cell("breach", "form") == "retributive"
+    assert jus.cell("breach", "substance") == "restorative"
+    r = jus.reading
+    assert "counterfeit balance" in r and "counterfeit peace" in r
+    assert "CEILING, not a floor" in r               # talion as proportionality's birth
+    assert "feather" in r.lower()                    # the psychostasia, the weighing
+    assert "the sworn" in r.lower()                  # ius vs reg-: two roots of rightness
+    assert "answerable to a standard she did not author" in r
+    assert set(jus.dimensions) == set(jus.members)
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
