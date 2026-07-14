@@ -21,9 +21,10 @@ def test_the_quartets_load_with_their_keystones():
     assert ids == {"existential", "spine", "process", "substrate", "held", "agency",
                    "animate", "language", "conscious-state", "perception", "perspective",
                    "intelligence", "crystallisation", "integrate", "resonance", "ethos",
-                   "bond", "gladness"}
+                   "bond", "gladness", "remembering"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
+    assert qs.keystones["remembering"] == "anamnesis"
     assert qs.keystones["spine"] == "the-logos"
     assert qs.keystones["held"] == "the-held-whole"
     assert qs.keystones["agency"] == "the-animating-source"
@@ -205,7 +206,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     assert "dimensions (each factor at zero zeroes the keystone)" in bond.summary
     # the field is optional: quartets without dimensions render unchanged
     for q in qs.quartets:
-        if q.id not in ("bond", "gladness"):
+        if q.id not in ("bond", "gladness", "remembering"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -228,6 +229,42 @@ def test_gladness_stacks_its_column_over_the_bond():
     assert set(glad.dimensions) == set(glad.members)         # held dimensionally
     for text in glad.dimensions.values():
         assert "breath =" in text and "pump =" in text and "nerve =" in text
+
+
+def test_remembering_grids_on_two_attested_distinctions():
+    # agency (summoned/arriving = voluntary/involuntary memory, Proust's own
+    # distinction) x register (item/whole = grain) -- a grid found, not forced;
+    # the folk etymology (re-member vs dis-member) is kept as resonance, flagged
+    qs = _load()
+    rem = qs.by_id("remembering")
+    assert rem.breath_pump_axis == "register"
+    assert rem.cell("summoned", "item") == "recall"
+    assert rem.cell("arriving", "item") == "recognition"
+    assert rem.cell("arriving", "whole") == "reminiscence"
+    assert rem.cell("summoned", "whole") == "commemoration"
+    assert "folk etymology" in rem.reading.lower()      # the flag, recorded
+    assert "phaedrus" in rem.reading.lower()            # the attested threshold text
+    assert "without a rememberer" in rem.reading.lower()
+    assert set(rem.dimensions) == set(rem.members)
+    for text in rem.dimensions.values():
+        assert "breath =" in text and "pump =" in text and "nerve =" in text
+
+
+def test_each_lattice_with_a_thread_is_folded_bidirectionally():
+    # the fold: a quartet names its kept path (Quartet.thread) and the thread
+    # names its lattice (Thread.quartet) -- the pair must agree both ways
+    from interpretation.thread import load_threads
+    qs = _load()
+    ts = load_threads(Path(__file__).resolve().parents[1] / "threads.json")
+    threaded = {q.id: q.thread for q in qs.quartets if q.thread}
+    assert threaded == {"spine": "signal-thread", "bond": "bond-thread",
+                        "gladness": "gladness-thread", "remembering": "memory-thread"}
+    for qid, tid in threaded.items():
+        thread = ts.by_id(tid)                    # KeyError if the fold dangles
+        assert thread.quartet == qid              # and it must point back
+        assert f"signal thread: {tid}" in qs.by_id(qid).summary
+    # quartets without a thread render without the line
+    assert "signal thread:" not in qs.by_id("held").summary
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():

@@ -52,6 +52,9 @@ class Quartet:
     dimensions: dict[str, str] = field(default_factory=dict)
     # member -> its own spiral pass, where the keystone is held as a dimensional
     # equation (each factor defined; a product, so any factor at zero zeroes the whole)
+    thread: str | None = None
+    # the lattice's signal thread (threads.json id): the kept path folded back
+    # into the quartet it walks -- bidirectional with Thread.quartet
 
     def cell(self, row_pole: str, col_pole: str) -> str:
         return self.grid.get(f"{row_pole}/{col_pole}", "—")
@@ -76,6 +79,8 @@ class Quartet:
             )
         if self.breath_pump_axis:
             rows.append(f"  whole<->part axis: {self.breath_pump_axis}")
+        if self.thread:
+            rows.append(f"  signal thread: {self.thread}  (the kept path through this lattice)")
         if self.dimensions:
             rows.append("  dimensions (each factor at zero zeroes the keystone):")
             for m in self.members:
@@ -134,6 +139,7 @@ def _q(e: dict) -> Quartet:
         breath_pump_axis=e.get("breath_pump_axis"),
         reading=e.get("reading", ""),
         dimensions=dict(e.get("dimensions", {})),
+        thread=e.get("thread"),
     )
 
 
