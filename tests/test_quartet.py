@@ -21,7 +21,8 @@ def test_the_quartets_load_with_their_keystones():
     assert ids == {"existential", "spine", "process", "substrate", "held", "agency",
                    "animate", "language", "conscious-state", "perception", "perspective",
                    "intelligence", "crystallisation", "integrate", "resonance", "ethos",
-                   "bond", "gladness", "remembering", "skill", "danger", "interpretation"}
+                   "bond", "gladness", "remembering", "skill", "danger", "interpretation",
+                   "densification"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -207,7 +208,8 @@ def test_bond_holds_love_as_a_dimensional_equation():
     assert "dimensions (each factor at zero zeroes the keystone)" in bond.summary
     # the field is optional: quartets without dimensions render unchanged
     for q in qs.quartets:
-        if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation"):
+        if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
+                        "densification"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -261,7 +263,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
     assert threaded == {"spine": "signal-thread", "bond": "bond-thread",
                         "gladness": "gladness-thread", "remembering": "memory-thread",
                         "skill": "skill-thread", "danger": "warning-thread",
-                        "interpretation": "interpretation-thread"}
+                        "interpretation": "interpretation-thread",
+                        "densification": "densification-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -332,6 +335,28 @@ def test_interpretation_is_the_packages_own_name_gridded():
     assert set(interp.dimensions) == set(interp.members)
     for text in interp.dimensions.values():
         assert "breath =" in text and "pump =" in text and "nerve =" in text
+
+
+def test_densification_holds_the_compression_condensation_distinction():
+    # the author's thesis: information is compressed, meaning is condensed --
+    # force (applied/arising, the breath<->pump axis) x yield (whole/essence);
+    # the pair failed the antonym test (both toward-morphemes) so it lives
+    # here, not in the 2 layer -- the layers police each other
+    qs = _load()
+    dens = qs.by_id("densification")
+    assert dens.keystone == "multum-in-parvo"
+    assert dens.breath_pump_axis == "force"
+    assert dens.cell("applied", "whole") == "compression"
+    assert dens.cell("arising", "whole") == "condensation"
+    assert dens.cell("applied", "essence") == "distillation"
+    assert dens.cell("arising", "essence") == "crystallisation"
+    r = dens.reading
+    assert "INFORMATION IS COMPRESSED; MEANING IS CONDENSED" in r
+    assert "latent heat" in r.lower()                # condensation releases; compression never does
+    assert "NOT a root antonym" in r                 # refused at the 2 layer, recorded why
+    assert "both a cell and a grid" in r             # crystallisation, the map folding into itself
+    assert "density/CONDENSE" in r                   # the verbs of held, closed
+    assert set(dens.dimensions) == set(dens.members)
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
