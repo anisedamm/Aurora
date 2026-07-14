@@ -49,6 +49,9 @@ class Quartet:
     grid: dict[str, str]                # "rowpole/colpole" -> member
     breath_pump_axis: str | None        # which axis is whole<->part, or None where it is soft
     reading: str = ""
+    dimensions: dict[str, str] = field(default_factory=dict)
+    # member -> its own spiral pass, where the keystone is held as a dimensional
+    # equation (each factor defined; a product, so any factor at zero zeroes the whole)
 
     def cell(self, row_pole: str, col_pole: str) -> str:
         return self.grid.get(f"{row_pole}/{col_pole}", "—")
@@ -73,6 +76,11 @@ class Quartet:
             )
         if self.breath_pump_axis:
             rows.append(f"  whole<->part axis: {self.breath_pump_axis}")
+        if self.dimensions:
+            rows.append("  dimensions (each factor at zero zeroes the keystone):")
+            for m in self.members:
+                if m in self.dimensions:
+                    rows.append(f"    {m}: {self.dimensions[m]}")
         if self.reading:
             rows.append(f"  reading: {self.reading}")
         return "\n".join(rows)
@@ -125,6 +133,7 @@ def _q(e: dict) -> Quartet:
         grid=dict(e.get("grid", {})),
         breath_pump_axis=e.get("breath_pump_axis"),
         reading=e.get("reading", ""),
+        dimensions=dict(e.get("dimensions", {})),
     )
 
 

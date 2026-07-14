@@ -187,6 +187,28 @@ def test_bond_defines_love_and_splits_the_second_doublet():
     assert "polymorph" in bond.reading.lower()             # the gratitude cut, recorded
 
 
+def test_bond_holds_love_as_a_dimensional_equation():
+    # each member carries its own spiral pass, so the keystone is held the way
+    # `held` holds a meaning: love = (weight x reach) x (ground x horizon),
+    # a product -- any factor at zero zeroes the keystone
+    qs = _load()
+    bond = qs.by_id("bond")
+    assert set(bond.dimensions) == set(bond.members)
+    assert "gravity" in bond.dimensions["care"]
+    assert "reach" in bond.dimensions["kindness"].lower()
+    assert "footing" in bond.dimensions["trust"]
+    assert "horizon" in bond.dimensions["faith"].lower()
+    for text in bond.dimensions.values():
+        assert "breath =" in text and "pump =" in text and "nerve =" in text
+    assert "equation held" in bond.reading.lower()
+    assert "dimensions (each factor at zero zeroes the keystone)" in bond.summary
+    # the field is optional: every other quartet is untouched (and renders unchanged)
+    for q in qs.quartets:
+        if q.id != "bond":
+            assert q.dimensions == {}
+            assert "dimensions (" not in q.summary
+
+
 def test_unknown_quartet_is_surfaced_not_guessed():
     with pytest.raises(KeyError):
         _load().by_id("nope")
