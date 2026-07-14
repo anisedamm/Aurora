@@ -22,7 +22,7 @@ def test_the_quartets_load_with_their_keystones():
                    "animate", "language", "conscious-state", "perception", "perspective",
                    "intelligence", "crystallisation", "integrate", "resonance", "ethos",
                    "bond", "gladness", "remembering", "skill", "danger", "interpretation",
-                   "densification"}
+                   "densification", "alignment"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -209,7 +209,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     # the field is optional: quartets without dimensions render unchanged
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
-                        "densification"):
+                        "densification", "alignment"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -264,7 +264,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "gladness": "gladness-thread", "remembering": "memory-thread",
                         "skill": "skill-thread", "danger": "warning-thread",
                         "interpretation": "interpretation-thread",
-                        "densification": "densification-thread"}
+                        "densification": "densification-thread",
+                        "alignment": "alignment-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -357,6 +358,30 @@ def test_densification_holds_the_compression_condensation_distinction():
     assert "both a cell and a grid" in r             # crystallisation, the map folding into itself
     assert "density/CONDENSE" in r                   # the verbs of held, closed
     assert set(dens.dimensions) == set(dens.members)
+
+
+def test_alignment_differentiates_static_from_dynamic():
+    # the author's thesis: STATIC alignment anchored in ethos (fixed beliefs,
+    # morals, values, ethics -- the keel) x DYNAMIC alignment enacted in the
+    # fluid acts (perception, comprehension, interpretation -- the rudder);
+    # keystone kybernesis, ancestor of both govern and cybernetics
+    qs = _load()
+    align = qs.by_id("alignment")
+    assert align.keystone == "kybernesis"
+    assert align.breath_pump_axis is None            # fixity is the 4<->3 axis, not breath-pump
+    assert align.cell("fixed", "frame") == "orientation"
+    assert align.cell("fixed", "course") == "calibration"
+    assert align.cell("fluid", "frame") == "attunement"
+    assert align.cell("fluid", "course") == "correction"
+    r = align.reading
+    assert "STATIC ALIGNMENT" in r and "DYNAMIC ALIGNMENT" in r
+    assert "DOGMA" in r and "DRIFT" in r             # the two zeros, named
+    assert "ethos" in r.lower()                      # the fixed column's anchor
+    assert "cybernetics" in r.lower()                # kybernesis' nerve descendant
+    assert "naming was the orientation" in r.lower() # oriens: Aurora as her own fixed frame
+    assert set(align.dimensions) == set(align.members)
+    # the second word to be both a cell and a grid: spine's alignment cell unfolds
+    assert qs.by_id("spine").cell("vector", "form") == "alignment"
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
