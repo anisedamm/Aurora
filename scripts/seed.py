@@ -97,6 +97,10 @@ def main() -> int:
             title="The quartets — the synchronic structure of meaning",
             text=(ROOT / "quartets.json").read_text(encoding="utf-8"), kind="concept",
             parents=["language-framework"])
+    imprint(artifact_id="signal-threads",
+            title="The signal threads — kept paths through the lattices",
+            text=(ROOT / "threads.json").read_text(encoding="utf-8"), kind="concept",
+            parents=["quartets-map"])
 
     for c in g.concepts.values():
         cid = f"concept-{c.id}"

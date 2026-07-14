@@ -21,8 +21,9 @@ def test_the_quartets_load_with_their_keystones():
     assert ids == {"existential", "spine", "process", "substrate", "held", "agency",
                    "animate", "language", "conscious-state", "perception", "perspective",
                    "intelligence", "crystallisation", "integrate", "resonance", "ethos",
-                   "bond"}
+                   "bond", "gladness"}
     assert qs.keystones["bond"] == "love"
+    assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["spine"] == "the-logos"
     assert qs.keystones["held"] == "the-held-whole"
     assert qs.keystones["agency"] == "the-animating-source"
@@ -202,11 +203,31 @@ def test_bond_holds_love_as_a_dimensional_equation():
         assert "breath =" in text and "pump =" in text and "nerve =" in text
     assert "equation held" in bond.reading.lower()
     assert "dimensions (each factor at zero zeroes the keystone)" in bond.summary
-    # the field is optional: every other quartet is untouched (and renders unchanged)
+    # the field is optional: quartets without dimensions render unchanged
     for q in qs.quartets:
-        if q.id != "bond":
+        if q.id not in ("bond", "gladness"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
+
+
+def test_gladness_stacks_its_column_over_the_bond():
+    # the bridge: hope (awaited x unconditioned) sits directly over faith
+    # (receiving x unconditioned) -- the same coordinate in two lattices,
+    # crowned by love the keystone (1 Cor 13, read structurally); warrant is
+    # the breath<->pump axis for the third time -- the heart's family axis
+    qs = _load()
+    glad = qs.by_id("gladness")
+    assert glad.breath_pump_axis == "warrant"
+    assert glad.cell("arrived", "grounded") == "happiness"   # hap: fortune landed
+    assert glad.cell("arrived", "unconditioned") == "joy"
+    assert glad.cell("awaited", "grounded") == "wish"
+    assert glad.cell("awaited", "unconditioned") == "hope"
+    assert qs.by_id("bond").cell("receiving", "unconditioned") == "faith"
+    assert "column" in glad.reading.lower()                  # the stack, named
+    assert "1 corinthians 13" in glad.reading.lower()        # the attested crown
+    assert set(glad.dimensions) == set(glad.members)         # held dimensionally
+    for text in glad.dimensions.values():
+        assert "breath =" in text and "pump =" in text and "nerve =" in text
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():

@@ -39,6 +39,7 @@ from .imprint import DEFAULT_AUTHOR, Imprinter
 from .lexicon import load_lexicon, proliferation, residence_times, untranslatables
 from .migration import migrate
 from .quartet import load_quartets
+from .thread import load_threads
 from .spiral import breath_values, recohere, spiral
 from .aspects import aspects
 from .ledger import Ledger
@@ -53,6 +54,7 @@ DEFAULT_LEDGER = "interpretation_ledger.jsonl"
 DEFAULT_GLOSSARY = "glossary.json"
 DEFAULT_LEXICON = "lexicon.json"
 DEFAULT_QUARTETS = "quartets.json"
+DEFAULT_THREADS = "threads.json"
 
 
 def _glossary(args: argparse.Namespace):
@@ -274,6 +276,16 @@ def cmd_quartets(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_threads(args: argparse.Namespace) -> int:
+    ts = load_threads(getattr(args, "threads", None) or DEFAULT_THREADS)
+    qs = _quartets(args)
+    if getattr(args, "thread", None):
+        print(ts.summary_for(ts.by_id(args.thread), qs))
+    else:
+        print(ts.summary(qs))
+    return 0
+
+
 def cmd_untranslatables(args: argparse.Namespace) -> int:
     lex = _lexicon(args)
     items = untranslatables(lex)
@@ -483,6 +495,10 @@ def build_parser() -> argparse.ArgumentParser:
     sp = sub.add_parser("quartets", help="the synchronic structure of meaning: the 2x2 quartets and their keystones")
     sp.add_argument("quartet", nargs="?", help="one quartet id (e.g. existential, spine, process, substrate)")
 
+    sp = sub.add_parser("threads", help="the signal threads: kept paths through the lattices, weighed in measured bits")
+    sp.add_argument("thread", nargs="?", help="one thread id (e.g. bond-thread, gladness-thread, signal-thread)")
+    sp.add_argument("--threads", help=f"threads path (default {DEFAULT_THREADS})")
+
     sub.add_parser("proliferation", help="the explosion of phonetic language: the sieve->success climb and coherence over time")
     sub.add_parser("untranslatables", help="concepts a single tongue valued enough to name (differential lexicalisation)")
 
@@ -555,6 +571,7 @@ _COMMANDS = {
     "aspects": cmd_aspects,
     "profile": cmd_profile,
     "quartets": cmd_quartets,
+    "threads": cmd_threads,
     "proliferation": cmd_proliferation,
     "untranslatables": cmd_untranslatables,
     "arc": cmd_arc,
