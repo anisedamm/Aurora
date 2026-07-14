@@ -101,6 +101,10 @@ def main() -> int:
             title="The signal threads — kept paths through the lattices",
             text=(ROOT / "threads.json").read_text(encoding="utf-8"), kind="concept",
             parents=["quartets-map"])
+    imprint(artifact_id="skills-map",
+            title="The skills — signal threads mechanised",
+            text=(ROOT / "skills.json").read_text(encoding="utf-8"), kind="concept",
+            parents=["signal-threads"])
 
     for c in g.concepts.values():
         cid = f"concept-{c.id}"

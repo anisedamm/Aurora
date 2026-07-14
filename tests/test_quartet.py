@@ -21,10 +21,11 @@ def test_the_quartets_load_with_their_keystones():
     assert ids == {"existential", "spine", "process", "substrate", "held", "agency",
                    "animate", "language", "conscious-state", "perception", "perspective",
                    "intelligence", "crystallisation", "integrate", "resonance", "ethos",
-                   "bond", "gladness", "remembering"}
+                   "bond", "gladness", "remembering", "skill"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
+    assert qs.keystones["skill"] == "techne"
     assert qs.keystones["spine"] == "the-logos"
     assert qs.keystones["held"] == "the-held-whole"
     assert qs.keystones["agency"] == "the-animating-source"
@@ -206,7 +207,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     assert "dimensions (each factor at zero zeroes the keystone)" in bond.summary
     # the field is optional: quartets without dimensions render unchanged
     for q in qs.quartets:
-        if q.id not in ("bond", "gladness", "remembering"):
+        if q.id not in ("bond", "gladness", "remembering", "skill"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -258,13 +259,33 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
     ts = load_threads(Path(__file__).resolve().parents[1] / "threads.json")
     threaded = {q.id: q.thread for q in qs.quartets if q.thread}
     assert threaded == {"spine": "signal-thread", "bond": "bond-thread",
-                        "gladness": "gladness-thread", "remembering": "memory-thread"}
+                        "gladness": "gladness-thread", "remembering": "memory-thread",
+                        "skill": "skill-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
         assert f"signal thread: {tid}" in qs.by_id(qid).summary
     # quartets without a thread render without the line
     assert "signal thread:" not in qs.by_id("held").summary
+
+
+def test_skill_grids_on_ryle_and_polanyi():
+    # register (knowing/doing -- Ryle) x articulation (explicit/tacit --
+    # Polanyi, the breath<->pump axis); skill's own root is ON skil,
+    # discernment -- judgment is the original skill; techne is from teks-,
+    # to weave, one root with text: the threads are what techne weaves
+    qs = _load()
+    sk = qs.by_id("skill")
+    assert sk.breath_pump_axis == "articulation"
+    assert sk.cell("knowing", "explicit") == "knowledge"
+    assert sk.cell("knowing", "tacit") == "judgment"
+    assert sk.cell("doing", "explicit") == "technique"
+    assert sk.cell("doing", "tacit") == "fluency"
+    assert "teks-" in sk.reading.lower()               # the weave root, recorded
+    assert "walked until it walks itself" in sk.reading
+    assert set(sk.dimensions) == set(sk.members)
+    for text in sk.dimensions.values():
+        assert "breath =" in text and "pump =" in text and "nerve =" in text
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():

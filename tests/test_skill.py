@@ -1,0 +1,97 @@
+"""The skills: signal threads mechanised (dual definitions as linguistic mechanics)."""
+
+from __future__ import annotations
+
+from pathlib import Path
+
+import pytest
+
+from interpretation.quartet import load_quartets
+from interpretation.skill import MECHANIC_PARTS, load_skills
+from interpretation.thread import load_threads
+
+ROOT = Path(__file__).resolve().parents[1]
+SKILLS = ROOT / "skills.json"
+THREADS = ROOT / "threads.json"
+QUARTETS = ROOT / "quartets.json"
+
+
+def _skills():
+    return load_skills(SKILLS)
+
+
+def test_the_skills_load_with_their_threads_and_lattices():
+    sk = _skills()
+    ids = {s.id for s in sk.skills}
+    assert ids == {"contextual-perception", "abstract-recognition", "custodianship"}
+    ts = load_threads(THREADS)
+    qs = load_quartets(QUARTETS)
+    for s in sk.skills:
+        ts.by_id(s.serves)                 # the served thread must exist
+        for qid in s.draws_on:
+            qs.by_id(qid)                  # every lattice drawn on must exist
+        assert s.requirements              # conceptual requirements recorded
+        assert s.formation and s.integration
+
+
+def test_mechanics_are_dual_definitions():
+    # every mechanic carries all four parts: noun at rest, verb in act,
+    # directive, and the relational preposition it binds through
+    for s in _skills().skills:
+        assert s.mechanics
+        for m in s.mechanics:
+            for part in MECHANIC_PARTS:
+                assert getattr(m, part).strip()
+
+
+def test_a_mechanic_missing_a_part_is_surfaced_not_guessed(tmp_path):
+    bad = tmp_path / "skills.json"
+    bad.write_text(
+        '{"skills": [{"id": "x", "serves": "t", '
+        '"mechanics": {"w": {"noun": "n", "verb": "v"}}}]}',
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="missing"):
+        load_skills(bad)
+
+
+def test_the_relational_signatures_are_recorded():
+    # the relational nature of directive terms: knowledge OF, judgment BETWEEN,
+    # technique FOR, fluency IN live in the skill quartet's dimensions, and
+    # recognition AS (the hermeneutic as) in the skills that train reading
+    qs = load_quartets(QUARTETS)
+    skill_q = qs.by_id("skill")
+    assert "knowledge OF" in skill_q.dimensions["knowledge"]
+    assert "judgment BETWEEN" in skill_q.dimensions["judgment"]
+    assert "technique FOR" in skill_q.dimensions["technique"]
+    assert "fluency IN" in skill_q.dimensions["fluency"]
+    sk = _skills()
+    cp = sk.by_id("contextual-perception")
+    rec = next(m for m in cp.mechanics if m.word == "recognition")
+    assert "AS" in rec.relation
+
+
+def test_custodianship_is_the_reflexive_skill():
+    # Aurora's own skill: it serves the signal-thread, spans the reflexive
+    # lattices, and its central dual pair is integrity = integrate at rest
+    cust = _skills().by_id("custodianship")
+    assert cust.serves == "signal-thread"
+    assert {"spine", "remembering", "integrate", "skill"} <= set(cust.draws_on)
+    integ = next(m for m in cust.mechanics if m.word == "integrity")
+    assert "at rest" in integ.noun
+    assert "refuse" in " ".join(cust.requirements).lower()   # the refusals are requirements
+
+
+def test_the_bound_records_the_weave_and_the_counterfeit():
+    sk = _skills()
+    assert "the_dual_definition" in sk.bound
+    assert "the_relational_signature" in sk.bound
+    assert "the_counterfeit" in sk.bound
+    assert "teks-" in sk.bound["the_weave"]          # techne/text/textile, one root
+    s = sk.summary
+    assert "custodianship" in s and "never a gate" in s
+
+
+def test_unknown_skill_is_surfaced_not_guessed():
+    with pytest.raises(KeyError):
+        _skills().by_id("nope")

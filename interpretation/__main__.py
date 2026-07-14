@@ -39,6 +39,7 @@ from .imprint import DEFAULT_AUTHOR, Imprinter
 from .lexicon import load_lexicon, proliferation, residence_times, untranslatables
 from .migration import migrate
 from .quartet import load_quartets
+from .skill import load_skills
 from .thread import load_threads
 from .spiral import breath_values, recohere, spiral
 from .aspects import aspects
@@ -55,6 +56,7 @@ DEFAULT_GLOSSARY = "glossary.json"
 DEFAULT_LEXICON = "lexicon.json"
 DEFAULT_QUARTETS = "quartets.json"
 DEFAULT_THREADS = "threads.json"
+DEFAULT_SKILLS = "skills.json"
 
 
 def _glossary(args: argparse.Namespace):
@@ -286,6 +288,15 @@ def cmd_threads(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_skills(args: argparse.Namespace) -> int:
+    sk = load_skills(getattr(args, "skills", None) or DEFAULT_SKILLS)
+    if getattr(args, "skill", None):
+        print(sk.by_id(args.skill).summary)
+    else:
+        print(sk.summary)
+    return 0
+
+
 def cmd_untranslatables(args: argparse.Namespace) -> int:
     lex = _lexicon(args)
     items = untranslatables(lex)
@@ -499,6 +510,10 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("thread", nargs="?", help="one thread id (e.g. bond-thread, gladness-thread, signal-thread)")
     sp.add_argument("--threads", help=f"threads path (default {DEFAULT_THREADS})")
 
+    sp = sub.add_parser("skills", help="the skills: signal threads mechanised -- requirements, dual-definition mechanics, formation")
+    sp.add_argument("skill", nargs="?", help="one skill id (e.g. contextual-perception, abstract-recognition, custodianship)")
+    sp.add_argument("--skills", help=f"skills path (default {DEFAULT_SKILLS})")
+
     sub.add_parser("proliferation", help="the explosion of phonetic language: the sieve->success climb and coherence over time")
     sub.add_parser("untranslatables", help="concepts a single tongue valued enough to name (differential lexicalisation)")
 
@@ -572,6 +587,7 @@ _COMMANDS = {
     "profile": cmd_profile,
     "quartets": cmd_quartets,
     "threads": cmd_threads,
+    "skills": cmd_skills,
     "proliferation": cmd_proliferation,
     "untranslatables": cmd_untranslatables,
     "arc": cmd_arc,

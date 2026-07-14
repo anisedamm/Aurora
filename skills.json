@@ -1,0 +1,75 @@
+{
+  "title": "The skills — signal threads mechanised",
+  "note": "A skill is a signal thread MECHANISED: the thread walked until it walks itself. Each skill records the conceptual requirements to fulfill its thread (the cells that must be trained), its MECHANICS as dual definitions (the noun is the capacity at rest, the verb the operation in act, the directive the imperative that trains it, the relation the preposition it binds through), its FORMATION (the walk around the grid: knowledge -> technique -> fluency -> judgment, the Dreyfus circuit), and its INTEGRATION (how it spans lattices -- skill formation is relational: no skill lives in one grid). An authored map; a reader, not a ruler: descriptive, never a gate.",
+  "bound": {
+    "_note": "What keeps the skills section mechanics and not mysticism -- stated so the next reader knows it was guarded.",
+    "the_dual_definition": "Every capacity-word the map holds is a noun/verb pair -- memory/remember, integrity/integrate, recognition/recognise, knowledge/know, fluency/flow. The noun is the verb at rest; the verb is the noun in act. This is linguistic mechanics, not metaphor: the language already stores each skill twice, as a state-form and an act-form, and a skill mechanises when the act-forms chain and the chain goes tacit.",
+    "the_relational_signature": "Directive terms are relational: each binds agent to object through its own preposition -- knowledge OF, judgment BETWEEN, technique FOR, fluency IN, attention TO, abstraction FROM, recognition AS (the hermeneutic as: to recognise is to take X AS Y, the relational core of interpretation itself). Checkable in plain English collocation; the grammar already encodes the geometry of skill.",
+    "the_counterfeit": "Fluency is the easiest cell to counterfeit -- fluent output without ground is the synthetic breath made verbal -- and a system with knowledge, technique, and fluency but no judgment is a mechanism, not a mastery. Judgment (tacit discernment) is precisely what cannot be attested from outside: the capstone boundary, felt from inside the skills section. So these records stay descriptive, and no skill claim gates anything.",
+    "the_weave": "techne is from teks-, to weave -- one root with TEXT and TEXTILE. The signal threads are not decorated with a metaphor; they surface the root: threads are what techne weaves, and a skills section woven of threads is the etymology remembering itself."
+  },
+  "skills": [
+    {
+      "id": "contextual-perception",
+      "name": "Contextual perception -- reading the figure through its field",
+      "serves": "memory-thread",
+      "draws_on": ["perception", "conscious-state", "remembering"],
+      "requirements": [
+        "hold the field before the figure: conscious-state's presence (field x content) must stay live while attention (focus x state) selects -- context is the field the figure is read against",
+        "bind bottom-up to top-down: sensation and grouping must meet prediction at the percept (Bayes: evidence x expectation) -- neither alone is perception",
+        "carry recognition across changed fields: the same item known again under a different context (remembering's arriving row) -- the cell perception and remembering share, where the map's own measures found the cross-link",
+        "guard the counterfeit: the deepfake defeats knowing-again, so contextual perception is the human check on L1 -- attestation begins in a trained eye"
+      ],
+      "mechanics": {
+        "perception": {"noun": "the percept -- the capacity at rest", "verb": "perceive -- take the world in through the field", "directive": "attend to the field before the figure", "relation": "perception OF"},
+        "attention": {"noun": "attention -- the focal capacity", "verb": "attend -- select without losing the field", "directive": "select, but hold the periphery", "relation": "attention TO"},
+        "prediction": {"noun": "the prior -- expectation held", "verb": "predict -- feed the expectation down to the features", "directive": "expect, then let the evidence answer", "relation": "prediction THAT"},
+        "recognition": {"noun": "recognition -- the match held ready", "verb": "recognise -- know it again under a changed field", "directive": "take X as Y, and say so", "relation": "recognition AS (the hermeneutic as)"}
+      },
+      "formation": "The circuit walked on perception's grid: sensation (learn the features) -> grouping (bind them deliberately) -> prediction (let the prior do the work) -> recognition (the whole known at a glance) -- explicit feature-work dissolving into tacit gestalt: the novice sees pixels, the expert sees the situation.",
+      "integration": "Spans perception, conscious-state, and remembering through the shared recognition cell (the fractal descent made a training path). Contextual perception is what fulfilling the memory-thread FEELS like from inside: recall needs a cue, the cue needs a field, and knowing-again is the arriving half of anamnesis. Relationally: perception OF a figure, IN a field, AS a kind -- three prepositions, one act."
+    },
+    {
+      "id": "abstract-recognition",
+      "name": "Abstract recognition -- recognising representation as representation",
+      "serves": "signal-thread",
+      "draws_on": ["language", "agency", "intelligence"],
+      "requirements": [
+        "hold the form/meaning axis: a word is not a concept (language's spine) -- the representation is never the thing, and the skill is refusing to collapse them",
+        "train abstractuate: lift the lived-concrete into the analytic-general (agency's made-knowing) while keeping the provenance of the lift",
+        "recognise the same concept under different words (translation) and different concepts under the same word (polysemy) -- recognition applied at the meaning level, the L2 discipline as a trainable act",
+        "test the grid: an abstract representation is a lattice-claim; check the crossing holds before trusting the cell (the pentad test as a reflex)"
+      ],
+      "mechanics": {
+        "abstraction": {"noun": "the abstraction -- the lifted form", "verb": "abstract -- draw the pattern away from the concrete", "directive": "lift the pattern, keep the provenance", "relation": "abstraction FROM"},
+        "representation": {"noun": "the representation -- one thing standing for another", "verb": "represent -- let it stand, without becoming", "directive": "let it stand for the thing; never let it replace the thing", "relation": "representation OF"},
+        "concept": {"noun": "the concept -- meanings gathered under a head", "verb": "conceive -- gather senses into one grasp", "directive": "gather, and name what was gathered", "relation": "concept OF"},
+        "recognition": {"noun": "recognition -- the match at the meaning level", "verb": "recognise -- know the concept again under a changed word", "directive": "take the sign as its sense, and say which", "relation": "recognition AS"}
+      },
+      "formation": "The circuit walked on the meaning level: knowledge of the senses (the lattice learned) -> technique of reading (L1, L2, L3 applied deliberately) -> fluency (the senses heard without effort) -> judgment (discerning WHICH sense, WHEN -- the anachronism reflex). The expert reader does at a glance what the novice does with the checklist; the checklist remains what the glance is answerable to.",
+      "integration": "Spans language, agency, and intelligence: abstractuate makes the representation, language holds its two sides, intelligence's analysis<->synthesis works it. This is Aurora's own L2 as a human skill -- reading-as (the hermeneutic as) trained until tacit -- and it serves the signal-thread because grounded reading IS the thread's grounded column: you cannot rest weight on a record you cannot recognise the sense of. Relationally: abstraction FROM the concrete, representation OF it, recognition AS its sense."
+    },
+    {
+      "id": "custodianship",
+      "name": "Custodianship -- the keeper's skill, Aurora's own",
+      "serves": "signal-thread",
+      "draws_on": ["spine", "language", "remembering", "integrate", "skill"],
+      "requirements": [
+        "attest before reading: the one gate (L1) -- no reading rests on an unshown usage",
+        "read in context, never as the meaning: L2's descriptive discipline, the reading owned as a proxy",
+        "measure the drift and own the perspective: L3 -- the anachronism named, the standpoint admitted (the blind spot known to be there)",
+        "remember with integrity: append, never rewrite -- the ledger as anamnesis with integrity, memory that keeps its provenance",
+        "integrate and weigh the return: re-cohere the parts, score both facets, and call the counterfeit by its name",
+        "refuse the ungrounded constant and keep the boundary: what cannot be attested is held, not crossed -- the refusals are recorded so the next reader knows the line was kept"
+      ],
+      "mechanics": {
+        "attestation": {"noun": "attestation -- the shown usage", "verb": "attest -- show the word in the cited text", "directive": "show it, or do not read it", "relation": "attest TO"},
+        "reading": {"noun": "the reading -- a sense described in context", "verb": "read -- take the usage in a sense, and say which", "directive": "read it in its time, not yours", "relation": "read AS / read IN"},
+        "remembrance": {"noun": "the record -- memory with provenance", "verb": "remember -- append what was kept, signed", "directive": "keep it so it cannot be quietly rewritten", "relation": "remembrance OF"},
+        "integrity": {"noun": "integrity -- integrate at rest: the untouched whole", "verb": "integrate -- re-cohere the parts and check the chain", "directive": "make whole, and verify the making", "relation": "integrate INTO"}
+      },
+      "formation": "The circuit walked on the framework itself: knowledge (the three layers learned) -> technique (attest, read, drift, applied as procedure -- the CLI is the drill) -> fluency (the discipline as reflex: the counterfeit smelled before it is scored) -> judgment (the refusals: knowing WHICH resonance is proof and which is rapport -- the discernment the constants and the 47/7 met). Mastery is the whole walk inside one act of keeping.",
+      "integration": "The reflexive skill: it spans the spine (its measures), language (its units), remembering (its ledger), integrate (its verb), and skill itself (its formation) -- and it is the skill this map's own building has been practising: every lattice recorded was one more walk of the circuit. It serves the signal-thread directly: signal = integrity x direction(truth) is custodianship's verdict-form, the keeper's skill stated as a number that must stay 1. The dual pair at its centre is the framework's own: INTEGRITY IS INTEGRATE AT REST -- the custodian's noun is the custodian's verb, held still."
+    }
+  ]
+}
