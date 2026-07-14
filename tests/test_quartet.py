@@ -22,7 +22,8 @@ def test_the_quartets_load_with_their_keystones():
                    "animate", "language", "conscious-state", "perception", "perspective",
                    "intelligence", "crystallisation", "integrate", "resonance", "ethos",
                    "bond", "gladness", "remembering", "skill", "danger", "interpretation",
-                   "densification", "alignment", "loyalty", "justice", "fairness", "equity"}
+                   "densification", "alignment", "loyalty", "justice", "fairness", "equity",
+                   "honesty"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -209,7 +210,8 @@ def test_bond_holds_love_as_a_dimensional_equation():
     # the field is optional: quartets without dimensions render unchanged
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
-                        "densification", "alignment", "loyalty", "justice", "fairness", "equity"):
+                        "densification", "alignment", "loyalty", "justice", "fairness", "equity",
+                        "honesty"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -267,7 +269,7 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "densification": "densification-thread",
                         "alignment": "alignment-thread", "loyalty": "loyalty-thread",
                         "justice": "justice-thread", "fairness": "fairness-thread",
-                        "equity": "equity-thread"}
+                        "equity": "equity-thread", "honesty": "honesty-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -475,6 +477,29 @@ def test_equity_is_the_level_and_carries_mercys_fossil():
     assert set(eq.dimensions) == set(eq.members)
     for text in eq.dimensions.values():
         assert "breath =" in text and "pump =" in text and "nerve =" in text
+
+
+def test_honesty_weighs_the_maps_most_used_word_on_its_own_scale():
+    # honestas (honor -> truth-telling: the spiral inside one word); the court
+    # oath is the grid's attested formula; three cells provable in the record,
+    # sincerity held at the boundary -- honesty about honesty
+    qs = _load()
+    hon = qs.by_id("honesty")
+    assert hon.keystone == "honestas"
+    assert hon.breath_pump_axis == "side"            # saying<->being, lived/articulated again
+    assert hon.cell("saying", "matched") == "accuracy"
+    assert hon.cell("saying", "unmixed") == "candor"
+    assert hon.cell("being", "matched") == "probity"
+    assert hon.cell("being", "unmixed") == "sincerity"
+    r = hon.reading
+    assert "HONOR" in r                              # honestas: the honourable whole
+    assert "Lunaria" in r                            # the translucent pod
+    assert "court oath" in r.lower()                 # truth / whole truth / nothing but
+    assert "folk etymology" in r.lower()             # sine cera, flagged
+    assert "lying with truths" in r.lower()          # why candor is its own cell
+    assert "left to the reader" in r.lower()         # sincerity at the boundary
+    assert "ad + CURA" in r                          # accuracy is carefulness: caru returns
+    assert set(hon.dimensions) == set(hon.members)
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
