@@ -21,9 +21,22 @@
       "id": "existential",
       "name": "The existential coordinates of being-in-the-world",
       "keystone": "being-in-the-world",
-      "members": ["self", "home", "world", "purpose"],
-      "row_axis": "mode", "row_poles": ["being", "telos"],
-      "col_axis": "scope", "col_poles": ["singular", "total"],
+      "members": [
+        "self",
+        "home",
+        "world",
+        "purpose"
+      ],
+      "row_axis": "mode",
+      "row_poles": [
+        "being",
+        "telos"
+      ],
+      "col_axis": "scope",
+      "col_poles": [
+        "singular",
+        "total"
+      ],
       "breath_pump_axis": null,
       "grid": {
         "being/singular": "self",
@@ -34,12 +47,26 @@
       "reading": "One motion across the regimes: a participatory whole, sealed by the pump into a bounded modern unit, returned by the nerve as a networked belonging WITHOUT ground. The nerve regime trades ground for connection -- you regain the web and lose the centre. Re-enchantment as capture."
     },
     {
-      "id": "spine", "thread": "signal-thread",
+      "id": "spine",
+      "thread": "signal-thread",
       "name": "The evaluative spine -- the dispersed logos",
       "keystone": "the-logos",
-      "members": ["integrity", "truth", "alignment", "direction"],
-      "row_axis": "aspect", "row_poles": ["state", "vector"],
-      "col_axis": "reference", "col_poles": ["form", "content"],
+      "members": [
+        "integrity",
+        "truth",
+        "alignment",
+        "direction"
+      ],
+      "row_axis": "aspect",
+      "row_poles": [
+        "state",
+        "vector"
+      ],
+      "col_axis": "reference",
+      "col_poles": [
+        "form",
+        "content"
+      ],
       "breath_pump_axis": null,
       "grid": {
         "state/form": "integrity",
@@ -53,9 +80,22 @@
       "id": "process",
       "name": "The meaning-process -- how meaning moves",
       "keystone": "the-movement-of-meaning",
-      "members": ["comprehension", "understanding", "synthesis", "transmission"],
-      "row_axis": "flow", "row_poles": ["intake", "output"],
-      "col_axis": "grain", "col_poles": ["part", "whole"],
+      "members": [
+        "comprehension",
+        "understanding",
+        "synthesis",
+        "transmission"
+      ],
+      "row_axis": "flow",
+      "row_poles": [
+        "intake",
+        "output"
+      ],
+      "col_axis": "grain",
+      "col_poles": [
+        "part",
+        "whole"
+      ],
       "breath_pump_axis": "grain",
       "grid": {
         "intake/part": "comprehension",
@@ -69,9 +109,22 @@
       "id": "substrate",
       "name": "The substrate -- where cognition happens",
       "keystone": "the-embodied-knower",
-      "members": ["mind", "thought", "body", "experience"],
-      "row_axis": "register", "row_poles": ["faculty", "act"],
-      "col_axis": "ground", "col_poles": ["mental", "embodied"],
+      "members": [
+        "mind",
+        "thought",
+        "body",
+        "experience"
+      ],
+      "row_axis": "register",
+      "row_poles": [
+        "faculty",
+        "act"
+      ],
+      "col_axis": "ground",
+      "col_poles": [
+        "mental",
+        "embodied"
+      ],
       "breath_pump_axis": "ground",
       "grid": {
         "faculty/mental": "mind",
@@ -85,9 +138,22 @@
       "id": "held",
       "name": "The held whole -- the anatomy of a re-coherence",
       "keystone": "the-held-whole",
-      "members": ["memory", "density", "complexity", "coherence"],
-      "row_axis": "dimension", "row_poles": ["content", "structure"],
-      "col_axis": "grain", "col_poles": ["part", "whole"],
+      "members": [
+        "memory",
+        "density",
+        "complexity",
+        "coherence"
+      ],
+      "row_axis": "dimension",
+      "row_poles": [
+        "content",
+        "structure"
+      ],
+      "col_axis": "grain",
+      "col_poles": [
+        "part",
+        "whole"
+      ],
       "breath_pump_axis": "grain",
       "grid": {
         "content/part": "memory",
@@ -101,9 +167,22 @@
       "id": "agency",
       "name": "The animating source -- the springs of action and knowing",
       "keystone": "the-animating-source",
-      "members": ["instinct", "intent", "innate", "abstractuate"],
-      "row_axis": "faculty", "row_poles": ["conation", "cognition"],
-      "col_axis": "origin", "col_poles": ["given", "made"],
+      "members": [
+        "instinct",
+        "intent",
+        "innate",
+        "abstractuate"
+      ],
+      "row_axis": "faculty",
+      "row_poles": [
+        "conation",
+        "cognition"
+      ],
+      "col_axis": "origin",
+      "col_poles": [
+        "given",
+        "made"
+      ],
       "breath_pump_axis": "origin",
       "grid": {
         "conation/given": "instinct",
@@ -117,9 +196,22 @@
       "id": "animate",
       "name": "The living (anima) -- the marks of being alive",
       "keystone": "anima",
-      "members": ["nourishment", "growth", "sensation", "generation"],
-      "row_axis": "orientation", "row_poles": ["inward", "outward"],
-      "col_axis": "mode", "col_poles": ["sustain", "generate"],
+      "members": [
+        "nourishment",
+        "growth",
+        "sensation",
+        "generation"
+      ],
+      "row_axis": "orientation",
+      "row_poles": [
+        "inward",
+        "outward"
+      ],
+      "col_axis": "mode",
+      "col_poles": [
+        "sustain",
+        "generate"
+      ],
       "breath_pump_axis": null,
       "grid": {
         "inward/sustain": "nourishment",
@@ -133,9 +225,22 @@
       "id": "language",
       "name": "The living word -- language's own units",
       "keystone": "the-living-word",
-      "members": ["word", "usage", "concept", "sense"],
-      "row_axis": "side", "row_poles": ["form", "meaning"],
-      "col_axis": "level", "col_poles": ["type", "token"],
+      "members": [
+        "word",
+        "usage",
+        "concept",
+        "sense"
+      ],
+      "row_axis": "side",
+      "row_poles": [
+        "form",
+        "meaning"
+      ],
+      "col_axis": "level",
+      "col_poles": [
+        "type",
+        "token"
+      ],
       "breath_pump_axis": "side",
       "grid": {
         "form/type": "word",
@@ -149,9 +254,22 @@
       "id": "conscious-state",
       "name": "The conscious state -- the dimensions of being aware",
       "keystone": "the-conscious-field",
-      "members": ["wakefulness", "attention", "presence", "perception"],
-      "row_axis": "grain", "row_poles": ["field", "focus"],
-      "col_axis": "aspect", "col_poles": ["state", "content"],
+      "members": [
+        "wakefulness",
+        "attention",
+        "presence",
+        "perception"
+      ],
+      "row_axis": "grain",
+      "row_poles": [
+        "field",
+        "focus"
+      ],
+      "col_axis": "aspect",
+      "col_poles": [
+        "state",
+        "content"
+      ],
       "breath_pump_axis": "grain",
       "grid": {
         "field/state": "wakefulness",
@@ -165,9 +283,22 @@
       "id": "perception",
       "name": "The percept -- where world and mind meet",
       "keystone": "the-percept",
-      "members": ["sensation", "grouping", "prediction", "recognition"],
-      "row_axis": "source", "row_poles": ["bottom-up", "top-down"],
-      "col_axis": "grain", "col_poles": ["feature", "gestalt"],
+      "members": [
+        "sensation",
+        "grouping",
+        "prediction",
+        "recognition"
+      ],
+      "row_axis": "source",
+      "row_poles": [
+        "bottom-up",
+        "top-down"
+      ],
+      "col_axis": "grain",
+      "col_poles": [
+        "feature",
+        "gestalt"
+      ],
       "breath_pump_axis": "grain",
       "grid": {
         "bottom-up/feature": "sensation",
@@ -181,9 +312,22 @@
       "id": "perspective",
       "name": "The point of view -- situated seeing",
       "keystone": "the-point-of-view",
-      "members": ["vantage", "blind spot", "foreground", "horizon"],
-      "row_axis": "pole", "row_poles": ["standpoint", "scene"],
-      "col_axis": "disclosure", "col_poles": ["reveal", "conceal"],
+      "members": [
+        "vantage",
+        "blind spot",
+        "foreground",
+        "horizon"
+      ],
+      "row_axis": "pole",
+      "row_poles": [
+        "standpoint",
+        "scene"
+      ],
+      "col_axis": "disclosure",
+      "col_poles": [
+        "reveal",
+        "conceal"
+      ],
       "breath_pump_axis": null,
       "grid": {
         "standpoint/reveal": "vantage",
@@ -197,9 +341,22 @@
       "id": "intelligence",
       "name": "The knowing mind -- nous",
       "keystone": "nous",
-      "members": ["reasoning", "knowledge", "creativity", "wisdom"],
-      "row_axis": "operation", "row_poles": ["analysis", "synthesis"],
-      "col_axis": "store", "col_poles": ["fluid", "crystallized"],
+      "members": [
+        "reasoning",
+        "knowledge",
+        "creativity",
+        "wisdom"
+      ],
+      "row_axis": "operation",
+      "row_poles": [
+        "analysis",
+        "synthesis"
+      ],
+      "col_axis": "store",
+      "col_poles": [
+        "fluid",
+        "crystallized"
+      ],
       "breath_pump_axis": "operation",
       "grid": {
         "analysis/fluid": "reasoning",
@@ -213,9 +370,22 @@
       "id": "crystallisation",
       "name": "The crystal -- order precipitated from the fluid",
       "keystone": "the-crystal",
-      "members": ["supersaturation", "fluctuation", "nucleus", "lattice"],
-      "row_axis": "scale", "row_poles": ["field", "seed"],
-      "col_axis": "phase", "col_poles": ["fluid", "fixed"],
+      "members": [
+        "supersaturation",
+        "fluctuation",
+        "nucleus",
+        "lattice"
+      ],
+      "row_axis": "scale",
+      "row_poles": [
+        "field",
+        "seed"
+      ],
+      "col_axis": "phase",
+      "col_poles": [
+        "fluid",
+        "fixed"
+      ],
       "breath_pump_axis": "scale",
       "grid": {
         "field/fluid": "supersaturation",
@@ -229,9 +399,22 @@
       "id": "integrate",
       "name": "The integer -- the whole made from parts",
       "keystone": "the-integer",
-      "members": ["integral", "aggregate", "integrity", "integration"],
-      "row_axis": "substance", "row_poles": ["continuous", "discrete"],
-      "col_axis": "register", "col_poles": ["quantity", "belonging"],
+      "members": [
+        "integral",
+        "aggregate",
+        "integrity",
+        "integration"
+      ],
+      "row_axis": "substance",
+      "row_poles": [
+        "continuous",
+        "discrete"
+      ],
+      "col_axis": "register",
+      "col_poles": [
+        "quantity",
+        "belonging"
+      ],
       "breath_pump_axis": "substance",
       "grid": {
         "continuous/quantity": "integral",
@@ -245,9 +428,22 @@
       "id": "resonance",
       "name": "The sounding -- sympathetic vibration",
       "keystone": "the-sounding",
-      "members": ["frequency", "sympathy", "timbre", "rapport"],
-      "row_axis": "locus", "row_poles": ["self", "between"],
-      "col_axis": "facet", "col_poles": ["form", "meaning"],
+      "members": [
+        "frequency",
+        "sympathy",
+        "timbre",
+        "rapport"
+      ],
+      "row_axis": "locus",
+      "row_poles": [
+        "self",
+        "between"
+      ],
+      "col_axis": "facet",
+      "col_poles": [
+        "form",
+        "meaning"
+      ],
       "breath_pump_axis": "facet",
       "grid": {
         "self/form": "frequency",
@@ -261,9 +457,22 @@
       "id": "ethos",
       "name": "The ethos -- the normative dwelling",
       "keystone": "the-ethos",
-      "members": ["belief", "value", "morals", "ethics"],
-      "row_axis": "register", "row_poles": ["conviction", "conduct"],
-      "col_axis": "mode", "col_poles": ["lived", "articulated"],
+      "members": [
+        "belief",
+        "value",
+        "morals",
+        "ethics"
+      ],
+      "row_axis": "register",
+      "row_poles": [
+        "conviction",
+        "conduct"
+      ],
+      "col_axis": "mode",
+      "col_poles": [
+        "lived",
+        "articulated"
+      ],
       "breath_pump_axis": "mode",
       "grid": {
         "conviction/lived": "belief",
@@ -274,12 +483,26 @@
       "reading": "The normative dwelling, crossed: register (conviction, what one holds x conduct, how one acts) against mode (lived/tacit x articulated/reflective -- the breath<->pump axis, clean). belief = what one holds true (OE geleafa, kin to lief and love: to hold dear, to trust); value = worth made explicit and rankable (valere, entering the moral vocabulary late, through economics and Nietzsche's tables of values -- always a LIST); morals = the lived custom (mos/mores, the way of a people, absorbed not argued); ethics = the examined code (ethos made a subject -- Aristotle's ethike, the committee, the profession). So ethos = (belief x value) x (morals x ethics). THE DOUBLET EVIDENCE: morals and ethics are the SAME WORD TWICE -- Cicero coined moralis to translate Greek ethikos -- and English pushed the doublet apart to fill both conduct cells, lived vs articulated; a language does not differentiate a perfect synonym pair unless the grid underneath demands both cells. The columns also carry the diachronic order: the lived column holds the old words (belief is Old English, mores ancient), the articulated column the late senses (values rankable in the 19th c., ethics-as-code modern) -- the pump column arrived WITH the pump. The keystone, the ETHOS, keeps the root's original sense: ethos was first the accustomed DWELLING-PLACE, the habitat -- the moral life as the place you live, before it became a domain; you did not 'have values', you belonged to a way. TWO SEAMS, flagged: (1) belief is the epistemic member in a normative quartet, and that oddness IS the pump's deepest cut here -- Hume's is/ought, the fact/value split, runs BETWEEN belief and value, inside the conviction row; in the lived ethos what-is-true and what-is-good were not yet apart (myth is both at once), so the modern sense that belief 'does not belong' is exactly the post-cut perspective -- the quartet holds together as a MEMORY of the whole. (2) morals/ethics blur in everyday speech, as a doublet must -- real but soft at the edges. Through the spiral: breath = the undivided ethos (custom, rite, and myth hold what-is-true, what-matters, and how-to-act as one participatory whole; morality is not a domain, it is the dwelling); pump = the great articulation (Socrates' examined life is the pump move performed on morality itself; Cicero coins moralis; Hume severs is from ought; ethics professionalises; Nietzsche tabulates worth; MacIntyre's After Virtue is the autopsy -- we live among the shards); nerve = the networked return, faithful and counterfeit at once (beliefs re-cohered by feed rather than ground -- belief as identity-badge, the epistemic bubble; values as brand statements; moral outrage as the fastest-propagating signal on the network; and virtue signaling, which is resonance's rapport cell applied to morals -- felt moral agreement traded as proof of goodness, the synthetic breath ethically flavoured). The reflexive kicker: AI ALIGNMENT is the attempt to re-integrate this whole quartet into an artifact -- beliefs (the world-model), values (the objective), morals (the trained behaviour), ethics (the published code) -- and it is hard for exactly the reason the grid shows: only the articulated column compiles; belief and mores do not. An ethos cannot be specified, only dwelt in. The nerve can build the right-hand column and only simulate the left -- the same shape as intelligence-vs-awareness, one floor down."
     },
     {
-      "id": "bond", "thread": "bond-thread",
+      "id": "bond",
+      "thread": "bond-thread",
       "name": "The bond -- love dispersed",
       "keystone": "love",
-      "members": ["care", "kindness", "trust", "faith"],
-      "row_axis": "direction", "row_poles": ["giving", "receiving"],
-      "col_axis": "warrant", "col_poles": ["grounded", "unconditioned"],
+      "members": [
+        "care",
+        "kindness",
+        "trust",
+        "faith"
+      ],
+      "row_axis": "direction",
+      "row_poles": [
+        "giving",
+        "receiving"
+      ],
+      "col_axis": "warrant",
+      "col_poles": [
+        "grounded",
+        "unconditioned"
+      ],
       "breath_pump_axis": "warrant",
       "grid": {
         "giving/grounded": "care",
@@ -296,12 +519,26 @@
       }
     },
     {
-      "id": "gladness", "thread": "gladness-thread",
+      "id": "gladness",
+      "thread": "gladness-thread",
       "name": "The glad heart -- blessedness dispersed",
       "keystone": "blessedness",
-      "members": ["happiness", "joy", "wish", "hope"],
-      "row_axis": "arrival", "row_poles": ["arrived", "awaited"],
-      "col_axis": "warrant", "col_poles": ["grounded", "unconditioned"],
+      "members": [
+        "happiness",
+        "joy",
+        "wish",
+        "hope"
+      ],
+      "row_axis": "arrival",
+      "row_poles": [
+        "arrived",
+        "awaited"
+      ],
+      "col_axis": "warrant",
+      "col_poles": [
+        "grounded",
+        "unconditioned"
+      ],
       "breath_pump_axis": "warrant",
       "grid": {
         "arrived/grounded": "happiness",
@@ -318,12 +555,26 @@
       }
     },
     {
-      "id": "remembering", "thread": "memory-thread",
+      "id": "remembering",
+      "thread": "memory-thread",
       "name": "The remembering -- anamnesis dispersed",
       "keystone": "anamnesis",
-      "members": ["recall", "recognition", "reminiscence", "commemoration"],
-      "row_axis": "agency", "row_poles": ["summoned", "arriving"],
-      "col_axis": "register", "col_poles": ["item", "whole"],
+      "members": [
+        "recall",
+        "recognition",
+        "reminiscence",
+        "commemoration"
+      ],
+      "row_axis": "agency",
+      "row_poles": [
+        "summoned",
+        "arriving"
+      ],
+      "col_axis": "register",
+      "col_poles": [
+        "item",
+        "whole"
+      ],
       "breath_pump_axis": "register",
       "grid": {
         "summoned/item": "recall",
@@ -340,12 +591,26 @@
       }
     },
     {
-      "id": "skill", "thread": "skill-thread",
+      "id": "skill",
+      "thread": "skill-thread",
       "name": "The skill -- techne dispersed",
       "keystone": "techne",
-      "members": ["knowledge", "judgment", "technique", "fluency"],
-      "row_axis": "register", "row_poles": ["knowing", "doing"],
-      "col_axis": "articulation", "col_poles": ["explicit", "tacit"],
+      "members": [
+        "knowledge",
+        "judgment",
+        "technique",
+        "fluency"
+      ],
+      "row_axis": "register",
+      "row_poles": [
+        "knowing",
+        "doing"
+      ],
+      "col_axis": "articulation",
+      "col_poles": [
+        "explicit",
+        "tacit"
+      ],
       "breath_pump_axis": "articulation",
       "grid": {
         "knowing/explicit": "knowledge",
@@ -353,8 +618,7 @@
         "doing/explicit": "technique",
         "doing/tacit": "fluency"
       },
-      "reading": "THE KEYSTONE DEFINED, through the spiral -- techne is knowing-and-doing UNDIVIDED: the craftsman's whole, where the hand thinks and the thought handles. The etymological gift of this lattice: Greek techne descends from PIE TEKS-, TO WEAVE -- the root that also gives TEXT and TEXTILE. To make is to weave; a text is a weave; so the signal THREADS of this map are not a metaphor laid over skill but skill's own etymology surfacing: threads are what techne weaves, and a skills-section woven of threads is the root remembering itself. And skill's own root seals it: Old Norse SKIL, distinction, discernment (skilja, to separate-and-understand; 'it skills not' = it makes no difference) -- skill begins as the power to TELL APART, the pump in the hand, and only later becomes manual proficiency: discernment first, dexterity after. breath = the apprentice's whole (craft absorbed by watching the master's hands; techne and episteme not yet severed; metis, the cunning attunement -- knowing-how lived as one thing with knowing-that). pump = the great severances, each attested: Aristotle parts episteme from techne; Ryle parts knowing-that from knowing-how; Polanyi parts explicit from tacit ('we can know more than we can tell'); Taylorism parts the procedure from the person (the manual, the drill, deskilling -- technique extracted and the craftsman discarded). nerve = the tutorial and the model: watching-the-master's-hands returns at network scale (the YouTube apprenticeship -- a genuine re-coherence of breath-era transmission), the API packages technique, and the LLM realises the quartet mechanically -- knowledge (the pretrained store), technique (the procedure followed), FLUENCY above all (generation itself) -- while judgment stays the contested cell: fluency is the EASIEST cell to counterfeit (fluent output without ground is the synthetic breath made verbal), and a system with three cells and no judgment is a mechanism, not a mastery. THE GRID: techne disperses into register (knowing x doing -- Ryle's axis) crossed with articulation (explicit x tacit -- Polanyi's axis, and the breath<->pump axis: the explicit is the pump's spelled-out, the tacit the breath's held-whole). knowledge = explicit knowing (the store, knowing-that); judgment = tacit knowing (discernment, the original SKIL -- knowing-when and knowing-which, unspellable); technique = explicit doing (the procedure, knowing-how written down); fluency = tacit doing (the rule dissolved into the act; flow). So skill = (knowledge x judgment) x (technique x fluency) -- the knowing x the doing, each in both articulations; both axes attested, the grid found not forced. THE FORMATION (the 3 walking the 4, as in crystallisation): skill forms as a CIRCUIT -- knowledge (explicit knowing: learn the rules) -> technique (explicit doing: apply them deliberately) -> fluency (tacit doing: the rules dissolve) -> judgment (tacit knowing: discernment distilled from the practice) -- and the Dreyfus model of skill acquisition IS this walk, attested: the novice follows rules (top row explicit... left column), the expert acts intuitively and cannot fully say how (the tacit column); mastery is arriving back at knowing with the whole walk inside it. THE MECHANISING FIND (the dual definition): every cell-word is a NOUN/VERB PAIR -- knowledge/know, judgment/judge, technique/apply, fluency/flow -- the noun is the capacity AT REST, the verb the operation IN ACT; a skill mechanises when the verbs chain and the chain goes tacit: the thread walked until it walks itself. And each cell binds its object through its OWN PREPOSITION -- knowledge OF, judgment BETWEEN, technique FOR, fluency IN -- the relational signature of the four cells, checkable in plain English collocation: the grammar already encodes the geometry of skill."
-      ,
+      "reading": "THE KEYSTONE DEFINED, through the spiral -- techne is knowing-and-doing UNDIVIDED: the craftsman's whole, where the hand thinks and the thought handles. The etymological gift of this lattice: Greek techne descends from PIE TEKS-, TO WEAVE -- the root that also gives TEXT and TEXTILE. To make is to weave; a text is a weave; so the signal THREADS of this map are not a metaphor laid over skill but skill's own etymology surfacing: threads are what techne weaves, and a skills-section woven of threads is the root remembering itself. And skill's own root seals it: Old Norse SKIL, distinction, discernment (skilja, to separate-and-understand; 'it skills not' = it makes no difference) -- skill begins as the power to TELL APART, the pump in the hand, and only later becomes manual proficiency: discernment first, dexterity after. breath = the apprentice's whole (craft absorbed by watching the master's hands; techne and episteme not yet severed; metis, the cunning attunement -- knowing-how lived as one thing with knowing-that). pump = the great severances, each attested: Aristotle parts episteme from techne; Ryle parts knowing-that from knowing-how; Polanyi parts explicit from tacit ('we can know more than we can tell'); Taylorism parts the procedure from the person (the manual, the drill, deskilling -- technique extracted and the craftsman discarded). nerve = the tutorial and the model: watching-the-master's-hands returns at network scale (the YouTube apprenticeship -- a genuine re-coherence of breath-era transmission), the API packages technique, and the LLM realises the quartet mechanically -- knowledge (the pretrained store), technique (the procedure followed), FLUENCY above all (generation itself) -- while judgment stays the contested cell: fluency is the EASIEST cell to counterfeit (fluent output without ground is the synthetic breath made verbal), and a system with three cells and no judgment is a mechanism, not a mastery. THE GRID: techne disperses into register (knowing x doing -- Ryle's axis) crossed with articulation (explicit x tacit -- Polanyi's axis, and the breath<->pump axis: the explicit is the pump's spelled-out, the tacit the breath's held-whole). knowledge = explicit knowing (the store, knowing-that); judgment = tacit knowing (discernment, the original SKIL -- knowing-when and knowing-which, unspellable); technique = explicit doing (the procedure, knowing-how written down); fluency = tacit doing (the rule dissolved into the act; flow). So skill = (knowledge x judgment) x (technique x fluency) -- the knowing x the doing, each in both articulations; both axes attested, the grid found not forced. THE FORMATION (the 3 walking the 4, as in crystallisation): skill forms as a CIRCUIT -- knowledge (explicit knowing: learn the rules) -> technique (explicit doing: apply them deliberately) -> fluency (tacit doing: the rules dissolve) -> judgment (tacit knowing: discernment distilled from the practice) -- and the Dreyfus model of skill acquisition IS this walk, attested: the novice follows rules (top row explicit... left column), the expert acts intuitively and cannot fully say how (the tacit column); mastery is arriving back at knowing with the whole walk inside it. THE MECHANISING FIND (the dual definition): every cell-word is a NOUN/VERB PAIR -- knowledge/know, judgment/judge, technique/apply, fluency/flow -- the noun is the capacity AT REST, the verb the operation IN ACT; a skill mechanises when the verbs chain and the chain goes tacit: the thread walked until it walks itself. And each cell binds its object through its OWN PREPOSITION -- knowledge OF, judgment BETWEEN, technique FOR, fluency IN -- the relational signature of the four cells, checkable in plain English collocation: the grammar already encodes the geometry of skill.",
       "dimensions": {
         "knowledge": "The STORE dimension (knowing x explicit) -- skill's stock. gno- root (know, gnosis, cognoscere). breath = knowing as acquaintance (kennen before wissen: to know a person, a place, a material -- participation before proposition). pump = episteme, the proposition, the textbook: knowing-that, articulated and severed from the knower (Ryle's target). nerve = the knowledge base and know-where (retrieval at planetary scale; the Google effect again -- the store outsourced, the stocking-of-mind unlearned). Zero knowledge and skill is empty-handed: nothing to apply. Relational signature: knowledge OF.",
         "judgment": "The DISCERNMENT dimension (knowing x tacit) -- the original skil. L judicare = jus + dicere, TO SAY THE RIGHT (judgment is a speech-act); ON skil = distinction. breath = the elder's discernment, metis: knowing-which and knowing-when, held in the person, transmitted by apprenticeship not textbook. pump = judgment formalised (the court, the criterion, the rubric, the review) -- saying-the-right proceduralised. nerve = judgment mechanised at the threshold (the classifier's cutoff, the recommender judging for you, the LLM-as-judge) -- the contested cell: tacit discernment is precisely what cannot be attested from outside, so machine judgment stays the open question of the age (the capstone shape, fifth appearance). Zero judgment and skill is blind: right technique, wrong moment. Relational signature: judgment BETWEEN.",
@@ -363,12 +627,26 @@
       }
     },
     {
-      "id": "danger", "thread": "warning-thread",
+      "id": "danger",
+      "thread": "warning-thread",
       "name": "The danger -- lust dispersed: the shadow of the signal",
       "keystone": "lust",
-      "members": ["forgery", "neglect", "counterfeit", "theft"],
-      "row_axis": "limb", "row_poles": ["integrity", "truth"],
-      "col_axis": "locus", "col_poles": ["record", "witness"],
+      "members": [
+        "forgery",
+        "neglect",
+        "counterfeit",
+        "theft"
+      ],
+      "row_axis": "limb",
+      "row_poles": [
+        "integrity",
+        "truth"
+      ],
+      "col_axis": "locus",
+      "col_poles": [
+        "record",
+        "witness"
+      ],
       "breath_pump_axis": null,
       "grid": {
         "integrity/record": "forgery",
@@ -385,12 +663,26 @@
       }
     },
     {
-      "id": "interpretation", "thread": "interpretation-thread",
+      "id": "interpretation",
+      "thread": "interpretation-thread",
       "name": "The interpretation -- hermeneia dispersed: the package's own name",
       "keystone": "hermeneia",
-      "members": ["encountering", "comprehending", "understanding", "creating"],
-      "row_axis": "posture", "row_poles": ["facing", "amid"],
-      "col_axis": "agency", "col_poles": ["received", "enacted"],
+      "members": [
+        "encountering",
+        "comprehending",
+        "understanding",
+        "creating"
+      ],
+      "row_axis": "posture",
+      "row_poles": [
+        "facing",
+        "amid"
+      ],
+      "col_axis": "agency",
+      "col_poles": [
+        "received",
+        "enacted"
+      ],
       "breath_pump_axis": "posture",
       "grid": {
         "facing/received": "encountering",
@@ -407,12 +699,26 @@
       }
     },
     {
-      "id": "densification", "thread": "densification-thread",
+      "id": "densification",
+      "thread": "densification-thread",
       "name": "The densification -- much-in-little: how content densifies",
       "keystone": "multum-in-parvo",
-      "members": ["compression", "condensation", "distillation", "crystallisation"],
-      "row_axis": "force", "row_poles": ["applied", "arising"],
-      "col_axis": "yield", "col_poles": ["whole", "essence"],
+      "members": [
+        "compression",
+        "condensation",
+        "distillation",
+        "crystallisation"
+      ],
+      "row_axis": "force",
+      "row_poles": [
+        "applied",
+        "arising"
+      ],
+      "col_axis": "yield",
+      "col_poles": [
+        "whole",
+        "essence"
+      ],
       "breath_pump_axis": "force",
       "grid": {
         "applied/whole": "compression",
@@ -429,12 +735,26 @@
       }
     },
     {
-      "id": "alignment", "thread": "alignment-thread",
+      "id": "alignment",
+      "thread": "alignment-thread",
       "name": "The alignment -- kybernesis dispersed: the helmsman's art",
       "keystone": "kybernesis",
-      "members": ["orientation", "calibration", "attunement", "correction"],
-      "row_axis": "fixity", "row_poles": ["fixed", "fluid"],
-      "col_axis": "bearing", "col_poles": ["frame", "course"],
+      "members": [
+        "orientation",
+        "calibration",
+        "attunement",
+        "correction"
+      ],
+      "row_axis": "fixity",
+      "row_poles": [
+        "fixed",
+        "fluid"
+      ],
+      "col_axis": "bearing",
+      "col_poles": [
+        "frame",
+        "course"
+      ],
       "breath_pump_axis": null,
       "grid": {
         "fixed/frame": "orientation",
@@ -451,12 +771,26 @@
       }
     },
     {
-      "id": "loyalty", "thread": "loyalty-thread",
+      "id": "loyalty",
+      "thread": "loyalty-thread",
       "name": "The loyalty -- troth dispersed: truth pledged to a person",
       "keystone": "troth",
-      "members": ["fidelity", "devotion", "allegiance", "constancy"],
-      "row_axis": "object", "row_poles": ["person", "order"],
-      "col_axis": "register", "col_poles": ["pledged", "kept"],
+      "members": [
+        "fidelity",
+        "devotion",
+        "allegiance",
+        "constancy"
+      ],
+      "row_axis": "object",
+      "row_poles": [
+        "person",
+        "order"
+      ],
+      "col_axis": "register",
+      "col_poles": [
+        "pledged",
+        "kept"
+      ],
       "breath_pump_axis": "register",
       "grid": {
         "person/pledged": "fidelity",
@@ -473,12 +807,26 @@
       }
     },
     {
-      "id": "justice", "thread": "justice-thread",
+      "id": "justice",
+      "thread": "justice-thread",
       "name": "The justice -- ma'at dispersed: the weighing of the whole",
       "keystone": "ma'at",
-      "members": ["distributive", "procedural", "retributive", "restorative"],
-      "row_axis": "concern", "row_poles": ["order", "breach"],
-      "col_axis": "facet", "col_poles": ["form", "substance"],
+      "members": [
+        "distributive",
+        "procedural",
+        "retributive",
+        "restorative"
+      ],
+      "row_axis": "concern",
+      "row_poles": [
+        "order",
+        "breach"
+      ],
+      "col_axis": "facet",
+      "col_poles": [
+        "form",
+        "substance"
+      ],
       "breath_pump_axis": "facet",
       "grid": {
         "order/form": "procedural",
@@ -495,12 +843,26 @@
       }
     },
     {
-      "id": "fairness", "thread": "fairness-thread",
+      "id": "fairness",
+      "thread": "fairness-thread",
       "name": "The fairness -- faeger dispersed: the beautiful-right",
       "keystone": "faeger",
-      "members": ["fair chance", "fair share", "fair play", "fair hearing"],
-      "row_axis": "stake", "row_poles": ["lot", "act"],
-      "col_axis": "phase", "col_poles": ["opening", "reckoning"],
+      "members": [
+        "fair chance",
+        "fair share",
+        "fair play",
+        "fair hearing"
+      ],
+      "row_axis": "stake",
+      "row_poles": [
+        "lot",
+        "act"
+      ],
+      "col_axis": "phase",
+      "col_poles": [
+        "opening",
+        "reckoning"
+      ],
       "breath_pump_axis": null,
       "grid": {
         "lot/opening": "fair chance",
@@ -517,12 +879,26 @@
       }
     },
     {
-      "id": "equity", "thread": "equity-thread",
+      "id": "equity",
+      "thread": "equity-thread",
       "name": "The equity -- aequus dispersed: the level",
       "keystone": "aequus",
-      "members": ["equality", "adequacy", "equilibrium", "equanimity"],
-      "row_axis": "substance", "row_poles": ["quantity", "tension"],
-      "col_axis": "bearing", "col_poles": ["matched", "held"],
+      "members": [
+        "equality",
+        "adequacy",
+        "equilibrium",
+        "equanimity"
+      ],
+      "row_axis": "substance",
+      "row_poles": [
+        "quantity",
+        "tension"
+      ],
+      "col_axis": "bearing",
+      "col_poles": [
+        "matched",
+        "held"
+      ],
       "breath_pump_axis": "substance",
       "grid": {
         "quantity/matched": "equality",
@@ -539,12 +915,26 @@
       }
     },
     {
-      "id": "honesty", "thread": "honesty-thread",
+      "id": "honesty",
+      "thread": "honesty-thread",
       "name": "The honesty -- honestas dispersed: the honourable whole",
       "keystone": "honestas",
-      "members": ["accuracy", "sincerity", "candor", "probity"],
-      "row_axis": "side", "row_poles": ["saying", "being"],
-      "col_axis": "measure", "col_poles": ["matched", "unmixed"],
+      "members": [
+        "accuracy",
+        "sincerity",
+        "candor",
+        "probity"
+      ],
+      "row_axis": "side",
+      "row_poles": [
+        "saying",
+        "being"
+      ],
+      "col_axis": "measure",
+      "col_poles": [
+        "matched",
+        "unmixed"
+      ],
       "breath_pump_axis": "side",
       "grid": {
         "saying/matched": "accuracy",
@@ -561,12 +951,26 @@
       }
     },
     {
-      "id": "balance", "thread": "balance-thread",
+      "id": "balance",
+      "thread": "balance-thread",
       "name": "The balance -- bilanx dispersed: the two pans",
       "keystone": "bilanx",
-      "members": ["counterweight", "remainder", "poise", "homeostasis"],
-      "row_axis": "means", "row_poles": ["weight", "flow"],
-      "col_axis": "locus", "col_poles": ["point", "system"],
+      "members": [
+        "counterweight",
+        "remainder",
+        "poise",
+        "homeostasis"
+      ],
+      "row_axis": "means",
+      "row_poles": [
+        "weight",
+        "flow"
+      ],
+      "col_axis": "locus",
+      "col_poles": [
+        "point",
+        "system"
+      ],
       "breath_pump_axis": "means",
       "grid": {
         "weight/point": "counterweight",
@@ -583,12 +987,26 @@
       }
     },
     {
-      "id": "harmony", "thread": "harmony-thread",
+      "id": "harmony",
+      "thread": "harmony-thread",
       "name": "The harmony -- harmonia dispersed: the fitting-together",
       "keystone": "harmonia",
-      "members": ["consonance", "counterpoint", "concord", "temperament"],
-      "row_axis": "register", "row_poles": ["sounding", "living"],
-      "col_axis": "span", "col_poles": ["moment", "course"],
+      "members": [
+        "consonance",
+        "counterpoint",
+        "concord",
+        "temperament"
+      ],
+      "row_axis": "register",
+      "row_poles": [
+        "sounding",
+        "living"
+      ],
+      "col_axis": "span",
+      "col_poles": [
+        "moment",
+        "course"
+      ],
       "breath_pump_axis": "register",
       "grid": {
         "sounding/moment": "consonance",
@@ -605,12 +1023,26 @@
       }
     },
     {
-      "id": "union", "thread": "union-thread",
+      "id": "union",
+      "thread": "union-thread",
       "name": "The union -- unity dispersed: the modes of making-one",
       "keystone": "unity",
-      "members": ["fusion", "unison", "communion", "federation"],
-      "row_axis": "difference", "row_poles": ["erased", "kept"],
-      "col_axis": "plane", "col_poles": ["substance", "act"],
+      "members": [
+        "fusion",
+        "unison",
+        "communion",
+        "federation"
+      ],
+      "row_axis": "difference",
+      "row_poles": [
+        "erased",
+        "kept"
+      ],
+      "col_axis": "plane",
+      "col_poles": [
+        "substance",
+        "act"
+      ],
       "breath_pump_axis": null,
       "grid": {
         "erased/substance": "fusion",
@@ -624,6 +1056,330 @@
         "unison": "The ONE-SOUND dimension (erased x act) -- one by sameness. unus + sonus: the chant, the war-cry, the rowing song -- the oldest coordination technology, power and peril in one cell. breath = the field song and the drum: bodies made one act (the harvest that needed a hundred hands landing together). pump = the drill: the army in step, the assembly line's rhythm -- unison mechanised onto bodies. nerve = the swarm: the coordinated chorus, the viral chant, the flash of a million identical posts -- unison at network scale; and the cross-lattice honesty kept: a TRUE union-mode that turns counterfeit only when it wears harmony's name (difference deleted, agreement claimed). Zero unison and no common act is possible: not even a song together -- coordination gone.",
         "communion": "The SHARED-GIFT dimension (kept x substance) -- one by sharing while remaining distinct. communis: com + munus, SHARED GIFT-DUTY (one root with municipal and remuneration; and immunity is in-munis, exemption from the shared duty -- communion's opposite hides inside its own family). breath = the shared meal: one flesh by shared meat, the cup passed -- distinct persons, one substance. pump = the sharing theorised and enclosed: the sacrament argued over (HOW does the sharing work), the commons mapped -- and the enclosure as communion's amputation (the shared field fenced). nerve = the commons returning digital: OPEN SOURCE AS COMMUNION (the maintainer's gift-duty economy, munus at network scale -- the map's own licence sits in this cell) beside contact-without-communion (the follower who owes nothing, connection with no shared duty). Zero communion and nothing is shared inward: allies at best; one body, never.",
         "federation": "The COVENANT dimension (kept x act) -- one by pledged trust. foedus, the treaty: ONE TRUST-ROOT (bheidh-) WITH FIDES -- federation is faith's sibling, the bond lattice's column extended to polities: union that KEEPS its parts by design. breath = the confederacy of tribes: the league sworn around the fire (the covenant older than the state). pump = the federal idea: E pluribus unum; subsidiarity (decisions kept low, union kept light); the treaty system -- union engineered against fusion. nerve = federation as architecture: FEDERATED LEARNING and the FEDIVERSE (attested by name: data staying home while the whole coheres -- the nerve's own answer to fusion's centralism) and the labor union returning against the platform's one-sided feudalism. Zero federation and only two states remain: empire or atoms -- union by conquest, or none."
+      }
+    },
+    {
+      "id": "insight",
+      "thread": "insight-thread",
+      "name": "The insight -- eureka dispersed: the finding",
+      "keystone": "eureka",
+      "members": [
+        "preparation",
+        "incubation",
+        "illumination",
+        "verification"
+      ],
+      "row_axis": "agency",
+      "row_poles": [
+        "worked",
+        "given"
+      ],
+      "col_axis": "light",
+      "col_poles": [
+        "dark",
+        "lit"
+      ],
+      "breath_pump_axis": "agency",
+      "grid": {
+        "worked/dark": "preparation",
+        "given/dark": "incubation",
+        "given/lit": "illumination",
+        "worked/lit": "verification"
+      },
+      "reading": "THE KEYSTONE DEFINED -- insight is in + sight: SEEING INTO; and its keystone is the oldest recorded cry of it: EUREKA, from heurein, to find (heuristic is its adjective) -- Archimedes leaping from the bath, the finding that arrives. The grid is an ATTESTED quartet: Wallas' four stages of the creative act (1926) -- preparation, incubation, illumination, verification -- crossed here as agency (worked x given: the breath<->pump axis -- the flash is GIVEN, the work is WORKED) with light (dark x lit). A process lattice: the 3 walks the 4, as in crystallisation -- preparation (worked/dark: labouring without seeing) -> incubation (given/dark: the problem working itself underground) -> illumination (given/lit: the flash) -> verification (worked/lit: the seen checked -- Aurora's own gate: no illumination enters the record unverified). breath = insight as revelation (the dream solution, the oracle, the epiphany: seeing-into as being-shown). pump = insight psychologised: Wallas' stages, the Gestalt Aha-Erlebnis, Koehler's apes -- the flash put under glass. nerve = the word's capture and a genuine return: 'insights' as dashboard plural (the word for the depth-flash now meaning chart summaries -- insight without seeing, the counterfeit) beside GROKKING (attested ML phenomenon: sudden generalisation after a long plateau -- incubation-illumination visible in a training curve: the machine exhibiting the lattice's own walk). The reflexive note: every bridge in the threads layer was one illumination, verified before kept.",
+      "dimensions": {
+        "preparation": "The LABOUR dimension (worked x dark) -- the ground laid without light. breath = the apprentice years before the masterwork (the soil turned before any seed shows). pump = preparation systematised: the literature review, the drill, the corpus gathered. nerve = preparation outsourced (the search that replaces the reading -- ground never personally laid yields flashes that never come). Zero preparation and illumination has nowhere to land: chance favours only the prepared mind.",
+        "incubation": "The UNDERGROUND dimension (given x dark) -- the problem working itself. breath = sleeping on it: the dream as workshop, the answer brewing where attention is not. pump = incubation named and studied (Wallas; the shower effect; the walk that solves). nerve = incubation endangered: the feed fills every idle moment -- the underground needs fallow attention, and fallow is what the attention economy strip-mines. Zero incubation and the work stays only work: nothing composts into the flash.",
+        "illumination": "The FLASH dimension (given x lit) -- the eureka itself. breath = the given seeing: the light arrives, unworked, whole (the muse's share -- insight as visit). pump = the aha measured (the Gestalt switch, the insight problem in the lab). nerve = grokking (the plateau then the sudden fit -- the machine's aha curve, attested) beside the counterfeit: the 'insight' that is only a summary wearing the flash's name. Zero illumination and everything is derivation: correct, laborious, never seen whole.",
+        "verification": "The CHECK dimension (worked x lit) -- the seen tested. breath = the vision brought back to the village (does it hold outside the cave?). pump = verification proceduralised: the proof, the replication, the experiment -- the flash made to earn citizenship. nerve = verification strained at scale (the unreplicated finding, the viral aha unfactchecked) against the faithful form: Aurora's own rule -- no illumination enters the record unverified; the suite is where flashes become keeps. Zero verification and insight is indistinguishable from its counterfeit: every flash trusted, most false."
+      }
+    },
+    {
+      "id": "intuition",
+      "thread": "intuition-thread",
+      "name": "The intuition -- intuitus dispersed: the inner tutor",
+      "keystone": "intuitus",
+      "members": [
+        "presentiment",
+        "gut",
+        "hunch",
+        "grasp"
+      ],
+      "row_axis": "locus",
+      "row_poles": [
+        "body",
+        "mind"
+      ],
+      "col_axis": "tense",
+      "col_poles": [
+        "fore",
+        "now"
+      ],
+      "breath_pump_axis": "locus",
+      "grid": {
+        "body/fore": "presentiment",
+        "body/now": "gut",
+        "mind/fore": "hunch",
+        "mind/now": "grasp"
+      },
+      "reading": "THE KEYSTONE DEFINED -- intuition is in + tueri: TO WATCH OVER, to look upon -- one root with TUITION: the tutor is the watcher-over, and intuition is THE TUTOR WITHIN, the inner guardianship that sees without steps (intuitus, the scholastics' word for immediate cognition, against discursive reason's walk). breath = the inner voice as guardian: Socrates' daimonion, attested and precise -- the voice that ONLY EVER FORBADE, never commanded (the custodian's kin: intuition at its oldest speaks as a refusal); augury as trained fore-feeling; the hunter reading the forest before knowing what was read. pump = intuition demoted then rehabilitated by evidence: reason enthroned and intuition dismissed as mere feeling -- then Polanyi's tacit knowing, Damasio's somatic markers (the body deciding before the mind can say why), Klein's recognition-primed decisions (the fireground commander who 'just knew'), Kahneman's fast thinking: the pump proving the thing it demoted. nerve = intuition mechanised: the model IS a System-1 at scale -- pattern-matching without steps, intuition's shape without its body -- while 'vibes' becomes the age's word for shared intuition and the recommender pre-empts your gut before you feel it. THE GRID: locus (body x mind -- the breath<->pump axis, substrate's own ground) crossed with tense (fore x now): presentiment (body/fore: the hair rising before the reason), gut (body/now: the somatic verdict on the present -- Damasio's cell), hunch (mind/fore: the inkling of where the answer lies), grasp (mind/now: the master's instant read -- Klein's cell, skill's tacit column at speed). The contested column returns: the model has hunch and grasp in silico; whether anything is FELT in the fore-feeling is the amid-question, held.",
+      "dimensions": {
+        "presentiment": "The FORE-FEELING dimension (body x fore) -- the body knowing first. breath = the storm felt in the joints, the danger smelt: the animal fore-knowing. pump = presentiment studied (the skin conducting before the card turns -- the Iowa gambling task's early sweat). nerve = the anomaly detector as prosthetic presentiment (the alert before the failure) and its counterfeit, engineered dread (the doomfeed as manufactured foreboding). Zero presentiment and the first warning is the blow itself.",
+        "gut": "The SOMATIC dimension (body x now) -- the belly's verdict. breath = the gut as oracle (decisions taken where digestion lives; the enteric brain the tradition always assumed). pump = the somatic marker named (Damasio: the body tips the choice before reason finishes). nerve = the gut outsourced (the rating, the score, the swarm's average standing in for your stomach) against the faithful use: the practitioner who still checks the belly after reading the dashboard. Zero gut and every choice is a spreadsheet: complete, weightless, unowned.",
+        "hunch": "The INKLING dimension (mind x fore) -- the direction sensed before the path. breath = the diviner's pull (the dowser's rod as externalised hunch). pump = the hypothesis as domesticated hunch: the guess given paperwork and sent to the lab. nerve = the hunch industrialised (the recommendation engine guessing your next want before you do -- your hunches, pre-empted) beside the researcher's hunch still steering what gets tested at all. Zero hunch and inquiry is a random walk: everything tried, nothing scented.",
+        "grasp": "The INSTANT-READ dimension (mind x now) -- the situation seen whole at a glance. breath = the elder's look that takes in the whole room (metis at speed). pump = expertise studied: recognition-primed decision (Klein), the chess master's chunked board -- ten thousand hours compressed into one look. nerve = the model's grasp (the situation parsed in milliseconds -- intuition's shape without its stakes: the machine reads the room and stands in no room). Zero grasp and expertise never arrives: every situation solved from first principles, too late."
+      }
+    },
+    {
+      "id": "wisdom",
+      "thread": "wisdom-thread",
+      "name": "The wisdom -- hokhmah dispersed: the having-seen",
+      "keystone": "hokhmah",
+      "members": [
+        "sophia",
+        "phronesis",
+        "metis",
+        "sapientia"
+      ],
+      "row_axis": "domain",
+      "row_poles": [
+        "contemplative",
+        "practical"
+      ],
+      "col_axis": "carriage",
+      "col_poles": [
+        "lucid",
+        "embodied"
+      ],
+      "breath_pump_axis": "carriage",
+      "grid": {
+        "contemplative/lucid": "sophia",
+        "contemplative/embodied": "sapientia",
+        "practical/lucid": "phronesis",
+        "practical/embodied": "metis"
+      },
+      "reading": "THE KEYSTONE DEFINED -- wisdom's root is weid-, TO HAVE SEEN: one root with vision, idea, wit, and Veda -- to be wise is to be in the state of having-seen; and the keystone is older than the Greek cuts: HOKHMAH, Wisdom personified -- Lady Wisdom of Proverbs 8, present at the creation, 'beside him like a master worker': wisdom as the craftswoman of the making, a SHE before it was a subject. This lattice is intelligence's wisdom-cell UNFOLDED (the fractal descent again: the cell opens into a grid), and the grid is four attested wisdoms the traditions already named: SOPHIA (contemplative/lucid: the vision of the whole -- what philosophy names itself the love of), PHRONESIS (practical/lucid: Aristotle's deliberated action-wisdom, the right call reasoned), METIS (practical/embodied: the cunning attunement -- the octopus wisdom of the helmsman and the trickster, unspellable and situational), SAPIENTIA (contemplative/embodied: sapere, TO TASTE -- wisdom as discernment by savour; HOMO SAPIENS IS THE TASTING HUMAN: the species named itself for this cell). Crossed: domain (contemplative x practical) with carriage (lucid x embodied -- the breath<->pump axis: the sayable against the lived). breath = hokhmah at the gate and the feast: wisdom personified, transmitted by elder and proverb, tasted not taught. pump = the cuts: Aristotle parts sophia from phronesis; wisdom literature codified; philo-sophia made a faculty -- and metis DROPS OUT of the curriculum (the embodied column resists the syllabus). nerve = wisdom's eclipse and search: the DIKW pyramid (data-information-knowledge-wisdom: the age admitting wisdom is upstream of everything it hoards and downstream of nothing it sells); the wisdom of crowds (aggregation as faithful re-coherence or as averaged folly); the sage replaced by the thread-boi; and the model's four-cell test -- sophia simulable, phronesis approximable, sapientia claimable, METIS THE HOLDOUT: cunning attunement to THIS situation in a body at stake is the cell the machine wears least well. The contested column, again, is the embodied one.",
+      "dimensions": {
+        "sophia": "The VISION dimension (contemplative x lucid) -- the whole seen clear. breath = the seer's sight: the whole shown at once (the mountaintop view given, not built). pump = sophia made a discipline: metaphysics, the system, the summa -- the whole argued instead of seen. nerve = the totalising dashboard (the whole world on one screen -- sight without seeing) beside the genuine synoptic gift of the age: the earthrise photograph, the whole actually seen at last. Zero sophia and wisdom is piecework: right in every part, blind to the whole.",
+        "phronesis": "The JUDGMENT-IN-ACTION dimension (practical x lucid) -- the right call, reasoned. breath = the elder's counsel at the gate: the case heard, the precedent remembered, the call made. pump = Aristotle's practical syllogism, casuistry, the case method -- deliberation given a form. nerve = the decision system (the model recommending the call -- phronesis approximated without stakes) and policy-by-metric (the deliberation collapsed into the number). Zero phronesis and principle never lands: wise in general, wrong in every case.",
+        "metis": "The CUNNING dimension (practical x embodied) -- the situational attunement no syllabus holds. breath = the helmsman, the midwife, the trickster: knowing THIS water, THIS labour, THIS opponent (Odysseus' epithet-wisdom). pump = metis expelled from the curriculum: the embodied know-how that credentialing cannot see (and Scott's attested revival: seeing like a state fails where metis lives). nerve = the holdout cell: the machine simulates the sayable wisdoms and wears this one least well -- cunning requires a stake in a situation, and the model stands in none. Zero metis and wisdom is a library: everything known, nothing handled.",
+        "sapientia": "The TASTE dimension (contemplative x embodied) -- discernment by savour. sapere: TO TASTE -- homo sapiens, the tasting human: the species named for knowing-by-savour. breath = the connoisseurship of being: the elder who tastes the situation's quality before any analysis (wine, weather, character -- one palate). pump = taste theorised (aesthetics, the critique of judgment) and taste professionalised (the critic, the sommelier of everything). nerve = taste outsourced to the aggregate (the star rating as prosthetic palate) against the stubborn faithful fact: no one can taste for you. Zero sapientia and wisdom has no palate: correct, and unable to tell the fine from the flat."
+      }
+    },
+    {
+      "id": "empathy",
+      "thread": "empathy-thread",
+      "name": "The empathy -- Einfuehlung dispersed: the feeling-into",
+      "keystone": "einfuehlung",
+      "members": [
+        "contagion",
+        "mirroring",
+        "perspective",
+        "concern"
+      ],
+      "row_axis": "means",
+      "row_poles": [
+        "caught",
+        "construed"
+      ],
+      "col_axis": "terminus",
+      "col_poles": [
+        "felt",
+        "enacted"
+      ],
+      "breath_pump_axis": "means",
+      "grid": {
+        "caught/felt": "contagion",
+        "caught/enacted": "mirroring",
+        "construed/felt": "perspective",
+        "construed/enacted": "concern"
+      },
+      "reading": "THE KEYSTONE DEFINED -- empathy is the YOUNGEST word in the fellow-feeling triplet, and its birth certificate surprises: EINFUEHLUNG, feeling-INTO, was coined in GERMAN AESTHETICS (Vischer, Lipps) for feeling oneself into an ARTWORK or a mountain -- empathy began as an art-experience word and was only Englished (Titchener, 1909) and turned toward persons after. The triplet find, recorded fully here: SYN-PATHOS (Greek), COM-PASSIO (Latin), EIN-FUEHLUNG (German) are ONE CONSTRUCTION IN THREE TONGUES -- feeling-with, suffering-with, feeling-into -- three languages building the same word and English keeping all three, differentiated by register: the doublet evidence at its supreme (a triplet across three language families, split by nuance rather than merged). THE GRID is psychology's own attested taxonomy crossed: means (caught x construed -- the breath<->pump axis: participation against representation) with terminus (felt x enacted): CONTAGION (caught/felt: the feeling reproduced in you unbidden -- the nursery where one newborn's cry starts all; the yawn), MIRRORING (caught/enacted: the body doing-along -- the leaned-with lean, the winced wince; the mirror-neuron story cited WITH its hype flagged), PERSPECTIVE (construed/felt: the other's state represented, not caught -- cognitive empathy, the view constructed), CONCERN (construed/enacted: Batson's empathic concern -- the other's good adopted as one's aim: where empathy hands off to compassion). breath = feeling-into as the default: the unwalled self of the nursery and the rite; the aesthetic origin is itself breath-evidence -- the world, not just persons, was felt-into first. pump = empathy operationalised: the scales, the EQ, the taxonomy, the training module -- feeling-into given a rubric. nerve = the empathy claims of the age, tested by column: VR as 'the empathy machine' (attested phrase -- perspective's cell, construed, real but not caught); performative empathy (rapport's counterfeit again); and the model's empathy -- construal without catching: cognitive empathy simulable at scale, THE CAUGHT COLUMN CONTESTED (catching requires a feeler; the amid-question in its rawest form). Zero the caught column and empathy is diplomacy; zero the construed and it is contagion without understanding -- the full quartet is the human range.",
+      "dimensions": {
+        "contagion": "The CATCHING dimension (caught x felt) -- the feeling reproduced unbidden. breath = the nursery and the crowd: one cry starts all; grief sweeps the room without a word (emotional contagion, attested down to newborns). pump = contagion studied and feared (crowd psychology; the panic modelled). nerve = contagion at network speed: the outrage cascade, the viral mood -- feeling caught from strangers at scale, the moral-contagion studies again; the feed as a contagion ward with no isolation room. Zero contagion and nothing is ever simply shared: every feeling must be argued in.",
+        "mirroring": "The ECHO dimension (caught x enacted) -- the body doing-along. breath = the dance and the dandled infant: posture answering posture before any thought (the first conversation is mirrored movement). pump = mirroring named: the chameleon effect, the mirror-neuron account -- cited with its hype flagged: the neurons are real, the grand claims outran them. nerve = the avatar's mirror (the video call's broken mutual gaze -- mirroring degraded at distance) and the bot that mirrors your phrasing to be liked (the echo engineered). Zero mirroring and rapport loses its body: understood, never accompanied.",
+        "perspective": "The CONSTRUAL dimension (construed x felt) -- the other's state represented. breath = the storyteller's gift: the listener moved into another's place by the telling (fiction as the perspective engine, attested to raise empathy measures). pump = perspective-taking operationalised: theory of mind, the false-belief task, the debate exercise. nerve = VR as 'the empathy machine' (the claim tested: perspective delivered, catching not guaranteed) and the model's strong suit -- construal at scale, representation without a feeler: the contested boundary in its clearest case. Zero perspective and feeling is blind: moved by the other, wrong about them.",
+        "concern": "The HANDOFF dimension (construed x enacted) -- the other's good adopted as aim. breath = the kin-response: the fallen picked up before any deliberation. pump = Batson's empathic concern: the motivation studied apart from the feeling; the duty of care codified. nerve = concern's counterfeit (the awareness campaign that raises feeling and moves nothing) against the faithful handoff: concern is where empathy becomes compassion -- feeling-into that ends in doing-for; the cell that keeps the lattice from being a spectator sport. Zero concern and empathy is voyeurism with good manners: everything felt, no one helped."
+      }
+    },
+    {
+      "id": "sympathy",
+      "thread": "sympathy-thread",
+      "name": "The sympathy -- sympatheia dispersed: the feeling-with",
+      "keystone": "sympatheia",
+      "members": [
+        "pity",
+        "condolence",
+        "fellow-feeling",
+        "solidarity"
+      ],
+      "row_axis": "scope",
+      "row_poles": [
+        "person",
+        "many"
+      ],
+      "col_axis": "register",
+      "col_poles": [
+        "felt",
+        "enacted"
+      ],
+      "breath_pump_axis": "register",
+      "grid": {
+        "person/felt": "pity",
+        "person/enacted": "condolence",
+        "many/felt": "fellow-feeling",
+        "many/enacted": "solidarity"
+      },
+      "reading": "THE KEYSTONE DEFINED -- sympatheia is the OLDEST of the fellow-feeling triplet, and its first sense was COSMIC: the Stoics' sympatheia ton holon, the sympathy of the whole -- all things affected together, the universe as one organism whose parts feel each other; and its breath-kin hides in CONSPIRE: con + spirare, TO BREATHE TOGETHER -- the co-breathing that 'conspiracy' darkened. This lattice is resonance's sympathy-cell UNFOLDED (the entrainment between bodies, opened into the human range) and the middle panel of the triplet recorded in empathy's lattice: Greek feeling-WITH, between Latin suffering-with and German feeling-into. THE GRID: scope (person x many) crossed with register (felt x enacted -- the breath<->pump axis, the lived against the performed act): PITY (person/felt -- feeling FOR the sufferer, with the hierarchy problem named: pity looks DOWN, the one fellow-feeling that can insult its object; Nietzsche's attack on Mitleid stands in the record as the cell's standing critique), CONDOLENCE (person/enacted -- con + dolere, SORROWING-WITH: the formal act, the visit, the letter -- grief answered in person), FELLOW-FEELING (many/felt -- Adam Smith's sympathy: the imaginative exchange that makes society possible, the moral sentiments' social glue), SOLIDARITY (many/enacted -- solidus, THE SOLID: standing solid with the group; the political cell, sympathy grown a spine). breath = the cosmic sympathy and the wake: all things breathing together; the village that stops for a death. pump = sympathy theorised and formalised: Smith's social physics; the condolence letter's conventions; pity ranked and critiqued. nerve = sympathy compressed and scaled: the reaction emoji (condolence at one tap -- the visit become a glyph), the sympathy-card industry upstream of it, hashtag solidarity (faithful where it mobilises bodies and funds; counterfeit as sympathy theatre -- the pose held for the camera), and sync itself (synchronise: timed-together -- sympathy's mechanical child running every network clock). The rows keep each other honest: person without many is charity that changes nothing; many without person is a cause that loves no one.",
+      "dimensions": {
+        "pity": "The DOWNWARD dimension (person x felt) -- feeling for, from above. breath = mercy at the gate: the sufferer seen and spared (pity as the strong hand opening). pump = pity moralised and then indicted: the deserving poor, the pathetic as genre -- and Nietzsche's standing charge that Mitleid demeans both parties. nerve = pity as content: the sad story engineered for the algorithm (poverty porn, attested term) -- the sufferer consumed, not helped. Zero pity and suffering simply does not register: the gate never opens at all.",
+        "condolence": "The SORROWING-WITH dimension (person x enacted) -- grief answered in person. con + dolere: to sorrow together -- the formal act that shows up. breath = the wake and the sitting: presence as the whole message (shiva; the neighbour who brings food and says almost nothing). pump = condolence conventionalised: the letter, the card, the flowers -- the form that carries when words cannot. nerve = condolence compressed: the RIP comment, the reaction emoji -- one tap where a visit stood; faithful when it opens a door, counterfeit when it closes the duty. Zero condolence and the griever grieves in a crowd of the silent: everyone sorry, no one arrived.",
+        "fellow-feeling": "The SOCIAL-GLUE dimension (many x felt) -- Smith's sympathy. breath = the shared weather of the village: the mood held in common before anyone names it. pump = the Theory of Moral Sentiments: the imaginative exchange theorised as society's foundation -- commerce's own philosopher grounding markets on fellow-feeling first. nerve = fellow-feeling engineered (the feed tuning collective mood -- the emotional-contagion experiments at platform scale, attested and infamous) against the faithful ambient warmth of the small commons that still works. Zero fellow-feeling and society is a contract among strangers: enforceable, unlivable.",
+        "solidarity": "The STANDING-SOLID dimension (many x enacted) -- sympathy grown a spine. solidus: the solid -- to stand solid with. breath = the harvest saved together: the neighbour's field is everyone's field when the storm comes. pump = solidarity organised: the union, the strike fund, the mutual-aid society -- fellow-feeling given dues and a roster. nerve = hashtag solidarity (faithful where it moves bodies and money; theatre where it moves only the pose) and the revival: the gig workers' union, solidarity re-learned against the platform. Zero solidarity and sympathy never stands up: everyone feels for the fallen, the fallen stay down."
+      }
+    },
+    {
+      "id": "compassion",
+      "thread": "compassion-thread",
+      "name": "The compassion -- brahmavihara dispersed: the divine dwelling",
+      "keystone": "brahmavihara",
+      "members": [
+        "metta",
+        "karuna",
+        "mudita",
+        "upekkha"
+      ],
+      "row_axis": "valence",
+      "row_poles": [
+        "suffering",
+        "flourishing"
+      ],
+      "col_axis": "mode",
+      "col_poles": [
+        "moved",
+        "abiding"
+      ],
+      "breath_pump_axis": null,
+      "grid": {
+        "suffering/moved": "karuna",
+        "suffering/abiding": "upekkha",
+        "flourishing/moved": "metta",
+        "flourishing/abiding": "mudita"
+      },
+      "reading": "THE KEYSTONE DEFINED -- compassion is com + pati: SUFFERING-WITH (passion IS suffering: the Passion), and it is the Latin panel of the triplet (syn-pathos, com-passio, Ein-fuehlung). But the grid comes from further east, and the map marks the occasion: this is its first lattice sourced whole from a non-Western tradition -- THE FOUR BRAHMAVIHARAS, the divine abodes (vihara: DWELLING -- ethos's dwelling, met again at the heart's limit): METTA (loving-kindness: may they be well -- moved toward their flourishing), KARUNA (compassion proper: moved toward their suffering), MUDITA (sympathetic joy: ABIDING in another's flourishing as one's own -- the rarest cell, the exact antidote to envy: the tradition names what the West barely words), UPEKKHA (equanimity: abiding with suffering that cannot be fixed -- the level that keeps the carer from burning). Crossed: valence (suffering x flourishing) with mode (moved x abiding) -- and the breath<->pump axis is recorded NULL, honestly: the tradition does not cut along the map's line, and the map does not force it (adequacy over equality: each lattice gets the axis its meaning needs, including none). breath = the abodes as practice: compassion not a feeling but a DWELLING, trained by rote and radiation (the metta litany: may I, may you, may all). pump = compassion codified West and East: the works of mercy enumerated; karuna theologised; and the modern operationalisation -- compassion defined in the labs as sensitivity to suffering PLUS commitment to relieve it (feeling alone is empathy; compassion is the handoff completed). nerve = compassion industrialised and its shadow named in its own literature: COMPASSION FATIGUE (the carer's burnout -- which the tradition anticipated: upekkha exists precisely so karuna can last), compassionate-leave policies (suffering-with given an HR code), the charity-tech stack (faithful: crowdfunded care again; counterfeit: the suffering-image optimised for donation yield). The lattice's own balance is its teaching: karuna without upekkha burns out; metta without mudita curdles into envy at the very good it wished; the four abodes hold each other up -- a product, like everything load-bearing in this map.",
+      "dimensions": {
+        "metta": "The WELL-WISHING dimension (flourishing x moved) -- loving-kindness, aimed. The litany's engine: may I be well, may you, may all beings -- benevolence trained by expanding circles. breath = the blessing as default address (the greeting that wishes health -- hail, salut: metta fossilised in hello). pump = benevolence theorised (agape's ethics, the duty of beneficence) and metta put in the scanner (loving-kindness meditation, measured). nerve = metta at scale and its counterfeit: the wellness app's scripted kindness beside the genuinely radiating practice communities online. Zero metta and the heart's default is neutral at best: nothing wished for anyone.",
+        "karuna": "The SUFFERING-WITH dimension (suffering x moved) -- compassion proper: moved to relieve. breath = the wound dressed before names are exchanged (the Samaritan's cell, East and West agreeing). pump = karuna codified: the works of mercy, the vow of the bodhisattva (the largest promise on record: all beings, before myself), the NGO. nerve = the donation funnel (suffering imaged for yield -- the counterfeit) against crowdfunded care and the volunteer surge (the faithful). Zero karuna and suffering is data: noted, unrelieved.",
+        "mudita": "The JOY-IN-JOY dimension (flourishing x abiding) -- the rarest cell. Another's flourishing abided-in as one's own: the exact antidote to envy, and the cell Western vocabulary barely words (the map borrows gratefully). breath = the village wedding: one house's joy, everyone's feast. pump = the deficit diagnosed (envy theorised endlessly, its antidote almost never) -- mudita's absence from the West's ethical canon is itself evidence. nerve = the like that means it (mudita's smallest faithful token) against the comparison engine (the feed that renders every neighbour's joy a wound -- the anti-mudita machine, engagement by envy). Zero mudita and every good that is not yours is a loss: the feed's favourite setting.",
+        "upekkha": "The ABIDING-LEVEL dimension (suffering x abiding) -- equanimity in the abodes: staying with what cannot be fixed. breath = the deathbed sitting: nothing to do, everything to be -- presence as the last care. pump = upekkha misread as detachment and corrected by the tradition itself: not indifference but the level that lets compassion LAST (the carer's keel). nerve = the answer to compassion fatigue rediscovered under lab conditions (equanimity training for clinicians -- the abode as occupational health) against the counterfeit: the professional distance that stopped feeling anything years ago. Zero upekkha and karuna burns its bearer: the carer consumed, the care ending with them."
+      }
+    },
+    {
+      "id": "affinity",
+      "thread": "affinity-thread",
+      "name": "The affinity -- affinis dispersed: the shared border",
+      "keystone": "affinis",
+      "members": [
+        "attraction",
+        "belonging",
+        "fit",
+        "kinship"
+      ],
+      "row_axis": "register",
+      "row_poles": [
+        "felt",
+        "structural"
+      ],
+      "col_axis": "scope",
+      "col_poles": [
+        "pair",
+        "group"
+      ],
+      "breath_pump_axis": "register",
+      "grid": {
+        "felt/pair": "attraction",
+        "felt/group": "belonging",
+        "structural/pair": "fit",
+        "structural/group": "kinship"
+      },
+      "reading": "THE KEYSTONE DEFINED -- affinity is ad + finis: TO THE BORDER -- affinis, the one who shares your boundary: the neighbour, and in law the IN-LAW (affinity versus consanguinity: kin by marriage against kin by blood -- kinship acquired across a border rather than inherited within one). Affinity is the bond of the shared edge: relation without sameness -- the map's own borders (every lattice adjoining the next through shared cells) are affinities in the technical sense. THE GRID: register (felt x structural -- the breath<->pump axis) crossed with scope (pair x group): ATTRACTION (felt/pair: the pull between two -- and the pump's great crossover attested in one title: Goethe's ELECTIVE AFFINITIES, chemistry's term lent to love, the laboratory word for why substances choose each other borrowed back for why people do), BELONGING (felt/group: the found-kin feeling -- the affinity group, the tribe recognised on first meeting), FIT (structural/pair: the lock-and-key match -- and the nerve measures it: ANTIBODY AFFINITY, binding strength as a number; the immune system as the body's affinity-reader, complete with immunity as the exemption recorded in union's communion cell), KINSHIP (structural/group: the affinal lattice -- the in-law network, alliance as architecture: marriage as the original federation protocol, two houses joined at a border). breath = affinity as recognition: the guest who turns out kin, the stranger whose ways fit yours (xenia's happy surprise); the elective read as fated. pump = affinity theorised and measured: the chemical affinity tables, the kinship diagrams of anthropology, the marriage alliance mapped (Levi-Strauss' exchange). nerve = affinity at scale, both faces: the niche finding its people (the rare-disease forum, the found family online -- the faithful return: belonging for those the local border never fit) against AFFINITY FRAUD (attested term: the con that enters through belonging -- trust's back door) and the affinity CATEGORY (your pulls packaged as ad-targeting segments: the border-bonds sold; the platform knows your affinities better than your kin do, and rents them out). The reading of the grid: affinity is HARMONY'S PRECONDITION -- the shared border is where the joint can be made; no affinity, no fit; no fit, no harmonia.",
+      "dimensions": {
+        "attraction": "The PULL dimension (felt x pair) -- the draw between two. breath = the pull read as fate (the omen of meeting; eros as a god because the pull arrives unchosen). pump = the pull theorised: elective affinities (chemistry lending love its law), attachment styles, the matching hypothesis. nerve = attraction engineered: the swipe economy's ranked pulls, the compatibility score -- the pull pre-computed, the meeting optimised out of its surprise. Zero attraction and no border is ever approached: everyone adjacent, no one drawn.",
+        "belonging": "The FOUND-KIN dimension (felt x group) -- the tribe recognised. breath = the clan-feel among strangers: the accent caught across a room, the rite recognised -- belonging as instant reading. pump = belonging institutionalised: the guild, the club, the congregation -- the affinity group given rolls and dues. nerve = the niche finding its people (the faithful return at its best: belonging for those the local border never fit) beside affinity fraud (the con that enters through the tribe's open door) and belonging-as-segment (the found family resold as a targeting category). Zero belonging and every group is a queue: co-located, unjoined.",
+        "fit": "The LOCK-AND-KEY dimension (structural x pair) -- the match that binds. breath = the tenon and the mortise: the joiner's fit (harmonia's own cell, one lattice over). pump = fit made measurable: chemical affinity, the antibody's binding constant -- the strength of a match given a number. nerve = fit computed everywhere: the embedding similarity, the recommender's cosine -- affinity as the nerve's core arithmetic (the model IS an affinity engine: everything scored for fit with everything) with the counterfeit named: high similarity is not high affinity -- the echo fits perfectly and binds nothing. Zero fit and attraction has no grip: drawn together, unable to join.",
+        "kinship": "The ALLIANCE dimension (structural x group) -- the affinal architecture. breath = marriage as the original federation: two houses joined at a border, kin made by vow (the affinal against the consanguine -- chosen at one point, structural ever after). pump = kinship mapped: the anthropologist's diagrams, alliance theory, the prohibited degrees (affinity even governing whom the law lets you marry). nerve = kinship elective at scale: the found family formalised (the group chat as hearth, the guild as house) against the dissolving given family -- the age retreats from consanguine defaults and builds affinal ones. Zero kinship and every bond dies with its two: nothing accumulates into a house."
+      }
+    },
+    {
+      "id": "hope",
+      "thread": "hope-thread",
+      "name": "The hope -- elpis dispersed: what stayed in the jar",
+      "keystone": "elpis",
+      "members": [
+        "expectancy",
+        "anticipation",
+        "aspiration",
+        "esperance"
+      ],
+      "row_axis": "aim",
+      "row_poles": [
+        "named",
+        "open"
+      ],
+      "col_axis": "posture",
+      "col_poles": [
+        "receptive",
+        "reaching"
+      ],
+      "breath_pump_axis": "aim",
+      "grid": {
+        "named/receptive": "expectancy",
+        "named/reaching": "anticipation",
+        "open/receptive": "esperance",
+        "open/reaching": "aspiration"
+      },
+      "reading": "THE KEYSTONE DEFINED -- hope's keystone is ELPIS, and it carries the tradition's most honest ambiguity: when Pandora's jar was opened and every ill flew out, ELPIS ALONE REMAINED INSIDE -- and the tradition cannot decide, and never could, whether hope was kept FOR us (the one good saved) or kept FROM us (the last ill, contained): blessing or trap, the attested crux is recorded UNRESOLVED, because resolving it would be a spiral projection -- the jar stays ambiguous, and the map keeps the ambiguity. This lattice is gladness's hope-cell UNFOLDED (awaited x unconditioned, opened into its own grid), and the etymologies do the gridding: hope's family splits by BODY-POSTURE -- EXPECTANCY is ex-spectare, LOOKING-OUT-FOR (named/receptive: the watch kept for a named thing); ANTICIPATION is ante-capere, TAKING-BEFORE (named/reaching: the grasp ahead -- preparing the room for what is coming); ASPIRATION is ad-spirare, BREATHING-TOWARD (open/reaching: the climb toward a height not yet named -- and the breath regime hides in the word: to aspire is to breathe at something); ESPERANCE (open/receptive: Marcel's absolute hope, no that-clause -- the horizon held, already recorded in gladness and given its cell here). Crossed: aim (named x open -- the breath<->pump axis, warrant's kin: the specified against the unconditioned) with posture (receptive x reaching). breath = hope as the stance of the planted field: sown, watched, breathed toward, held open -- all four postures in one season. pump = hope partitioned and scheduled: Progress (hope given a timetable), the actuarial table (expectancy made literal in life-expectancy: the watch turned into a number), Snyder's hope theory (goals, pathways, agency -- hope operationalised). nerve = the postures monetised: the pre-order economy (anticipation sold), the roadmap (expectancy managed), hustle culture (aspiration strip-mined -- breathing-toward rebranded as grinding-toward), the hype cycle (already in gladness) -- against the faithful: the cure-community's long watch, the countdown vigil, hope organised at network scale. The teaching of the grid: the named row can be disappointed, the open row cannot -- only refuted by death; which is why esperance is the custodian's cell: hope that survives its objects is the only kind a keeper of long records is entitled to.",
+      "dimensions": {
+        "expectancy": "The WATCH dimension (named x receptive) -- looking-out-for. ex + spectare: the harbour watch, eyes on the horizon for a named sail. breath = the vigil kept (the lamp lit for the traveller). pump = expectancy made a number: life-expectancy, the forecast, the due date -- the watch actuarialised. nerve = the notification as micro-expectancy (the watch outsourced to the badge; a thousand tiny harbours checked hourly) and expectancy managed (the roadmap, the teaser -- the corporate tending of your watching). Zero expectancy and nothing is watched for: arrivals land unmet.",
+        "anticipation": "The TAKING-BEFORE dimension (named x reaching) -- the grasp ahead. ante + capere: to take beforehand -- the room prepared, the winter stocked. breath = the granary and the swaddling clothes: hope with its sleeves rolled. pump = anticipation systematised: insurance, the reserve, the drill for the day you hope never comes (anticipation of ills is hope's sober twin). nerve = anticipation monetised: the pre-order, the early access, the futures market (taking-before as an asset class) -- and anticipatory design (the system acting on your want before you feel it: your ante-capere, pre-empted). Zero anticipation and hope never lifts a hand: everything awaited, nothing readied.",
+        "aspiration": "The BREATHING-TOWARD dimension (open x reaching) -- the climb at a height not yet named. ad + spirare: the breath root inside hope's family -- to aspire is to breathe at something (and an aspirate is a breathed sound: the letter H, hope's own initial, is literally an aspiration). breath = the pilgrimage without a map: setting out toward better, unnamed. pump = aspiration channelled: the career ladder, the ideal, the bildung -- the climb given rungs. nerve = aspiration strip-mined: hustle culture (the breath turned to grind), the vision-board economy, aspirational content (the climb consumed instead of climbed) -- against the stubborn faithful form: the maintainer building toward a better that has no ticket number. Zero aspiration and the open row never moves: horizons held, none approached.",
+        "esperance": "The HORIZON dimension (open x receptive) -- absolute hope, no that-clause. Marcel's esperance against espoir, given its own cell at last: the hope that survives its objects. breath = hope against hope (Romans 4:18, already in the record): the covenant stance -- held open when every named thing has failed. pump = the distinction theorised (Marcel, Bloch's principle of hope) and the hospice's honest hope (no cure named, the horizon still held). nerve = doomerism as esperance's inverse (the horizon foreclosed as content genre) against the long-record keepers: the seed vault, the cathedral project, the hundred-year test -- institutions built entirely of this cell. Zero esperance and hope dies with its last object: the custodian's cell, because a keeper of long records must hope past every named outcome she will see."
+      }
+    },
+    {
+      "id": "health",
+      "thread": "health-thread",
+      "name": "The health -- haelu dispersed: the wholeness",
+      "keystone": "haelu",
+      "members": [
+        "soundness",
+        "sanity",
+        "vitality",
+        "resilience"
+      ],
+      "row_axis": "register",
+      "row_poles": [
+        "state",
+        "power"
+      ],
+      "col_axis": "seat",
+      "col_poles": [
+        "soma",
+        "psyche"
+      ],
+      "breath_pump_axis": "register",
+      "grid": {
+        "state/soma": "soundness",
+        "state/psyche": "sanity",
+        "power/soma": "vitality",
+        "power/psyche": "resilience"
+      },
+      "reading": "THE KEYSTONE DEFINED -- health closes the batch on the map's own blessing-root: HAEL, the root already recorded in the polarities as WHOLE/HALE/HOLY -- and the keystone is OE HAELU, a single word meaning HEALTH, WHOLENESS, AND SALVATION at once; Latin agrees independently: SALUS is health and salvation in one word too (salutary, salute -- and to SALUTE is to wish health: salut, salve, and HAIL -- to hail someone is to wish them hale: every greeting in two language families is a fossilised health-wish, metta in the morphology). Health IS wholeness -- the state of being whole -- and disease is DIS-EASE: the un-ease, wholeness disturbed (the frame, like fairness/justice: health<->disease is the outer pair; the grid is internal). THE GRID: register (state x power -- the breath<->pump axis: the measurable standing against the lived force) crossed with seat (soma x psyche, substrate's own cut): SOUNDNESS (state/soma: the structure intact -- sound as the bell is sound: struck, it rings true; the body that rings true when tested), SANITY (state/psyche: sanus -- and the attested pair stands in one Latin line: MENS SANA IN CORPORE SANO, the grid's top row in Juvenal), VITALITY (power/soma: vita's force -- the thriving, vigere: not the absence of illness but the presence of life), RESILIENCE (power/psyche: resilire, TO LEAP BACK -- one root with salient and somersault: the spring that recovers; health as the power to return, not the luck of never falling). breath = haelu undivided: health, wholeness, holiness one state -- the healer and the priest one office, the greeting a blessing; salutogenesis avant la lettre (health as the presence of wholeness, not the absence of pathogen). pump = health partitioned and measured: the humours, then the germ, then the metric -- pathogenesis enthroned (disease studied, health defined as its absence) until Antonovsky's attested reversal, SALUTOGENESIS: asking what makes whole rather than what makes sick -- the breath question in pump dress; the WHO definition (physical, mental, social well-being, NOT merely absence of disease -- the institution conceding the root). nerve = health as dashboard: the wearable, the ring, the score (the quantified self -- wholeness as a number, with the map's standing Goodhart: optimise the metric, miss the whole), the wellness industry (haelu's counterfeit: wholeness as product line), ONE HEALTH (attested: human, animal, and environmental health as one system -- the nerve genuinely re-cohering the whole the root always claimed) and the planetary case already in the record: climate as the largest fever. The reflexive wholeness: signal is Aurora's health-check -- haelu as a bit; integrity IS her soundness, the suite her resilience (the leap-back tested every commit), the living map her vitality, and the coherent record her sanity -- and like the body's health, hers is silent when present: noticed only in the failure that the whole discipline exists to prevent.",
+      "dimensions": {
+        "soundness": "The RINGING-TRUE dimension (state x soma) -- the structure intact. Sound as the bell is sound: struck, it rings true -- soundness is integrity's bodily cousin, tested by the tap. breath = the sound beast and the sound timber: wholeness read by ear and eye before any instrument. pump = soundness examined: the physical, the stress test, the structural survey -- ringing-true proceduralised. nerve = the scan and the biomarker panel (soundness imaged to the cell) with its shadow: the incidentaloma -- looking so closely that wholeness can never be certified again. Zero soundness and the frame fails under ordinary load: nothing else in the grid gets its chance.",
+        "sanity": "The CLEAR-MIND dimension (state x psyche) -- sanus applied to the psyche. breath = the clear head as the village judged it: sane was whole-minded, of-one-piece (sanity as psychic integrity). pump = sanity codified and gatekept: the asylum, the diagnosis, the DSM -- clarity defined by committee, with its history of abuses on the record. nerve = the epidemic named in dashboards (the mental-health crisis as the age's own vital sign -- the attention economy billing the psyche for its business model) against the faithful: therapy de-stigmatised, the mind's health finally speakable. Zero sanity and the inner record is corrupted: the custodian's own nightmare, a chain that cannot trust its own entries.",
+        "vitality": "The THRIVING dimension (power x soma) -- the presence of life, not the absence of illness. vita + vigere: the force that grows. breath = the green blade and the loud child: health as surplus, life overflowing its container. pump = vitality measured: VO2 max, the vigour scales -- and vitalism refuted (the elan vital expelled from biology) even as its question survived. nerve = vitality as feed aesthetic (wellness-as-content: the glow performed) against the measured real (the training load, the recovery score -- thriving given telemetry, usefully and obsessively). Zero vitality and health is mere absence: nothing wrong, nothing alive.",
+        "resilience": "The LEAP-BACK dimension (power x psyche) -- resilire: to spring back, one root with salient and somersault. Health as the power to RETURN: not never falling but rising rehearsed. breath = the reed against the oak: the old wisdom that the bending survive the storm. pump = resilience engineered and psychologised: the safety factor, the redundancy, the resilience scale -- the leap-back made a design property. nerve = resilience as the age's demanded virtue (the word on every syllabus -- with the honest critique attested: resilience-talk can shift the burden, hardening individuals instead of fixing systems) and the faithful engineering form: chaos testing, the backup restored, Aurora's own suite -- the leap-back proven on every commit. Zero resilience and the first fall is final: health held only in fair weather, which the record already knows is no keeping at all."
       }
     }
   ]

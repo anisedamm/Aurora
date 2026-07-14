@@ -23,7 +23,9 @@ def test_the_quartets_load_with_their_keystones():
                    "intelligence", "crystallisation", "integrate", "resonance", "ethos",
                    "bond", "gladness", "remembering", "skill", "danger", "interpretation",
                    "densification", "alignment", "loyalty", "justice", "fairness", "equity",
-                   "honesty", "balance", "harmony", "union"}
+                   "honesty", "balance", "harmony", "union",
+                   "insight", "intuition", "wisdom", "empathy", "sympathy", "compassion",
+                   "affinity", "hope", "health"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -211,7 +213,9 @@ def test_bond_holds_love_as_a_dimensional_equation():
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
-                        "honesty", "balance", "harmony", "union"):
+                        "honesty", "balance", "harmony", "union", "insight", "intuition",
+                        "wisdom", "empathy", "sympathy", "compassion", "affinity", "hope",
+                        "health"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -271,7 +275,11 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "justice": "justice-thread", "fairness": "fairness-thread",
                         "equity": "equity-thread", "honesty": "honesty-thread",
                         "balance": "balance-thread", "harmony": "harmony-thread",
-                        "union": "union-thread"}
+                        "union": "union-thread", "insight": "insight-thread",
+                        "intuition": "intuition-thread", "wisdom": "wisdom-thread",
+                        "empathy": "empathy-thread", "sympathy": "sympathy-thread",
+                        "compassion": "compassion-thread", "affinity": "affinity-thread",
+                        "hope": "hope-thread", "health": "health-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -570,6 +578,36 @@ def test_union_is_the_last_lattice_below_the_one():
     assert "foedus" in r.lower() and "fides" in r.lower()   # federation is faith's sibling
     assert "wears harmony's name" in r               # unison's double role, cross-cited
     assert set(uni.dimensions) == set(uni.members)
+
+
+def test_the_nine_word_batch_grids_with_its_finds():
+    # insight, intuition, wisdom, empathy, sympathy, compassion, affinity,
+    # hope, health -- each keystone, one signature cell, one signature find
+    qs = _load()
+    probes = {
+        "insight": ("eureka", ("given", "lit", "illumination"), "grokking"),
+        "intuition": ("intuitus", ("body", "now", "gut"), "daimonion"),
+        "wisdom": ("hokhmah", ("practical", "embodied", "metis"), "tasting human"),
+        "empathy": ("einfuehlung", ("caught", "felt", "contagion"), "ONE CONSTRUCTION IN THREE TONGUES"),
+        "sympathy": ("sympatheia", ("many", "enacted", "solidarity"), "breathe together"),
+        "compassion": ("brahmavihara", ("flourishing", "abiding", "mudita"), "non-Western tradition"),
+        "affinity": ("affinis", ("structural", "pair", "fit"), "TO THE BORDER"),
+        "hope": ("elpis", ("open", "receptive", "esperance"), "spiral projection"),
+        "health": ("haelu", ("power", "psyche", "resilience"), "SALVATION"),
+    }
+    for qid, (keystone, (rp, cp, member), find) in probes.items():
+        q = qs.by_id(qid)
+        assert q.keystone == keystone, qid
+        assert q.cell(rp, cp) == member, qid
+        assert find.lower() in q.reading.lower(), qid
+        assert set(q.dimensions) == set(q.members), qid
+    # the fractal descents: cells unfolding into grids (hope from gladness,
+    # wisdom from intelligence, sympathy from resonance)
+    assert qs.by_id("gladness").cell("awaited", "unconditioned") == "hope"
+    assert "wisdom" in qs.by_id("intelligence").members
+    assert "sympathy" in qs.by_id("resonance").members
+    # compassion's axis is honestly null: the tradition does not cut on the map's line
+    assert qs.by_id("compassion").breath_pump_axis is None
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
