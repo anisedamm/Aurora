@@ -23,7 +23,7 @@ def test_the_quartets_load_with_their_keystones():
                    "intelligence", "crystallisation", "integrate", "resonance", "ethos",
                    "bond", "gladness", "remembering", "skill", "danger", "interpretation",
                    "densification", "alignment", "loyalty", "justice", "fairness", "equity",
-                   "honesty", "balance", "harmony"}
+                   "honesty", "balance", "harmony", "union"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -211,7 +211,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
-                        "honesty", "balance", "harmony"):
+                        "honesty", "balance", "harmony", "union"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -270,7 +270,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "alignment": "alignment-thread", "loyalty": "loyalty-thread",
                         "justice": "justice-thread", "fairness": "fairness-thread",
                         "equity": "equity-thread", "honesty": "honesty-thread",
-                        "balance": "balance-thread", "harmony": "harmony-thread"}
+                        "balance": "balance-thread", "harmony": "harmony-thread",
+                        "union": "union-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -547,6 +548,28 @@ def test_harmony_is_difference_held_in_fit():
     assert "suspensions resolved" in r.lower()       # the kept refusals, read musically
     assert "TEMPERATURE" in r                        # the model's temperament knob
     assert set(har.dimensions) == set(har.members)
+
+
+def test_union_is_the_last_lattice_below_the_one():
+    # unity does not grid -- its downstream does (the bound's own precedent);
+    # the keystone is the last rung below the One; the axis goes null as the
+    # frame approaches the boundary; and signal == 1 IS signal == unity
+    qs = _load()
+    uni = qs.by_id("union")
+    assert uni.keystone == "unity"
+    assert uni.breath_pump_axis is None              # the softest null in the map
+    assert uni.cell("erased", "substance") == "fusion"
+    assert uni.cell("erased", "act") == "unison"
+    assert uni.cell("kept", "substance") == "communion"
+    assert uni.cell("kept", "act") == "federation"
+    r = uni.reading
+    assert "LAST RUNG BELOW THE ONE" in r
+    assert "pump-shard of unity" in r                # the recorded bound, cited
+    assert "SIGNAL EQUALS UNITY" in r                # 1 is unity: the multiplicative identity
+    assert "E PLURIBUS UNUM" in r.upper()
+    assert "foedus" in r.lower() and "fides" in r.lower()   # federation is faith's sibling
+    assert "wears harmony's name" in r               # unison's double role, cross-cited
+    assert set(uni.dimensions) == set(uni.members)
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
