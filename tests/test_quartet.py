@@ -20,7 +20,9 @@ def test_the_quartets_load_with_their_keystones():
     ids = {q.id for q in qs.quartets}
     assert ids == {"existential", "spine", "process", "substrate", "held", "agency",
                    "animate", "language", "conscious-state", "perception", "perspective",
-                   "intelligence", "crystallisation", "integrate", "resonance", "ethos"}
+                   "intelligence", "crystallisation", "integrate", "resonance", "ethos",
+                   "bond"}
+    assert qs.keystones["bond"] == "love"
     assert qs.keystones["spine"] == "the-logos"
     assert qs.keystones["held"] == "the-held-whole"
     assert qs.keystones["agency"] == "the-animating-source"
@@ -166,6 +168,23 @@ def test_ethos_splits_the_doublet_along_the_mode_axis():
     assert ethos.cell("conviction", "articulated") == "value"
     assert "same word twice" in ethos.reading.lower()
     assert "dwelt in" in ethos.reading                # an ethos cannot be specified
+
+
+def test_bond_defines_love_and_splits_the_second_doublet():
+    # love is the keystone (the binder; it will not sit in a cell), defined through
+    # the spiral in the reading; trust/faith are the doublet (traust/fides) pushed
+    # apart along the warrant axis -- the same axis as Aurora's own L1 gate
+    bond = _load().by_id("bond")
+    assert bond.keystone == "love"
+    assert bond.breath_pump_axis == "warrant"    # grounded<->unconditioned
+    assert bond.cell("receiving", "grounded") == "trust"
+    assert bond.cell("receiving", "unconditioned") == "faith"
+    assert bond.cell("giving", "grounded") == "care"
+    assert bond.cell("giving", "unconditioned") == "kindness"
+    assert "keystone defined" in bond.reading.lower()      # the spiral definition attached
+    assert "empedocles" in bond.reading.lower()            # breath-love = the binding force
+    assert "same word twice" in bond.reading.lower()       # the trust/faith doublet
+    assert "polymorph" in bond.reading.lower()             # the gratitude cut, recorded
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
