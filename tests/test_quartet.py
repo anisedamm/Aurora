@@ -22,7 +22,7 @@ def test_the_quartets_load_with_their_keystones():
                    "animate", "language", "conscious-state", "perception", "perspective",
                    "intelligence", "crystallisation", "integrate", "resonance", "ethos",
                    "bond", "gladness", "remembering", "skill", "danger", "interpretation",
-                   "densification", "alignment", "loyalty", "justice", "fairness"}
+                   "densification", "alignment", "loyalty", "justice", "fairness", "equity"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -209,7 +209,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     # the field is optional: quartets without dimensions render unchanged
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
-                        "densification", "alignment", "loyalty", "justice", "fairness"):
+                        "densification", "alignment", "loyalty", "justice", "fairness", "equity"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -266,7 +266,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "interpretation": "interpretation-thread",
                         "densification": "densification-thread",
                         "alignment": "alignment-thread", "loyalty": "loyalty-thread",
-                        "justice": "justice-thread", "fairness": "fairness-thread"}
+                        "justice": "justice-thread", "fairness": "fairness-thread",
+                        "equity": "equity-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -451,6 +452,29 @@ def test_fairness_is_justices_felt_twin():
     assert "cucumber" in r                           # fairness older than the species
     assert "CUT WITHOUT THE CHOOSE" in r.upper() or "cut without the choose" in r
     assert set(fair.dimensions) == set(fair.members)
+
+
+def test_equity_is_the_level_and_carries_mercys_fossil():
+    # aequus, the level: equality/adequacy/equilibrium/equanimity cross
+    # substance (quantity/tension) with bearing (matched/held); finance's
+    # equity descends from chancery's equity of redemption -- mercy's fossil
+    # in the balance sheet; the equation is the pump's equity
+    qs = _load()
+    eq = qs.by_id("equity")
+    assert eq.keystone == "aequus"
+    assert eq.breath_pump_axis == "substance"
+    assert eq.cell("quantity", "matched") == "equality"
+    assert eq.cell("quantity", "held") == "adequacy"
+    assert eq.cell("tension", "matched") == "equilibrium"
+    assert eq.cell("tension", "held") == "equanimity"
+    r = eq.reading
+    assert "EQUITY OF REDEMPTION" in r.upper()        # mercy's fossil, attested
+    assert "equity of expressions" in r               # aequatio: solving keeps the level
+    assert "QUANTITY ROW" in r                        # the equality-vs-equity debate, placed
+    assert "water" in r.lower()                       # the level as given
+    assert set(eq.dimensions) == set(eq.members)
+    for text in eq.dimensions.values():
+        assert "breath =" in text and "pump =" in text and "nerve =" in text
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
