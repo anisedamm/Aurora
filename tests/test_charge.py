@@ -56,11 +56,13 @@ def test_an_ungridded_word_reports_zero_interlock_not_an_error():
 
 def test_the_most_charged_words_are_the_load_bearers():
     graph, qs, _, g = _fixtures()
-    ranked = rank_charges(graph, qs, g, limit=12)
+    ranked = rank_charges(graph, qs, g, limit=30)
     charges = [c.charge for c in ranked]
     assert charges == sorted(charges, reverse=True)
     words = [c.word for c in ranked]
-    assert "integrity" in words                   # the map's measured hub carries the load
+    # the map's measured hubs carry the load (the exact order shifts as the
+    # map grows -- a living record -- but the load-bearers stay in the van)
+    assert "integrity" in words and "whole" in words
     assert all(c.charge == c.interlock * c.depth_tokens for c in ranked)
 
 

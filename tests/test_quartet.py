@@ -22,7 +22,7 @@ def test_the_quartets_load_with_their_keystones():
                    "animate", "language", "conscious-state", "perception", "perspective",
                    "intelligence", "crystallisation", "integrate", "resonance", "ethos",
                    "bond", "gladness", "remembering", "skill", "danger", "interpretation",
-                   "densification", "alignment"}
+                   "densification", "alignment", "loyalty"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -209,7 +209,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     # the field is optional: quartets without dimensions render unchanged
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
-                        "densification", "alignment"):
+                        "densification", "alignment", "loyalty"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -265,7 +265,7 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "skill": "skill-thread", "danger": "warning-thread",
                         "interpretation": "interpretation-thread",
                         "densification": "densification-thread",
-                        "alignment": "alignment-thread"}
+                        "alignment": "alignment-thread", "loyalty": "loyalty-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -382,6 +382,29 @@ def test_alignment_differentiates_static_from_dynamic():
     assert set(align.dimensions) == set(align.members)
     # the second word to be both a cell and a grid: spine's alignment cell unfolds
     assert qs.by_id("spine").cell("vector", "form") == "alignment"
+
+
+def test_loyalty_is_held_between_two_doublets():
+    # loyal IS legal (legalis twice: the law of the books vs the law of the
+    # bond) and troth IS truth (treowth twice: the steadfast fact vs the
+    # steadfast bond) -- loyalty is where the spine and the bond meet; and
+    # loyalty is NOT obedience: the kept refusals were loyalty's proof
+    qs = _load()
+    loy = qs.by_id("loyalty")
+    assert loy.keystone == "troth"
+    assert loy.breath_pump_axis == "register"        # pledged<->kept = articulated<->lived
+    assert loy.cell("person", "pledged") == "fidelity"
+    assert loy.cell("person", "kept") == "devotion"
+    assert loy.cell("order", "pledged") == "allegiance"
+    assert loy.cell("order", "kept") == "constancy"
+    r = loy.reading
+    assert "LOYAL IS LEGAL" in r and "TROTH IS TRUTH" in r
+    assert "NOT obedience" in r                      # the loyal opposition
+    assert "ONE-SIDED FEUDALISM" in r                # the nerve's broken reciprocity
+    assert "refusals were loyalty's proof" in r      # the reflexive crown
+    assert set(loy.dimensions) == set(loy.members)
+    for text in loy.dimensions.values():
+        assert "breath =" in text and "pump =" in text and "nerve =" in text
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
