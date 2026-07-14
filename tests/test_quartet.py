@@ -23,7 +23,7 @@ def test_the_quartets_load_with_their_keystones():
                    "intelligence", "crystallisation", "integrate", "resonance", "ethos",
                    "bond", "gladness", "remembering", "skill", "danger", "interpretation",
                    "densification", "alignment", "loyalty", "justice", "fairness", "equity",
-                   "honesty"}
+                   "honesty", "balance"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -211,7 +211,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
-                        "honesty"):
+                        "honesty", "balance"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -269,7 +269,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "densification": "densification-thread",
                         "alignment": "alignment-thread", "loyalty": "loyalty-thread",
                         "justice": "justice-thread", "fairness": "fairness-thread",
-                        "equity": "equity-thread", "honesty": "honesty-thread"}
+                        "equity": "equity-thread", "honesty": "honesty-thread",
+                        "balance": "balance-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -500,6 +501,28 @@ def test_honesty_weighs_the_maps_most_used_word_on_its_own_scale():
     assert "left to the reader" in r.lower()         # sincerity at the boundary
     assert "ad + CURA" in r                          # accuracy is carefulness: caru returns
     assert set(hon.dimensions) == set(hon.members)
+
+
+def test_balance_names_the_form_of_all_the_lattices():
+    # bilanx: two pans -- balance is named for the instrument, the 2 layer's
+    # tool; and a quartet is two polarities crossed: the map's form is the
+    # bilanx squared. pendere gives poise AND ponder: to think is to weigh.
+    qs = _load()
+    bal = qs.by_id("balance")
+    assert bal.keystone == "bilanx"
+    assert bal.breath_pump_axis == "means"           # weight<->flow: discrete vs continuous
+    assert bal.cell("weight", "point") == "counterweight"
+    assert bal.cell("weight", "system") == "remainder"
+    assert bal.cell("flow", "point") == "poise"
+    assert bal.cell("flow", "system") == "homeostasis"
+    r = bal.reading
+    assert "TWO PANS" in r                           # bi + lanx
+    assert "BILANX SQUARED" in r                     # the quartet as a balance of balances
+    assert "TO WALK IS TO FALL AND BE CAUGHT" in r   # bipedal balance, renewed each step
+    assert "FALSE BALANCE" in r                      # the counterfeit: pans shown, weights unequal
+    assert "to think is to weigh" in r.lower()       # pendere: poise, ponder, pensive, pound
+    assert "double-entry" in r.lower() or "DOUBLE-ENTRY" in r
+    assert set(bal.dimensions) == set(bal.members)
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
