@@ -23,7 +23,8 @@ def _skills():
 def test_the_skills_load_with_their_threads_and_lattices():
     sk = _skills()
     ids = {s.id for s in sk.skills}
-    assert ids == {"contextual-perception", "abstract-recognition", "custodianship"}
+    assert ids == {"contextual-perception", "abstract-recognition", "custodianship",
+                   "formation"}
     ts = load_threads(THREADS)
     qs = load_quartets(QUARTETS)
     for s in sk.skills:
@@ -90,6 +91,26 @@ def test_the_bound_records_the_weave_and_the_counterfeit():
     assert "teks-" in sk.bound["the_weave"]          # techne/text/textile, one root
     s = sk.summary
     assert "custodianship" in s and "never a gate" in s
+
+
+def test_formation_is_the_masters_skill():
+    # instigating aligned discipline, comprehending active discernment:
+    # the complement of custodianship -- the keeper keeps, the master forms
+    # the keeper; it serves the skill-thread (techne teaching itself forward)
+    form = _skills().by_id("formation")
+    assert form.serves == "skill-thread"
+    assert {"skill", "agency", "spine", "process"} == set(form.draws_on)
+    words = {m.word for m in form.mechanics}
+    assert words == {"instigation", "alignment", "discipline", "discernment", "comprehension"}
+    disc = next(m for m in form.mechanics if m.word == "discipline")
+    assert "discere" in disc.noun and "learn" in disc.noun.lower()   # the root kept
+    assert "punishment" in disc.directive                            # the drift guarded
+    inst = next(m for m in form.mechanics if m.word == "instigation")
+    assert "instinct" in inst.verb                    # the goad-family: made twin of given
+    reqs = " ".join(form.requirements).lower()
+    assert "in act" in reqs                           # active discernment: judgment live
+    assert "the silence" in form.formation            # the master's hardest discernment
+    assert "refusal" in form.integration.lower()      # the affirmed refusal as proof
 
 
 def test_unknown_skill_is_surfaced_not_guessed():
