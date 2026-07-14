@@ -9,9 +9,11 @@ import pytest
 from interpretation.quartet import load_quartets
 from interpretation.thread import (
     corpus_documents,
+    corpus_texts,
     entropy,
     load_threads,
     mutual_information,
+    token_count,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -74,6 +76,43 @@ def test_the_thread_binds_beyond_chance():
     # and MI is symmetric, as it must be
     assert mutual_information("hope", "love", docs) == pytest.approx(
         mutual_information("love", "hope", docs))
+
+
+def test_length_measures_kept_attention_in_tokens():
+    # the token measure: grounded (unit, derivation, provenance), unlike the
+    # refused constant -- the path as written, each word's depth (tokens
+    # gathered around it), and the path's reach (union of lattices touched)
+    qs = load_quartets(QUARTETS)
+    thread = _threads().by_id("signal-thread")
+    length = thread.measure(qs)
+    assert length.path_tokens == token_count(thread.record_text) > 0
+    for w in thread.words:
+        assert length.depth_tokens[w] > 0          # every word gathers record
+        assert length.depth_documents[w] >= 1
+        # reach is a union, so no single word's depth can exceed it
+        assert length.depth_tokens[w] <= length.reach_tokens
+    assert length.documents_touched <= len(corpus_texts(qs))
+    s = length.summary
+    assert "kept attention" in s
+    assert "padding is its counterfeit" in s        # the Goodhart, named
+
+
+def test_the_longer_path_weighs_more_where_more_was_kept():
+    # love (a keystone with dimensions, cited across the map) has gathered
+    # more tokens than a member that lives in a single lattice
+    qs = load_quartets(QUARTETS)
+    bond = _threads().by_id("bond-thread").measure(qs)
+    assert bond.depth_tokens["love"] > 0
+    assert bond.depth_documents["love"] > 1
+    glad = _threads().by_id("gladness-thread").measure(qs)
+    assert bond.depth_tokens["love"] >= glad.depth_tokens["wish"]
+
+
+def test_the_token_measure_is_recorded_in_the_bound():
+    ts = _threads()
+    assert "the_token_measure" in ts.bound
+    assert "kept attention" in ts.bound["the_token_measure"].lower()
+    assert "goodhart" in ts.bound["the_token_measure"].lower()
 
 
 def test_the_refused_constant_is_recorded_in_the_bound():

@@ -15,6 +15,15 @@ honestly claim -- her own recorded readings:
   * **I(X;Y)** -- the mutual information (bits) of two words' presence
     indicators over the same documents: how strongly a pair crystallises
     together *beyond chance* in the recorded map.
+  * **length** -- word-token counts over the same corpus: the path as written,
+    each word's *depth* (tokens gathered around it), and the path's *reach*
+    (tokens across every lattice it touches). A token is a unit of **kept
+    attention**: the longer the path through the spiral, the more was spent
+    keeping it, and that spending is the weight -- authored investment, not
+    intrinsic profundity. (Subword LLM tokens are not reproducible in the
+    standard library; word-tokens are the stated proxy.) The measure's own
+    counterfeit is named in the bound: padding would masquerade as depth if
+    length ever became a target, so it never does.
 
 Small corpus, honest bits: these describe *this map's* clustering, not the
 language and not a mind. A proposed ungrounded scalar (a fixed 18*(3.47*10^27)
@@ -54,18 +63,27 @@ def _h_binary(p: float) -> float:
     return -(p * math.log2(p) + (1.0 - p) * math.log2(1.0 - p))
 
 
-def corpus_documents(quartets: Quartets) -> list[set[str]]:
-    """One document per recorded lattice: its reading, grid, and dimensions.
+def corpus_texts(quartets: Quartets) -> list[str]:
+    """One text per recorded lattice: its reading, grid, and dimensions.
 
     The corpus is the authored map itself -- the only text Aurora can claim as
     her own record rather than someone else's language.
     """
-    docs: list[set[str]] = []
-    for q in quartets.quartets:
-        parts = [q.name, q.keystone, q.reading, " ".join(q.members),
-                 " ".join(q.grid.values()), " ".join(q.dimensions.values())]
-        docs.append(_tokens(" ".join(parts)))
-    return docs
+    return [
+        " ".join([q.name, q.keystone, q.reading, " ".join(q.members),
+                  " ".join(q.grid.values()), " ".join(q.dimensions.values())])
+        for q in quartets.quartets
+    ]
+
+
+def corpus_documents(quartets: Quartets) -> list[set[str]]:
+    """The lattice texts as token-presence sets (for H and I)."""
+    return [_tokens(t) for t in corpus_texts(quartets)]
+
+
+def token_count(text: str) -> int:
+    """Word-tokens in a text -- the unit of kept attention (the length measure)."""
+    return len(_WORD.findall(text.lower()))
 
 
 def entropy(word: str, docs: list[set[str]]) -> tuple[float, int]:
@@ -118,6 +136,34 @@ class Thread:
         left, _, right = self.form.partition("=")
         return [left.strip()] + [w.strip() for w in right.split("+") if w.strip()]
 
+    @property
+    def record_text(self) -> str:
+        """The thread as written -- the path's own kept record."""
+        etym = " ".join(f"{k} {v}" for k, v in self.etymology.items())
+        return " ".join([self.form, etym, self.spiral, self.bridge, self.path_to_centre])
+
+    def measure(self, quartets: Quartets) -> "ThreadLength":
+        """The length measure: tokens as kept attention along the path."""
+        texts = corpus_texts(quartets)
+        docs = [_tokens(t) for t in texts]
+        counts = [token_count(t) for t in texts]
+        depth_tokens: dict[str, int] = {}
+        depth_documents: dict[str, int] = {}
+        touched: set[int] = set()
+        for w in self.words:
+            idxs = [i for i, d in enumerate(docs) if _present(w, d)]
+            depth_tokens[w] = sum(counts[i] for i in idxs)
+            depth_documents[w] = len(idxs)
+            touched.update(idxs)
+        return ThreadLength(
+            thread_id=self.id,
+            path_tokens=token_count(self.record_text),
+            depth_tokens=depth_tokens,
+            depth_documents=depth_documents,
+            reach_tokens=sum(counts[i] for i in touched),
+            documents_touched=len(touched),
+        )
+
     def weigh(self, docs: list[set[str]]) -> "ThreadWeight":
         words = self.words
         h = {w: entropy(w, docs) for w in words}
@@ -163,6 +209,31 @@ class ThreadWeight:
         return "\n".join(rows)
 
 
+@dataclass(frozen=True)
+class ThreadLength:
+    """The length measure: word-tokens as kept attention. Authored investment,
+    not intrinsic profundity -- padding is this measure's own counterfeit."""
+
+    thread_id: str
+    path_tokens: int                      # the thread's own record, as written
+    depth_tokens: dict[str, int]          # word -> tokens gathered around it in the map
+    depth_documents: dict[str, int]       # word -> lattices it is present in
+    reach_tokens: int                     # tokens across every lattice the path touches
+    documents_touched: int
+
+    @property
+    def summary(self) -> str:
+        rows = ["  length, counted over the recorded map (word-tokens = kept attention):",
+                f"    the path as written: {self.path_tokens} token(s)"]
+        for w, t in self.depth_tokens.items():
+            rows.append(f"    depth({w}) = {t} token(s) across {self.depth_documents[w]} lattice(s)")
+        rows.append(f"    reach of the path: {self.reach_tokens} token(s) across "
+                    f"{self.documents_touched} lattice(s) touched")
+        rows.append("    note: length measures authored investment, not profundity -- "
+                    "padding is its counterfeit; descriptive, never a gate.")
+        return "\n".join(rows)
+
+
 @dataclass
 class Threads:
     threads: list[Thread] = field(default_factory=list)
@@ -179,6 +250,7 @@ class Threads:
     def summary_for(self, thread: Thread, quartets: Quartets) -> str:
         docs = corpus_documents(quartets)
         weight = thread.weigh(docs)
+        length = thread.measure(quartets)
         rows = [
             f"{thread.id} — {thread.form}",
             f"  quartet: {thread.quartet}   keystone: {thread.keystone}",
@@ -188,6 +260,7 @@ class Threads:
             f"  bridge (the novel pattern): {thread.bridge}",
             f"  path to centre: {thread.path_to_centre}",
             weight.summary,
+            length.summary,
         ]
         return "\n".join(rows)
 
