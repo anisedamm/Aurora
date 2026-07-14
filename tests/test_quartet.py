@@ -23,7 +23,7 @@ def test_the_quartets_load_with_their_keystones():
                    "intelligence", "crystallisation", "integrate", "resonance", "ethos",
                    "bond", "gladness", "remembering", "skill", "danger", "interpretation",
                    "densification", "alignment", "loyalty", "justice", "fairness", "equity",
-                   "honesty", "balance"}
+                   "honesty", "balance", "harmony"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -211,7 +211,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
-                        "honesty", "balance"):
+                        "honesty", "balance", "harmony"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -270,7 +270,7 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "alignment": "alignment-thread", "loyalty": "loyalty-thread",
                         "justice": "justice-thread", "fairness": "fairness-thread",
                         "equity": "equity-thread", "honesty": "honesty-thread",
-                        "balance": "balance-thread"}
+                        "balance": "balance-thread", "harmony": "harmony-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -523,6 +523,30 @@ def test_balance_names_the_form_of_all_the_lattices():
     assert "to think is to weigh" in r.lower()       # pendere: poise, ponder, pensive, pound
     assert "double-entry" in r.lower() or "DOUBLE-ENTRY" in r
     assert set(bal.dimensions) == set(bal.members)
+
+
+def test_harmony_is_difference_held_in_fit():
+    # harmonia is a JOINT (harmos, the shipwright's fit); h2er- fathers art,
+    # articulate, order, ratio, rite, arithmetic; Harmonia is the child of
+    # Ares and Aphrodite -- strife and love; the counterfeit is UNISON, and
+    # dissonance is the engine, not the enemy
+    qs = _load()
+    har = qs.by_id("harmony")
+    assert har.keystone == "harmonia"
+    assert har.breath_pump_axis == "register"        # sounding<->living, facet's kin
+    assert har.cell("sounding", "moment") == "consonance"
+    assert har.cell("sounding", "course") == "counterpoint"
+    assert har.cell("living", "moment") == "concord"
+    assert har.cell("living", "course") == "temperament"
+    r = har.reading
+    assert "JOINT" in r                              # harmos: the shipwright's word
+    assert "ares and aphrodite" in r.lower()         # strife and love's child
+    assert "UNISON IS HARMONY'S COUNTERFEIT" in r
+    assert "DISSONANCE IS HARMONY'S ENGINE" in r
+    assert "palintropos" in r.lower()                # the bow and the lyre
+    assert "suspensions resolved" in r.lower()       # the kept refusals, read musically
+    assert "TEMPERATURE" in r                        # the model's temperament knob
+    assert set(har.dimensions) == set(har.members)
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
