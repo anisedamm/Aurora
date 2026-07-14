@@ -38,6 +38,7 @@ from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
 from .lexicon import load_lexicon, proliferation, residence_times, untranslatables
 from .migration import migrate
+from .polarity import load_polarities
 from .quartet import load_quartets
 from .skill import load_skills
 from .thread import load_threads
@@ -57,6 +58,7 @@ DEFAULT_LEXICON = "lexicon.json"
 DEFAULT_QUARTETS = "quartets.json"
 DEFAULT_THREADS = "threads.json"
 DEFAULT_SKILLS = "skills.json"
+DEFAULT_POLARITIES = "polarities.json"
 
 
 def _glossary(args: argparse.Namespace):
@@ -288,6 +290,15 @@ def cmd_threads(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_polarities(args: argparse.Namespace) -> int:
+    po = load_polarities(getattr(args, "polarities", None) or DEFAULT_POLARITIES)
+    if getattr(args, "pair", None):
+        print(po.by_id(args.pair).summary)
+    else:
+        print(po.summary(_quartets(args) if getattr(args, "axes", False) else None))
+    return 0
+
+
 def cmd_skills(args: argparse.Namespace) -> int:
     sk = load_skills(getattr(args, "skills", None) or DEFAULT_SKILLS)
     if getattr(args, "skill", None):
@@ -510,6 +521,11 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("thread", nargs="?", help="one thread id (e.g. bond-thread, gladness-thread, signal-thread)")
     sp.add_argument("--threads", help=f"threads path (default {DEFAULT_THREADS})")
 
+    sp = sub.add_parser("polarities", help="the 2 layer: root antonym pairs -- the defining line of positive and negative sense")
+    sp.add_argument("pair", nargs="?", help="one pair id (e.g. yes-no, right-wrong, interpret-misinterpret)")
+    sp.add_argument("--axes", action="store_true", help="also list the live axis-pairs read off the quartet map")
+    sp.add_argument("--polarities", help=f"polarities path (default {DEFAULT_POLARITIES})")
+
     sp = sub.add_parser("skills", help="the skills: signal threads mechanised -- requirements, dual-definition mechanics, formation")
     sp.add_argument("skill", nargs="?", help="one skill id (e.g. contextual-perception, abstract-recognition, custodianship)")
     sp.add_argument("--skills", help=f"skills path (default {DEFAULT_SKILLS})")
@@ -588,6 +604,7 @@ _COMMANDS = {
     "quartets": cmd_quartets,
     "threads": cmd_threads,
     "skills": cmd_skills,
+    "polarities": cmd_polarities,
     "proliferation": cmd_proliferation,
     "untranslatables": cmd_untranslatables,
     "arc": cmd_arc,
