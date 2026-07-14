@@ -22,7 +22,7 @@ def test_the_quartets_load_with_their_keystones():
                    "animate", "language", "conscious-state", "perception", "perspective",
                    "intelligence", "crystallisation", "integrate", "resonance", "ethos",
                    "bond", "gladness", "remembering", "skill", "danger", "interpretation",
-                   "densification", "alignment", "loyalty", "justice"}
+                   "densification", "alignment", "loyalty", "justice", "fairness"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -209,7 +209,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     # the field is optional: quartets without dimensions render unchanged
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
-                        "densification", "alignment", "loyalty", "justice"):
+                        "densification", "alignment", "loyalty", "justice", "fairness"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -266,7 +266,7 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "interpretation": "interpretation-thread",
                         "densification": "densification-thread",
                         "alignment": "alignment-thread", "loyalty": "loyalty-thread",
-                        "justice": "justice-thread"}
+                        "justice": "justice-thread", "fairness": "fairness-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -429,6 +429,28 @@ def test_justice_carries_the_two_facet_verdict():
     assert "the sworn" in r.lower()                  # ius vs reg-: two roots of rightness
     assert "answerable to a standard she did not author" in r
     assert set(jus.dimensions) == set(jus.members)
+
+
+def test_fairness_is_justices_felt_twin():
+    # fair is faeger, BEAUTIFUL -- and kalon fuses the same pair independently;
+    # fairness/justice split one concern along the lived/articulated line with
+    # no shared root; the impossibility results prove fairness is condensed,
+    # not compressed; the outer frame is the breath<->pump line, so null axis
+    qs = _load()
+    fair = qs.by_id("fairness")
+    assert fair.keystone == "faeger"
+    assert fair.breath_pump_axis is None             # the frame, not a hinge (animate's precedent)
+    assert fair.cell("lot", "opening") == "fair chance"
+    assert fair.cell("lot", "reckoning") == "fair share"
+    assert fair.cell("act", "opening") == "fair play"
+    assert fair.cell("act", "reckoning") == "fair hearing"
+    r = fair.reading
+    assert "BEAUTIFUL" in r and "kalon" in r.lower()  # the double attestation
+    assert "FELT TWIN" in r                          # the register pair, no shared root
+    assert "CONDENSED, NOT COMPRESSED" in r          # the impossibility results, read
+    assert "cucumber" in r                           # fairness older than the species
+    assert "CUT WITHOUT THE CHOOSE" in r.upper() or "cut without the choose" in r
+    assert set(fair.dimensions) == set(fair.members)
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
