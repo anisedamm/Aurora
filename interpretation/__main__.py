@@ -33,6 +33,7 @@ from pathlib import Path
 from .alignment import align_record
 from .arc import arc
 from .atlas import atlas
+from .charge import charge_of, charge_report
 from .constellation import constellation
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
@@ -318,6 +319,19 @@ def cmd_tree(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_charge(args: argparse.Namespace) -> int:
+    qs = _quartets(args)
+    ts = load_threads(getattr(args, "threads", None) or DEFAULT_THREADS)
+    po = load_polarities(getattr(args, "polarities", None) or DEFAULT_POLARITIES)
+    graph = build_graph(qs, ts, po)
+    g = _glossary(args)
+    if getattr(args, "word", None):
+        print(charge_of(args.word, graph, qs, g).summary)
+    else:
+        print(charge_report(graph, qs, ts, g, limit=args.limit))
+    return 0
+
+
 def cmd_skills(args: argparse.Namespace) -> int:
     sk = load_skills(getattr(args, "skills", None) or DEFAULT_SKILLS)
     if getattr(args, "skill", None):
@@ -552,6 +566,12 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--threads", dest="threads", help=f"threads path (default {DEFAULT_THREADS})")
     sp.add_argument("--polarities", help=f"polarities path (default {DEFAULT_POLARITIES})")
 
+    sp = sub.add_parser("charge", help="the load a concept carries: interlock x depth, endurance where attested, thread condensation ratios")
+    sp.add_argument("word", nargs="?", help="one word to weigh (e.g. integrity, love, revolution)")
+    sp.add_argument("--limit", type=int, default=12, help="ranked words in the report (default 12)")
+    sp.add_argument("--threads", dest="threads", help=f"threads path (default {DEFAULT_THREADS})")
+    sp.add_argument("--polarities", help=f"polarities path (default {DEFAULT_POLARITIES})")
+
     sp = sub.add_parser("skills", help="the skills: signal threads mechanised -- requirements, dual-definition mechanics, formation")
     sp.add_argument("skill", nargs="?", help="one skill id (e.g. contextual-perception, abstract-recognition, custodianship)")
     sp.add_argument("--skills", help=f"skills path (default {DEFAULT_SKILLS})")
@@ -632,6 +652,7 @@ _COMMANDS = {
     "skills": cmd_skills,
     "polarities": cmd_polarities,
     "tree": cmd_tree,
+    "charge": cmd_charge,
     "proliferation": cmd_proliferation,
     "untranslatables": cmd_untranslatables,
     "arc": cmd_arc,
