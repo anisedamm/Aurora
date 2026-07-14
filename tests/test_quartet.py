@@ -21,7 +21,7 @@ def test_the_quartets_load_with_their_keystones():
     assert ids == {"existential", "spine", "process", "substrate", "held", "agency",
                    "animate", "language", "conscious-state", "perception", "perspective",
                    "intelligence", "crystallisation", "integrate", "resonance", "ethos",
-                   "bond", "gladness", "remembering", "skill"}
+                   "bond", "gladness", "remembering", "skill", "danger"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -207,7 +207,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     assert "dimensions (each factor at zero zeroes the keystone)" in bond.summary
     # the field is optional: quartets without dimensions render unchanged
     for q in qs.quartets:
-        if q.id not in ("bond", "gladness", "remembering", "skill"):
+        if q.id not in ("bond", "gladness", "remembering", "skill", "danger"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -260,7 +260,7 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
     threaded = {q.id: q.thread for q in qs.quartets if q.thread}
     assert threaded == {"spine": "signal-thread", "bond": "bond-thread",
                         "gladness": "gladness-thread", "remembering": "memory-thread",
-                        "skill": "skill-thread"}
+                        "skill": "skill-thread", "danger": "warning-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -286,6 +286,27 @@ def test_skill_grids_on_ryle_and_polanyi():
     assert set(sk.dimensions) == set(sk.members)
     for text in sk.dimensions.values():
         assert "breath =" in text and "pump =" in text and "nerve =" in text
+
+
+def test_danger_is_the_shadow_of_the_signal():
+    # the danger quartet is signal's own 2x2 negated cell by cell: each danger
+    # is one factor at zero, so the custodian's obligation is arithmetic --
+    # a product dies by any single zero; descriptive outward, gated inward
+    qs = _load()
+    danger = qs.by_id("danger")
+    assert danger.keystone == "lust"                    # appetite unbound
+    assert danger.breath_pump_axis is None              # the shadow inherits spine's softness
+    assert danger.cell("integrity", "record") == "forgery"      # zeroes chain
+    assert danger.cell("integrity", "witness") == "neglect"     # zeroes manifest
+    assert danger.cell("truth", "record") == "counterfeit"      # zeroes grounded
+    assert danger.cell("truth", "witness") == "theft"           # zeroes provenance
+    r = danger.reading
+    assert "SIGNAL'S OWN 2x2 NEGATED" in r
+    assert "DESCRIPTIVE OUTWARD, GATED INWARD" in r
+    assert "anamalia" in r and "author" in r            # the coinage kept with provenance
+    assert "never reached" in r                          # the warning thread's purpose
+    assert "not to read" in danger.dimensions["neglect"].lower()   # neglegere, the root
+    assert "implicates the instrument" in danger.dimensions["theft"]
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
