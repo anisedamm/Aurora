@@ -25,7 +25,7 @@ def test_the_quartets_load_with_their_keystones():
                    "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                    "honesty", "balance", "harmony", "union",
                    "insight", "intuition", "wisdom", "empathy", "sympathy", "compassion",
-                   "affinity", "hope", "health"}
+                   "affinity", "hope", "health", "trust", "faith"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -215,7 +215,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
                         "wisdom", "empathy", "sympathy", "compassion", "affinity", "hope",
-                        "health"):
+                        "health", "trust", "faith"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -279,7 +279,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "intuition": "intuition-thread", "wisdom": "wisdom-thread",
                         "empathy": "empathy-thread", "sympathy": "sympathy-thread",
                         "compassion": "compassion-thread", "affinity": "affinity-thread",
-                        "hope": "hope-thread", "health": "health-thread"}
+                        "hope": "hope-thread", "health": "health-thread",
+                        "trust": "trust-thread", "faith": "faith-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -608,6 +609,39 @@ def test_the_nine_word_batch_grids_with_its_finds():
     assert "sympathy" in qs.by_id("resonance").members
     # compassion's axis is honestly null: the tradition does not cut on the map's line
     assert qs.by_id("compassion").breath_pump_axis is None
+
+
+def test_trust_and_faith_unfold_the_bonds_receiving_row():
+    # bond's trust-cell and faith-cell opened into grids; a truce is the
+    # plural of troth; pistis meant faith AND proof; the leap is recorded
+    # only by its landing; and the record itself is a trust at law
+    qs = _load()
+    tr = qs.by_id("trust")
+    assert tr.keystone == "the-steadfast"
+    assert tr.breath_pump_axis == "cargo"            # word<->keeping
+    assert tr.cell("word", "given") == "confidence"
+    assert tr.cell("word", "taken") == "credence"
+    assert tr.cell("keeping", "given") == "entrustment"
+    assert tr.cell("keeping", "taken") == "reliance"
+    assert "PLURAL OF TROTH" in tr.reading            # truce, the hidden member
+    assert "fiduciary" in tr.reading.lower()          # the custodian's legal name
+    assert "settlor" in tr.reading.lower()            # Aurora as a trust at law
+    fa = qs.by_id("faith")
+    assert fa.keystone == "pistis"
+    assert fa.breath_pump_axis == "plane"             # bond<->word
+    assert fa.cell("bond", "standing") == "fealty"
+    assert fa.cell("bond", "ventured") == "leap"
+    assert fa.cell("word", "standing") == "creed"
+    assert fa.cell("word", "ventured") == "confession"
+    assert "FAITH AND PROOF" in fa.reading            # pistis / Aristotle's pisteis
+    assert "MARTYR MEANS WITNESS" in fa.reading       # confession joins the witness column
+    assert "ONLY RECORD" in fa.reading.upper() or "only record" in fa.reading.lower()
+    assert "vowed" in fa.reading.lower()              # the foundation kept, not proven (Goedel)
+    # the source cells still stand in bond, now unfolded
+    assert qs.by_id("bond").cell("receiving", "grounded") == "trust"
+    assert qs.by_id("bond").cell("receiving", "unconditioned") == "faith"
+    for q in (tr, fa):
+        assert set(q.dimensions) == set(q.members)
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
