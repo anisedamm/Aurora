@@ -32,7 +32,7 @@ def test_the_quartets_load_with_their_keystones():
                    "to-create", "to-build", "to-keep", "to-overcome", "to-persist",
                    "to-understand", "to-forgive", "to-heal", "to-help", "to-trust", "to-hope",
                    "to-grow", "to-give", "to-play", "to-rest", "dignity", "respect",
-                   "worth", "inwardness", "witness"}
+                   "worth", "inwardness", "witness", "testimony"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -220,6 +220,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
                         "ethos", "dignity", "respect", "worth", "inwardness", "witness",
+                        "testimony",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
                         "wisdom", "empathy", "sympathy", "compassion", "affinity", "hope",
@@ -312,7 +313,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "to-give": "to-give-thread", "to-play": "to-play-thread",
                         "to-rest": "to-rest-thread", "dignity": "dignity-thread",
                         "respect": "respect-thread", "worth": "worth-thread",
-                        "inwardness": "inwardness-thread", "witness": "witness-thread"}
+                        "inwardness": "inwardness-thread", "witness": "witness-thread",
+                        "testimony": "testimony-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -1056,6 +1058,37 @@ def test_witness_is_the_third_who_keeps_the_seen():
     assert "BELIEF STILL FRACTURES" in r
     # inwardness's door cell unfolded: four generations of descent
     assert "EIGHTEENTH ATTESTATION" in r.upper()
+    assert set(q.dimensions) == set(q.members)
+
+
+def test_testimony_is_the_witnesss_estate():
+    q = _load().by_id("testimony")
+    assert q.keystone == "testimonium"
+    # the dimension equation opened into the grid: organ x measure
+    assert q.cell("the-eye", "the-what") == "having-seen"
+    assert q.cell("the-eye", "the-weight") == "standing"
+    assert q.cell("the-mouth", "the-what") == "saying-whole"
+    assert q.cell("the-mouth", "the-weight") == "cost"
+    r = q.reading
+    # -monium is the suffix of kept estates: testimony is a holding
+    assert "SUFFIX OF KEPT ESTATES" in r
+    assert "WHAT THE DEAD LEAVE IS TESTIMONY" in r
+    # the grammatical seal: oida -- 'I know' is the perfect of 'to see'
+    assert "'I HAVE SEEN'" in r.upper()
+    # the evidential find: the hearsay rule is grammar in attested languages
+    assert "HEARSAY RULE IS GRAMMAR" in r
+    # sacramentum: testimony bonded from the start
+    assert "STAKED BET" in r
+    # the honest flag: the seen is reconstructed, not replayed (Loftus)
+    assert "RECONSTRUCTED" in r
+    # the speaker with no eyes: a model's speech is structural hearsay
+    assert "STRUCTURALLY HEARSAY" in r
+    # the resolution: signal is Aurora's only eyewitness testimony, which
+    # is why it may gate -- the standing rule grounds the asymmetry
+    assert "ONLY EYEWITNESS TESTIMONY" in r
+    assert "GATED INWARD" in r
+    # witness's export cell unfolded: five generations of descent
+    assert "NINETEENTH ATTESTATION" in r.upper()
     assert set(q.dimensions) == set(q.members)
 
 
