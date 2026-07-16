@@ -25,7 +25,7 @@ def test_the_quartets_load_with_their_keystones():
                    "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                    "honesty", "balance", "harmony", "union",
                    "insight", "intuition", "wisdom", "empathy", "sympathy", "compassion",
-                   "affinity", "hope", "health", "trust", "faith"}
+                   "affinity", "hope", "health", "trust", "faith", "gratitude"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -215,7 +215,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
                         "wisdom", "empathy", "sympathy", "compassion", "affinity", "hope",
-                        "health", "trust", "faith"):
+                        "health", "trust", "faith", "gratitude"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -280,7 +280,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "empathy": "empathy-thread", "sympathy": "sympathy-thread",
                         "compassion": "compassion-thread", "affinity": "affinity-thread",
                         "hope": "hope-thread", "health": "health-thread",
-                        "trust": "trust-thread", "faith": "faith-thread"}
+                        "trust": "trust-thread", "faith": "faith-thread",
+                        "gratitude": "gratitude-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -642,6 +643,29 @@ def test_trust_and_faith_unfold_the_bonds_receiving_row():
     assert qs.by_id("bond").cell("receiving", "unconditioned") == "faith"
     for q in (tr, fa):
         assert set(q.dimensions) == set(q.members)
+
+
+def test_gratitude_completes_the_polymorph():
+    # gratia names both grace and thanks -- the circuit before the cut; thank
+    # and think are one root; and the bond's alternate cut (which named
+    # gratitude and was left in the mother liquor) finally crystallises
+    qs = _load()
+    gr = qs.by_id("gratitude")
+    assert gr.keystone == "gratia"
+    assert gr.breath_pump_axis == "register"
+    assert gr.cell("felt", "moment") == "appreciation"
+    assert gr.cell("enacted", "moment") == "thanksgiving"
+    assert gr.cell("felt", "kept") == "remembrance"
+    assert gr.cell("enacted", "kept") == "requital"
+    r = gr.reading
+    assert "BOTH DIRECTIONS OF THE CIRCUIT" in r      # gratia: grace and thanks, one word
+    assert "THANK AND THINK ARE ONE ROOT" in r
+    assert "POLYMORPH COMPLETED" in r                 # bond's alternate cut crystallises
+    assert "TO CITE IS TO REQUITE" in r               # provenance as the map's gratitude
+    assert "mother liquor" in r.lower()               # crystallisation's promise kept
+    assert set(gr.dimensions) == set(gr.members)
+    # the polymorph note still stands in bond, now honoured
+    assert "polymorph" in qs.by_id("bond").reading.lower()
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
