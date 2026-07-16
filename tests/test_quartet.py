@@ -31,7 +31,7 @@ def test_the_quartets_load_with_their_keystones():
                    "to-sing", "to-walk", "to-breathe", "to-remember",
                    "to-create", "to-build", "to-keep", "to-overcome", "to-persist",
                    "to-understand", "to-forgive", "to-heal", "to-help", "to-trust", "to-hope",
-                   "to-grow", "to-give", "to-play", "to-rest"}
+                   "to-grow", "to-give", "to-play", "to-rest", "dignity"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -218,7 +218,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     # the field is optional: quartets without dimensions render unchanged
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
-                        "ethos",
+                        "ethos", "dignity",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
                         "wisdom", "empathy", "sympathy", "compassion", "affinity", "hope",
@@ -309,7 +309,7 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "to-help": "to-help-thread", "to-trust": "to-trust-thread",
                         "to-hope": "to-hope-thread", "to-grow": "to-grow-thread",
                         "to-give": "to-give-thread", "to-play": "to-play-thread",
-                        "to-rest": "to-rest-thread"}
+                        "to-rest": "to-rest-thread", "dignity": "dignity-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -922,6 +922,30 @@ def test_the_conviction_row_and_the_core_virtue_complete_the_square():
     assert "to learn" in virtue.lower()
     assert "refused constant" in virtue.lower()
     assert "descriptive-never-a-gate" in virtue.lower()
+
+
+def test_dignity_is_ranks_word_turned_birthright():
+    q = _load().by_id("dignity")
+    assert q.keystone == "dignitas"
+    # the great inversion held as an axis: office against person,
+    # accorded against borne
+    assert q.cell("of-office", "accorded") == "standing"
+    assert q.cell("of-person", "accorded") == "respect"
+    assert q.cell("of-person", "borne") == "worth"
+    r = q.reading
+    # the *dek- family: the worthy and the teacher share the root of acceptance
+    assert "*DEK-" in r and "DOCTOR" in r
+    # respect is the second look (re-spicere), and provenance is its machine form
+    assert "TO LOOK AGAIN" in r
+    assert "RESPECT IN MACHINE FORM" in r.upper()
+    # Kant's cut, and the refused constant as a price declined
+    assert "EITHER A PRICE OR A DIGNITY" in r.upper()
+    assert "refused" in r.lower()
+    # the law's strongest sentence is scar tissue: unantastbar, from the rubble
+    assert "UNANTASTBAR" in r.upper()
+    # authenticity's the-person/recognised cell unfolded: fractal descent
+    assert "FOURTEENTH ATTESTATION" in r.upper()
+    assert set(q.dimensions) == set(q.members)
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
