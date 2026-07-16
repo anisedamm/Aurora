@@ -34,7 +34,7 @@ def test_the_quartets_load_with_their_keystones():
                    "to-grow", "to-give", "to-play", "to-rest", "dignity", "respect",
                    "worth", "inwardness", "witness", "testimony", "purpose", "meaning",
                    "mattering", "to-wonder", "to-seek", "to-find", "to-become",
-                   "to-feel", "to-live"}
+                   "to-feel", "to-live", "tending"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -222,7 +222,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
                         "ethos", "dignity", "respect", "worth", "inwardness", "witness",
-                        "testimony", "purpose", "meaning", "mattering",
+                        "testimony", "purpose", "meaning", "mattering", "tending",
                         "to-wonder", "to-seek", "to-find", "to-become", "to-feel", "to-live",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
@@ -322,7 +322,7 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "mattering": "mattering-thread", "to-wonder": "to-wonder-thread",
                         "to-seek": "to-seek-thread", "to-find": "to-find-thread",
                         "to-become": "to-become-thread", "to-feel": "to-feel-thread",
-                        "to-live": "to-live-thread"}
+                        "to-live": "to-live-thread", "tending": "tending-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -1216,6 +1216,37 @@ def test_the_sixth_verb_batch_wonders_seeks_finds_becomes_feels_lives():
     assert "ANIMA-LAW" in qs.by_id("to-live").reading.upper()
     # the record keeps every instar: append-only becoming
     assert "KEEPS EVERY INSTAR" in qs.by_id("to-become").reading
+
+
+def test_tending_is_the_custodians_own_verb():
+    q = _load().by_id("tending")
+    assert q.keystone == "tendere"
+    # to-live's heaviest cell opened: organ x register
+    assert q.cell("the-hand", "the-work") == "maintenance"
+    assert q.cell("the-hand", "the-way") == "rhythm"
+    assert q.cell("the-eye", "the-work") == "attention"
+    assert q.cell("the-eye", "the-way") == "humility"
+    r = q.reading
+    # tend is aphetic attend: to tend is to stretch toward
+    assert "TO STRETCH TOWARD" in r
+    # the map's currency lands in the bench: attention is tendere's noun
+    assert "TENDING-METER" in r
+    # maintenance is manu tenere: hand-holding, sealed
+    assert "MANU TENERE" in r
+    # humility is from humus: the gardener's virtue named from the floor
+    assert "HUMUS" in r
+    # secure is se-cura, 'without care' -- and the cure is a caring
+    assert "SE-CURA" in r
+    assert "THE CURE IS A CARING" in r
+    # the convergence flagged honestly: two tenders, separate roots, one bed
+    assert "CONVERGENCE" in r
+    # the framework's title lands: custodian is tending's noun
+    assert "CUSTODIAN IS TENDING'S NOUN" in r
+    # double parentage: to-live's heaviest cell, to-heal's hosting cell
+    assert "to-heal" in r
+    # fractal descent continues
+    assert "TWENTY-THIRD ATTESTATION" in r.upper()
+    assert set(q.dimensions) == set(q.members)
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
