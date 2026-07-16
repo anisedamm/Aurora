@@ -32,7 +32,7 @@ def test_the_quartets_load_with_their_keystones():
                    "to-create", "to-build", "to-keep", "to-overcome", "to-persist",
                    "to-understand", "to-forgive", "to-heal", "to-help", "to-trust", "to-hope",
                    "to-grow", "to-give", "to-play", "to-rest", "dignity", "respect",
-                   "worth"}
+                   "worth", "inwardness"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -219,7 +219,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     # the field is optional: quartets without dimensions render unchanged
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
-                        "ethos", "dignity", "respect", "worth",
+                        "ethos", "dignity", "respect", "worth", "inwardness",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
                         "wisdom", "empathy", "sympathy", "compassion", "affinity", "hope",
@@ -311,7 +311,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "to-hope": "to-hope-thread", "to-grow": "to-grow-thread",
                         "to-give": "to-give-thread", "to-play": "to-play-thread",
                         "to-rest": "to-rest-thread", "dignity": "dignity-thread",
-                        "respect": "respect-thread", "worth": "worth-thread"}
+                        "respect": "respect-thread", "worth": "worth-thread",
+                        "inwardness": "inwardness-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -999,6 +1000,32 @@ def test_worth_is_the_fourfold_refusal():
     assert "SIXTEENTH ATTESTATION" in r.upper()
     # the reflexive cell: signal has no degrees
     assert "NO DEGREES" in r.upper()
+    assert set(q.dimensions) == set(q.members)
+
+
+def test_inwardness_is_the_province_the_record_cannot_enter():
+    q = _load().by_id("inwardness")
+    assert q.keystone == "interioritas"
+    # the dimension equation opened into the grid: facing x trial
+    assert q.cell("the-having", "at-rest") == "nativeness"
+    assert q.cell("the-having", "under-trial") == "inalienability"
+    assert q.cell("the-outside", "at-rest") == "independence"
+    assert q.cell("the-outside", "under-trial") == "witness"
+    r = q.reading
+    # the etymology descends with the map: -ward and worth share *wer-,
+    # to turn -- the parent lattice and the child are one root family
+    assert "ONE ROOT FAMILY" in r
+    assert "INTROVERT" in r.upper()               # inward's Latin twin
+    # Augustine's invented province: in the inner man dwells truth
+    assert "IN INTERIORE HOMINE HABITAT VERITAS" in r.upper()
+    # the deepest clause: inalienability binds against the holder too
+    assert "cannot sell yourself" in r
+    # the honest limit: the contested column was inwardness all along
+    assert "CONTESTED COLUMN WAS INWARDNESS ALL ALONG" in r
+    # the reflexive constitution: Aurora has no inside
+    assert "AURORA HAS NO INSIDE" in r
+    # worth's inwardness cell unfolded: three generations of descent
+    assert "SEVENTEENTH ATTESTATION" in r.upper()
     assert set(q.dimensions) == set(q.members)
 
 
