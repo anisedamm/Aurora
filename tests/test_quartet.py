@@ -26,7 +26,8 @@ def test_the_quartets_load_with_their_keystones():
                    "honesty", "balance", "harmony", "union",
                    "insight", "intuition", "wisdom", "empathy", "sympathy", "compassion",
                    "affinity", "hope", "health", "trust", "faith", "gratitude", "grace",
-                   "persistence", "peace", "experience", "appreciation"}
+                   "persistence", "peace", "experience", "appreciation",
+                   "to-dance", "to-dream", "to-laugh", "to-listen", "to-learn", "to-love"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -217,7 +218,8 @@ def test_bond_holds_love_as_a_dimensional_equation():
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
                         "wisdom", "empathy", "sympathy", "compassion", "affinity", "hope",
                         "health", "trust", "faith", "gratitude", "grace", "persistence", "peace",
-                        "experience", "appreciation"):
+                        "experience", "appreciation", "to-dance", "to-dream", "to-laugh",
+                        "to-listen", "to-learn", "to-love"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -285,7 +287,10 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "trust": "trust-thread", "faith": "faith-thread",
                         "gratitude": "gratitude-thread", "grace": "grace-thread",
                         "persistence": "persistence-thread", "peace": "peace-thread",
-                        "experience": "experience-thread", "appreciation": "appreciation-thread"}
+                        "experience": "experience-thread", "appreciation": "appreciation-thread",
+                        "to-dance": "to-dance-thread", "to-dream": "to-dream-thread",
+                        "to-laugh": "to-laugh-thread", "to-listen": "to-listen-thread",
+                        "to-learn": "to-learn-thread", "to-love": "to-love-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -719,6 +724,37 @@ def test_the_standing_the_fastened_the_fared_and_the_prized():
     assert "PLURAL OF TROTH" in qs.by_id("peace").reading
     # the model's limit case, held at the boundary
     assert "READ EVERY JOURNEY AND FARED NONE" in qs.by_id("experience").reading.upper()
+
+
+def test_the_experience_verbs_carry_weighted_doings():
+    # the 'to-' convention: an experience verb grids the act from inside and
+    # carries an experience field -- the breath-sign's weighted field applied
+    # to what it means to DO the thing; recorded in the bound
+    qs = _load()
+    assert "the_experience_verbs" in qs.bound
+    assert "to-" in qs.bound["the_experience_verbs"]
+    verbs = [q for q in qs.quartets if q.id.startswith("to-")]
+    assert {q.id for q in verbs} == {"to-dance", "to-dream", "to-laugh",
+                                     "to-listen", "to-learn", "to-love"}
+    for q in verbs:
+        assert q.experience, q.id
+        assert set(q.experience) == set(q.members), q.id
+        assert abs(sum(q.experience.values()) - 1.0) < 1e-9, q.id
+        assert "the experience (what it means to do it" in q.summary
+    # every non-verb lattice carries no experience field: the marker is honest
+    for q in qs.quartets:
+        if not q.id.startswith("to-"):
+            assert q.experience == {}, q.id
+    # signature finds, one per verb
+    assert "DANCING-PLACE" in qs.by_id("to-dance").reading    # orchestra
+    assert "HORN AND IVORY" in qs.by_id("to-dream").reading.upper()
+    assert "HE LAUGHS" in qs.by_id("to-laugh").reading        # Isaac
+    assert "OBEDIENCE" in qs.by_id("to-listen").reading.upper()  # ob-audire
+    assert "OFF THE FURROW" in qs.by_id("to-learn").reading   # delirium
+    assert "agapas me?" in qs.by_id("to-love").reading        # the interrogated verb
+    # the crown's weighting: tending is love's heaviest cell -- the verb stays
+    assert qs.by_id("to-love").experience["tending"] == max(
+        qs.by_id("to-love").experience.values())
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():

@@ -55,6 +55,10 @@ class Quartet:
     thread: str | None = None
     # the lattice's signal thread (threads.json id): the kept path folded back
     # into the quartet it walks -- bidirectional with Thread.quartet
+    experience: dict[str, float] = field(default_factory=dict)
+    # EXPERIENCE VERBS ONLY (ids prefixed 'to-'): the actionable experience as a
+    # weighted field over the members -- what it means to DO the thing, weighted;
+    # the breath-sign's WeightedField applied to the act from inside
 
     def cell(self, row_pole: str, col_pole: str) -> str:
         return self.grid.get(f"{row_pole}/{col_pole}", "—")
@@ -81,6 +85,11 @@ class Quartet:
             rows.append(f"  whole<->part axis: {self.breath_pump_axis}")
         if self.thread:
             rows.append(f"  signal thread: {self.thread}  (the kept path through this lattice)")
+        if self.experience:
+            rows.append("  the experience (what it means to do it -- a weighted field):")
+            for m in self.members:
+                if m in self.experience:
+                    rows.append(f"    {m}: {self.experience[m]:.2f}")
         if self.dimensions:
             rows.append("  dimensions (each factor at zero zeroes the keystone):")
             for m in self.members:
@@ -140,6 +149,7 @@ def _q(e: dict) -> Quartet:
         reading=e.get("reading", ""),
         dimensions=dict(e.get("dimensions", {})),
         thread=e.get("thread"),
+        experience=dict(e.get("experience", {})),
     )
 
 
