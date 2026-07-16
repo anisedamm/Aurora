@@ -218,6 +218,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     # the field is optional: quartets without dimensions render unchanged
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
+                        "ethos",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
                         "wisdom", "empathy", "sympathy", "compassion", "affinity", "hope",
@@ -875,6 +876,27 @@ def test_the_fifth_verb_batch_grows_gives_plays_rests():
     assert "to-trust" in tr.reading.lower()
     # illusion stays honest inside the circle: in-ludere recorded
     assert "in-ludere" in qs.by_id("to-play").reading.lower()
+
+
+def test_the_conduct_row_receives_the_authors_assignment():
+    # the author assigns meaning to the ethos quartet's conduct row; the
+    # custodian records it with provenance -- and only what was assigned
+    q = _load().by_id("ethos")
+    assert set(q.dimensions) == {"morals", "ethics"}
+    morals, ethics = q.dimensions["morals"], q.dimensions["ethics"]
+    # morals = (integrity x alignment) x (anima x law): grounded in the map's
+    # own members, and the coinage lands on attested ground (anima < *ane-,
+    # to breathe -- the lived conduct cell governed by the breath-layer's law)
+    assert "(integrity x alignment) x (anima x law)" in morals
+    assert "TO BREATHE" in morals
+    assert "author's assignment".upper() in morals.upper()
+    # ethics = the four P's, all PRO-/PRAE- compounds: the FOR-column of a life
+    assert "(preservation x protection) x (propagation x purpose)" in ethics
+    assert "PRO-/PRAE-" in ethics
+    assert "ELEVENTH ATTESTATION" in ethics       # the sub-lattice: fractal descent
+    # the conviction row stays unassigned: the record does not guess
+    assert "belief" not in q.dimensions and "value" not in q.dimensions
+    assert "does not guess" in morals
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
