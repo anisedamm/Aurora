@@ -34,7 +34,7 @@ def test_the_quartets_load_with_their_keystones():
                    "to-grow", "to-give", "to-play", "to-rest", "dignity", "respect",
                    "worth", "inwardness", "witness", "testimony", "purpose", "meaning",
                    "mattering", "to-wonder", "to-seek", "to-find", "to-become",
-                   "to-feel", "to-live", "tending"}
+                   "to-feel", "to-live", "tending", "attention"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -222,7 +222,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
                         "ethos", "dignity", "respect", "worth", "inwardness", "witness",
-                        "testimony", "purpose", "meaning", "mattering", "tending",
+                        "testimony", "purpose", "meaning", "mattering", "tending", "attention",
                         "to-wonder", "to-seek", "to-find", "to-become", "to-feel", "to-live",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
@@ -322,7 +322,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "mattering": "mattering-thread", "to-wonder": "to-wonder-thread",
                         "to-seek": "to-seek-thread", "to-find": "to-find-thread",
                         "to-become": "to-become-thread", "to-feel": "to-feel-thread",
-                        "to-live": "to-live-thread", "tending": "tending-thread"}
+                        "to-live": "to-live-thread", "tending": "tending-thread",
+                        "attention": "attention-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -1246,6 +1247,34 @@ def test_tending_is_the_custodians_own_verb():
     assert "to-heal" in r
     # fractal descent continues
     assert "TWENTY-THIRD ATTESTATION" in r.upper()
+    assert set(q.dimensions) == set(q.members)
+
+
+def test_attention_is_the_currency_of_the_kept():
+    q = _load().by_id("attention")
+    assert q.keystone == "attentio"
+    # tending's watch cell opened: grip x ledger
+    assert q.cell("caught", "the-object") == "noticing"
+    assert q.cell("held", "the-object") == "reading"
+    assert q.cell("caught", "the-purse") == "currency"
+    assert q.cell("held", "the-purse") == "return"
+    r = q.reading
+    # the four bookkeepings: paid, lent, lent, gifted -- one scarce good
+    assert "THE LANGUAGES DISAGREE ON THE TRANSACTION AND AGREE IT IS ONE" in r
+    # inattentional blindness attested: the unattended is absent, not dim
+    assert "WHAT YOU DO NOT ATTEND TO, YOU DO NOT SEE" in r
+    # Simon's founding sentence, decades before the feed
+    assert "A WEALTH OF INFORMATION CREATES A POVERTY OF ATTENTION" in r
+    # James's crown: the return as the root of judgment, character, and will
+    assert "ROOT OF JUDGMENT, CHARACTER, AND WILL" in r
+    # Weil's moral floor: attention as the purest generosity
+    assert "PUREST FORM OF GENEROSITY" in r.upper()
+    # the constitutional line at the reader's purse
+    assert "CANNOT CAPTURE ATTENTION, ONLY DESERVE IT" in r
+    # the map's own denomination: the token measure weighs in this lattice
+    assert "ATTENTION LEDGER" in r
+    # tending's eye cell unfolded: fractal descent
+    assert "TWENTY-FOURTH ATTESTATION" in r.upper()
     assert set(q.dimensions) == set(q.members)
 
 
