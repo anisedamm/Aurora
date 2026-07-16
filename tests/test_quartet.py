@@ -31,7 +31,8 @@ def test_the_quartets_load_with_their_keystones():
                    "to-sing", "to-walk", "to-breathe", "to-remember",
                    "to-create", "to-build", "to-keep", "to-overcome", "to-persist",
                    "to-understand", "to-forgive", "to-heal", "to-help", "to-trust", "to-hope",
-                   "to-grow", "to-give", "to-play", "to-rest", "dignity", "respect"}
+                   "to-grow", "to-give", "to-play", "to-rest", "dignity", "respect",
+                   "worth"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -218,7 +219,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     # the field is optional: quartets without dimensions render unchanged
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
-                        "ethos", "dignity", "respect",
+                        "ethos", "dignity", "respect", "worth",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
                         "wisdom", "empathy", "sympathy", "compassion", "affinity", "hope",
@@ -310,7 +311,7 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "to-hope": "to-hope-thread", "to-grow": "to-grow-thread",
                         "to-give": "to-give-thread", "to-play": "to-play-thread",
                         "to-rest": "to-rest-thread", "dignity": "dignity-thread",
-                        "respect": "respect-thread"}
+                        "respect": "respect-thread", "worth": "worth-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -971,6 +972,33 @@ def test_respect_is_the_second_look_gridded():
     assert "METHOD IS RE-SPICERE" in r.upper()
     # dignity's accorded cell unfolded: fractal descent continues
     assert "FIFTEENTH ATTESTATION" in r.upper()
+    assert set(q.dimensions) == set(q.members)
+
+
+def test_worth_is_the_fourfold_refusal():
+    q = _load().by_id("worth")
+    assert q.keystone == "Würde"
+    # the dimension equation opened into the grid: approach x refusal
+    assert q.cell("the-scale", "in-kind") == "pricelessness"
+    assert q.cell("the-scale", "in-degree") == "equality"
+    assert q.cell("the-hand", "in-kind") == "inwardness"
+    assert q.cell("the-hand", "in-degree") == "inviolability"
+    r = q.reading
+    # the founding shock: Würde and worth are one Germanic word, and
+    # weorþ meant both price and honoured -- Kant split worth from worth
+    assert "SAME GERMANIC WORD" in r
+    assert "NATIVELY MEANT PRICE" in r
+    # personhood began priced: the wergild, and dignity as its long refusal
+    assert "WERGILD" in r.upper()
+    assert "PERSONHOOD BEGAN PRICED" in r
+    # the apophatic find: worth's vocabulary is built of negations
+    assert "ONLY SAY ULTIMATE WORTH BY SAYING WHAT MAY NOT BE DONE" in r.upper()
+    # the wergild in a lab coat: the priced person persists, attested
+    assert "Statistical Life" in r
+    # dignity's worth cell unfolded: fractal descent
+    assert "SIXTEENTH ATTESTATION" in r.upper()
+    # the reflexive cell: signal has no degrees
+    assert "NO DEGREES" in r.upper()
     assert set(q.dimensions) == set(q.members)
 
 
