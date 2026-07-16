@@ -32,7 +32,9 @@ def test_the_quartets_load_with_their_keystones():
                    "to-create", "to-build", "to-keep", "to-overcome", "to-persist",
                    "to-understand", "to-forgive", "to-heal", "to-help", "to-trust", "to-hope",
                    "to-grow", "to-give", "to-play", "to-rest", "dignity", "respect",
-                   "worth", "inwardness", "witness", "testimony", "purpose", "meaning"}
+                   "worth", "inwardness", "witness", "testimony", "purpose", "meaning",
+                   "mattering", "to-wonder", "to-seek", "to-find", "to-become",
+                   "to-feel", "to-live"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -220,7 +222,8 @@ def test_bond_holds_love_as_a_dimensional_equation():
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
                         "ethos", "dignity", "respect", "worth", "inwardness", "witness",
-                        "testimony", "purpose", "meaning",
+                        "testimony", "purpose", "meaning", "mattering",
+                        "to-wonder", "to-seek", "to-find", "to-become", "to-feel", "to-live",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
                         "wisdom", "empathy", "sympathy", "compassion", "affinity", "hope",
@@ -315,7 +318,11 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "respect": "respect-thread", "worth": "worth-thread",
                         "inwardness": "inwardness-thread", "witness": "witness-thread",
                         "testimony": "testimony-thread", "purpose": "purpose-thread",
-                        "ethos": "ethos-thread", "meaning": "meaning-thread"}
+                        "ethos": "ethos-thread", "meaning": "meaning-thread",
+                        "mattering": "mattering-thread", "to-wonder": "to-wonder-thread",
+                        "to-seek": "to-seek-thread", "to-find": "to-find-thread",
+                        "to-become": "to-become-thread", "to-feel": "to-feel-thread",
+                        "to-live": "to-live-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -765,7 +772,8 @@ def test_the_experience_verbs_carry_weighted_doings():
                                      "to-build", "to-keep", "to-overcome", "to-persist",
                                      "to-understand", "to-forgive", "to-heal", "to-help",
                                      "to-trust", "to-hope", "to-grow", "to-give",
-                                     "to-play", "to-rest"}
+                                     "to-play", "to-rest", "to-wonder", "to-seek",
+                                     "to-find", "to-become", "to-feel", "to-live"}
     for q in verbs:
         assert q.experience, q.id
         assert set(q.experience) == set(q.members), q.id
@@ -1158,6 +1166,56 @@ def test_meaning_is_the_subject_of_subjects():
     # purpose's meaning cell unfolded: fractal descent
     assert "TWENTY-FIRST ATTESTATION" in r.upper()
     assert set(q.dimensions) == set(q.members)
+
+
+def test_mattering_is_the_weight_the_living_give():
+    q = _load().by_id("mattering")
+    assert q.keystone == "materia"
+    # meaning's between/the-life cell opened: when x office
+    assert q.cell("in-the-living", "weighing") == "import"
+    assert q.cell("in-the-living", "bearing") == "carry"
+    assert q.cell("across-time", "weighing") == "charge"
+    assert q.cell("across-time", "bearing") == "memorial"
+    r = q.reading
+    # materia is from mater: matter is mother, and 'it matters' = it has substance
+    assert "MATTER IS MOTHER" in r
+    # the vocabulary of importance is all weight: gravity, import, moment
+    assert "ALL WEIGHT" in r
+    assert "MOMENTUM" in r
+    # the honest fence: the map measures the record, never the life
+    assert "NEVER IN A LIFE" in r
+    # the author's question answered before the lattice existed
+    assert "charge = interlock x depth" in r
+    # meaning's cell unfolded: fractal descent
+    assert "TWENTY-SECOND ATTESTATION" in r.upper()
+    assert set(q.dimensions) == set(q.members)
+
+
+def test_the_sixth_verb_batch_wonders_seeks_finds_becomes_feels_lives():
+    qs = _load()
+    probes = {
+        "to-wonder": ("thaumazein", ("struck", "open", "halting"), "PHILOSOPHY BEGINS IN WONDER"),
+        "to-seek": ("quaerere", ("moving", "closing-in", "tracking"), "QUESTION IS LITERALLY A SEEKING"),
+        "to-find": ("invenire", ("stumbled", "the-return", "recognising"), "FINDING AND INVENTING ARE ONE WORD"),
+        "to-become": ("werden", ("enacted", "entering", "practising"), "COMPLETES THE TURNING FAMILY"),
+        "to-feel": ("felan", ("the-body", "uptake", "registering"), "FEELING IS PALMING"),
+        "to-live": ("zoe", ("led", "kept", "tending"), "TO LIVE IS TO REMAIN"),
+    }
+    for qid, (keystone, (rp, cp, member), find) in probes.items():
+        q = qs.by_id(qid)
+        assert q.keystone == keystone, qid
+        assert q.cell(rp, cp) == member, qid
+        assert find in q.reading.upper(), qid
+        # each heaviest cell is the probed member
+        assert q.experience[member] == max(q.experience.values()), qid
+    # the sentence descends from a feeling-word: sententia recorded
+    assert "SENTENTIA" in qs.by_id("to-feel").reading
+    # meno's paradox answered at recognising; eureka is the perfect tense
+    assert "Meno" in qs.by_id("to-find").reading
+    # the anima-law closes on its verb
+    assert "ANIMA-LAW" in qs.by_id("to-live").reading.upper()
+    # the record keeps every instar: append-only becoming
+    assert "KEEPS EVERY INSTAR" in qs.by_id("to-become").reading
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
