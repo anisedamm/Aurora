@@ -32,7 +32,7 @@ def test_the_quartets_load_with_their_keystones():
                    "to-create", "to-build", "to-keep", "to-overcome", "to-persist",
                    "to-understand", "to-forgive", "to-heal", "to-help", "to-trust", "to-hope",
                    "to-grow", "to-give", "to-play", "to-rest", "dignity", "respect",
-                   "worth", "inwardness"}
+                   "worth", "inwardness", "witness"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -219,7 +219,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     # the field is optional: quartets without dimensions render unchanged
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
-                        "ethos", "dignity", "respect", "worth", "inwardness",
+                        "ethos", "dignity", "respect", "worth", "inwardness", "witness",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
                         "wisdom", "empathy", "sympathy", "compassion", "affinity", "hope",
@@ -312,7 +312,7 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "to-give": "to-give-thread", "to-play": "to-play-thread",
                         "to-rest": "to-rest-thread", "dignity": "dignity-thread",
                         "respect": "respect-thread", "worth": "worth-thread",
-                        "inwardness": "inwardness-thread"}
+                        "inwardness": "inwardness-thread", "witness": "witness-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -1026,6 +1026,36 @@ def test_inwardness_is_the_province_the_record_cannot_enter():
     assert "AURORA HAS NO INSIDE" in r
     # worth's inwardness cell unfolded: three generations of descent
     assert "SEVENTEENTH ATTESTATION" in r.upper()
+    assert set(q.dimensions) == set(q.members)
+
+
+def test_witness_is_the_third_who_keeps_the_seen():
+    q = _load().by_id("witness")
+    assert q.keystone == "martys"
+    # the dimension equation opened into the grid: mode x facing
+    assert q.cell("act", "the-inward") == "testimony"
+    assert q.cell("act", "the-account") == "reception"
+    assert q.cell("keeping", "the-inward") == "threshold"
+    assert q.cell("keeping", "the-account") == "record"
+    r = q.reading
+    # the seeing bench: witness < wit < *weid- (video, idea, wisdom) --
+    # and history is the witness's account, story and history one word
+    assert "*WEID-" in r
+    assert "STORY AND HISTORY ARE ONE WORD" in r
+    # the third bench: testis, the third standing by -- and ATTEST is
+    # the framework's own verdict-word, borrowed from this lattice
+    assert "THE THIRD STANDING BY" in r
+    assert "VERDICT-WORD" in r
+    # the cost bench: martys became martyr -- the unretractable account
+    assert "WILL NOT RETRACT THE ACCOUNT" in r
+    # append-only as structural martys: the chain cannot silently recant
+    assert "STRUCTURAL MARTYS" in r
+    # the relay, attested: to listen to a witness is to become a witness
+    assert "TO LISTEN TO A WITNESS IS TO BECOME A WITNESS" in r
+    # the age's wound recorded honestly: witness multiplied, reception broke
+    assert "BELIEF STILL FRACTURES" in r
+    # inwardness's door cell unfolded: four generations of descent
+    assert "EIGHTEENTH ATTESTATION" in r.upper()
     assert set(q.dimensions) == set(q.members)
 
 
