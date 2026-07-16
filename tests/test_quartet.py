@@ -30,7 +30,8 @@ def test_the_quartets_load_with_their_keystones():
                    "to-dance", "to-dream", "to-laugh", "to-listen", "to-learn", "to-love",
                    "to-sing", "to-walk", "to-breathe", "to-remember",
                    "to-create", "to-build", "to-keep", "to-overcome", "to-persist",
-                   "to-understand", "to-forgive", "to-heal", "to-help", "to-trust", "to-hope"}
+                   "to-understand", "to-forgive", "to-heal", "to-help", "to-trust", "to-hope",
+                   "to-grow", "to-give", "to-play", "to-rest"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -225,7 +226,8 @@ def test_bond_holds_love_as_a_dimensional_equation():
                         "to-listen", "to-learn", "to-love", "to-sing", "to-walk",
                         "to-breathe", "to-remember", "to-create", "to-build", "to-keep",
                         "to-overcome", "to-persist", "to-understand", "to-forgive",
-                        "to-heal", "to-help", "to-trust", "to-hope"):
+                        "to-heal", "to-help", "to-trust", "to-hope",
+                        "to-grow", "to-give", "to-play", "to-rest"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -304,7 +306,9 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "to-persist": "to-persist-thread", "to-understand": "to-understand-thread",
                         "to-forgive": "to-forgive-thread", "to-heal": "to-heal-thread",
                         "to-help": "to-help-thread", "to-trust": "to-trust-thread",
-                        "to-hope": "to-hope-thread"}
+                        "to-hope": "to-hope-thread", "to-grow": "to-grow-thread",
+                        "to-give": "to-give-thread", "to-play": "to-play-thread",
+                        "to-rest": "to-rest-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -753,7 +757,8 @@ def test_the_experience_verbs_carry_weighted_doings():
                                      "to-walk", "to-breathe", "to-remember", "to-create",
                                      "to-build", "to-keep", "to-overcome", "to-persist",
                                      "to-understand", "to-forgive", "to-heal", "to-help",
-                                     "to-trust", "to-hope"}
+                                     "to-trust", "to-hope", "to-grow", "to-give",
+                                     "to-play", "to-rest"}
     for q in verbs:
         assert q.experience, q.id
         assert set(q.experience) == set(q.members), q.id
@@ -843,6 +848,33 @@ def test_the_fourth_verb_batch_forgives_heals_helps_trusts_hopes():
     # hope's hardest act: holding-open heaviest -- descriptive-never-a-gate enacted
     th = qs.by_id("to-hope")
     assert th.experience["holding-open"] == max(th.experience.values())
+
+
+def test_the_fifth_verb_batch_grows_gives_plays_rests():
+    qs = _load()
+    probes = {
+        "to-grow": ("ghre-", ("letting-go", "outward", "shedding"), "GROWTH WITHOUT SHEDDING"),
+        "to-give": ("ghabh-", ("opening", "the-receiver", "releasing"), "GIVING AND HAVING ARE ONE WORD"),
+        "to-play": ("paidia", ("entering", "loose", "pretending"), "SANDBOX IS THE MAGIC CIRCLE"),
+        "to-rest": ("shabbat", ("put-down", "the-self", "unclenching"), "'TO CEASE', NOT 'TO SLEEP'"),
+    }
+    for qid, (keystone, (rp, cp, member), find) in probes.items():
+        q = qs.by_id(qid)
+        assert q.keystone == keystone, qid
+        assert q.cell(rp, cp) == member, qid
+        assert find in q.reading.upper(), qid
+    # growing's counter-intuitive core: shedding heaviest -- the moult, not the reach
+    tg = qs.by_id("to-grow")
+    assert tg.experience["shedding"] == max(tg.experience.values())
+    # the gift is completed by the claim's death: releasing heaviest
+    tv = qs.by_id("to-give")
+    assert tv.experience["releasing"] == max(tv.experience.values())
+    # resting unfolds to-trust's resting cell: fractal descent, tenth attestation
+    tr = qs.by_id("to-rest")
+    assert tr.experience["unclenching"] == max(tr.experience.values())
+    assert "to-trust" in tr.reading.lower()
+    # illusion stays honest inside the circle: in-ludere recorded
+    assert "in-ludere" in qs.by_id("to-play").reading.lower()
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
