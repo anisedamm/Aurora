@@ -30,7 +30,7 @@ def test_the_quartets_load_with_their_keystones():
                    "to-dance", "to-dream", "to-laugh", "to-listen", "to-learn", "to-love",
                    "to-sing", "to-walk", "to-breathe", "to-remember",
                    "to-create", "to-build", "to-keep", "to-overcome", "to-persist",
-                   "to-understand"}
+                   "to-understand", "to-forgive", "to-heal", "to-help", "to-trust", "to-hope"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -224,7 +224,8 @@ def test_bond_holds_love_as_a_dimensional_equation():
                         "experience", "appreciation", "to-dance", "to-dream", "to-laugh",
                         "to-listen", "to-learn", "to-love", "to-sing", "to-walk",
                         "to-breathe", "to-remember", "to-create", "to-build", "to-keep",
-                        "to-overcome", "to-persist", "to-understand"):
+                        "to-overcome", "to-persist", "to-understand", "to-forgive",
+                        "to-heal", "to-help", "to-trust", "to-hope"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -300,7 +301,10 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "to-breathe": "to-breathe-thread", "to-remember": "to-remember-thread",
                         "to-create": "to-create-thread", "to-build": "to-build-thread",
                         "to-keep": "to-keep-thread", "to-overcome": "to-overcome-thread",
-                        "to-persist": "to-persist-thread", "to-understand": "to-understand-thread"}
+                        "to-persist": "to-persist-thread", "to-understand": "to-understand-thread",
+                        "to-forgive": "to-forgive-thread", "to-heal": "to-heal-thread",
+                        "to-help": "to-help-thread", "to-trust": "to-trust-thread",
+                        "to-hope": "to-hope-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -748,7 +752,8 @@ def test_the_experience_verbs_carry_weighted_doings():
                                      "to-listen", "to-learn", "to-love", "to-sing",
                                      "to-walk", "to-breathe", "to-remember", "to-create",
                                      "to-build", "to-keep", "to-overcome", "to-persist",
-                                     "to-understand"}
+                                     "to-understand", "to-forgive", "to-heal", "to-help",
+                                     "to-trust", "to-hope"}
     for q in verbs:
         assert q.experience, q.id
         assert set(q.experience) == set(q.members), q.id
@@ -814,6 +819,30 @@ def test_the_third_verb_batch_creates_builds_keeps_and_understands():
     tu = qs.by_id("to-understand")
     assert tu.experience["dwelling"] == max(tu.experience.values())
     assert "the dwelling is yours" in tu.reading
+
+
+def test_the_fourth_verb_batch_forgives_heals_helps_trusts_hopes():
+    qs = _load()
+    probes = {
+        "to-forgive": ("aphesis", ("cancelled", "within", "unburdening"), "RECORDING THE REMISSION"),
+        "to-heal": ("haelan", ("by-life", "kept", "scarring"), "TEST SUITE IS SCAR TISSUE"),
+        "to-help": ("boetheia", ("meeting", "now", "noticing"), "RUNNING TOWARD THE SHOUT"),
+        "to-trust": ("fidere", ("living", "after", "resting"), "SET THE WEIGHT DOWN"),
+        "to-hope": ("sperare", ("open", "receptive", "holding-open"), "DE-SPERARE"),
+    }
+    for qid, (keystone, (rp, cp, member), find) in probes.items():
+        q = qs.by_id(qid)
+        assert q.keystone == keystone, qid
+        assert q.cell(rp, cp) == member, qid
+        assert find in q.reading.upper(), qid
+    # forgiveness is not reconciliation: the boundary kept, attested
+    assert "NOT RECONCILIATION" in qs.by_id("to-forgive").reading.upper()
+    # trusting's felt core: resting heaviest -- the framework's purpose in a cell
+    tt = qs.by_id("to-trust")
+    assert tt.experience["resting"] == max(tt.experience.values())
+    # hope's hardest act: holding-open heaviest -- descriptive-never-a-gate enacted
+    th = qs.by_id("to-hope")
+    assert th.experience["holding-open"] == max(th.experience.values())
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():

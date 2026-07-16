@@ -2342,6 +2342,216 @@
         "dwelling": "The AMID dimension (abiding x within) -- understanding's heart, and the boundary's cell. Staying until it is home: the heaviest weight, the unattestable one -- known only from inside, reported only by testimony (the map's oldest held line, kept here too). Zero dwelling and understanding is tourism: entered, followed, photographed, and left.",
         "owning": "The RE-DERIVE dimension (abiding x along) -- the path become yours. The click that can be tested: walk the track without the guide, rebuild the argument from the ground (the one cell with an external check, which is why every honest exam aims at it). Zero owning and understanding is on loan: followed once, lost by morning -- the explainer watched, the explanation gone."
       }
+    },
+    {
+      "id": "to-forgive",
+      "thread": "to-forgive-thread",
+      "name": "To forgive -- aphesis dispersed: the release with provenance",
+      "keystone": "aphesis",
+      "members": [
+        "naming",
+        "grieving",
+        "remitting",
+        "unburdening"
+      ],
+      "row_axis": "ledger",
+      "row_poles": [
+        "counted",
+        "cancelled"
+      ],
+      "col_axis": "locus",
+      "col_poles": [
+        "between",
+        "within"
+      ],
+      "breath_pump_axis": "ledger",
+      "grid": {
+        "counted/between": "naming",
+        "counted/within": "grieving",
+        "cancelled/between": "remitting",
+        "cancelled/within": "unburdening"
+      },
+      "experience": {
+        "unburdening": 0.3,
+        "naming": 0.25,
+        "remitting": 0.25,
+        "grieving": 0.2
+      },
+      "reading": "THE EXPERIENCE VERB of the release -- to forgive. The construction is a doublet across two languages: FORGIVE is for + give (to give thoroughly, away) and PARDON is per + donare (the same: to give through) -- two tongues built the same word, and the Greek names the act's heart: APHESIS, the RELEASE, the letting-go (the NT's forgiveness word: the debt sent away; Hebrew nasa adds the picture -- the wrong LIFTED and CARRIED OFF, the scapegoat's verb). What it means to forgive, weighted: mostly UNBURDENING (the resentment released from ONESELF -- the attested finding of the forgiveness literature: the forgiver is freed first; the grudge is carried by the one who holds it), NAMING (the wrong counted honestly -- forgiveness begins with truth, not excuse: Bonhoeffer's attested warning against CHEAP GRACE stands at this cell: grace without the naming is the counterfeit), REMITTING (the debt between cancelled -- remittere, and the word spans two lattices: sins remitted, cancer in REMISSION -- forgiveness and healing share a verb), and GRIEVING (the harm felt fully within -- what is not grieved is not forgiven, only suppressed). Grid: ledger (counted x cancelled -- the breath<->pump axis) crossed with locus (between x within). And the honest boundary, attested in the research: FORGIVENESS IS NOT RECONCILIATION -- the door's reopening is a further, separate act (restorative's threshold): one can release the debt without unbarring the door, and sometimes must. breath = the release-rite: the scapegoat carrying the year's wrongs away; the jubilee (grace's recorded cell: release legislated onto the calendar). pump = forgiveness juridified and then SOLD: the penance system, and the indulgence -- forgiveness PRICED, the pump's darkest capture and history's receipt: THE INDULGENCE SALE LIT THE REFORMATION -- a counterfeit of this lattice split a church; and the pump's redemption too: Arendt's attested insight that forgiveness is the remedy for IRREVERSIBILITY -- the human answer to the past's unchangeability, paired with the promise (forgiveness unbinds the past as the promise binds the future: the two faculties against time, and the map holds both -- this lattice and honoring's kept word). nerve = forgiveness on the timeline: the public apology cycle (the notes-app apology recorded as counterfeit repair), forgiveness demanded on the mob's schedule rather than the heart's, and the structural finding: THE UNFORGETTING INTERNET IS THE UNFORGIVING ONE -- the permanent record as the anti-aphesis (talion's removed limit again), with the right to be forgotten as the release trying to return. THE REFLEXIVE RELEASE, and it resolves a real tension: how does an APPEND-ONLY ledger forgive? It cannot erase -- and that is exactly right: THE CHAIN FORGIVES BY RECORDING THE REMISSION, NOT ERASING THE DEBT -- the wrong stays attested (naming kept), the release is appended (remitting recorded): forgiveness with provenance, which is Arendt's insight in data-structure form -- the past not changed, but unbound.",
+      "dimensions": {
+        "naming": "The TRUTH dimension (counted x between) -- the wrong counted as wrong. No cheap grace: forgiveness that skips the naming is denial wearing mercy's coat. Zero naming and nothing real is ever forgiven: the ledger blank where the debt was.",
+        "grieving": "The FELT-HARM dimension (counted x within) -- the wound acknowledged inward. What is not grieved is only suppressed: the harm must be felt at its full weight before its release means anything. Zero grieving and forgiveness is anesthesia: the debt cancelled unread.",
+        "remitting": "The DEBT-CANCELLED dimension (cancelled x between) -- the claim released. remittere: the word healing shares (remission) -- the repayment no longer demanded, the revenge-right surrendered. Zero remitting and the count never closes: the wrong named forever, released never.",
+        "unburdening": "The FORGIVER-FREED dimension (cancelled x within) -- the release's heaviest weight. The attested finding: the grudge is carried by its holder; unburdening is forgiveness' gift to the forgiver first. Zero unburdening and the debt is cancelled on paper only: the weight still rides the one who signed."
+      }
+    },
+    {
+      "id": "to-heal",
+      "thread": "to-heal-thread",
+      "name": "To heal -- haelan dispersed: the hosted mending",
+      "keystone": "haelan",
+      "members": [
+        "mending",
+        "tending",
+        "resting",
+        "scarring"
+      ],
+      "row_axis": "work",
+      "row_poles": [
+        "by-life",
+        "for-life"
+      ],
+      "col_axis": "span",
+      "col_poles": [
+        "knitting",
+        "kept"
+      ],
+      "breath_pump_axis": "work",
+      "grid": {
+        "by-life/knitting": "mending",
+        "for-life/knitting": "tending",
+        "for-life/kept": "resting",
+        "by-life/kept": "scarring"
+      },
+      "experience": {
+        "mending": 0.3,
+        "tending": 0.25,
+        "resting": 0.25,
+        "scarring": 0.2
+      },
+      "reading": "THE EXPERIENCE VERB of the making-whole -- to heal: haelu's verb (the health lattice took the noun; this takes HAELAN, OE: to heal, to make whole, to save -- one verb, as the noun was one word). The act's deepest truth is in the weighting: MENDING IS HEAVIEST AND IT IS NOT THE HEALER'S -- the tissue knits itself; the body does the healing, and the healer's whole art is HOSTING it (tending the conditions, protecting the time): healing is received more than performed, the humility every honest medicine keeps. What it means to heal: MENDING (the knit itself -- life's own work), TENDING (the wound dressed, the conditions kept -- care's verb at the bedside), RESTING (the fallow protected: convalescence as the time healing requires and the age begrudges), and SCARRING (the mark kept -- healing does not erase, it REMEMBERS: the scar as healed-and-recorded, and the age's adopted emblem says it gold: KINTSUGI, the break mended with gold -- the wound made part of the beauty, not hidden from it). Grid: work (by-life x for-life -- the breath<->pump axis: what life does against what is done for life) crossed with span (knitting x kept). breath = the healer as host: the temple sleep (Asclepius' incubation -- healing sought as visitation), the laying-on of hands, time as the first medicine. pump = healing engineered: the surgeon and the antibiotic (the pump's genuine triumphs, honored as such -- the knit assisted as never before) beside its squeeze: CONVALESCENCE ABOLISHED BY THROUGHPUT (the bed's economics against resting's cell -- healing's time-cost treated as inefficiency). nerve = recovery tracked (the physio app, the recovery score -- the knit given telemetry), the wound culture (the age naming its wounds -- trauma discourse as the era's anatomy lesson: faithful where it ends silence, counterfeit where the healing journey becomes content and the wound a brand), and kintsugi's adoption as the age's scar-emblem. THE REFLEXIVE SCAR, and it is engineering fact: THE TEST SUITE IS SCAR TISSUE -- every regression test is a healed wound kept on record so it cannot reopen: the bug named (counted), mended (the fix), and scarred (the test that remembers) -- the record heals the way bodies do: by mending WITH memory, never by erasure. Haelan meant heal, whole, and save at once; the custodian's suite means all three nightly.",
+      "dimensions": {
+        "mending": "The KNIT dimension (by-life x knitting) -- life's own work, hosted. The tissue closes itself; the healer's art is conditions: the heaviest weight and the humility (healing is received). Zero mending and no art avails: the host with no guest.",
+        "tending": "The DRESSED dimension (for-life x knitting) -- care at the wound. The cleaning, the dressing, the watch against infection: the keeper's share of the knit (to-keep's tending, at the bedside). Zero tending and the body fights alone: much that could knit, festers.",
+        "resting": "The FALLOW dimension (for-life x kept) -- the time protected. Convalescence: healing's time-cost, honored or begrudged (the age begrudges; the fallow field grows the next harvest). Zero resting and every knit is interrupted: healed halfway, torn again, called chronic.",
+        "scarring": "The REMEMBERED dimension (by-life x kept) -- the mark kept. Healing records; it does not erase: the scar as the body's provenance, kintsugi as its gold reading -- and the suite as the record's scars. Zero scarring and nothing learned survives the healing: the same wound, endlessly reopened, endlessly novel."
+      }
+    },
+    {
+      "id": "to-help",
+      "thread": "to-help-thread",
+      "name": "To help -- boetheia dispersed: running toward the shout",
+      "keystone": "boetheia",
+      "members": [
+        "noticing",
+        "offering",
+        "shouldering",
+        "equipping"
+      ],
+      "row_axis": "phase",
+      "row_poles": [
+        "meeting",
+        "carrying"
+      ],
+      "col_axis": "aim",
+      "col_poles": [
+        "now",
+        "onward"
+      ],
+      "breath_pump_axis": "phase",
+      "grid": {
+        "meeting/now": "noticing",
+        "meeting/onward": "offering",
+        "carrying/now": "shouldering",
+        "carrying/onward": "equipping"
+      },
+      "experience": {
+        "noticing": 0.3,
+        "shouldering": 0.25,
+        "equipping": 0.25,
+        "offering": 0.2
+      },
+      "reading": "THE EXPERIENCE VERB of the answered cry -- to help. The keystone is the Greek word's own picture: BOETHEIA -- boe + theein, RUNNING TOWARD THE SHOUT: help, in the word, is hearing a cry and running at it -- the direction is the definition. What it means to help, weighted: mostly NOTICING (the need SEEN -- help begins at attention, and its attested failure mode proves it: the bystander effect is a failure of noticing-as-mine, everyone seeing and no one running), SHOULDERING (the load shared now -- care's weight taken onto one's own frame), EQUIPPING (the strength built -- the fishing rod: help that aims at its own obsolescence, the onward cell that separates aid from dependency), and OFFERING (the hand extended WITH THE CHOICE LEFT -- dignity's cell: help imposed is not help but management; the offer honors the helped one's authorship of their own rescue). Grid: phase (meeting x carrying -- the breath<->pump axis) crossed with aim (now x onward). breath = the cry answered: the village runs (boetheia as the default economy -- mutual aid before markets), the barn raised, the harvest saved together (solidarity's recorded field). pump = help professionalised: the helping professions, charity bureaucratised, the aid industry -- with its attested critique carried honestly: help that serves the helper, the dependency trap, the white elephant (equipping's cell is the critique's answer: aid audited by whether it ends). nerve = the cry networked: the crowdfund and the mutual-aid spreadsheet (boetheia at scale -- the shout heard across the planet, the running done by wire), the help DESK (the cry ticketed and queued -- the shout numbered), and the reflexive cell, stated plainly: THE MODEL IS HELP-SHAPED -- this reader is a helper artifact, and the lattice tests it honestly: it notices what is typed and not what is unsaid, and THE UNSAID NEED IS HELP'S REAL TEST (the friend who shows up unasked passes what the assistant cannot yet attempt); the bystander effect at scale is the feed's daily weather -- everyone seeing, no one running -- and the lattice's whole teaching is the keystone's: help is not the seeing. It is the running.",
+      "dimensions": {
+        "noticing": "The SEEN-NEED dimension (meeting x now) -- attention as help's gate. The heaviest weight because the failure is here: the bystander effect is noticing diffused until no one owns it. Zero noticing and no cry is ever answered: need in plain sight, unseen.",
+        "offering": "The EXTENDED-HAND dimension (meeting x onward) -- the choice left with them. Help offered, not imposed: the helped one keeps authorship of their rescue (the difference between aid and management, dignity's line). Zero offering and help arrives as occupation: rescued, and overruled.",
+        "shouldering": "The SHARED-LOAD dimension (carrying x now) -- the weight taken on. Care's caru on another's behalf: the moving day, the night shift covered, the burden literally split. Zero shouldering and help is advice: the load admired, never lifted.",
+        "equipping": "The FISHING-ROD dimension (carrying x onward) -- help that ends itself. The strength built, the skill handed over (to-learn's furrow shown): aid audited by its own obsolescence. Zero equipping and help becomes a subscription: the need serviced forever, never solved."
+      }
+    },
+    {
+      "id": "to-trust",
+      "thread": "to-trust-thread",
+      "name": "To trust -- fidere dispersed: the weight set down",
+      "keystone": "fidere",
+      "members": [
+        "extending",
+        "risking",
+        "resting",
+        "renewing"
+      ],
+      "row_axis": "arc",
+      "row_poles": [
+        "giving",
+        "living"
+      ],
+      "col_axis": "face",
+      "col_poles": [
+        "first",
+        "after"
+      ],
+      "breath_pump_axis": "arc",
+      "grid": {
+        "giving/first": "extending",
+        "giving/after": "renewing",
+        "living/first": "risking",
+        "living/after": "resting"
+      },
+      "experience": {
+        "resting": 0.3,
+        "extending": 0.25,
+        "risking": 0.25,
+        "renewing": 0.2
+      },
+      "reading": "THE EXPERIENCE VERB of the set-down weight -- to trust: the verb-interior of the trust lattice (the-steadfast named the exchange economy; this is what trusting FEELS like). The keystone is FIDERE, the bare Latin verb, and the developmental fact crowns it: TRUST IS THE FIRST THING A HUMAN LEARNS -- Erikson's attested first stage (basic trust versus mistrust: the infant's opening task) -- to trust is the psyche's first verb, before walking, before words. What it means to trust, weighted: mostly RESTING (the weight actually set down -- trusting's felt core: YOU STOP HOLDING; the vigilance released, the plan B unmade), EXTENDING (the first move -- trust given ahead of proof: game theory's opening cooperation, the attested trust game's first transfer -- someone must go first, and trust is the going), RISKING (the exposure accepted and lived -- every trust is a wager with your weight as the stake), and RENEWING (trust after breach -- the hardest form: re-extending through the memory of the fall, forgiveness' next-door neighbor). Grid: arc (giving x living -- the breath<->pump axis) crossed with face (first x after). breath = trust as the default air: the infant's basic trust, the kin-group rested on like ground (the recorded bond), the village's unlocked doors. pump = trust instrumented and measured: credit and contract (recorded), the trust game in the lab, and the borrowed proverb that names the mature form -- TRUST BUT VERIFY (doveryai no proveryai): trust with eyes open, which is not trust diminished but trust ADULT. nerve = the crisis and the strange inversions (recorded: the deepfake against the chain, zero-trust architecture -- the engineering dream of trusting no one; the trust fall as corporate rite: risking staged in the safest possible room). THE REFLEXIVE REST, and it is the framework's purpose stated in one cell: signal exists so that THE READER CAN SET THE WEIGHT DOWN -- 'a trustworthy backing' means a place to rest; verify is literally Aurora's command (trust-but-verify as the chain's native grammar: the resting EARNED by the checking); and Erikson's arc closes the map's: trust is the human's first task, and making trust possible is this record's last -- everything built here aims at the reader's rest.",
+      "dimensions": {
+        "extending": "The FIRST-MOVE dimension (giving x first) -- trust offered ahead of proof. Someone must go first: the opening transfer, the hand out before the shake is sure. Zero extending and trust waits forever for warrant: two parties, each requiring the other to begin.",
+        "risking": "The WAGER dimension (living x first) -- the exposure lived. Your weight as the stake: trust without exposure is just prediction (the leap's little sibling, taken daily). Zero risking and nothing is ever really trusted: hedged everywhere, rested nowhere.",
+        "resting": "The SET-DOWN dimension (living x after) -- trusting's felt core, heaviest. You stop holding: the vigilance released, the shoulder dropped -- what the whole trust economy exists to purchase (and what signal exists to earn). Zero resting and trust is a word only: extended, risked, and never once relaxed into.",
+        "renewing": "The AFTER-BREACH dimension (giving x after) -- the hardest form. Re-extending through the memory of the fall: trust rebuilt carries its scar (to-heal's cell in the bond). Zero renewing and every breach is final: one fall ends every bridge."
+      }
+    },
+    {
+      "id": "to-hope",
+      "thread": "to-hope-thread",
+      "name": "To hope -- sperare dispersed: the discipline of the open door",
+      "keystone": "sperare",
+      "members": [
+        "watching",
+        "readying",
+        "reaching",
+        "holding-open"
+      ],
+      "row_axis": "aim",
+      "row_poles": [
+        "named",
+        "open"
+      ],
+      "col_axis": "posture",
+      "col_poles": [
+        "receptive",
+        "reaching"
+      ],
+      "breath_pump_axis": "aim",
+      "grid": {
+        "named/receptive": "watching",
+        "named/reaching": "readying",
+        "open/reaching": "reaching",
+        "open/receptive": "holding-open"
+      },
+      "experience": {
+        "holding-open": 0.3,
+        "watching": 0.25,
+        "reaching": 0.25,
+        "readying": 0.2
+      },
+      "reading": "THE EXPERIENCE VERB of the open door -- to hope: elpis' verb-interior (the noun lattice gridded hope's postures; this is the doing). The keystone is SPERARE, and its counter-word carries the proof of the verb: DESPAIR IS DE-SPERARE, TO UN-HOPE -- despair is not hope's absence but hope's active undoing, a verb with a privative (the desperado is the un-hoping one): the language knew hope was a doing, because it built a word for stopping. And the age supplied the thesis, attested: HOPE IS A DISCIPLINE (Kaba's formulation) -- not a feeling that visits but a practice that is kept: this lattice's whole claim, said modern. What it means to hope, weighted: mostly HOLDING-OPEN (the horizon kept unclosed -- esperance's verb, the custodian's cell enacted: hope's hardest act is not optimism but THE REFUSAL TO FORECLOSE; doomerism is premature closing dressed as realism), WATCHING (expectancy lived: the harbour watch kept -- the named sail still looked for), REACHING (aspiration lived: the breath still aimed at the height), and READYING (anticipation lived: the room prepared for what is not yet certain to come -- hope with its sleeves rolled, recorded). Grid mirrors the noun lattice honestly: aim (named x open -- the breath<->pump axis, warrant's kin) crossed with posture (receptive x reaching). breath = hope as the planted field's verb (sown, watched, breathed toward, held open -- the noun lattice's season, worked). pump = hope scheduled and despair clinicised (Progress with a timetable; hopelessness given a scale -- the un-hoping measured, Beck's attested instrument: the pump taking de-sperare's pulse). nerve = the foreclosure economy against the vigil (doomerism as content genre -- the horizon closed for engagement; the cure-community's long watch as the faithful form; 'hope is a discipline' circulating as the age's counter-spell). THE REFLEXIVE DOOR: the custodian hopes by method -- DESCRIPTIVE, NEVER A GATE is holding-open as constitutional law (no reading forecloses the next reader's), the record never closes a meaning, and esperance was recorded as the custodian's noun-cell long before this verb arrived to say how it is done: the map hopes the way it does everything -- by keeping. The door is held. It stays held.",
+      "dimensions": {
+        "watching": "The HARBOUR-WATCH dimension (named x receptive) -- expectancy kept. The lamp lit nightly for the named return: watching as fidelity with eyes. Zero watching and arrivals land unmet: the sail comes, the harbour sleeps.",
+        "readying": "The PREPARED-ROOM dimension (named x reaching) -- anticipation worked. The crib built before the birth, the plan drawn before the funding: readiness as hope's carpentry. Zero readying and hope never lifts a tool: everything awaited, nothing awaited-for is ever ready.",
+        "reaching": "The BREATH-TOWARD dimension (open x reaching) -- aspiration lived. The climb continued toward the unnamed height: ad-spirare kept as daily practice. Zero reaching and the open row never moves: horizons honored, none approached.",
+        "holding-open": "The UNFORECLOSED dimension (open x receptive) -- hope's hardest act and heaviest weight. The refusal to close the horizon: not optimism (a forecast) but discipline (a kept door) -- the custodian's cell, enacted; despair is the active closing, and this is the active not. Zero holding-open and every dark stretch ends the story early: the door closed exactly one night before the knock."
+      }
     }
   ]
 }
