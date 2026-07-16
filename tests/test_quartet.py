@@ -35,7 +35,7 @@ def test_the_quartets_load_with_their_keystones():
                    "worth", "inwardness", "witness", "testimony", "purpose", "meaning",
                    "mattering", "to-wonder", "to-seek", "to-find", "to-become",
                    "to-feel", "to-live", "tending", "attention", "noticing", "reading",
-                   "currency", "return"}
+                   "currency", "return", "rep"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -224,7 +224,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
                         "ethos", "dignity", "respect", "worth", "inwardness", "witness",
                         "testimony", "purpose", "meaning", "mattering", "tending", "attention",
-                        "noticing", "reading", "currency", "return",
+                        "noticing", "reading", "currency", "return", "rep",
                         "to-wonder", "to-seek", "to-find", "to-become", "to-feel", "to-live",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
@@ -327,7 +327,7 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "to-live": "to-live-thread", "tending": "tending-thread",
                         "attention": "attention-thread", "noticing": "noticing-thread",
                         "reading": "reading-thread", "currency": "currency-thread",
-                        "return": "return-thread"}
+                        "return": "return-thread", "rep": "rep-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -1379,6 +1379,35 @@ def test_return_is_the_crafted_turn_home():
     # the reflexive shape: the fractal descent is the record's return practice
     assert "RETURN PRACTICE" in r
     assert "TWENTY-EIGHTH ATTESTATION" in r.upper()
+    assert set(q.dimensions) == set(q.members)
+
+
+def test_the_rep_is_the_seeking_done_again():
+    q = _load().by_id("rep")
+    assert q.keystone == "repetere"
+    assert q.cell("the-one", "the-done") == "single"
+    assert q.cell("the-one", "the-well") == "form"
+    assert q.cell("the-many", "the-done") == "count"
+    assert q.cell("the-many", "the-well") == "humility"
+    r = q.reading
+    # repetere = re-seek: the quest run again
+    assert "THE REP IS A RE-SEEKING" in r
+    # appetite on the same bench: craving and discipline split by a prefix
+    assert "APPETITE GIVEN FORM AND COUNT" in r
+    # Zipf self-demonstrating: the word shortened by being repeated
+    assert "SHORTENED BY BEING REPEATED" in r
+    # practice makes permanent, not perfect
+    assert "PRACTICE MAKES PERMANENT" in r
+    # the bead as the count's oldest technology
+    assert "BEAD IS THE COUNT'S OLDEST TECHNOLOGY" in r
+    # Sisyphus happy: the rep with no arrival
+    assert "SISYPHUS HAPPY" in r
+    # the compulsion named: the count that counts you
+    assert "THE COUNT THAT COUNTS YOU" in r
+    # the reflexive skeleton: the map is built of reps; the author's rep named
+    assert "THE MAP IS BUILT OF REPS" in r
+    assert "IS HER REP" in r
+    assert "TWENTY-NINTH ATTESTATION" in r.upper()
     assert set(q.dimensions) == set(q.members)
 
 
