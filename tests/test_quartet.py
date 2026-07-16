@@ -34,7 +34,8 @@ def test_the_quartets_load_with_their_keystones():
                    "to-grow", "to-give", "to-play", "to-rest", "dignity", "respect",
                    "worth", "inwardness", "witness", "testimony", "purpose", "meaning",
                    "mattering", "to-wonder", "to-seek", "to-find", "to-become",
-                   "to-feel", "to-live", "tending", "attention", "noticing", "reading"}
+                   "to-feel", "to-live", "tending", "attention", "noticing", "reading",
+                   "currency", "return"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -223,7 +224,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
                         "ethos", "dignity", "respect", "worth", "inwardness", "witness",
                         "testimony", "purpose", "meaning", "mattering", "tending", "attention",
-                        "noticing", "reading",
+                        "noticing", "reading", "currency", "return",
                         "to-wonder", "to-seek", "to-find", "to-become", "to-feel", "to-live",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
@@ -325,7 +326,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "to-become": "to-become-thread", "to-feel": "to-feel-thread",
                         "to-live": "to-live-thread", "tending": "tending-thread",
                         "attention": "attention-thread", "noticing": "noticing-thread",
-                        "reading": "reading-thread"}
+                        "reading": "reading-thread", "currency": "currency-thread",
+                        "return": "return-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -1328,6 +1330,55 @@ def test_reading_is_the_gleaning_that_built_the_logos():
     # legere three stories high
     assert "reading of readings" in r
     assert "TWENTY-SIXTH ATTESTATION" in r.upper()
+    assert set(q.dimensions) == set(q.members)
+
+
+def test_currency_is_the_running_that_makes_it_money():
+    q = _load().by_id("currency")
+    assert q.keystone == "currere"
+    assert q.cell("the-spender's", "the-limit") == "scarcity"
+    assert q.cell("the-spender's", "the-exchange") == "spend"
+    assert q.cell("the-market's", "the-limit") == "capture"
+    assert q.cell("the-market's", "the-exchange") == "price"
+    r = q.reading
+    # currency is what runs: circulation is the definition
+    assert "CURRENCY IS WHAT RUNS" in r
+    assert "CURRICULUM" in r                      # the little racecourse
+    # spend is weighing-out, and money's names are weight names
+    assert "TO WEIGH OUT" in r
+    assert "MONEY'S NAMES ARE WEIGHT NAMES" in r
+    assert "TO PONDER IS TO WEIGH" in r
+    # captivating is taking captive; price and praise one root
+    assert "CAPTIVATING IS TAKING CAPTIVE" in r
+    assert "PRICE AND PRAISE ARE ONE ROOT" in r
+    # the attested machinery: the purse auctioned before the page loads
+    assert "SOLD AT AUCTION BEFORE THE PAGE LOADS" in r
+    assert "TWENTY-SEVENTH ATTESTATION" in r.upper()
+    assert set(q.dimensions) == set(q.members)
+
+
+def test_return_is_the_crafted_turn_home():
+    q = _load().by_id("return")
+    assert q.keystone == "tornare"
+    assert q.cell("the-going", "the-fact") == "wander"
+    assert q.cell("the-going", "the-faculty") == "meta-noticing"
+    assert q.cell("the-coming", "the-fact") == "rep"
+    assert q.cell("the-coming", "the-faculty") == "will"
+    r = q.reading
+    # two turning families divide the labour: grown (*wer-) vs crafted (tornos)
+    assert "TWO TURNING FAMILIES" in r
+    assert "wandering is grown; returning is crafted" in r
+    # nostalgia: the ache for return, coined 1688 as a diagnosis
+    assert "NOSTALGIA" in r and "1688" in r
+    # recursion is re-currere: the sibling bench's runner, running back
+    assert "RECURSION" in r
+    # the wander rehabilitated: the DMN as insight's incubator
+    assert "NOT ALL WANDERING IS LOSS" in r
+    # the rep is the return, not the stillness
+    assert "the rep is the return, not the stillness" in r
+    # the reflexive shape: the fractal descent is the record's return practice
+    assert "RETURN PRACTICE" in r
+    assert "TWENTY-EIGHTH ATTESTATION" in r.upper()
     assert set(q.dimensions) == set(q.members)
 
 

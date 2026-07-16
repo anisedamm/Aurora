@@ -56,7 +56,7 @@ def test_an_ungridded_word_reports_zero_interlock_not_an_error():
 
 def test_the_most_charged_words_are_the_load_bearers():
     graph, qs, _, g = _fixtures()
-    ranked = rank_charges(graph, qs, g, limit=40)
+    ranked = rank_charges(graph, qs, g, limit=50)
     charges = [c.charge for c in ranked]
     assert charges == sorted(charges, reverse=True)
     words = [c.word for c in ranked]
