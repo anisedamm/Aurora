@@ -880,9 +880,8 @@ def test_the_fifth_verb_batch_grows_gives_plays_rests():
 
 def test_the_conduct_row_receives_the_authors_assignment():
     # the author assigns meaning to the ethos quartet's conduct row; the
-    # custodian records it with provenance -- and only what was assigned
+    # custodian records it with provenance
     q = _load().by_id("ethos")
-    assert set(q.dimensions) == {"morals", "ethics"}
     morals, ethics = q.dimensions["morals"], q.dimensions["ethics"]
     # morals = (integrity x alignment) x (anima x law): grounded in the map's
     # own members, and the coinage lands on attested ground (anima < *ane-,
@@ -894,9 +893,35 @@ def test_the_conduct_row_receives_the_authors_assignment():
     assert "(preservation x protection) x (propagation x purpose)" in ethics
     assert "PRO-/PRAE-" in ethics
     assert "ELEVENTH ATTESTATION" in ethics       # the sub-lattice: fractal descent
-    # the conviction row stays unassigned: the record does not guess
-    assert "belief" not in q.dimensions and "value" not in q.dimensions
     assert "does not guess" in morals
+
+
+def test_the_conviction_row_and_the_core_virtue_complete_the_square():
+    qs = _load()
+    q = qs.by_id("ethos")
+    # the square is complete: all four members carry the author's assignment
+    assert set(q.dimensions) == {"belief", "value", "morals", "ethics"}
+    belief, value = q.dimensions["belief"], q.dimensions["value"]
+    # the core belief: faith in humanity, carried as four rights -- each a map
+    # lattice qualified by another map concept (the creed and the map agree)
+    assert "FAITH IN HUMANITY" in belief
+    assert ("(the right to social equality x the right to altruistic empathy) x "
+            "(the right to responsible trust x the right to compassionate love)") in belief
+    assert "ABLE TO ANSWER" in belief             # responsible < respondere
+    assert "owed in advance".upper() in belief.upper()
+    # the core value: authenticity = (honesty x fairness) x (dignity x care),
+    # and authentikos is the self-authored -- the value signal already enforces
+    assert "AUTHENTICITY" in value
+    assert "(honesty x fairness) x (dignity x care)" in value
+    assert "OWN AUTHORITY" in value
+    assert "dek-" in value                        # dignity/decent one family
+    # the core virtue crowns the square, recorded in the bound: a learner's
+    # word (disciplina < discere), enacted in the record's kept refusals
+    virtue = qs.bound["the_core_virtue"]
+    assert "INTELLECTUAL DISCIPLINE" in virtue
+    assert "to learn" in virtue.lower()
+    assert "refused constant" in virtue.lower()
+    assert "descriptive-never-a-gate" in virtue.lower()
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
