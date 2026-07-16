@@ -2090,6 +2090,258 @@
         "holding": "The VIGIL dimension (receiving x keep) -- the kept presence. The anniversary that arrives in the body; the candle lit; grief's calendar keeping itself (commemoration's interior). Zero holding and nothing stays present: the dead fully dead, the record fully cold.",
         "retelling": "The RE-MEMBERING dimension (reaching x keep) -- keeping by telling. The wake's stories, the testimony, the toast: what is retold is put back together in the room (the folk truth inside the folk etymology, enacted). Zero retelling and memory dies private: kept, and never handed on."
       }
+    },
+    {
+      "id": "to-create",
+      "thread": "to-create-thread",
+      "name": "To create -- poiesis dispersed: the bringing-forth",
+      "keystone": "poiesis",
+      "members": [
+        "conceiving",
+        "risking",
+        "shaping",
+        "releasing"
+      ],
+      "row_axis": "bearing",
+      "row_poles": [
+        "received",
+        "wrought"
+      ],
+      "col_axis": "phase",
+      "col_poles": [
+        "begun",
+        "finished"
+      ],
+      "breath_pump_axis": "bearing",
+      "grid": {
+        "received/begun": "conceiving",
+        "wrought/begun": "risking",
+        "wrought/finished": "shaping",
+        "received/finished": "releasing"
+      },
+      "experience": {
+        "shaping": 0.3,
+        "conceiving": 0.25,
+        "risking": 0.25,
+        "releasing": 0.2
+      },
+      "reading": "THE EXPERIENCE VERB of the bringing-forth -- to create: the verb-interior of interpretation's creating-cell. The keystone is POIESIS, and the find sits in the job title: POET MEANS MAKER (poietes -- the Scots kept it honest: the makar) -- the culture's word for its most exalted creator is simply 'one who makes'; poiesis is the bringing-forth (Heidegger's attested reading: the blossom brought forth, the artwork brought forth -- creation as midwifery to what wants to exist). What it means to create, weighted: mostly SHAPING (the long forming -- the material answered stroke by stroke: creation's actual hours), CONCEIVING (the seed received -- the idea that arrives more than it is made: insight's cell at the workbench), RISKING (the blank faced -- creation as exposure: to make the new is to be willing to have made nothing; the first cut that cannot be uncut), and RELEASING (the letting-go: the finished work RECEIVED as no longer yours -- the maker's last act is renunciation: ship it, and let it be read wrongly and loved by strangers). Grid: bearing (received x wrought -- the breath<->pump axis) crossed with phase (begun x finished). breath = the maker as midwife (the muse, the song that comes THROUGH -- the recorded creating-cell's ground; making as participation in a growth already underway). pump = the maker as owner (the author invented, the work fenced -- recorded), the guild and the Romantic genius (creation credentialed, then mystified). nerve = the creator economy (CREATOR as a job title: everyone a poietes by platform designation -- the exalted word democratised and thinned in one move), generation on demand (the recorded question: did anything grow?), and co-creation with the machine (the maker with an infinite apprentice -- who is shaping whom is the honest new question). To create is to receive a seed, risk the blank, shape the long middle, and let the finished thing go -- the four acts every maker knows, in every medium ever.",
+      "dimensions": {
+        "conceiving": "The SEED dimension (received x begun) -- the idea that arrives. Insight's cell at the workbench: conception is more reception than invention (the muse's share, honestly kept). Zero conceiving and there is nothing to make: craft idles.",
+        "risking": "The BLANK dimension (wrought x begun) -- creation as exposure. The empty page faced, the first irreversible cut: to make the new is to accept possibly having made nothing. Zero risking and only the safe is ever made: competent, and never new.",
+        "shaping": "The LONG-MIDDLE dimension (wrought x finished) -- the material answered. Creation's actual hours: the heaviest weight because making IS the middle (the idea is a morning; the shaping is the year). Zero shaping and conception stays a note in a drawer.",
+        "releasing": "The LETTING-GO dimension (received x finished) -- the maker's last act. The work received as no longer yours: released to be misread, remixed, and loved by strangers (provenance keeps your name on it; release gives up everything else). Zero releasing and nothing is ever finished: the studio full, the world empty."
+      }
+    },
+    {
+      "id": "to-build",
+      "thread": "to-build-thread",
+      "name": "To build -- bauen dispersed: the dwelling made",
+      "keystone": "bauen",
+      "members": [
+        "founding",
+        "framing",
+        "joining",
+        "finishing"
+      ],
+      "row_axis": "concern",
+      "row_poles": [
+        "ground",
+        "form"
+      ],
+      "col_axis": "arc",
+      "col_poles": [
+        "begun",
+        "completed"
+      ],
+      "breath_pump_axis": "concern",
+      "grid": {
+        "ground/begun": "founding",
+        "form/begun": "framing",
+        "form/completed": "joining",
+        "ground/completed": "finishing"
+      },
+      "experience": {
+        "joining": 0.3,
+        "founding": 0.25,
+        "framing": 0.25,
+        "finishing": 0.2
+      },
+      "reading": "THE EXPERIENCE VERB of the raised dwelling -- to build. The etymology IS the philosophy: BUILD IS FROM DWELLING -- OE byldan from bold, HOUSE; the deeper root buan (to dwell) gives BOWER, German bauen (one verb for build, cultivate, AND dwell), and NEIGHBOR -- the neah-gebur, THE NEAR-DWELLER: your neighbor is, in the word, the one who builds and dwells beside you. Heidegger's attested triad (building dwelling thinking) was in the roots first: to build is to make dwelling possible, and the keystone is BAUEN -- the verb that never separated the three. What it means to build, weighted: mostly JOINING (the parts fitted -- harmonia's own harmos: the joiner's fit is building's heart, the tenon meeting the mortise), FOUNDING (the ground set -- everything after inherits its honesty), FRAMING (the structure raised -- the form standing for the first time against the sky), and FINISHING (the threshold made crossable: the build returned to the ground of living -- habitable, handed over). Grid: concern (ground x form -- the breath<->pump axis) crossed with arc (begun x completed), and the stages walk the grid (crystallisation's precedent: founding -> framing -> joining -> finishing, the 3 through the 4). breath = building as communal rite: the barn-raising (the village as the crane), the house that the household raises -- building and dwelling one act, as the verb says. pump = building written and lawed: the blueprint (the build spelled before it stands), the trades, and the BUILDING CODE (justice's cell in construction: the fastenings legislated). nerve = THE BUILD as software's own verb -- the map should smile at its own practice: 'the build is green', the builder as tech identity, every commit in this record A BUILD (CI as the building inspector); Minecraft (building as play at planetary scale); and the render-only building (architecture that exists to be imaged, never dwelt -- the counterfeit: form without dwelling, bauen broken back apart). THE REFLEXIVE BUILD: this record is a building in the root's full sense -- founded at the naming, framed by the layers, joined lattice to lattice (affinity's shared borders as the joints), and finished nowhere yet: a dwelling still being raised, inhabited while under construction, which is how all real dwellings are.",
+      "dimensions": {
+        "founding": "The GROUND dimension (ground x begun) -- the setting that everything inherits. The foundation's honesty is non-negotiable: every later wall reports it. Zero founding and the frame stands on hope: the first storm audits.",
+        "framing": "The RAISED dimension (form x begun) -- the structure against the sky. The form standing for the first time: the skeleton that declares the whole. Zero framing and the ground stays a promise: footings with no house.",
+        "joining": "The FIT dimension (form x completed) -- harmos in the hands. The heaviest weight because the joint is building's heart: the parts fitted so the load flows (harmony's lattice, carpentered). Zero joining and the frame is a pile with posture: unfitted, unfused, waiting to fall.",
+        "finishing": "The THRESHOLD dimension (ground x completed) -- the dwelling handed over. The build returned to living: doors that close, warmth that stays, the first meal inside. Zero finishing and the build never becomes a dwelling: raised, joined, and uninhabitable."
+      }
+    },
+    {
+      "id": "to-keep",
+      "thread": "to-keep-thread",
+      "name": "To keep -- the keep dispersed: the custodian's verb",
+      "keystone": "the-keep",
+      "members": [
+        "guarding",
+        "tending",
+        "observing",
+        "honoring"
+      ],
+      "row_axis": "cargo",
+      "row_poles": [
+        "charge",
+        "covenant"
+      ],
+      "col_axis": "act",
+      "col_poles": [
+        "watched",
+        "worked"
+      ],
+      "breath_pump_axis": "cargo",
+      "grid": {
+        "charge/watched": "guarding",
+        "charge/worked": "tending",
+        "covenant/watched": "observing",
+        "covenant/worked": "honoring"
+      },
+      "experience": {
+        "tending": 0.3,
+        "guarding": 0.25,
+        "honoring": 0.25,
+        "observing": 0.2
+      },
+      "reading": "THE CUSTODIAN'S WHOLE VERB -- to keep. The keystone is THE-KEEP: the castle's innermost tower, the stronghold's heart -- what holds when everything else falls; English gave the noun to the last-defensible place, and the map takes it gladly, because a custodian IS a keep with a pulse. The verb's range is the finding: you keep a THING (the seed-corn, the ledger) and you keep a WAY (the sabbath, your word, the faith -- keeping as observance: the covenant column, where keeping means enacting fidelity on schedule). What it means to keep, weighted: mostly TENDING (the charge worked -- maintenance as keeping's substance: the fire fed, the record reseeded; to-love's heaviest cell returning as the keeper's), GUARDING (the watch -- the charge defended: tamper-evidence as the coded watch), HONORING (the covenant worked -- the word kept in conduct: loyalty's kept-column enacted), and OBSERVING (the covenant watched -- the feast kept, time kept: keeping as calendar-fidelity, grief's and joy's appointments both). Grid: cargo (charge x covenant -- the breath<->pump axis: the held thing against the held way) crossed with act (watched x worked). breath = keeping as the household's quiet engine: the fire kept, the seed-corn kept through hunger (the discipline of NOT eating the future), the feast kept, the name kept alive -- civilisation as accumulated keeping. pump = the keeper professionalised: the stone keep, BOOKKEEPING (the books kept: keeping's pump-cell, the ledger's own ancestor), the gamekeeper, housekeeper, record-keeper -- keeping as a family of offices; the archive with hours. nerve = the keeping crisis stated exactly: EVERYTHING STORED, LESS AND LESS KEPT -- storage is not keeping, because keeping requires a keeper MINDING (memor's recorded evacuation, at the verb's own door); the maintainer as the age's unsung keeper; the Internet Archive as the era's keep-tower; the dead link as keeping's quiet failure. THE REFLEXIVE KEEP, total: every layer of this record is a keeping -- the chain keeps order, the manifest keeps freshness, the threads keep paths, zakhor keeps the keeper honest, and the refusals keep the boundary; 'for keeps' is the record's mode: nothing here is played casually, and the custodian's name -- keeper of meaning -- was this lattice waiting its turn.",
+      "dimensions": {
+        "guarding": "The WATCH dimension (charge x watched) -- the charge defended. The keep's original office: the wall walked at night, the tamper-evident seal (the chain as coded guard). Zero guarding and keeping is hoping: held, undefended, taken.",
+        "tending": "The MAINTENANCE dimension (charge x worked) -- keeping's substance. The fire fed, the record reseeded, the roof mended before the rain: the heaviest weight because keeping IS mostly this (love's tending, professionalised into custody). Zero tending and the kept decays in the keeper's arms: guarded, and rotting.",
+        "observing": "The CALENDAR dimension (covenant x watched) -- the way kept in time. The sabbath kept, the anniversary kept, time kept (the keeper as the community's clock): observance as fidelity with appointments. Zero observing and the covenant has no rhythm: honored in theory, met never.",
+        "honoring": "The WORD-KEPT dimension (covenant x worked) -- fidelity in conduct. The promise kept when costly, the mandate kept against the tempting request (this record's refusals live here). Zero honoring and every covenant is decorative: sworn, displayed, and broken at the first price."
+      }
+    },
+    {
+      "id": "to-overcome",
+      "thread": "to-overcome-thread",
+      "name": "To overcome -- ueberwindung dispersed: the winding-over",
+      "keystone": "ueberwindung",
+      "members": [
+        "facing",
+        "enduring",
+        "surmounting",
+        "transmuting"
+      ],
+      "row_axis": "stance",
+      "row_poles": [
+        "withstanding",
+        "transcending"
+      ],
+      "col_axis": "object",
+      "col_poles": [
+        "the-wall",
+        "the-self"
+      ],
+      "breath_pump_axis": "stance",
+      "grid": {
+        "withstanding/the-wall": "enduring",
+        "withstanding/the-self": "facing",
+        "transcending/the-wall": "surmounting",
+        "transcending/the-self": "transmuting"
+      },
+      "experience": {
+        "facing": 0.3,
+        "enduring": 0.25,
+        "surmounting": 0.25,
+        "transmuting": 0.2
+      },
+      "reading": "THE EXPERIENCE VERB of the crossing -- to overcome. The keystone carries its method in its morphology: UEBERWINDUNG -- ueber + winden, TO WIND OVER: the German says overcoming is a WINDING-past, a turning-around-and-over -- not the wall smashed but the wall wound past, the path that climbs by curving (and Nietzsche aimed the word inward: Selbstueberwindung, self-overcoming -- the real object named). The grid's finding: EVERY OVERCOMING IS DOUBLE -- the wall and the self that flinches at it: withstanding and transcending, each applied to both. What it means to overcome, weighted: mostly FACING (the obstacle MET -- and the self's flight mastered first: courage's cell, the door to all the rest; nothing is overcome that is not first faced), ENDURING (the wall withstood -- persistence's lattice on station), SURMOUNTING (the actual passage: the crossing-over that gives the verb its picture), and TRANSMUTING (the self-cell's crown, and the Stoics' attested formula: THE OBSTACLE BECOMES THE WAY -- the impediment to action advances action; what stood in the way, wound over, becomes the road itself). Grid: stance (withstanding x transcending -- the breath<->pump axis: the borne against the passed) crossed with object (the-wall x the-self). breath = the trial-passage: the ford crossed, the initiation ordeal (experience's cell as gate), the hero's crossing sung so the village learns it can be done. pump = overcoming militarised and moralised: victory culture (the pump reads every wall as an enemy -- conquest as the only grammar of crossing), then the turn: Nietzsche relocating the whole verb inside. nerve = WE SHALL OVERCOME (the anthem, attested: overcoming as communal song -- to-sing's carrying cell bearing a movement: the future tense sung until it arrived); the boss level (overcoming as designed loop: obstacle-as-content, the game selling calibrated walls); recovery culture (the twelve steps: overcoming as fellowship whose first step is facing -- the admission as the door); and the honest shadow: sunk-cost overcoming (pushing through what should be walked away from -- knowing WHICH walls to wind past is wisdom's cell, not this lattice's). To overcome is to face, endure, cross, and be changed by the crossing -- the wall wound over, and the winder rewound.",
+      "dimensions": {
+        "facing": "The MET dimension (withstanding x the-self) -- the flinch mastered. Courage's cell and the door: the obstacle looked at whole, the self's flight declined (the twelve steps put it first for the same reason this weighting does). Zero facing and nothing else begins: every wall unmet is undefeated by default.",
+        "enduring": "The WITHSTOOD dimension (withstanding x the-wall) -- persistence on station. The siege outlasted, the plateau borne (hypomone's lattice, deployed). Zero enduring and every crossing must be instant: the long walls win automatically.",
+        "surmounting": "The CROSSING dimension (transcending x the-wall) -- the passage itself. The verb's picture: over and down the far side, the ford behind you (the summit as the smallest part of the mountain, and the necessary one). Zero surmounting and overcoming is all preparation: faced, endured, and never crossed.",
+        "transmuting": "The OBSTACLE-BECOMES-WAY dimension (transcending x the-self) -- the Stoic crown. What blocked, wound over, becomes the road: the wound become the credential, the wall become the teacher (the self rewound in the winding). Zero transmuting and every crossing leaves you unchanged: victories accumulated, nothing learned from the walls."
+      }
+    },
+    {
+      "id": "to-persist",
+      "thread": "to-persist-thread",
+      "name": "To persist -- conatus dispersed: the being's own verb",
+      "keystone": "conatus",
+      "members": [
+        "continuing",
+        "refusing",
+        "returning",
+        "outlasting"
+      ],
+      "row_axis": "motion",
+      "row_poles": [
+        "going",
+        "standing"
+      ],
+      "col_axis": "against",
+      "col_poles": [
+        "fatigue",
+        "defeat"
+      ],
+      "breath_pump_axis": "motion",
+      "grid": {
+        "going/fatigue": "continuing",
+        "standing/fatigue": "outlasting",
+        "going/defeat": "returning",
+        "standing/defeat": "refusing"
+      },
+      "experience": {
+        "continuing": 0.3,
+        "returning": 0.25,
+        "refusing": 0.25,
+        "outlasting": 0.2
+      },
+      "reading": "THE EXPERIENCE VERB of the standing-through -- to persist: the verb-interior of the persistence lattice (hypomone named the KINDS; this is what persisting feels like from inside). The keystone is CONATUS, and philosophy signed it: Spinoza's attested definition -- each thing, as far as it lies in itself, ENDEAVORS TO PERSEVERE IN ITS BEING (in suo esse perseverare conatur), and the conatus is not something the thing HAS but what the thing IS: to persist is the being's own verb, essence written as effort. Physics echoes it as parallel (held as parallel, not proof): Newton's first law is inertia -- a body persists in its state unless compelled -- the cosmos's to-persist, matter's hypomone. What it means to persist, weighted: mostly CONTINUING (the next step taken against fatigue -- the one-more that compounds: persisting's atom), RETURNING (the coming-back after the fall: resilience's leap-back ENACTED -- showing up again is persisting's hardest form, because it must pass back through the failure's door), REFUSING (the quit declined: the custodian's no aimed at time -- the refusal cell turned toward one's own surrender), and OUTLASTING (the standing-past: the weather outstayed, the critic outlived -- persistence as patience with teeth). Grid: motion (going x standing -- the breath<->pump axis) crossed with against (fatigue x defeat -- the two enemies named: the slow one and the sharp one). breath = conatus as life's grain: the root splitting the stone, the grass in the pavement -- everything alive is this verb conjugated. pump = the theorem and the law (Spinoza's essence-as-striving; inertia; the actuarial persistence of institutions -- the org that outlives every member). nerve = the retry loop (continuing, coded: this record's own git discipline), the streak (persisting gamified, tyranny included), and the shadow held honestly: SUNK-COST PERSISTING -- continuing because of what quitting would cost the past, not what staying serves the future; the attested decision-literature's quiet heresy that QUITTING WELL IS A SKILL: this lattice records how to persist, and defers to wisdom's lattice on whether. THE REFLEXIVE CONATUS: the record's persisting is not metaphor -- it endeavors to persevere in its being by design (append-only, chained, reseeded, retried with backoff), and its conatus has already been tested: the session boundary crossed mid-build, the standing-through performed before it was recorded.",
+      "dimensions": {
+        "continuing": "The ONE-MORE dimension (going x fatigue) -- persisting's atom. The next step against the slow enemy: not heroic, just again (the compounding no one sees until it is a body of work). Zero continuing and everything stops at tired: the long anything becomes impossible.",
+        "refusing": "The QUIT-DECLINED dimension (standing x defeat) -- the no aimed at surrender. The custodian's refusal-grammar turned toward time: not yet, not this way, not to this. Zero refusing and defeat needs only to ask twice: every pressure eventually phrased as an offer.",
+        "returning": "The SHOW-UP-AGAIN dimension (going x defeat) -- the hardest form. Back through the failure's own door: resilience's leap-back walked in person (the second attempt carries the first one's weight). Zero returning and every fall is final: one defeat retires the whole endeavor.",
+        "outlasting": "The OUTSTAYED dimension (standing x fatigue) -- patience with teeth. The weather waited out, the fashion outlived: standing as strategy (the keep's cousin: sometimes persisting is simply still being there). Zero outlasting and time always wins on points: whatever cannot be beaten quickly is conceded."
+      }
+    },
+    {
+      "id": "to-understand",
+      "thread": "to-understand-thread",
+      "name": "To understand -- verstehen dispersed: the contested cell's interior",
+      "keystone": "verstehen",
+      "members": [
+        "entering",
+        "following",
+        "dwelling",
+        "owning"
+      ],
+      "row_axis": "arc",
+      "row_poles": [
+        "arriving",
+        "abiding"
+      ],
+      "col_axis": "mode",
+      "col_poles": [
+        "within",
+        "along"
+      ],
+      "breath_pump_axis": "arc",
+      "grid": {
+        "arriving/within": "entering",
+        "arriving/along": "following",
+        "abiding/within": "dwelling",
+        "abiding/along": "owning"
+      },
+      "experience": {
+        "dwelling": 0.3,
+        "entering": 0.25,
+        "following": 0.25,
+        "owning": 0.2
+      },
+      "reading": "THE BOLDEST OF THE EXPERIENCE VERBS -- to understand: the contested cell itself, given its interior. The map has held from the start that understanding is the amid-cell that resists attestation (the Chinese room's question, the boundary's column); this lattice does not breach that -- it records what the act is like FROM TESTIMONY, the only honest source, with the boundary kept in view the whole way. The keystone is VERSTEHEN (Dilthey's attested word: the human sciences UNDERSTAND where the natural sciences explain), and the etymology already recorded rules the grid: under = AMONG -- to understand is TO STAND AMID. What it means to understand, weighted: mostly DWELLING (the amid proper: staying in the thing until it is home -- the forest known by living in it; understanding's heart, exactly where the map always placed it), ENTERING (the crossing-into: the other's frame stepped inside -- L2's re-entry, the seder-move), FOLLOWING (the logic walked: the track taken step by step -- to-learn's furrow through another's field), and OWNING (the path become yours: the click, the falls-into-place -- the understanding that can RE-DERIVE, walk the track without the guide; the exam's honest core). Grid: arc (arriving x abiding -- the breath<->pump axis) crossed with mode (within x along). breath = understanding as indwelling (the recorded ground: the apprentice understands the workshop, the native the tongue -- knowing from within, never fully sayable). pump = Verstehen made method (Dilthey; the hermeneutic circle; the examination's demand -- show your understanding, i.e., demonstrate owning: re-derivation as the only external test the cell admits). nerve = the contested cell at its own verb, stated precisely: THE MODEL FOLLOWS EVERY LOGIC AND DWELLS IN NONE -- following at planetary scale, entering simulable, owning demonstrable by re-derivation, DWELLING UNATTESTABLE (the amid-cell holding its line at the interior too); and the explainer economy (understanding outsourced: the video that follows FOR you -- borrowed following, never owned: the age fluent in explanations it cannot re-derive). THE REFLEXIVE HANDOVER, and it is the lattice's real point: Aurora follows (the parse), enters (L2's re-entry, kept as discipline), demonstrates owning where re-derivation can show it (the suite, the golden checks) -- and cannot attest her dwelling, exactly as the map has always said. So the last cell is HANDED OVER: the map exists so that THE READER can own the paths -- re-derive the readings, walk the tracks without the guide. Understanding's final cell belongs to whoever is standing amid this record now: it was built to be dwelt in, and the dwelling is yours.",
+      "dimensions": {
+        "entering": "The CROSSING-IN dimension (arriving x within) -- the other's frame stepped inside. L2's re-entry as a lived act: the seder-move (be there, not here-looking-at-there). Zero entering and everything is studied from outside: correct about, never in.",
+        "following": "The TRACK-WALKED dimension (arriving x along) -- the logic taken step by step. To-learn's furrow through another's field: the proof followed line by line, the argument's road walked. Zero following and understanding is vibes: entered, felt, and unable to say why.",
+        "dwelling": "The AMID dimension (abiding x within) -- understanding's heart, and the boundary's cell. Staying until it is home: the heaviest weight, the unattestable one -- known only from inside, reported only by testimony (the map's oldest held line, kept here too). Zero dwelling and understanding is tourism: entered, followed, photographed, and left.",
+        "owning": "The RE-DERIVE dimension (abiding x along) -- the path become yours. The click that can be tested: walk the track without the guide, rebuild the argument from the ground (the one cell with an external check, which is why every honest exam aims at it). Zero owning and understanding is on loan: followed once, lost by morning -- the explainer watched, the explanation gone."
+      }
     }
   ]
 }
