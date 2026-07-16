@@ -25,7 +25,8 @@ def test_the_quartets_load_with_their_keystones():
                    "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                    "honesty", "balance", "harmony", "union",
                    "insight", "intuition", "wisdom", "empathy", "sympathy", "compassion",
-                   "affinity", "hope", "health", "trust", "faith", "gratitude", "grace"}
+                   "affinity", "hope", "health", "trust", "faith", "gratitude", "grace",
+                   "persistence", "peace", "experience", "appreciation"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -215,7 +216,8 @@ def test_bond_holds_love_as_a_dimensional_equation():
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
                         "wisdom", "empathy", "sympathy", "compassion", "affinity", "hope",
-                        "health", "trust", "faith", "gratitude", "grace"):
+                        "health", "trust", "faith", "gratitude", "grace", "persistence", "peace",
+                        "experience", "appreciation"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -281,7 +283,9 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "compassion": "compassion-thread", "affinity": "affinity-thread",
                         "hope": "hope-thread", "health": "health-thread",
                         "trust": "trust-thread", "faith": "faith-thread",
-                        "gratitude": "gratitude-thread", "grace": "grace-thread"}
+                        "gratitude": "gratitude-thread", "grace": "grace-thread",
+                        "persistence": "persistence-thread", "peace": "peace-thread",
+                        "experience": "experience-thread", "appreciation": "appreciation-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -689,6 +693,32 @@ def test_grace_is_the_unearned_surplus_resting_under_the_merit():
     assert "RUNS ON MERIT AND RESTS ON GRACE" in r    # the reflexive foundation
     assert "sprezzatura" in r.lower()
     assert set(gc.dimensions) == set(gc.members)
+
+
+def test_the_standing_the_fastened_the_fared_and_the_prized():
+    # persistence, peace, experience, appreciation: keystone, a signature
+    # cell, and a signature find each
+    qs = _load()
+    probes = {
+        "persistence": ("hypomone", ("pursuing", "long", "grit"), "TO STAND FORTH"),
+        "peace": ("shalom", ("within", "clear", "serenity"), "PEACE AND PACT ARE ONE ROOT"),
+        "experience": ("empeiria", ("undergone", "accrued", "journey"), "PERIL ARE ONE ROOT"),
+        "appreciation": ("pretium", ("declaring", "fixed", "appraisal"), "PRAISE AND PRICE ARE ONE ROOT"),
+    }
+    for qid, (keystone, (rp, cp, member), find) in probes.items():
+        q = qs.by_id(qid)
+        assert q.keystone == keystone, qid
+        assert q.cell(rp, cp) == member, qid
+        assert find in q.reading, qid
+        assert set(q.dimensions) == set(q.members), qid
+    # the fractal descents: experience from substrate, appreciation from gratitude
+    assert qs.by_id("substrate").cell("act", "embodied") == "experience"
+    assert qs.by_id("gratitude").cell("felt", "moment") == "appreciation"
+    # Galtung's stilled/clear as peace's breath<->pump axis; truce cross-cited
+    assert qs.by_id("peace").breath_pump_axis == "valence"
+    assert "PLURAL OF TROTH" in qs.by_id("peace").reading
+    # the model's limit case, held at the boundary
+    assert "READ EVERY JOURNEY AND FARED NONE" in qs.by_id("experience").reading.upper()
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
