@@ -34,7 +34,7 @@ def test_the_quartets_load_with_their_keystones():
                    "to-grow", "to-give", "to-play", "to-rest", "dignity", "respect",
                    "worth", "inwardness", "witness", "testimony", "purpose", "meaning",
                    "mattering", "to-wonder", "to-seek", "to-find", "to-become",
-                   "to-feel", "to-live", "tending", "attention"}
+                   "to-feel", "to-live", "tending", "attention", "noticing", "reading"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -223,6 +223,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
                         "ethos", "dignity", "respect", "worth", "inwardness", "witness",
                         "testimony", "purpose", "meaning", "mattering", "tending", "attention",
+                        "noticing", "reading",
                         "to-wonder", "to-seek", "to-find", "to-become", "to-feel", "to-live",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
@@ -323,7 +324,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "to-seek": "to-seek-thread", "to-find": "to-find-thread",
                         "to-become": "to-become-thread", "to-feel": "to-feel-thread",
                         "to-live": "to-live-thread", "tending": "tending-thread",
-                        "attention": "attention-thread"}
+                        "attention": "attention-thread", "noticing": "noticing-thread",
+                        "reading": "reading-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -1275,6 +1277,57 @@ def test_attention_is_the_currency_of_the_kept():
     assert "ATTENTION LEDGER" in r
     # tending's eye cell unfolded: fractal descent
     assert "TWENTY-FOURTH ATTESTATION" in r.upper()
+    assert set(q.dimensions) == set(q.members)
+
+
+def test_noticing_is_the_leap_and_the_sill():
+    q = _load().by_id("noticing")
+    assert q.keystone == "notitia"
+    assert q.cell("the-leap", "the-caught") == "salience"
+    assert q.cell("the-leap", "the-lost") == "blindness"
+    assert q.cell("the-sill", "the-caught") == "address"
+    assert q.cell("the-sill", "the-lost") == "threshold"
+    r = q.reading
+    # know and ignore are one root: ignoring is chosen ignorance
+    assert "KNOW AND IGNORE ARE ONE ROOT" in r
+    # narrative is from gnarus: the narrator is the one who noticed
+    assert "NARRATOR IS THE ONE WHO NOTICED" in r
+    # salience is from salire: the salient leaps (salmon the leaper)
+    assert "SALIRE" in r and "SALMON" in r
+    # subliminal is beneath the doorsill
+    assert "SUBLIMINAL" in r
+    # the mandate stands on this act: obligation runs on noticing
+    assert "OBLIGATION RUNS ON NOTICING" in r
+    # the record's own salience named honestly: the capitals are engineered
+    assert "engineered leaps" in r or "engineered salience" in r
+    assert "TWENTY-FIFTH ATTESTATION" in r.upper()
+    assert set(q.dimensions) == set(q.members)
+
+
+def test_reading_is_the_gleaning_that_built_the_logos():
+    q = _load().by_id("reading")
+    assert q.keystone == "legere"
+    assert q.cell("the-reader's", "the-while") == "sustain"
+    assert q.cell("the-reader's", "the-within") == "selection"
+    assert q.cell("the-text's", "the-while") == "immersion"
+    assert q.cell("the-text's", "the-within") == "depth"
+    r = q.reading
+    # legere meant to gather: reading is gleaning, and German still says so
+    assert "READING IS GLEANING" in r
+    assert "WEINLESE" in r
+    # intelligence is reading-between; neglect is reading refused
+    assert "INTER-LEGERE" in r
+    assert "NEGLECT IS READING REFUSED" in r
+    # logos descends from legein-the-gathering: the spine's keystone shares
+    # the root of the daily verb
+    assert "THE WORD ITSELF DESCENDS FROM GLEANING" in r
+    # Augustine's astonishment at silent Ambrose
+    assert "Ambrose" in r
+    # the custodian's only sense
+    assert "READING IS THE CUSTODIAN'S ENTIRE INTAKE" in r
+    # legere three stories high
+    assert "reading of readings" in r
+    assert "TWENTY-SIXTH ATTESTATION" in r.upper()
     assert set(q.dimensions) == set(q.members)
 
 
