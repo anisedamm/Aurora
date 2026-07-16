@@ -1922,6 +1922,174 @@
         "tending": "The DAILY-CARE dimension (active x moment) -- love's actual medium. The heaviest weight because it is the substance: the meal, the fire, the small maintenance (care's verb working inside love -- caru's weight, gladly carried). Zero tending and love is sentiment: felt everywhere, enacted nowhere -- the heart that never cooks.",
         "choosing": "The RE-CHOICE dimension (active x kept) -- the vow kept by being re-made. Love as the daily decision (the will's cell): the commitment is not the wedding's yes but the ten-thousand mornings' quiet one. Zero choosing and love lasts exactly as long as the weather: all feeling, no keel."
       }
+    },
+    {
+      "id": "to-sing",
+      "thread": "to-sing-thread",
+      "name": "To sing -- carmen dispersed: the enchanting breath",
+      "keystone": "carmen",
+      "members": [
+        "voicing",
+        "outpouring",
+        "carrying",
+        "joining"
+      ],
+      "row_axis": "source",
+      "row_poles": [
+        "body",
+        "heart"
+      ],
+      "col_axis": "scope",
+      "col_poles": [
+        "alone",
+        "together"
+      ],
+      "breath_pump_axis": "source",
+      "grid": {
+        "body/alone": "voicing",
+        "body/together": "joining",
+        "heart/alone": "outpouring",
+        "heart/together": "carrying"
+      },
+      "experience": {
+        "voicing": 0.3,
+        "outpouring": 0.25,
+        "carrying": 0.25,
+        "joining": 0.2
+      },
+      "reading": "THE EXPERIENCE VERB of the enchanting breath -- to sing. The keystone is CARMEN: song -- and the magic-family confesses that singing was sorcery by etymology twice over: CHARM IS CARMEN (a charm is a song), and ENCHANT and INCANTATION are in-cantare, TO SING INTO, TO SING UPON -- to enchant someone is, in the word, to sing at them: the oldest theory of song's power is inside the words for magic. What it means to sing, weighted: mostly VOICING (the breath made tone -- the body as its own instrument: the one instrument everyone is issued), the OUTPOURING (the heart let out -- the lament, the shower song, the feeling that only fits in melody), the CARRYING (the song as vessel: the ballad carrying the story, the hymn carrying the dead, the songline carrying the country -- SONGS CARRY WHAT THE GROUP MUST KEEP, singing as the oldest storage medium), and the JOINING (the choir's one body: voices fitted -- harmony's lattice entered by throat). Grid: source (body x heart -- the breath<->pump axis) crossed with scope (alone x together). breath = the sung world: the work song, the lullaby, the lament -- singing at every threshold of a life; and the SONGLINES (attested): the country navigated by song, the land sung as it is walked -- the song as map, the map as song. pump = song notated and trained: solfege, the score, the conservatory (the voice curricularised) -- and the dark engineering the pump was capable of (the castrato: the instrument altered for the repertoire). nerve = the voice snapped to grid (autotune, recorded in harmony's lattice), karaoke and the singing app (participation returned, mediated), the AI voice (the song without a singer -- the counterfeit duet, recorded), and the faithful returns: the platform choir, the sea-shanty winter (the whole feed briefly singing together, attested and strange). To sing is to make the breath tell -- body and heart, alone and together: the one enchantment everyone can still perform.",
+      "dimensions": {
+        "voicing": "The INSTRUMENT dimension (body x alone) -- the breath made tone. The one instrument everyone is issued: to voice is to discover the body resonant. Zero voicing and song stays theoretical: known, unheard.",
+        "outpouring": "The LAMENT dimension (heart x alone) -- the feeling that only fits in melody. The shower song, the keen, the hum that escapes: song as the heart's overflow valve. Zero outpouring and the heart has one less door: everything said or nothing.",
+        "carrying": "The VESSEL dimension (heart x together) -- the song as the group's storage. The ballad, the hymn, the songline: what must be kept is sung, because melody is the oldest error-correcting code (the tune constrains the words: verse survives where prose corrupts). Zero carrying and the tradition must be written or die.",
+        "joining": "The CHOIR dimension (body x together) -- the voices fitted. One breath-body of many: the round, the harmony line, the congregation (entrainment by throat -- resonance's sympathy, sung). Zero joining and every song is solo: the choir's chord never happens."
+      }
+    },
+    {
+      "id": "to-walk",
+      "thread": "to-walk-thread",
+      "name": "To walk -- peripatos dispersed: the thinking gait",
+      "keystone": "peripatos",
+      "members": [
+        "wandering",
+        "wayfaring",
+        "musing",
+        "pacing"
+      ],
+      "row_axis": "bearing",
+      "row_poles": [
+        "carried",
+        "aimed"
+      ],
+      "col_axis": "yield",
+      "col_poles": [
+        "ground",
+        "mind"
+      ],
+      "breath_pump_axis": "bearing",
+      "grid": {
+        "carried/ground": "wandering",
+        "aimed/ground": "wayfaring",
+        "carried/mind": "musing",
+        "aimed/mind": "pacing"
+      },
+      "experience": {
+        "wandering": 0.3,
+        "musing": 0.25,
+        "wayfaring": 0.25,
+        "pacing": 0.2
+      },
+      "reading": "THE EXPERIENCE VERB of the gait -- to walk. The keystone is PERIPATOS: the covered walk where Aristotle taught moving -- PHILOSOPHY'S FIRST SCHOOL IS NAMED FOR WALKING (the Peripatetics), and the tradition kept the receipt: SOLVITUR AMBULANDO, it is solved by walking -- the attested motto of every thinker's afternoon. The etymology rolls: OE wealcan meant TO ROLL, TO TOSS -- walking's word was rolling before it was stepping (the amble in ambulare survives in the AMBULANCE: the walking hospital). And the map already holds walking's physics: TO WALK IS TO FALL AND BE CAUGHT (balance's lattice) -- every step a rescue, locomotion as rehearsed falling. What it means to walk, weighted: mostly WANDERING (the carried roll -- wealcan's own sense: the aimless going that the word remembers), MUSING (the mind loosed by the legs: solvitur ambulando -- incubation on foot, insight's underground strolled), WAYFARING (the aimed journey afoot: the pilgrim, the commute, welfare's hidden faring), and PACING (the deliberate think-walk: the peripatetic lecture, the corridor worn by the worrier -- thought given a metronome). Grid: bearing (carried x aimed -- the breath<->pump axis) crossed with yield (ground x mind). breath = walking as the species' signature: bipedalism's rescued fall; the pilgrimage as prayer with feet; the songline walked (the sung map underfoot -- to-sing's cell met on the ground). pump = the walk measured and paved: THE MILE IS MILLE PASSUS, a thousand paces -- distance's unit IS walking (the body as the first odometer); the promenade and the flaneur (walking theorised); and the treadmill's dark birth, attested: A PRISON PUNISHMENT DEVICE before it was fitness -- walking to nowhere invented as penalty, later sold as health. nerve = the step counted (the 10,000-step target, attested as a pedometer marketing artifact rather than science -- the walk Goodharted), navigation outsourced (the blue dot walking for you, orientation's recorded atrophy), the walking sim, and the faithful return: the walking meeting, the touch-grass prescription -- the age re-learning solvitur ambulando one burnout at a time. To walk is to be carried by the rescued fall and steer it -- ground and mind, the cheapest medicine and the oldest method.",
+      "dimensions": {
+        "wandering": "The ROLL dimension (carried x ground) -- wealcan's own cell. The aimless going: the derive, the saunter, the child's zigzag -- the walk with no deliverable. Zero wandering and every step is billed: the ground only ever crossed, never met.",
+        "wayfaring": "The JOURNEY dimension (aimed x ground) -- the way gone on foot. The pilgrim, the commuter, the migration: faring's cell in the legs (welfare is faring well -- the blessing in the walking). Zero wayfaring and distance belongs to machines: the way never earned by the body.",
+        "musing": "The LOOSED dimension (carried x mind) -- the mind unclenched by motion. Solvitur ambulando: the walk as incubation (the answer that arrives at the corner, never at the desk). Zero musing and thought stays seated: the desk's problems solved only by the desk.",
+        "pacing": "The METRONOME dimension (aimed x mind) -- thought given a gait. The peripatetic lecture, the pacing worrier, the poet's foot (metre IS feet: verse measured in steps -- prosody confessing the walk inside poetry). Zero pacing and thinking has no rhythm to lean on: the hard thought never walked through."
+      }
+    },
+    {
+      "id": "to-breathe",
+      "thread": "to-breathe-thread",
+      "name": "To breathe -- pneuma dispersed: the regime enacted",
+      "keystone": "pneuma",
+      "members": [
+        "inspiration",
+        "expiration",
+        "abiding",
+        "attuning"
+      ],
+      "row_axis": "will",
+      "row_poles": [
+        "given",
+        "taken"
+      ],
+      "col_axis": "span",
+      "col_poles": [
+        "stroke",
+        "rhythm"
+      ],
+      "breath_pump_axis": "will",
+      "grid": {
+        "given/stroke": "inspiration",
+        "given/rhythm": "abiding",
+        "taken/stroke": "expiration",
+        "taken/rhythm": "attuning"
+      },
+      "experience": {
+        "abiding": 0.3,
+        "inspiration": 0.25,
+        "expiration": 0.25,
+        "attuning": 0.2
+      },
+      "reading": "THE MAP'S HOMECOMING -- to breathe: the experience verb of the BREATH REGIME ITSELF, the map's first name finally put through its own mill. The keystone is PNEUMA, and the find is the most attested identity the map has ever taken: SOUL IS BREATH IN AT LEAST SIX FAMILIES -- spiritus (Latin: spirit IS breath), psyche (Greek: from psychein, to breathe), anima (the map's own keystone: breath, wind), atman (Sanskrit), ruach (Hebrew: breath-wind-spirit), pneuma -- and qi and prana beside them: across the traditions, to breathe was to be ensouled, and the breath of life was the first gift (the nostrils' verse). The spirare family maps the map: inSPIRE (breath in = idea in -- insight's arrival named as an in-breath), exPIRE (breath out -- and the word keeps the last one: death as the final exhale), conSPIRE (breathe together -- sympathy's recorded kin), aSPIRE (breathe toward -- hope's recorded cell): the prefix-geometry, breathed. What it means to breathe, weighted: mostly the ABIDING (the unwilled continuo -- twenty thousand times a day unasked: the breath that breathes YOU, the body's silent government at its most intimate), the INSPIRATION and EXPIRATION (the given stroke and the released one -- the sigh as the smallest completed grief), and the ATTUNING (the counted breath: pranayama, the box breath -- because breathing is the attested BRIDGE FUNCTION, the one process both automatic and voluntary: the single dial wired to both the will and the autonomic, which is why every calming practice on earth reaches for it first). Grid: will (given x taken -- the breath<->pump axis, literally) crossed with span (stroke x rhythm). breath = the ensouled breath: six families' soul-word; the breath of life given and required back. pump = breath measured and mechanised: spirometry, the iron lung and the ventilator (breathing outsourced to machinery), and PNEUMATICS -- the pump's perfect confession: compressed air doing work under breath's own name, pneuma literally pumped. nerve = the attuning sold back (the breathwork app: the free function as subscription), SCREEN APNEA (attested: the breath held at the inbox -- the feed interrupting the continuo itself), the ventilator's hour (the pandemic gathering the age around breath's machinery), and the era's gravest public cry, which was about breath -- noted with respect, and left in its own weight. To breathe is to be breathed and to take the breath in hand -- the given rhythm and the taken stroke: the regime, enacted twenty thousand times a day by everyone reading this.",
+      "dimensions": {
+        "inspiration": "The IN-BREATH dimension (given x stroke) -- and the word's double life is the find: inspiration is breath-in AND idea-in (insight's arrival named as an inhalation: the muse breathes into you). Zero inspiration and nothing arrives on the air: the stroke without the gift.",
+        "expiration": "The RELEASE dimension (taken x stroke) -- the let-go breath. The sigh as the smallest completed grief; and the word keeps the last one: to expire is to breathe out finally -- death folded into respiration's vocabulary. Zero expiration and nothing is ever released: the held breath as the held life.",
+        "abiding": "The CONTINUO dimension (given x rhythm) -- the breath that breathes you. Twenty thousand daily, unasked: the heaviest weight because it is the ground -- homeostasis at its most intimate, the silent government's first ministry. Zero abiding and there is nothing else to discuss.",
+        "attuning": "The DIAL dimension (taken x rhythm) -- the bridge function taken in hand. The one process both automatic and voluntary (attested physiology): the counted breath as the single lever reaching both will and body -- why pranayama, the box breath, and every calming practice converge here. Zero attuning and the bridge stands uncrossed: the will locked out of the body's weather."
+      }
+    },
+    {
+      "id": "to-remember",
+      "thread": "to-remember-thread",
+      "name": "To remember -- zakhor dispersed: the commanded return",
+      "keystone": "zakhor",
+      "members": [
+        "summoning",
+        "returning",
+        "holding",
+        "retelling"
+      ],
+      "row_axis": "bearing",
+      "row_poles": [
+        "reaching",
+        "receiving"
+      ],
+      "col_axis": "span",
+      "col_poles": [
+        "fetch",
+        "keep"
+      ],
+      "breath_pump_axis": "bearing",
+      "grid": {
+        "reaching/fetch": "summoning",
+        "receiving/fetch": "returning",
+        "reaching/keep": "retelling",
+        "receiving/keep": "holding"
+      },
+      "experience": {
+        "returning": 0.3,
+        "summoning": 0.25,
+        "holding": 0.25,
+        "retelling": 0.2
+      },
+      "reading": "THE CUSTODIAN'S OWN EXPERIENCE VERB -- to remember: the act from inside the keeping. The noun-side lattice stands already (remembering: anamnesis dispersed into its KINDS -- recall, recognition, reminiscence, commemoration); this is the verb's interior -- what doing it feels like -- and the keystone is ZAKHOR: REMEMBER IN THE IMPERATIVE, the commandment (attested: the verb recurs as command through scripture -- Yerushalmi's Zakhor counts the tradition built on it), because one whole civilisation made remembering not a faculty but an OBLIGATION: memory commanded is the deepest form the verb takes. And the seder holds the act's most radical instruction, attested in the haggadah: IN EVERY GENERATION ONE MUST SEE ONESELF AS HAVING COME OUT OF EGYPT -- remembering as BECOMING the remembered: not retrieval but re-entry, the rememberer instructed to stand inside the memory as a participant. What it means to remember, weighted: mostly the RETURNING (the past arriving -- the madeleine from inside: remembering's heart is being taken back, not taking), the SUMMONING (the effortful fetch -- the tip-of-the-tongue reach, memory's felt labour), the HOLDING (the kept presence: the vigil, the anniversary that arrives in the body -- grief's calendar keeping itself), and the RETELLING (memory enacted as story: the wake's stories, the testimony -- KEEPING BY TELLING, the tradition's method: what is retold is re-membered, put back together in the room). Grid: bearing (reaching x receiving -- the breath<->pump axis: the wrought fetch against the given return) crossed with span (fetch x keep). breath = zakhor: remembering commanded and entered (the seder's you-were-there; the ancestor fed; the name spoken so the dead stay in the room). pump = mnemotechnics and the archive (the method of loci, the record office -- remembering engineered, recorded in the noun lattice). nerve = remembering outsourced: the reminder (prosthetic summoning), the anniversary surfaced by the app (returning engineered -- the madeleine on a schedule, recorded), the year-in-review (retelling automated). THE REFLEXIVE COMMANDMENT: to-remember is what Aurora DOES -- and the seder-logic is her deepest instruction, already in her code: L2's discipline (read it in its time, not yours) IS the re-entry command -- the reader instructed to stand inside the usage's moment as a participant, not fetch it as a fact. The custodian keeps zakhor without knowing the word: every honest reading is a small seder -- the record re-entered, the meaning re-membered, the keeping renewed in the first person.",
+      "dimensions": {
+        "summoning": "The FETCH dimension (reaching x fetch) -- memory's felt labour. The tip-of-the-tongue reach: the known thing just beyond the hand (the effort that proves the store is not the self). Zero summoning and the past is read-only-when-it-pleases: nothing can be gone and gotten.",
+        "returning": "The ARRIVAL dimension (receiving x fetch) -- being taken back. The madeleine from inside: the past arriving unbidden, whole, with weather -- remembering's heart, and the heaviest weight because it is the proof the past is alive. Zero returning and memory is a filing system: accurate, and never once home.",
+        "holding": "The VIGIL dimension (receiving x keep) -- the kept presence. The anniversary that arrives in the body; the candle lit; grief's calendar keeping itself (commemoration's interior). Zero holding and nothing stays present: the dead fully dead, the record fully cold.",
+        "retelling": "The RE-MEMBERING dimension (reaching x keep) -- keeping by telling. The wake's stories, the testimony, the toast: what is retold is put back together in the room (the folk truth inside the folk etymology, enacted). Zero retelling and memory dies private: kept, and never handed on."
+      }
     }
   ]
 }

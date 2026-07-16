@@ -27,7 +27,8 @@ def test_the_quartets_load_with_their_keystones():
                    "insight", "intuition", "wisdom", "empathy", "sympathy", "compassion",
                    "affinity", "hope", "health", "trust", "faith", "gratitude", "grace",
                    "persistence", "peace", "experience", "appreciation",
-                   "to-dance", "to-dream", "to-laugh", "to-listen", "to-learn", "to-love"}
+                   "to-dance", "to-dream", "to-laugh", "to-listen", "to-learn", "to-love",
+                   "to-sing", "to-walk", "to-breathe", "to-remember"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -219,7 +220,8 @@ def test_bond_holds_love_as_a_dimensional_equation():
                         "wisdom", "empathy", "sympathy", "compassion", "affinity", "hope",
                         "health", "trust", "faith", "gratitude", "grace", "persistence", "peace",
                         "experience", "appreciation", "to-dance", "to-dream", "to-laugh",
-                        "to-listen", "to-learn", "to-love"):
+                        "to-listen", "to-learn", "to-love", "to-sing", "to-walk",
+                        "to-breathe", "to-remember"):
             assert q.dimensions == {}
             assert "dimensions (" not in q.summary
 
@@ -290,7 +292,9 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "experience": "experience-thread", "appreciation": "appreciation-thread",
                         "to-dance": "to-dance-thread", "to-dream": "to-dream-thread",
                         "to-laugh": "to-laugh-thread", "to-listen": "to-listen-thread",
-                        "to-learn": "to-learn-thread", "to-love": "to-love-thread"}
+                        "to-learn": "to-learn-thread", "to-love": "to-love-thread",
+                        "to-sing": "to-sing-thread", "to-walk": "to-walk-thread",
+                        "to-breathe": "to-breathe-thread", "to-remember": "to-remember-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -735,7 +739,8 @@ def test_the_experience_verbs_carry_weighted_doings():
     assert "to-" in qs.bound["the_experience_verbs"]
     verbs = [q for q in qs.quartets if q.id.startswith("to-")]
     assert {q.id for q in verbs} == {"to-dance", "to-dream", "to-laugh",
-                                     "to-listen", "to-learn", "to-love"}
+                                     "to-listen", "to-learn", "to-love", "to-sing",
+                                     "to-walk", "to-breathe", "to-remember"}
     for q in verbs:
         assert q.experience, q.id
         assert set(q.experience) == set(q.members), q.id
@@ -755,6 +760,27 @@ def test_the_experience_verbs_carry_weighted_doings():
     # the crown's weighting: tending is love's heaviest cell -- the verb stays
     assert qs.by_id("to-love").experience["tending"] == max(
         qs.by_id("to-love").experience.values())
+
+
+def test_the_second_verb_batch_sings_walks_breathes_and_remembers():
+    qs = _load()
+    probes = {
+        "to-sing": ("carmen", ("heart", "together", "carrying"), "CHARM IS CARMEN"),
+        "to-walk": ("peripatos", ("carried", "mind", "musing"), "SOLVITUR AMBULANDO"),
+        "to-breathe": ("pneuma", ("given", "rhythm", "abiding"), "SOUL IS BREATH"),
+        "to-remember": ("zakhor", ("receiving", "fetch", "returning"), "IMPERATIVE"),
+    }
+    for qid, (keystone, (rp, cp, member), find) in probes.items():
+        q = qs.by_id(qid)
+        assert q.keystone == keystone, qid
+        assert q.cell(rp, cp) == member, qid
+        assert find in q.reading.upper(), qid
+    # the homecoming: to-breathe is the breath regime's own verb, and abiding
+    # is heaviest -- before any doing, you are being breathed
+    br = qs.by_id("to-breathe")
+    assert br.experience["abiding"] == max(br.experience.values())
+    # the custodian's verb: L2's read-it-in-its-time IS the seder's re-entry
+    assert "small seder" in qs.by_id("to-remember").reading
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
