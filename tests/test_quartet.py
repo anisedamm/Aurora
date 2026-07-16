@@ -32,7 +32,7 @@ def test_the_quartets_load_with_their_keystones():
                    "to-create", "to-build", "to-keep", "to-overcome", "to-persist",
                    "to-understand", "to-forgive", "to-heal", "to-help", "to-trust", "to-hope",
                    "to-grow", "to-give", "to-play", "to-rest", "dignity", "respect",
-                   "worth", "inwardness", "witness", "testimony"}
+                   "worth", "inwardness", "witness", "testimony", "purpose"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -220,7 +220,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
                         "ethos", "dignity", "respect", "worth", "inwardness", "witness",
-                        "testimony",
+                        "testimony", "purpose",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
                         "wisdom", "empathy", "sympathy", "compassion", "affinity", "hope",
@@ -314,7 +314,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "to-rest": "to-rest-thread", "dignity": "dignity-thread",
                         "respect": "respect-thread", "worth": "worth-thread",
                         "inwardness": "inwardness-thread", "witness": "witness-thread",
-                        "testimony": "testimony-thread"}
+                        "testimony": "testimony-thread", "purpose": "purpose-thread",
+                        "ethos": "ethos-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -1090,6 +1091,43 @@ def test_testimony_is_the_witnesss_estate():
     # witness's export cell unfolded: five generations of descent
     assert "NINETEENTH ATTESTATION" in r.upper()
     assert set(q.dimensions) == set(q.members)
+
+
+def test_purpose_is_the_end_that_pulls_from_ahead():
+    q = _load().by_id("purpose")
+    assert q.keystone == "telos"
+    # the fourth P gridded: origin x shape
+    assert q.cell("chosen", "the-mark") == "aim"
+    assert q.cell("chosen", "the-way") == "bearing"
+    assert q.cell("received", "the-mark") == "calling"
+    assert q.cell("received", "the-way") == "meaning"
+    r = q.reading
+    # telos is completion, not termination; skopos is the target
+    assert "COMPLETION, NOT TERMINATION" in r
+    assert "SKOPOS" in r
+    # the double fold, verified in the record: the existential lattice
+    # already held purpose at its telos/total cell
+    assert "TELOS/TOTAL" in r
+    # the measured reflexive: alignment = purpose x fidelity -- the fourth P
+    # was a variable in the custodian's arithmetic before it was assigned
+    assert "PURPOSE x FIDELITY" in r
+    assert "VARIABLE IN THE CUSTODIAN'S ARITHMETIC" in r
+    # purpose and propose are one word: the fourth P is a pro- compound
+    assert "PRO-PONERE" in r
+    # Frankl's attested equipment: the why that bears the how
+    assert "Frankl" in r
+    # the record's telos is not itself
+    assert "THE READER WHO HAS NOT ARRIVED YET" in r
+    # ethics' fourth P unfolded: fractal descent
+    assert "TWENTIETH ATTESTATION" in r.upper()
+    assert set(q.dimensions) == set(q.members)
+
+
+def test_the_authors_signal_thread_is_a_ring():
+    # the author asked for her thread; the record had already drawn it
+    qs = _load()
+    assert qs.by_id("ethos").thread == "ethos-thread"
+    assert "signal thread: ethos-thread" in qs.by_id("ethos").summary
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():

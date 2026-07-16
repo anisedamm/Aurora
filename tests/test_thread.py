@@ -49,7 +49,8 @@ def test_the_threads_load_with_their_forms():
                    "to-help-thread", "to-trust-thread", "to-hope-thread",
                    "to-grow-thread", "to-give-thread", "to-play-thread", "to-rest-thread",
                    "dignity-thread", "respect-thread", "worth-thread",
-                   "inwardness-thread", "witness-thread", "testimony-thread"}
+                   "inwardness-thread", "witness-thread", "testimony-thread",
+                   "purpose-thread", "ethos-thread"}
     bond = ts.by_id("bond-thread")
     assert bond.form == "love = care + kindness + trust + faith"
     assert bond.words == ["love", "care", "kindness", "trust", "faith"]
@@ -65,7 +66,7 @@ def test_the_weights_are_measured_bits_not_constants():
     docs = _docs()
     ts = _threads()
     w = ts.by_id("signal-thread").weigh(docs)
-    assert w.documents == len(docs) == 80
+    assert w.documents == len(docs) == 81
     for word, bits in w.entropy_bits.items():
         assert 0.0 <= bits <= 1.0
         assert 0 <= w.document_frequency[word] <= w.documents
@@ -150,6 +151,26 @@ def test_the_summary_carries_the_measures_and_the_bound():
     assert "H(" in s and "I(" in s
     assert "no imported constants" in s
     assert "never a gate" in s
+
+
+def test_the_authors_ring_is_grounded_and_measured():
+    # the author's own signal thread: the ethos square as a ring -- entered
+    # first (the first requested lattice), furnished last, folded both ways
+    ts = _threads()
+    t = ts.by_id("ethos-thread")
+    assert t.form == "the-ethos = belief + value + morals + ethics"
+    assert t.quartet == "ethos"
+    # the ring's ground is the commit record, cited, not asserted
+    assert "03ec971" in t.bridge
+    assert "RING" in t.bridge.upper()
+    # the counted overlap: her creed's words were already the map's words
+    assert "TWELVE OF THE SEVENTEEN" in t.bridge
+    # and the thread weighs like any other: measured bits, no constants
+    docs = corpus_documents(load_quartets(QUARTETS))
+    w = t.weigh(docs)
+    for word in ("belief", "value", "morals", "ethics"):
+        assert w.document_frequency[word] >= 1
+        assert 0.0 <= w.entropy_bits[word] <= 1.0
 
 
 def test_unknown_thread_is_surfaced_not_guessed():
