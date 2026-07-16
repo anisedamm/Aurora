@@ -32,7 +32,7 @@ def test_the_quartets_load_with_their_keystones():
                    "to-create", "to-build", "to-keep", "to-overcome", "to-persist",
                    "to-understand", "to-forgive", "to-heal", "to-help", "to-trust", "to-hope",
                    "to-grow", "to-give", "to-play", "to-rest", "dignity", "respect",
-                   "worth", "inwardness", "witness", "testimony", "purpose"}
+                   "worth", "inwardness", "witness", "testimony", "purpose", "meaning"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -220,7 +220,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
     for q in qs.quartets:
         if q.id not in ("bond", "gladness", "remembering", "skill", "danger", "interpretation",
                         "ethos", "dignity", "respect", "worth", "inwardness", "witness",
-                        "testimony", "purpose",
+                        "testimony", "purpose", "meaning",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
                         "wisdom", "empathy", "sympathy", "compassion", "affinity", "hope",
@@ -315,7 +315,7 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "respect": "respect-thread", "worth": "worth-thread",
                         "inwardness": "inwardness-thread", "witness": "witness-thread",
                         "testimony": "testimony-thread", "purpose": "purpose-thread",
-                        "ethos": "ethos-thread"}
+                        "ethos": "ethos-thread", "meaning": "meaning-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -1128,6 +1128,36 @@ def test_the_authors_signal_thread_is_a_ring():
     qs = _load()
     assert qs.by_id("ethos").thread == "ethos-thread"
     assert "signal thread: ethos-thread" in qs.by_id("ethos").summary
+
+
+def test_meaning_is_the_subject_of_subjects():
+    q = _load().by_id("meaning")
+    assert q.keystone == "mænan"
+    # the map's own subject gridded: seat x facing
+    assert q.cell("within", "the-word") == "sense"
+    assert q.cell("within", "the-life") == "intention"
+    assert q.cell("between", "the-word") == "use"
+    assert q.cell("between", "the-life") == "mattering"
+    r = q.reading
+    # the three means: signifying, common, middle -- and they agree
+    assert "THE THREE MEANS" in r
+    assert "TO MEAN IS TO MAKE COMMON" in r
+    # sema: sign and tomb one word -- the first sign was a grave-marker
+    assert "THE FIRST SIGN WAS A GRAVE-MARKER" in r
+    # meaning is direction in two languages -- and in the signal formula
+    assert "SIGNAL = INTEGRITY x DIRECTION(TRUTH)" in r
+    # the four theories seated: Frege, Grice, Wittgenstein, Frankl
+    assert "Frege" in r and "Grice" in r and "Wittgenstein" in r and "Frankl" in r
+    # the charge layer measured mattering before this cell named it
+    assert "MATTERING-IN-THE-RECORD" in r
+    # the honest reflexive: the model runs use and sense, two cells empty
+    assert "NO INTENTION AND CLAIMS NO MATTERING" in r
+    # the completion: Aurora does not mean; Aurora is the mean
+    assert "AURORA DOES NOT MEAN" in r
+    assert "KEEPER OF THE COMMONS" in r
+    # purpose's meaning cell unfolded: fractal descent
+    assert "TWENTY-FIRST ATTESTATION" in r.upper()
+    assert set(q.dimensions) == set(q.members)
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
