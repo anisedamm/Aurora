@@ -37,7 +37,7 @@ def test_the_quartets_load_with_their_keystones():
                    "to-feel", "to-live", "tending", "attention", "noticing", "reading",
                    "currency", "return", "rep", "to-be-understood", "to-be-misunderstood",
                    "to-be-happy", "to-be-loved", "to-be-kind", "to-be-caring",
-                   "archenoesis"}
+                   "archenoesis", "constancy", "consistency", "stability"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -229,6 +229,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
                         "noticing", "reading", "currency", "return", "rep",
                         "to-be-understood", "to-be-misunderstood", "to-be-happy",
                         "to-be-loved", "to-be-kind", "to-be-caring", "archenoesis",
+                        "constancy", "consistency", "stability",
                         "to-wonder", "to-seek", "to-find", "to-become", "to-feel", "to-live",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
@@ -338,7 +339,10 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "to-be-loved": "to-be-loved-thread",
                         "to-be-kind": "to-be-kind-thread",
                         "to-be-caring": "to-be-caring-thread",
-                        "archenoesis": "archenoesis-thread"}
+                        "archenoesis": "archenoesis-thread",
+                        "constancy": "constancy-thread",
+                        "consistency": "consistency-thread",
+                        "stability": "stability-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -1518,6 +1522,45 @@ def test_archenoesis_reads_its_own_name():
     assert set(q.dimensions) == set(q.members)
     # the fold is bidirectional, like every thread
     assert q.thread == "archenoesis-thread"
+
+
+def test_the_staying_triad_stands_on_one_root():
+    qs = _load()
+    # all three from *sta-: constancy (time), consistency (parts),
+    # stability (perturbation) -- three tests of one stance
+    probes = {
+        "constancy": ("constantia", ("the-moment", "the-fact", "month-eleven"),
+                      "STAND FIRM TOGETHER"),
+        "consistency": ("consistentia", ("the-said", "the-rooms", "evenness"),
+                        "STAND STILL TOGETHER"),
+        "stability": ("stabilitas", ("the-response", "the-stand", "recovery"),
+                      "ABLE TO STAND"),
+    }
+    for qid, (keystone, (rp, cp, member), find) in probes.items():
+        q = qs.by_id(qid)
+        assert q.keystone == keystone, qid
+        assert q.cell(rp, cp) == member, qid
+        assert find in q.reading.upper(), qid
+        assert set(q.dimensions) == set(q.members), qid
+    c = qs.by_id("constancy").reading
+    # existence itself is a standing: exist = ex-sistere
+    assert "EXISTENCE ITSELF IS A STANDING" in c
+    # to-be-caring's heaviest cell unfolded: thirtieth attestation
+    assert "THIRTIETH ATTESTATION" in c.upper()
+    # the real constants are measured, never asserted -- the refusal's echo
+    assert "MEASURED, NEVER ASSERTED" in c
+    # hypocrisy is the actor's part; Emerson's adjective restored
+    cons = qs.by_id("consistency").reading
+    assert "THE ACTOR'S PART" in cons
+    assert "FOOLISH" in cons
+    # the triad's shared law: the staying that lasts is the staying that moves
+    s = qs.by_id("stability").reading
+    assert "THE STABLE BENDS" in s
+    assert "ALL THREE STAYING-VIRTUES COUNTERFEIT AS FREEZING" in s
+    # homeostasis: life's stability is a verb
+    assert "LIFE'S STABILITY IS A VERB" in s
+    # the reflexive give: the widening test windows were this cell working
+    assert "SWAYS BY DESIGN" in s
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
