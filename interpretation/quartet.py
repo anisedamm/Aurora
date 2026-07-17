@@ -59,6 +59,10 @@ class Quartet:
     # EXPERIENCE VERBS ONLY (ids prefixed 'to-'): the actionable experience as a
     # weighted field over the members -- what it means to DO the thing, weighted;
     # the breath-sign's WeightedField applied to the act from inside
+    state: dict[str, float] = field(default_factory=dict)
+    # STATES OF BEING ONLY (ids prefixed 'to-be-'): the felt composition of the
+    # state as a weighted field over the members -- what it means to BE it;
+    # received states (the passive: understood, loved) cannot be self-administered
 
     def cell(self, row_pole: str, col_pole: str) -> str:
         return self.grid.get(f"{row_pole}/{col_pole}", "—")
@@ -90,6 +94,11 @@ class Quartet:
             for m in self.members:
                 if m in self.experience:
                     rows.append(f"    {m}: {self.experience[m]:.2f}")
+        if self.state:
+            rows.append("  the state (what it means to be it -- a weighted field):")
+            for m in self.members:
+                if m in self.state:
+                    rows.append(f"    {m}: {self.state[m]:.2f}")
         if self.dimensions:
             rows.append("  dimensions (each factor at zero zeroes the keystone):")
             for m in self.members:
@@ -150,6 +159,7 @@ def _q(e: dict) -> Quartet:
         dimensions=dict(e.get("dimensions", {})),
         thread=e.get("thread"),
         experience=dict(e.get("experience", {})),
+        state=dict(e.get("state", {})),
     )
 
 

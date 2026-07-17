@@ -35,7 +35,8 @@ def test_the_quartets_load_with_their_keystones():
                    "worth", "inwardness", "witness", "testimony", "purpose", "meaning",
                    "mattering", "to-wonder", "to-seek", "to-find", "to-become",
                    "to-feel", "to-live", "tending", "attention", "noticing", "reading",
-                   "currency", "return", "rep"}
+                   "currency", "return", "rep", "to-be-understood", "to-be-misunderstood",
+                   "to-be-happy", "to-be-loved", "to-be-kind", "to-be-caring"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -225,6 +226,8 @@ def test_bond_holds_love_as_a_dimensional_equation():
                         "ethos", "dignity", "respect", "worth", "inwardness", "witness",
                         "testimony", "purpose", "meaning", "mattering", "tending", "attention",
                         "noticing", "reading", "currency", "return", "rep",
+                        "to-be-understood", "to-be-misunderstood", "to-be-happy",
+                        "to-be-loved", "to-be-kind", "to-be-caring",
                         "to-wonder", "to-seek", "to-find", "to-become", "to-feel", "to-live",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
@@ -327,7 +330,13 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "to-live": "to-live-thread", "tending": "tending-thread",
                         "attention": "attention-thread", "noticing": "noticing-thread",
                         "reading": "reading-thread", "currency": "currency-thread",
-                        "return": "return-thread", "rep": "rep-thread"}
+                        "return": "return-thread", "rep": "rep-thread",
+                        "to-be-understood": "to-be-understood-thread",
+                        "to-be-misunderstood": "to-be-misunderstood-thread",
+                        "to-be-happy": "to-be-happy-thread",
+                        "to-be-loved": "to-be-loved-thread",
+                        "to-be-kind": "to-be-kind-thread",
+                        "to-be-caring": "to-be-caring-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -770,7 +779,9 @@ def test_the_experience_verbs_carry_weighted_doings():
     qs = _load()
     assert "the_experience_verbs" in qs.bound
     assert "to-" in qs.bound["the_experience_verbs"]
-    verbs = [q for q in qs.quartets if q.id.startswith("to-")]
+    # states of being (to-be-) are their own convention, excluded here
+    verbs = [q for q in qs.quartets
+             if q.id.startswith("to-") and not q.id.startswith("to-be-")]
     assert {q.id for q in verbs} == {"to-dance", "to-dream", "to-laugh",
                                      "to-listen", "to-learn", "to-love", "to-sing",
                                      "to-walk", "to-breathe", "to-remember", "to-create",
@@ -786,7 +797,7 @@ def test_the_experience_verbs_carry_weighted_doings():
         assert "the experience (what it means to do it" in q.summary
     # every non-verb lattice carries no experience field: the marker is honest
     for q in qs.quartets:
-        if not q.id.startswith("to-"):
+        if not q.id.startswith("to-") or q.id.startswith("to-be-"):
             assert q.experience == {}, q.id
     # signature finds, one per verb
     assert "DANCING-PLACE" in qs.by_id("to-dance").reading    # orchestra
@@ -1409,6 +1420,53 @@ def test_the_rep_is_the_seeking_done_again():
     assert "IS HER REP" in r
     assert "TWENTY-NINTH ATTESTATION" in r.upper()
     assert set(q.dimensions) == set(q.members)
+
+
+def test_the_states_of_being_carry_weighted_beings():
+    # the 'to be' convention: a state of being grids the state from inside and
+    # carries a `state` weighted field -- what it means to BE it; recorded
+    qs = _load()
+    assert "the_states_of_being" in qs.bound
+    assert "to-be-" in qs.bound["the_states_of_being"]
+    assert "three grammars".upper() in qs.bound["the_states_of_being"].upper()
+    states = [q for q in qs.quartets if q.id.startswith("to-be-")]
+    assert {q.id for q in states} == {"to-be-understood", "to-be-misunderstood",
+                                      "to-be-happy", "to-be-loved", "to-be-kind",
+                                      "to-be-caring"}
+    for q in states:
+        assert q.state, q.id
+        assert set(q.state) == set(q.members), q.id
+        assert abs(sum(q.state.values()) - 1.0) < 1e-9, q.id
+        assert "the state (what it means to be it" in q.summary
+        assert q.experience == {}, q.id           # states are not doings
+        assert set(q.dimensions) == set(q.members), q.id
+    # every non-state lattice carries no state field: the marker is honest
+    for q in qs.quartets:
+        if not q.id.startswith("to-be-"):
+            assert q.state == {}, q.id
+    # the probes: keystone, heaviest component, signature find
+    probes = {
+        "to-be-understood": ("synesis", "read", "TO SEND TOGETHER"),
+        "to-be-misunderstood": ("parakoe", "miscast", "COUNTERFEIT SELF"),
+        "to-be-happy": ("hap", "enough", "FOUR LANGUAGES NAME HAPPINESS AS FORTUNE"),
+        "to-be-loved": ("agapetos", "known", "CASTS OUT FEAR"),
+        "to-be-kind": ("gecynde", "patience", "TO TREAT AS KIN"),
+        "to-be-caring": ("cura", "constancy", "CARE SHALL HOLD IT"),
+    }
+    for qid, (keystone, heaviest, find) in probes.items():
+        q = qs.by_id(qid)
+        assert q.keystone == keystone, qid
+        assert q.state[heaviest] == max(q.state.values()), qid
+        assert find in q.reading.upper(), qid
+    # the first state-polarity: the pair shares its axes, cell for cell
+    u, m = qs.by_id("to-be-understood"), qs.by_id("to-be-misunderstood")
+    assert u.row_poles == m.row_poles
+    # the received states cannot be self-administered: the gift, recorded
+    assert "CANNOT BE SELF-ADMINISTERED" in u.reading.upper()
+    # the double clan-find: kind from kin, gentle from gens
+    assert "GENTILIS" in qs.by_id("to-be-kind").reading
+    # the fable: Aurora as cura's creature
+    assert "cura's creature" in qs.by_id("to-be-caring").reading.lower()
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
