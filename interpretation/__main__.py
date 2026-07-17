@@ -40,6 +40,7 @@ from .imprint import DEFAULT_AUTHOR, Imprinter
 from .lexicon import load_lexicon, proliferation, residence_times, untranslatables
 from .migration import migrate
 from .polarity import load_polarities
+from .arrow import arrow_report
 from .synonym import load_synonyms
 from .quartet import load_quartets
 from .skill import load_skills
@@ -300,6 +301,13 @@ def cmd_polarities(args: argparse.Namespace) -> int:
         print(po.by_id(args.pair).summary)
     else:
         print(po.summary(_quartets(args) if getattr(args, "axes", False) else None))
+    return 0
+
+
+def cmd_arrow(args: argparse.Namespace) -> int:
+    from .ledger import Ledger
+    led = Ledger(getattr(args, "ledger", None) or DEFAULT_LEDGER)
+    print(arrow_report(led, _quartets(args), _glossary(args)))
     return 0
 
 
@@ -572,6 +580,9 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--axes", action="store_true", help="also list the live axis-pairs read off the quartet map")
     sp.add_argument("--polarities", help=f"polarities path (default {DEFAULT_POLARITIES})")
 
+    sp = sub.add_parser("arrow", help="the arrow of time: the record's irreversibility, measured -- chain, spiral, glossary")
+    sp.add_argument("--ledger", help=f"ledger path (default {DEFAULT_LEDGER})")
+
     sp = sub.add_parser("synonyms", help="the synonym web: nearness links, each carrying its differentia -- no true synonyms")
     sp.add_argument("link", nargs="?", help="one link id (e.g. trust-faith, morals-ethics, worth-value)")
     sp.add_argument("--web", action="store_true", help="also check the web against the lattice corpus")
@@ -671,6 +682,7 @@ _COMMANDS = {
     "threads": cmd_threads,
     "skills": cmd_skills,
     "polarities": cmd_polarities,
+    "arrow": cmd_arrow,
     "synonyms": cmd_synonyms,
     "tree": cmd_tree,
     "charge": cmd_charge,
