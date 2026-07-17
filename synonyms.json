@@ -1,0 +1,124 @@
+{
+ "title": "The synonym web — the nearness layer: everything interconnected, honestly",
+ "note": "The polarity layer recorded opposition (the 2); this layer records nearness — the thesaurus's other axis, and the meaning tree carries both. By the first law of synonymy every link carries its differentia: sameness is recorded by recording what keeps the pair apart.",
+ "links": [
+  {
+   "id": "trust-faith",
+   "a": "trust", "b": "faith", "kind": "near",
+   "differentia": "trust rests on shown firmness (the ledger of evidence); faith trusts without the ledger — the record differentiated them into two lattices for exactly this line",
+   "derivation": "trust < deru- (the steadfast oak); faith < fides (the pledge)",
+   "aurora": "bond's receiving row unfolded into both lattices; the MI test attests they co-crystallise beyond chance"
+  },
+  {
+   "id": "morals-ethics",
+   "a": "morals", "b": "ethics", "kind": "calque",
+   "differentia": "the lived custom against the examined code — the same word twice, pushed apart to fill both conduct cells",
+   "derivation": "Cicero coined moralis to TRANSLATE Greek ethikos: the record's founding calque",
+   "aurora": "the ethos quartet's conduct row: the doublet evidence that started the doublet hunt"
+  },
+  {
+   "id": "respect-regard",
+   "a": "respect", "b": "regard", "kind": "calque",
+   "differentia": "one construction, two tongues: re-spicere looks again, re-garder WATCHES again — regard leans to the sustained gaze, respect to the accorded worth",
+   "derivation": "Latin re-spicere / French re-garder: look-again built twice",
+   "aurora": "the respect lattice: both walked gaze-word to honouring-word independently"
+  },
+  {
+   "id": "forgive-pardon",
+   "a": "forgive", "b": "pardon", "kind": "calque",
+   "differentia": "for-give kept the heart's register; per-donare went to the court (the state pardons, the person forgives)",
+   "derivation": "Germanic for-giefan / Latin per-donare: 'thoroughly give', built twice",
+   "aurora": "to-forgive's founding find"
+  },
+  {
+   "id": "sympathy-compassion",
+   "a": "sympathy", "b": "compassion", "kind": "calque",
+   "differentia": "syn-pathos felt-with from the Greek bench; com-passio is its Latin translation that took the heavier suffering-with sense",
+   "derivation": "com-passio calques syn-pathos morpheme for morpheme",
+   "aurora": "the triplet (syn-pathos / com-passio / Ein-fühlung): three lattices, one construction three times"
+  },
+  {
+   "id": "empathy-sympathy",
+   "a": "empathy", "b": "sympathy", "kind": "near",
+   "differentia": "feeling-INTO against feeling-WITH: empathy enters the other's state, sympathy stands beside it",
+   "derivation": "Ein-fühlung (translated 1909 as empathy) / syn-pathos",
+   "aurora": "both lattices; resonating's boundary factor holds the line between them"
+  },
+  {
+   "id": "worth-value",
+   "a": "worth", "b": "value", "kind": "register",
+   "differentia": "worth is the inward standing (Germanic, the breath register); value is the rankable articulated (Latin valere, the pump register) — Kant's cut runs between the strata",
+   "derivation": "Germanic *werthaz / Latin valere",
+   "aurora": "the worth lattice and the ethos value cell: the strata are the regimes"
+  },
+  {
+   "id": "keep-preserve",
+   "a": "keep", "b": "preserve", "kind": "register",
+   "differentia": "keep is the hand's word (the lived holding); preserve is the office's (prae-servare, the watch institutionalised)",
+   "derivation": "OE cepan / Latin prae-servare",
+   "aurora": "to-keep's lattice and the four P's first factor: one act, two strata"
+  },
+  {
+   "id": "gladness-joy",
+   "a": "gladness", "b": "joy", "kind": "scalar",
+   "differentia": "the same brightness at two intensities: gladness the settled shine (glaed, bright), joy the surge",
+   "derivation": "OE glaed ('bright, shining') / OF joie < gaudia",
+   "aurora": "the gladness lattice holds both; to-be-happy weights gladness as the weather cell"
+  },
+  {
+   "id": "meaning-sense",
+   "a": "meaning", "b": "sense", "kind": "near",
+   "differentia": "meaning is the whole field (all four cells); sense is one cell of it — the mode of presentation, the word's interior",
+   "derivation": "OE maenan / Latin sensus (sentire, to feel: a sentence was a felt judgment)",
+   "aurora": "the meaning lattice contains sense as its within/the-word member"
+  },
+  {
+   "id": "purpose-aim",
+   "a": "purpose", "b": "aim", "kind": "near",
+   "differentia": "purpose is the held why (the way, received or chosen); aim is the pointed mark (skopos, the target seen) — one is a course, the other a point",
+   "derivation": "pro-ponere ('set before') / OF esmer < aestimare (aim shares estimate's root: aiming began as appraising)",
+   "aurora": "the purpose lattice contains aim as its chosen/the-mark member"
+  },
+  {
+   "id": "constancy-stability",
+   "a": "constancy", "b": "stability", "kind": "near",
+   "differentia": "constancy stands with one thing across TIME; stability is able to stand across PERTURBATION — the staying triad's own differentiation",
+   "derivation": "con-stare / stabilis, one *sta- bench two tests apart",
+   "aurora": "the staying triad: three lattices differentiating what the thesaurus blurs"
+  },
+  {
+   "id": "peace-harmony",
+   "a": "peace", "b": "harmony", "kind": "near",
+   "differentia": "peace is the pact's quiet (pax, the fastening); harmony is difference sounding together (harmonia, the joint) — peace can be silent, harmony never is",
+   "derivation": "pax (pangere, to fasten) / harmonia (the carpenter's joint)",
+   "aurora": "both lattices; the two voices of the record are harmony, not unison"
+  },
+  {
+   "id": "love-charity",
+   "a": "love", "b": "charity", "kind": "calque",
+   "differentia": "caritas translated agape and then narrowed to almsgiving: the translation that drifted — love kept the whole field, charity kept one act of it",
+   "derivation": "Latin caritas rendering Greek agape (the KJV's 'charity' is agape wearing Latin)",
+   "aurora": "bond's keystone; the drift is the layer's own exhibit: even a calque cannot hold a pair identical"
+  },
+  {
+   "id": "royal-regal",
+   "a": "royal", "b": "regal", "kind": "doublet",
+   "differentia": "one root arrived twice: royal through French (worn smooth, the everyday crown), regal direct from Latin (the ceremonial register) — and Germanic kingly beneath both completes the strata",
+   "derivation": "both < regalis; kingly < cyning: the three-layer exhibit (Germanic / French / Latin)",
+   "aurora": "the register stratification's canonical triple, kept as the layer's textbook case"
+  },
+  {
+   "id": "wisdom-insight",
+   "a": "wisdom", "b": "insight", "kind": "near",
+   "differentia": "insight is the single seeing-into (the flash, one lock opened); wisdom is seeing's long compound (the practice of right calls) — one arrives, the other accrues",
+   "derivation": "wis- < *weid- (the seeing root) / in + sight: both from seeing, at two durations",
+   "aurora": "both lattices; the *weid- bench holds each"
+  }
+ ],
+ "bound": {
+  "the_first_law": "NO TRUE SYNONYMS SURVIVE: total synonymy is unstable (attested across lexical semantics) — a language differentiates a perfect pair or drops one member. The record's doublets are the law's fossils (morals/ethics split to fill two cells; trust/faith split on the ledger line). The layer therefore records sameness by recording difference: every link carries its DIFFERENTIA, and the loader refuses a link without one — the web is honest because it never claims two words are the same, only near, and says exactly how they differ.",
+  "the_register_stratification": "English's synonym pairs are stratified by conquest — Germanic under French under Latin (kingly/royal/regal, the canonical triple) — AND THE STRATA ARE THE REGIMES: the Germanic word is the breath register (the lived: keep, worth, gladness), the Romance word the pump register (the articulated: preserve, value, felicity). The breath<->pump axis runs through the English lexicon itself: every register pair is the framework's first polarity, fossilised in vocabulary.",
+  "the_non_transitivity": "SYNONYM CHAINS DRIFT: nearness is non-transitive (big ~ large, large ~ spacious, big !~ spacious — the attested chain problem). The web carries NEARNESS, not identity; distance accumulates along every path, so a chain is a walk, not a proof — follow synonym links far enough and you can reach an antonym. The chain() function returns walks with this caveat standing.",
+  "the_webs_two_axes": "The thesaurus runs on two relations and the record now holds both: the POLARITY layer is the antonym web (the 2, the first cut), this layer is the SYNONYM web (the nearness beside it) — and the meaning tree carries both edge kinds, so every walk through the map can move by opposition or by nearness: the two moves every dictionary reader has always made."
+ }
+}

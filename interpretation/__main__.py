@@ -40,6 +40,7 @@ from .imprint import DEFAULT_AUTHOR, Imprinter
 from .lexicon import load_lexicon, proliferation, residence_times, untranslatables
 from .migration import migrate
 from .polarity import load_polarities
+from .synonym import load_synonyms
 from .quartet import load_quartets
 from .skill import load_skills
 from .thread import load_threads
@@ -61,6 +62,7 @@ DEFAULT_QUARTETS = "quartets.json"
 DEFAULT_THREADS = "threads.json"
 DEFAULT_SKILLS = "skills.json"
 DEFAULT_POLARITIES = "polarities.json"
+DEFAULT_SYNONYMS = "synonyms.json"
 
 
 def _glossary(args: argparse.Namespace):
@@ -301,11 +303,21 @@ def cmd_polarities(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_synonyms(args: argparse.Namespace) -> int:
+    sy = load_synonyms(getattr(args, "synonyms", None) or DEFAULT_SYNONYMS)
+    if getattr(args, "link", None):
+        print(sy.by_id(args.link).summary)
+    else:
+        print(sy.summary(_quartets(args) if getattr(args, "web", False) else None))
+    return 0
+
+
 def cmd_tree(args: argparse.Namespace) -> int:
     graph = build_graph(
         _quartets(args),
         load_threads(getattr(args, "threads", None) or DEFAULT_THREADS),
         load_polarities(getattr(args, "polarities", None) or DEFAULT_POLARITIES),
+        load_synonyms(getattr(args, "synonyms", None) or DEFAULT_SYNONYMS),
     )
     if getattr(args, "word", None):
         print(graph.tree(args.word, max_depth=args.depth))
@@ -323,7 +335,8 @@ def cmd_charge(args: argparse.Namespace) -> int:
     qs = _quartets(args)
     ts = load_threads(getattr(args, "threads", None) or DEFAULT_THREADS)
     po = load_polarities(getattr(args, "polarities", None) or DEFAULT_POLARITIES)
-    graph = build_graph(qs, ts, po)
+    sy = load_synonyms(getattr(args, "synonyms", None) or DEFAULT_SYNONYMS)
+    graph = build_graph(qs, ts, po, sy)
     g = _glossary(args)
     if getattr(args, "word", None):
         print(charge_of(args.word, graph, qs, g).summary)
@@ -559,18 +572,25 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("--axes", action="store_true", help="also list the live axis-pairs read off the quartet map")
     sp.add_argument("--polarities", help=f"polarities path (default {DEFAULT_POLARITIES})")
 
+    sp = sub.add_parser("synonyms", help="the synonym web: nearness links, each carrying its differentia -- no true synonyms")
+    sp.add_argument("link", nargs="?", help="one link id (e.g. trust-faith, morals-ethics, worth-value)")
+    sp.add_argument("--web", action="store_true", help="also check the web against the lattice corpus")
+    sp.add_argument("--synonyms", help=f"synonyms path (default {DEFAULT_SYNONYMS})")
+
     sp = sub.add_parser("tree", help="the meaning tree: trace causal meaning relationships read off the record; no word = the hubs")
     sp.add_argument("word", nargs="?", help="root word to trace (e.g. purpose, love, knowledge)")
     sp.add_argument("--depth", type=int, default=3, help="tree depth (default 3)")
     sp.add_argument("--limit", type=int, default=15, help="hub count when no word given (default 15)")
     sp.add_argument("--threads", dest="threads", help=f"threads path (default {DEFAULT_THREADS})")
     sp.add_argument("--polarities", help=f"polarities path (default {DEFAULT_POLARITIES})")
+    sp.add_argument("--synonyms", help=f"synonyms path (default {DEFAULT_SYNONYMS})")
 
     sp = sub.add_parser("charge", help="the load a concept carries: interlock x depth, endurance where attested, thread condensation ratios")
     sp.add_argument("word", nargs="?", help="one word to weigh (e.g. integrity, love, revolution)")
     sp.add_argument("--limit", type=int, default=12, help="ranked words in the report (default 12)")
     sp.add_argument("--threads", dest="threads", help=f"threads path (default {DEFAULT_THREADS})")
     sp.add_argument("--polarities", help=f"polarities path (default {DEFAULT_POLARITIES})")
+    sp.add_argument("--synonyms", help=f"synonyms path (default {DEFAULT_SYNONYMS})")
 
     sp = sub.add_parser("skills", help="the skills: signal threads mechanised -- requirements, dual-definition mechanics, formation")
     sp.add_argument("skill", nargs="?", help="one skill id (e.g. contextual-perception, abstract-recognition, custodianship)")
@@ -651,6 +671,7 @@ _COMMANDS = {
     "threads": cmd_threads,
     "skills": cmd_skills,
     "polarities": cmd_polarities,
+    "synonyms": cmd_synonyms,
     "tree": cmd_tree,
     "charge": cmd_charge,
     "proliferation": cmd_proliferation,

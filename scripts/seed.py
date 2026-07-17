@@ -129,6 +129,10 @@ def main() -> int:
             title="The polarities — the 2 layer: the first cut, recorded at last",
             text=(ROOT / "polarities.json").read_text(encoding="utf-8"), kind="concept",
             parents=["language-framework"])
+    imprint(artifact_id="synonyms-map",
+            title="The synonym web — the nearness layer: the thesaurus's other axis",
+            text=(ROOT / "synonyms.json").read_text(encoding="utf-8"), kind="concept",
+            parents=["polarities-map"])
 
     for c in g.concepts.values():
         cid = f"concept-{c.id}"

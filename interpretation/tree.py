@@ -1,18 +1,19 @@
 """The meaning tree: causal meaning relationships read off the record.
 
 The map's layers already store connections -- this module reads them into one
-graph and traces **trees** through it. Five edge kinds, every one derived from
+graph and traces **trees** through it. Six edge kinds, every one derived from
 a recorded structure (the graph is computed against the record, never asserted
 beside it):
 
   * **keystone** -- a keystone disperses into its members (quartets)
-  * **kin**      -- members crystallised in the same lattice (the map's
-                    synonym-side: it records no synonym lists; its kinship is
-                    co-crystallisation, and its doublets live in the readings)
+  * **kin**      -- members crystallised in the same lattice (kinship as
+                    co-crystallisation)
   * **pole**     -- a member and the axis poles of its grid cell (position)
   * **polarity** -- the antonym pairs: every quartet axis, and the root pairs
                     of the 2 layer (the cut)
   * **thread**   -- consecutive words of a signal thread (the walked path)
+  * **synonym**  -- the nearness links of the synonym web (each carrying its
+                    differentia: nearness recorded, identity never claimed)
 
 **Nodes of importance**: highly interlocked meaning. Importance is measured,
 never asserted -- *interlock* is a node's connection count (degree), *depth*
@@ -32,9 +33,10 @@ from itertools import combinations
 
 from .polarity import Polarities
 from .quartet import Quartets
+from .synonym import Synonyms
 from .thread import Threads, corpus_texts, token_count, _present, _tokens
 
-EDGE_KINDS = ("keystone", "kin", "pole", "polarity", "thread")
+EDGE_KINDS = ("keystone", "kin", "pole", "polarity", "thread", "synonym")
 
 
 @dataclass(frozen=True)
@@ -122,8 +124,10 @@ def _norm(word: str) -> str:
 
 
 def build_graph(quartets: Quartets, threads: Threads,
-                polarities: Polarities | None = None) -> MeaningGraph:
-    """Read the graph off the record: lattices, threads, and the 2 layer."""
+                polarities: Polarities | None = None,
+                synonyms: "Synonyms | None" = None) -> MeaningGraph:
+    """Read the graph off the record: lattices, threads, the 2 layer, and the
+    synonym web."""
     edges: dict[tuple[str, str, str], Edge] = {}
 
     def add(a: str, b: str, kind: str, source: str) -> None:
@@ -154,6 +158,10 @@ def build_graph(quartets: Quartets, threads: Threads,
     if polarities is not None:
         for p in polarities.pairs:
             add(p.positive, p.negative, "polarity", p.id)
+
+    if synonyms is not None:
+        for l in synonyms.links:
+            add(l.a, l.b, "synonym", l.id)
 
     graph = MeaningGraph()
     for e in edges.values():
