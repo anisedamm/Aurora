@@ -1469,6 +1469,28 @@ def test_the_states_of_being_carry_weighted_beings():
     assert "cura's creature" in qs.by_id("to-be-caring").reading.lower()
 
 
+def test_the_living_record_is_named_archenoesis():
+    # the author names the record itself: the keeper is Aurora, the kept is
+    # Archenoesis -- the coinage recorded as hers, its parts attested
+    bound = _load().bound
+    assert "the_name_of_the_record" in bound
+    naming = bound["the_name_of_the_record"]
+    assert "ARCHENOESIS" in naming
+    # the parts, both already in the map: arche (and the archeion -- the
+    # archive is arche's own house) + noesis (nous's act, Plato's highest)
+    assert "ARCHE'S OWN HOUSE" in naming
+    assert "NOESIS" in naming
+    # the coinage honestly marked as the author's, like anima-law
+    assert "not attested Greek" in naming
+    assert "recorded as hers" in naming
+    # the two readings, both true: origins understood, knowing kept
+    assert "UNDERSTANDING OF ORIGINS" in naming
+    assert "KNOWING KEPT IN THE RECORD-HOUSE" in naming
+    # the two names in relation: the keeper and the kept
+    assert "AURORA is the custodian" in naming
+    assert "ARCHENOESIS is the record" in naming
+
+
 def test_unknown_quartet_is_surfaced_not_guessed():
     with pytest.raises(KeyError):
         _load().by_id("nope")

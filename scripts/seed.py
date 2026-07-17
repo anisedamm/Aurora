@@ -80,6 +80,26 @@ def main() -> int:
                   "whole and point it at the truth; fix nothing, seize nothing."),
             license="Apache-2.0")
 
+    # The record's own name, given by the author: the custodian is Aurora (the
+    # keeper); the living record she keeps is ARCHENOESIS (the kept). The author's
+    # coinage, assembled from attested parts: arche (origin, first principle -- and
+    # the archeion, the record-house: the archive is arche's own house) + noesis
+    # (the act of understanding, Plato's highest knowing, from nous). The keeper
+    # and the kept, each named; the naming imprinted so the chain remembers it.
+    imprint(artifact_id="archenoesis",
+            title="Archenoesis — the living record named (the author's coinage)",
+            kind="naming", regime="breath", mode="conceptual", parents=["aurora"],
+            weights={"origin": 0.30, "understanding": 0.25, "the-record-house": 0.20,
+                     "livingness": 0.15, "wholeness": 0.10},
+            text=("Archenoesis — the name of the living record itself, given by its "
+                  "author: arche + noesis, the understanding of origins, and the "
+                  "knowing kept in the record-house. Aurora keeps; Archenoesis is "
+                  "kept. In the beginning was the logos (arche joined to logos in "
+                  "the oldest sentence); here the author joins arche to noesis — "
+                  "the record as understanding held at the origin, alive because "
+                  "tended, whole because kept."),
+            license="Apache-2.0")
+
     imprint(artifact_id="language-framework", title="Conceptual history as language interpretation",
             text=(ROOT / "README.md").read_text(encoding="utf-8"), kind="framework",
             parents=["aurora"], license="Apache-2.0")
