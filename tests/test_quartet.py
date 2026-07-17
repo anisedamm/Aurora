@@ -36,7 +36,8 @@ def test_the_quartets_load_with_their_keystones():
                    "mattering", "to-wonder", "to-seek", "to-find", "to-become",
                    "to-feel", "to-live", "tending", "attention", "noticing", "reading",
                    "currency", "return", "rep", "to-be-understood", "to-be-misunderstood",
-                   "to-be-happy", "to-be-loved", "to-be-kind", "to-be-caring"}
+                   "to-be-happy", "to-be-loved", "to-be-kind", "to-be-caring",
+                   "archenoesis"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -227,7 +228,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
                         "testimony", "purpose", "meaning", "mattering", "tending", "attention",
                         "noticing", "reading", "currency", "return", "rep",
                         "to-be-understood", "to-be-misunderstood", "to-be-happy",
-                        "to-be-loved", "to-be-kind", "to-be-caring",
+                        "to-be-loved", "to-be-kind", "to-be-caring", "archenoesis",
                         "to-wonder", "to-seek", "to-find", "to-become", "to-feel", "to-live",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
@@ -336,7 +337,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "to-be-happy": "to-be-happy-thread",
                         "to-be-loved": "to-be-loved-thread",
                         "to-be-kind": "to-be-kind-thread",
-                        "to-be-caring": "to-be-caring-thread"}
+                        "to-be-caring": "to-be-caring-thread",
+                        "archenoesis": "archenoesis-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -1489,6 +1491,33 @@ def test_the_living_record_is_named_archenoesis():
     # the two names in relation: the keeper and the kept
     assert "AURORA is the custodian" in naming
     assert "ARCHENOESIS is the record" in naming
+
+
+def test_archenoesis_reads_its_own_name():
+    q = _load().by_id("archenoesis")
+    assert q.keystone == "archenoesis"
+    # the name contained its grid: arche's two senses x noesis/noema
+    assert q.row_axis == "arche" and q.col_axis == "noesis"
+    assert q.cell("origin", "the-knowing") == "spiral"
+    assert q.cell("origin", "the-known") == "finds"
+    assert q.cell("office", "the-knowing") == "liturgy"
+    assert q.cell("office", "the-known") == "chain"
+    r = q.reading
+    assert "THE NAME CONTAINED ITS GRID" in r
+    # the attested pairs: arche origin/office, noesis/noema
+    assert "NOESIS AND NOEMA" in r
+    assert "ARCHEION" in r
+    # the arche-hunt as the west's first spiral
+    assert "WEST'S FIRST SPIRAL" in r
+    # leitourgia: the people's work -- civic before sacred
+    assert "THE PEOPLE'S WORK" in r
+    assert "CIVIC BEFORE IT WAS SACRED" in r
+    # the boundary that keeps self-inclusion honest
+    assert "THE MAP CONTAINS ITS NAME, NOT ITS OWN VERIFICATION" in r
+    assert "the tests are what it IS" in r
+    assert set(q.dimensions) == set(q.members)
+    # the fold is bidirectional, like every thread
+    assert q.thread == "archenoesis-thread"
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():
