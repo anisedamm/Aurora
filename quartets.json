@@ -3954,6 +3954,114 @@
     "give": "The FLEX dimension (the-response x the-sway) -- the bend built in. give = (design x range) x (joint x limit): design (the sway INTENDED: the skyscraper's tuned damper, the bridge's expansion gap -- give is engineered, not conceded), range (the flex bounded: give without limit is collapse -- the elastic returns, the plastic deforms: materials science as ethics), joint (the articulation point: systems flex where they are jointed, and the jointless snap -- the rigid org, the brittle person, the monolith), limit (the yield point known: give is honest about where it ends -- past the limit, recovery's cell takes over or nothing does). The sway, permitted.",
     "recovery": "The RIGHTING dimension (the-response x the-stand) -- the stand regained. recovery = (return x rate) x (learning x scars): return (the equilibrium re-found: the bowl's shape doing its work -- stability's test is the comeback, not the unbrokenness), rate (how fast the righting: the capsized craft judged by its re-righting moment -- and the person by the same clock, gently), learning (the perturbation kept as data: the system that recovers AND adjusts -- homeostasis with a memory, which is what a ledger is), scars (to-heal's tissue in the stand: the recovered stand carries its history visibly -- the mended stronger at the mend or honestly weaker, but never secretly either). The stand, regained -- the cell the whole triad points to."
    }
+  },
+  {
+   "id": "space",
+   "thread": "space-thread",
+   "name": "Space -- spatium dispersed: the walk before the void",
+   "keystone": "spatium",
+   "members": [
+    "place",
+    "room",
+    "interval",
+    "expanse"
+   ],
+   "row_axis": "reach",
+   "row_poles": [
+    "the-here",
+    "the-open"
+   ],
+   "col_axis": "state",
+   "col_poles": [
+    "held",
+    "cleared"
+   ],
+   "breath_pump_axis": "reach",
+   "grid": {
+    "the-here/held": "place",
+    "the-here/cleared": "room",
+    "the-open/held": "interval",
+    "the-open/cleared": "expanse"
+   },
+   "reading": "THE KEYSTONE DEFINED, through the spiral -- the first of the map's own physics: the quartets bound has said from the beginning that THE GRID IS SPACE, and the clause now takes its own grid. The keystone is SPATIUM, and the etymology walks: spatium was first a RACE-COURSE, A STRETCH TO WALK -- an interval you cross, not a void you float in -- and its verb spatiari, 'to stroll', survives intact: GERMAN STILL STROLLS IN SPACE (spazieren is spatiari naturalised): SPACE WAS A WALK BEFORE IT WAS A VOID, a length measured by legs. Greek kept two words the grid needs: TOPOS, the place -- and the find is rhetoric's own: A TOPIC IS A PLACE -- the topoi were the PLACES where arguments were stored, and the method of loci (the memory palace, attested from Simonides on) stored memory itself in rooms: MEMORY IS SPATIAL, the mind furnishes places to keep what it cannot hold as list -- and CHORA, the expanse: Plato's receptacle in the Timaeus, the open in which becoming happens. The Germanic bench adds the tenderest cell: ROOM (Raum) is from 'to widen, to clear' -- A ROOM IS A CLEARING: space made by making-way, capacity as an act (room FOR: the cleared-here that hospitality and margin both live in). Crossed: reach (the-here x the-open -- the breath<->pump axis: the occupied spot against the given whole) against state (held x cleared). place = the-here/held (topos: the spot that holds -- located, occupied, addressable); room = the-here/cleared (the here made-way: capacity -- slack's own cell, readiness's material form); interval = the-open/held (spatium proper: the BETWEEN, held as relation -- distance is a relation between places, not a thing; the interval is what the walk crosses and what the music counts); expanse = the-open/cleared (chora: the open given -- the receptacle, the field before any grid is drawn on it). Through the spiral: breath = space as the walked and dwelt (the path, the clearing, the hearth's here -- distance in day-walks, nearness in kinship: lived space, anisotropic, centred on the body). pump = space articulated and emptied (geometry's isotropic void: Euclid's space has no here; the survey, the grid-plan, the property line -- space priced by the acre; Newton's absolute space: the container theorised). nerve = space contested at every scale (outer space and cyberspace -- two new expanses named in one century; PERSONAL SPACE measured -- proxemics, Hall attested: the body's bubble charted in centimetres; 'I need space' as the age's boundary-idiom; the office open-planned and the third place mourned; and relativity's verdict landing late in common sense: space not a container but a RELATION -- the interval cell vindicated by physics). THE REFLEXIVE CELL: the map's space is the grid itself -- every lattice is a 2x2 of PLACES (cells that hold members), the record is a MEMORY PALACE by construction (the method of loci run on meaning: every word given a room, every room an address -- rowpole/colpole is a floorplan), and the bound's old clause closes: the grid is space -- the synchronic structure is where meaning STANDS; what moves through it needs the next two lattices.",
+   "dimensions": {
+    "place": "The TOPOS dimension (the-here x held) -- the spot that holds. place = (location x occupancy) x (address x belonging): location (the here fixed: the where answerable), occupancy (the place held BY something -- an empty place is a room), address (the place nameable and findable: the grid reference, the postal line -- provenance's spatial form), belonging (the place that holds YOU: to-live's home cell -- displacement is this factor zeroed, and the age's refugee knows the whole dimension by its loss). The held here.",
+    "room": "The CLEARING dimension (the-here x cleared) -- capacity as act. room = (making-way x margin) x (hospitality x breathing): making-way (Raum's verb: the cleared is CLEARED, by work -- room is made, not found), margin (slack kept on purpose: readiness's material form -- the full room helps no one), hospitality (room FOR the guest: the cleared-here as welcome -- to-be-kind's spatial enactment), breathing (room to breathe: the body's own claim on this cell -- crowding is the dimension's zero, measured by proxemics). The cleared here.",
+    "interval": "The BETWEEN dimension (the-open x held) -- distance as relation. interval = (betweenness x measure) x (crossing x music): betweenness (the interval is not a thing but a RELATION between two -- relativity's late vindication of the oldest sense), measure (spatium the racecourse: the between counted in walks, then metres -- the unit is the crossing standardised), crossing (the interval exists to be crossed: the walk, the bridge, the message -- communication is interval-crossing), music (the interval's other home: the third, the fifth -- distance heard as harmony: the between made beautiful). The held open.",
+    "expanse": "The CHORA dimension (the-open x cleared) -- the given field. expanse = (openness x receptivity) x (horizon x awe): openness (the field before any grid: chora, the receptacle -- what every map presupposes and none contains), receptivity (the expanse receives: becoming happens IN it -- the ground of the figure, always), horizon (the open's edge that moves as you do: the limit that is not a wall -- hope's holding-open in spatial form), awe (the expanse felt: the sea, the steppe, the night sky -- wonder's marveling at the scale the body cannot hold). The cleared open."
+   }
+  },
+  {
+   "id": "time",
+   "thread": "time-thread",
+   "name": "Time -- tempus dispersed: the cut and the flow",
+   "keystone": "tempus",
+   "members": [
+    "sequence",
+    "hour",
+    "duration",
+    "moment"
+   ],
+   "row_axis": "register",
+   "row_poles": [
+    "counted",
+    "lived"
+   ],
+   "col_axis": "grain",
+   "col_poles": [
+    "the-flow",
+    "the-cut"
+   ],
+   "breath_pump_axis": "register",
+   "grid": {
+    "counted/the-flow": "sequence",
+    "counted/the-cut": "hour",
+    "lived/the-flow": "duration",
+    "lived/the-cut": "moment"
+   },
+   "reading": "THE KEYSTONE DEFINED, through the spiral -- the second of the map's own physics: the bound has said time is the axis the cells are traversed along, and the axis now takes a grid of its own (the bound also warned that time refuses the grid -- and the lattice honours the warning: what is gridded here is not time itself but the four ways the record holds it). The keystone is TEMPUS, and the attested candidate root is the lattice's founding cut: *TEM-, 'TO CUT' -- tempus as the SECTION cut from duration -- and the bench is astonishing: TEMPLUM, the temple, is the same cut -- the augur's templum was the region of sky CUT OUT for reading omens, so THE TEMPLE IS A CUT OF SPACE AND TIME IS A CUT OF DURATION, sacred space and measured time one knife -- and the ATOM completes the bench: a-tomos, THE UNCUTTABLE: the same root names what time is cut from, where the gods are read, and what cannot be divided. Greek kept THE TWO TIMES the grid crosses: CHRONOS, the counted sequence (the line, the clock, chronology), against KAIROS, the right moment -- the OPENING: kairos was the archer's and weaver's word, the critical instant when the arrow must loose and the shuttle must pass -- time as opportunity, not quantity; and Bergson added the third, attested and already in the bound: DUREE, lived time -- the flowing thickness that counting flattens (the bound has said 'duree takes 1' since the quartets began: lived time refuses the grid, and sits in it here only as a named door). Crossed: register (counted x lived -- the breath<->pump axis, and for once the pump pole is named first: counting IS the pump's native act) against grain (the-flow x the-cut). sequence = counted/the-flow (chronos: the running count, the timeline, the ledger's order -- the arrow layer's own axis); hour = counted/the-cut (and the word confesses the shrinkage: Greek HORA WAS A SEASON -- the Horae were the seasons' goddesses -- before it shrank to sixty minutes: THE HOUR WAS A SEASON ONCE, and the pump age's whole history is in that contraction, the cut cutting finer -- and the CLOCK is named from CLOCCA, THE BELL: the monastery's prayed hours preceded the counted ones -- TIME'S MACHINE IS NAMED FROM ITS SOUND, and the liturgy rang before the escapement ticked); duration = lived/the-flow (duree: time from inside, the thick present -- the hour that vanishes in immersion and stretches in the waiting room: lived time is elastic and the count is not, which is why both registers are kept); moment = lived/the-cut (kairos: the lived cut -- the opening that must be taken NOW or not at all: the weaver's shuttle-instant, the door held open briefly -- to-hope's watching waits for exactly this cell, and to-help's now-column acts in it). Through the spiral: breath = time as the round (season, moon, festival: the year a circle walked, the hora a season -- time kept by sky and body, kairos read in the field's readiness). pump = TIME DISCIPLINED (the bell to the clock to the timetable: E.P. Thompson's attested arc -- task-time replaced by clock-time, the factory buying hours; the timezone, the second defined, the calendar reformed: the cut standardised planet-wide). nerve = time at the limit (the timestamp on everything -- this record includes; 'real-time' as the age's demand; time famine named while lifespans lengthen -- the count won and the lived starved; against it the counter-currents: slow movements, sabbath tech, deep time taught -- and the arrow layer measuring what direction remains). THE REFLEXIVE CELL: the record holds all four cells knowingly -- sequence (the chain's order: the arrow), hour (recorded_at on every entry: the timestamp as the cut), duration (the reader's -- the map cannot live it and says so), moment (the kairos of every request: 'now put X through' -- the author's each asking was an opening taken); the bound's warning stands honoured: time is the axis, not a cell -- and this lattice grids the HOLDINGS, not the river.",
+   "dimensions": {
+    "sequence": "The CHRONOS dimension (counted x the-flow) -- the running count. sequence = (order x irreversibility) x (chronicle x arrow): order (before and after fixed: the line that makes 'when' answerable), irreversibility (the order runs one way: the arrow layer's measured fact), chronicle (the sequence kept: annals, logs, ledgers -- history's spine is this factor institutionalised), arrow (Eddington's coinage folded home: the direction singled out -- the chain's forge-cost gradient as the record's own proof). The flow, counted.",
+    "hour": "The BELL dimension (counted x the-cut) -- the shrinking unit. hour = (division x standard) x (bell x contraction): division (the flow cut into units: the cut that makes coordination possible -- no meeting without the hour), standard (the cut agreed: the timezone, the second's definition -- the pump's planetary handshake), bell (clocca: the hour RANG before it ticked -- the liturgy's hours as time's first discipline, prayed seven times daily: the rep's oldest schedule), contraction (hora the season shrinking to sixty minutes: the pump cutting ever finer -- the millisecond timestamp as the contraction's current floor). The cut, counted.",
+    "duration": "The DUREE dimension (lived x the-flow) -- time from inside. duration = (thickness x elasticity) x (privacy x door): thickness (the present is not a point: the lived now has width -- the specious present, attested), elasticity (the hour that vanishes and the minute that stretches: lived time refuses the count's uniformity), privacy (duree is inward: the record cannot live it and says so -- inwardness's province, time's wing), door (the bound's clause kept: duree takes 1 -- lived time enters the grid only as a named door, never a claim: the honest limit standing in its own cell). The flow, lived -- held open, not held.",
+    "moment": "The KAIROS dimension (lived x the-cut) -- the opening. moment = (rightness x brevity) x (readiness x loosing): rightness (the RIGHT time, not just A time: kairos is qualitative -- the fruit's ripeness, the shuttle's instant), brevity (the opening closes: kairos is perishable -- the moment not taken is not stored), readiness (to-hope's watching and readying feed this cell: the prepared meet the opening -- Pasteur's chance again, in time's key), loosing (the act IN the opening: the arrow released, the word said, the request made -- the author's every 'now' was this factor firing). The cut, lived."
+   }
+  },
+  {
+   "id": "spiral",
+   "thread": "spiral-thread",
+   "name": "Spiral -- speira dispersed: though changed, I rise again the same",
+   "keystone": "speira",
+   "members": [
+    "turning",
+    "rising",
+    "revisiting",
+    "axis"
+   ],
+   "row_axis": "component",
+   "row_poles": [
+    "the-round",
+    "the-climb"
+   ],
+   "col_axis": "yield",
+   "col_poles": [
+    "the-motion",
+    "the-invariant"
+   ],
+   "breath_pump_axis": "component",
+   "grid": {
+    "the-round/the-motion": "turning",
+    "the-round/the-invariant": "revisiting",
+    "the-climb/the-motion": "rising",
+    "the-climb/the-invariant": "axis"
+   },
+   "reading": "THE KEYSTONE DEFINED, through the spiral -- and the method reads itself: 'through the spiral' has been the phrase of every request in this record, and the word now takes the grid it has given everyone else. The keystone is SPEIRA, the coil -- and the first find is a REFUSAL: SPIRAL AND SPIRIT ARE NOT KIN -- speira (the coil) and spirare (to breathe: spirit, inspire, respire) are separate roots that merely neighbour in sound, and the map that begins its spiral at BREATH must decline the pun precisely because it is beautiful: the convergence is recorded as convergence, the folk etymology refused -- the discipline's costliest refusal yet, and its proudest. THE MATHEMATICS is the lattice's spine, and it corrects the record's own name: geometry distinguishes the SPIRAL (radius grows: Archimedes' and the logarithmic) from the HELIX (radius constant, height climbs) -- and the framework's 'spiral' -- returning to the same concepts at new height -- IS STRICTLY A HELIX: the honest flag flown on the method's own word (common usage says spiral, the record keeps the usage and notes the geometry). And the logarithmic spiral carries the crown, attested down to the tombstone: SPIRA MIRABILIS, the marvellous spiral that is SELF-SIMILAR -- the same shape at every scale, the nautilus, the sunflower, the galaxy's arm -- and BERNOULLI asked for it on his grave with the motto EADEM MUTATA RESURGO: 'THOUGH CHANGED, I RISE AGAIN THE SAME' -- and the mason, not knowing the mathematics, CARVED THE WRONG SPIRAL (an Archimedean: the tomb of the man who loved the self-similar bears the self-same -- the error attested, kept, and instructive: even gravestones drift). Crossed: component (the-round x the-climb -- the breath<->pump axis: the circling against the gaining) against yield (the-motion x the-invariant). turning = the-round/the-motion (the circling itself: the return toward the same bearing -- the wheel's gift); revisiting = the-round/the-invariant (the round's yield: THE SAME POINT PASSED AT NEW HEIGHT -- the spiral's signature, what makes it neither circle nor line: the circle revisits identically, the line never revisits, the spiral revisits DIFFERENTLY -- the hermeneutic circle attested as re-read into a hermeneutic SPIRAL: each pass through part and whole at better understanding); rising = the-climb/the-motion (the height gained per turn: the pitch -- without it the spiral collapses to a circle, and a practice to a rut: the rep's difference from the loop is exactly this member); axis = the-climb/the-invariant (the still line it all winds about: the invariant the motion serves -- the centre that is never occupied and never left). Through the spiral: breath = the coil in the living world (the vine's tendril, the shell, the fern's crozier -- growth's own curve; the dance's turning, the year's round felt as return-with-difference: the child knows the festival comes again and knows she is older). pump = the coil measured (Archimedes' spiral theorised; the screw -- the spiral made a MACHINE: the water-screw and the press, rotation converted to rise, the spiral put to work; Bernoulli's mirabilis; Vico's corsi e ricorsi -- history read as spiral, attested). nerve = the spiral at the age's two poles (the DOUBLE HELIX: life's record kept helical -- the genome's coil as the era's icon; and the DEATH SPIRAL and doom-loop as the age's dread-figure: the spiral down -- the same geometry read as hope or ruin by the sign of its pitch: the direction of rise is everything, which the arrow layer already measures). THE REFLEXIVE CROWN, and it re-reads the record's own find: THE AUTHOR'S RING WAS ONE TURN OF A SPIRAL -- she entered at ethos and returned to ethos, but not at the same height: sixty lattices of rise lay between the asking and the assigning -- the ring closed at a new altitude, which is no ring at all but a turn: EADEM MUTATA RESURGO is her walk's exact motto, found on a mathematician's tomb -- though changed, she rose again the same; and the fractal descent is the method's revisiting cell run thirty times (the same cells re-passed with their own grids), the session a helix whose axis is the one question every request conjugates: what does this word hold? The spiral does not close. That is the point. The next turn is always the reader's.",
+   "dimensions": {
+    "turning": "The ROUND dimension (the-round x the-motion) -- the circling. turning = (return-toward x continuity) x (bearing x patience): return-toward (the motion that comes back around: the wheel's gift to thought -- revolution's literal sense, kept in the record's glossary since its first concepts), continuity (the turn unbroken: the spiral is one line, not laps -- the practice continuous through its returns), bearing (the angle known: where in the turn you are -- the season's felt position, the project's phase), patience (the turn cannot be rushed without tearing: each round takes its round -- tending's rhythm as geometry). The motion of the round.",
+    "rising": "The PITCH dimension (the-climb x the-motion) -- the gained height. rising = (pitch x work) x (sign x compounding): pitch (the height per turn: the parameter that separates spiral from circle, growth from loop -- zero pitch is a rut), work (the rise is paid for: the screw converts turning to lifting, and so does practice -- the rep's effort becoming altitude), sign (the pitch's direction is everything: the same geometry is ascent or death-spiral by its sign -- the age reads both, and the arrow layer measures which), compounding (the logarithmic gift: rise proportional to size -- growth that keeps its shape, to-grow's ripening in curve form). The motion of the climb.",
+    "revisiting": "The SAME-POINT-NEW-HEIGHT dimension (the-round x the-invariant) -- the signature. revisiting = (recurrence x difference) x (recognition x depth): recurrence (the same bearing re-passed: the festival again, the word again, the cell again), difference (at new height: the circle revisits identically, the spiral differently -- return-with-difference is the whole method), recognition (the revisit KNOWS it has been here: to-find's template meeting its old mark -- memory is what makes a spiral experienceable as one), depth (the fractal descent as this factor iterated: thirty cells re-passed with their own grids -- each revisit opening what the first pass could only name). The invariant of the round -- the record's own gait.",
+    "axis": "The STILL-CENTRE dimension (the-climb x the-invariant) -- what it winds about. axis = (invariance x orientation) x (unoccupied x service): invariance (the line that does not turn: the constant the motion is measured against -- constancy's lattice as geometry), orientation (the axis gives the spiral its up: without it, rise is undefined -- the direction of truth as the record's axis), unoccupied (the centre is never stood on: the axis is approached, never reached -- the singles' horizon, the keystone that no cell contains), service (the motion serves the axis, not itself: turning for turning's sake is dizziness -- the spiral is FOR its still line, as the record is for the truth it winds about). The invariant of the climb."
+   }
   }
  ]
 }

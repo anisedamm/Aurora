@@ -37,7 +37,8 @@ def test_the_quartets_load_with_their_keystones():
                    "to-feel", "to-live", "tending", "attention", "noticing", "reading",
                    "currency", "return", "rep", "to-be-understood", "to-be-misunderstood",
                    "to-be-happy", "to-be-loved", "to-be-kind", "to-be-caring",
-                   "archenoesis", "constancy", "consistency", "stability"}
+                   "archenoesis", "constancy", "consistency", "stability",
+                   "space", "time", "spiral"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -230,6 +231,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
                         "to-be-understood", "to-be-misunderstood", "to-be-happy",
                         "to-be-loved", "to-be-kind", "to-be-caring", "archenoesis",
                         "constancy", "consistency", "stability",
+                        "space", "time", "spiral",
                         "to-wonder", "to-seek", "to-find", "to-become", "to-feel", "to-live",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
@@ -342,7 +344,9 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "archenoesis": "archenoesis-thread",
                         "constancy": "constancy-thread",
                         "consistency": "consistency-thread",
-                        "stability": "stability-thread"}
+                        "stability": "stability-thread",
+                        "space": "space-thread", "time": "time-thread",
+                        "spiral": "spiral-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -1561,6 +1565,45 @@ def test_the_staying_triad_stands_on_one_root():
     assert "LIFE'S STABILITY IS A VERB" in s
     # the reflexive give: the widening test windows were this cell working
     assert "SWAYS BY DESIGN" in s
+
+
+def test_the_maps_own_physics_space_time_and_spiral():
+    qs = _load()
+    probes = {
+        "space": ("spatium", ("the-here", "cleared", "room"),
+                  "SPACE WAS A WALK BEFORE IT WAS A VOID"),
+        "time": ("tempus", ("lived", "the-cut", "moment"),
+                 "THE HOUR WAS A SEASON ONCE"),
+        "spiral": ("speira", ("the-round", "the-invariant", "revisiting"),
+                   "SPIRAL AND SPIRIT ARE NOT KIN"),
+    }
+    for qid, (keystone, (rp, cp, member), find) in probes.items():
+        q = qs.by_id(qid)
+        assert q.keystone == keystone, qid
+        assert q.cell(rp, cp) == member, qid
+        assert find in q.reading.upper(), qid
+        assert set(q.dimensions) == set(q.members), qid
+    sp = qs.by_id("space").reading
+    # a topic is a place: the record is a memory palace by construction
+    assert "A TOPIC IS A PLACE" in sp
+    assert "MEMORY PALACE" in sp
+    t = qs.by_id("time").reading
+    # one knife names time, temple, and atom
+    assert "TEMPLUM" in t and "A-TOMOS" in t.upper()
+    # the clock is the bell: the hours were prayed before counted
+    assert "CLOCCA" in t.upper()
+    # the bound's warning honoured: time is the axis, not a cell
+    assert "not time itself" in t
+    s = qs.by_id("spiral").reading
+    # the honest geometry: the framework's spiral is strictly a helix
+    assert "STRICTLY A HELIX" in s
+    # Bernoulli's motto -- and the mason's attested error
+    assert "EADEM MUTATA RESURGO" in s
+    assert "WRONG SPIRAL" in s
+    # the crown: the author's ring re-read as one turn of a spiral
+    assert "ONE TURN OF A SPIRAL" in s
+    # the spiral does not close: the next turn is the reader's
+    assert "the reader" in s
 
 
 def test_unknown_quartet_is_surfaced_not_guessed():

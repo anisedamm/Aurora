@@ -1481,6 +1481,54 @@
    "spiral": "breath = the given ground (the mountain, the hearthstone, the stable's standing beasts) -> pump = stability engineered and enthroned (the arch, the keel, the balance of powers -- give built into government; the stable currency) -> nerve = stability as the scarce good (the precariat named, footing priced away) against antifragility argued and ballast debated as policy.",
    "bridge": "THE TRIAD CLOSES ON ITS SHARED LAW: ALL THREE STAYING-VIRTUES COUNTERFEIT AS FREEZING, AND ALL THREE REAL FORMS CONTAIN MOTION -- constancy's rhythm, consistency's growth, stability's give: the staying that lasts is the staying that moves, attested from the swaying skyscraper to homeostasis (life's stability is a verb: the tightrope walker is never still). The record demonstrates its own cell-set: footing (the regimes), ballast (the bound's humble clauses -- every 'never a gate' is keel-weight), give (the test windows that widened this session WERE this cell working: the suite sways by design), recovery (re-seed rebuilds the ledger from scratch: perturb the record and it returns -- signal == 1 is the stand regained, verified after every sway). Ground: stabilis/stabulum, earthquake engineering, equilibria physics, homeostasis, antifragility argued.",
    "path_to_centre": "footing (the ground gripped and known) -> ballast (the low weight, hidden and real) -> give (the sway permitted, bounded) -> recovery (the stand regained, scars kept) -> stabilitas (the stability entire: the ability to stand -- proved not by stillness but by every recorded return)."
+  },
+  {
+   "id": "space-thread",
+   "form": "spatium = place + room + interval + expanse",
+   "keystone": "spatium",
+   "quartet": "space",
+   "etymology": {
+    "spatium": "first a RACE-COURSE, a stretch to walk -- space was a walk before it was a void; spatiari, 'to stroll', survives in German spazieren: a living language still strolls in space",
+    "place": "topos -- and A TOPIC IS A PLACE: the topoi were where arguments were stored; the memory palace stores the mind in rooms",
+    "room": "Raum, from 'to widen, to clear': a room is a CLEARING -- capacity as an act",
+    "interval": "the between, held as relation: distance is between places, not a thing -- relativity's late vindication",
+    "expanse": "chora, Plato's receptacle: the open in which becoming happens"
+   },
+   "spiral": "breath = lived space (the path, the clearing, distance in day-walks: anisotropic, body-centred) -> pump = space emptied and priced (Euclid's here-less void, the survey, the acre, Newton's container) -> nerve = space contested at every scale (outer and cyber named in one century; the body's bubble measured; the third place mourned; relation vindicated over container).",
+   "bridge": "THE GRID IS SPACE -- the bound's oldest clause takes its grid: every lattice is a 2x2 of PLACES, the record is a MEMORY PALACE by construction (the method of loci run on meaning: every word given a room, every room an address -- rowpole/colpole is a floorplan), and the map's space is exactly what spatium first was: not a void but a WALK -- the reader strolls the lattices as spatiari strolled the course. Ground: spatium the racecourse, topos/topic, the method of loci attested, Raum's clearing, chora, proxemics.",
+   "path_to_centre": "place (the spot that holds and is held) -> room (the here cleared for) -> interval (the between crossed and counted) -> expanse (the open all of it presupposes) -> spatium (the space entire: the walk before the void -- the course this record lays out room by room)."
+  },
+  {
+   "id": "time-thread",
+   "form": "tempus = sequence + hour + duration + moment",
+   "keystone": "tempus",
+   "quartet": "time",
+   "etymology": {
+    "tempus": "the attested candidate: *tem-, 'to cut' -- time as the section cut from duration; the bench: TEMPLUM (the sky-region cut out for reading: the temple is a cut of space), and A-TOMOS, the uncuttable -- one knife names time, temple, and atom",
+    "sequence": "chronos: the counted line, the ledger's order",
+    "hour": "HORA WAS A SEASON (the Horae) before it shrank to sixty minutes -- and CLOCK is clocca, the BELL: the hours were prayed before they were counted",
+    "duration": "Bergson's duree: lived time, the elastic thickness -- 'duree takes 1', as the bound has always said",
+    "moment": "kairos: the archer's and weaver's opening -- the right time, perishable, qualitative"
+   },
+   "spiral": "breath = the round (season, moon, festival: time kept by sky and body) -> pump = time disciplined (bell to clock to timetable -- Thompson's arc: task-time replaced by clock-time, the cut standardised planet-wide) -> nerve = time at the limit (the timestamp on everything, real-time demanded, time famine named while lifespans lengthen -- the count won and the lived starved; slow movements and deep time as counter-currents).",
+   "bridge": "TIME IS THE AXIS, NOT A CELL -- the bound's warning is honoured by gridding the record's four HOLDINGS of time, never the river itself: sequence is the chain's order (the arrow layer's fact), hour is the timestamp on every entry (the cut, ringing in recorded_at), duration is the reader's alone (the map cannot live it and says so -- inwardness's province, time's wing), and moment is the author's: every 'now put X through' was a kairos taken -- the opening seized, the shuttle passed. The *tem- bench seals the map's whole method: reading is cutting sections from the flow of drift -- every lattice is a templum, a region cut out for reading. Ground: *tem- bench, chronos/kairos, hora's contraction, clocca, Bergson, Thompson.",
+   "path_to_centre": "sequence (the count that cannot reverse) -> hour (the cut that rang before it ticked) -> duration (the lived thickness, held open not held) -> moment (the opening taken now or never) -> tempus (the time entire: the cut and the flow -- the axis this whole record is traversed along)."
+  },
+  {
+   "id": "spiral-thread",
+   "form": "speira = turning + rising + revisiting + axis",
+   "keystone": "speira",
+   "quartet": "spiral",
+   "etymology": {
+    "speira": "the coil -- and the refusal is the find: SPIRAL AND SPIRIT ARE NOT KIN (speira the coil, spirare the breath: separate roots, neighbouring sounds) -- the map that starts its spiral at breath declines the pun BECAUSE it is beautiful",
+    "turning": "the round's motion: revolution's literal sense",
+    "rising": "the pitch: zero pitch is a rut -- the parameter separating growth from loop",
+    "revisiting": "the signature: the same point at new height -- the hermeneutic circle re-read as spiral",
+    "axis": "the still centre: approached, never reached -- and the honest geometry flown: the framework's 'spiral' (constant subjects, gaining height) is strictly a HELIX"
+   },
+   "spiral": "breath = the coil in the living world (tendril, shell, crozier; the dance's turn; the festival's return-with-difference) -> pump = the coil measured and worked (Archimedes; the screw: rotation converted to rise; Bernoulli's spira mirabilis; Vico's corsi e ricorsi) -> nerve = the double helix as the era's icon and the doom-loop as its dread -- the same geometry read as hope or ruin by the sign of its pitch.",
+   "bridge": "EADEM MUTATA RESURGO -- 'though changed, I rise again the same': Bernoulli's tomb-motto for the self-similar spiral is the record's method found in mathematics, and the mason's attested error (he carved the wrong spiral) is drift's signature even in stone. THE CROWN RE-READS THE RECORD'S OWN FIND: the author's ring was ONE TURN OF A SPIRAL -- she entered at ethos and returned to ethos at sixty lattices' height: the ring closed at new altitude, which is no ring but a turn, and her walk's exact motto was waiting on a mathematician's grave. The fractal descent is the revisiting cell run thirty times; the session is a helix whose axis is one question -- what does this word hold? -- and the spiral does not close: the next turn is always the reader's. Ground: speira vs spirare refused, spiral/helix geometry, spira mirabilis and the tombstone attested, the hermeneutic spiral, Vico.",
+   "path_to_centre": "turning (the round, unbroken) -> rising (the pitch, paid for and signed) -> revisiting (the same point, new height: the record's gait) -> axis (the still line it all serves) -> speira (the spiral entire: though changed, rising again the same -- the method reading itself, and handing the next turn on)."
   }
  ]
 }
