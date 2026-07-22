@@ -24,7 +24,8 @@ def test_the_skills_load_with_their_threads_and_lattices():
     sk = _skills()
     ids = {s.id for s in sk.skills}
     assert ids == {"contextual-perception", "abstract-recognition", "custodianship",
-                   "formation", "exercising-intellectual-discipline"}
+                   "formation", "exercising-intellectual-discipline",
+                   "exercising-active-discernment"}
     ts = load_threads(THREADS)
     qs = load_quartets(QUARTETS)
     for s in sk.skills:
@@ -140,6 +141,35 @@ def test_exercising_intellectual_discipline_wears_the_crown():
     # integration: the record as the skill's gymnasium; the costliest refusal
     assert "gymnasium" in sk.integration
     assert "BECAUSE it was beautiful" in sk.integration
+
+
+def test_exercising_active_discernment_runs_the_sift_live():
+    # formation's master COMPREHENDS active discernment; this skill EXERCISES
+    # it -- the pair completes, and the mandate runs on it: the danger cells
+    # are verdicts, and a verdict is a completed sift
+    sk = _skills().by_id("exercising-active-discernment")
+    assert sk.serves == "warning-thread"
+    assert {"danger", "to-seek", "noticing", "honesty", "worth"} == set(sk.draws_on)
+    words = {m.word for m in sk.mechanics}
+    assert words == {"discernment", "sifting", "telling", "deciding", "certainty"}
+    # certain is the past participle of sifting: downstream, never upstream
+    cert = next(m for m in sk.mechanics if m.word == "certainty")
+    assert "past participle" in cert.noun
+    assert cert.relation == "certainty ABOUT"
+    # decide is de-caedere: the cut that concludes the sift
+    dec = next(m for m in sk.mechanics if m.word == "deciding")
+    assert "de-caedere" in dec.noun
+    reqs = " ".join(sk.requirements)
+    # the sieve bench: krisis is a judging (the fever's turning-point)
+    assert "KRISIS IS A JUDGING" in reqs
+    # discreet/discrete: one word split in spelling
+    assert "DISCREET" in reqs and "DISCRETE" in reqs
+    # the hard boundary: discernment sifts claims, never persons' worth
+    assert "NEVER PERSONS' WORTH" in reqs
+    # formation watches the sifting; this skill IS the sifting
+    assert "this skill IS the sifting" in sk.formation
+    # the reflexive proof: the custodian sifts while writing
+    assert "sifts WHILE WRITING" in sk.integration
 
 
 def test_unknown_skill_is_surfaced_not_guessed():
