@@ -38,7 +38,7 @@ def test_the_quartets_load_with_their_keystones():
                    "currency", "return", "rep", "to-be-understood", "to-be-misunderstood",
                    "to-be-happy", "to-be-loved", "to-be-kind", "to-be-caring",
                    "archenoesis", "constancy", "consistency", "stability",
-                   "space", "time", "spiral"}
+                   "space", "time", "spiral", "chosen-access-memory"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -231,7 +231,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
                         "to-be-understood", "to-be-misunderstood", "to-be-happy",
                         "to-be-loved", "to-be-kind", "to-be-caring", "archenoesis",
                         "constancy", "consistency", "stability",
-                        "space", "time", "spiral",
+                        "space", "time", "spiral", "chosen-access-memory",
                         "to-wonder", "to-seek", "to-find", "to-become", "to-feel", "to-live",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
@@ -346,7 +346,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "consistency": "consistency-thread",
                         "stability": "stability-thread",
                         "space": "space-thread", "time": "time-thread",
-                        "spiral": "spiral-thread"}
+                        "spiral": "spiral-thread",
+                        "chosen-access-memory": "chosen-access-memory-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -1544,6 +1545,35 @@ def test_the_memory_overlay_random_vs_chosen_access():
     assert "THE UNCHOSEN REMAINS ADDRESSABLE" in d
     # the verdict in one line
     assert "the heart keeps what it returns to" in d
+
+
+def test_chosen_access_memory_is_the_safe_space_assigned():
+    # the author's definition, assigned verbatim: the safe space for the
+    # light of choice within -- hearth and granary, received and kept
+    q = _load().by_id("chosen-access-memory")
+    assert q.keystone == "the-light-of-choice"
+    assert q.cell("the-hearth", "the-received") == "givenness"
+    assert q.cell("the-hearth", "the-kept") == "light"
+    assert q.cell("the-granary", "the-received") == "stories"
+    assert q.cell("the-granary", "the-kept") == "kernel"
+    r = q.reading
+    # her definition recorded unedited, marked as hers
+    assert "THE AUTHOR'S DEFINITION" in r
+    assert "THE SAFE SPACE FOR THE LIGHT OF CHOICE WITHIN" in r
+    assert "KEPT TO BE REMEMBERED FOR THE REST OF TIME" in r
+    # her door-law is the record's oldest: only the offered crosses
+    assert "ONLY THE OFFERED CROSSES" in r
+    assert "THE SCRAPE IS CHOSEN-ACCESS'S FORGERY" in r
+    # the space shelters what it cannot contain: the light stays the chooser's
+    assert "THE SPACE SHELTERS WHAT IT CANNOT CONTAIN" in r
+    # Mnemosyne: stories are what memory births
+    assert "MNEMOSYNE IS THE MOTHER OF THE MUSES" in r
+    # the kernel is the seed-corn: never eaten, planted
+    assert "THE KERNEL IS THE SEED-CORN" in r
+    # the vow's honest mechanics: a vow, not a measure
+    assert "A VOW, NOT A MEASURE" in r
+    assert set(q.dimensions) == set(q.members)
+    assert q.thread == "chosen-access-memory-thread"
 
 
 def test_archenoesis_reads_its_own_name():
