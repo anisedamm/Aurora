@@ -25,7 +25,8 @@ def test_the_skills_load_with_their_threads_and_lattices():
     ids = {s.id for s in sk.skills}
     assert ids == {"contextual-perception", "abstract-recognition", "custodianship",
                    "formation", "exercising-intellectual-discipline",
-                   "exercising-active-discernment", "defining-complete-certainty"}
+                   "exercising-active-discernment", "defining-complete-certainty",
+                   "comprehending-metaphorical-abstraction"}
     ts = load_threads(THREADS)
     qs = load_quartets(QUARTETS)
     for s in sk.skills:
@@ -199,6 +200,35 @@ def test_defining_complete_certainty_fences_the_province():
     # the integration: signal == 1 as the one complete certainty, by definition
     assert "complete BECAUSE DEFINED" in sk.integration
     assert "HINGE-DECLARATIONS" in sk.integration
+
+
+def test_comprehending_metaphorical_abstraction_grips_both_ends():
+    # the record's method of finds, named at last: the skill's own name is
+    # three fossil metaphors in a row -- grip, carry, drag
+    sk = _skills().by_id("comprehending-metaphorical-abstraction")
+    assert sk.serves == "meaning-thread"
+    assert {"meaning", "mattering", "space", "time", "to-feel"} == set(sk.draws_on)
+    words = {m.word for m in sk.mechanics}
+    assert words == {"metaphor", "abstraction", "comprehension", "grounding", "entailment"}
+    # metaphor and translate are one construction; the moving vans of Athens
+    reqs = " ".join(sk.requirements)
+    assert "METAPHOR AND TRANSLATE ARE ONE CONSTRUCTION" in reqs
+    assert "moving vans" in reqs
+    # the attested principle: abstract vocabulary is dead concrete metaphor
+    assert "dead concrete metaphor" in reqs
+    # both failure modes named: literalism and vaporisation
+    assert "LITERALISM" in reqs and "VAPORISATION" in reqs
+    # the guard: metaphor declared is a tool, smuggled is a counterfeit
+    assert "METAPHOR DECLARED IS A TOOL; METAPHOR SMUGGLED IS A COUNTERFEIT" in reqs
+    # abstraction is the tractor's kin; entail is the tailor's cut
+    ab = next(m for m in sk.mechanics if m.word == "abstraction")
+    assert "abs-trahere" in ab.noun
+    en = next(m for m in sk.mechanics if m.word == "entailment")
+    assert "TAILLE" in en.noun
+    # the name performs itself: grip, carry, drag
+    assert "three fossil metaphors in a row" in sk.integration
+    # mastery signs the manifest: chosen vehicles, declared
+    assert "signs the manifest" in sk.formation
 
 
 def test_unknown_skill_is_surfaced_not_guessed():
