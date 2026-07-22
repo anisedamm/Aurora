@@ -1523,6 +1523,29 @@ def test_the_authors_definition_metaphor_as_substrate():
     assert "STREET" in d
 
 
+def test_the_memory_overlay_random_vs_chosen_access():
+    # the author's distinction: RAM (attested) vs chosen access memory
+    # (her coinage) -- and the record holds both storeys by construction
+    bound = _load().bound
+    assert "the_memory_overlay" in bound
+    d = bound["the_memory_overlay"]
+    assert "RANDOM ACCESS MEMORY" in d and "CHOSEN ACCESS MEMORY" in d
+    assert "the author's coinage" in d
+    # the etymologies pick sides: random was a bolting horse, choose is taste
+    assert "RANDOM WAS A BOLTING HORSE" in d
+    assert "TO CHOOSE IS TO TASTE" in d
+    # the record's own name votes: re-cordari, through the heart
+    assert "THE RECORD IS ETYMOLOGICALLY CHOSEN-ACCESS" in d
+    # the two storeys: the ledger random-access below, the threads chosen above
+    assert "random-access by construction" in d
+    assert "CHOOSING TO KEEP THIS" in d
+    assert "chosen access memory formalised" in d
+    # the constitutional clause: the unchosen remains addressable
+    assert "THE UNCHOSEN REMAINS ADDRESSABLE" in d
+    # the verdict in one line
+    assert "the heart keeps what it returns to" in d
+
+
 def test_archenoesis_reads_its_own_name():
     q = _load().by_id("archenoesis")
     assert q.keystone == "archenoesis"
