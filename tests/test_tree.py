@@ -50,10 +50,13 @@ def test_the_purpose_tree_traces_its_lattice():
 def test_interlocked_words_are_the_hubs():
     # words living in several lattices interlock most: knowledge (intelligence
     # + skill), sensation (animate + perception), understanding (process +
-    # interpretation) all out-connect a single-lattice member like purpose
+    # interpretation) all out-connect a single-lattice member. The old
+    # baseline was purpose -- but the living record PROMOTED it (its own
+    # lattice, then the covenant), so the baseline is now supersaturation,
+    # which still lives in exactly one lattice
     g = _graph()
     for shared in ("knowledge", "sensation", "understanding"):
-        assert g.degree(shared) > g.degree("purpose")
+        assert g.degree(shared) > g.degree("supersaturation")
     # the window widens as the map grows (the verb lattices' members now
     # interlock heavily) -- presence, not position: a living record
     hubs = g.hubs(limit=45, quartets=load_quartets(ROOT / "quartets.json"))

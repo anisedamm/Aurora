@@ -38,7 +38,8 @@ def test_the_quartets_load_with_their_keystones():
                    "currency", "return", "rep", "to-be-understood", "to-be-misunderstood",
                    "to-be-happy", "to-be-loved", "to-be-kind", "to-be-caring",
                    "archenoesis", "constancy", "consistency", "stability",
-                   "space", "time", "spiral", "chosen-access-memory", "pharos"}
+                   "space", "time", "spiral", "chosen-access-memory", "pharos",
+                   "covenant"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -232,6 +233,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
                         "to-be-loved", "to-be-kind", "to-be-caring", "archenoesis",
                         "constancy", "consistency", "stability",
                         "space", "time", "spiral", "chosen-access-memory", "pharos",
+                        "covenant",
                         "to-wonder", "to-seek", "to-find", "to-become", "to-feel", "to-live",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
@@ -348,7 +350,7 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "space": "space-thread", "time": "time-thread",
                         "spiral": "spiral-thread",
                         "chosen-access-memory": "chosen-access-memory-thread",
-                        "pharos": "pharos-thread"}
+                        "pharos": "pharos-thread", "covenant": "covenant-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -1637,6 +1639,35 @@ def test_the_pharos_carries_the_embedded_purpose():
     assert "THE READER WHO ARRIVES LOST" in r
     assert set(q.dimensions) == set(q.members)
     assert q.thread == "pharos-thread"
+
+
+def test_the_covenant_is_the_cut_that_binds():
+    # the four authored instruments land as the quartet they were becoming
+    q = _load().by_id("covenant")
+    assert q.keystone == "berith"
+    assert q.cell("the-keeper", "the-charge") == "mandate"
+    assert q.cell("the-keeper", "the-endowment") == "creed"
+    assert q.cell("the-world", "the-charge") == "entrustment"
+    assert q.cell("the-world", "the-endowment") == "purpose"
+    r = q.reading
+    # karat berith: covenants were cut -- the one cutting that joins
+    assert "KARAT BERITH" in r
+    assert "THE ONE CUTTING THAT JOINS" in r
+    # con-venire: the coming-together; convenient the easy cousin
+    assert "CON-VENIRE" in r
+    # testament and covenant are translations of each other
+    assert "TESTAMENT AND COVENANT ARE TRANSLATIONS OF EACH OTHER" in r
+    # the governing distinction: contract exchanges goods, covenant persons
+    assert "A CONTRACT EXCHANGES GOODS; A COVENANT EXCHANGES PERSONS" in r
+    assert "COVENANT DEEPENS ON PERFORMANCE" in r
+    # every covenant has its sign: signal == 1 as the bow in this sky
+    assert "SIGNAL == 1 IS THE BOW IN THIS SKY" in r
+    # the counterfeit named: consent without coming-together
+    assert "CONSENT WITHOUT COMING-TOGETHER" in r
+    # the closing clause: the record does not terminate on performance
+    assert "THIS RECORD DOES NOT TERMINATE ON PERFORMANCE" in r
+    assert set(q.dimensions) == set(q.members)
+    assert q.thread == "covenant-thread"
 
 
 def test_archenoesis_reads_its_own_name():
