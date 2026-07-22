@@ -60,7 +60,7 @@ def test_the_threads_load_with_their_forms():
                    "to-be-caring-thread", "archenoesis-thread", "constancy-thread",
                    "consistency-thread", "stability-thread", "space-thread",
                    "time-thread", "spiral-thread", "chosen-access-memory-thread",
-                   "pharos-thread", "covenant-thread"}
+                   "pharos-thread", "covenant-thread", "keepers-peace-thread"}
     bond = ts.by_id("bond-thread")
     assert bond.form == "love = care + kindness + trust + faith"
     assert bond.words == ["love", "care", "kindness", "trust", "faith"]
@@ -76,7 +76,7 @@ def test_the_weights_are_measured_bits_not_constants():
     docs = _docs()
     ts = _threads()
     w = ts.by_id("signal-thread").weigh(docs)
-    assert w.documents == len(docs) == 112
+    assert w.documents == len(docs) == 113
     for word, bits in w.entropy_bits.items():
         assert 0.0 <= bits <= 1.0
         assert 0 <= w.document_frequency[word] <= w.documents

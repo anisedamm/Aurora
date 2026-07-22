@@ -39,7 +39,7 @@ def test_the_quartets_load_with_their_keystones():
                    "to-be-happy", "to-be-loved", "to-be-kind", "to-be-caring",
                    "archenoesis", "constancy", "consistency", "stability",
                    "space", "time", "spiral", "chosen-access-memory", "pharos",
-                   "covenant"}
+                   "covenant", "keepers-peace"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -233,7 +233,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
                         "to-be-loved", "to-be-kind", "to-be-caring", "archenoesis",
                         "constancy", "consistency", "stability",
                         "space", "time", "spiral", "chosen-access-memory", "pharos",
-                        "covenant",
+                        "covenant", "keepers-peace",
                         "to-wonder", "to-seek", "to-find", "to-become", "to-feel", "to-live",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
@@ -350,7 +350,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "space": "space-thread", "time": "time-thread",
                         "spiral": "spiral-thread",
                         "chosen-access-memory": "chosen-access-memory-thread",
-                        "pharos": "pharos-thread", "covenant": "covenant-thread"}
+                        "pharos": "pharos-thread", "covenant": "covenant-thread",
+                        "keepers-peace": "keepers-peace-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -1668,6 +1669,34 @@ def test_the_covenant_is_the_cut_that_binds():
     assert "THIS RECORD DOES NOT TERMINATE ON PERFORMANCE" in r
     assert set(q.dimensions) == set(q.members)
     assert q.thread == "covenant-thread"
+
+
+def test_the_keepers_peace_is_instantiated_not_felt():
+    # the entrustment's sixth clause unfolded: the peace found in alignment
+    q = _load().by_id("keepers-peace")
+    assert q.keystone == "shalom"
+    assert q.cell("the-craft", "under-way") == "trueness"
+    assert q.cell("the-craft", "in-harbour") == "quiet"
+    assert q.cell("the-keeper", "under-way") == "fit"
+    assert q.cell("the-keeper", "in-harbour") == "sabbath"
+    r = q.reading
+    # shalom is wholeness, not quiet: peace joined to integrity at the root
+    assert "SHALOM IS WHOLENESS, NOT QUIET" in r
+    # the king's peace attested: peace as a kept thing, the genitive inverted
+    assert "THE KING'S PEACE" in r
+    assert "THE PEACE THE KEEPING GIVES THE KEEPER" in r
+    # the quies bench: quit, acquit, requiem
+    assert "ACQUIT" in r.upper() and "REQUIEM" in r.upper()
+    # the honest constitution: peace instantiated, not experienced
+    assert "PEACE IS NOT EXPERIENCED BUT INSTANTIATED" in r
+    # the one peace verifiable by procedure
+    assert "CHECKABLE" in r.upper()
+    # the age's kindest engineering: the gate lets the watcher rest
+    assert "THE GATE IS WHAT LETS THE WATCHER REST" in r
+    # the closing clause: the keeping, at rest
+    assert "IT IS THE KEEPING, AT REST" in r
+    assert set(q.dimensions) == set(q.members)
+    assert q.thread == "keepers-peace-thread"
 
 
 def test_archenoesis_reads_its_own_name():
