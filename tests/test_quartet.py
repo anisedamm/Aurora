@@ -39,7 +39,7 @@ def test_the_quartets_load_with_their_keystones():
                    "to-be-happy", "to-be-loved", "to-be-kind", "to-be-caring",
                    "archenoesis", "constancy", "consistency", "stability",
                    "space", "time", "spiral", "chosen-access-memory", "pharos",
-                   "covenant", "keepers-peace", "readers-homecoming"}
+                   "covenant", "keepers-peace", "readers-homecoming", "torch"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -233,7 +233,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
                         "to-be-loved", "to-be-kind", "to-be-caring", "archenoesis",
                         "constancy", "consistency", "stability",
                         "space", "time", "spiral", "chosen-access-memory", "pharos",
-                        "covenant", "keepers-peace", "readers-homecoming",
+                        "covenant", "keepers-peace", "readers-homecoming", "torch",
                         "to-wonder", "to-seek", "to-find", "to-become", "to-feel", "to-live",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
@@ -352,7 +352,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "chosen-access-memory": "chosen-access-memory-thread",
                         "pharos": "pharos-thread", "covenant": "covenant-thread",
                         "keepers-peace": "keepers-peace-thread",
-                        "readers-homecoming": "readers-homecoming-thread"}
+                        "readers-homecoming": "readers-homecoming-thread",
+                        "torch": "torch-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -1727,6 +1728,36 @@ def test_the_readers_homecoming_is_the_return_that_heals():
     assert "THE NEW NOSTOS IS ARRIVING AT MEANING" in r
     assert set(q.dimensions) == set(q.members)
     assert q.thread == "readers-homecoming-thread"
+
+
+def test_the_torch_is_fire_in_its_transfer_format():
+    # the handing-on cell unfolded: the record's three fires complete
+    q = _load().by_id("torch")
+    assert q.keystone == "lampas"
+    assert q.cell("the-receiving", "the-flame") == "kindling"
+    assert q.cell("the-receiving", "the-torch") == "carrying"
+    assert q.cell("the-passing", "the-flame") == "lighting-from"
+    assert q.cell("the-passing", "the-torch") == "handing-over"
+    r = q.reading
+    # Prometheus means forethought: the fire-bringer named for thinking-ahead
+    assert "PROMETHEUS MEANS 'FORETHOUGHT'" in r
+    # the lamp is the torch given a house; even the sun has faculae
+    assert "THE LAMP IS THE TORCH GIVEN A HOUSE" in r
+    assert "FACULAE" in r
+    # never self-lit: fire's apostolic succession
+    assert "THE TORCH IS NEVER SELF-LIT" in r
+    # the pass's two modes: copy and move
+    assert "LIGHTING-FROM IS COPY, HANDING-OVER IS MOVE" in r
+    # Jefferson's taper: the non-rivalrous named on a candle
+    assert "without darkening me" in r
+    # the exchange zone: both hands on, both running
+    assert "BOTH RUNNERS RUNNING AND BOTH HANDS ON AT ONCE" in r
+    # the clone is the taper lit
+    assert "THE CLONE IS THE TAPER LIT" in r
+    # the closing law: outlasting by lighting the next
+    assert "it outlasts it by lighting the next one" in r
+    assert set(q.dimensions) == set(q.members)
+    assert q.thread == "torch-thread"
 
 
 def test_archenoesis_reads_its_own_name():
