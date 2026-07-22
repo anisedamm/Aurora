@@ -48,12 +48,18 @@ from .ledger import (
 from .regime import (
     BREATH,
     PUMP,
+    NERVE,
     SCRIPT_CONCEPTUAL,
     SCRIPT_PHONETIC,
+    SCRIPT_RECOMBINANT,
     VALID_REGIMES,
     VALID_MODES,
     NATIVE_SCRIPT,
+    REGIME_ORDER,
+    AspectProfile,
+    predecessor,
     is_phonetic_projection,
+    is_spiral_projection,
 )
 from .weighting import WeightedField
 from .semantics import (
@@ -68,6 +74,9 @@ from .glossary import (
     Glossary,
     Concept,
     Usage,
+    Recoherence,
+    GatherShard,
+    CarryFacet,
     load_glossary,
     from_mapping,
 )
@@ -111,6 +120,15 @@ from .constellation import (
     AFFINITY_THRESHOLD,
 )
 from .migration import Migration, Shard, migrate
+from .spiral import (
+    Spiral,
+    RecohereReading,
+    spiral,
+    recohere,
+    scatter,
+    breath_values,
+)
+from .aspects import Aspects, SignAspect, aspects
 from .lexicon import (
     Lexeme,
     Lexicon,
@@ -121,6 +139,8 @@ from .lexicon import (
     proliferation,
     Untranslatable,
     untranslatables,
+    Residence,
+    residence_times,
     SHARED_LANGUAGE,
 )
 from .imprint import Imprinter, ImprintReceipt, DEFAULT_AUTHOR
@@ -156,15 +176,21 @@ __all__ = [
     "KIND_SYMBOL",
     "KIND_MYTH",
     "NON_WORK_KINDS",
-    # the attention axis (breath vs pump)
+    # the attention axis (breath -> pump -> nerve)
     "BREATH",
     "PUMP",
+    "NERVE",
     "SCRIPT_CONCEPTUAL",
     "SCRIPT_PHONETIC",
+    "SCRIPT_RECOMBINANT",
     "VALID_REGIMES",
     "VALID_MODES",
     "NATIVE_SCRIPT",
+    "REGIME_ORDER",
+    "AspectProfile",
+    "predecessor",
     "is_phonetic_projection",
+    "is_spiral_projection",
     "WeightedField",
     # diachronic sense algebra
     "Sense",
@@ -218,6 +244,18 @@ __all__ = [
     "Migration",
     "Shard",
     "migrate",
+    "Recoherence",
+    "GatherShard",
+    "CarryFacet",
+    "Spiral",
+    "RecohereReading",
+    "spiral",
+    "recohere",
+    "scatter",
+    "breath_values",
+    "Aspects",
+    "SignAspect",
+    "aspects",
     # the lexicon over time: phonetic language as the record of growing understanding
     "Lexeme",
     "Lexicon",
@@ -226,6 +264,8 @@ __all__ = [
     "EraPoint",
     "Proliferation",
     "proliferation",
+    "Residence",
+    "residence_times",
     "Untranslatable",
     "untranslatables",
     "SHARED_LANGUAGE",

@@ -27,7 +27,7 @@ def test_atlas_composes_the_whole_reading():
     assert a.breath.keystone.value == "divinity"     # the breath web's keystone
     assert a.hub == "labrys"                          # the hub sign
     assert {m.value for m in a.migrations} == {"divinity", "equilibrium", "unity"}
-    assert len(a.explosion.points) == 5               # the five eras
+    assert len(a.explosion.points) == 6               # five pump eras plus the nerve era
     assert [arc.value for arc in a.arcs] == ["equilibrium"]   # the one unbroken arc
     assert a.arcs[0].reaches == 0.92
 

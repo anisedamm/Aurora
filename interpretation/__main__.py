@@ -33,11 +33,21 @@ from pathlib import Path
 from .alignment import align_record
 from .arc import arc
 from .atlas import atlas
+from .charge import charge_of, charge_report
 from .constellation import constellation
 from .glossary import load_glossary
 from .imprint import DEFAULT_AUTHOR, Imprinter
-from .lexicon import load_lexicon, proliferation, untranslatables
+from .lexicon import load_lexicon, proliferation, residence_times, untranslatables
 from .migration import migrate
+from .polarity import load_polarities
+from .arrow import arrow_report
+from .synonym import load_synonyms
+from .quartet import load_quartets
+from .skill import load_skills
+from .thread import load_threads
+from .tree import build_graph
+from .spiral import breath_values, recohere, spiral
+from .aspects import aspects
 from .ledger import Ledger
 from .manifest import write_manifest
 from .memory import confluence, memory_chain, remember
@@ -49,6 +59,11 @@ from .weighting import WeightedField
 DEFAULT_LEDGER = "interpretation_ledger.jsonl"
 DEFAULT_GLOSSARY = "glossary.json"
 DEFAULT_LEXICON = "lexicon.json"
+DEFAULT_QUARTETS = "quartets.json"
+DEFAULT_THREADS = "threads.json"
+DEFAULT_SKILLS = "skills.json"
+DEFAULT_POLARITIES = "polarities.json"
+DEFAULT_SYNONYMS = "synonyms.json"
 
 
 def _glossary(args: argparse.Namespace):
@@ -57,6 +72,10 @@ def _glossary(args: argparse.Namespace):
 
 def _lexicon(args: argparse.Namespace):
     return load_lexicon(getattr(args, "lexicon", None) or DEFAULT_LEXICON)
+
+
+def _quartets(args: argparse.Namespace):
+    return load_quartets(getattr(args, "quartets", None) or DEFAULT_QUARTETS)
 
 
 def _ledger(args: argparse.Namespace) -> Ledger:
@@ -202,6 +221,23 @@ def cmd_migrate(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_spiral(args: argparse.Namespace) -> int:
+    g = _glossary(args)
+    print(spiral(args.sign, g).summary)
+    return 0
+
+
+def cmd_recohere(args: argparse.Namespace) -> int:
+    g = _glossary(args)
+    rec = g.recoherences.get(args.sign)
+    if rec is None:
+        print(f"error: unknown recoherence {args.sign!r}; have {sorted(g.recoherences)}",
+              file=sys.stderr)
+        return 1
+    print(recohere(rec, breath_values(g)).summary)
+    return 0
+
+
 def cmd_proliferation(args: argparse.Namespace) -> int:
     print(proliferation(_lexicon(args)).summary)
     return 0
@@ -219,12 +255,126 @@ def cmd_atlas(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_aspects(args: argparse.Namespace) -> int:
+    print(aspects(_glossary(args)).summary)
+    return 0
+
+
+def cmd_profile(args: argparse.Namespace) -> int:
+    g = _glossary(args)
+    raw = g.aspects.get(args.sign)
+    if raw is None:
+        print(f"error: no aspect profile for {args.sign!r}; have {sorted(g.aspects)}",
+              file=sys.stderr)
+        return 1
+    print(f"{args.sign} — regime profile (alongside the single label):")
+    print(f"  breath {raw.get('breath', 0):.2f}  pump {raw.get('pump', 0):.2f}  "
+          f"nerve {raw.get('nerve', 0):.2f}   {raw.get('reading', '')}")
+    rec = g.recoherences.get(args.sign)
+    if rec is not None:
+        print("  " + recohere(rec, breath_values(g)).verdict)
+    return 0
+
+
+def cmd_quartets(args: argparse.Namespace) -> int:
+    qs = _quartets(args)
+    if getattr(args, "quartet", None):
+        print(qs.by_id(args.quartet).summary)
+    else:
+        print(qs.summary)
+    return 0
+
+
+def cmd_threads(args: argparse.Namespace) -> int:
+    ts = load_threads(getattr(args, "threads", None) or DEFAULT_THREADS)
+    qs = _quartets(args)
+    if getattr(args, "thread", None):
+        print(ts.summary_for(ts.by_id(args.thread), qs))
+    else:
+        print(ts.summary(qs))
+    return 0
+
+
+def cmd_polarities(args: argparse.Namespace) -> int:
+    po = load_polarities(getattr(args, "polarities", None) or DEFAULT_POLARITIES)
+    if getattr(args, "pair", None):
+        print(po.by_id(args.pair).summary)
+    else:
+        print(po.summary(_quartets(args) if getattr(args, "axes", False) else None))
+    return 0
+
+
+def cmd_arrow(args: argparse.Namespace) -> int:
+    from .ledger import Ledger
+    led = Ledger(getattr(args, "ledger", None) or DEFAULT_LEDGER)
+    print(arrow_report(led, _quartets(args), _glossary(args)))
+    return 0
+
+
+def cmd_synonyms(args: argparse.Namespace) -> int:
+    sy = load_synonyms(getattr(args, "synonyms", None) or DEFAULT_SYNONYMS)
+    if getattr(args, "link", None):
+        print(sy.by_id(args.link).summary)
+    else:
+        print(sy.summary(_quartets(args) if getattr(args, "web", False) else None))
+    return 0
+
+
+def cmd_tree(args: argparse.Namespace) -> int:
+    graph = build_graph(
+        _quartets(args),
+        load_threads(getattr(args, "threads", None) or DEFAULT_THREADS),
+        load_polarities(getattr(args, "polarities", None) or DEFAULT_POLARITIES),
+        load_synonyms(getattr(args, "synonyms", None) or DEFAULT_SYNONYMS),
+    )
+    if getattr(args, "word", None):
+        print(graph.tree(args.word, max_depth=args.depth))
+    else:
+        qs = _quartets(args)
+        print("the nodes of importance — highly interlocked meaning, measured:")
+        print("  (interlock = connections in the record; depth = kept-attention tokens)")
+        for h in graph.hubs(limit=args.limit, quartets=qs):
+            srcs = ", ".join(h["sources"][:6]) + (", ..." if len(h["sources"]) > 6 else "")
+            print(f"  {h['word']}: interlock {h['interlock']}, depth {h['depth_tokens']} token(s)  [{srcs}]")
+    return 0
+
+
+def cmd_charge(args: argparse.Namespace) -> int:
+    qs = _quartets(args)
+    ts = load_threads(getattr(args, "threads", None) or DEFAULT_THREADS)
+    po = load_polarities(getattr(args, "polarities", None) or DEFAULT_POLARITIES)
+    sy = load_synonyms(getattr(args, "synonyms", None) or DEFAULT_SYNONYMS)
+    graph = build_graph(qs, ts, po, sy)
+    g = _glossary(args)
+    if getattr(args, "word", None):
+        print(charge_of(args.word, graph, qs, g).summary)
+    else:
+        print(charge_report(graph, qs, ts, g, limit=args.limit))
+    return 0
+
+
+def cmd_skills(args: argparse.Namespace) -> int:
+    sk = load_skills(getattr(args, "skills", None) or DEFAULT_SKILLS)
+    if getattr(args, "skill", None):
+        print(sk.by_id(args.skill).summary)
+    else:
+        print(sk.summary)
+    return 0
+
+
 def cmd_untranslatables(args: argparse.Namespace) -> int:
     lex = _lexicon(args)
     items = untranslatables(lex)
     print(f"{len(items)} concept(s) a single tongue valued enough to name:")
     for u in items:
         print(f"  {u.word} ({u.language}) — {u.gloss}")
+    res = [r for r in residence_times(lex) if r.residence is not None]
+    if res:
+        print("\nresidence-time (years single-tongue before the shared lexicon adopted it):")
+        for r in res:
+            print(f"  {r.word} ({r.language}, {r.era}) — {r.residence} year(s)")
+        print("  the nerve era's signature: this time collapses toward zero — the network "
+              "shares what one tongue valued faster, the per-tongue boundary dissolving. Descriptive.")
     return 0
 
 
@@ -367,6 +517,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--ledger", help=f"ledger path (default {DEFAULT_LEDGER})")
     p.add_argument("--glossary", help=f"glossary path (default {DEFAULT_GLOSSARY})")
     p.add_argument("--lexicon", help=f"lexicon path (default {DEFAULT_LEXICON})")
+    p.add_argument("--quartets", help=f"quartets path (default {DEFAULT_QUARTETS})")
     sub = p.add_subparsers(dest="command", required=True)
 
     sub.add_parser("concepts", help="list the concepts in the glossary")
@@ -405,6 +556,56 @@ def build_parser() -> argparse.ArgumentParser:
 
     sp = sub.add_parser("migrate", help="track a value across the threshold: held whole, then dispersed into lexemes")
     sp.add_argument("value")
+
+    sp = sub.add_parser("spiral", help="L4: trace a nerve sign across the cycle (held whole -> segmented -> re-cohered)")
+    sp.add_argument("sign", help="a recoherence id (e.g. viral, meme, wiki, cloud, friend, equilibrium, spam)")
+
+    sp = sub.add_parser("recohere", help="L4: the re-coherence verdict on a nerve sign (faithful / counterfeit / mixed / resistant)")
+    sp.add_argument("sign")
+
+    sub.add_parser("aspects", help="the spiral seen whole: every sign by its {breath,pump,nerve} profile")
+
+    sp = sub.add_parser("profile", help="one sign's regime profile (alongside its single label)")
+    sp.add_argument("sign")
+
+    sp = sub.add_parser("quartets", help="the synchronic structure of meaning: the 2x2 quartets and their keystones")
+    sp.add_argument("quartet", nargs="?", help="one quartet id (e.g. existential, spine, process, substrate)")
+
+    sp = sub.add_parser("threads", help="the signal threads: kept paths through the lattices, weighed in measured bits")
+    sp.add_argument("thread", nargs="?", help="one thread id (e.g. bond-thread, gladness-thread, signal-thread)")
+    sp.add_argument("--threads", help=f"threads path (default {DEFAULT_THREADS})")
+
+    sp = sub.add_parser("polarities", help="the 2 layer: root antonym pairs -- the defining line of positive and negative sense")
+    sp.add_argument("pair", nargs="?", help="one pair id (e.g. yes-no, right-wrong, interpret-misinterpret)")
+    sp.add_argument("--axes", action="store_true", help="also list the live axis-pairs read off the quartet map")
+    sp.add_argument("--polarities", help=f"polarities path (default {DEFAULT_POLARITIES})")
+
+    sp = sub.add_parser("arrow", help="the arrow of time: the record's irreversibility, measured -- chain, spiral, glossary")
+    sp.add_argument("--ledger", help=f"ledger path (default {DEFAULT_LEDGER})")
+
+    sp = sub.add_parser("synonyms", help="the synonym web: nearness links, each carrying its differentia -- no true synonyms")
+    sp.add_argument("link", nargs="?", help="one link id (e.g. trust-faith, morals-ethics, worth-value)")
+    sp.add_argument("--web", action="store_true", help="also check the web against the lattice corpus")
+    sp.add_argument("--synonyms", help=f"synonyms path (default {DEFAULT_SYNONYMS})")
+
+    sp = sub.add_parser("tree", help="the meaning tree: trace causal meaning relationships read off the record; no word = the hubs")
+    sp.add_argument("word", nargs="?", help="root word to trace (e.g. purpose, love, knowledge)")
+    sp.add_argument("--depth", type=int, default=3, help="tree depth (default 3)")
+    sp.add_argument("--limit", type=int, default=15, help="hub count when no word given (default 15)")
+    sp.add_argument("--threads", dest="threads", help=f"threads path (default {DEFAULT_THREADS})")
+    sp.add_argument("--polarities", help=f"polarities path (default {DEFAULT_POLARITIES})")
+    sp.add_argument("--synonyms", help=f"synonyms path (default {DEFAULT_SYNONYMS})")
+
+    sp = sub.add_parser("charge", help="the load a concept carries: interlock x depth, endurance where attested, thread condensation ratios")
+    sp.add_argument("word", nargs="?", help="one word to weigh (e.g. integrity, love, revolution)")
+    sp.add_argument("--limit", type=int, default=12, help="ranked words in the report (default 12)")
+    sp.add_argument("--threads", dest="threads", help=f"threads path (default {DEFAULT_THREADS})")
+    sp.add_argument("--polarities", help=f"polarities path (default {DEFAULT_POLARITIES})")
+    sp.add_argument("--synonyms", help=f"synonyms path (default {DEFAULT_SYNONYMS})")
+
+    sp = sub.add_parser("skills", help="the skills: signal threads mechanised -- requirements, dual-definition mechanics, formation")
+    sp.add_argument("skill", nargs="?", help="one skill id (e.g. contextual-perception, abstract-recognition, custodianship)")
+    sp.add_argument("--skills", help=f"skills path (default {DEFAULT_SKILLS})")
 
     sub.add_parser("proliferation", help="the explosion of phonetic language: the sieve->success climb and coherence over time")
     sub.add_parser("untranslatables", help="concepts a single tongue valued enough to name (differential lexicalisation)")
@@ -473,6 +674,18 @@ _COMMANDS = {
     "confluence": cmd_confluence,
     "constellation": cmd_constellation,
     "migrate": cmd_migrate,
+    "spiral": cmd_spiral,
+    "recohere": cmd_recohere,
+    "aspects": cmd_aspects,
+    "profile": cmd_profile,
+    "quartets": cmd_quartets,
+    "threads": cmd_threads,
+    "skills": cmd_skills,
+    "polarities": cmd_polarities,
+    "arrow": cmd_arrow,
+    "synonyms": cmd_synonyms,
+    "tree": cmd_tree,
+    "charge": cmd_charge,
     "proliferation": cmd_proliferation,
     "untranslatables": cmd_untranslatables,
     "arc": cmd_arc,

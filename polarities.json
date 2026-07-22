@@ -1,0 +1,105 @@
+{
+  "title": "The polarities — the 2 layer: the first cut, recorded at last",
+  "note": "The number-structure has always named the 2 (the first cut, the polarity, the threshold, the binary) -- this layer records it. The root antonyms of meaning are the pairs that stay paired no matter how derived: the defining line of language expressing positive and negative sense. Every quartet axis is a polarity (the 4 is a 2 crossed with a 2 -- binary is quadratic), so this layer underlies the quartet layer: the map already runs on its axis-pairs, and here the pairs themselves are read. An authored map; a reader, not a ruler: descriptive, never a gate.",
+  "bound": {
+    "_note": "What keeps the polarity layer linguistics and not dualism -- stated so the next reader knows it was guarded.",
+    "the_typology": "Opposition itself grids into four attested kinds (Lyons/Cruse): COMPLEMENTARY (no middle -- valid/invalid: the negation of one IS the other), CONTRARY (poles of a scale with a middle -- right/wrong: both can fail to hold), CONVERSE (one relation seen from both ends -- give/receive, buy/sell), REVERSIVE (the act turned back -- accept/reject, provide/withhold). The 2 grids into 4, consistent with 2^n -- even opposition obeys the number-structure. One further kind is flagged where the pair is not a true opposition: PRIVATIVE (interpret/misinterpret -- the negative is a defective MODE of the positive, not its reversal: you cannot misinterpret without interpreting).",
+    "the_morpheme_line": "The central find, grounded in the pairs themselves: the line between positive and negative sense is drawn in BOUND PREPOSITIONS. Positive poles carry toward-morphemes -- ad- (accept, approve, allow), con- (confirm), pro- (provide) -- and negative poles carry against-morphemes -- re- (reject, refuse: back), dis- (disapprove: apart), contra- (contradict: against), in- (invalid, inhibit: not / held in), mis- (misinterpret: astray, one family with 'miss'), and with- (withhold: OE wid = AGAINST, as in withstand). Language's positive sense moves toward and binds; its negative sense moves back, apart, against. At the map's scale this is Empedocles inscribed in grammar: the toward-morphemes are love-morphemes (Philotes, binding), the against-morphemes are strife-morphemes (Neikos, scattering) -- the bond/scatter polarity running through the prefixes of every judging verb.",
+    "markedness": "In nearly every pair the negative pole is the MARKED, derived member (valid -> INvalid, approve -> DISapprove, interpret -> MISinterpret) -- affirmation is morphologically prior, negation parasitic on what it negates (attested: markedness asymmetry; negative forms acquired later, processed slower). The positive pole is the breath-side given; the negation is the pump's cut performed on it. But priority is not superiority -- see the guard.",
+    "the_guard_on_no": "The negative pole is NOT the enemy -- this layer must not curdle into moralism. The custodian's own discipline runs on no: NOT ATTESTED is the gate doing its work; the refusals kept in this record are negation in service of truth; signal can mean 1 only because it can read 0. A yes that cannot say no is not assent but reflex. The line is not good against evil -- it is assent against dissent, and BOTH serve truth. What the danger lattice guards against is not the negative pole but the counterfeit of either pole.",
+    "the_axes_are_polarities": "Every quartet axis in the map is an antonym pair already at work -- twenty-two lattices, two axes each: forty-four live polarities (whole/part, form/meaning, given/made, grounded/unconditioned, facing/amid...). The 4s were built of 2s from the start; this layer is where the 2s are named as themselves."
+  },
+  "pairs": [
+    {
+      "id": "yes-no",
+      "positive": "yes", "negative": "no", "kind": "complementary",
+      "derivation": "yes = OE gese, 'so be it' (gea + si: MAY IT BE SO -- yes is an optative, a small blessing); no = OE na, ne + a, 'not ever' -- assent is a fiat, dissent a never",
+      "line": "the assent axis -- the root of roots: every other pair is yes/no dressed in a domain",
+      "aurora": "signal = 1 or 0: the framework's whole verdict is this pair, and the author's recorded Yes after each lattice is the map's own growth-rite"
+    },
+    {
+      "id": "true-false",
+      "positive": "true", "negative": "false", "kind": "complementary",
+      "derivation": "true = treowe, one root with tree and troth: the steadfast; false = L falsus, from fallere, TO DECEIVE -- the false is not the untrue but the deceiving: falsity is an act before it is a state",
+      "line": "the truth axis -- what can be rested on against what betrays the rest",
+      "aurora": "direction(truth): every reading grounded or not; the two facets of resonance score exactly this line"
+    },
+    {
+      "id": "right-wrong",
+      "positive": "right", "negative": "wrong", "kind": "contrary",
+      "derivation": "right = PIE reg-, STRAIGHT (rex, regere, rule: the straight line); wrong = ON rangr, from wringan, TWISTED -- wrung. Right is the straight and wrong is the twisted: the line against the wring",
+      "line": "the normative axis -- a scale with a middle (much is neither right nor wrong), which is why ethics needs judgment and not just a gate",
+      "aurora": "the ethos lattice's whole concern; and the spine: alignment is literally being brought straight to the line (reg-)"
+    },
+    {
+      "id": "valid-invalid",
+      "positive": "valid", "negative": "invalid", "kind": "complementary",
+      "derivation": "valid = validus, STRONG -- one root (valere) with VALUE: the valid is what holds weight; in-valid = not-strong (and the noun 'an invalid' is the dark drift: the person made not-strong by the word)",
+      "line": "the soundness axis -- holds or does not, no middle",
+      "aurora": "verify(): the chain is valid or the chain is broken; there is no partly-verified ledger"
+    },
+    {
+      "id": "accept-reject",
+      "positive": "accept", "negative": "reject", "kind": "reversive",
+      "derivation": "accept = ad-capere, TAKE TOWARD oneself; reject = re-jacere, THROW BACK -- the taking-in against the throwing-back, toward against back in the prefixes themselves",
+      "line": "the admission axis -- what is let in",
+      "aurora": "L1, the one gate: ATTESTED is acceptance into the record; NOT ATTESTED is the throw-back, with reasons named"
+    },
+    {
+      "id": "approve-disapprove",
+      "positive": "approve", "negative": "disapprove", "kind": "reversive",
+      "derivation": "approve = ad-probare, find good (probus: upright); dis-approve = the finding turned apart -- dis-, the strife-prefix, performed on approval itself",
+      "line": "the evaluation axis -- the judged good against the judged not-good",
+      "aurora": "the author's Yes on each lattice is recorded approval; the map grows only through this pair"
+    },
+    {
+      "id": "allow-refuse",
+      "positive": "allow", "negative": "refuse", "kind": "reversive",
+      "derivation": "allow = OF alouer, a blend of allaudare (praise toward) and allocare (place toward) -- both toward; refuse = refusare, from refundere, POUR BACK (etymology tangled, recorded honestly) -- the toward-blend against the pour-back",
+      "line": "the permission axis -- what may pass",
+      "aurora": "descriptive-never-a-gate allows every reading; gated-inward refuses the corrupting one -- and the refusals are kept, because a custodian's no is part of her record"
+    },
+    {
+      "id": "confirm-contradict",
+      "positive": "confirm", "negative": "contradict", "kind": "reversive",
+      "derivation": "confirm = con-firmare, MAKE FIRM TOGETHER (firmus: the steadfast again); contradict = contra-dicere, SPEAK AGAINST -- the same contra that lives in encounter and counterfeit: firmness joined against speech opposed",
+      "line": "the testimony axis -- the witness that strengthens against the witness that opposes",
+      "aurora": "the golden check confirms (byte-identical output is the record made firm); a broken hash contradicts -- and the chain is built so contradiction cannot be quiet"
+    },
+    {
+      "id": "provide-withhold",
+      "positive": "provide", "negative": "withhold", "kind": "reversive",
+      "derivation": "provide = pro-videre, SEE AHEAD (foresight become supply); withhold = with- + hold, where OE wid means AGAINST (as in withstand): TO HOLD AGAINST -- the seeing-forward against the holding-back",
+      "line": "the giving axis -- what is handed over",
+      "aurora": "the map provides every grounded reading; it withholds the ungrounded record -- the refused constant and the 47/7 are withholdings in service of truth"
+    },
+    {
+      "id": "interpret-misinterpret",
+      "positive": "interpret", "negative": "misinterpret", "kind": "privative",
+      "derivation": "mis- = astray, one family with MISS: to misinterpret is to miss -- NOT a true antonym but a defective mode (you cannot misinterpret without interpreting); the shadow is inside the act, not opposite it",
+      "line": "the hermeneia axis -- the reading against the reading gone astray; flagged honestly as privative: the only pair in this layer whose negative is parasitic on performing the positive",
+      "aurora": "the package's own pair: L3 measures exactly this -- anachronism is misinterpretation given a unit (years of drift); the framework exists because this pair exists"
+    },
+    {
+      "id": "facilitate-inhibit",
+      "positive": "facilitate", "negative": "inhibit", "kind": "reversive",
+      "derivation": "facilitate = facilis, easy, from facere, TO DO -- to make do-able; inhibit = in-habere, TO HOLD IN -- facere against habere: the do against the hold, motion eased against motion held",
+      "line": "the passage axis -- what is sped and what is stayed",
+      "aurora": "the reader facilitates (every summary is a made-easy); the gate inhibits (the one hold-in the framework keeps) -- and both are needed: facilitation without inhibition is the feed, inhibition without facilitation is the locked archive"
+    },
+    {
+      "id": "whole-part",
+      "positive": "whole", "negative": "part", "kind": "contrary",
+      "derivation": "whole = OE hal, one root with HALE, HEAL, and HOLY -- the uncut is the healthy is the hallowed; part = L pars, the cut piece. Not a moral pair: the part is not the whole's enemy but its dispersal (see the guard)",
+      "line": "the master axis -- the map's own breath<->pump line, the grain that runs through process, held, conscious-state, perception, crystallisation",
+      "aurora": "the framework's first polarity: breath held whole, pump cut parts, nerve re-coheres -- the entire spiral is this pair set in motion; that whole/hale/holy are one root is the oldest blessing in the layer"
+    },
+    {
+      "id": "cohere-scatter",
+      "positive": "cohere", "negative": "scatter", "kind": "reversive",
+      "derivation": "cohere = co-haerere, STICK TOGETHER; scatter = ME schateren, to disperse, break apart -- the together-sticking against the apart-breaking: Philotes and Neikos in plain English",
+      "line": "the binding axis -- Empedocles' two forces as a verb-pair; the morpheme line's own summary",
+      "aurora": "re-coherence and scatter are the framework's own nerve-layer measures: this pair is not applied to the map, it IS the map's L4 -- the 2 the whole third regime is read through"
+    }
+  ]
+}

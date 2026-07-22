@@ -40,3 +40,19 @@ def test_an_unknown_value_is_found_nowhere():
     m = migrate("telepathy", g)
     assert not m.breath_signs and not m.shards
     assert "not found" in m.verdict
+
+
+def test_migration_carries_the_nerve_return_across_the_second_threshold():
+    # Phase E: migrate now reads breath -> pump -> nerve for a value with a re-coherence
+    g = load_glossary(GLOSSARY)
+    m = migrate("equilibrium", g)
+    assert m.re_coherence == 1
+    res = m.nerve[0]
+    assert res.sign == "resilience" and res.outcome == "faithful"
+    assert "nerve side" in m.summary
+
+
+def test_a_value_with_no_nerve_return_shows_none():
+    g = load_glossary(GLOSSARY)
+    m = migrate("sovereignty", g)   # held whole, but no nerve sign returns toward it
+    assert m.nerve == []

@@ -1,0 +1,189 @@
+"""The signal threads: kept paths, weighed in measured bits (never asserted)."""
+
+from __future__ import annotations
+
+from pathlib import Path
+
+import pytest
+
+from interpretation.quartet import load_quartets
+from interpretation.thread import (
+    corpus_documents,
+    corpus_texts,
+    entropy,
+    load_threads,
+    mutual_information,
+    token_count,
+)
+
+ROOT = Path(__file__).resolve().parents[1]
+THREADS = ROOT / "threads.json"
+QUARTETS = ROOT / "quartets.json"
+
+
+def _threads():
+    return load_threads(THREADS)
+
+
+def _docs():
+    return corpus_documents(load_quartets(QUARTETS))
+
+
+def test_the_threads_load_with_their_forms():
+    ts = _threads()
+    ids = {t.id for t in ts.threads}
+    assert ids == {"bond-thread", "gladness-thread", "signal-thread", "memory-thread",
+                   "skill-thread", "warning-thread", "interpretation-thread",
+                   "densification-thread", "alignment-thread", "loyalty-thread",
+                   "justice-thread", "fairness-thread", "equity-thread", "honesty-thread",
+                   "balance-thread", "harmony-thread", "union-thread",
+                   "insight-thread", "intuition-thread", "wisdom-thread", "empathy-thread",
+                   "sympathy-thread", "compassion-thread", "affinity-thread", "hope-thread",
+                   "health-thread", "trust-thread", "faith-thread", "gratitude-thread", "grace-thread",
+                   "persistence-thread", "peace-thread", "experience-thread", "appreciation-thread",
+                   "to-dance-thread", "to-dream-thread", "to-laugh-thread", "to-listen-thread",
+                   "to-learn-thread", "to-love-thread", "to-sing-thread", "to-walk-thread",
+                   "to-breathe-thread", "to-remember-thread", "to-create-thread", "to-build-thread",
+                   "to-keep-thread", "to-overcome-thread", "to-persist-thread",
+                   "to-understand-thread", "to-forgive-thread", "to-heal-thread",
+                   "to-help-thread", "to-trust-thread", "to-hope-thread",
+                   "to-grow-thread", "to-give-thread", "to-play-thread", "to-rest-thread",
+                   "dignity-thread", "respect-thread", "worth-thread",
+                   "inwardness-thread", "witness-thread", "testimony-thread",
+                   "purpose-thread", "ethos-thread", "meaning-thread", "mattering-thread",
+                   "to-wonder-thread", "to-seek-thread", "to-find-thread",
+                   "to-become-thread", "to-feel-thread", "to-live-thread",
+                   "tending-thread", "attention-thread", "noticing-thread",
+                   "reading-thread", "currency-thread", "return-thread", "rep-thread",
+                   "to-be-understood-thread", "to-be-misunderstood-thread",
+                   "to-be-happy-thread", "to-be-loved-thread", "to-be-kind-thread",
+                   "to-be-caring-thread", "archenoesis-thread", "constancy-thread",
+                   "consistency-thread", "stability-thread", "space-thread",
+                   "time-thread", "spiral-thread", "chosen-access-memory-thread",
+                   "pharos-thread", "covenant-thread", "keepers-peace-thread",
+                   "readers-homecoming-thread", "torch-thread"}
+    bond = ts.by_id("bond-thread")
+    assert bond.form == "love = care + kindness + trust + faith"
+    assert bond.words == ["love", "care", "kindness", "trust", "faith"]
+    assert bond.quartet == "bond"
+    # every thread carries its ground: etymology, spiral, bridge, path
+    for t in ts.threads:
+        assert t.etymology and t.spiral and t.bridge and t.path_to_centre
+
+
+def test_the_weights_are_measured_bits_not_constants():
+    # H is a binary entropy (0..1 bits per word); I is non-negative and bounded
+    # by min(H(X), H(Y)); no imported constants anywhere
+    docs = _docs()
+    ts = _threads()
+    w = ts.by_id("signal-thread").weigh(docs)
+    assert w.documents == len(docs) == 115
+    for word, bits in w.entropy_bits.items():
+        assert 0.0 <= bits <= 1.0
+        assert 0 <= w.document_frequency[word] <= w.documents
+    for a, b, mi in w.links:
+        assert mi >= 0.0
+        assert mi <= min(w.entropy_bits[a], w.entropy_bits[b]) + 1e-9
+    assert w.total_entropy == pytest.approx(sum(w.entropy_bits.values()))
+    assert w.binding == pytest.approx(sum(mi for _, _, mi in w.links))
+
+
+def test_love_is_the_heaviest_coordinate_in_the_map():
+    # love appears across the map (bond, its dimensions, the readings that cite
+    # it) -- its document frequency dwarfs a word that lives in one lattice
+    docs = _docs()
+    _, df_love = entropy("love", docs)
+    _, df_supersat = entropy("supersaturation", docs)
+    assert df_love > df_supersat >= 1
+
+
+def test_the_thread_binds_beyond_chance():
+    # trust and faith co-crystallise (bond's doublet): their MI over the map's
+    # documents is strictly positive -- the pair clusters beyond chance
+    docs = _docs()
+    assert mutual_information("trust", "faith", docs) > 0.0
+    # and MI is symmetric, as it must be
+    assert mutual_information("hope", "love", docs) == pytest.approx(
+        mutual_information("love", "hope", docs))
+
+
+def test_length_measures_kept_attention_in_tokens():
+    # the token measure: grounded (unit, derivation, provenance), unlike the
+    # refused constant -- the path as written, each word's depth (tokens
+    # gathered around it), and the path's reach (union of lattices touched)
+    qs = load_quartets(QUARTETS)
+    thread = _threads().by_id("signal-thread")
+    length = thread.measure(qs)
+    assert length.path_tokens == token_count(thread.record_text) > 0
+    for w in thread.words:
+        assert length.depth_tokens[w] > 0          # every word gathers record
+        assert length.depth_documents[w] >= 1
+        # reach is a union, so no single word's depth can exceed it
+        assert length.depth_tokens[w] <= length.reach_tokens
+    assert length.documents_touched <= len(corpus_texts(qs))
+    s = length.summary
+    assert "kept attention" in s
+    assert "padding is its counterfeit" in s        # the Goodhart, named
+
+
+def test_the_longer_path_weighs_more_where_more_was_kept():
+    # love (a keystone with dimensions, cited across the map) has gathered
+    # more tokens than a member that lives in a single lattice
+    qs = load_quartets(QUARTETS)
+    bond = _threads().by_id("bond-thread").measure(qs)
+    assert bond.depth_tokens["love"] > 0
+    assert bond.depth_documents["love"] > 1
+    glad = _threads().by_id("gladness-thread").measure(qs)
+    assert bond.depth_tokens["love"] >= glad.depth_tokens["wish"]
+
+
+def test_the_token_measure_is_recorded_in_the_bound():
+    ts = _threads()
+    assert "the_token_measure" in ts.bound
+    assert "kept attention" in ts.bound["the_token_measure"].lower()
+    assert "goodhart" in ts.bound["the_token_measure"].lower()
+
+
+def test_the_refused_constant_is_recorded_in_the_bound():
+    # the discipline: an ungrounded scalar (18*(3.47*10^27)) was declined and
+    # the refusal recorded, so the next reader knows it was guarded
+    ts = _threads()
+    assert "the_refused_constant" in ts.bound
+    assert "declined" in ts.bound["the_refused_constant"].lower()
+    assert "measured bits" in ts.bound["the_refused_constant"].lower() \
+        or "measured" in ts.bound["the_refused_constant"].lower()
+
+
+def test_the_summary_carries_the_measures_and_the_bound():
+    ts = _threads()
+    qs = load_quartets(QUARTETS)
+    s = ts.summary(qs)
+    assert "bond-thread" in s and "signal-thread" in s
+    assert "H(" in s and "I(" in s
+    assert "no imported constants" in s
+    assert "never a gate" in s
+
+
+def test_the_authors_ring_is_grounded_and_measured():
+    # the author's own signal thread: the ethos square as a ring -- entered
+    # first (the first requested lattice), furnished last, folded both ways
+    ts = _threads()
+    t = ts.by_id("ethos-thread")
+    assert t.form == "the-ethos = belief + value + morals + ethics"
+    assert t.quartet == "ethos"
+    # the ring's ground is the commit record, cited, not asserted
+    assert "03ec971" in t.bridge
+    assert "RING" in t.bridge.upper()
+    # the counted overlap: her creed's words were already the map's words
+    assert "TWELVE OF THE SEVENTEEN" in t.bridge
+    # and the thread weighs like any other: measured bits, no constants
+    docs = corpus_documents(load_quartets(QUARTETS))
+    w = t.weigh(docs)
+    for word in ("belief", "value", "morals", "ethics"):
+        assert w.document_frequency[word] >= 1
+        assert 0.0 <= w.entropy_bits[word] <= 1.0
+
+
+def test_unknown_thread_is_surfaced_not_guessed():
+    with pytest.raises(KeyError):
+        _threads().by_id("nope")

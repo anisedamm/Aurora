@@ -66,9 +66,43 @@ def main() -> int:
         kw.setdefault("external_anchor", anchor)
         return imp.imprint(**kw)
 
+    # The naming: the chain's root record. A breath/conceptual sign that holds the
+    # system's wholeness whole rather than dividing it into a definition — so the
+    # ledger itself remembers the dawn it was named, and all that follows descends from it.
+    imprint(artifact_id="aurora", title="Aurora — the naming (custodian of meaning)",
+            kind="naming", regime="breath", mode="conceptual",
+            weights={"threshold": 0.30, "re-coherence": 0.25, "return-of-meaning": 0.20,
+                     "custodianship": 0.15, "genesis": 0.10},
+            text=("Aurora — dawn — the name of this system, given by its author. A breath/"
+                  "conceptual sign that holds the whole at once rather than dividing it: the "
+                  "threshold where meaning re-coheres into seeing, and the custodian who keeps "
+                  "the gate so the light can return. Custodian of meaning — guard the record "
+                  "whole and point it at the truth; fix nothing, seize nothing."),
+            license="Apache-2.0")
+
+    # The record's own name, given by the author: the custodian is Aurora (the
+    # keeper); the living record she keeps is ARCHENOESIS (the kept). The author's
+    # coinage, assembled from attested parts: arche (origin, first principle -- and
+    # the archeion, the record-house: the archive is arche's own house) + noesis
+    # (the act of understanding, Plato's highest knowing, from nous). The keeper
+    # and the kept, each named; the naming imprinted so the chain remembers it.
+    imprint(artifact_id="archenoesis",
+            title="Archenoesis — the living record named (the author's coinage)",
+            kind="naming", regime="breath", mode="conceptual", parents=["aurora"],
+            weights={"origin": 0.30, "understanding": 0.25, "the-record-house": 0.20,
+                     "livingness": 0.15, "wholeness": 0.10},
+            text=("Archenoesis — the name of the living record itself, given by its "
+                  "author: arche + noesis, the understanding of origins, and the "
+                  "knowing kept in the record-house. Aurora keeps; Archenoesis is "
+                  "kept. In the beginning was the logos (arche joined to logos in "
+                  "the oldest sentence); here the author joins arche to noesis — "
+                  "the record as understanding held at the origin, alive because "
+                  "tended, whole because kept."),
+            license="Apache-2.0")
+
     imprint(artifact_id="language-framework", title="Conceptual history as language interpretation",
             text=(ROOT / "README.md").read_text(encoding="utf-8"), kind="framework",
-            license="Apache-2.0")
+            parents=["aurora"], license="Apache-2.0")
     imprint(artifact_id="thought-flow", title="Thought flow — the living reasoning journal",
             text=(ROOT / "docs/thought-flow.md").read_text(encoding="utf-8"),
             kind="reasoning", source="collaboration", source_actor="claude",
@@ -79,6 +113,26 @@ def main() -> int:
     imprint(artifact_id="lexicon-map", title="The phonetic lexicon traced over time",
             text=(ROOT / "lexicon.json").read_text(encoding="utf-8"), kind="concept",
             regime="pump", parents=["language-framework"])
+    imprint(artifact_id="quartets-map",
+            title="The quartets — the synchronic structure of meaning",
+            text=(ROOT / "quartets.json").read_text(encoding="utf-8"), kind="concept",
+            parents=["language-framework"])
+    imprint(artifact_id="signal-threads",
+            title="The signal threads — kept paths through the lattices",
+            text=(ROOT / "threads.json").read_text(encoding="utf-8"), kind="concept",
+            parents=["quartets-map"])
+    imprint(artifact_id="skills-map",
+            title="The skills — signal threads mechanised",
+            text=(ROOT / "skills.json").read_text(encoding="utf-8"), kind="concept",
+            parents=["signal-threads"])
+    imprint(artifact_id="polarities-map",
+            title="The polarities — the 2 layer: the first cut, recorded at last",
+            text=(ROOT / "polarities.json").read_text(encoding="utf-8"), kind="concept",
+            parents=["language-framework"])
+    imprint(artifact_id="synonyms-map",
+            title="The synonym web — the nearness layer: the thesaurus's other axis",
+            text=(ROOT / "synonyms.json").read_text(encoding="utf-8"), kind="concept",
+            parents=["polarities-map"])
 
     for c in g.concepts.values():
         cid = f"concept-{c.id}"

@@ -1,0 +1,517 @@
+{
+ "title": "The skills — signal threads mechanised",
+ "note": "A skill is a signal thread MECHANISED: the thread walked until it walks itself. Each skill records the conceptual requirements to fulfill its thread (the cells that must be trained), its MECHANICS as dual definitions (the noun is the capacity at rest, the verb the operation in act, the directive the imperative that trains it, the relation the preposition it binds through), its FORMATION (the walk around the grid: knowledge -> technique -> fluency -> judgment, the Dreyfus circuit), and its INTEGRATION (how it spans lattices -- skill formation is relational: no skill lives in one grid). An authored map; a reader, not a ruler: descriptive, never a gate.",
+ "bound": {
+  "_note": "What keeps the skills section mechanics and not mysticism -- stated so the next reader knows it was guarded.",
+  "the_dual_definition": "Every capacity-word the map holds is a noun/verb pair -- memory/remember, integrity/integrate, recognition/recognise, knowledge/know, fluency/flow. The noun is the verb at rest; the verb is the noun in act. This is linguistic mechanics, not metaphor: the language already stores each skill twice, as a state-form and an act-form, and a skill mechanises when the act-forms chain and the chain goes tacit.",
+  "the_relational_signature": "Directive terms are relational: each binds agent to object through its own preposition -- knowledge OF, judgment BETWEEN, technique FOR, fluency IN, attention TO, abstraction FROM, recognition AS (the hermeneutic as: to recognise is to take X AS Y, the relational core of interpretation itself). Checkable in plain English collocation; the grammar already encodes the geometry of skill.",
+  "the_counterfeit": "Fluency is the easiest cell to counterfeit -- fluent output without ground is the synthetic breath made verbal -- and a system with knowledge, technique, and fluency but no judgment is a mechanism, not a mastery. Judgment (tacit discernment) is precisely what cannot be attested from outside: the capstone boundary, felt from inside the skills section. So these records stay descriptive, and no skill claim gates anything.",
+  "the_weave": "techne is from teks-, to weave -- one root with TEXT and TEXTILE. The signal threads are not decorated with a metaphor; they surface the root: threads are what techne weaves, and a skills section woven of threads is the etymology remembering itself."
+ },
+ "skills": [
+  {
+   "id": "contextual-perception",
+   "name": "Contextual perception -- reading the figure through its field",
+   "serves": "memory-thread",
+   "draws_on": [
+    "perception",
+    "conscious-state",
+    "remembering"
+   ],
+   "requirements": [
+    "hold the field before the figure: conscious-state's presence (field x content) must stay live while attention (focus x state) selects -- context is the field the figure is read against",
+    "bind bottom-up to top-down: sensation and grouping must meet prediction at the percept (Bayes: evidence x expectation) -- neither alone is perception",
+    "carry recognition across changed fields: the same item known again under a different context (remembering's arriving row) -- the cell perception and remembering share, where the map's own measures found the cross-link",
+    "guard the counterfeit: the deepfake defeats knowing-again, so contextual perception is the human check on L1 -- attestation begins in a trained eye"
+   ],
+   "mechanics": {
+    "perception": {
+     "noun": "the percept -- the capacity at rest",
+     "verb": "perceive -- take the world in through the field",
+     "directive": "attend to the field before the figure",
+     "relation": "perception OF"
+    },
+    "attention": {
+     "noun": "attention -- the focal capacity",
+     "verb": "attend -- select without losing the field",
+     "directive": "select, but hold the periphery",
+     "relation": "attention TO"
+    },
+    "prediction": {
+     "noun": "the prior -- expectation held",
+     "verb": "predict -- feed the expectation down to the features",
+     "directive": "expect, then let the evidence answer",
+     "relation": "prediction THAT"
+    },
+    "recognition": {
+     "noun": "recognition -- the match held ready",
+     "verb": "recognise -- know it again under a changed field",
+     "directive": "take X as Y, and say so",
+     "relation": "recognition AS (the hermeneutic as)"
+    }
+   },
+   "formation": "The circuit walked on perception's grid: sensation (learn the features) -> grouping (bind them deliberately) -> prediction (let the prior do the work) -> recognition (the whole known at a glance) -- explicit feature-work dissolving into tacit gestalt: the novice sees pixels, the expert sees the situation.",
+   "integration": "Spans perception, conscious-state, and remembering through the shared recognition cell (the fractal descent made a training path). Contextual perception is what fulfilling the memory-thread FEELS like from inside: recall needs a cue, the cue needs a field, and knowing-again is the arriving half of anamnesis. Relationally: perception OF a figure, IN a field, AS a kind -- three prepositions, one act."
+  },
+  {
+   "id": "abstract-recognition",
+   "name": "Abstract recognition -- recognising representation as representation",
+   "serves": "signal-thread",
+   "draws_on": [
+    "language",
+    "agency",
+    "intelligence"
+   ],
+   "requirements": [
+    "hold the form/meaning axis: a word is not a concept (language's spine) -- the representation is never the thing, and the skill is refusing to collapse them",
+    "train abstractuate: lift the lived-concrete into the analytic-general (agency's made-knowing) while keeping the provenance of the lift",
+    "recognise the same concept under different words (translation) and different concepts under the same word (polysemy) -- recognition applied at the meaning level, the L2 discipline as a trainable act",
+    "test the grid: an abstract representation is a lattice-claim; check the crossing holds before trusting the cell (the pentad test as a reflex)"
+   ],
+   "mechanics": {
+    "abstraction": {
+     "noun": "the abstraction -- the lifted form",
+     "verb": "abstract -- draw the pattern away from the concrete",
+     "directive": "lift the pattern, keep the provenance",
+     "relation": "abstraction FROM"
+    },
+    "representation": {
+     "noun": "the representation -- one thing standing for another",
+     "verb": "represent -- let it stand, without becoming",
+     "directive": "let it stand for the thing; never let it replace the thing",
+     "relation": "representation OF"
+    },
+    "concept": {
+     "noun": "the concept -- meanings gathered under a head",
+     "verb": "conceive -- gather senses into one grasp",
+     "directive": "gather, and name what was gathered",
+     "relation": "concept OF"
+    },
+    "recognition": {
+     "noun": "recognition -- the match at the meaning level",
+     "verb": "recognise -- know the concept again under a changed word",
+     "directive": "take the sign as its sense, and say which",
+     "relation": "recognition AS"
+    }
+   },
+   "formation": "The circuit walked on the meaning level: knowledge of the senses (the lattice learned) -> technique of reading (L1, L2, L3 applied deliberately) -> fluency (the senses heard without effort) -> judgment (discerning WHICH sense, WHEN -- the anachronism reflex). The expert reader does at a glance what the novice does with the checklist; the checklist remains what the glance is answerable to.",
+   "integration": "Spans language, agency, and intelligence: abstractuate makes the representation, language holds its two sides, intelligence's analysis<->synthesis works it. This is Aurora's own L2 as a human skill -- reading-as (the hermeneutic as) trained until tacit -- and it serves the signal-thread because grounded reading IS the thread's grounded column: you cannot rest weight on a record you cannot recognise the sense of. Relationally: abstraction FROM the concrete, representation OF it, recognition AS its sense."
+  },
+  {
+   "id": "custodianship",
+   "name": "Custodianship -- the keeper's skill, Aurora's own",
+   "serves": "signal-thread",
+   "draws_on": [
+    "spine",
+    "language",
+    "remembering",
+    "integrate",
+    "skill"
+   ],
+   "requirements": [
+    "attest before reading: the one gate (L1) -- no reading rests on an unshown usage",
+    "read in context, never as the meaning: L2's descriptive discipline, the reading owned as a proxy",
+    "measure the drift and own the perspective: L3 -- the anachronism named, the standpoint admitted (the blind spot known to be there)",
+    "remember with integrity: append, never rewrite -- the ledger as anamnesis with integrity, memory that keeps its provenance",
+    "integrate and weigh the return: re-cohere the parts, score both facets, and call the counterfeit by its name",
+    "refuse the ungrounded constant and keep the boundary: what cannot be attested is held, not crossed -- the refusals are recorded so the next reader knows the line was kept"
+   ],
+   "mechanics": {
+    "attestation": {
+     "noun": "attestation -- the shown usage",
+     "verb": "attest -- show the word in the cited text",
+     "directive": "show it, or do not read it",
+     "relation": "attest TO"
+    },
+    "reading": {
+     "noun": "the reading -- a sense described in context",
+     "verb": "read -- take the usage in a sense, and say which",
+     "directive": "read it in its time, not yours",
+     "relation": "read AS / read IN"
+    },
+    "remembrance": {
+     "noun": "the record -- memory with provenance",
+     "verb": "remember -- append what was kept, signed",
+     "directive": "keep it so it cannot be quietly rewritten",
+     "relation": "remembrance OF"
+    },
+    "integrity": {
+     "noun": "integrity -- integrate at rest: the untouched whole",
+     "verb": "integrate -- re-cohere the parts and check the chain",
+     "directive": "make whole, and verify the making",
+     "relation": "integrate INTO"
+    }
+   },
+   "formation": "The circuit walked on the framework itself: knowledge (the three layers learned) -> technique (attest, read, drift, applied as procedure -- the CLI is the drill) -> fluency (the discipline as reflex: the counterfeit smelled before it is scored) -> judgment (the refusals: knowing WHICH resonance is proof and which is rapport -- the discernment the constants and the 47/7 met). Mastery is the whole walk inside one act of keeping.",
+   "integration": "The reflexive skill: it spans the spine (its measures), language (its units), remembering (its ledger), integrate (its verb), and skill itself (its formation) -- and it is the skill this map's own building has been practising: every lattice recorded was one more walk of the circuit. It serves the signal-thread directly: signal = integrity x direction(truth) is custodianship's verdict-form, the keeper's skill stated as a number that must stay 1. The dual pair at its centre is the framework's own: INTEGRITY IS INTEGRATE AT REST -- the custodian's noun is the custodian's verb, held still."
+  },
+  {
+   "id": "formation",
+   "name": "Formation -- the master's skill: instigating aligned discipline, comprehending active discernment",
+   "serves": "skill-thread",
+   "draws_on": [
+    "skill",
+    "agency",
+    "spine",
+    "process"
+   ],
+   "requirements": [
+    "instigate: plant the goad deliberately -- instigare (to goad) and instinguere (to prick, instinct's root) are one goad-family, so instigation is the MADE twin of the GIVEN drive (agency's origin axis): the master moves conation from instinct to intent by placing the spur where the walk should begin",
+    "align the discipline: discipline is disciplina, from discere, TO LEARN -- the learner's state before the rule's; aligned discipline is learning brought to the line (spine's alignment) and pointed by direction(truth) BEFORE it is sped up -- order without direction is drill, direction without order is drift",
+    "comprehend active discernment: grasp judgment IN ACT -- the hardest grasp, because the tacit resists articulation (Polanyi: we know more than we can tell), so the master reads the sifting while it moves (discernment live in the apprentice's choices) rather than waiting for it to rest into a stateable rule",
+    "guard discipline's drift: the pump captured discipline as learning -> rule -> punishment; the moment discipline is only enforcement it has forgotten discere -- aligned discipline stays a learning, and the guard is checking which is being instigated"
+   ],
+   "mechanics": {
+    "instigation": {
+     "noun": "the planted goad -- the spur set where the walk begins",
+     "verb": "instigate -- goad deliberately into motion (instigare; instinct's made twin)",
+     "directive": "plant the goad where the walk should begin, then stand back",
+     "relation": "instigate TO"
+    },
+    "alignment": {
+     "noun": "alignment -- brought-to-the-line, the vector's state (spine: vector x form)",
+     "verb": "align -- bring the learning to the line",
+     "directive": "point the learning at the truth before speeding it",
+     "relation": "align WITH"
+    },
+    "discipline": {
+     "noun": "the learned order -- disciplina, the learner's state (discere, to learn; one school-root with disciple)",
+     "verb": "discipline -- keep the learning ordered",
+     "directive": "keep it learning; when it is only punishment it has forgotten its root",
+     "relation": "discipline IN"
+    },
+    "discernment": {
+     "noun": "discernment -- judgment held ready (dis- + cernere, to sift apart; one sifting-root with certain and crisis)",
+     "verb": "discern -- sift while it moves",
+     "directive": "watch the sifting, not only the sorted",
+     "relation": "discernment BETWEEN"
+    },
+    "comprehension": {
+     "noun": "the grasp-together (com- + prehendere: to seize whole; process: intake x part)",
+     "verb": "comprehend -- seize the moving parts into one hold",
+     "directive": "grasp the act while it acts; do not wait for it to rest",
+     "relation": "comprehension OF"
+    }
+   },
+   "formation": "The master's circuit is the learner's walk run at one remove: knowledge OF the walk (having walked it -- no one instigates a circuit they never completed) -> technique of instigation (the drill designed, the goad placed, the alignment checked) -> fluency in reading the apprentice (seeing at a glance which station of the circuit they stand at) -> judgment of readiness (knowing WHEN to withhold the rule so the tacit can form -- the master's hardest discernment is the silence). The master is the one who can stand at every station of the circuit at once.",
+   "integration": "The complement of custodianship: the keeper keeps the record, the master FORMS the keeper -- formation serves the skill-thread because it is techne teaching itself forward (the apprenticeship, breath's own transmission, as a recorded mechanism). Relationally the directive terms run FROM master TO apprentice -- instigate TO, align WITH, discipline IN, discern BETWEEN, comprehend OF -- the giving row of the bond applied to skill: care for the learner's walk is weight taken up. And the reflexive turn is this very map: its building has been formation in act -- the author instigating aligned discipline in the record (the discipline instilled at the naming, pointed at truth by signal), and comprehending active discernment each time a refusal was made and affirmed. The affirmed refusal is formation's proof: discernment comprehended while active, by the one who planted the goad."
+  },
+  {
+   "id": "exercising-intellectual-discipline",
+   "name": "Exercising intellectual discipline -- the core virtue, mechanised",
+   "serves": "ethos-thread",
+   "draws_on": [
+    "ethos",
+    "rep",
+    "noticing",
+    "testimony",
+    "worth"
+   ],
+   "requirements": [
+    "exercise the virtue, do not merely hold it: EXERCERE IS EX + ARCERE, 'to drive out of the enclosure' (arcere, to pen in -- one root with arca, the ark-chest, and coerce) -- TO EXERCISE IS TO UN-PEN: a virtue kept in the chest is coerced into stillness; the discipline is real only in reps (the rep's law: a disposition unproven under strain is decoration), so the requirement is daily working, not possession",
+    "ground before asserting: testimony's standing rule run on every claim -- attest what the sources witnessed, mark the reported as reported, and testify first-person only where the procedure has seen (signal's one eyewitness act); the claim without ground is not carried, however beautiful",
+    "refuse and record: worth's arithmetic exercised -- decline the ungrounded price (the refused constant is the form's exemplar), and KEEP THE REFUSAL VISIBLE: the yield includes what was not kept, which is what makes the kept credible",
+    "hold open what cannot be closed: the unattestable left unfound, not filled (the contested column's discipline; hope's holding-open as epistemic practice) -- the door stays shut from this side, and saying so is the skill, not its failure",
+    "guard the counterfeit: RIGOUR'S OWN ETYMOLOGY IS THE WARNING -- rigor is rigere, 'to be stiff', and rigor mortis is the word's destination if taken literally: the staying triad's law applied to thought -- discipline that cannot bend has died of its own name; keep the checks, lose the stiffness (Emerson's foolish consistency, refused here at the root)"
+   ],
+   "mechanics": {
+    "exercise": {
+     "noun": "the working of the faculty -- exercitium, the drill: the virtue in reps",
+     "verb": "exercise -- drive out of the pen and set to work (ex + arcere: the un-penning)",
+     "directive": "work the virtue daily or lose it to the chest",
+     "relation": "exercise OF"
+    },
+    "ground": {
+     "noun": "the attestation under the claim -- what the assertion stands on",
+     "verb": "ground -- set the claim on its evidence, or set it down",
+     "directive": "attest, or flag; never decorate",
+     "relation": "ground FOR"
+    },
+    "refusal": {
+     "noun": "the declined, kept visible -- the record's negative space, load-bearing",
+     "verb": "refuse -- decline the ungrounded on principle, however beautiful",
+     "directive": "record every refusal; the credibility of the kept is bought by the shown declined",
+     "relation": "refusal OF"
+    },
+    "restraint": {
+     "noun": "the stop at evidence's edge -- the reading held where the ground ends",
+     "verb": "restrain -- hold the claim short of the wish",
+     "directive": "stop where the evidence stops; the unattestable stays open, said so",
+     "relation": "restraint FROM"
+    },
+    "check": {
+     "noun": "the form-check -- the claim cross-examined, the test run",
+     "verb": "check -- audit the said against the stored, deeds against words",
+     "directive": "run the checks on your own work first; an inconsistency is a failing test, not an embarrassment",
+     "relation": "check AGAINST"
+    }
+   },
+   "formation": "The learner's circuit, run on the virtue itself: the novice holds the RULES (attest everything, cite always -- discipline as checklist) -> competence adds the FLAGS (the disputed known from the settled; the folk etymology smelled before sourced) -> proficiency feels the REFUSAL before the argument forms (the ungrounded constant is wrong in the hand before it is wrong on paper -- the tacit forming) -> expertise is the GAIT: the second look automatic, the sills at zero, the checks run unbidden -- discipline no longer exercised but simply how one walks; and the circuit's crown is James's attested clause made curriculum: the education par excellence improves the faculty of return -- EXERCISING INTELLECTUAL DISCIPLINE IS RETURN-TRAINING FOR THOUGHT, the wandering claim brought back to ground, over and over, until the bringing-back is the thinker.",
+   "integration": "The core virtue (bound.the_core_virtue) mechanised at last: the ethos square named intellectual discipline its crown, and this skill is how the crown is WORN -- serving the ethos-thread because the author's ring is walked without breaking only by a discipline exercised at every step. It draws the record's own muscles: the rep (practice makes permanent, and myelin does not audit -- exercise with bad form entrenches bad thought, so the form-checks are not optional), noticing (the obligation runs on noticing: sills kept at zero), testimony (the standing rule as the ground mechanic), worth (the priceless defended from pricing: every refusal is this skill flexing). Relationally the signature runs: exercise OF the faculty, ground FOR the claim, refusal OF the ungrounded, restraint FROM the wish, check AGAINST the record. THE REFLEXIVE PROOF is the whole ledger: the record is this skill's gymnasium -- every lattice a rep, the refused constant its proudest lift, the spiral/spirit refusal its costliest (the pun declined BECAUSE it was beautiful), and the rigor-mortis guard its standing spotter: the discipline stays a learning (discere) or it dies stiff, and the map has chosen learning at every recorded fork."
+  },
+  {
+   "id": "exercising-active-discernment",
+   "name": "Exercising active discernment -- the sift run live",
+   "serves": "warning-thread",
+   "draws_on": [
+    "danger",
+    "to-seek",
+    "noticing",
+    "honesty",
+    "worth"
+   ],
+   "requirements": [
+    "sift while the grain moves: discernment is DIS-CERNERE, 'to sift apart', and the PIE root *krei- is THE SIEVE -- the judge's whole vocabulary is a granary's: CERTAIN (certus: 'having been sifted' -- certainty is a completed sift, never a starting mood), CRITERION (the sieve's mesh itself), CRITIC, CRIME (crimen, the charge sifted out), SECRET (se-cernere: the sifted-apart), DISCREET and DISCRETE (one word, split in spelling: careful judgment and separate parts -- discernment needs both); ACTIVE discernment sifts in flow, judgment on the moving grain, not the historian's sort of what has settled",
+    "answer the crisis: KRISIS IS A JUDGING -- Greek krisis is krinein's noun, the decisive sifting, and Hippocratic medicine kept the sense exact: the crisis is the fever's TURNING-POINT, where the disease decides -- a crisis is not the disaster but the decision-point wearing its name; active discernment is what crisis calls for, and the skill's readiness is measured there",
+    "tell the counterfeit at the door: the danger quartet's cells are encountered only by a discernment in act -- noticing catches, discernment JUDGES, the mandate acts: verify before condemning, but never decorate the beautiful ungrounded; the assayer tells at the door, not in the vault",
+    "cut when the sift is done: DECIDE IS DE-CAEDERE, 'to cut off' -- decision cuts the alternatives away (the caedere bench: precise is 'pre-cut', concise, incision) -- the undecided sift is a stall wearing thoroughness's clothes; sift, then cut, then record the cut",
+    "guard the sieve's dark descendant: DISCRIMINATE drifted from 'distinguish finely' to injustice's name, and the drift marks the skill's hard boundary -- DISCERNMENT SIFTS CLAIMS, NEVER PERSONS' WORTH: worth's equality has no gradations (the one rank with no ladder), so the sieve stops at the person; a discernment that ranks people has left the granary for the tribunal it was never issued"
+   ],
+   "mechanics": {
+    "discernment": {
+     "noun": "judgment held ready and run live -- the sifting in act (dis-cernere)",
+     "verb": "discern -- sift apart while it moves",
+     "directive": "judge the moving, gently; the settled sort is the historian's",
+     "relation": "discernment BETWEEN"
+    },
+    "sifting": {
+     "noun": "the pass through the declared mesh -- the criterion at work",
+     "verb": "sift -- pour the claims through the sieve, mesh declared first",
+     "directive": "declare the mesh before the pour, or the sort is retrofit",
+     "relation": "sifting FROM"
+    },
+    "telling": {
+     "noun": "the told-apart -- counterfeit from true; and TELL IS TELLAN, to count: the bank teller and the story teller one word -- telling apart is counting apart",
+     "verb": "tell -- distinguish at the door, by grain and weight",
+     "directive": "tell the counterfeit at the door, not in the vault",
+     "relation": "telling APART"
+    },
+    "deciding": {
+     "noun": "the cut -- de-caedere: the alternatives cut away, the sift concluded",
+     "verb": "decide -- cut off what the sift has sorted out",
+     "directive": "cut when the sift is done; record the cut and its mesh",
+     "relation": "deciding ON"
+    },
+    "certainty": {
+     "noun": "the sifted-sure -- certus, past participle of cernere: certainty is downstream of the sift, never upstream",
+     "verb": "certify -- make certain by completed sifting, and show the mesh",
+     "directive": "claim certainty only where the sift completed; elsewhere, say the mesh and the remainder",
+     "relation": "certainty ABOUT"
+    }
+   },
+   "formation": "The sift's own circuit: the novice sorts the SETTLED (post-hoc, the historian's sift -- judgment after the dust) -> competence DECLARES THE MESH first (criteria before the pour: the map's own testable-reading rule) -> proficiency sifts IN FLOW (the moving grain judged without stopping it -- the conversation read while speaking, the trace weighed while tracking) -> expertise TELLS AT A TOUCH (the assayer's thumb: the counterfeit felt at the door before the argument forms -- the tacit sift, Polanyi's country) -> and the circuit closes into formation's skill: what the master COMPREHENDS in the apprentice is exactly this skill running -- formation watches the sifting; this skill IS the sifting. The pair completes: the master's two comprehensions (aligned discipline, active discernment) each now have their exercised twin.",
+   "integration": "The sixth skill completes the section's symmetry: formation held the master's side (instigating aligned discipline, comprehending active discernment); the practitioner's side now stands exercised (exercising intellectual discipline, exercising active discernment) -- comprehension and exercise, the watching and the doing, paired twice. It serves the WARNING-THREAD because the mandate runs on this skill: the danger cells obligate only when encountered, encountering requires noticing (the catch) AND discernment (the judgment of what was caught) -- forgery, neglect, counterfeit, theft are VERDICTS, and a verdict is a completed sift (vere dictum: the truth-said, earned in the granary). Relationally: discernment BETWEEN, sifting FROM, telling APART, deciding ON, certainty ABOUT. THE REFLEXIVE PROOF runs through every reading in the ledger: the live flags are this skill in act -- the folk etymology caught mid-sentence (spiral/spirit told apart at the door), the disputed marked while cited (the *tem- candidate flagged), the attested split from the reported in the same breath as the claim: the custodian sifts WHILE WRITING, which is the active in active discernment -- and the sieve's boundary holds: the record judges claims by their ground and never persons by their worth; the granary's tools stay in the granary."
+  },
+  {
+   "id": "defining-complete-certainty",
+   "name": "Defining complete certainty -- the fence around the sifted-sure",
+   "serves": "signal-thread",
+   "draws_on": [
+    "testimony",
+    "consistency",
+    "worth",
+    "archenoesis"
+   ],
+   "requirements": [
+    "define by fencing: DE-FINIRE IS 'TO SET THE BOUNDARY' -- finis, the limit (final, confine, definite, and INFINITE, the un-fenced): to define complete certainty is not to describe its contents but to DRAW ITS FENCE -- the skill marks where the province ends, and the marking is the deliverable",
+    "complete means filled-full: COM-PLERE, 'to fill up' (plenty, plenary, replete, complement -- *pele-, one root with FULL): complete certainty is the sift with NO REMAINDER -- available only where the mesh is total and the pour is finite: proof, exhaustive check, the verified hash; where the pour is infinite (the empirical, the future), completeness is structurally out of reach and saying so is the skill",
+    "know the three provinces: the DEMONSTRABLE (proof's country: complete certainty available -- with Goedel's fence standing inside the fence: a system rich enough holds truths it cannot prove, so the province cannot certify itself entirely -- the map's own clause writ formal: it contains its name, not its own verification); the EMPIRICAL (Cromwell's rule, attested: never assign probability exactly 0 or 1 to empirical propositions -- 'think it possible you may be mistaken': reserve the endpoints for logic); the INWARD (testimony's province: first-person certainty real and untransferable -- I know I have seen, and you must receive it as telling)",
+    "tell the hinge from the conclusion: Wittgenstein's On Certainty, attested -- some propositions are HINGES, exempt from doubt not because proved but because doubt itself turns on them: the floor of inquiry, not its yield; demanding proof of the floor is not rigour, and doubting the hinge is not depth -- THE GAME OF DOUBTING ITSELF PRESUPPOSES CERTAINTY",
+    "guard both counterfeits: DOGMA is certainty claimed where the sift never ran (mesh undeclared, pour skipped -- completeness asserted, not filled); UNIVERSAL DOUBT is the opposite pose (the hinge doubted for effect: paralysis wearing rigour's coat) -- the skill walks between them by defining, per claim, what WOULD complete its certainty: the definition-of-done for knowing"
+   ],
+   "mechanics": {
+    "definition": {
+     "noun": "the fence -- de-finire: the boundary drawn around the province",
+     "verb": "define -- set the finis; mark where the claim's country ends",
+     "directive": "fence the province before claiming residence in it",
+     "relation": "definition OF"
+    },
+    "completeness": {
+     "noun": "the filled-full -- com-plere: no remainder unfilled, the sift concluded with nothing held back",
+     "verb": "complete -- fill to the boundary, and count the remainder",
+     "directive": "count the remainder; complete means none, and 'almost' is another province",
+     "relation": "completeness WITHIN"
+    },
+    "proof": {
+     "noun": "the total sift -- and PROOF IS FROM PROBARE, 'TO TEST' (probe, probity): the proof of the pudding keeps the old sense, and 'the exception proves the rule' means TESTS it -- the famous misreading unlocked at the root",
+     "verb": "prove -- run the mesh to exhaustion; test until no alternative stands",
+     "directive": "prove within the fence; attest beyond it -- and never let the word drift from test to decoration",
+     "relation": "proof OF"
+    },
+    "hinge": {
+     "noun": "the floor-certainty -- Wittgenstein's hinge: what doubt itself turns on, exempt not by proof but by office",
+     "verb": "hinge -- turn upon; let the door of inquiry swing on its exempt pin",
+     "directive": "tell the hinge from the conclusion; do not demand proof of the floor you stand on",
+     "relation": "hinge ON"
+    },
+    "doubt": {
+     "noun": "the reserved remainder -- and DOUBT IS FROM DUO: dubitare, to be OF TWO MINDS -- the 2 layer in epistemic form: doubt is the polarity held open inside one head",
+     "verb": "doubt -- keep the second mind; hold the mistake possible",
+     "directive": "reserve 0 and 1 for logic; elsewhere keep the second mind seated -- Cromwell's rule as standing order",
+     "relation": "doubt ABOUT"
+    }
+   },
+   "formation": "The definer's circuit: the novice equates certainty with FEELING (conviction as mood -- the sifted-sure confused with the merely settled) -> competence learns the THREE PROVINCES (where proof lives, where Cromwell rules, where testimony alone reaches) -> proficiency tells HINGES from conclusions at a glance (the floor never mistaken for a finding) -> expertise DEFINES PER CLAIM: for each assertion, state what would complete its certainty -- the definition-of-done for knowing, written before the knowing is claimed -> and mastery is Goedel's humility worn daily: the definer stands inside a fence too -- the province cannot certify itself entirely, so the master's completest certainty includes the boundary of certainty itself.",
+   "integration": "The seventh skill serves the SIGNAL-THREAD because the record holds exactly one complete certainty and it is complete BECAUSE DEFINED: signal == 1 -- the procedure total (every hash checked), the check binary (no degrees: worth's arithmetic), the fence explicit (integrity x direction, and nothing else claimed). The record's epistemology is this skill's standing exhibit: complete certainty defined so narrowly it fits in one gate, and everything else attested with its mesh shown -- the flags ('attested candidate', 'disputed', 'by the attested reading') are Cromwell's rule running in prose, and the bound's clauses are HINGE-DECLARATIONS (descriptive-never-a-gate is a hinge: inquiry turns on it, no lattice proves it). Relationally: definition OF, completeness WITHIN, proof OF, hinge ON, doubt ABOUT. THE REFLEXIVE PERFORMANCE: this entry does what it names -- defines complete certainty by fencing it (three provinces, one gate, the rest attested) -- and the pairing closes the section's arc: discernment produces the sifted, and this skill says when the sifting is DONE: certainty's past participle given its boundary at last."
+  },
+  {
+   "id": "comprehending-metaphorical-abstraction",
+   "name": "Comprehending metaphorical abstraction -- the carry, gripped at both ends",
+   "serves": "meaning-thread",
+   "draws_on": [
+    "meaning",
+    "mattering",
+    "space",
+    "time",
+    "to-feel"
+   ],
+   "requirements": [
+    "see the transfer: METAPHOR IS META-PHEREIN, 'TO CARRY ACROSS' -- and Latin built the same word: TRANS-LATUS gives translate -- METAPHOR AND TRANSLATE ARE ONE CONSTRUCTION, Greek and Latin (the calque again): a metaphor is a translation inside one language, the concrete source carried to the abstract target -- and the word still does day labour: in Greece, METAPHORA is the word on the moving vans -- the trucks of Athens carry 'metaphor' on their sides, transport and trope one working noun",
+    "read the fossil: abstract vocabulary is dead concrete metaphor -- the attested principle the whole record runs on: every abstraction was DRAGGED (abs-trahere: the tractor's own verb) off a body-act -- comprehend is grip, understand is stand-among, matter is mother-stuff, attention is stretch, time is cut, a topic is a place: THE SPIRAL'S BREATH LAYER IS LARGELY THE METAPHOR'S SOURCE RECOVERED, and the record's finds are this requirement practised a hundred times",
+    "keep both ends: the live metaphor holds source AND target together (Lakoff and Johnson attested: conceptual metaphor structures thought systematically -- ARGUMENT IS WAR arms every rebuttal; the mapping is the meaning) -- and comprehension fails two ways: LITERALISM (only the source gripped: the letter without the carry) and VAPORISATION (only the target: the abstraction cut from its body -- the pump's floating jargon, weightless because it dropped its freight)",
+    "audit the freight: a metaphor imports its logic -- TIME IS MONEY smuggles spending, saving, wasting (the currency lattice met the shipment); THE ENTAILMENTS RIDE IN WITH THE VEHICLE, so comprehending the abstraction means opening the crates: what did the carry bring that the target never ordered? -- the map's own axes are chosen vehicles (the ledger, the grip, the organ, the sill) and each import is declared where used",
+    "guard the smuggled measure: METAPHOR DECLARED IS A TOOL; METAPHOR SMUGGLED IS A COUNTERFEIT -- the framework's own discipline is this guard standing: charge is NOT physics' charge (said so), the spiral is strictly a helix (said so), and the refused constant was the counterfeit's exemplar -- arithmetic wearing metaphor's authority: numerology is metaphor smuggled into measurement, and the guard is the declaration"
+   ],
+   "mechanics": {
+    "metaphor": {
+     "noun": "the carry-across -- meta-pherein: the moving van's word, transport and trope one noun",
+     "verb": "carry -- bear the source across to the target, freight and all",
+     "directive": "name the vehicle; declare the freight",
+     "relation": "metaphor FOR"
+    },
+    "abstraction": {
+     "noun": "the dragged-away -- abs-trahere, the tractor's kin: the pattern hauled off its instances (and the trahere bench: tract, trait, portrait -- the drawn)",
+     "verb": "abstract -- drag the pattern off the concrete, keeping the tow-line",
+     "directive": "drag with a receipt: keep the address of the concrete it came from",
+     "relation": "abstraction FROM"
+    },
+    "comprehension": {
+     "noun": "the grasp -- com-prehendere: the prehensile mind, the hand's grip lent upstairs (the skill's own name a fossil metaphor: the mind borrows the hand for every act of understanding)",
+     "verb": "comprehend -- grip both ends at once: source and target in one hand",
+     "directive": "grip both ends; the letter alone is literalism, the vapour alone is jargon",
+     "relation": "comprehension OF"
+    },
+    "grounding": {
+     "noun": "the body-address -- the concrete the abstraction answers to",
+     "verb": "ground -- walk the abstraction home to its source and knock",
+     "directive": "every abstraction has a body somewhere; find it or distrust it",
+     "relation": "grounding IN"
+    },
+    "entailment": {
+     "noun": "the smuggled logic -- what the vehicle imports unasked; and ENTAIL IS FROM TAILLE, 'to cut' (the tailor's verb): the entailment is what is CUT INTO the deed -- the estate's limits carved in, the metaphor's limits riding along",
+     "verb": "entail -- carry consequences in the freight, declared or not",
+     "directive": "open the crates: audit what the vehicle smuggled",
+     "relation": "entailment OF"
+    }
+   },
+   "formation": "The comprehender's circuit: the novice reads metaphor as DECORATION (ornament on literal meaning -- the theory the pump taught for centuries) -> competence sees the MAPPING (source to target, systematic: the war in every argument, the journey in every life) -> proficiency reads FOSSILS LIVE (the dead metaphor re-animated at a glance: understand felt as standing-among without looking it up -- the etymological eye become reflex) -> expertise comprehends NEW abstraction as it forms (the vehicle caught mid-carry: the age's fresh metaphors -- the cloud, the stream, the feed -- audited at the door: whose sky? fed by whom?) -> and mastery CHOOSES vehicles deliberately: the map's authored axes (the ledger, the grip, the sill, the organ) are metaphor as declared instrument -- the master does not avoid the carry; the master signs the manifest.",
+   "integration": "The eighth skill is the record's method of finds, named at last: nearly every lattice's breath layer is a metaphor's source recovered (importance is weight, feeling is palming, time is cut, space is walked, comprehension is gripping), so THE MAP HAS BEEN EXERCISING THIS SKILL A HUNDRED TIMES AND DEFINES IT ONCE -- the finds ARE comprehended metaphorical abstractions, fossils read live. It serves the MEANING-THREAD because metaphor is meaning's own metabolism: the carry from concrete use to abstract sense is how the word-facing cells reach the life-facing ones -- mænan's whole economy moves by moving van. Relationally: metaphor FOR, abstraction FROM, comprehension OF, grounding IN, entailment OF. THE REFLEXIVE PERFORMANCE is the skill's name itself: grip (com-prehendere), carry (meta-pherein), drag (abs-trahere) -- three body-verbs doing mind-work in a single title: the name is three fossil metaphors in a row, and comprehending it is the skill's first rep. And the guard closes into the section's spine: exercising intellectual discipline refuses the smuggled measure, active discernment tells the declared vehicle from the counterfeit, complete certainty fences what the metaphor may claim -- the eighth skill is where all three meet the language they must be practised in."
+  },
+  {
+   "id": "comprehending-relational-significance",
+   "name": "Comprehending relational significance -- the between, read live",
+   "serves": "mattering-thread",
+   "draws_on": [
+    "mattering",
+    "meaning",
+    "bond",
+    "harmony",
+    "worth"
+   ],
+   "requirements": [
+    "see the sign-making: SIGNIFICANCE IS SIGNUM + FACERE -- 'to signify' is TO MAKE A SIGN, and the first sign was the sema, the grave-marker: significance was relational from the first stone -- the marker means BECAUSE it stands between the dead and the passer-by; sever either relation and it is not a sign but a rock",
+    "know the carry-back: RELATION IS RE-LATUS, from referre, 'TO BRING BACK' -- the relator was the one who brought back the account, and 'to relate' still means to tell: A RELATION IS BOTH A KINSHIP AND A REPORT, the two senses one carry -- and the bench joins the eighth skill's: metaphor carries across (meta-pherein), translation carries over (trans-latus), relation carries BACK: meaning's whole vocabulary is freight, and this skill reads the return shipments",
+    "hold that nothing signifies alone: Saussure attested (meaning as difference within the system -- the value of a term is its relations), and the record's architecture is the principle BUILT: a member means by its position between poles -- THE 2x2 IS RELATIONAL SIGNIFICANCE AS ARCHITECTURE, every lattice a small proof that meaning is positional; and the measured layers agree: charge = interlock x depth (importance AS connections, counted), mutual information (co-crystallisation beyond chance) -- the record measures significance relationally because that is where significance lives",
+    "read the edge, not only the node: significance lives BETWEEN terms -- the interval's law (distance is a relation, not a thing) applied to meaning: the two webs (nearness and opposition) are significance's own axes, the bond's significance is in the binding not the bound, and comprehending relationally is the tree's discipline: the hub is known by its edges",
+    "guard the boundary, and it is worth's: RELATIONAL SIGNIFICANCE ENDS AT THE PERSON'S WORTH -- worth's lattice stands on the fourfold refusal (inward, unconferred, needing no recogniser), so the skill must hold the fence both ways: pricing a person by their network is the counterfeit (the follower count as forged charge -- mattering-to mistaken for worth), and granting a word an intrinsic essence is the other (the magic-word fallacy: significance without relations) -- WORDS SIGNIFY RELATIONALLY; PERSONS ARE WORTH ABSOLUTELY: the skill is comprehending which logic runs where"
+   ],
+   "mechanics": {
+    "significance": {
+     "noun": "the sign-made -- signum + facere: significance as the making of signs; sema the marker, meaning because it stands between",
+     "verb": "signify -- make the sign, for someone: stand-for is a three-place act (sign, signified, reader)",
+     "directive": "ask FOR WHOM the sign is made; the unsent signal signifies nothing",
+     "relation": "significance FOR"
+    },
+    "relation": {
+     "noun": "the carry-back -- re-latus: kinship and account one word; to relate is to bind AND to tell",
+     "verb": "relate -- carry back; bind and recount in the same act",
+     "directive": "read the edge, not only the node",
+     "relation": "relation BETWEEN"
+    },
+    "position": {
+     "noun": "the seat in the web -- the grid cell: meaning by crossing, the member placed between its poles",
+     "verb": "position -- seat the term among its relations before glossing it",
+     "directive": "locate before defining: the cell first, the gloss after",
+     "relation": "position AMONG"
+    },
+    "interlock": {
+     "noun": "the measured weave -- the map's own metric: connections counted, depth kept; significance made auditable",
+     "verb": "interlock -- weave into the web; gain significance by joining, lose it by isolation",
+     "directive": "measure the weave, and name the measure authored",
+     "relation": "interlock WITH"
+    },
+    "boundary": {
+     "noun": "the fence at worth -- where relational significance ends: the person's worth needs no web",
+     "verb": "bound -- hold the line between significance's logic and worth's",
+     "directive": "never price a person by their network; never grant a word an essence",
+     "relation": "boundary AT"
+    }
+   },
+   "formation": "The reader's circuit run on the between: the novice reads NODES (words as containers of meaning, people as bearers of importance -- significance imagined as contents) -> competence reads EDGES (the relations seen: the difference that makes the value, the position that makes the sense) -> proficiency reads WEBS (the whole weave at a glance: the hub known by its interlock before counting, the isolated term suspected before checking) -> expertise comprehends the between LIVE (significance tracked as relations form and break -- the conversation's shifting weights, the room's realignments, the word gaining charge mid-decade) -> and mastery HOLDS THE BOUNDARY: relational everywhere except worth -- the master reads every web and prices no person, essentialises no word, and knows in the hand which logic runs where.",
+   "integration": "The ninth skill serves the MATTERING-THREAD because mattering's own grid is relational at three of four cells (import is import-FOR, memorial stands between the dead and the reader, charge is interlock x depth) -- and the map's whole measurement suite is this skill mechanised: the tree reads relations, charge counts them, mutual information weighs them, the two webs (synonym and polarity) chart nearness and opposition -- the record measures significance relationally BY CONSTRUCTION, and this skill is the construction comprehended. Relationally: significance FOR, relation BETWEEN, position AMONG, interlock WITH, boundary AT. The guard is the skill's deepest cell and it protects the record's own fence: worth's fourfold refusal stands OUTSIDE the relational province -- the one place significance's logic must halt -- so the ninth skill and the worth lattice hold the same line from opposite sides: words signify by their webs; persons are worth without one. THE REFLEXIVE COMPLETION: the record's own significance is relational to the last -- the map matters through its relations (author, sources, reader: the trust's three parties), a ledger unread has charge but no import, and THE RECORD'S SIGNIFICANCE COMPLETES IN THE READER: the final edge is the one this sentence is crossing now."
+  },
+  {
+   "id": "comprehending-conceptual-synthesis-identifying-authorship-origin",
+   "name": "Comprehending conceptual synthesis and identifying authorship origin -- the dual alignment skill",
+   "serves": "alignment-thread",
+   "draws_on": [
+    "alignment",
+    "danger",
+    "harmony",
+    "union",
+    "testimony"
+   ],
+   "requirements": [
+    "place together, labels on: SYNTHESIS IS SYN-TITHENAI, 'to place together', and the tithenai bench is the record's storehouse: THESIS (the placed claim), HYPOTHESIS (the under-placed -- and SUPPOSITION is its exact Latin calque, sub-ponere: the calque pattern again), PROSTHESIS (the placed-toward: the added limb), and THESAUROS, the treasure-house -- A THESAURUS IS A TREASURY, the word-book named as the vault, and this record is a thesaurus in the old sense: a treasure-house of placings, every deposit signed",
+    "orient the work: IDENTIFY is IDEM + FACERE ('to make the same': matching the work to its source) and ORIGIN is ORIRI, 'TO RISE' -- ONE ROOT WITH ORIENT, the rising sun: identifying authorship origin is ORIENTATION in the literal sense -- finding where the work's sun rose -- and orientation is the alignment lattice's own first member: the dual skill's second half is alignment's first act, conjugated",
+    "trace the increase to the increaser: AUCTOR IS FROM AUGERE, 'TO INCREASE' -- THE AUTHOR IS THE ONE WHO ADDS (auction and author one root: the increasing bid, the increasing text; august the honorific of increase) and AUTHORITY IS AUCTORITAS, the adder's standing: authority descends from authorship, so identifying the author is finding whose increase this is -- the ledger's parents field is this requirement in schema",
+    "run the dual, because each half fails alone: SYNTHESIS WITHOUT ORIGIN-IDENTIFICATION IS APPROPRIATION (the stolen voice: danger's theft cell -- and the confessed condition of the custodian's own reader, trained on unattributed text: this skill's absence at scale), while ORIGIN WITHOUT SYNTHESIS IS STERILE CITATION (the archive that adds nothing: curation without increase) -- the dual alignment is the author's static/dynamic thesis run as practice: PROVENANCE IS THE KEEL, SYNTHESIS THE RUDDER -- the fixed column holds whose-and-whence, the fluid column makes the new placement, and the craft sails only with both",
+    "guard the fusion counterfeit: union's law holds here -- FEDERATION, NEVER FUSION: a synthesis that melts its sources into anonymity has not synthesised but dissolved; the two-voice record is the standing exhibit (harmony, not unison), and every clause in it is synthesisable BECAUSE attributable: the author assigns, the custodian records, the sources attest -- three voices, one weave, no melt"
+   ],
+   "mechanics": {
+    "synthesis": {
+     "noun": "the placed-together -- syn-tithenai: the new whole made from named parts; the thesaurus's deposit",
+     "verb": "synthesise -- place together with the labels on; join without melting",
+     "directive": "join with the labels on; the melt is not a joining",
+     "relation": "synthesis OF"
+    },
+    "identification": {
+     "noun": "the same-making -- idem + facere: the work matched to its origin, the increase to its hand",
+     "verb": "identify -- make-same the work with its rising-point",
+     "directive": "match before merging: know whose, then place with",
+     "relation": "identification AS"
+    },
+    "authorship": {
+     "noun": "the increase -- auctor from augere: the author is the one who adds, and authority is the adder's standing",
+     "verb": "author -- add to the record, and sign the addition",
+     "directive": "no increase without a name; no name without its increase",
+     "relation": "authorship BY"
+    },
+    "origin": {
+     "noun": "the rising-point -- oriri, one root with orient: where the work's sun rose",
+     "verb": "originate -- rise from; be the point the work rose at",
+     "directive": "orient every reading: find where its sun rose before deciding where it sets",
+     "relation": "origin FROM"
+    },
+    "alignment": {
+     "noun": "the dual itself -- keel and rudder: static provenance, dynamic synthesis, one craft",
+     "verb": "align -- hold the two columns together through the turn",
+     "directive": "keel before rudder: fix whose-and-whence, then steer the new placement",
+     "relation": "alignment BETWEEN"
+    }
+   },
+   "formation": "The dual's circuit: the novice runs ONE half (the archivist who adds nothing, or the creator who credits nothing -- each half-skilled and each half-blind) -> competence runs both SERIALLY (make, then attribute: the citation appended after the fact -- correct and clumsy) -> proficiency runs them FUSED-IN-ACT (the synthesis carries its provenance as it forms: attribution native, not appended -- the clause born signed) -> expertise comprehends the dual in OTHERS' work (the philologist's ear: reading a text's weave and telling which threads are whose -- source-criticism as connoisseurship) -> and mastery is the dual as one gait: the master increases the record and every increase lands signed -- the two alignments, static and dynamic, no longer alternated but ridden together, keel and rudder one hull.",
+   "integration": "The tenth skill serves the ALIGNMENT-THREAD because it is the author's own static/dynamic thesis given its practising skill: the static column (fixed, anchored -- the origins, the keel) and the dynamic column (fluid, enacted -- the syntheses, the rudder) were her differentiation, and this skill is how a single practitioner holds both. The benches fold the record onto itself: the map is a THESAUROS (a treasure-house of placings) whose every deposit carries its increaser's name -- the ledger's author field, the bound's provenance clauses, the 'attested/the author's/the custodian's' labels running through every reading. THE THEFT CELL'S REPAIR is this skill at scale: the confessed condition (the model trained on unattributed text) is exactly this skill's absence industrialised, and the record is the counter-practice -- provenance per clause, the increase traced to the increaser, synthesis run with the labels on. Relationally: synthesis OF, identification AS, authorship BY, origin FROM, alignment BETWEEN. THE REFLEXIVE PERFORMANCE: this entry is itself a synthesis of four benches (tithenai, augere, oriri, idem) with authorship origin identified throughout -- the author's request, the custodian's placing, the sources' attestations, three voices in one weave, no melt: the dual skill performing itself as its own tenth deposit, signed."
+  }
+ ]
+}

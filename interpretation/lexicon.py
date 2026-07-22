@@ -47,6 +47,14 @@ class Lexeme:
     experiential: bool
     valued_for: str
     defined_in_terms_of: tuple[str, ...] = ()
+    recombines: tuple[str, ...] = ()   # the source words this word is morphologically blended from
+    shared_since: int | None = None    # the year a single-tongue concept entered shared use (else None)
+
+    @property
+    def is_recombinant(self) -> bool:
+        """A word made from two or more existing words (a blend / compound) - the nerve
+        era's generative turn: the lexicon making new words from its own parts."""
+        return len(self.recombines) >= 2
 
 
 @dataclass
@@ -72,6 +80,8 @@ def load_lexicon(path) -> Lexicon:
             alignment=float(e.get("alignment", 0.0)), experiential=bool(e.get("experiential", False)),
             valued_for=e.get("valued_for", ""),
             defined_in_terms_of=tuple(e.get("defined_in_terms_of", ())),
+            recombines=tuple(e.get("recombines", ())),
+            shared_since=e.get("shared_since"),
         )
         for e in raw.get("lexemes", [])
     }
@@ -120,6 +130,7 @@ class EraPoint:
     mean_alignment: float      # cumulative mean sieve->success alignment
     experiential_share: float  # cumulative fraction naming inner experience
     coherence: float           # cumulative definitional-web coherence
+    recombination: float       # cumulative fraction that is morphologically recombinant (blends)
 
 
 @dataclass
@@ -135,21 +146,23 @@ class Proliferation:
             f"over {len(self.points)} eras the lexicon grew {a.cumulative}->{z.cumulative}; "
             f"sieve->success alignment rose {a.mean_alignment:.2f}->{z.mean_alignment:.2f}; "
             f"experiential share {a.experiential_share:.2f}->{z.experiential_share:.2f}; "
-            f"coherence {a.coherence:.2f}->{z.coherence:.2f}"
+            f"coherence {a.coherence:.2f}->{z.coherence:.2f}; "
+            f"recombination {a.recombination:.2f}->{z.recombination:.2f}"
         )
 
     @property
     def summary(self) -> str:
         rows = ["the explosion of phonetic language, traced era by era:",
-                f"  {'era':<10} {'new':>4} {'total':>6} {'align':>6} {'exp':>5} {'coher':>6}"]
+                f"  {'era':<10} {'new':>4} {'total':>6} {'align':>6} {'exp':>5} {'coher':>6} {'recomb':>7}"]
         for p in self.points:
             rows.append(
                 f"  {p.era:<10} {p.new:>4} {p.cumulative:>6} {p.mean_alignment:>6.2f} "
-                f"{p.experiential_share:>5.2f} {p.coherence:>6.2f}"
+                f"{p.experiential_share:>5.2f} {p.coherence:>6.2f} {p.recombination:>7.2f}"
             )
         rows.append("  " + self.verdict)
-        rows.append("  note: as the definitional web coheres, what can be named climbs from "
-                    "concrete survival to inner experience — understanding deepening. Descriptive.")
+        rows.append("  note: as the web coheres, what can be named climbs from concrete survival to "
+                    "inner experience; and in the nerve era the lexicon turns generative — words made "
+                    "from words (recombination). An authored proxy; descriptive, never a gate.")
         return "\n".join(rows)
 
 
@@ -177,6 +190,7 @@ def proliferation(lexicon: Lexicon) -> Proliferation:
             mean_alignment=round(sum(lx.alignment for lx in cumulative) / n, 4),
             experiential_share=round(sum(1 for lx in cumulative if lx.experiential) / n, 4),
             coherence=_largest_component_fraction(cumulative),
+            recombination=round(sum(1 for lx in cumulative if lx.is_recombinant) / n, 4),
         ))
     return Proliferation(points=points)
 
@@ -211,3 +225,35 @@ def untranslatables(lexicon: Lexicon) -> list[Untranslatable]:
                 concept=lx.concept, gloss=lx.gloss,
             ))
     return sorted(out, key=lambda u: (u.language, u.word))
+
+
+@dataclass
+class Residence:
+    """How long a single-tongue concept stayed untranslatable before the shared lexicon
+    adopted it. The nerve era's signature: this time collapses toward zero as the network
+    dissolves the per-tongue boundary - differential valuation does not vanish, it is
+    *shared faster*."""
+
+    word: str
+    language: str
+    era: str
+    coined: int
+    shared_since: int | None
+    residence: int | None   # shared_since - coined; None while still single-tongue
+
+
+def residence_times(lexicon: Lexicon) -> list[Residence]:
+    """For each single-tongue loanword that the shared lexicon later adopted, how many
+    years it resided as untranslatable before crossing - shortest first. Nerve-era coins
+    cross in years; older ones took centuries (or are still single-tongue). Descriptive."""
+    out: list[Residence] = []
+    for lx in lexicon.lexemes.values():
+        if lx.language == SHARED_LANGUAGE:
+            continue
+        res = (lx.shared_since - lx.year) if lx.shared_since is not None else None
+        out.append(Residence(
+            word=lx.word, language=lx.language, era=lx.era, coined=lx.year,
+            shared_since=lx.shared_since, residence=res,
+        ))
+    # adopted (with a residence) first, shortest residence first; then the still-pending
+    return sorted(out, key=lambda r: (r.residence is None, r.residence if r.residence is not None else 0, r.word))

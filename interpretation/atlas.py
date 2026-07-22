@@ -17,11 +17,13 @@ from collections import Counter
 from dataclasses import dataclass, field
 
 from .arc import Arc, arc
+from .aspects import Aspects, aspects as aspects_view
 from .constellation import Constellation, constellation
 from .glossary import Glossary
 from .ledger import Ledger
 from .lexicon import Lexicon, Proliferation, proliferation
 from .migration import Migration, migrate
+from .regime import NERVE
 from .signal import Signal, compute_signal
 
 
@@ -32,6 +34,7 @@ class Atlas:
     explosion: Proliferation
     migrations: list[Migration] = field(default_factory=list)
     arcs: list[Arc] = field(default_factory=list)
+    aspects: Aspects | None = None
 
     @property
     def hub(self) -> str:
@@ -77,6 +80,17 @@ class Atlas:
                 f"reaching {a.reaches:.2f} over ~{a.span_years} year(s)"
             )
 
+        if self.aspects and self.aspects.keystone:
+            v, reach = self.aspects.keystone
+            verdicts = Counter(s.verdict for s in self.aspects.signs if s.verdict)
+            spread = ", ".join(f"{n}x {o}" for o, n in
+                               sorted(verdicts.items(), key=lambda kv: (-kv[1], kv[0])))
+            n_nerve = len(self.aspects.clusters.get(NERVE, []))
+            rows.append(
+                f"  the nerve return — keystone {v} (reach {reach}); {n_nerve} sign(s) "
+                f"span {spread or '—'}; bridge {self.aspects.bridge} (it is the cycle)"
+            )
+
         rows.append("  note: composed from already-tested measures - a reader, not a ruler; "
                     "read-only, gates nothing.")
         return "\n".join(rows)
@@ -98,8 +112,9 @@ def atlas(
     values = [v for v in glossary.migrations if not v.startswith("_")]
     migrations = [migrate(v, glossary) for v in sorted(values)]
     arcs = [a for a in (arc(v, glossary, lexicon) for v in sorted(values)) if a.thread]
+    asp = aspects_view(glossary) if glossary.aspects else None
 
     return Atlas(
         signal=sig, breath=breath, explosion=explosion,
-        migrations=migrations, arcs=arcs,
+        migrations=migrations, arcs=arcs, aspects=asp,
     )

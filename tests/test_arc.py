@@ -42,3 +42,13 @@ def test_a_value_whose_shards_were_not_relexicalised_has_no_thread():
     assert a.breath_signs                 # it was held whole in the breath web
     assert a.lexicalized == []            # but no shard re-entered this lexicon
     assert a.thread == []
+
+
+def test_the_arc_now_crosses_both_thresholds():
+    # Phase E: the flagship arc reaches the nerve re-coherence, not just the pump climb
+    g, lex = _world()
+    a = arc("equilibrium", g, lex)
+    assert a.reaches == 0.92                       # the pump thread still climbs to wellbeing
+    assert [n.sign for n in a.nerve] == ["resilience"]
+    assert a.nerve[0].outcome == "faithful"
+    assert "crosses BOTH thresholds" in a.summary

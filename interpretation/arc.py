@@ -24,7 +24,7 @@ from dataclasses import dataclass, field
 
 from .glossary import Glossary
 from .lexicon import Lexicon
-from .migration import migrate
+from .migration import NerveReturn, migrate
 
 
 def _descendants(seeds: list[str], lexicon: Lexicon) -> set[str]:
@@ -63,6 +63,7 @@ class Arc:
     shards: list[str] = field(default_factory=list)
     lexicalized: list[tuple[str, str]] = field(default_factory=list)  # (shard term, lexeme id)
     thread: list[ArcStop] = field(default_factory=list)               # by year, climbing
+    nerve: list[NerveReturn] = field(default_factory=list)            # the return across the SECOND threshold
 
     @property
     def reaches(self) -> float:
@@ -93,6 +94,13 @@ class Arc:
                         f"— from a sign held whole to flourishing named, unbroken across the ghost lag")
         else:
             rows.append("  pump      — dispersed, but no shard was re-traced into this lexicon")
+        if self.nerve:
+            rows.append("  nerve     — re-cohered across the second threshold:")
+            for n in self.nerve:
+                rows.append(f"    {n.sign:<12} — {n.outcome.upper()} "
+                            f"(structural {n.structural:.2f} x substantive {n.substantive:.2f})")
+            rows.append("  the thread now crosses BOTH thresholds: a breath sign held whole -> the pump "
+                        "lexicon -> the nerve return — one value, unbroken from origin to re-coherence")
         rows.append("  note: an authored map, a proxy; descriptive, never a gate.")
         return "\n".join(rows)
 
@@ -142,4 +150,5 @@ def arc(value: str, glossary: Glossary, lexicon: Lexicon) -> Arc:
         shards=[sh.term for sh in m.shards],
         lexicalized=lexicalized,
         thread=thread,
+        nerve=m.nerve,           # the nerve return migrate already computed (Phase E)
     )

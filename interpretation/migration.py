@@ -47,6 +47,16 @@ class Shard:
     period: str = ""
 
 
+@dataclass(frozen=True)
+class NerveReturn:
+    """A nerve sign that re-coheres the dispersed value back toward a whole, with verdict."""
+
+    sign: str
+    outcome: str          # faithful / counterfeit / mixed / resistant
+    structural: float
+    substantive: float
+
+
 @dataclass
 class Migration:
     """A value's passage across the threshold: held whole, then dispersed."""
@@ -56,6 +66,7 @@ class Migration:
     breath_weight: float = 0.0
     shards: list[Shard] = field(default_factory=list)
     note: str = ""
+    nerve: list[NerveReturn] = field(default_factory=list)  # the nerve-era return(s) of the value
 
     @property
     def concentration(self) -> int:
@@ -66,6 +77,11 @@ class Migration:
     def dispersion(self) -> int:
         """How many separate pump-era lexemes the value scattered into."""
         return len(self.shards)
+
+    @property
+    def re_coherence(self) -> int:
+        """How many nerve signs re-cohered the value back toward a whole."""
+        return len(self.nerve)
 
     @property
     def verdict(self) -> str:
@@ -92,8 +108,13 @@ class Migration:
             rows.append("  pump side (segmented into separate lexemes):")
             for sh in self.shards:
                 rows.append(f"    {sh.term:<12} — {sh.aspect}")
-        rows.append("  note: the breath side is measured; the dispersal is an authored "
-                    "reading of the redistribution, a proxy. Descriptive, never a gate.")
+        if self.nerve:
+            rows.append("  nerve side (re-cohered toward the whole, at greater complexity):")
+            for n in self.nerve:
+                rows.append(f"    {n.sign:<12} — {n.outcome.upper()} "
+                            f"(structural {n.structural:.2f} x substantive {n.substantive:.2f})")
+        rows.append("  note: the breath side is measured; the dispersal and the nerve return are "
+                    "authored proxies. Descriptive, never a gate.")
         return "\n".join(rows)
 
 
@@ -121,7 +142,18 @@ def migrate(value: str, glossary: Glossary, *, regime: str = BREATH) -> Migratio
               citation=s.get("citation", ""), period=s.get("period", ""))
         for s in entry.get("shards", [])
     ]
+
+    # the nerve side: the signs that re-cohere this value back toward a whole (Phase E)
+    from .spiral import breath_values, recohere, returns_for
+    bvals = breath_values(glossary)
+    nerve = [
+        NerveReturn(sign=rec.sign, outcome=r.outcome,
+                    structural=r.structural, substantive=r.substantive)
+        for rec in returns_for(value, glossary)
+        for r in (recohere(rec, bvals),)
+    ]
+
     return Migration(
         value=value, breath_signs=signs, breath_weight=round(total, 4),
-        shards=shards, note=entry.get("note", ""),
+        shards=shards, note=entry.get("note", ""), nerve=nerve,
     )

@@ -24,7 +24,7 @@ from dataclasses import dataclass, field
 
 from .fingerprint import normalize
 from .glossary import Usage
-from .regime import BREATH, SCRIPT_CONCEPTUAL, SCRIPT_PHONETIC, is_phonetic_projection
+from .regime import SCRIPT_CONCEPTUAL, is_phonetic_projection
 from .semantics import SenseLattice
 from .weighting import WeightedField
 
