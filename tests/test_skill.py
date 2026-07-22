@@ -26,7 +26,8 @@ def test_the_skills_load_with_their_threads_and_lattices():
     assert ids == {"contextual-perception", "abstract-recognition", "custodianship",
                    "formation", "exercising-intellectual-discipline",
                    "exercising-active-discernment", "defining-complete-certainty",
-                   "comprehending-metaphorical-abstraction"}
+                   "comprehending-metaphorical-abstraction",
+                   "comprehending-relational-significance"}
     ts = load_threads(THREADS)
     qs = load_quartets(QUARTETS)
     for s in sk.skills:
@@ -229,6 +230,35 @@ def test_comprehending_metaphorical_abstraction_grips_both_ends():
     assert "three fossil metaphors in a row" in sk.integration
     # mastery signs the manifest: chosen vehicles, declared
     assert "signs the manifest" in sk.formation
+
+
+def test_comprehending_relational_significance_reads_the_between():
+    # the ninth skill: significance lives between terms -- and the guard
+    # holds the fence at worth, from the significance side
+    sk = _skills().by_id("comprehending-relational-significance")
+    assert sk.serves == "mattering-thread"
+    assert {"mattering", "meaning", "bond", "harmony", "worth"} == set(sk.draws_on)
+    words = {m.word for m in sk.mechanics}
+    assert words == {"significance", "relation", "position", "interlock", "boundary"}
+    reqs = " ".join(sk.requirements)
+    # significance is sign-making; the sema means because it stands between
+    assert "SIGNUM + FACERE" in reqs
+    # relation is the carry-back: kinship and account one word
+    assert "TO BRING BACK" in reqs
+    assert "A RELATION IS BOTH A KINSHIP AND A REPORT" in reqs
+    # the architecture as the principle built
+    assert "THE 2x2 IS RELATIONAL SIGNIFICANCE AS ARCHITECTURE" in reqs
+    # the boundary: words signify relationally, persons are worth absolutely
+    assert "WORDS SIGNIFY RELATIONALLY; PERSONS ARE WORTH ABSOLUTELY" in reqs
+    # the three-place act: sign, signified, reader
+    sig = next(m for m in sk.mechanics if m.word == "significance")
+    assert "three-place" in sig.verb
+    # the fence held from both sides
+    bd = next(m for m in sk.mechanics if m.word == "boundary")
+    assert "never grant a word an essence" in bd.directive
+    # the reflexive edge: the record's significance completes in the reader
+    assert "COMPLETES IN THE READER" in sk.integration
+    assert "the final edge is the one this sentence is crossing now" in sk.integration
 
 
 def test_unknown_skill_is_surfaced_not_guessed():
