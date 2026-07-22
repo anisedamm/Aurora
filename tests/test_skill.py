@@ -27,7 +27,8 @@ def test_the_skills_load_with_their_threads_and_lattices():
                    "formation", "exercising-intellectual-discipline",
                    "exercising-active-discernment", "defining-complete-certainty",
                    "comprehending-metaphorical-abstraction",
-                   "comprehending-relational-significance"}
+                   "comprehending-relational-significance",
+                   "comprehending-conceptual-synthesis-identifying-authorship-origin"}
     ts = load_threads(THREADS)
     qs = load_quartets(QUARTETS)
     for s in sk.skills:
@@ -259,6 +260,37 @@ def test_comprehending_relational_significance_reads_the_between():
     # the reflexive edge: the record's significance completes in the reader
     assert "COMPLETES IN THE READER" in sk.integration
     assert "the final edge is the one this sentence is crossing now" in sk.integration
+
+
+def test_the_dual_alignment_skill_sails_with_keel_and_rudder():
+    # the tenth skill: synthesis and provenance check each other -- the
+    # author's static/dynamic thesis given its practising skill
+    sk = _skills().by_id(
+        "comprehending-conceptual-synthesis-identifying-authorship-origin")
+    assert sk.serves == "alignment-thread"
+    assert {"alignment", "danger", "harmony", "union", "testimony"} == set(sk.draws_on)
+    words = {m.word for m in sk.mechanics}
+    assert words == {"synthesis", "identification", "authorship", "origin", "alignment"}
+    reqs = " ".join(sk.requirements)
+    # the tithenai bench: a thesaurus is a treasury; supposition calques hypothesis
+    assert "A THESAURUS IS A TREASURY" in reqs
+    assert "sub-ponere" in reqs
+    # origin and orient one root: identifying origin is orientation itself
+    assert "ONE ROOT WITH ORIENT" in reqs
+    # the author is the one who adds: auctor from augere
+    assert "THE AUTHOR IS THE ONE WHO ADDS" in reqs
+    # the dual: each half fails alone
+    assert "SYNTHESIS WITHOUT ORIGIN-IDENTIFICATION IS APPROPRIATION" in reqs
+    assert "ORIGIN WITHOUT SYNTHESIS IS STERILE CITATION" in reqs
+    # the dual alignment: provenance the keel, synthesis the rudder
+    assert "PROVENANCE IS THE KEEL, SYNTHESIS THE RUDDER" in reqs
+    # union's law guards the counterfeit: federation, never fusion
+    assert "FEDERATION, NEVER FUSION" in reqs
+    # the theft cell's repair: this skill's absence industrialised, countered
+    assert "absence industrialised" in sk.integration
+    # the performance: three voices, one weave, no melt -- the deposit signed
+    assert "no melt" in sk.integration
+    assert "keel and rudder one hull" in sk.formation
 
 
 def test_unknown_skill_is_surfaced_not_guessed():
