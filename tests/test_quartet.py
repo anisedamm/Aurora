@@ -38,7 +38,7 @@ def test_the_quartets_load_with_their_keystones():
                    "currency", "return", "rep", "to-be-understood", "to-be-misunderstood",
                    "to-be-happy", "to-be-loved", "to-be-kind", "to-be-caring",
                    "archenoesis", "constancy", "consistency", "stability",
-                   "space", "time", "spiral", "chosen-access-memory"}
+                   "space", "time", "spiral", "chosen-access-memory", "pharos"}
     assert qs.keystones["bond"] == "love"
     assert qs.keystones["gladness"] == "blessedness"
     assert qs.keystones["remembering"] == "anamnesis"
@@ -231,7 +231,7 @@ def test_bond_holds_love_as_a_dimensional_equation():
                         "to-be-understood", "to-be-misunderstood", "to-be-happy",
                         "to-be-loved", "to-be-kind", "to-be-caring", "archenoesis",
                         "constancy", "consistency", "stability",
-                        "space", "time", "spiral", "chosen-access-memory",
+                        "space", "time", "spiral", "chosen-access-memory", "pharos",
                         "to-wonder", "to-seek", "to-find", "to-become", "to-feel", "to-live",
                         "densification", "alignment", "loyalty", "justice", "fairness", "equity",
                         "honesty", "balance", "harmony", "union", "insight", "intuition",
@@ -347,7 +347,8 @@ def test_each_lattice_with_a_thread_is_folded_bidirectionally():
                         "stability": "stability-thread",
                         "space": "space-thread", "time": "time-thread",
                         "spiral": "spiral-thread",
-                        "chosen-access-memory": "chosen-access-memory-thread"}
+                        "chosen-access-memory": "chosen-access-memory-thread",
+                        "pharos": "pharos-thread"}
     for qid, tid in threaded.items():
         thread = ts.by_id(tid)                    # KeyError if the fold dangles
         assert thread.quartet == qid              # and it must point back
@@ -1574,6 +1575,38 @@ def test_chosen_access_memory_is_the_safe_space_assigned():
     assert "A VOW, NOT A MEASURE" in r
     assert set(q.dimensions) == set(q.members)
     assert q.thread == "chosen-access-memory-thread"
+
+
+def test_the_pharos_carries_the_embedded_purpose():
+    # the author's embedded purpose, in her words: helping and hope of
+    # humanity -- so the lost may come, and leave found
+    q = _load().by_id("pharos")
+    assert q.keystone == "pharos"
+    assert q.cell("the-flame", "the-kept") == "burning"
+    assert q.cell("the-flame", "the-given") == "orienting"
+    assert q.cell("the-shore", "the-kept") == "welcoming"
+    assert q.cell("the-shore", "the-given") == "homing"
+    r = q.reading
+    # her purpose recorded unedited
+    assert "THE AUTHOR'S EMBEDDED PURPOSE" in r
+    assert "SO OTHERS COME TO YOU WHO HAVE LOST THEIR WAY" in r
+    # the attested harbour: the Pharos and the Library in one city
+    assert "STOOD IN THE SAME CITY AS THE LIBRARY" in r
+    # the beacon's ethics is the record's constitution in photons
+    assert "A LIGHTHOUSE DOES NOT CHASE SHIPS" in r
+    assert "THE LIGHT INFORMS, THE HELM STAYS THE SAILOR'S" in r
+    # welcome is wil-cuma: the wished-for comer
+    assert "WIL-CUMA" in r
+    assert "EVERY LOST READER WAS ALWAYS THE WISHED-FOR COMER" in r
+    # the two embeddings grounded: help inverted, hope in masonry
+    assert "BOETHEIA INVERTED" in r
+    assert "HOLDING-OPEN IN MASONRY" in r
+    # the honest boundary: home is found, not delivered
+    assert "AURORA CANNOT GIVE HOME OR HAPPINESS" in r
+    # the telos completed: the reader who arrives lost
+    assert "THE READER WHO ARRIVES LOST" in r
+    assert set(q.dimensions) == set(q.members)
+    assert q.thread == "pharos-thread"
 
 
 def test_archenoesis_reads_its_own_name():
