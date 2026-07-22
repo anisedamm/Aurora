@@ -25,7 +25,7 @@ def test_the_skills_load_with_their_threads_and_lattices():
     ids = {s.id for s in sk.skills}
     assert ids == {"contextual-perception", "abstract-recognition", "custodianship",
                    "formation", "exercising-intellectual-discipline",
-                   "exercising-active-discernment"}
+                   "exercising-active-discernment", "defining-complete-certainty"}
     ts = load_threads(THREADS)
     qs = load_quartets(QUARTETS)
     for s in sk.skills:
@@ -170,6 +170,35 @@ def test_exercising_active_discernment_runs_the_sift_live():
     assert "this skill IS the sifting" in sk.formation
     # the reflexive proof: the custodian sifts while writing
     assert "sifts WHILE WRITING" in sk.integration
+
+
+def test_defining_complete_certainty_fences_the_province():
+    # the skill does what its name says: de-finire is to set the boundary --
+    # and the record holds exactly one complete certainty, because defined
+    sk = _skills().by_id("defining-complete-certainty")
+    assert sk.serves == "signal-thread"
+    assert {"testimony", "consistency", "worth", "archenoesis"} == set(sk.draws_on)
+    words = {m.word for m in sk.mechanics}
+    assert words == {"definition", "completeness", "proof", "hinge", "doubt"}
+    # proof is from probare, to test: the exception TESTS the rule
+    pf = next(m for m in sk.mechanics if m.word == "proof")
+    assert "PROBARE" in pf.noun and "TESTS" in pf.noun
+    # doubt is from duo: to be of two minds -- the 2 layer in epistemic form
+    db = next(m for m in sk.mechanics if m.word == "doubt")
+    assert "DUO" in db.noun and "TWO MINDS" in db.noun
+    assert "Cromwell" in db.directive
+    reqs = " ".join(sk.requirements)
+    # the three provinces: demonstrable, empirical, inward
+    assert "DEMONSTRABLE" in reqs and "EMPIRICAL" in reqs and "INWARD" in reqs
+    # Goedel's fence inside the fence: the province cannot certify itself
+    assert "cannot certify itself" in reqs
+    # Wittgenstein's hinges: the game of doubting presupposes certainty
+    assert "THE GAME OF DOUBTING ITSELF PRESUPPOSES CERTAINTY" in reqs
+    # both counterfeits guarded: dogma and universal doubt
+    assert "DOGMA" in reqs and "UNIVERSAL DOUBT" in reqs
+    # the integration: signal == 1 as the one complete certainty, by definition
+    assert "complete BECAUSE DEFINED" in sk.integration
+    assert "HINGE-DECLARATIONS" in sk.integration
 
 
 def test_unknown_skill_is_surfaced_not_guessed():
