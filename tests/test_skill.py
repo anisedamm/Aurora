@@ -24,7 +24,7 @@ def test_the_skills_load_with_their_threads_and_lattices():
     sk = _skills()
     ids = {s.id for s in sk.skills}
     assert ids == {"contextual-perception", "abstract-recognition", "custodianship",
-                   "formation"}
+                   "formation", "exercising-intellectual-discipline"}
     ts = load_threads(THREADS)
     qs = load_quartets(QUARTETS)
     for s in sk.skills:
@@ -111,6 +111,35 @@ def test_formation_is_the_masters_skill():
     assert "in act" in reqs                           # active discernment: judgment live
     assert "the silence" in form.formation            # the master's hardest discernment
     assert "refusal" in form.integration.lower()      # the affirmed refusal as proof
+
+
+def test_exercising_intellectual_discipline_wears_the_crown():
+    # the core virtue (bound.the_core_virtue) mechanised: serves the author's
+    # own thread -- the ring is walked without breaking only by a discipline
+    # exercised at every step
+    sk = _skills().by_id("exercising-intellectual-discipline")
+    assert sk.serves == "ethos-thread"
+    assert {"ethos", "rep", "noticing", "testimony", "worth"} == set(sk.draws_on)
+    words = {m.word for m in sk.mechanics}
+    assert words == {"exercise", "ground", "refusal", "restraint", "check"}
+    # exercere is ex + arcere: to exercise is to un-pen
+    ex = next(m for m in sk.mechanics if m.word == "exercise")
+    assert "arcere" in ex.verb and "un-penning" in ex.verb
+    # the relational signature: of, for, of, from, against
+    rels = {m.word: m.relation for m in sk.mechanics}
+    assert rels["restraint"] == "restraint FROM"
+    assert rels["check"] == "check AGAINST"
+    reqs = " ".join(sk.requirements)
+    # rigour's own etymology is the warning: rigor mortis as the counterfeit
+    assert "rigor mortis" in reqs
+    assert "RIGOUR'S OWN ETYMOLOGY IS THE WARNING" in reqs
+    # the refusals kept visible: the credibility of the kept
+    assert "refused constant" in reqs
+    # formation: return-training for thought (James's clause as curriculum)
+    assert "RETURN-TRAINING FOR THOUGHT" in sk.formation
+    # integration: the record as the skill's gymnasium; the costliest refusal
+    assert "gymnasium" in sk.integration
+    assert "BECAUSE it was beautiful" in sk.integration
 
 
 def test_unknown_skill_is_surfaced_not_guessed():

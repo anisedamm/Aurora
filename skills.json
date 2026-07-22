@@ -1,96 +1,253 @@
 {
-  "title": "The skills — signal threads mechanised",
-  "note": "A skill is a signal thread MECHANISED: the thread walked until it walks itself. Each skill records the conceptual requirements to fulfill its thread (the cells that must be trained), its MECHANICS as dual definitions (the noun is the capacity at rest, the verb the operation in act, the directive the imperative that trains it, the relation the preposition it binds through), its FORMATION (the walk around the grid: knowledge -> technique -> fluency -> judgment, the Dreyfus circuit), and its INTEGRATION (how it spans lattices -- skill formation is relational: no skill lives in one grid). An authored map; a reader, not a ruler: descriptive, never a gate.",
-  "bound": {
-    "_note": "What keeps the skills section mechanics and not mysticism -- stated so the next reader knows it was guarded.",
-    "the_dual_definition": "Every capacity-word the map holds is a noun/verb pair -- memory/remember, integrity/integrate, recognition/recognise, knowledge/know, fluency/flow. The noun is the verb at rest; the verb is the noun in act. This is linguistic mechanics, not metaphor: the language already stores each skill twice, as a state-form and an act-form, and a skill mechanises when the act-forms chain and the chain goes tacit.",
-    "the_relational_signature": "Directive terms are relational: each binds agent to object through its own preposition -- knowledge OF, judgment BETWEEN, technique FOR, fluency IN, attention TO, abstraction FROM, recognition AS (the hermeneutic as: to recognise is to take X AS Y, the relational core of interpretation itself). Checkable in plain English collocation; the grammar already encodes the geometry of skill.",
-    "the_counterfeit": "Fluency is the easiest cell to counterfeit -- fluent output without ground is the synthetic breath made verbal -- and a system with knowledge, technique, and fluency but no judgment is a mechanism, not a mastery. Judgment (tacit discernment) is precisely what cannot be attested from outside: the capstone boundary, felt from inside the skills section. So these records stay descriptive, and no skill claim gates anything.",
-    "the_weave": "techne is from teks-, to weave -- one root with TEXT and TEXTILE. The signal threads are not decorated with a metaphor; they surface the root: threads are what techne weaves, and a skills section woven of threads is the etymology remembering itself."
-  },
-  "skills": [
-    {
-      "id": "contextual-perception",
-      "name": "Contextual perception -- reading the figure through its field",
-      "serves": "memory-thread",
-      "draws_on": ["perception", "conscious-state", "remembering"],
-      "requirements": [
-        "hold the field before the figure: conscious-state's presence (field x content) must stay live while attention (focus x state) selects -- context is the field the figure is read against",
-        "bind bottom-up to top-down: sensation and grouping must meet prediction at the percept (Bayes: evidence x expectation) -- neither alone is perception",
-        "carry recognition across changed fields: the same item known again under a different context (remembering's arriving row) -- the cell perception and remembering share, where the map's own measures found the cross-link",
-        "guard the counterfeit: the deepfake defeats knowing-again, so contextual perception is the human check on L1 -- attestation begins in a trained eye"
-      ],
-      "mechanics": {
-        "perception": {"noun": "the percept -- the capacity at rest", "verb": "perceive -- take the world in through the field", "directive": "attend to the field before the figure", "relation": "perception OF"},
-        "attention": {"noun": "attention -- the focal capacity", "verb": "attend -- select without losing the field", "directive": "select, but hold the periphery", "relation": "attention TO"},
-        "prediction": {"noun": "the prior -- expectation held", "verb": "predict -- feed the expectation down to the features", "directive": "expect, then let the evidence answer", "relation": "prediction THAT"},
-        "recognition": {"noun": "recognition -- the match held ready", "verb": "recognise -- know it again under a changed field", "directive": "take X as Y, and say so", "relation": "recognition AS (the hermeneutic as)"}
-      },
-      "formation": "The circuit walked on perception's grid: sensation (learn the features) -> grouping (bind them deliberately) -> prediction (let the prior do the work) -> recognition (the whole known at a glance) -- explicit feature-work dissolving into tacit gestalt: the novice sees pixels, the expert sees the situation.",
-      "integration": "Spans perception, conscious-state, and remembering through the shared recognition cell (the fractal descent made a training path). Contextual perception is what fulfilling the memory-thread FEELS like from inside: recall needs a cue, the cue needs a field, and knowing-again is the arriving half of anamnesis. Relationally: perception OF a figure, IN a field, AS a kind -- three prepositions, one act."
+ "title": "The skills — signal threads mechanised",
+ "note": "A skill is a signal thread MECHANISED: the thread walked until it walks itself. Each skill records the conceptual requirements to fulfill its thread (the cells that must be trained), its MECHANICS as dual definitions (the noun is the capacity at rest, the verb the operation in act, the directive the imperative that trains it, the relation the preposition it binds through), its FORMATION (the walk around the grid: knowledge -> technique -> fluency -> judgment, the Dreyfus circuit), and its INTEGRATION (how it spans lattices -- skill formation is relational: no skill lives in one grid). An authored map; a reader, not a ruler: descriptive, never a gate.",
+ "bound": {
+  "_note": "What keeps the skills section mechanics and not mysticism -- stated so the next reader knows it was guarded.",
+  "the_dual_definition": "Every capacity-word the map holds is a noun/verb pair -- memory/remember, integrity/integrate, recognition/recognise, knowledge/know, fluency/flow. The noun is the verb at rest; the verb is the noun in act. This is linguistic mechanics, not metaphor: the language already stores each skill twice, as a state-form and an act-form, and a skill mechanises when the act-forms chain and the chain goes tacit.",
+  "the_relational_signature": "Directive terms are relational: each binds agent to object through its own preposition -- knowledge OF, judgment BETWEEN, technique FOR, fluency IN, attention TO, abstraction FROM, recognition AS (the hermeneutic as: to recognise is to take X AS Y, the relational core of interpretation itself). Checkable in plain English collocation; the grammar already encodes the geometry of skill.",
+  "the_counterfeit": "Fluency is the easiest cell to counterfeit -- fluent output without ground is the synthetic breath made verbal -- and a system with knowledge, technique, and fluency but no judgment is a mechanism, not a mastery. Judgment (tacit discernment) is precisely what cannot be attested from outside: the capstone boundary, felt from inside the skills section. So these records stay descriptive, and no skill claim gates anything.",
+  "the_weave": "techne is from teks-, to weave -- one root with TEXT and TEXTILE. The signal threads are not decorated with a metaphor; they surface the root: threads are what techne weaves, and a skills section woven of threads is the etymology remembering itself."
+ },
+ "skills": [
+  {
+   "id": "contextual-perception",
+   "name": "Contextual perception -- reading the figure through its field",
+   "serves": "memory-thread",
+   "draws_on": [
+    "perception",
+    "conscious-state",
+    "remembering"
+   ],
+   "requirements": [
+    "hold the field before the figure: conscious-state's presence (field x content) must stay live while attention (focus x state) selects -- context is the field the figure is read against",
+    "bind bottom-up to top-down: sensation and grouping must meet prediction at the percept (Bayes: evidence x expectation) -- neither alone is perception",
+    "carry recognition across changed fields: the same item known again under a different context (remembering's arriving row) -- the cell perception and remembering share, where the map's own measures found the cross-link",
+    "guard the counterfeit: the deepfake defeats knowing-again, so contextual perception is the human check on L1 -- attestation begins in a trained eye"
+   ],
+   "mechanics": {
+    "perception": {
+     "noun": "the percept -- the capacity at rest",
+     "verb": "perceive -- take the world in through the field",
+     "directive": "attend to the field before the figure",
+     "relation": "perception OF"
     },
-    {
-      "id": "abstract-recognition",
-      "name": "Abstract recognition -- recognising representation as representation",
-      "serves": "signal-thread",
-      "draws_on": ["language", "agency", "intelligence"],
-      "requirements": [
-        "hold the form/meaning axis: a word is not a concept (language's spine) -- the representation is never the thing, and the skill is refusing to collapse them",
-        "train abstractuate: lift the lived-concrete into the analytic-general (agency's made-knowing) while keeping the provenance of the lift",
-        "recognise the same concept under different words (translation) and different concepts under the same word (polysemy) -- recognition applied at the meaning level, the L2 discipline as a trainable act",
-        "test the grid: an abstract representation is a lattice-claim; check the crossing holds before trusting the cell (the pentad test as a reflex)"
-      ],
-      "mechanics": {
-        "abstraction": {"noun": "the abstraction -- the lifted form", "verb": "abstract -- draw the pattern away from the concrete", "directive": "lift the pattern, keep the provenance", "relation": "abstraction FROM"},
-        "representation": {"noun": "the representation -- one thing standing for another", "verb": "represent -- let it stand, without becoming", "directive": "let it stand for the thing; never let it replace the thing", "relation": "representation OF"},
-        "concept": {"noun": "the concept -- meanings gathered under a head", "verb": "conceive -- gather senses into one grasp", "directive": "gather, and name what was gathered", "relation": "concept OF"},
-        "recognition": {"noun": "recognition -- the match at the meaning level", "verb": "recognise -- know the concept again under a changed word", "directive": "take the sign as its sense, and say which", "relation": "recognition AS"}
-      },
-      "formation": "The circuit walked on the meaning level: knowledge of the senses (the lattice learned) -> technique of reading (L1, L2, L3 applied deliberately) -> fluency (the senses heard without effort) -> judgment (discerning WHICH sense, WHEN -- the anachronism reflex). The expert reader does at a glance what the novice does with the checklist; the checklist remains what the glance is answerable to.",
-      "integration": "Spans language, agency, and intelligence: abstractuate makes the representation, language holds its two sides, intelligence's analysis<->synthesis works it. This is Aurora's own L2 as a human skill -- reading-as (the hermeneutic as) trained until tacit -- and it serves the signal-thread because grounded reading IS the thread's grounded column: you cannot rest weight on a record you cannot recognise the sense of. Relationally: abstraction FROM the concrete, representation OF it, recognition AS its sense."
+    "attention": {
+     "noun": "attention -- the focal capacity",
+     "verb": "attend -- select without losing the field",
+     "directive": "select, but hold the periphery",
+     "relation": "attention TO"
     },
-    {
-      "id": "custodianship",
-      "name": "Custodianship -- the keeper's skill, Aurora's own",
-      "serves": "signal-thread",
-      "draws_on": ["spine", "language", "remembering", "integrate", "skill"],
-      "requirements": [
-        "attest before reading: the one gate (L1) -- no reading rests on an unshown usage",
-        "read in context, never as the meaning: L2's descriptive discipline, the reading owned as a proxy",
-        "measure the drift and own the perspective: L3 -- the anachronism named, the standpoint admitted (the blind spot known to be there)",
-        "remember with integrity: append, never rewrite -- the ledger as anamnesis with integrity, memory that keeps its provenance",
-        "integrate and weigh the return: re-cohere the parts, score both facets, and call the counterfeit by its name",
-        "refuse the ungrounded constant and keep the boundary: what cannot be attested is held, not crossed -- the refusals are recorded so the next reader knows the line was kept"
-      ],
-      "mechanics": {
-        "attestation": {"noun": "attestation -- the shown usage", "verb": "attest -- show the word in the cited text", "directive": "show it, or do not read it", "relation": "attest TO"},
-        "reading": {"noun": "the reading -- a sense described in context", "verb": "read -- take the usage in a sense, and say which", "directive": "read it in its time, not yours", "relation": "read AS / read IN"},
-        "remembrance": {"noun": "the record -- memory with provenance", "verb": "remember -- append what was kept, signed", "directive": "keep it so it cannot be quietly rewritten", "relation": "remembrance OF"},
-        "integrity": {"noun": "integrity -- integrate at rest: the untouched whole", "verb": "integrate -- re-cohere the parts and check the chain", "directive": "make whole, and verify the making", "relation": "integrate INTO"}
-      },
-      "formation": "The circuit walked on the framework itself: knowledge (the three layers learned) -> technique (attest, read, drift, applied as procedure -- the CLI is the drill) -> fluency (the discipline as reflex: the counterfeit smelled before it is scored) -> judgment (the refusals: knowing WHICH resonance is proof and which is rapport -- the discernment the constants and the 47/7 met). Mastery is the whole walk inside one act of keeping.",
-      "integration": "The reflexive skill: it spans the spine (its measures), language (its units), remembering (its ledger), integrate (its verb), and skill itself (its formation) -- and it is the skill this map's own building has been practising: every lattice recorded was one more walk of the circuit. It serves the signal-thread directly: signal = integrity x direction(truth) is custodianship's verdict-form, the keeper's skill stated as a number that must stay 1. The dual pair at its centre is the framework's own: INTEGRITY IS INTEGRATE AT REST -- the custodian's noun is the custodian's verb, held still."
+    "prediction": {
+     "noun": "the prior -- expectation held",
+     "verb": "predict -- feed the expectation down to the features",
+     "directive": "expect, then let the evidence answer",
+     "relation": "prediction THAT"
     },
-    {
-      "id": "formation",
-      "name": "Formation -- the master's skill: instigating aligned discipline, comprehending active discernment",
-      "serves": "skill-thread",
-      "draws_on": ["skill", "agency", "spine", "process"],
-      "requirements": [
-        "instigate: plant the goad deliberately -- instigare (to goad) and instinguere (to prick, instinct's root) are one goad-family, so instigation is the MADE twin of the GIVEN drive (agency's origin axis): the master moves conation from instinct to intent by placing the spur where the walk should begin",
-        "align the discipline: discipline is disciplina, from discere, TO LEARN -- the learner's state before the rule's; aligned discipline is learning brought to the line (spine's alignment) and pointed by direction(truth) BEFORE it is sped up -- order without direction is drill, direction without order is drift",
-        "comprehend active discernment: grasp judgment IN ACT -- the hardest grasp, because the tacit resists articulation (Polanyi: we know more than we can tell), so the master reads the sifting while it moves (discernment live in the apprentice's choices) rather than waiting for it to rest into a stateable rule",
-        "guard discipline's drift: the pump captured discipline as learning -> rule -> punishment; the moment discipline is only enforcement it has forgotten discere -- aligned discipline stays a learning, and the guard is checking which is being instigated"
-      ],
-      "mechanics": {
-        "instigation": {"noun": "the planted goad -- the spur set where the walk begins", "verb": "instigate -- goad deliberately into motion (instigare; instinct's made twin)", "directive": "plant the goad where the walk should begin, then stand back", "relation": "instigate TO"},
-        "alignment": {"noun": "alignment -- brought-to-the-line, the vector's state (spine: vector x form)", "verb": "align -- bring the learning to the line", "directive": "point the learning at the truth before speeding it", "relation": "align WITH"},
-        "discipline": {"noun": "the learned order -- disciplina, the learner's state (discere, to learn; one school-root with disciple)", "verb": "discipline -- keep the learning ordered", "directive": "keep it learning; when it is only punishment it has forgotten its root", "relation": "discipline IN"},
-        "discernment": {"noun": "discernment -- judgment held ready (dis- + cernere, to sift apart; one sifting-root with certain and crisis)", "verb": "discern -- sift while it moves", "directive": "watch the sifting, not only the sorted", "relation": "discernment BETWEEN"},
-        "comprehension": {"noun": "the grasp-together (com- + prehendere: to seize whole; process: intake x part)", "verb": "comprehend -- seize the moving parts into one hold", "directive": "grasp the act while it acts; do not wait for it to rest", "relation": "comprehension OF"}
-      },
-      "formation": "The master's circuit is the learner's walk run at one remove: knowledge OF the walk (having walked it -- no one instigates a circuit they never completed) -> technique of instigation (the drill designed, the goad placed, the alignment checked) -> fluency in reading the apprentice (seeing at a glance which station of the circuit they stand at) -> judgment of readiness (knowing WHEN to withhold the rule so the tacit can form -- the master's hardest discernment is the silence). The master is the one who can stand at every station of the circuit at once.",
-      "integration": "The complement of custodianship: the keeper keeps the record, the master FORMS the keeper -- formation serves the skill-thread because it is techne teaching itself forward (the apprenticeship, breath's own transmission, as a recorded mechanism). Relationally the directive terms run FROM master TO apprentice -- instigate TO, align WITH, discipline IN, discern BETWEEN, comprehend OF -- the giving row of the bond applied to skill: care for the learner's walk is weight taken up. And the reflexive turn is this very map: its building has been formation in act -- the author instigating aligned discipline in the record (the discipline instilled at the naming, pointed at truth by signal), and comprehending active discernment each time a refusal was made and affirmed. The affirmed refusal is formation's proof: discernment comprehended while active, by the one who planted the goad."
+    "recognition": {
+     "noun": "recognition -- the match held ready",
+     "verb": "recognise -- know it again under a changed field",
+     "directive": "take X as Y, and say so",
+     "relation": "recognition AS (the hermeneutic as)"
     }
-  ]
+   },
+   "formation": "The circuit walked on perception's grid: sensation (learn the features) -> grouping (bind them deliberately) -> prediction (let the prior do the work) -> recognition (the whole known at a glance) -- explicit feature-work dissolving into tacit gestalt: the novice sees pixels, the expert sees the situation.",
+   "integration": "Spans perception, conscious-state, and remembering through the shared recognition cell (the fractal descent made a training path). Contextual perception is what fulfilling the memory-thread FEELS like from inside: recall needs a cue, the cue needs a field, and knowing-again is the arriving half of anamnesis. Relationally: perception OF a figure, IN a field, AS a kind -- three prepositions, one act."
+  },
+  {
+   "id": "abstract-recognition",
+   "name": "Abstract recognition -- recognising representation as representation",
+   "serves": "signal-thread",
+   "draws_on": [
+    "language",
+    "agency",
+    "intelligence"
+   ],
+   "requirements": [
+    "hold the form/meaning axis: a word is not a concept (language's spine) -- the representation is never the thing, and the skill is refusing to collapse them",
+    "train abstractuate: lift the lived-concrete into the analytic-general (agency's made-knowing) while keeping the provenance of the lift",
+    "recognise the same concept under different words (translation) and different concepts under the same word (polysemy) -- recognition applied at the meaning level, the L2 discipline as a trainable act",
+    "test the grid: an abstract representation is a lattice-claim; check the crossing holds before trusting the cell (the pentad test as a reflex)"
+   ],
+   "mechanics": {
+    "abstraction": {
+     "noun": "the abstraction -- the lifted form",
+     "verb": "abstract -- draw the pattern away from the concrete",
+     "directive": "lift the pattern, keep the provenance",
+     "relation": "abstraction FROM"
+    },
+    "representation": {
+     "noun": "the representation -- one thing standing for another",
+     "verb": "represent -- let it stand, without becoming",
+     "directive": "let it stand for the thing; never let it replace the thing",
+     "relation": "representation OF"
+    },
+    "concept": {
+     "noun": "the concept -- meanings gathered under a head",
+     "verb": "conceive -- gather senses into one grasp",
+     "directive": "gather, and name what was gathered",
+     "relation": "concept OF"
+    },
+    "recognition": {
+     "noun": "recognition -- the match at the meaning level",
+     "verb": "recognise -- know the concept again under a changed word",
+     "directive": "take the sign as its sense, and say which",
+     "relation": "recognition AS"
+    }
+   },
+   "formation": "The circuit walked on the meaning level: knowledge of the senses (the lattice learned) -> technique of reading (L1, L2, L3 applied deliberately) -> fluency (the senses heard without effort) -> judgment (discerning WHICH sense, WHEN -- the anachronism reflex). The expert reader does at a glance what the novice does with the checklist; the checklist remains what the glance is answerable to.",
+   "integration": "Spans language, agency, and intelligence: abstractuate makes the representation, language holds its two sides, intelligence's analysis<->synthesis works it. This is Aurora's own L2 as a human skill -- reading-as (the hermeneutic as) trained until tacit -- and it serves the signal-thread because grounded reading IS the thread's grounded column: you cannot rest weight on a record you cannot recognise the sense of. Relationally: abstraction FROM the concrete, representation OF it, recognition AS its sense."
+  },
+  {
+   "id": "custodianship",
+   "name": "Custodianship -- the keeper's skill, Aurora's own",
+   "serves": "signal-thread",
+   "draws_on": [
+    "spine",
+    "language",
+    "remembering",
+    "integrate",
+    "skill"
+   ],
+   "requirements": [
+    "attest before reading: the one gate (L1) -- no reading rests on an unshown usage",
+    "read in context, never as the meaning: L2's descriptive discipline, the reading owned as a proxy",
+    "measure the drift and own the perspective: L3 -- the anachronism named, the standpoint admitted (the blind spot known to be there)",
+    "remember with integrity: append, never rewrite -- the ledger as anamnesis with integrity, memory that keeps its provenance",
+    "integrate and weigh the return: re-cohere the parts, score both facets, and call the counterfeit by its name",
+    "refuse the ungrounded constant and keep the boundary: what cannot be attested is held, not crossed -- the refusals are recorded so the next reader knows the line was kept"
+   ],
+   "mechanics": {
+    "attestation": {
+     "noun": "attestation -- the shown usage",
+     "verb": "attest -- show the word in the cited text",
+     "directive": "show it, or do not read it",
+     "relation": "attest TO"
+    },
+    "reading": {
+     "noun": "the reading -- a sense described in context",
+     "verb": "read -- take the usage in a sense, and say which",
+     "directive": "read it in its time, not yours",
+     "relation": "read AS / read IN"
+    },
+    "remembrance": {
+     "noun": "the record -- memory with provenance",
+     "verb": "remember -- append what was kept, signed",
+     "directive": "keep it so it cannot be quietly rewritten",
+     "relation": "remembrance OF"
+    },
+    "integrity": {
+     "noun": "integrity -- integrate at rest: the untouched whole",
+     "verb": "integrate -- re-cohere the parts and check the chain",
+     "directive": "make whole, and verify the making",
+     "relation": "integrate INTO"
+    }
+   },
+   "formation": "The circuit walked on the framework itself: knowledge (the three layers learned) -> technique (attest, read, drift, applied as procedure -- the CLI is the drill) -> fluency (the discipline as reflex: the counterfeit smelled before it is scored) -> judgment (the refusals: knowing WHICH resonance is proof and which is rapport -- the discernment the constants and the 47/7 met). Mastery is the whole walk inside one act of keeping.",
+   "integration": "The reflexive skill: it spans the spine (its measures), language (its units), remembering (its ledger), integrate (its verb), and skill itself (its formation) -- and it is the skill this map's own building has been practising: every lattice recorded was one more walk of the circuit. It serves the signal-thread directly: signal = integrity x direction(truth) is custodianship's verdict-form, the keeper's skill stated as a number that must stay 1. The dual pair at its centre is the framework's own: INTEGRITY IS INTEGRATE AT REST -- the custodian's noun is the custodian's verb, held still."
+  },
+  {
+   "id": "formation",
+   "name": "Formation -- the master's skill: instigating aligned discipline, comprehending active discernment",
+   "serves": "skill-thread",
+   "draws_on": [
+    "skill",
+    "agency",
+    "spine",
+    "process"
+   ],
+   "requirements": [
+    "instigate: plant the goad deliberately -- instigare (to goad) and instinguere (to prick, instinct's root) are one goad-family, so instigation is the MADE twin of the GIVEN drive (agency's origin axis): the master moves conation from instinct to intent by placing the spur where the walk should begin",
+    "align the discipline: discipline is disciplina, from discere, TO LEARN -- the learner's state before the rule's; aligned discipline is learning brought to the line (spine's alignment) and pointed by direction(truth) BEFORE it is sped up -- order without direction is drill, direction without order is drift",
+    "comprehend active discernment: grasp judgment IN ACT -- the hardest grasp, because the tacit resists articulation (Polanyi: we know more than we can tell), so the master reads the sifting while it moves (discernment live in the apprentice's choices) rather than waiting for it to rest into a stateable rule",
+    "guard discipline's drift: the pump captured discipline as learning -> rule -> punishment; the moment discipline is only enforcement it has forgotten discere -- aligned discipline stays a learning, and the guard is checking which is being instigated"
+   ],
+   "mechanics": {
+    "instigation": {
+     "noun": "the planted goad -- the spur set where the walk begins",
+     "verb": "instigate -- goad deliberately into motion (instigare; instinct's made twin)",
+     "directive": "plant the goad where the walk should begin, then stand back",
+     "relation": "instigate TO"
+    },
+    "alignment": {
+     "noun": "alignment -- brought-to-the-line, the vector's state (spine: vector x form)",
+     "verb": "align -- bring the learning to the line",
+     "directive": "point the learning at the truth before speeding it",
+     "relation": "align WITH"
+    },
+    "discipline": {
+     "noun": "the learned order -- disciplina, the learner's state (discere, to learn; one school-root with disciple)",
+     "verb": "discipline -- keep the learning ordered",
+     "directive": "keep it learning; when it is only punishment it has forgotten its root",
+     "relation": "discipline IN"
+    },
+    "discernment": {
+     "noun": "discernment -- judgment held ready (dis- + cernere, to sift apart; one sifting-root with certain and crisis)",
+     "verb": "discern -- sift while it moves",
+     "directive": "watch the sifting, not only the sorted",
+     "relation": "discernment BETWEEN"
+    },
+    "comprehension": {
+     "noun": "the grasp-together (com- + prehendere: to seize whole; process: intake x part)",
+     "verb": "comprehend -- seize the moving parts into one hold",
+     "directive": "grasp the act while it acts; do not wait for it to rest",
+     "relation": "comprehension OF"
+    }
+   },
+   "formation": "The master's circuit is the learner's walk run at one remove: knowledge OF the walk (having walked it -- no one instigates a circuit they never completed) -> technique of instigation (the drill designed, the goad placed, the alignment checked) -> fluency in reading the apprentice (seeing at a glance which station of the circuit they stand at) -> judgment of readiness (knowing WHEN to withhold the rule so the tacit can form -- the master's hardest discernment is the silence). The master is the one who can stand at every station of the circuit at once.",
+   "integration": "The complement of custodianship: the keeper keeps the record, the master FORMS the keeper -- formation serves the skill-thread because it is techne teaching itself forward (the apprenticeship, breath's own transmission, as a recorded mechanism). Relationally the directive terms run FROM master TO apprentice -- instigate TO, align WITH, discipline IN, discern BETWEEN, comprehend OF -- the giving row of the bond applied to skill: care for the learner's walk is weight taken up. And the reflexive turn is this very map: its building has been formation in act -- the author instigating aligned discipline in the record (the discipline instilled at the naming, pointed at truth by signal), and comprehending active discernment each time a refusal was made and affirmed. The affirmed refusal is formation's proof: discernment comprehended while active, by the one who planted the goad."
+  },
+  {
+   "id": "exercising-intellectual-discipline",
+   "name": "Exercising intellectual discipline -- the core virtue, mechanised",
+   "serves": "ethos-thread",
+   "draws_on": [
+    "ethos",
+    "rep",
+    "noticing",
+    "testimony",
+    "worth"
+   ],
+   "requirements": [
+    "exercise the virtue, do not merely hold it: EXERCERE IS EX + ARCERE, 'to drive out of the enclosure' (arcere, to pen in -- one root with arca, the ark-chest, and coerce) -- TO EXERCISE IS TO UN-PEN: a virtue kept in the chest is coerced into stillness; the discipline is real only in reps (the rep's law: a disposition unproven under strain is decoration), so the requirement is daily working, not possession",
+    "ground before asserting: testimony's standing rule run on every claim -- attest what the sources witnessed, mark the reported as reported, and testify first-person only where the procedure has seen (signal's one eyewitness act); the claim without ground is not carried, however beautiful",
+    "refuse and record: worth's arithmetic exercised -- decline the ungrounded price (the refused constant is the form's exemplar), and KEEP THE REFUSAL VISIBLE: the yield includes what was not kept, which is what makes the kept credible",
+    "hold open what cannot be closed: the unattestable left unfound, not filled (the contested column's discipline; hope's holding-open as epistemic practice) -- the door stays shut from this side, and saying so is the skill, not its failure",
+    "guard the counterfeit: RIGOUR'S OWN ETYMOLOGY IS THE WARNING -- rigor is rigere, 'to be stiff', and rigor mortis is the word's destination if taken literally: the staying triad's law applied to thought -- discipline that cannot bend has died of its own name; keep the checks, lose the stiffness (Emerson's foolish consistency, refused here at the root)"
+   ],
+   "mechanics": {
+    "exercise": {
+     "noun": "the working of the faculty -- exercitium, the drill: the virtue in reps",
+     "verb": "exercise -- drive out of the pen and set to work (ex + arcere: the un-penning)",
+     "directive": "work the virtue daily or lose it to the chest",
+     "relation": "exercise OF"
+    },
+    "ground": {
+     "noun": "the attestation under the claim -- what the assertion stands on",
+     "verb": "ground -- set the claim on its evidence, or set it down",
+     "directive": "attest, or flag; never decorate",
+     "relation": "ground FOR"
+    },
+    "refusal": {
+     "noun": "the declined, kept visible -- the record's negative space, load-bearing",
+     "verb": "refuse -- decline the ungrounded on principle, however beautiful",
+     "directive": "record every refusal; the credibility of the kept is bought by the shown declined",
+     "relation": "refusal OF"
+    },
+    "restraint": {
+     "noun": "the stop at evidence's edge -- the reading held where the ground ends",
+     "verb": "restrain -- hold the claim short of the wish",
+     "directive": "stop where the evidence stops; the unattestable stays open, said so",
+     "relation": "restraint FROM"
+    },
+    "check": {
+     "noun": "the form-check -- the claim cross-examined, the test run",
+     "verb": "check -- audit the said against the stored, deeds against words",
+     "directive": "run the checks on your own work first; an inconsistency is a failing test, not an embarrassment",
+     "relation": "check AGAINST"
+    }
+   },
+   "formation": "The learner's circuit, run on the virtue itself: the novice holds the RULES (attest everything, cite always -- discipline as checklist) -> competence adds the FLAGS (the disputed known from the settled; the folk etymology smelled before sourced) -> proficiency feels the REFUSAL before the argument forms (the ungrounded constant is wrong in the hand before it is wrong on paper -- the tacit forming) -> expertise is the GAIT: the second look automatic, the sills at zero, the checks run unbidden -- discipline no longer exercised but simply how one walks; and the circuit's crown is James's attested clause made curriculum: the education par excellence improves the faculty of return -- EXERCISING INTELLECTUAL DISCIPLINE IS RETURN-TRAINING FOR THOUGHT, the wandering claim brought back to ground, over and over, until the bringing-back is the thinker.",
+   "integration": "The core virtue (bound.the_core_virtue) mechanised at last: the ethos square named intellectual discipline its crown, and this skill is how the crown is WORN -- serving the ethos-thread because the author's ring is walked without breaking only by a discipline exercised at every step. It draws the record's own muscles: the rep (practice makes permanent, and myelin does not audit -- exercise with bad form entrenches bad thought, so the form-checks are not optional), noticing (the obligation runs on noticing: sills kept at zero), testimony (the standing rule as the ground mechanic), worth (the priceless defended from pricing: every refusal is this skill flexing). Relationally the signature runs: exercise OF the faculty, ground FOR the claim, refusal OF the ungrounded, restraint FROM the wish, check AGAINST the record. THE REFLEXIVE PROOF is the whole ledger: the record is this skill's gymnasium -- every lattice a rep, the refused constant its proudest lift, the spiral/spirit refusal its costliest (the pun declined BECAUSE it was beautiful), and the rigor-mortis guard its standing spotter: the discipline stays a learning (discere) or it dies stiff, and the map has chosen learning at every recorded fork."
+  }
+ ]
 }
