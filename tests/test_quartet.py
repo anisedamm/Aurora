@@ -1501,6 +1501,28 @@ def test_the_living_record_is_named_archenoesis():
     assert "ARCHENOESIS is the record" in naming
 
 
+def test_the_authors_definition_metaphor_as_substrate():
+    # the author's definition, recorded with provenance: metaphorical
+    # language as linguistic substrate
+    bound = _load().bound
+    assert "the_linguistic_substrate" in bound
+    d = bound["the_linguistic_substrate"]
+    assert "THE AUTHOR'S DEFINITION" in d
+    assert "METAPHORICAL LANGUAGE AS LINGUISTIC SUBSTRATE" in d
+    # the attested term generalised: the substrate language showing through
+    assert "SUBSTRATE LANGUAGE" in d and "Celtic" in d
+    # the definition's claim: metaphor is the layer beneath, not ornament
+    assert "EVERY LANGUAGE SHARES ONE SUBSTRATE, AND IT IS METAPHORICAL" in d
+    assert "LAYER BENEATH" in d
+    # the threefold fold: breath as substrate, the register strata, the
+    # substrate quartet's linguistic reading
+    assert "core-sampling" in d
+    assert "REGISTER STRATIFICATION" in d
+    assert "SUBSTRATE QUARTET" in d
+    # street is via strata: the substrate walked daily
+    assert "STREET" in d
+
+
 def test_archenoesis_reads_its_own_name():
     q = _load().by_id("archenoesis")
     assert q.keystone == "archenoesis"
